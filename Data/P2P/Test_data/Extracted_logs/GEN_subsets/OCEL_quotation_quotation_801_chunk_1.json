@@ -1,0 +1,106 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create_purchase_order",
+            "attributes": [
+                {
+                    "name": "created_by",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "approve_purchase_order",
+            "attributes": [
+                {
+                    "name": "approved_by",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:1383",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "status",
+                    "time": "2024-06-10T17:13:00Z",
+                    "value": "complete"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2024-06-10T17:13:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:801",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": "quotation:801",
+            "type": "quotation",
+            "attributes": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create_purchase_order",
+            "time": "2024-06-10T17:13:00Z",
+            "attributes": [
+                {
+                    "name": "created_by",
+                    "value": "Procurement Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1383",
+                    "qualifier": "created"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "approve_purchase_order",
+            "time": "2024-06-11T08:27:00Z",
+            "attributes": [
+                {
+                    "name": "approved_by",
+                    "value": "Procurement Order Manager"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1383",
+                    "qualifier": "approved"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,92 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                },
+                {
+                    "name": "lifecycle status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create invoice receipt",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:1300",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2024-01-01T09:58:00Z",
+                    "value": "28700.0"
+                },
+                {
+                    "name": "lifecycle status",
+                    "time": "2024-01-01T09:58:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1288",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:1288",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2024-01-01T09:58:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create invoice receipt",
+            "time": "2024-01-01T09:58:00Z",
+            "attributes": [
+                {
+                    "name": "invoice receipt ID",
+                    "value": "invoice receipt:1300"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1300",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

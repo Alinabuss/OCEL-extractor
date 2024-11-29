@@ -1,0 +1,125 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "movement_type",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "credit_amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "goods_receipt_recorded",
+            "attributes": [
+                {
+                    "name": "matching_status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "573",
+            "type": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-02-06T12:41:00Z",
+                    "value": "573"
+                },
+                {
+                    "name": "movement_type",
+                    "time": "2023-02-06T12:41:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "581",
+            "type": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-02-06T12:41:00Z",
+                    "value": "581"
+                },
+                {
+                    "name": "credit_amount",
+                    "time": "2023-02-06T12:41:00Z",
+                    "value": "49550.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Finance/Account Department",
+            "type": "department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-02-06T12:41:00Z",
+                    "value": "Finance/Account Department"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "goods_receipt_recorded",
+            "time": "2023-02-06T12:41:00Z",
+            "attributes": [
+                {
+                    "name": "matching_status",
+                    "value": "completed"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "573",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "581",
+                    "qualifier": "matched_with"
+                },
+                {
+                    "objectId": "Finance/Account Department",
+                    "qualifier": "involved_in"
+                }
+            ]
+        }
+    ]
+}

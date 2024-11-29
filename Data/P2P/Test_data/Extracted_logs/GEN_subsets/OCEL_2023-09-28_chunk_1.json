@@ -1,0 +1,92 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "goods receipt creation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1096",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2023-09-28T05:42:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "purchasing group",
+                    "time": "2023-09-28T05:42:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:914",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:914",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-09-28T05:42:00Z",
+                    "value": "purchase_order:914"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "goods receipt creation",
+            "time": "2023-09-28T05:42:00Z",
+            "attributes": [
+                {
+                    "name": "id",
+                    "value": "goods receipt:1096"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1096",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

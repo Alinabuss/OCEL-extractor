@@ -1,0 +1,108 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "float"
+                },
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "float"
+                },
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "perform two - way match",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:73",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "credit amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "600.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:67",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "credit amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "600.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 467,
+            "type": "perform two - way match",
+            "time": "2022-05-19T07:10:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Finance / Account Department"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:73",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "invoice receipt:67",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

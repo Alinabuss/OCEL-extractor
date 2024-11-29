@@ -1,0 +1,100 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase_order",
+            "attributes": []
+        },
+        {
+            "name": "purchasing_group",
+            "attributes": []
+        },
+        {
+            "name": "department",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create_goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods_receipt:435",
+            "type": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "time": "2022-10-19T22:04:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:367",
+                    "qualifier": "associated_with"
+                },
+                {
+                    "objectId": "003",
+                    "qualifier": "part_of"
+                },
+                {
+                    "objectId": "Warehouse Department",
+                    "qualifier": "involved"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:367",
+            "type": "purchase_order",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "003",
+            "type": "purchasing_group",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Warehouse Department",
+            "type": "department",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create_goods_receipt",
+            "time": "2022-10-19T22:04:00Z",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods_receipt:435",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

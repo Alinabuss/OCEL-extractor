@@ -1,0 +1,130 @@
+{
+    "objectTypes": [
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Goods Receipt Creation",
+            "attributes": [
+                {
+                    "name": "Department",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Invoice Receipt Generation",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1730",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "time": "2024-07-16T19:56:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1419",
+                    "qualifier": "linked to"
+                }
+            ]
+        },
+        {
+            "id": "invoice receipt:1732",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "time": "2024-07-16T19:56:00Z",
+                    "value": "35100.00"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:1419",
+            "type": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "Purchasing Group",
+                    "time": "2024-07-18T05:51:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Invoice Receipt Generation",
+            "time": "2024-07-16T19:56:00Z",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "value": "35100.00"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1732",
+                    "qualifier": "generated"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Goods Receipt Creation",
+            "time": "2024-07-18T05:51:00Z",
+            "attributes": [
+                {
+                    "name": "Department",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1730",
+                    "qualifier": "finalized"
+                }
+            ]
+        }
+    ]
+}

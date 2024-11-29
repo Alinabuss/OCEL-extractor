@@ -1,0 +1,107 @@
+{
+    "objectTypes": [
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "Department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Two-Way Match",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:644",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2023-03-10T08:10:00Z",
+                    "value": "123750.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:652",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2023-03-10T08:10:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Finance/Account Department",
+            "type": "Department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-03-10T08:10:00Z",
+                    "value": "Finance/Account Department"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Two-Way Match",
+            "time": "2023-03-10T08:10:00Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "completed successfully"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:644",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "goods receipt:652",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "Finance/Account Department",
+                    "qualifier": "performed by"
+                }
+            ]
+        }
+    ]
+}

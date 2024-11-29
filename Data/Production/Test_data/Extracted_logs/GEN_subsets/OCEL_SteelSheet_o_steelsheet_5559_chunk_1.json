@@ -1,0 +1,133 @@
+{
+    "objectTypes": [
+        {
+            "name": "steel_sheet",
+            "attributes": [
+                {
+                    "name": "weight",
+                    "type": "float"
+                },
+                {
+                    "name": "derived_weight",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "machine",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "electric_consumption",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "workstation",
+            "attributes": [
+                {
+                    "name": "metrics",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "steel_sheet_processing",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "co2_emission",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o_steelsheet_5559",
+            "type": "steel_sheet",
+            "attributes": [
+                {
+                    "name": "weight",
+                    "time": "2023-04-06T11:40:57Z",
+                    "value": "31.91076"
+                },
+                {
+                    "name": "derived_weight",
+                    "time": "2023-04-06T11:40:57Z",
+                    "value": "0.02108"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Splitter01",
+            "type": "machine",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-04-06T11:40:57Z",
+                    "value": "Splitter01"
+                },
+                {
+                    "name": "electric_consumption",
+                    "time": "2023-04-06T11:40:57Z",
+                    "value": "0.0213713"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "workstation_01",
+            "type": "workstation",
+            "attributes": [
+                {
+                    "name": "metrics",
+                    "time": "2023-04-06T11:40:57Z",
+                    "value": "connected"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "steel_sheet_processing",
+            "time": "2023-04-06T11:40:57Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "13.99"
+                },
+                {
+                    "name": "co2_emission",
+                    "value": "0.014626911"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_steelsheet_5559",
+                    "qualifier": "processed"
+                },
+                {
+                    "objectId": "Splitter01",
+                    "qualifier": "used"
+                },
+                {
+                    "objectId": "workstation_01",
+                    "qualifier": "located_at"
+                }
+            ]
+        }
+    ]
+}

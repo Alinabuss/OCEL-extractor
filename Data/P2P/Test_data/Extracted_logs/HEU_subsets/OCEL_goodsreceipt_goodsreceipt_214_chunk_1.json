@@ -1,0 +1,184 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "invoice receipt",
+                    "type": "string"
+                },
+                {
+                    "name": "movement type",
+                    "type": "float"
+                },
+                {
+                    "name": "invoice receipt",
+                    "type": "string"
+                },
+                {
+                    "name": "credit amount",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase group",
+            "attributes": [
+                {
+                    "name": "purchase group",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create 214 with a movement type",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "create Report invoice receipt",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "perform two - way match",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "receipt",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:210",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "invoice receipt",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": ": 214"
+                },
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "invoice receipt",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": ": 210"
+                },
+                {
+                    "name": "credit amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "141,000.00"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": ": purchase_order:184",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": ": purchase_order:184",
+            "type": "purchase group",
+            "attributes": [
+                {
+                    "name": "purchase group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 711,
+            "type": "create Report invoice receipt",
+            "time": "2022-07-26T21:36:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Account Department Finance"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:210",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 712,
+            "type": "receipt",
+            "time": "2022-07-27T00:43:00Z",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": 713,
+            "type": "create 214 with a movement type",
+            "time": "2022-07-27T00:43:00Z",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": ": purchase_order:184",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 714,
+            "type": "perform two - way match",
+            "time": "2022-07-27T07:10:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Account Department Finance"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": []
+        }
+    ]
+}

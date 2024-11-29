@@ -1,0 +1,83 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "purchasing_group_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "purchasing_group_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "purchase_order_created",
+            "attributes": [
+                {
+                    "name": "purchase_order_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order[772]",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "purchasing_group_id",
+                    "time": "2023-07-17T15:59:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation[455]",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "quotation[455]",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "purchasing_group_id",
+                    "time": "2023-07-17T15:59:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "purchase_order_created",
+            "time": "2023-07-17T15:59:00Z",
+            "attributes": [
+                {
+                    "name": "purchase_order_id",
+                    "value": "purchase_order[772]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order[772]",
+                    "qualifier": "created_for"
+                }
+            ]
+        }
+    ]
+}

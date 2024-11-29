@@ -1,0 +1,94 @@
+{
+  "objectTypes": [
+    {
+      "name": "material",
+      "attributes": [
+        {
+          "name": "Net Price (EKPO-NETPR)",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "purchase_requisition",
+      "attributes": [
+        {
+          "name": "Purchasing Group (EBAN-EKGRP)",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Approve Purchase Requisition",
+      "attributes": [
+        {
+          "name": "lifecycle",
+          "type": "string"
+        },
+        {
+          "name": "resource",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "id": "material:1352",
+      "type": "material",
+      "attributes": [
+        {
+          "name": "Net Price (EKPO-NETPR)",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 600.0
+        }
+      ]
+    },
+    {
+      "id": "purchase_requisition:544:pr_trigger_544",
+      "type": "purchase_requisition",
+      "attributes": [
+        {
+          "name": "Purchasing Group (EBAN-EKGRP)",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "002"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "material:1352",
+          "qualifier": "assigned_materials of PR"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "event_17110",
+      "type": "Approve Purchase Requisition",
+      "time": "2023-10-11T18:52:00Z",
+      "attributes": [
+        {
+          "name": "lifecycle",
+          "value": "complete"
+        },
+        {
+          "name": "resource",
+          "value": "Procurement Requisition Manager"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "material:1352",
+          "qualifier": "material"
+        },
+        {
+          "objectId": "purchase_requisition:544:pr_trigger_544",
+          "qualifier": "purchase_requisition"
+        }
+      ]
+    }
+  ]
+}

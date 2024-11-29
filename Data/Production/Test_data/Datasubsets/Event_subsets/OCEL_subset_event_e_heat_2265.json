@@ -1,0 +1,142 @@
+{
+  "objectTypes": [
+    {
+      "name": "Machine",
+      "attributes": [
+        {
+          "name": "P_electric-from-grid-de[kWh]",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "SteelSheet",
+      "attributes": [
+        {
+          "name": "p_mass[kg]",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Workstation",
+      "attributes": [
+        {
+          "name": "P_electric-from-grid-de[kWh]",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "HeatSteelSheet",
+      "attributes": [
+        {
+          "name": "p_duration[s]",
+          "type": "string"
+        },
+        {
+          "name": "s_co2e[kg]",
+          "type": "string"
+        },
+        {
+          "name": "i_electric-from-grid-de[kWh]",
+          "type": "float"
+        },
+        {
+          "name": "i_gas_input[Wh]",
+          "type": "float"
+        },
+        {
+          "name": "i_emission-of-burn[Wh]",
+          "type": "float"
+        }
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "id": "o_machine_oven01",
+      "type": "Machine",
+      "attributes": [
+        {
+          "name": "P_electric-from-grid-de[kWh]",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "(Pointer-M-electr-oven01)"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "o_workstation_1",
+          "qualifier": "located at"
+        }
+      ]
+    },
+    {
+      "id": "o_steelsheet_2265",
+      "type": "SteelSheet",
+      "attributes": [
+        {
+          "name": "p_mass[kg]",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "0.02113"
+        }
+      ]
+    },
+    {
+      "id": "o_workstation_1",
+      "type": "Workstation",
+      "attributes": [
+        {
+          "name": "P_electric-from-grid-de[kWh]",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "o_workstation_1"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "e_heat_2265",
+      "type": "HeatSteelSheet",
+      "time": "2023-04-04T10:21:10Z",
+      "attributes": [
+        {
+          "name": "p_duration[s]",
+          "value": "900.0"
+        },
+        {
+          "name": "s_co2e[kg]",
+          "value": "0.0138019093344"
+        },
+        {
+          "name": "i_electric-from-grid-de[kWh]",
+          "value": 0.02
+        },
+        {
+          "name": "i_gas_input[Wh]",
+          "value": 0.49392
+        },
+        {
+          "name": "i_emission-of-burn[Wh]",
+          "value": 0.49392
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "o_workstation_1",
+          "qualifier": "located at"
+        },
+        {
+          "objectId": "o_machine_oven01",
+          "qualifier": "with"
+        },
+        {
+          "objectId": "o_steelsheet_2265",
+          "qualifier": "on"
+        }
+      ]
+    }
+  ]
+}

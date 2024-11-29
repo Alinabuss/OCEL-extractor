@@ -1,0 +1,273 @@
+{
+    "objectTypes": [
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "position",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "applicant_name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "VacancyClosed",
+            "attributes": [
+                {
+                    "name": "vacancy_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "InterviewInvitation",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "type": "string"
+                },
+                {
+                    "name": "invited_applicant",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Vacancy[550020]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2019-07-02T12:30:12Z",
+                    "value": "550020"
+                },
+                {
+                    "name": "position",
+                    "time": "2019-07-02T12:30:12Z",
+                    "value": "Consultant"
+                }
+            ]
+        },
+        {
+            "id": "Application[770245]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2019-07-02T13:49:52Z",
+                    "value": "770245"
+                },
+                {
+                    "name": "applicant_name",
+                    "time": "2019-07-02T13:49:52Z",
+                    "value": "Mary Neumann"
+                }
+            ]
+        },
+        {
+            "id": "Application[770118]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2019-07-04T09:51:12Z",
+                    "value": "770118"
+                },
+                {
+                    "name": "applicant_name",
+                    "time": "2019-07-04T09:51:12Z",
+                    "value": "Sonia Pietersen"
+                }
+            ]
+        },
+        {
+            "id": "Application[770276]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2019-07-04T13:06:05Z",
+                    "value": "770276"
+                },
+                {
+                    "name": "applicant_name",
+                    "time": "2019-07-04T13:06:05Z",
+                    "value": "Johan Jansen"
+                }
+            ]
+        },
+        {
+            "id": "Recruiter_Jana_Keane",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-02T13:49:52Z",
+                    "value": "Jana Keane"
+                }
+            ]
+        },
+        {
+            "id": "Recruiter_Simon_Meister",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-02T13:49:52Z",
+                    "value": "Simon Meister"
+                }
+            ]
+        },
+        {
+            "id": "Recruiter_Ed_Meister",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-04T09:51:12Z",
+                    "value": "Ed Meister"
+                }
+            ]
+        },
+        {
+            "id": "Recruiter_Dionne_Meister",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-04T09:51:12Z",
+                    "value": "Dionne Meister"
+                }
+            ]
+        },
+        {
+            "id": "Recruiter_Jana_Meister",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-04T13:06:05Z",
+                    "value": "Jana Meister"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "VacancyClosed",
+            "time": "2019-07-02T12:30:12Z",
+            "attributes": [
+                {
+                    "name": "vacancy_id",
+                    "value": "Vacancy[550020]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": 2,
+            "type": "InterviewInvitation",
+            "time": "2019-07-02T13:49:52Z",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "value": "Application[770245]"
+                },
+                {
+                    "name": "invited_applicant",
+                    "value": "Mary Neumann"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Recruiter_Jana_Keane",
+                    "qualifier": "inviter"
+                },
+                {
+                    "objectId": "Recruiter_Simon_Meister",
+                    "qualifier": "inviter"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "InterviewInvitation",
+            "time": "2019-07-04T09:51:12Z",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "value": "Application[770118]"
+                },
+                {
+                    "name": "invited_applicant",
+                    "value": "Sonia Pietersen"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Recruiter_Ed_Meister",
+                    "qualifier": "inviter"
+                },
+                {
+                    "objectId": "Recruiter_Dionne_Meister",
+                    "qualifier": "acknowledged"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "InterviewInvitation",
+            "time": "2019-07-04T13:06:05Z",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "value": "Application[770276]"
+                },
+                {
+                    "name": "invited_applicant",
+                    "value": "Johan Jansen"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Recruiter_Jana_Meister",
+                    "qualifier": "inviter"
+                },
+                {
+                    "objectId": "Recruiter_Dionne_Meister",
+                    "qualifier": "facilitated"
+                }
+            ]
+        }
+    ]
+}

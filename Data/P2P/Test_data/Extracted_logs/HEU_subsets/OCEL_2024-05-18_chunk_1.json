@@ -1,0 +1,95 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "goods receipt",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create invoice receipt",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:1600",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "3600.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1597",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:1597",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "goods receipt",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "movement type 101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 456,
+            "type": "create invoice receipt",
+            "time": "2024-05-18T04:13:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Account Department"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1597",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "invoice receipt:1600",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

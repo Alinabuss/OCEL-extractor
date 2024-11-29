@@ -1,0 +1,117 @@
+{
+    "objectTypes": [
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "stock_check",
+            "attributes": [
+                {
+                    "name": "result",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "iPhone 8",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2024-02-20T10:48:27Z",
+                    "value": "529.00"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-886897",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2024-02-20T10:48:27Z",
+                    "value": "623.48"
+                },
+                {
+                    "name": "status",
+                    "time": "2024-02-20T10:48:27Z",
+                    "value": "out of stock"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "iPhone 8",
+                    "qualifier": "corresponds_to"
+                }
+            ]
+        },
+        {
+            "id": "Mahsa Bafrani",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "time": "2024-02-20T10:48:27Z",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "stock_check",
+            "time": "2024-02-20T10:48:27Z",
+            "attributes": [
+                {
+                    "name": "result",
+                    "value": "out of stock"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-886897",
+                    "qualifier": "checks"
+                },
+                {
+                    "objectId": "Mahsa Bafrani",
+                    "qualifier": "performed_by"
+                }
+            ]
+        }
+    ]
+}

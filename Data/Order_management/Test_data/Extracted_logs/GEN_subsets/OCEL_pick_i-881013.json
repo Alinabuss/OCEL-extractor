@@ -1,0 +1,142 @@
+{
+    "objectTypes": [
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                },
+                {
+                    "name": "description",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "description",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Item Picked",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "quantity",
+                    "type": "integer"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Detlef Wetzeler",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-06-02T09:36:47Z",
+                    "value": "Detlef Wetzeler"
+                },
+                {
+                    "name": "role",
+                    "time": "2023-06-02T09:36:47Z",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-881013",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "2023-06-02T09:36:47Z",
+                    "value": "i-881013"
+                },
+                {
+                    "name": "description",
+                    "time": "2023-06-02T09:36:47Z",
+                    "value": "Fire Stick"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-06-02T09:36:47Z",
+                    "value": 39.99
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Fire Stick",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "description",
+                    "time": "2023-06-02T09:36:47Z",
+                    "value": "Fire Stick"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Item Picked",
+            "time": "2023-06-02T09:36:47Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-06-02T09:36:47Z"
+                },
+                {
+                    "name": "quantity",
+                    "value": 1
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Detlef Wetzeler",
+                    "qualifier": "picked"
+                },
+                {
+                    "objectId": "i-881013",
+                    "qualifier": "picked"
+                },
+                {
+                    "objectId": "Fire Stick",
+                    "qualifier": "associated with"
+                }
+            ]
+        }
+    ]
+}

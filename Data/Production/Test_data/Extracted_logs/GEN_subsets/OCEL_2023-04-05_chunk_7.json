@@ -1,0 +1,412 @@
+{
+    "objectTypes": [
+        {
+            "name": "Machine",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Part",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Cutting Process",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2 Emissions",
+                    "type": "float"
+                },
+                {
+                    "name": "Electricity Consumption",
+                    "type": "float"
+                },
+                {
+                    "name": "Compressed Air Consumption",
+                    "type": "float"
+                },
+                {
+                    "name": "Nitrogen Consumption",
+                    "type": "float"
+                },
+                {
+                    "name": "Steel Waste",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Forming Process",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2 Emissions",
+                    "type": "float"
+                },
+                {
+                    "name": "Electricity Consumption",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Machine[3457]",
+            "type": "Machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Workstation[2]",
+            "type": "Workstation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "MalePart[3457]",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "value": "Male"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "FormedPart[3457]",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "value": "Formed"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Machine[former02]",
+            "type": "Machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Workstation[1]",
+            "type": "Workstation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "FormedPart[3480]",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "value": "Formed"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "FemalePart[3480]",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "value": "Female"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_machine_cutter01",
+            "type": "Machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "o_workstation_2",
+            "type": "Workstation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "o_formedpart_3568",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "value": "Formed"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_malepart_3568",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "value": "Male"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Machine[form02]",
+            "type": "Machine",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Cutting Process",
+            "time": "2023-04-05T11:01:30Z",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "value": 9.93
+                },
+                {
+                    "name": "CO2 Emissions",
+                    "value": 0.0646
+                },
+                {
+                    "name": "Electricity Consumption",
+                    "value": 0.0152
+                },
+                {
+                    "name": "Compressed Air Consumption",
+                    "value": 0.056
+                },
+                {
+                    "name": "Nitrogen Consumption",
+                    "value": 0.061
+                },
+                {
+                    "name": "Steel Waste",
+                    "value": "unspecified"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "MalePart[3457]",
+                    "qualifier": "produced"
+                },
+                {
+                    "objectId": "FormedPart[3457]",
+                    "qualifier": "input"
+                },
+                {
+                    "objectId": "Machine[3457]",
+                    "qualifier": "performed_on"
+                },
+                {
+                    "objectId": "Workstation[2]",
+                    "qualifier": "performed_at"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Forming Process",
+            "time": "2023-04-05T11:02:57Z",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "value": 5.0
+                },
+                {
+                    "name": "CO2 Emissions",
+                    "value": 0.0028500228
+                },
+                {
+                    "name": "Electricity Consumption",
+                    "value": 0.0041667
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "FormedPart[3480]",
+                    "qualifier": "produced"
+                },
+                {
+                    "objectId": "Machine[former02]",
+                    "qualifier": "performed_on"
+                },
+                {
+                    "objectId": "Workstation[1]",
+                    "qualifier": "performed_at"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Cutting Process",
+            "time": "2023-04-05T11:03:09Z",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "value": 12.55
+                },
+                {
+                    "name": "CO2 Emissions",
+                    "value": 0.0916
+                },
+                {
+                    "name": "Electricity Consumption",
+                    "value": 0.0192
+                },
+                {
+                    "name": "Compressed Air Consumption",
+                    "value": 0.086
+                },
+                {
+                    "name": "Nitrogen Consumption",
+                    "value": 0.077
+                },
+                {
+                    "name": "Steel Waste",
+                    "value": 0.00255
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "FormedPart[3480]",
+                    "qualifier": "produced"
+                },
+                {
+                    "objectId": "FemalePart[3480]",
+                    "qualifier": "input"
+                },
+                {
+                    "objectId": "Cutter[01]",
+                    "qualifier": "performed_on"
+                },
+                {
+                    "objectId": "Workstation[2]",
+                    "qualifier": "performed_at"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Cutting Process",
+            "time": "2023-04-05T11:11:37Z",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "value": 10.014
+                },
+                {
+                    "name": "CO2 Emissions",
+                    "value": 0.067719
+                },
+                {
+                    "name": "Electricity Consumption",
+                    "value": 0.0152999
+                },
+                {
+                    "name": "Compressed Air Consumption",
+                    "value": 0.057
+                },
+                {
+                    "name": "Nitrogen Consumption",
+                    "value": 0.061
+                },
+                {
+                    "name": "Steel Waste",
+                    "value": "unspecified"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_malepart_3568",
+                    "qualifier": "produced"
+                },
+                {
+                    "objectId": "o_formedpart_3568",
+                    "qualifier": "input"
+                },
+                {
+                    "objectId": "o_machine_cutter01",
+                    "qualifier": "performed_on"
+                },
+                {
+                    "objectId": "o_workstation_2",
+                    "qualifier": "performed_at"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "Forming Process",
+            "time": "2023-04-05T11:14:17Z",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "value": 5.0
+                },
+                {
+                    "name": "CO2 Emissions",
+                    "value": 0.0028500228
+                },
+                {
+                    "name": "Electricity Consumption",
+                    "value": 0.0041667
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "FormedPart[0]",
+                    "qualifier": "produced"
+                },
+                {
+                    "objectId": "Steel Sheet",
+                    "qualifier": "input"
+                },
+                {
+                    "objectId": "Machine[form02]",
+                    "qualifier": "performed_on"
+                },
+                {
+                    "objectId": "Workstation[1]",
+                    "qualifier": "performed_at"
+                }
+            ]
+        }
+    ]
+}

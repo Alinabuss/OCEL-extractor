@@ -1,0 +1,192 @@
+{
+    "objectTypes": [
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Vacancy",
+                    "type": "string"
+                },
+                {
+                    "name": "Submitted By",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Application Submitted",
+            "attributes": [
+                {
+                    "name": "Applicant",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiters Assigned",
+            "attributes": [
+                {
+                    "name": "Recruiters",
+                    "type": "array"
+                }
+            ]
+        },
+        {
+            "name": "First Screening Conducted",
+            "attributes": []
+        },
+        {
+            "name": "Rejection Notice Sent",
+            "attributes": [
+                {
+                    "name": "Recipient",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Application[770368]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-01T12:11:22Z",
+                    "value": "770368"
+                },
+                {
+                    "name": "Vacancy",
+                    "time": "2019-07-01T12:11:22Z",
+                    "value": "550047"
+                },
+                {
+                    "name": "Submitted By",
+                    "time": "2019-07-01T12:11:22Z",
+                    "value": "Mary Brown"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Recruiter[Ed Meister]",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-02T11:15:23Z",
+                    "value": "Ed Meister"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Recruiter[Jana Meister]",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-02T11:15:23Z",
+                    "value": "Jana Meister"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Recruiter[Dionne Hense]",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-02T11:15:23Z",
+                    "value": "Dionne Hense"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Application Submitted",
+            "time": "2019-07-01T12:11:22Z",
+            "attributes": [
+                {
+                    "name": "Applicant",
+                    "value": "Mary Brown"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770368]",
+                    "qualifier": "is"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Recruiters Assigned",
+            "time": "2019-07-02T11:15:23Z",
+            "attributes": [
+                {
+                    "name": "Recruiters",
+                    "value": [
+                        "Ed Meister",
+                        "Jana Meister",
+                        "Dionne Hense"
+                    ]
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770368]",
+                    "qualifier": "oversaw"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "First Screening Conducted",
+            "time": "2019-07-02T16:19:43Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Application[770368]",
+                    "qualifier": "is"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Rejection Notice Sent",
+            "time": "2019-07-05T07:14:05Z",
+            "attributes": [
+                {
+                    "name": "Recipient",
+                    "value": "Mary Brown"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770368]",
+                    "qualifier": "concerns"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,266 @@
+{
+    "objectTypes": [
+        {
+            "name": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "departureDate",
+                    "type": "string"
+                },
+                {
+                    "name": "priority",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Container",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "TransportDocumentCreated",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "VehiclesBooked",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "VehicleDepartureScheduled",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "VehicleMarkedHighPriority",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td186",
+            "type": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-10-12T12:09:10Z",
+                    "value": "td186"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh41",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-10-17T11:00:00Z",
+                    "value": "vh41"
+                },
+                {
+                    "name": "departureDate",
+                    "time": "2023-10-17T11:00:00Z",
+                    "value": "2023-10-17T11:00:00Z"
+                },
+                {
+                    "name": "priority",
+                    "time": "2023-10-12T12:09:10Z",
+                    "value": "high"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td186",
+                    "qualifier": "bookedFor"
+                }
+            ]
+        },
+        {
+            "id": "vh42",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-10-20T11:00:00Z",
+                    "value": "vh42"
+                },
+                {
+                    "name": "departureDate",
+                    "time": "2023-10-20T11:00:00Z",
+                    "value": "2023-10-20T11:00:00Z"
+                },
+                {
+                    "name": "priority",
+                    "time": "2023-10-12T12:09:10Z",
+                    "value": "normal"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td186",
+                    "qualifier": "bookedFor"
+                }
+            ]
+        },
+        {
+            "id": "container1",
+            "type": "Container",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-10-12T12:09:10Z",
+                    "value": "container1"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td186",
+                    "qualifier": "partOf"
+                }
+            ]
+        },
+        {
+            "id": "container2",
+            "type": "Container",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-10-12T12:09:10Z",
+                    "value": "container2"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td186",
+                    "qualifier": "partOf"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "TransportDocumentCreated",
+            "time": "2023-10-12T12:09:10Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-10-12T12:09:10Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td186",
+                    "qualifier": "created"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "VehiclesBooked",
+            "time": "2023-10-12T12:09:10Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-10-12T12:09:10Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td186",
+                    "qualifier": "booked"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "VehicleDepartureScheduled",
+            "time": "2023-10-17T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-10-17T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh41",
+                    "qualifier": "departureScheduled"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "VehicleDepartureScheduled",
+            "time": "2023-10-20T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-10-20T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh42",
+                    "qualifier": "departureScheduled"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "VehicleMarkedHighPriority",
+            "time": "2023-10-12T12:09:10Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-10-12T12:09:10Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh41",
+                    "qualifier": "markedHighPriority"
+                }
+            ]
+        }
+    ]
+}

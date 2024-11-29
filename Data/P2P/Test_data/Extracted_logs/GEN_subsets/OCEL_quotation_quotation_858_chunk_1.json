@@ -1,0 +1,109 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "purchase_order_approval",
+            "attributes": [
+                {
+                    "name": "approval_status",
+                    "type": "string"
+                },
+                {
+                    "name": "conducted_by",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:1476",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-08-08T13:40:00Z",
+                    "value": "purchase_order:1476"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2024-08-08T13:40:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:858",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": "quotation:858",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-08-08T13:40:00Z",
+                    "value": "quotation:858"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2024-08-08T13:40:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "purchase_order_approval",
+            "time": "2024-08-08T13:40:00Z",
+            "attributes": [
+                {
+                    "name": "approval_status",
+                    "value": "complete"
+                },
+                {
+                    "name": "conducted_by",
+                    "value": "Procurement Order Manager"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1476",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

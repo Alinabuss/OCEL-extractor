@@ -1,0 +1,197 @@
+{
+    "objectTypes": [
+        {
+            "name": "town_center",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "type": "string"
+                },
+                {
+                    "name": "session_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "villager",
+            "attributes": [
+                {
+                    "name": "villager_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "issue_command",
+            "attributes": [
+                {
+                    "name": "command_type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "set_gather_point",
+            "attributes": [
+                {
+                    "name": "gather_type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "gather_food",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "Town_Center_M250230427_1",
+            "type": "town_center",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "time": "2023-07-31T00:00:00Z",
+                    "value": "M250230427"
+                },
+                {
+                    "name": "session_id",
+                    "time": "2023-07-31T00:00:00Z",
+                    "value": "S250230427_2199669"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Villager_M250230427_103",
+            "type": "villager",
+            "attributes": [
+                {
+                    "name": "villager_id",
+                    "time": "2023-07-31T00:00:00Z",
+                    "value": "Villager_M250230427_103"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Town_Center_M250230427_1",
+                    "qualifier": "located_at"
+                }
+            ]
+        },
+        {
+            "id": "Villager_M250230427_105",
+            "type": "villager",
+            "attributes": [
+                {
+                    "name": "villager_id",
+                    "time": "2023-07-31T00:00:00Z",
+                    "value": "Villager_M250230427_105"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Town_Center_M250230427_1",
+                    "qualifier": "located_at"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "issue_command",
+            "time": "2023-07-31T00:10:51Z",
+            "attributes": [
+                {
+                    "name": "command_type",
+                    "value": "queue_villager"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Villager_M250230427_103",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "Town_Center_M250230427_1",
+                    "qualifier": "involved"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "set_gather_point",
+            "time": "2023-07-31T00:10:55Z",
+            "attributes": [
+                {
+                    "name": "gather_type",
+                    "value": "none"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Town_Center_M250230427_1",
+                    "qualifier": "involved"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "issue_command",
+            "time": "2023-07-31T00:11:12Z",
+            "attributes": [
+                {
+                    "name": "command_type",
+                    "value": "issue_command"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Villager_M250230427_105",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "Town_Center_M250230427_1",
+                    "qualifier": "involved"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "gather_food",
+            "time": "2023-07-31T00:11:16Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Villager_M250230427_103",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "Town_Center_M250230427_1",
+                    "qualifier": "involved"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "set_gather_point",
+            "time": "2023-07-31T00:11:18Z",
+            "attributes": [
+                {
+                    "name": "gather_type",
+                    "value": "food"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Town_Center_M250230427_1",
+                    "qualifier": "involved"
+                }
+            ]
+        }
+    ]
+}

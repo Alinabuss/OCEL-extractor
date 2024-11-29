@@ -1,0 +1,117 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "Application ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Position",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "Vacancy ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Application Submitted",
+            "attributes": [
+                {
+                    "name": "Submission Time",
+                    "type": "timestamp"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Andre Weber",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-06-28T16:37:46Z",
+                    "value": "Andre Weber"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770356]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "Application ID",
+                    "time": "2019-06-28T16:37:46Z",
+                    "value": "Application[770356]"
+                },
+                {
+                    "name": "Position",
+                    "time": "2019-06-28T16:37:46Z",
+                    "value": "Manager"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550016]",
+                    "qualifier": "is associated with"
+                }
+            ]
+        },
+        {
+            "id": "Vacancy[550016]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "Vacancy ID",
+                    "time": "2019-06-28T16:37:46Z",
+                    "value": "Vacancy[550016]"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Application Submitted",
+            "time": "2019-06-28T16:37:46Z",
+            "attributes": [
+                {
+                    "name": "Submission Time",
+                    "value": "2019-06-28T16:37:46Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Andre Weber",
+                    "qualifier": "submitted"
+                },
+                {
+                    "objectId": "Application[770356]",
+                    "qualifier": "is for"
+                }
+            ]
+        }
+    ]
+}

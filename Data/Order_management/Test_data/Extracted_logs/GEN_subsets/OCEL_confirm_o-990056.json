@@ -1,0 +1,138 @@
+{
+    "objectTypes": [
+        {
+            "name": "order",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                },
+                {
+                    "name": "product_name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "confirm_order",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o-990056",
+            "type": "order",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-04-28T14:04:09Z",
+                    "value": "1233.99"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-880241",
+                    "qualifier": "contains"
+                },
+                {
+                    "objectId": "i-880242",
+                    "qualifier": "contains"
+                }
+            ]
+        },
+        {
+            "id": "i-880241",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-04-28T14:04:09Z",
+                    "value": "1099.00"
+                },
+                {
+                    "name": "product_name",
+                    "time": "2023-04-28T14:04:09Z",
+                    "value": "unknown"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-880242",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-04-28T14:04:09Z",
+                    "value": "129.99"
+                },
+                {
+                    "name": "product_name",
+                    "time": "2023-04-28T14:04:09Z",
+                    "value": "Echo Show 8"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Christine von Dobbert",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "role",
+                    "time": "2023-04-28T14:04:09Z",
+                    "value": "sales"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "confirm_order",
+            "time": "2023-04-28T14:04:09Z",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "value": "o-990056"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Christine von Dobbert",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "o-990056",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

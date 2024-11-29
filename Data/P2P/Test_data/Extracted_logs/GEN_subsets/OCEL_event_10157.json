@@ -1,0 +1,107 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "type": "decimal"
+                }
+            ]
+        },
+        {
+            "name": "department",
+            "attributes": [
+                {
+                    "name": "lifecycle_status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "two_way_match",
+            "attributes": [
+                {
+                    "name": "completion_time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "666",
+            "type": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "time": "2023-03-10T08:10:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "646",
+            "type": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "time": "2023-03-10T08:10:00Z",
+                    "value": "78100.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Finance/Account Department",
+            "type": "department",
+            "attributes": [
+                {
+                    "name": "lifecycle_status",
+                    "time": "2023-03-10T08:10:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "two_way_match",
+            "time": "2023-03-10T08:10:00Z",
+            "attributes": [
+                {
+                    "name": "completion_time",
+                    "value": "2023-03-10T08:10:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "666",
+                    "qualifier": "involved_goods_receipt"
+                },
+                {
+                    "objectId": "646",
+                    "qualifier": "involved_invoice_receipt"
+                },
+                {
+                    "objectId": "Finance/Account Department",
+                    "qualifier": "performed_by"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,100 @@
+{
+    "objectTypes": [
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Goods Receipt ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Movement Type",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Invoice Receipt ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Credit Amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Two-Way Match Completed",
+            "attributes": [
+                {
+                    "name": "Status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:281",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Goods Receipt ID",
+                    "time": "2022-08-22T09:12:00Z",
+                    "value": "goods receipt:281"
+                },
+                {
+                    "name": "Movement Type",
+                    "time": "2022-08-22T09:12:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:281",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Invoice Receipt ID",
+                    "time": "2022-08-22T09:12:00Z",
+                    "value": "invoice receipt:281"
+                },
+                {
+                    "name": "Credit Amount",
+                    "time": "2022-08-22T09:12:00Z",
+                    "value": "1200.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Two-Way Match Completed",
+            "time": "2022-08-22T09:12:00Z",
+            "attributes": [
+                {
+                    "name": "Status",
+                    "value": "Completed"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:281",
+                    "qualifier": "matched_with"
+                },
+                {
+                    "objectId": "invoice receipt:281",
+                    "qualifier": "matched_with"
+                }
+            ]
+        }
+    ]
+}

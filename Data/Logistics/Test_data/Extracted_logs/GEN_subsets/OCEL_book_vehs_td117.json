@@ -1,0 +1,87 @@
+{
+    "objectTypes": [
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "container_count",
+                    "type": "number"
+                }
+            ]
+        },
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "scheduled_departure",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "vehicle_booked",
+            "attributes": [
+                {
+                    "name": "booking_time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td117",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "container_count",
+                    "time": "2023-08-25T09:30:02Z",
+                    "value": "4.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh30",
+                    "qualifier": "associated_vehicle"
+                }
+            ]
+        },
+        {
+            "id": "vh30",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "scheduled_departure",
+                    "time": "2023-09-08T11:00:00Z",
+                    "value": ""
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "vehicle_booked",
+            "time": "2023-08-25T09:30:02Z",
+            "attributes": [
+                {
+                    "name": "booking_time",
+                    "value": "2023-08-25T09:30:02Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td117",
+                    "qualifier": "booked_for"
+                },
+                {
+                    "objectId": "vh30",
+                    "qualifier": "booked_vehicle"
+                }
+            ]
+        }
+    ]
+}

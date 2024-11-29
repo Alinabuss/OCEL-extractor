@@ -1,0 +1,117 @@
+{
+    "objectTypes": [
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "role",
+                    "type": "string"
+                },
+                {
+                    "name": "fullName",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "stockReport",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Kindle Paperwhite",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2024-02-05T15:40:32Z",
+                    "value": "129.00"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-886664",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2024-02-05T15:40:32Z",
+                    "value": "152.04"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Kindle Paperwhite",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": "Leah Tacke genannt Unterberg",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "role",
+                    "time": "2024-02-05T15:40:32Z",
+                    "value": "warehousing"
+                },
+                {
+                    "name": "fullName",
+                    "time": "2024-02-05T15:40:32Z",
+                    "value": "Leah Tacke genannt Unterberg"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "stockReport",
+            "time": "2024-02-05T15:40:32Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "out of stock"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-886664",
+                    "qualifier": "reported_item"
+                },
+                {
+                    "objectId": "Leah Tacke genannt Unterberg",
+                    "qualifier": "reported_by"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,114 @@
+{
+  "objectTypes": [
+    {
+      "name": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "Vehicle",
+      "attributes": [
+        {
+          "name": "Departure Date",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Depart",
+      "attributes": []
+    }
+  ],
+  "objects": [
+    {
+      "id": "td65",
+      "type": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 2.0
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "vh17",
+          "qualifier": "Regular VH for TD"
+        }
+      ]
+    },
+    {
+      "id": "cr229",
+      "type": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "empty"
+        }
+      ]
+    },
+    {
+      "id": "cr230",
+      "type": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "empty"
+        }
+      ]
+    },
+    {
+      "id": "vh17",
+      "type": "Vehicle",
+      "attributes": [
+        {
+          "name": "Departure Date",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "2023-07-25 11:00:00"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "depart_vh17",
+      "type": "Depart",
+      "time": "2023-07-25T09:00:00Z",
+      "relationships": [
+        {
+          "objectId": "vh17",
+          "qualifier": "VH departed"
+        },
+        {
+          "objectId": "td65",
+          "qualifier": "TD with CR departure"
+        },
+        {
+          "objectId": "cr229",
+          "qualifier": "CR departed"
+        },
+        {
+          "objectId": "cr230",
+          "qualifier": "CR departed"
+        }
+      ]
+    }
+  ]
+}

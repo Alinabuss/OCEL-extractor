@@ -1,0 +1,114 @@
+{
+    "objectTypes": [
+        {
+            "name": "Machine",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Formed Part",
+            "attributes": [
+                {
+                    "name": "part_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Coating Process",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "integer"
+                },
+                {
+                    "name": "energy_consumed",
+                    "type": "float"
+                },
+                {
+                    "name": "coating_material_used",
+                    "type": "float"
+                },
+                {
+                    "name": "waste_generated",
+                    "type": "float"
+                },
+                {
+                    "name": "co2_emission",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "coater03",
+            "type": "Machine",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2023-04-04T08:56:42Z",
+                    "value": "workstation 1"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_formedpart_1837",
+            "type": "Formed Part",
+            "attributes": [
+                {
+                    "name": "part_id",
+                    "time": "2023-04-04T08:56:42Z",
+                    "value": "o_formedpart_1837"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Coating Process",
+            "time": "2023-04-04T08:56:42Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "300"
+                },
+                {
+                    "name": "energy_consumed",
+                    "value": "0.25"
+                },
+                {
+                    "name": "coating_material_used",
+                    "value": "0.0004"
+                },
+                {
+                    "name": "waste_generated",
+                    "value": "0.0001"
+                },
+                {
+                    "name": "co2_emission",
+                    "value": "0.1751156951"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "coater03",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "o_formedpart_1837",
+                    "qualifier": "targeted"
+                }
+            ]
+        }
+    ]
+}

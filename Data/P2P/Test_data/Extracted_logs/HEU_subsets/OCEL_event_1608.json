@@ -1,0 +1,84 @@
+{
+    "objectTypes": [
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "quotation group",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "creation",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "creation of a purchase order",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "quotation:60",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "quotation group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:102",
+            "type": "creation",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation:60",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1385,
+            "type": "creation of a purchase order",
+            "time": "2022-05-30T17:32:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Procurement Department"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:102",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "quotation:60",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,82 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "number"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "two-way match",
+            "attributes": [
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1391",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2024-02-07T08:10:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:1383",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2024-02-07T08:10:00Z",
+                    "value": "74400.00"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "two-way match",
+            "time": "2024-02-07T08:10:00Z",
+            "attributes": [
+                {
+                    "name": "department",
+                    "value": "Finance/Account"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1391",
+                    "qualifier": "matched with"
+                },
+                {
+                    "objectId": "invoice receipt:1383",
+                    "qualifier": "matched with"
+                }
+            ]
+        }
+    ]
+}

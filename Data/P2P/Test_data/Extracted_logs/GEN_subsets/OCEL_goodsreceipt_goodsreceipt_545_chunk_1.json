@@ -1,0 +1,133 @@
+{
+    "objectTypes": [
+        {
+            "name": "GoodsReceipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "MovementType",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "InvoiceReceipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "CreditAmount",
+                    "type": "decimal"
+                }
+            ]
+        },
+        {
+            "name": "Department",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "TwoWayMatch",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "545",
+            "type": "GoodsReceipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-01-13T08:10:00Z",
+                    "value": "545"
+                },
+                {
+                    "name": "MovementType",
+                    "time": "2023-01-13T08:10:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "540",
+            "type": "InvoiceReceipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-01-13T08:10:00Z",
+                    "value": "540"
+                },
+                {
+                    "name": "CreditAmount",
+                    "time": "2023-01-13T08:10:00Z",
+                    "value": "31500.00"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "FinanceAccountDepartment",
+            "type": "Department",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2023-01-13T08:10:00Z",
+                    "value": "Finance/Account Department"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "TwoWayMatch",
+            "time": "2023-01-13T08:10:00Z",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "value": "2023-01-13T08:10:00Z"
+                },
+                {
+                    "name": "Status",
+                    "value": "Complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "545",
+                    "qualifier": "MatchedWith"
+                },
+                {
+                    "objectId": "540",
+                    "qualifier": "Invoiced"
+                },
+                {
+                    "objectId": "FinanceAccountDepartment",
+                    "qualifier": "PerformedBy"
+                }
+            ]
+        }
+    ]
+}

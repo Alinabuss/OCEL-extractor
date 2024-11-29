@@ -1,0 +1,160 @@
+{
+    "objectTypes": [
+        {
+            "name": "person",
+            "attributes": [
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "consultation",
+            "attributes": [
+                {
+                    "name": "with",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "assignment",
+            "attributes": [
+                {
+                    "name": "to_team",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Simon Keane",
+            "type": "person",
+            "attributes": [
+                {
+                    "name": "role",
+                    "time": "2019-07-03T20:52:36Z",
+                    "value": "recruiter"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Vaishnavi Sashikanth",
+            "type": "person",
+            "attributes": [
+                {
+                    "name": "role",
+                    "time": "2019-07-03T20:52:36Z",
+                    "value": "manager"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770055]",
+            "type": "application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "time": "2019-07-03T20:52:36Z",
+                    "value": "770055"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770396]",
+            "type": "application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "time": "2019-07-04T07:41:14Z",
+                    "value": "770396"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Jana Hense",
+            "type": "person",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Dionne Kershaw",
+            "type": "person",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "consultation",
+            "time": "2019-07-03T20:52:36Z",
+            "attributes": [
+                {
+                    "name": "with",
+                    "value": "Vaishnavi Sashikanth"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Simon Keane",
+                    "qualifier": "involves"
+                },
+                {
+                    "objectId": "Vaishnavi Sashikanth",
+                    "qualifier": "involves"
+                },
+                {
+                    "objectId": "Application[770055]",
+                    "qualifier": "regards"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "assignment",
+            "time": "2019-07-04T07:41:14Z",
+            "attributes": [
+                {
+                    "name": "to_team",
+                    "value": "includes Simon Keane, Jana Hense, and Dionne Kershaw"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770396]",
+                    "qualifier": "assigned"
+                },
+                {
+                    "objectId": "Simon Keane",
+                    "qualifier": "part_of"
+                },
+                {
+                    "objectId": "Jana Hense",
+                    "qualifier": "part_of"
+                },
+                {
+                    "objectId": "Dionne Kershaw",
+                    "qualifier": "part_of"
+                }
+            ]
+        }
+    ]
+}

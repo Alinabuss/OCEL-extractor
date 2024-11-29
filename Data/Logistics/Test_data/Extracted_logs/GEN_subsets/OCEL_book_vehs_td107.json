@@ -1,0 +1,122 @@
+{
+    "objectTypes": [
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "priority",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "container_count",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Vehicle Booking",
+            "attributes": [
+                {
+                    "name": "booking_time",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle Departure",
+            "attributes": [
+                {
+                    "name": "departure_time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Vehicle[vh24]",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "priority",
+                    "time": "2023-08-16T12:19:51Z",
+                    "value": "high"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Transport Document[td107]",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": "Vehicle[vh29]",
+            "type": "Vehicle",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Transport Document[td107]",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": "Transport Document[td107]",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "container_count",
+                    "time": "2023-08-16T12:19:51Z",
+                    "value": "4.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Vehicle Booking",
+            "time": "2023-08-16T12:19:51Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Transport Document[td107]",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Vehicle Departure",
+            "time": "2023-08-18T11:00:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Vehicle[vh24]",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Vehicle Departure",
+            "time": "2023-09-05T11:00:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Vehicle[vh29]",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

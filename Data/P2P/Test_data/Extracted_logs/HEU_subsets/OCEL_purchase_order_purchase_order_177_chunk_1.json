@@ -1,0 +1,131 @@
+{
+    "objectTypes": [
+        {
+            "name": "order purchase",
+            "attributes": []
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Combined Report",
+            "attributes": []
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "Combined Report",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create goods receipt",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "approve Combined Report",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "Purchase Order:177",
+            "type": "order purchase",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "quotation:108",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "Combined Report",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "purchasing group 004"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:177",
+            "type": "Combined Report",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation:108",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "goods_receipt:199",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1365,
+            "type": "approve Combined Report",
+            "time": "2022-07-17T22:04:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation:108",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "Purchase Order:177",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:177",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1366,
+            "type": "create goods receipt",
+            "time": "2022-07-24T13:14:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods_receipt:199",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:177",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

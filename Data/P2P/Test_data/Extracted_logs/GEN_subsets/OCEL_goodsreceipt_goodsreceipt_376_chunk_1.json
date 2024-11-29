@@ -1,0 +1,97 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "warehouse_department",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "goods_receipt_created",
+            "attributes": [
+                {
+                    "name": "goods_receipt_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods_receipt:376",
+            "type": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "time": "2022-09-24T17:13:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:300",
+                    "qualifier": "associated_with"
+                },
+                {
+                    "objectId": "warehouse_department",
+                    "qualifier": "resource"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:300",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "purchasing_group",
+                    "time": "2022-09-24T17:13:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "warehouse_department",
+            "type": "warehouse_department",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "goods_receipt_created",
+            "time": "2022-09-24T17:13:00Z",
+            "attributes": [
+                {
+                    "name": "goods_receipt_id",
+                    "value": "goods_receipt:376"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods_receipt:376",
+                    "qualifier": "creates"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,82 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "integer"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "process completion",
+            "attributes": [
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:1019",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2023-09-07T06:38:00Z",
+                    "value": "85050.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:1014",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2023-09-07T06:38:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "process completion",
+            "time": "2023-09-07T06:38:00Z",
+            "attributes": [
+                {
+                    "name": "department",
+                    "value": "Finance/Account"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1019",
+                    "qualifier": "created"
+                },
+                {
+                    "objectId": "goods receipt:1014",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,105 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "lifecycle_status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": []
+        },
+        {
+            "name": "purchasing_group",
+            "attributes": [
+                {
+                    "name": "code",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create_purchase_order",
+            "attributes": [
+                {
+                    "name": "purchase_order_id",
+                    "type": "string"
+                },
+                {
+                    "name": "quotation_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:339",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "lifecycle_status",
+                    "time": "2022-09-28T08:24:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:200",
+                    "qualifier": "associated_with"
+                },
+                {
+                    "objectId": "003",
+                    "qualifier": "assigned_to"
+                }
+            ]
+        },
+        {
+            "id": "quotation:200",
+            "type": "quotation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "003",
+            "type": "purchasing_group",
+            "attributes": [
+                {
+                    "name": "code",
+                    "time": "2022-09-28T08:24:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create_purchase_order",
+            "time": "2022-09-28T08:24:00Z",
+            "attributes": [
+                {
+                    "name": "purchase_order_id",
+                    "value": "purchase_order:339"
+                },
+                {
+                    "name": "quotation_id",
+                    "value": "quotation:200"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:339",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

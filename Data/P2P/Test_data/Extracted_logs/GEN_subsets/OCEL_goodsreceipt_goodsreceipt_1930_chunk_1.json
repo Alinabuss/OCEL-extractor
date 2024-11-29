@@ -1,0 +1,89 @@
+{
+    "objectTypes": [
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Purchase Order",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Goods Receipt Created",
+            "attributes": [
+                {
+                    "name": "Completion Status",
+                    "type": "string"
+                },
+                {
+                    "name": "Handled By",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1930",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "time": "2024-10-08T22:27:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "2024-10-08T22:27:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1589",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:1589",
+            "type": "Purchase Order",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Goods Receipt Created",
+            "time": "2024-10-08T22:27:00Z",
+            "attributes": [
+                {
+                    "name": "Completion Status",
+                    "value": "Complete"
+                },
+                {
+                    "name": "Handled By",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1930",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

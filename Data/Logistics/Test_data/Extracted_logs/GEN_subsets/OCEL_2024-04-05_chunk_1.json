@@ -1,0 +1,177 @@
+{
+    "objectTypes": [
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "vehicle",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "type": "string"
+                },
+                {
+                    "name": "transport_document_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "departure_scheduling",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "type": "string"
+                },
+                {
+                    "name": "scheduled_departure",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td418",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "time": "2024-04-05T07:32:17Z",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td419",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "time": "2024-04-05T13:54:09Z",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh92",
+            "type": "vehicle",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "vh94",
+            "type": "vehicle",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2024-04-05T07:32:17Z",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "value": "vh92"
+                },
+                {
+                    "name": "transport_document_id",
+                    "value": "td418"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td418",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "vh92",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "departure_scheduling",
+            "time": "2024-04-12T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "value": "vh92"
+                },
+                {
+                    "name": "scheduled_departure",
+                    "value": "2024-04-12T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh92",
+                    "qualifier": "scheduled_departure"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "booking",
+            "time": "2024-04-05T13:54:09Z",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "value": "vh94"
+                },
+                {
+                    "name": "transport_document_id",
+                    "value": "td419"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td419",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "vh94",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "departure_scheduling",
+            "time": "2024-04-19T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "value": "vh94"
+                },
+                {
+                    "name": "scheduled_departure",
+                    "value": "2024-04-19T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh94",
+                    "qualifier": "scheduled_departure"
+                }
+            ]
+        }
+    ]
+}

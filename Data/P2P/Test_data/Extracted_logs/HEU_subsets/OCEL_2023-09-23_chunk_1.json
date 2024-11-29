@@ -1,0 +1,113 @@
+{
+    "objectTypes": [
+        {
+            "name": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "Purchasing Group Order",
+                    "type": "float"
+                },
+                {
+                    "name": "Purchasing Group Order",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Receipt",
+                    "type": "string"
+                },
+                {
+                    "name": "Movement Type",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create Goods Receipt",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1092",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Receipt",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Goods Receipt"
+                },
+                {
+                    "name": "Movement Type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:885",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:885",
+            "type": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "Purchasing Group Order",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "001"
+                },
+                {
+                    "name": "Purchasing Group Order",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Purchasing Group"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1135,
+            "type": "create Goods Receipt",
+            "time": "2023-09-23T14:01:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Warehouse Department"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:885",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:1092",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

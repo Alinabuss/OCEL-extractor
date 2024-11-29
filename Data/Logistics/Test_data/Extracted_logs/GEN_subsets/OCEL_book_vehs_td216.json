@@ -1,0 +1,134 @@
+{
+    "objectTypes": [
+        {
+            "name": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "CreateTransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "BookVehicle",
+            "attributes": [
+                {
+                    "name": "VehicleID",
+                    "type": "string"
+                },
+                {
+                    "name": "DepartureTime",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td216",
+            "type": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-11-02T14:40:20Z",
+                    "value": "td216"
+                },
+                {
+                    "name": "Containers",
+                    "time": "2023-11-02T14:40:20Z",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh48",
+                    "qualifier": "RegularVehicle"
+                }
+            ]
+        },
+        {
+            "id": "vh48",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-11-02T14:40:20Z",
+                    "value": "vh48"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "CreateTransportDocument",
+            "time": "2023-11-02T14:40:20Z",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "value": "td216"
+                },
+                {
+                    "name": "Containers",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td216",
+                    "qualifier": "created"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "BookVehicle",
+            "time": "2023-11-10T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "VehicleID",
+                    "value": "vh48"
+                },
+                {
+                    "name": "DepartureTime",
+                    "value": "2023-11-10T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh48",
+                    "qualifier": "bookedFor"
+                }
+            ]
+        }
+    ]
+}

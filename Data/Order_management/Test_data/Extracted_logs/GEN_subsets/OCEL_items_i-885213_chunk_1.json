@@ -1,0 +1,138 @@
+{
+    "objectTypes": [
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "product_name",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "product_category",
+            "attributes": [
+                {
+                    "name": "category_price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "item_picked",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "employee_name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Benedikt Knopp",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-11-29T15:54:06Z",
+                    "value": "Benedikt Knopp"
+                },
+                {
+                    "name": "department",
+                    "time": "2023-11-29T15:54:06Z",
+                    "value": "warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-885213",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-11-29T15:54:06Z",
+                    "value": "i-885213"
+                },
+                {
+                    "name": "product_name",
+                    "time": "2023-11-29T15:54:06Z",
+                    "value": "Echo"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-11-29T15:54:06Z",
+                    "value": 99.99
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Echo_category",
+            "type": "product_category",
+            "attributes": [
+                {
+                    "name": "category_price",
+                    "time": "2023-11-29T15:54:06Z",
+                    "value": 109.76
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "item_picked",
+            "time": "2023-11-29T15:54:06Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2023-11-29T15:54:06Z"
+                },
+                {
+                    "name": "employee_name",
+                    "value": "Benedikt Knopp"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Benedikt Knopp",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "i-885213",
+                    "qualifier": "picked_item"
+                }
+            ]
+        }
+    ]
+}

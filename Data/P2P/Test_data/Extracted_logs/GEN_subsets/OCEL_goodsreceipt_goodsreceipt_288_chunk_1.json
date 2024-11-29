@@ -1,0 +1,132 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "decimal"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "goods receipt processed",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "invoice receipt processed",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "decimal"
+                }
+            ]
+        },
+        {
+            "name": "two-way match completed",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:288",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2022-08-29T15:00:00Z",
+                    "value": "101"
+                }
+            ]
+        },
+        {
+            "id": "invoice receipt:288",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2022-08-29T15:00:00Z",
+                    "value": "47700.00"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "goods receipt processed",
+            "time": "2022-08-29T15:00:00Z",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:288",
+                    "qualifier": "processed"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "invoice receipt processed",
+            "time": "2022-08-29T15:00:00Z",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "value": "47700.00"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:288",
+                    "qualifier": "processed"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "two-way match completed",
+            "time": "2022-08-29T15:00:00Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:288",
+                    "qualifier": "matched with"
+                },
+                {
+                    "objectId": "invoice receipt:288",
+                    "qualifier": "matched with"
+                }
+            ]
+        }
+    ]
+}

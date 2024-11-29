@@ -1,0 +1,91 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit receipt with amount",
+                    "type": "float"
+                },
+                {
+                    "name": "type movement",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "type movement",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "perform two - way match",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:691",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit receipt with amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "5500.0"
+                },
+                {
+                    "name": "type movement",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:690",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "type movement",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 90,
+            "type": "perform two - way match",
+            "time": "2023-03-21T13:06:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Finance / Account Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:691",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:690",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

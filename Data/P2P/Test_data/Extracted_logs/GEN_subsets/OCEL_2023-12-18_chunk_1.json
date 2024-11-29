@@ -1,0 +1,200 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "goods receipt created",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "invoice receipt created",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase order created",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1256",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2023-12-18T10:42:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1030",
+                    "qualifier": "completed"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:1030",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "time": "2023-12-18T10:42:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:1266",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2023-12-18T16:08:00Z",
+                    "value": "21850.00"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1261",
+                    "qualifier": "related"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:1261",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2023-12-18T16:08:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:1069",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "time": "2023-12-18T18:49:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:616",
+                    "qualifier": "related"
+                }
+            ]
+        },
+        {
+            "id": "quotation:616",
+            "type": "quotation",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "goods receipt created",
+            "time": "2023-12-18T10:42:00Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "completed"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1256",
+                    "qualifier": "associated"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "invoice receipt created",
+            "time": "2023-12-18T16:08:00Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "completed"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1266",
+                    "qualifier": "associated"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "purchase order created",
+            "time": "2023-12-18T18:49:00Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "completed"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1069",
+                    "qualifier": "associated"
+                }
+            ]
+        }
+    ]
+}

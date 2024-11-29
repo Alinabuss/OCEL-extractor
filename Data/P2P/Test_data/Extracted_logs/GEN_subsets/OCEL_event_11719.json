@@ -1,0 +1,96 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "finance/account department",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "two-way match completion",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:766",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2023-05-01T07:10:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:767",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2023-05-01T07:10:00Z",
+                    "value": "22700.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "finance/account department",
+            "type": "finance/account department",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "two-way match completion",
+            "time": "2023-05-01T07:10:00Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-05-01T07:10:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:766",
+                    "qualifier": "matched with"
+                },
+                {
+                    "objectId": "invoice receipt:767",
+                    "qualifier": "matched with"
+                },
+                {
+                    "objectId": "finance/account department",
+                    "qualifier": "performed by"
+                }
+            ]
+        }
+    ]
+}

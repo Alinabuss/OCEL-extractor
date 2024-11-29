@@ -1,0 +1,109 @@
+{
+    "objectTypes": [
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "purchase_order_created",
+            "attributes": [
+                {
+                    "name": "created_by",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle_status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "quotation:29",
+            "type": "quotation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:55",
+            "type": "purchase_order",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order[58]",
+            "type": "purchase_order",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "purchase_order_created",
+            "time": "2022-05-10T05:01:00Z",
+            "attributes": [
+                {
+                    "name": "created_by",
+                    "value": "Procurement Department"
+                },
+                {
+                    "name": "lifecycle_status",
+                    "value": "completed"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:55",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "quotation:29",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "purchase_order_created",
+            "time": "2022-05-10T18:36:00Z",
+            "attributes": [
+                {
+                    "name": "created_by",
+                    "value": "Procurement Department"
+                },
+                {
+                    "name": "lifecycle_status",
+                    "value": "created"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order[58]",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "quotation:29",
+                    "qualifier": "linked_to"
+                }
+            ]
+        }
+    ]
+}

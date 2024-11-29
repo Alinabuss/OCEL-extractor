@@ -1,0 +1,94 @@
+{
+  "objectTypes": [
+    {
+      "name": "purchase_order",
+      "attributes": [
+        {
+          "name": "Purchasing Group (EKKO-EKGRP)",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "quotation",
+      "attributes": [
+        {
+          "name": "Purchasing Group (EBAN-EKGRP)",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Approve Purchase Order",
+      "attributes": [
+        {
+          "name": "lifecycle",
+          "type": "string"
+        },
+        {
+          "name": "resource",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "id": "purchase_order:310",
+      "type": "purchase_order",
+      "attributes": [
+        {
+          "name": "Purchasing Group (EKKO-EKGRP)",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "004"
+        }
+      ]
+    },
+    {
+      "id": "quotation:185",
+      "type": "quotation",
+      "attributes": [
+        {
+          "name": "Purchasing Group (EBAN-EKGRP)",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "004"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "purchase_order:310",
+          "qualifier": "Purchase Order of Quotation"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "event_5677",
+      "type": "Approve Purchase Order",
+      "time": "2022-09-20T00:20:00Z",
+      "attributes": [
+        {
+          "name": "lifecycle",
+          "value": "complete"
+        },
+        {
+          "name": "resource",
+          "value": "Procurement Order Manager"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "quotation:185",
+          "qualifier": "quotation"
+        },
+        {
+          "objectId": "purchase_order:310",
+          "qualifier": "purchase_order"
+        }
+      ]
+    }
+  ]
+}

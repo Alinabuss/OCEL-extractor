@@ -1,0 +1,189 @@
+{
+    "objectTypes": [
+        {
+            "name": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Purchasing Group",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Procurement Order Manager",
+            "attributes": [
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Purchase Order Approved",
+            "attributes": [
+                {
+                    "name": "purchase order ID",
+                    "type": "string"
+                },
+                {
+                    "name": "approved by",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Quotation Lifecycle Status Changed",
+            "attributes": [
+                {
+                    "name": "quotation ID",
+                    "type": "string"
+                },
+                {
+                    "name": "new status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:1502",
+            "type": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-08-30T18:04:00Z",
+                    "value": "1502"
+                },
+                {
+                    "name": "status",
+                    "time": "2024-08-30T18:04:00Z",
+                    "value": "approved"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchasing_group:004",
+                    "qualifier": "associated with"
+                },
+                {
+                    "objectId": "quotation:872",
+                    "qualifier": "linked to"
+                }
+            ]
+        },
+        {
+            "id": "quotation:872",
+            "type": "Quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-08-30T18:04:00Z",
+                    "value": "872"
+                },
+                {
+                    "name": "lifecycle status",
+                    "time": "2024-08-30T18:04:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchasing_group:004",
+            "type": "Purchasing Group",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-08-30T18:04:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "procurement_order_manager",
+            "type": "Procurement Order Manager",
+            "attributes": [
+                {
+                    "name": "role",
+                    "time": "2024-08-30T18:04:00Z",
+                    "value": "overseer"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Purchase Order Approved",
+            "time": "2024-08-30T18:04:00Z",
+            "attributes": [
+                {
+                    "name": "purchase order ID",
+                    "value": "1502"
+                },
+                {
+                    "name": "approved by",
+                    "value": "Procurement Order Manager"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1502",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Quotation Lifecycle Status Changed",
+            "time": "2024-08-30T18:04:00Z",
+            "attributes": [
+                {
+                    "name": "quotation ID",
+                    "value": "872"
+                },
+                {
+                    "name": "new status",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:872",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ]
+}

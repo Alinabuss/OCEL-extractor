@@ -1,0 +1,82 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "request_for_quotation_created",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_requisition:483:pr_trigger_483",
+            "type": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "Purchasing Group",
+                    "time": "2023-08-18T03:14:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "quotation:493",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "Purchasing Group",
+                    "time": "2023-08-18T03:14:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "request_for_quotation_created",
+            "time": "2023-08-18T03:14:00Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:483:pr_trigger_483",
+                    "qualifier": "linked_to"
+                },
+                {
+                    "objectId": "quotation:493",
+                    "qualifier": "linked_quotation"
+                }
+            ]
+        }
+    ]
+}

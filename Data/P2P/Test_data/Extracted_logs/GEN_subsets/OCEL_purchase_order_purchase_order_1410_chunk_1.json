@@ -1,0 +1,86 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": []
+        },
+        {
+            "name": "purchasing_group",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create_purchase_order",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:1410",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "status",
+                    "time": "2024-06-28T17:35:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:825",
+                    "qualifier": "references"
+                },
+                {
+                    "objectId": "005",
+                    "qualifier": "recorded_under"
+                }
+            ]
+        },
+        {
+            "id": "quotation:825",
+            "type": "quotation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "005",
+            "type": "purchasing_group",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create_purchase_order",
+            "time": "2024-06-28T17:35:00Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1410",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

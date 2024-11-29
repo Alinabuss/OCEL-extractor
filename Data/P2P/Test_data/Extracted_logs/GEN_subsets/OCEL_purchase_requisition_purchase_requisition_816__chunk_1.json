@@ -1,0 +1,118 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "material",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "net_price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "approval",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "approved_by",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_requisition:816:pr_trigger_816",
+            "type": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-06-10T16:19:00Z",
+                    "value": "purchase_requisition:816:pr_trigger_816"
+                },
+                {
+                    "name": "status",
+                    "time": "2024-06-10T16:19:00Z",
+                    "value": "complete"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2024-06-10T16:19:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "material:2029",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": "material:2029",
+            "type": "material",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-06-10T16:19:00Z",
+                    "value": "material:2029"
+                },
+                {
+                    "name": "net_price",
+                    "time": "2024-06-10T16:19:00Z",
+                    "value": 750.0
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "approval",
+            "time": "2024-06-10T16:19:00Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2024-06-10T16:19:00Z"
+                },
+                {
+                    "name": "approved_by",
+                    "value": "procurement requisition manager"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:816:pr_trigger_816",
+                    "qualifier": "approval_for"
+                }
+            ]
+        }
+    ]
+}

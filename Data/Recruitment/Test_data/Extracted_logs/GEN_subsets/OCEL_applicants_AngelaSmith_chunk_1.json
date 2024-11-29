@@ -1,0 +1,189 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "position",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "title",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Submit Application",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Send Rejection",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Angela Smith",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-02T00:00:00Z",
+                    "value": "Angela Smith"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770381]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2019-07-02T15:05:39Z",
+                    "value": "Application[770381]"
+                },
+                {
+                    "name": "position",
+                    "time": "2019-07-02T15:05:39Z",
+                    "value": "Programmer"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Angela Smith",
+                    "qualifier": "submitted_by"
+                }
+            ]
+        },
+        {
+            "id": "Application[770304]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2019-07-02T00:00:00Z",
+                    "value": "Application[770304]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Vacancy[550048]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2019-07-02T00:00:00Z",
+                    "value": "Vacancy[550048]"
+                },
+                {
+                    "name": "title",
+                    "time": "2019-07-02T00:00:00Z",
+                    "value": "Programmer"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Ed Keane",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-02T00:00:00Z",
+                    "value": "Ed Keane"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Submit Application",
+            "time": "2019-07-02T15:05:39Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "submitted"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770381]",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Send Rejection",
+            "time": "2019-07-02T08:21:34Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "rejected"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770304]",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

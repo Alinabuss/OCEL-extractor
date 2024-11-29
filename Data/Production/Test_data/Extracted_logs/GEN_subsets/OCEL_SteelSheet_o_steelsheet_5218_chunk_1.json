@@ -1,0 +1,106 @@
+{
+    "objectTypes": [
+        {
+            "name": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Machine",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "HeatingOperation",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "integer"
+                },
+                {
+                    "name": "CO2_emission",
+                    "type": "float"
+                },
+                {
+                    "name": "electric_energy_consumed",
+                    "type": "float"
+                },
+                {
+                    "name": "gas_input",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o_steelsheet_5218",
+            "type": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-06T10:20:55Z",
+                    "value": "0.02133"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "oven01",
+            "type": "Machine",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2023-04-06T10:20:55Z",
+                    "value": "workstation 1"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "HeatingOperation",
+            "time": "2023-04-06T10:20:55Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "900"
+                },
+                {
+                    "name": "CO2_emission",
+                    "value": "0.0138019093344"
+                },
+                {
+                    "name": "electric_energy_consumed",
+                    "value": "0.02"
+                },
+                {
+                    "name": "gas_input",
+                    "value": "0.49392"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_steelsheet_5218",
+                    "qualifier": "performed_on"
+                },
+                {
+                    "objectId": "oven01",
+                    "qualifier": "performed_by"
+                }
+            ]
+        }
+    ]
+}

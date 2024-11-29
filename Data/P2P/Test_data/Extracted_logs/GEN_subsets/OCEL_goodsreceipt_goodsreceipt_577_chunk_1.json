@@ -1,0 +1,83 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "type": "int"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "invoice_created",
+            "attributes": [
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:577",
+            "type": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "time": "2023-02-03T02:40:00Z",
+                    "value": "202600.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:577",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:577",
+            "type": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "time": "2023-02-03T02:40:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "invoice_created",
+            "time": "2023-02-03T02:40:00Z",
+            "attributes": [
+                {
+                    "name": "department",
+                    "value": "Finance/Account Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:577",
+                    "qualifier": "creation_of"
+                }
+            ]
+        }
+    ]
+}

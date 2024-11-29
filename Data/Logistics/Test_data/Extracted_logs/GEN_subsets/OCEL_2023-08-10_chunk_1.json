@@ -1,0 +1,135 @@
+{
+    "objectTypes": [
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Priority",
+                    "type": "string"
+                },
+                {
+                    "name": "DepartureTime",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "ContainerCount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Booking",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh23",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "value": "vh23",
+                    "time": "2023-08-10T08:56:58Z"
+                },
+                {
+                    "name": "Priority",
+                    "value": "High",
+                    "time": "2023-08-10T08:56:58Z"
+                },
+                {
+                    "name": "DepartureTime",
+                    "value": "2023-08-15T11:00:00Z",
+                    "time": "2023-08-10T08:56:58Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh29",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "value": "vh29",
+                    "time": "2023-08-10T08:56:58Z"
+                },
+                {
+                    "name": "Priority",
+                    "value": "Normal",
+                    "time": "2023-08-10T08:56:58Z"
+                },
+                {
+                    "name": "DepartureTime",
+                    "value": "2023-09-05T11:00:00Z",
+                    "time": "2023-08-10T08:56:58Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td99",
+            "type": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "value": "td99",
+                    "time": "2023-08-10T08:56:58Z"
+                },
+                {
+                    "name": "ContainerCount",
+                    "value": 5.0,
+                    "time": "2023-08-10T08:56:58Z"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Booking",
+            "time": "2023-08-10T08:56:58Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2023-08-10T08:56:58Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td99",
+                    "qualifier": "booked"
+                },
+                {
+                    "objectId": "vh23",
+                    "qualifier": "booked"
+                },
+                {
+                    "objectId": "vh29",
+                    "qualifier": "booked"
+                }
+            ]
+        }
+    ]
+}

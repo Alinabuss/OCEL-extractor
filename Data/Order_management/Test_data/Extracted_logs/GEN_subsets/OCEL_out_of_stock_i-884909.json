@@ -1,0 +1,125 @@
+{
+    "objectTypes": [
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "report_out_of_stock",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                },
+                {
+                    "name": "reported_by",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "i-884909",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-11-15T12:18:57Z",
+                    "value": "109.76"
+                },
+                {
+                    "name": "status",
+                    "time": "2023-11-15T12:18:57Z",
+                    "value": "out of stock"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Echo",
+                    "qualifier": "categorized_under"
+                }
+            ]
+        },
+        {
+            "id": "Echo",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-11-15T12:18:57Z",
+                    "value": "99.99"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Christopher_Schwanen",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "time": "2023-11-15T12:18:57Z",
+                    "value": "warehousing"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "report_out_of_stock",
+            "time": "2023-11-15T12:18:57Z",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "value": "i-884909"
+                },
+                {
+                    "name": "reported_by",
+                    "value": "Christopher Schwanen"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-884909",
+                    "qualifier": "reported_item"
+                },
+                {
+                    "objectId": "Christopher_Schwanen",
+                    "qualifier": "reported_by"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,143 @@
+{
+    "objectTypes": [
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "title",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "applicant",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "VacancyOpened",
+            "attributes": [
+                {
+                    "name": "position",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "ApplicationSubmitted",
+            "attributes": [
+                {
+                    "name": "applicantId",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Vacancy[550060]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "title",
+                    "time": "2019-06-30T14:42:46Z",
+                    "value": "Consultant"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770377]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "applicant",
+                    "time": "2019-07-02T08:56:18Z",
+                    "value": "Lisa Wang"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550060]",
+                    "qualifier": "applies_to"
+                }
+            ]
+        },
+        {
+            "id": "Application[770402]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "applicant",
+                    "time": "2019-07-04T13:02:11Z",
+                    "value": "Sue Brown"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550060]",
+                    "qualifier": "applies_to"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "VacancyOpened",
+            "time": "2019-06-30T14:42:46Z",
+            "attributes": [
+                {
+                    "name": "position",
+                    "value": "Consultant"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550060]",
+                    "qualifier": "refers_to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "ApplicationSubmitted",
+            "time": "2019-07-02T08:56:18Z",
+            "attributes": [
+                {
+                    "name": "applicantId",
+                    "value": "Application[770377]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770377]",
+                    "qualifier": "submitted_by"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "ApplicationSubmitted",
+            "time": "2019-07-04T13:02:11Z",
+            "attributes": [
+                {
+                    "name": "applicantId",
+                    "value": "Application[770402]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770402]",
+                    "qualifier": "submitted_by"
+                }
+            ]
+        }
+    ]
+}

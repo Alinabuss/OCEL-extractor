@@ -1,0 +1,139 @@
+{
+    "objectTypes": [
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "identifier",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "StockOutReport",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "description",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "MacBook Pro",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-05-24T12:56:02Z",
+                    "value": "MacBook Pro"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-05-24T12:56:02Z",
+                    "value": "2500.0"
+                }
+            ]
+        },
+        {
+            "id": "i-880794",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "identifier",
+                    "time": "2023-05-24T12:56:02Z",
+                    "value": "i-880794"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-05-24T12:56:02Z",
+                    "value": "2500.0"
+                }
+            ]
+        },
+        {
+            "id": "Leah Tacke",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-05-24T12:56:02Z",
+                    "value": "Leah Tacke"
+                },
+                {
+                    "name": "department",
+                    "time": "2023-05-24T12:56:02Z",
+                    "value": "warehousing"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "StockOutReport",
+            "time": "2023-05-24T12:56:02Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-05-24T12:56:02Z"
+                },
+                {
+                    "name": "description",
+                    "value": "The product MacBook Pro was out of stock"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "MacBook Pro",
+                    "qualifier": "reported"
+                },
+                {
+                    "objectId": "Leah Tacke",
+                    "qualifier": "reported by"
+                },
+                {
+                    "objectId": "i-880794",
+                    "qualifier": "associated with"
+                }
+            ]
+        }
+    ]
+}

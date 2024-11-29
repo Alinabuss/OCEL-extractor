@@ -1,0 +1,221 @@
+{
+    "objectTypes": [
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Position",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Assignment",
+            "attributes": [
+                {
+                    "name": "ApplicationID",
+                    "type": "string"
+                },
+                {
+                    "name": "VacancyID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Screening",
+            "attributes": [
+                {
+                    "name": "ApplicationID",
+                    "type": "string"
+                },
+                {
+                    "name": "RecruiterName",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Rejection",
+            "attributes": [
+                {
+                    "name": "ApplicationID",
+                    "type": "string"
+                },
+                {
+                    "name": "RecruiterName",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Application[770331]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-06-28T15:12:05Z",
+                    "value": "Application[770331]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Vacancy[550014]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-06-28T15:12:05Z",
+                    "value": "Vacancy[550014]"
+                },
+                {
+                    "name": "Position",
+                    "time": "2019-06-28T15:12:05Z",
+                    "value": "Manager"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Recruiter[Simon Hense]",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-01T13:02:35Z",
+                    "value": "Simon Hense"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Applicant[Johan Davis]",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-04T13:33:46Z",
+                    "value": "Johan Davis"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Assignment",
+            "time": "2019-06-28T15:12:05Z",
+            "attributes": [
+                {
+                    "name": "ApplicationID",
+                    "value": "Application[770331]"
+                },
+                {
+                    "name": "VacancyID",
+                    "value": "Vacancy[550014]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770331]",
+                    "qualifier": "assigned_to"
+                },
+                {
+                    "objectId": "Vacancy[550014]",
+                    "qualifier": "assigned_to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Screening",
+            "time": "2019-07-01T13:02:35Z",
+            "attributes": [
+                {
+                    "name": "ApplicationID",
+                    "value": "Application[770331]"
+                },
+                {
+                    "name": "RecruiterName",
+                    "value": "Simon Hense"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770331]",
+                    "qualifier": "screened_by"
+                },
+                {
+                    "objectId": "Recruiter[Simon Hense]",
+                    "qualifier": "conducted"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Rejection",
+            "time": "2019-07-04T13:33:46Z",
+            "attributes": [
+                {
+                    "name": "ApplicationID",
+                    "value": "Application[770331]"
+                },
+                {
+                    "name": "RecruiterName",
+                    "value": "Simon Hense"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770331]",
+                    "qualifier": "rejected_by"
+                },
+                {
+                    "objectId": "Recruiter[Simon Hense]",
+                    "qualifier": "notified"
+                },
+                {
+                    "objectId": "Applicant[Johan Davis]",
+                    "qualifier": "notified"
+                }
+            ]
+        }
+    ]
+}

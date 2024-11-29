@@ -1,0 +1,105 @@
+{
+  "objectTypes": [
+    {
+      "name": "items",
+      "attributes": [
+        {
+          "name": "price",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "orders",
+      "attributes": [
+        {
+          "name": "price",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "products",
+      "attributes": [
+        {
+          "name": "price",
+          "type": "float"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "pay order",
+      "attributes": []
+    }
+  ],
+  "objects": [
+    {
+      "id": "o-990326",
+      "type": "orders",
+      "attributes": [
+        {
+          "name": "price",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 100.13
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "i-881308",
+          "qualifier": "comprises"
+        }
+      ]
+    },
+    {
+      "id": "i-881308",
+      "type": "items",
+      "attributes": [
+        {
+          "name": "price",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 95.13
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Fire Stick 4K",
+          "qualifier": "is a"
+        }
+      ]
+    },
+    {
+      "id": "Fire Stick 4K",
+      "type": "products",
+      "attributes": [
+        {
+          "name": "price",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 89.99
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "pay_o-990326",
+      "type": "pay order",
+      "time": "2023-06-23T14:49:42Z",
+      "relationships": [
+        {
+          "objectId": "i-881308",
+          "qualifier": "item"
+        },
+        {
+          "objectId": "o-990326",
+          "qualifier": "order"
+        },
+        {
+          "objectId": "Fire Stick 4K",
+          "qualifier": "product"
+        }
+      ]
+    }
+  ]
+}

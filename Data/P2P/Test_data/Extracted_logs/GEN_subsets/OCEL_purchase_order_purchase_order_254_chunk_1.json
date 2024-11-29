@@ -1,0 +1,89 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "goods receipt created",
+            "attributes": [
+                {
+                    "name": "created by",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:295",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2022-08-29T13:17:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "status",
+                    "time": "2022-08-29T13:17:00Z",
+                    "value": "complete"
+                },
+                {
+                    "name": "purchasing group",
+                    "time": "2022-08-29T13:17:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:254",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:254",
+            "type": "purchase order",
+            "attributes": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "goods receipt created",
+            "time": "2022-08-29T13:17:00Z",
+            "attributes": [
+                {
+                    "name": "created by",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:295",
+                    "qualifier": "pertains to"
+                }
+            ]
+        }
+    ]
+}

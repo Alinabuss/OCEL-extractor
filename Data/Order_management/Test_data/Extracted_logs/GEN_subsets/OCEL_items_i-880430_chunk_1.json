@@ -1,0 +1,104 @@
+{
+    "objectTypes": [
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "reorder",
+            "attributes": [
+                {
+                    "name": "itemId",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Echo Show 5",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-05-17T07:21:50Z",
+                    "value": "89.99"
+                }
+            ]
+        },
+        {
+            "id": "i-880430",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-05-17T07:21:50Z",
+                    "value": "89.99"
+                }
+            ]
+        },
+        {
+            "id": "Christopher Schwanen",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "time": "2023-05-17T07:21:50Z",
+                    "value": "Warehousing"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "reorder",
+            "time": "2023-05-17T07:21:50Z",
+            "attributes": [
+                {
+                    "name": "itemId",
+                    "value": "i-880430"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-880430",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "Echo Show 5",
+                    "qualifier": "related_product"
+                },
+                {
+                    "objectId": "Christopher Schwanen",
+                    "qualifier": "performed_by"
+                }
+            ]
+        }
+    ]
+}

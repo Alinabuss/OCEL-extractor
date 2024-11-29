@@ -1,0 +1,83 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "finalize invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:212",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "time": "2022-07-25T17:00:00Z",
+                    "value": "3300.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:212",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:212",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2022-07-25T17:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "finalize invoice receipt",
+            "time": "2022-07-25T17:00:00Z",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "value": "3300.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:212",
+                    "qualifier": "finalized"
+                }
+            ]
+        }
+    ]
+}

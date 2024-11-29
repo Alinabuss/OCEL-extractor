@@ -1,0 +1,143 @@
+{
+    "objectTypes": [
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "product_name",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "pick_item",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "action",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Nina Graves",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "",
+                    "value": "Nina Graves"
+                },
+                {
+                    "name": "department",
+                    "time": "",
+                    "value": "warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-886493",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "",
+                    "value": "i-886493"
+                },
+                {
+                    "name": "price",
+                    "time": "",
+                    "value": "2810.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "MacBook Pro",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "MacBook Pro",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "product_name",
+                    "time": "",
+                    "value": "MacBook Pro"
+                },
+                {
+                    "name": "price",
+                    "time": "",
+                    "value": "2500.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "pick_item",
+            "time": "2024-01-29T14:52:33Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2024-01-29T14:52:33Z"
+                },
+                {
+                    "name": "action",
+                    "value": "picked"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Nina Graves",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "i-886493",
+                    "qualifier": "target_item"
+                }
+            ]
+        }
+    ]
+}

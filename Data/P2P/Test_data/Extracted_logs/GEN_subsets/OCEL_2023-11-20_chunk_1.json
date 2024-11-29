@@ -1,0 +1,261 @@
+{
+    "objectTypes": [
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchase Order",
+                    "type": "string"
+                },
+                {
+                    "name": "Movement Type",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Create Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Approve Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Procurement Manager",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Create Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Goods_Receipt[1185]",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-11-20T09:15:00Z",
+                    "value": "Goods_Receipt[1185]"
+                },
+                {
+                    "name": "Purchase Order",
+                    "time": "2023-11-20T09:15:00Z",
+                    "value": "Purchase_Order[991]"
+                },
+                {
+                    "name": "Movement Type",
+                    "time": "2023-11-20T09:15:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Purchase_Order[991]",
+                    "qualifier": "linked to"
+                }
+            ]
+        },
+        {
+            "id": "Purchase_Order[991]",
+            "type": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-11-20T09:15:00Z",
+                    "value": "Purchase_Order[991]"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "2023-11-20T09:15:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:1001",
+            "type": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-11-20T10:01:00Z",
+                    "value": "purchase_order:1001"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "2023-11-20T10:01:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:584",
+                    "qualifier": "linked to"
+                }
+            ]
+        },
+        {
+            "id": "quotation:584",
+            "type": "Quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-11-20T10:01:00Z",
+                    "value": "quotation:584"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "2023-11-20T10:01:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:1003",
+            "type": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-11-20T18:51:00Z",
+                    "value": "purchase_order:1003"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "2023-11-20T18:51:00Z",
+                    "value": "001"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:577",
+                    "qualifier": "linked to"
+                }
+            ]
+        },
+        {
+            "id": "quotation:577",
+            "type": "Quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-11-20T18:51:00Z",
+                    "value": "quotation:577"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "2023-11-20T18:51:00Z",
+                    "value": "001"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Create Goods Receipt",
+            "time": "2023-11-20T09:15:00Z",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "value": "Goods_Receipt[1185]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Goods_Receipt[1185]",
+                    "qualifier": "recorded in"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Approve Purchase Order",
+            "time": "2023-11-20T10:01:00Z",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "value": "purchase_order:1001"
+                },
+                {
+                    "name": "Procurement Manager",
+                    "value": "Procurement Order Manager"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1001",
+                    "qualifier": "recorded in"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Create Purchase Order",
+            "time": "2023-11-20T18:51:00Z",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "value": "purchase_order:1003"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1003",
+                    "qualifier": "recorded in"
+                }
+            ]
+        }
+    ]
+}

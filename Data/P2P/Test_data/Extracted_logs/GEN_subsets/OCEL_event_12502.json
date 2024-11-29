@@ -1,0 +1,109 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "approval_process_completed",
+            "attributes": [
+                {
+                    "name": "purchase_order_ID",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:684",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "",
+                    "value": "purchase_order:684"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "",
+                    "value": "001"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:407",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "quotation:407",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "",
+                    "value": "quotation:407"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "",
+                    "value": "001"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "approval_process_completed",
+            "time": "2023-05-26T19:13:00Z",
+            "attributes": [
+                {
+                    "name": "purchase_order_ID",
+                    "value": "purchase_order:684"
+                },
+                {
+                    "name": "status",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:684",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

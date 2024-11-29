@@ -1,0 +1,115 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "material",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "net_price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "purchase_requisition_approval",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_requisition:628:pr_trigger_628",
+            "type": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "purchasing_group",
+                    "time": "",
+                    "value": "001"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "material:1573",
+            "type": "material",
+            "attributes": [
+                {
+                    "name": "net_price",
+                    "time": "",
+                    "value": "300.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Manufacturing Department",
+            "type": "department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "",
+                    "value": "Manufacturing Department"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "purchase_requisition_approval",
+            "time": "2023-12-19T08:11:00Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "completed"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:628:pr_trigger_628",
+                    "qualifier": "approved"
+                },
+                {
+                    "objectId": "Manufacturing Department",
+                    "qualifier": "conducted_by"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,156 @@
+{
+    "objectTypes": [
+        {
+            "name": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "SteelCoil",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Machine",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Workstation",
+            "attributes": [
+                {
+                    "name": "identifier",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "SplittingProcess",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2_emission",
+                    "type": "float"
+                },
+                {
+                    "name": "steel_waste",
+                    "type": "float"
+                },
+                {
+                    "name": "electricity_consumed",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "SteelSheet[5722]",
+            "type": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-06T12:19:29Z",
+                    "value": "0.02114"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "SteelCoil[1]",
+            "type": "SteelCoil",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-06T12:19:29Z",
+                    "value": "31.91076"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "splitter01",
+            "type": "Machine",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-04-06T12:19:29Z",
+                    "value": "splitter01"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Workstation[1]",
+            "type": "Workstation",
+            "attributes": [
+                {
+                    "name": "identifier",
+                    "time": "2023-04-06T12:19:29Z",
+                    "value": "1"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "SplittingProcess",
+            "time": "2023-04-06T12:19:29Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "14.97"
+                },
+                {
+                    "name": "CO2_emission",
+                    "value": "0.01565"
+                },
+                {
+                    "name": "steel_waste",
+                    "value": "0.00042"
+                },
+                {
+                    "name": "electricity_consumed",
+                    "value": "0.02287"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelSheet[5722]",
+                    "qualifier": "created"
+                },
+                {
+                    "objectId": "SteelCoil[1]",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "splitter01",
+                    "qualifier": "conducted_by"
+                },
+                {
+                    "objectId": "Workstation[1]",
+                    "qualifier": "performed_at"
+                }
+            ]
+        }
+    ]
+}

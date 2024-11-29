@@ -1,0 +1,127 @@
+{
+    "objectTypes": [
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Document Processed",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle Scheduled",
+            "attributes": [
+                {
+                    "name": "Departure Time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td420",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-04-08T08:56:42Z",
+                    "value": "td420"
+                },
+                {
+                    "name": "Containers",
+                    "time": "2024-04-08T08:56:42Z",
+                    "value": "3.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh97",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-04-08T08:56:42Z",
+                    "value": "vh97"
+                },
+                {
+                    "name": "Type",
+                    "time": "2024-04-08T08:56:42Z",
+                    "value": "Regular"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td420",
+                    "qualifier": "Associated with"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Document Processed",
+            "time": "2024-04-08T08:56:42Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2024-04-08T08:56:42Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td420",
+                    "qualifier": "Processed"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Vehicle Scheduled",
+            "time": "2024-04-30T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "Departure Time",
+                    "value": "2024-04-30T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh97",
+                    "qualifier": "Scheduled"
+                }
+            ]
+        }
+    ]
+}

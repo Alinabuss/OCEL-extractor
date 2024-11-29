@@ -1,0 +1,75 @@
+{
+  "objectTypes": [
+    {
+      "name": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Handling Unit",
+      "attributes": []
+    },
+    {
+      "name": "Truck",
+      "attributes": []
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Load Truck",
+      "attributes": []
+    }
+  ],
+  "objects": [
+    {
+      "id": "cr1933",
+      "type": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "empty"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "hu10228",
+          "qualifier": "CR contains HU"
+        }
+      ]
+    },
+    {
+      "id": "tr3",
+      "type": "Truck"
+    },
+    {
+      "id": "hu10228",
+      "type": "Handling Unit"
+    }
+  ],
+  "events": [
+    {
+      "id": "load_truck_hu10228",
+      "type": "Load Truck",
+      "time": "2024-08-01T12:42:17Z",
+      "relationships": [
+        {
+          "objectId": "cr1933",
+          "qualifier": "CR laded"
+        },
+        {
+          "objectId": "tr3",
+          "qualifier": "TR laded"
+        },
+        {
+          "objectId": "hu10228",
+          "qualifier": "HU loaded"
+        }
+      ]
+    }
+  ]
+}

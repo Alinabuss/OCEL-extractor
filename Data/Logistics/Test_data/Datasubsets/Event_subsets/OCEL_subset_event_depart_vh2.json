@@ -1,0 +1,141 @@
+{
+  "objectTypes": [
+    {
+      "name": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "Vehicle",
+      "attributes": [
+        {
+          "name": "Departure Date",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Depart",
+      "attributes": []
+    }
+  ],
+  "objects": [
+    {
+      "id": "td6",
+      "type": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 4.0
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "vh2",
+          "qualifier": "High-Prio VH for TD"
+        }
+      ]
+    },
+    {
+      "id": "td9",
+      "type": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 4.0
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "vh2",
+          "qualifier": "High-Prio VH for TD"
+        }
+      ]
+    },
+    {
+      "id": "cr24",
+      "type": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "empty"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "td6",
+          "qualifier": "CR for TD"
+        }
+      ]
+    },
+    {
+      "id": "cr33",
+      "type": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "empty"
+        }
+      ]
+    },
+    {
+      "id": "vh2",
+      "type": "Vehicle",
+      "attributes": [
+        {
+          "name": "Departure Date",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "2023-06-02 11:00:00"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "depart_vh2",
+      "type": "Depart",
+      "time": "2023-06-02T09:00:00Z",
+      "relationships": [
+        {
+          "objectId": "vh2",
+          "qualifier": "VH departed"
+        },
+        {
+          "objectId": "cr33",
+          "qualifier": "CR departed"
+        },
+        {
+          "objectId": "cr24",
+          "qualifier": "CR departed"
+        },
+        {
+          "objectId": "td9",
+          "qualifier": "TD with CR departure"
+        },
+        {
+          "objectId": "td6",
+          "qualifier": "TD with CR departure"
+        }
+      ]
+    }
+  ]
+}

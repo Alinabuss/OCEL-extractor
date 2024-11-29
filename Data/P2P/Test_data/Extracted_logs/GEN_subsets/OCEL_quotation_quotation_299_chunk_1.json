@@ -1,0 +1,118 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle_status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "approval",
+            "attributes": [
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                },
+                {
+                    "name": "approver",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:501",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-02-09T00:11:00Z",
+                    "value": "purchase_order:501"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2023-02-09T00:11:00Z",
+                    "value": "Purchasing Group 005"
+                },
+                {
+                    "name": "lifecycle_status",
+                    "time": "2023-02-09T00:11:00Z",
+                    "value": "approved"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:299",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": "quotation:299",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-02-09T00:11:00Z",
+                    "value": "quotation:299"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2023-02-09T00:11:00Z",
+                    "value": "Purchasing Group 005"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "approval",
+            "time": "2023-02-09T00:11:00Z",
+            "attributes": [
+                {
+                    "name": "purchasing_group",
+                    "value": "Purchasing Group 005"
+                },
+                {
+                    "name": "approver",
+                    "value": "Procurement Order Manager"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:501",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

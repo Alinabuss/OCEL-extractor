@@ -1,0 +1,199 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "request_for_quotation_complete",
+            "attributes": [
+                {
+                    "name": "initiated_by",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "two_way_match_complete",
+            "attributes": [
+                {
+                    "name": "match_type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_requisition:70:pr_trigger_70",
+            "type": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "Purchasing Group",
+                    "time": "2022-06-06T05:37:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "quotation:69",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "Purchasing Group",
+                    "time": "2022-06-06T05:37:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt[98]",
+            "type": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "time": "2022-06-06T07:10:00Z",
+                    "value": 101
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt[98]",
+            "type": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "time": "2022-06-06T07:10:00Z",
+                    "value": 141950.0
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:108",
+            "type": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "time": "2022-06-06T07:34:00Z",
+                    "value": 101
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:107",
+            "type": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "time": "2022-06-06T07:34:00Z",
+                    "value": 44550.0
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "request_for_quotation_complete",
+            "time": "2022-06-06T05:37:00Z",
+            "attributes": [
+                {
+                    "name": "initiated_by",
+                    "value": "procurement department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:70:pr_trigger_70",
+                    "qualifier": "refers_to"
+                },
+                {
+                    "objectId": "quotation:69",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "two_way_match_complete",
+            "time": "2022-06-06T07:10:00Z",
+            "attributes": [
+                {
+                    "name": "match_type",
+                    "value": "two-way"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt[98]",
+                    "qualifier": "matched_with"
+                },
+                {
+                    "objectId": "invoice receipt[98]",
+                    "qualifier": "matched_with"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "two_way_match_complete",
+            "time": "2022-06-06T07:34:00Z",
+            "attributes": [
+                {
+                    "name": "match_type",
+                    "value": "two-way"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:108",
+                    "qualifier": "matched_with"
+                },
+                {
+                    "objectId": "invoice receipt:107",
+                    "qualifier": "matched_with"
+                }
+            ]
+        }
+    ]
+}

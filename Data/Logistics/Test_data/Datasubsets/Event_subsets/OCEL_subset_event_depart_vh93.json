@@ -1,0 +1,129 @@
+{
+  "objectTypes": [
+    {
+      "name": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "Vehicle",
+      "attributes": [
+        {
+          "name": "Departure Date",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Depart",
+      "attributes": []
+    }
+  ],
+  "objects": [
+    {
+      "id": "td397",
+      "type": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 5.0
+        }
+      ]
+    },
+    {
+      "id": "td414",
+      "type": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 2.0
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "vh93",
+          "qualifier": "Regular VH for TD"
+        }
+      ]
+    },
+    {
+      "id": "cr1370",
+      "type": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "empty"
+        }
+      ]
+    },
+    {
+      "id": "cr1372",
+      "type": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "empty"
+        }
+      ]
+    },
+    {
+      "id": "vh93",
+      "type": "Vehicle",
+      "attributes": [
+        {
+          "name": "Departure Date",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "2024-04-16 11:00:00"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "depart_vh93",
+      "type": "Depart",
+      "time": "2024-04-16T09:00:00Z",
+      "relationships": [
+        {
+          "objectId": "cr1372",
+          "qualifier": "CR departed"
+        },
+        {
+          "objectId": "td414",
+          "qualifier": "TD with CR departure"
+        },
+        {
+          "objectId": "vh93",
+          "qualifier": "VH departed"
+        },
+        {
+          "objectId": "td397",
+          "qualifier": "TD with CR departure"
+        },
+        {
+          "objectId": "cr1370",
+          "qualifier": "CR departed"
+        }
+      ]
+    }
+  ]
+}

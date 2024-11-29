@@ -1,0 +1,131 @@
+{
+    "objectTypes": [
+        {
+            "name": "player",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "session",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "match",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "relic",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "gather_relic",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "timestamp"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Player[P767395]",
+            "type": "player",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-17T01:04:19Z",
+                    "value": "Player[P767395]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Session[S227028371_767395]",
+            "type": "session",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-17T01:04:19Z",
+                    "value": "Session[S227028371_767395]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Player[P767395]",
+                    "qualifier": "participated_in"
+                }
+            ]
+        },
+        {
+            "id": "Match[M227028371]",
+            "type": "match",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-17T01:04:19Z",
+                    "value": "Match[M227028371]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Session[S227028371_767395]",
+                    "qualifier": "part_of"
+                }
+            ]
+        },
+        {
+            "id": "Relic",
+            "type": "relic",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "gather_relic",
+            "time": "2023-04-17T01:04:19Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2023-04-17T01:04:19Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Player[P767395]",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "Session[S227028371_767395]",
+                    "qualifier": "during"
+                },
+                {
+                    "objectId": "Match[M227028371]",
+                    "qualifier": "in"
+                },
+                {
+                    "objectId": "Relic",
+                    "qualifier": "gathered"
+                }
+            ]
+        }
+    ]
+}

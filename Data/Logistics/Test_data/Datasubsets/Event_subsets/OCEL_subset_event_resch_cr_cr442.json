@@ -1,0 +1,93 @@
+{
+  "objectTypes": [
+    {
+      "name": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "Vehicle",
+      "attributes": [
+        {
+          "name": "Departure Date",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Reschedule Container",
+      "attributes": []
+    }
+  ],
+  "objects": [
+    {
+      "id": "td123",
+      "type": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 4.0
+        }
+      ]
+    },
+    {
+      "id": "cr442",
+      "type": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "empty"
+        }
+      ]
+    },
+    {
+      "id": "vh30",
+      "type": "Vehicle",
+      "attributes": [
+        {
+          "name": "Departure Date",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "2023-09-08 11:00:00"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "resch_cr_cr442",
+      "type": "Reschedule Container",
+      "time": "2023-09-06T08:47:10Z",
+      "relationships": [
+        {
+          "objectId": "vh30",
+          "qualifier": "booked VH"
+        },
+        {
+          "objectId": "cr442",
+          "qualifier": "CR rescheduled"
+        },
+        {
+          "objectId": "td123",
+          "qualifier": "TD with CR rescheduled"
+        }
+      ]
+    }
+  ]
+}

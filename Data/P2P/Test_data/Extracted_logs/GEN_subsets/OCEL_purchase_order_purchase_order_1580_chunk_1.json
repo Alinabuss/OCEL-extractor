@@ -1,0 +1,141 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "movement_type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "approval",
+            "attributes": [
+                {
+                    "name": "approver",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "creation",
+            "attributes": [
+                {
+                    "name": "creator",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:1580",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "status",
+                    "time": "2024-10-02T13:10:00Z",
+                    "value": "complete"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2024-10-02T13:10:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:915",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": "goods_receipt:1924",
+            "type": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "status",
+                    "time": "2024-10-04T08:48:00Z",
+                    "value": "complete"
+                },
+                {
+                    "name": "movement_type",
+                    "time": "2024-10-04T08:48:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1580",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "quotation:915",
+            "type": "quotation",
+            "attributes": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "approval",
+            "time": "2024-10-02T13:10:00Z",
+            "attributes": [
+                {
+                    "name": "approver",
+                    "value": "procurement order manager"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1580",
+                    "qualifier": "approved"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "creation",
+            "time": "2024-10-04T08:48:00Z",
+            "attributes": [
+                {
+                    "name": "creator",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods_receipt:1924",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

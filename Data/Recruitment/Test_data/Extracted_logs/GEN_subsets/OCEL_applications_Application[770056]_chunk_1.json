@@ -1,0 +1,200 @@
+{
+    "objectTypes": [
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Manager",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Interview",
+            "attributes": [
+                {
+                    "name": "Applicant",
+                    "type": "string"
+                },
+                {
+                    "name": "Position",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Rejection",
+            "attributes": [
+                {
+                    "name": "Applicant",
+                    "type": "string"
+                },
+                {
+                    "name": "Application",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Application[770056]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-01T00:00:00Z",
+                    "value": "770056"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Vacancy[550007]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-01T00:00:00Z",
+                    "value": "550007"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Applicant[Toon Lopez]",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-01T00:00:00Z",
+                    "value": "Toon Lopez"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Recruiter[Dionne Kershaw]",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-01T00:00:00Z",
+                    "value": "Dionne Kershaw"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Manager[Alexander Rinke]",
+            "type": "Manager",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-01T00:00:00Z",
+                    "value": "Alexander Rinke"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Interview",
+            "time": "2019-07-01T16:15:45Z",
+            "attributes": [
+                {
+                    "name": "Applicant",
+                    "value": "Toon Lopez"
+                },
+                {
+                    "name": "Position",
+                    "value": "Consultant"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Recruiter[Dionne Kershaw]",
+                    "qualifier": "conducted"
+                },
+                {
+                    "objectId": "Manager[Alexander Rinke]",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "Applicant[Toon Lopez]",
+                    "qualifier": "interviewed"
+                },
+                {
+                    "objectId": "Vacancy[550007]",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Rejection",
+            "time": "2019-07-01T18:30:30Z",
+            "attributes": [
+                {
+                    "name": "Applicant",
+                    "value": "Toon Lopez"
+                },
+                {
+                    "name": "Application",
+                    "value": "Application[770056]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770056]",
+                    "qualifier": "concerned"
+                },
+                {
+                    "objectId": "Applicant[Toon Lopez]",
+                    "qualifier": "rejected"
+                }
+            ]
+        }
+    ]
+}

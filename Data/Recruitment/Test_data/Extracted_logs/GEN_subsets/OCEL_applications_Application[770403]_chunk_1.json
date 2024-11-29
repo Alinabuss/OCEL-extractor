@@ -1,0 +1,194 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "type": "string"
+                },
+                {
+                    "name": "vacancy_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "title",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Application Submitted",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Application Assigned",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Toon Lopez",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-04T13:46:31Z",
+                    "value": "Toon Lopez"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770403]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "time": "2019-07-04T13:46:31Z",
+                    "value": "Application[770403]"
+                },
+                {
+                    "name": "vacancy_id",
+                    "time": "2019-07-04T13:46:31Z",
+                    "value": "Vacancy[550065]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Vacancy[550065]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "title",
+                    "time": "2019-07-04T13:46:31Z",
+                    "value": "Manager"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Ed Meister",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-04T13:52:34Z",
+                    "value": "Ed Meister"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Jana Kershaw",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-04T13:52:34Z",
+                    "value": "Jana Kershaw"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Ed Keane",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-04T13:52:34Z",
+                    "value": "Ed Keane"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Application Submitted",
+            "time": "2019-07-04T13:46:31Z",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "value": "Application[770403]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Toon Lopez",
+                    "qualifier": "submitted_by"
+                },
+                {
+                    "objectId": "Application[770403]",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "Vacancy[550065]",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Application Assigned",
+            "time": "2019-07-04T13:52:34Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Application[770403]",
+                    "qualifier": "assigned_to"
+                },
+                {
+                    "objectId": "Ed Meister",
+                    "qualifier": "assigned"
+                },
+                {
+                    "objectId": "Jana Kershaw",
+                    "qualifier": "assigned"
+                },
+                {
+                    "objectId": "Ed Keane",
+                    "qualifier": "assigned"
+                }
+            ]
+        }
+    ]
+}

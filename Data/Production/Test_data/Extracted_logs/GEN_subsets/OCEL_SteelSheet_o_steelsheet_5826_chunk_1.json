@@ -1,0 +1,128 @@
+{
+    "objectTypes": [
+        {
+            "name": "Machine",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Material",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Split Operation",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2 Emission",
+                    "type": "float"
+                },
+                {
+                    "name": "Steel Waste",
+                    "type": "float"
+                },
+                {
+                    "name": "Electricity Consumption",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Splitter01",
+            "type": "Machine",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "time": "2023-04-06T12:44:11Z",
+                    "value": "Workstation[1]"
+                }
+            ]
+        },
+        {
+            "id": "SteelCoil[1]",
+            "type": "Material",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "time": "2023-04-06T12:44:11Z",
+                    "value": "Steel Coil"
+                }
+            ]
+        },
+        {
+            "id": "SteelSheet[5826]",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "time": "2023-04-06T12:44:11Z",
+                    "value": "Steel Sheet"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Split Operation",
+            "time": "2023-04-06T12:44:11Z",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "value": 14.37
+                },
+                {
+                    "name": "CO2 Emission",
+                    "value": 0.015
+                },
+                {
+                    "name": "Steel Waste",
+                    "value": 0.00042
+                },
+                {
+                    "name": "Electricity Consumption",
+                    "value": 0.02195
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Splitter01",
+                    "qualifier": "executed by"
+                },
+                {
+                    "objectId": "SteelCoil[1]",
+                    "qualifier": "input to"
+                },
+                {
+                    "objectId": "SteelSheet[5826]",
+                    "qualifier": "produced"
+                }
+            ]
+        }
+    ]
+}

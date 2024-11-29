@@ -1,0 +1,120 @@
+{
+    "objectTypes": [
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Movement Type",
+                    "type": "string"
+                },
+                {
+                    "name": "Credit Amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Invoice Created",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Two-Way Match",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt[203]",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-07-23T03:48:00Z",
+                    "value": "invoice receipt[203]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt[185]",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-07-23T03:48:00Z",
+                    "value": "goods receipt[185]"
+                },
+                {
+                    "name": "Movement Type",
+                    "time": "2022-07-23T03:48:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "Credit Amount",
+                    "time": "2022-07-23T03:48:00Z",
+                    "value": "28200.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Invoice Created",
+            "time": "2022-07-23T03:48:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt[203]",
+                    "qualifier": "created"
+                },
+                {
+                    "objectId": "goods receipt[185]",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Two-Way Match",
+            "time": "2022-07-25T07:10:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt[203]",
+                    "qualifier": "matched"
+                },
+                {
+                    "objectId": "goods receipt[185]",
+                    "qualifier": "matched"
+                }
+            ]
+        }
+    ]
+}

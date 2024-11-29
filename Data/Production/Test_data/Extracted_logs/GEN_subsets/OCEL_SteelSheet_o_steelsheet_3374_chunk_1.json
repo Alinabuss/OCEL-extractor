@@ -1,0 +1,118 @@
+{
+    "objectTypes": [
+        {
+            "name": "steel sheet",
+            "attributes": [
+                {
+                    "name": "weight",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "workstation",
+            "attributes": []
+        },
+        {
+            "name": "machine",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "HeatSteelSheet",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "int"
+                },
+                {
+                    "name": "CO2_emissions",
+                    "type": "float"
+                },
+                {
+                    "name": "electricity_usage",
+                    "type": "float"
+                },
+                {
+                    "name": "gas_input",
+                    "type": "float"
+                },
+                {
+                    "name": "burn_emission",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o_steelsheet_3374",
+            "type": "steel sheet",
+            "attributes": [
+                {
+                    "name": "weight",
+                    "time": "2023-04-05T08:53:28Z",
+                    "value": "0.02125"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_workstation_1",
+            "type": "workstation",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "o_machine_oven01",
+                    "qualifier": "part_of"
+                }
+            ]
+        },
+        {
+            "id": "o_machine_oven01",
+            "type": "machine",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "HeatSteelSheet",
+            "time": "2023-04-05T08:53:28Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "900"
+                },
+                {
+                    "name": "CO2_emissions",
+                    "value": "0.0138019093344"
+                },
+                {
+                    "name": "electricity_usage",
+                    "value": "0.02"
+                },
+                {
+                    "name": "gas_input",
+                    "value": "0.49392"
+                },
+                {
+                    "name": "burn_emission",
+                    "value": "0.49392"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_steelsheet_3374",
+                    "qualifier": "processed_in"
+                },
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "performed_by"
+                }
+            ]
+        }
+    ]
+}

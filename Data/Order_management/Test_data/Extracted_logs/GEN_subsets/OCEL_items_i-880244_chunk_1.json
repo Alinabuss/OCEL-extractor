@@ -1,0 +1,91 @@
+{
+    "objectTypes": [
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "Role",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "ProductID",
+                    "type": "string"
+                },
+                {
+                    "name": "Price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Reorder",
+            "attributes": [
+                {
+                    "name": "ItemID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Nina Graves",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "Role",
+                    "time": "2023-05-02T08:03:49Z",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-880244",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "ProductID",
+                    "time": "2023-05-02T08:03:49Z",
+                    "value": "iPhone 8"
+                },
+                {
+                    "name": "Price",
+                    "time": "2023-05-02T08:03:49Z",
+                    "value": "529.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Reorder",
+            "time": "2023-05-02T08:03:49Z",
+            "attributes": [
+                {
+                    "name": "ItemID",
+                    "value": "i-880244"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Nina Graves",
+                    "qualifier": "reorderedBy"
+                },
+                {
+                    "objectId": "i-880244",
+                    "qualifier": "reorders"
+                }
+            ]
+        }
+    ]
+}

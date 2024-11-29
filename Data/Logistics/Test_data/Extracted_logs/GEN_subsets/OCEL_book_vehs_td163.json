@@ -1,0 +1,102 @@
+{
+    "objectTypes": [
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "departure_date",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "priority",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td163",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "time": "2023-09-22T15:18:38Z",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh35",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "departure_date",
+                    "time": "2023-09-22T15:18:38Z",
+                    "value": "2023-09-26T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh37",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "departure_date",
+                    "time": "2023-09-22T15:18:38Z",
+                    "value": "2023-10-03T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2023-09-22T15:18:38Z",
+            "attributes": [
+                {
+                    "name": "priority",
+                    "value": "high"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td163",
+                    "qualifier": "booked_for"
+                },
+                {
+                    "objectId": "vh35",
+                    "qualifier": "booked"
+                },
+                {
+                    "objectId": "vh37",
+                    "qualifier": "booked"
+                }
+            ]
+        }
+    ]
+}

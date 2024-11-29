@@ -1,0 +1,356 @@
+{
+    "objectTypes": [
+        {
+            "name": "steel_coil",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "steel_sheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "machine",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "workstation",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "splitting_event",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "co2_emitted",
+                    "type": "float"
+                },
+                {
+                    "name": "electricity_consumed",
+                    "type": "float"
+                },
+                {
+                    "name": "steel_waste_generated",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "SteelCoil[1]",
+            "type": "steel_coil",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-06T00:00:00Z",
+                    "value": "31.91076"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "SteelSheet[4447]",
+            "type": "steel_sheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-06T07:40:02Z",
+                    "value": "0.02106"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelCoil[1]",
+                    "qualifier": "produced_from"
+                }
+            ]
+        },
+        {
+            "id": "o_steelsheet_4479",
+            "type": "steel_sheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-06T07:43:35Z",
+                    "value": "0.0213"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelCoil[1]",
+                    "qualifier": "produced_from"
+                }
+            ]
+        },
+        {
+            "id": "SteelSheet[4626]",
+            "type": "steel_sheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-06T07:59:48Z",
+                    "value": "0.02105"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelCoil[1]",
+                    "qualifier": "produced_from"
+                }
+            ]
+        },
+        {
+            "id": "SteelSheet[4729]",
+            "type": "steel_sheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-06T08:23:59Z",
+                    "value": "0.02121"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelCoil[1]",
+                    "qualifier": "produced_from"
+                }
+            ]
+        },
+        {
+            "id": "SteelSheet[4732]",
+            "type": "steel_sheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-06T08:24:43Z",
+                    "value": "0.02121"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelCoil[1]",
+                    "qualifier": "produced_from"
+                }
+            ]
+        },
+        {
+            "id": "Splitter01",
+            "type": "machine",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2023-04-06T00:00:00Z",
+                    "value": "Workstation[1]"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "splitting_event",
+            "time": "2023-04-06T07:40:02Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "6.6228"
+                },
+                {
+                    "name": "co2_emitted",
+                    "value": "0.0069298"
+                },
+                {
+                    "name": "electricity_consumed",
+                    "value": "0.0101182"
+                },
+                {
+                    "name": "steel_waste_generated",
+                    "value": "0.00042"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelSheet[4447]",
+                    "qualifier": "resulted_in"
+                },
+                {
+                    "objectId": "Splitter01",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "SteelCoil[1]",
+                    "qualifier": "input"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "splitting_event",
+            "time": "2023-04-06T07:43:35Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "6.69"
+                },
+                {
+                    "name": "co2_emitted",
+                    "value": "0.007003"
+                },
+                {
+                    "name": "electricity_consumed",
+                    "value": "0.0102252"
+                },
+                {
+                    "name": "steel_waste_generated",
+                    "value": "0.00042"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_steelsheet_4479",
+                    "qualifier": "resulted_in"
+                },
+                {
+                    "objectId": "Splitter01",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "SteelCoil[1]",
+                    "qualifier": "input"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "splitting_event",
+            "time": "2023-04-06T07:59:48Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "6.666"
+                },
+                {
+                    "name": "co2_emitted",
+                    "value": "0.006975"
+                },
+                {
+                    "name": "electricity_consumed",
+                    "value": "0.0101843"
+                },
+                {
+                    "name": "steel_waste_generated",
+                    "value": "0.00042"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelSheet[4626]",
+                    "qualifier": "resulted_in"
+                },
+                {
+                    "objectId": "Splitter01",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "SteelCoil[1]",
+                    "qualifier": "input"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "splitting_event",
+            "time": "2023-04-06T08:23:59Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "14.586"
+                },
+                {
+                    "name": "co2_emitted",
+                    "value": "0.015251"
+                },
+                {
+                    "name": "electricity_consumed",
+                    "value": "0.0222844"
+                },
+                {
+                    "name": "steel_waste_generated",
+                    "value": "0.00042"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelSheet[4729]",
+                    "qualifier": "resulted_in"
+                },
+                {
+                    "objectId": "Splitter01",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "SteelCoil[1]",
+                    "qualifier": "input"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "splitting_event",
+            "time": "2023-04-06T08:24:43Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "13.7751"
+                },
+                {
+                    "name": "co2_emitted",
+                    "value": "0.014404"
+                },
+                {
+                    "name": "electricity_consumed",
+                    "value": "0.0210453"
+                },
+                {
+                    "name": "steel_waste_generated",
+                    "value": "0.00042"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelSheet[4732]",
+                    "qualifier": "resulted_in"
+                },
+                {
+                    "objectId": "Splitter01",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "SteelCoil[1]",
+                    "qualifier": "input"
+                }
+            ]
+        }
+    ]
+}

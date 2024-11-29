@@ -1,0 +1,84 @@
+{
+  "objectTypes": [
+    {
+      "name": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "type": "float"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Order Empty Containers",
+      "attributes": []
+    }
+  ],
+  "objects": [
+    {
+      "id": "td338",
+      "type": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 2.0
+        }
+      ]
+    },
+    {
+      "id": "cr1179",
+      "type": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "empty"
+        }
+      ]
+    },
+    {
+      "id": "cr1180",
+      "type": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "empty"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "order_crs_td338",
+      "type": "Order Empty Containers",
+      "time": "2024-02-06T08:32:19Z",
+      "relationships": [
+        {
+          "objectId": "cr1180",
+          "qualifier": "CRs ordered"
+        },
+        {
+          "objectId": "td338",
+          "qualifier": "ordered for TD"
+        },
+        {
+          "objectId": "cr1179",
+          "qualifier": "CRs ordered"
+        }
+      ]
+    }
+  ]
+}

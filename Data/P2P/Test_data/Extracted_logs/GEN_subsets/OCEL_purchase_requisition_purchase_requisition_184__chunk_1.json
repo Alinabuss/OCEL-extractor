@@ -1,0 +1,109 @@
+{
+    "objectTypes": [
+        {
+            "name": "Purchase Requisition",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Material",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Net Price",
+                    "type": "number"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Approval Completed",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Purchase Requisition[184:pr_trigger_184]",
+            "type": "Purchase Requisition",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-09-10T16:49:00Z",
+                    "value": "184"
+                },
+                {
+                    "name": "Status",
+                    "time": "2022-09-10T16:49:00Z",
+                    "value": "Approved"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Material[443]",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "Material[443]",
+            "type": "Material",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-09-10T16:49:00Z",
+                    "value": "443"
+                },
+                {
+                    "name": "Net Price",
+                    "time": "2022-09-10T16:49:00Z",
+                    "value": 950.0
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Approval Completed",
+            "time": "2022-09-10T16:49:00Z",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "value": "2022-09-10T16:49:00Z"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "value": "004"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Purchase Requisition[184:pr_trigger_184]",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

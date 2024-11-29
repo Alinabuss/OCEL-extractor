@@ -1,0 +1,228 @@
+{
+    "objectTypes": [
+        {
+            "name": "Order",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "type": "string"
+                },
+                {
+                    "name": "customer_name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Order Placed",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "type": "string"
+                },
+                {
+                    "name": "item_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Item Reordered",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "type": "string"
+                },
+                {
+                    "name": "item_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "i-886792",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "2024-02-12T12:17:08Z",
+                    "value": "i-886792"
+                },
+                {
+                    "name": "price",
+                    "time": "2024-02-12T12:17:08Z",
+                    "value": "529.2"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-886791",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "2024-02-12T12:17:08Z",
+                    "value": "i-886791"
+                },
+                {
+                    "name": "price",
+                    "time": "2024-02-12T12:17:08Z",
+                    "value": "152.04"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-886793",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "2024-02-12T12:17:08Z",
+                    "value": "i-886793"
+                },
+                {
+                    "name": "price",
+                    "time": "2024-02-12T12:17:08Z",
+                    "value": "941.7"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-886795",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "2024-02-12T12:17:08Z",
+                    "value": "i-886795"
+                },
+                {
+                    "name": "price",
+                    "time": "2024-02-12T12:17:08Z",
+                    "value": "529.2"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Order_1",
+            "type": "Order",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "time": "2024-02-12T12:17:08Z",
+                    "value": "Order_1"
+                },
+                {
+                    "name": "customer_name",
+                    "time": "2024-02-12T12:17:08Z",
+                    "value": "Golden Fleece Textiles S.A.R.L."
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-886792",
+                    "qualifier": "includes_item"
+                },
+                {
+                    "objectId": "i-886791",
+                    "qualifier": "includes_item"
+                },
+                {
+                    "objectId": "i-886793",
+                    "qualifier": "includes_item"
+                },
+                {
+                    "objectId": "i-886795",
+                    "qualifier": "includes_item"
+                }
+            ]
+        },
+        {
+            "id": "Order_2",
+            "type": "Order",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "time": "2024-02-14T11:01:39Z",
+                    "value": "Order_2"
+                },
+                {
+                    "name": "customer_name",
+                    "time": "2024-02-14T11:01:39Z",
+                    "value": "Leah Tacke genannt Unterberg"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-886792",
+                    "qualifier": "includes_item"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Order Placed",
+            "time": "2024-02-12T12:17:08Z",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "value": "Order_1"
+                },
+                {
+                    "name": "item_id",
+                    "value": "i-886792"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Order_1",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Item Reordered",
+            "time": "2024-02-14T11:01:39Z",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "value": "Order_2"
+                },
+                {
+                    "name": "item_id",
+                    "value": "i-886792"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Order_2",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

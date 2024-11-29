@@ -1,0 +1,109 @@
+{
+    "objectTypes": [
+        {
+            "name": "procurement_order",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "approval",
+            "attributes": [
+                {
+                    "name": "manager",
+                    "type": "string"
+                },
+                {
+                    "name": "purchase_order_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:533",
+            "type": "procurement_order",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "",
+                    "value": "purchase_order:533"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "",
+                    "value": "001"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:321",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": "quotation:321",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "",
+                    "value": "quotation:321"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "",
+                    "value": "001"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "approval",
+            "time": "2023-03-08T11:01:00Z",
+            "attributes": [
+                {
+                    "name": "manager",
+                    "value": "Procurement Order Manager"
+                },
+                {
+                    "name": "purchase_order_id",
+                    "value": "purchase_order:533"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:533",
+                    "qualifier": "approves"
+                }
+            ]
+        }
+    ]
+}

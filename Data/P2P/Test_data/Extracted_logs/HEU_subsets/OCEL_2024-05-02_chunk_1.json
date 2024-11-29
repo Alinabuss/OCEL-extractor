@@ -1,0 +1,173 @@
+{
+    "objectTypes": [
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "purchase group",
+                    "type": "float"
+                },
+                {
+                    "name": "purchase order relationship between purchase order",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "goods",
+            "attributes": []
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase order relationship between purchase order",
+                    "type": "float"
+                },
+                {
+                    "name": "goods receipt",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "approval of another purchase order",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "create purchase order",
+            "attributes": []
+        },
+        {
+            "name": "create goods receipt",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "quotation quotation:766",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "purchase group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "003"
+                },
+                {
+                    "name": "purchase order relationship between purchase order",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "two"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "receipt:1560",
+            "type": "goods",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1275",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:1275",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase order relationship between purchase order",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "005"
+                },
+                {
+                    "name": "goods receipt",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "movement type 101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:1301",
+            "type": "purchase order",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation quotation:766",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:1300",
+            "type": "purchase order",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation quotation:766",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 322,
+            "type": "create purchase order",
+            "time": "2024-05-02T04:06:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1301",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 323,
+            "type": "create goods receipt",
+            "time": "2024-05-02T06:03:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1275",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "receipt:1560",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 324,
+            "type": "approval of another purchase order",
+            "time": "2024-05-02T13:16:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation quotation:766",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:1300",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

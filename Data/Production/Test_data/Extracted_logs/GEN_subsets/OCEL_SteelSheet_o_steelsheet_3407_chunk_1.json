@@ -1,0 +1,152 @@
+{
+    "objectTypes": [
+        {
+            "name": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "SteelCoil",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Machine",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Splitting Operation",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2 Emission",
+                    "type": "float"
+                },
+                {
+                    "name": "Electricity Consumption",
+                    "type": "float"
+                },
+                {
+                    "name": "Steel Waste",
+                    "type": "float"
+                },
+                {
+                    "name": "Waste Designation",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "SteelSheet[3407]",
+            "type": "SteelSheet",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "SteelCoil[2]",
+            "type": "SteelCoil",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Machine[splitter01]",
+            "type": "Machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Workstation[1]",
+            "type": "Workstation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "o_steelsheet_3407",
+            "type": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-05T09:00:21Z",
+                    "value": "SteelSheet[3407]"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Splitting Operation",
+            "time": "2023-04-05T09:00:21Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "14.16"
+                },
+                {
+                    "name": "CO2 Emission",
+                    "value": "0.0148"
+                },
+                {
+                    "name": "Electricity Consumption",
+                    "value": "0.0216"
+                },
+                {
+                    "name": "Steel Waste",
+                    "value": "0.00042"
+                },
+                {
+                    "name": "Waste Designation",
+                    "value": "recycling"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_steelsheet_3407",
+                    "qualifier": "produced"
+                },
+                {
+                    "objectId": "SteelCoil[2]",
+                    "qualifier": "processed"
+                },
+                {
+                    "objectId": "Machine[splitter01]",
+                    "qualifier": "utilized"
+                },
+                {
+                    "objectId": "Workstation[1]",
+                    "qualifier": "performed_at"
+                }
+            ]
+        }
+    ]
+}

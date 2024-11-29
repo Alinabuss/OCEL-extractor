@@ -1,0 +1,196 @@
+{
+    "objectTypes": [
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "title",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Vacancy Assigned",
+            "attributes": [
+                {
+                    "name": "vacancyId",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Interview Invitation Sent",
+            "attributes": [
+                {
+                    "name": "invitedApplicant",
+                    "type": "string"
+                },
+                {
+                    "name": "invitingRecruiter",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Vacancy[550017]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2019-07-04T06:56:07Z",
+                    "value": "550017"
+                },
+                {
+                    "name": "title",
+                    "time": "2019-07-04T06:56:07Z",
+                    "value": "Consultant"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770373]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2019-07-04T06:56:07Z",
+                    "value": "770373"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550017]",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": "Application[770123]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2019-07-05T07:41:24Z",
+                    "value": "770123"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Recruiter[Simon Meister]",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-05T07:41:24Z",
+                    "value": "Simon Meister"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Recruiter[Ed Keane]",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-05T07:41:24Z",
+                    "value": "Ed Keane"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Applicant[Mary Jones]",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-05T07:41:24Z",
+                    "value": "Mary Jones"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Vacancy Assigned",
+            "time": "2019-07-04T06:56:07Z",
+            "attributes": [
+                {
+                    "name": "vacancyId",
+                    "value": "Vacancy[550017]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770373]",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Interview Invitation Sent",
+            "time": "2019-07-05T07:41:24Z",
+            "attributes": [
+                {
+                    "name": "invitedApplicant",
+                    "value": "Applicant[Mary Jones]"
+                },
+                {
+                    "name": "invitingRecruiter",
+                    "value": "Recruiter[Simon Meister], Recruiter[Ed Keane]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770123]",
+                    "qualifier": "relatedTo"
+                },
+                {
+                    "objectId": "Vacancy[550017]",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,204 @@
+{
+    "objectTypes": [
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "Container Count",
+                    "type": "float"
+                },
+                {
+                    "name": "Creation Date",
+                    "type": "date"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "Regular Vehicle",
+                    "type": "boolean"
+                },
+                {
+                    "name": "Scheduled Departure",
+                    "type": "date"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Document Association",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "time"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle Booking",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "time"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td443",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "Container Count",
+                    "time": "2024-04-25T05:49:05Z",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh99",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "Regular Vehicle",
+                    "time": "2024-04-25T05:49:05Z",
+                    "value": "true"
+                },
+                {
+                    "name": "Scheduled Departure",
+                    "time": "2024-04-25T05:49:05Z",
+                    "value": "2024-05-07T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td442",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "Container Count",
+                    "time": "2024-04-25T06:27:30Z",
+                    "value": "3.0"
+                },
+                {
+                    "name": "Creation Date",
+                    "time": "2024-04-25T06:27:30Z",
+                    "value": "1970-01-01"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh98",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "Regular Vehicle",
+                    "time": "2024-04-25T06:27:30Z",
+                    "value": "true"
+                },
+                {
+                    "name": "Scheduled Departure",
+                    "time": "2024-04-25T06:27:30Z",
+                    "value": "2024-05-03T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td444",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "Container Count",
+                    "time": "2024-04-25T13:21:53Z",
+                    "value": "3.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Document Association",
+            "time": "2024-04-25T05:49:05Z",
+            "attributes": [
+                {
+                    "name": "Transport Document",
+                    "value": "td443"
+                },
+                {
+                    "name": "Vehicle",
+                    "value": "vh99"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td443",
+                    "qualifier": "associated with"
+                },
+                {
+                    "objectId": "vh99",
+                    "qualifier": "for"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Vehicle Booking",
+            "time": "2024-04-25T06:27:30Z",
+            "attributes": [
+                {
+                    "name": "Transport Document",
+                    "value": "td442"
+                },
+                {
+                    "name": "Vehicle",
+                    "value": "vh98"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td442",
+                    "qualifier": "booked for"
+                },
+                {
+                    "objectId": "vh98",
+                    "qualifier": "transport"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Vehicle Booking",
+            "time": "2024-04-25T13:21:53Z",
+            "attributes": [
+                {
+                    "name": "Transport Document",
+                    "value": "td444"
+                },
+                {
+                    "name": "Vehicle",
+                    "value": "vh99"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td444",
+                    "qualifier": "booked for"
+                },
+                {
+                    "objectId": "vh99",
+                    "qualifier": "transport"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,143 @@
+{
+    "objectTypes": [
+        {
+            "name": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "priority",
+                    "type": "string"
+                },
+                {
+                    "name": "scheduledDeparture",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "DocumentAssociatedWithVehicles",
+            "attributes": [
+                {
+                    "name": "documentID",
+                    "type": "string"
+                },
+                {
+                    "name": "vehicleIDs",
+                    "type": "array"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td403",
+            "type": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-03-22T13:29:24Z",
+                    "value": "td403"
+                },
+                {
+                    "name": "containers",
+                    "time": "2024-03-22T13:29:24Z",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh87",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-03-22T13:29:24Z",
+                    "value": "vh87"
+                },
+                {
+                    "name": "priority",
+                    "time": "2024-03-22T13:29:24Z",
+                    "value": "high"
+                },
+                {
+                    "name": "scheduledDeparture",
+                    "time": "2024-03-22T13:29:24Z",
+                    "value": "2024-03-26T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td403",
+                    "qualifier": "associated"
+                }
+            ]
+        },
+        {
+            "id": "vh93",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-03-22T13:29:24Z",
+                    "value": "vh93"
+                },
+                {
+                    "name": "priority",
+                    "time": "2024-03-22T13:29:24Z",
+                    "value": "normal"
+                },
+                {
+                    "name": "scheduledDeparture",
+                    "time": "2024-03-22T13:29:24Z",
+                    "value": "2024-04-16T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td403",
+                    "qualifier": "associated"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "DocumentAssociatedWithVehicles",
+            "time": "2024-03-22T13:29:24Z",
+            "attributes": [
+                {
+                    "name": "documentID",
+                    "value": "td403"
+                },
+                {
+                    "name": "vehicleIDs",
+                    "value": [
+                        "vh87",
+                        "vh93"
+                    ]
+                }
+            ],
+            "relationships": []
+        }
+    ]
+}

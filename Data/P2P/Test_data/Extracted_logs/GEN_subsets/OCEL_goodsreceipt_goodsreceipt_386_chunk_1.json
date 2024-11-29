@@ -1,0 +1,107 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "two_way_match_completed",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods_receipt_386",
+            "type": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "time": "2022-09-28T07:10:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice_receipt_379",
+            "type": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "time": "2022-09-28T07:10:00Z",
+                    "value": "36900.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "finance_account_department",
+            "type": "department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2022-09-28T07:10:00Z",
+                    "value": "Finance/Account Department"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "two_way_match_completed",
+            "time": "2022-09-28T07:10:00Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2022-09-28T07:10:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods_receipt_386",
+                    "qualifier": "involved_in"
+                },
+                {
+                    "objectId": "invoice_receipt_379",
+                    "qualifier": "involved_in"
+                },
+                {
+                    "objectId": "finance_account_department",
+                    "qualifier": "performed_by"
+                }
+            ]
+        }
+    ]
+}

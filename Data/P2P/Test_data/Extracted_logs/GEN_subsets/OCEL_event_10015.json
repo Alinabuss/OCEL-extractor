@@ -1,0 +1,122 @@
+{
+    "objectTypes": [
+        {
+            "name": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Lifecycle Status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Purchasing Group",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Purchase Order Created",
+            "attributes": [
+                {
+                    "name": "Created By",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:563",
+            "type": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-03-07T12:42:00Z",
+                    "value": "purchase_order:563"
+                },
+                {
+                    "name": "Lifecycle Status",
+                    "time": "2023-03-07T12:42:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:318",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "004",
+                    "qualifier": "part_of"
+                }
+            ]
+        },
+        {
+            "id": "quotation:318",
+            "type": "Quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-03-07T12:42:00Z",
+                    "value": "quotation:318"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "004",
+                    "qualifier": "part_of"
+                }
+            ]
+        },
+        {
+            "id": "004",
+            "type": "Purchasing Group",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-03-07T12:42:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Purchase Order Created",
+            "time": "2023-03-07T12:42:00Z",
+            "attributes": [
+                {
+                    "name": "Created By",
+                    "value": "Procurement Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:563",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

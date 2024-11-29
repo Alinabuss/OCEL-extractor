@@ -1,0 +1,193 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Position",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Title",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Application Rejection",
+            "attributes": [
+                {
+                    "name": "Reason",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application Submission",
+            "attributes": [
+                {
+                    "name": "Status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Lisa Li",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-01T17:26:00Z",
+                    "value": "Lisa Li"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Simon Keane",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-01T17:26:00Z",
+                    "value": "Simon Keane"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770059]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-01T17:26:00Z",
+                    "value": "Application[770059]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770404]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-04T15:17:22Z",
+                    "value": "Application[770404]"
+                },
+                {
+                    "name": "Position",
+                    "time": "2019-07-04T15:17:22Z",
+                    "value": "Consultant"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550043]",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": "Vacancy[550043]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-04T15:17:22Z",
+                    "value": "Vacancy[550043]"
+                },
+                {
+                    "name": "Title",
+                    "time": "2019-07-04T15:17:22Z",
+                    "value": "Consultant"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Application Rejection",
+            "time": "2019-07-01T17:26:00Z",
+            "attributes": [
+                {
+                    "name": "Reason",
+                    "value": "Rejection sent"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770059]",
+                    "qualifier": "related to"
+                },
+                {
+                    "objectId": "Simon Keane",
+                    "qualifier": "performed by"
+                },
+                {
+                    "objectId": "Lisa Li",
+                    "qualifier": "for"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Application Submission",
+            "time": "2019-07-04T15:17:22Z",
+            "attributes": [
+                {
+                    "name": "Status",
+                    "value": "Submitted"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770404]",
+                    "qualifier": "related to"
+                },
+                {
+                    "objectId": "Lisa Li",
+                    "qualifier": "submitted by"
+                }
+            ]
+        }
+    ]
+}

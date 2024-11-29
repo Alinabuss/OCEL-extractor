@@ -1,0 +1,141 @@
+{
+    "objectTypes": [
+        {
+            "name": "Player",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Match",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Session",
+            "attributes": [
+                {
+                    "name": "session_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Match Initialized",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "type": "string"
+                },
+                {
+                    "name": "player_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Wall Creation",
+            "attributes": [
+                {
+                    "name": "wall_type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "P2199669",
+            "type": "Player",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "time": "2023-07-31T00:10:50Z",
+                    "value": "P2199669"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "M250230427",
+            "type": "Match",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "time": "2023-07-31T00:10:50Z",
+                    "value": "M250230427"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "S250230427_2199669",
+            "type": "Session",
+            "attributes": [
+                {
+                    "name": "session_id",
+                    "time": "2023-07-31T00:10:50Z",
+                    "value": "S250230427_2199669"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Match Initialized",
+            "time": "2023-07-31T00:10:50Z",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "value": "M250230427"
+                },
+                {
+                    "name": "player_id",
+                    "value": "P2199669"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "initiated"
+                },
+                {
+                    "objectId": "P2199669",
+                    "qualifier": "participated"
+                },
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "part_of"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Wall Creation",
+            "time": "2023-07-31T00:10:50Z",
+            "attributes": [
+                {
+                    "name": "wall_type",
+                    "value": "stone wall"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

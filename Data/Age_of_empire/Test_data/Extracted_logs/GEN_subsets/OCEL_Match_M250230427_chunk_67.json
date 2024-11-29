@@ -1,0 +1,254 @@
+{
+    "objectTypes": [
+        {
+            "name": "Match",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Villager",
+            "attributes": [
+                {
+                    "name": "villager_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Market",
+            "attributes": [
+                {
+                    "name": "market_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Town Center",
+            "attributes": [
+                {
+                    "name": "town_center_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Farm",
+            "attributes": [
+                {
+                    "name": "farm_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Villager Activity",
+            "attributes": [
+                {
+                    "name": "activity_type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Market Action",
+            "attributes": [
+                {
+                    "name": "action_type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Construction",
+            "attributes": [
+                {
+                    "name": "construction_type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "M250230427",
+            "type": "Match",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "time": "2023-07-31T00:00:00Z",
+                    "value": "M250230427"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Villager_M250230427_248",
+            "type": "Villager",
+            "attributes": [
+                {
+                    "name": "villager_id",
+                    "time": "2023-07-31T00:00:00Z",
+                    "value": "Villager_M250230427_248"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Town_Center_M250230427_5",
+                    "qualifier": "associated_with"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "participated_in"
+                }
+            ]
+        },
+        {
+            "id": "Villager_M250230427_51",
+            "type": "Villager",
+            "attributes": [
+                {
+                    "name": "villager_id",
+                    "time": "2023-07-31T00:00:00Z",
+                    "value": "Villager_M250230427_51"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Farm_M250230427_22",
+                    "qualifier": "completed_construction"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "participated_in"
+                }
+            ]
+        },
+        {
+            "id": "Market_M250230427_2",
+            "type": "Market",
+            "attributes": [
+                {
+                    "name": "market_id",
+                    "time": "2023-07-31T00:00:00Z",
+                    "value": "Market_M250230427_2"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": "Town_Center_M250230427_5",
+            "type": "Town Center",
+            "attributes": [
+                {
+                    "name": "town_center_id",
+                    "time": "2023-07-31T00:00:00Z",
+                    "value": "Town_Center_M250230427_5"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": "Farm_M250230427_22",
+            "type": "Farm",
+            "attributes": [
+                {
+                    "name": "farm_id",
+                    "time": "2023-07-31T00:00:00Z",
+                    "value": "Farm_M250230427_22"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Villager_M250230427_51",
+                    "qualifier": "constructed_by"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Villager Activity",
+            "time": "2023-07-31T00:30:29Z",
+            "attributes": [
+                {
+                    "name": "activity_type",
+                    "value": "Gather None"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Villager_M250230427_248",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Market Action",
+            "time": "2023-07-31T00:30:31Z",
+            "attributes": [
+                {
+                    "name": "action_type",
+                    "value": "Complete Queue Trade Cart"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Market_M250230427_2",
+                    "qualifier": "performed_at"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Construction",
+            "time": "2023-07-31T00:30:34Z",
+            "attributes": [
+                {
+                    "name": "construction_type",
+                    "value": "Farm"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Villager_M250230427_51",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "Farm_M250230427_22",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

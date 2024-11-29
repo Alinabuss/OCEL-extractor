@@ -1,0 +1,133 @@
+{
+    "objectTypes": [
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Credit Amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Movement Type",
+                    "type": "int"
+                }
+            ]
+        },
+        {
+            "name": "Department",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Two-Way Match",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "Process Completion",
+                    "type": "boolean"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "1721",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-07-11T07:10:00Z",
+                    "value": "1721"
+                },
+                {
+                    "name": "Credit Amount",
+                    "time": "2024-07-11T07:10:00Z",
+                    "value": "213600.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "1723",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-07-11T07:10:00Z",
+                    "value": "1723"
+                },
+                {
+                    "name": "Movement Type",
+                    "time": "2024-07-11T07:10:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Finance/Account Department",
+            "type": "Department",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2024-07-11T07:10:00Z",
+                    "value": "Finance/Account Department"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Two-Way Match",
+            "time": "2024-07-11T07:10:00Z",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "value": "2024-07-11T07:10:00Z"
+                },
+                {
+                    "name": "Process Completion",
+                    "value": "true"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "1721",
+                    "qualifier": "matched"
+                },
+                {
+                    "objectId": "1723",
+                    "qualifier": "linked"
+                },
+                {
+                    "objectId": "Finance/Account Department",
+                    "qualifier": "performed by"
+                }
+            ]
+        }
+    ]
+}

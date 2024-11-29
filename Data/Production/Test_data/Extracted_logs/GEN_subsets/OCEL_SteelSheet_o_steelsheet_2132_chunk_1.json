@@ -1,0 +1,109 @@
+{
+    "objectTypes": [
+        {
+            "name": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Workstation",
+            "attributes": []
+        },
+        {
+            "name": "Machine",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "HeatingProcess",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "integer"
+                },
+                {
+                    "name": "emissions_CO2",
+                    "type": "float"
+                },
+                {
+                    "name": "energy_consumption_grid",
+                    "type": "float"
+                },
+                {
+                    "name": "energy_consumption_gas",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o_steelsheet_2132",
+            "type": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-04T09:49:44Z",
+                    "value": "0.02125"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Workstation[1]",
+            "type": "Workstation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Machine[oven01]",
+            "type": "Machine",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "HeatingProcess",
+            "time": "2023-04-04T09:49:44Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "900"
+                },
+                {
+                    "name": "emissions_CO2",
+                    "value": "0.0138019093344"
+                },
+                {
+                    "name": "energy_consumption_grid",
+                    "value": "0.02"
+                },
+                {
+                    "name": "energy_consumption_gas",
+                    "value": "0.49392"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_steelsheet_2132",
+                    "qualifier": "heating_process"
+                },
+                {
+                    "objectId": "Workstation[1]",
+                    "qualifier": "conducted_at"
+                },
+                {
+                    "objectId": "Machine[oven01]",
+                    "qualifier": "used_for"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,115 @@
+{
+    "objectTypes": [
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Report Out of Stock",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "Details",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "i-880814",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-05-24T09:00:10Z",
+                    "value": "i-880814"
+                },
+                {
+                    "name": "Name",
+                    "time": "2023-05-24T09:00:10Z",
+                    "value": "MacBook Air"
+                },
+                {
+                    "name": "Price",
+                    "time": "2023-05-24T09:00:10Z",
+                    "value": 2200.0
+                }
+            ]
+        },
+        {
+            "id": "Marco Pegoraro",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2023-05-24T09:00:10Z",
+                    "value": "Marco Pegoraro"
+                },
+                {
+                    "name": "Department",
+                    "time": "2023-05-24T09:00:10Z",
+                    "value": "Warehousing"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Report Out of Stock",
+            "time": "2023-05-24T09:00:10Z",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "value": "2023-05-24T09:00:10Z"
+                },
+                {
+                    "name": "Details",
+                    "value": "Item i-880814 went out of stock."
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-880814",
+                    "qualifier": "reported"
+                },
+                {
+                    "objectId": "Marco Pegoraro",
+                    "qualifier": "reported by"
+                }
+            ]
+        }
+    ]
+}

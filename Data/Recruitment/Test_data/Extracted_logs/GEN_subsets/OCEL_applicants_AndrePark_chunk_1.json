@@ -1,0 +1,191 @@
+{
+    "objectTypes": [
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Manager",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Interview Conducted",
+            "attributes": [
+                {
+                    "name": "Applicant",
+                    "type": "string"
+                },
+                {
+                    "name": "Position",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Rejection Sent",
+            "attributes": [
+                {
+                    "name": "Applicant",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Vacancy[550011]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-06-28T18:31:45Z",
+                    "value": "550011"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770235]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-06-28T18:31:45Z",
+                    "value": "770235"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Andre Park",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-06-28T18:31:45Z",
+                    "value": "Andre Park"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Jana Keane",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-06-28T18:31:45Z",
+                    "value": "Jana Keane"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Miguel Milano",
+            "type": "Manager",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-06-28T18:31:45Z",
+                    "value": "Miguel Milano"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Interview Conducted",
+            "time": "2019-06-28T18:31:45Z",
+            "attributes": [
+                {
+                    "name": "Applicant",
+                    "value": "Andre Park"
+                },
+                {
+                    "name": "Position",
+                    "value": "Programmer"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550011]",
+                    "qualifier": "related to"
+                },
+                {
+                    "objectId": "Application[770235]",
+                    "qualifier": "associated with"
+                },
+                {
+                    "objectId": "Jana Keane",
+                    "qualifier": "conducted by"
+                },
+                {
+                    "objectId": "Miguel Milano",
+                    "qualifier": "involved"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Rejection Sent",
+            "time": "2019-07-03T14:12:39Z",
+            "attributes": [
+                {
+                    "name": "Applicant",
+                    "value": "Andre Park"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770235]",
+                    "qualifier": "related to"
+                },
+                {
+                    "objectId": "Jana Keane",
+                    "qualifier": "sent by"
+                }
+            ]
+        }
+    ]
+}

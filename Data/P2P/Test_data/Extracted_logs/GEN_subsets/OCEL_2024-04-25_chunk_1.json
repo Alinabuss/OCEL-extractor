@@ -1,0 +1,169 @@
+{
+    "objectTypes": [
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle status",
+                    "type": "string"
+                },
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Purchase Order",
+            "attributes": []
+        },
+        {
+            "name": "Purchasing Group",
+            "attributes": [
+                {
+                    "name": "code",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Request for Quotation",
+            "attributes": []
+        },
+        {
+            "name": "Quotation",
+            "attributes": []
+        },
+        {
+            "name": "Purchase Requisition",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Create Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Create Request for Quotation",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1548",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2024-04-25T09:41:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "lifecycle status",
+                    "time": "2024-04-25T09:41:00Z",
+                    "value": "complete"
+                },
+                {
+                    "name": "resource",
+                    "time": "2024-04-25T09:41:00Z",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1264",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:1264",
+            "type": "Purchase Order",
+            "attributes": []
+        },
+        {
+            "id": "purchasing_group:004",
+            "type": "Purchasing Group",
+            "attributes": [
+                {
+                    "name": "code",
+                    "time": "2024-04-25T09:41:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1264",
+                    "qualifier": "linked to"
+                }
+            ]
+        },
+        {
+            "id": "request_for_quotation",
+            "type": "Request for Quotation",
+            "attributes": []
+        },
+        {
+            "id": "Quotation[758]",
+            "type": "Quotation",
+            "attributes": []
+        },
+        {
+            "id": "Purchase Requisition[754]",
+            "type": "Purchase Requisition",
+            "attributes": []
+        },
+        {
+            "id": "purchasing_group:002",
+            "type": "Purchasing Group",
+            "attributes": [
+                {
+                    "name": "code",
+                    "time": "2024-04-25T19:48:00Z",
+                    "value": "002"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Create Goods Receipt",
+            "time": "2024-04-25T09:41:00Z",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1548",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Create Request for Quotation",
+            "time": "2024-04-25T19:48:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "request_for_quotation",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

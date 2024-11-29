@@ -1,0 +1,151 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "type movement",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                },
+                {
+                    "name": "purchase order",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create purchase order",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "process goods receipt",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:138",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "type movement",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:94",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:94",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "Purchasing Group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Purchasing Group"
+                },
+                {
+                    "name": "purchase order",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:129",
+            "type": "purchase order",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation:83",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "quotation:83",
+            "type": "purchase order",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 439,
+            "type": "create purchase order",
+            "time": "2022-06-20T07:35:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Procurement Department"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:129",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "quotation:83",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 440,
+            "type": "process goods receipt",
+            "time": "2022-06-20T14:04:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:94",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:138",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

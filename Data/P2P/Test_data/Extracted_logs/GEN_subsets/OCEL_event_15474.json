@@ -1,0 +1,101 @@
+{
+    "objectTypes": [
+        {
+            "name": "InvoiceReceipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "CreditAmount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "GoodsReceipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "MovementType",
+                    "type": "integer"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "CreateInvoiceReceipt",
+            "attributes": [
+                {
+                    "name": "Department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:1012",
+            "type": "InvoiceReceipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-08-30T14:50:00Z",
+                    "value": "invoice receipt:1012"
+                },
+                {
+                    "name": "CreditAmount",
+                    "time": "2023-08-30T14:50:00Z",
+                    "value": "25350.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1018",
+                    "qualifier": "linkedTo"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:1018",
+            "type": "GoodsReceipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-08-30T14:50:00Z",
+                    "value": "goods receipt:1018"
+                },
+                {
+                    "name": "MovementType",
+                    "time": "2023-08-30T14:50:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "CreateInvoiceReceipt",
+            "time": "2023-08-30T14:50:00Z",
+            "attributes": [
+                {
+                    "name": "Department",
+                    "value": "Finance/Account Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1012",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

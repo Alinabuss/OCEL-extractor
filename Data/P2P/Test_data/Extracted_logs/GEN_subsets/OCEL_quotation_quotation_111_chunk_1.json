@@ -1,0 +1,134 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "purchase_order_created",
+            "attributes": [
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:194",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-07-19T09:11:00Z",
+                    "value": "purchase_order:194"
+                },
+                {
+                    "name": "status",
+                    "time": "2022-07-19T09:11:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:111",
+                    "qualifier": "linked_to"
+                },
+                {
+                    "objectId": "Procurement Department",
+                    "qualifier": "managed_by"
+                }
+            ]
+        },
+        {
+            "id": "quotation:111",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-07-19T09:11:00Z",
+                    "value": "quotation:111"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2022-07-19T09:11:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Procurement Department",
+            "type": "department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2022-07-19T09:11:00Z",
+                    "value": "Procurement Department"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "purchase_order_created",
+            "time": "2022-07-19T09:11:00Z",
+            "attributes": [
+                {
+                    "name": "purchasing_group",
+                    "value": "004"
+                },
+                {
+                    "name": "status",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:194",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

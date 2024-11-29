@@ -1,0 +1,169 @@
+{
+    "objectTypes": [
+        {
+            "name": "Order",
+            "attributes": [
+                {
+                    "name": "total_price",
+                    "type": "float"
+                },
+                {
+                    "name": "order_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                },
+                {
+                    "name": "product_name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Order Confirmation",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "timestamp"
+                },
+                {
+                    "name": "confirmed_by",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o-990068",
+            "type": "Order",
+            "attributes": [
+                {
+                    "name": "total_price",
+                    "time": "2023-05-02T09:23:12Z",
+                    "value": "3779.98"
+                },
+                {
+                    "name": "order_id",
+                    "time": "2023-05-02T09:23:12Z",
+                    "value": "o-990068"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-880289",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "2023-05-02T09:23:12Z",
+                    "value": "i-880289"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-05-02T09:23:12Z",
+                    "value": "1149.0"
+                },
+                {
+                    "name": "product_name",
+                    "time": "2023-05-02T09:23:12Z",
+                    "value": "Echo Studio"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-880290",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "2023-05-02T09:23:12Z",
+                    "value": "i-880290"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-05-02T09:23:12Z",
+                    "value": "199.99"
+                },
+                {
+                    "name": "product_name",
+                    "time": "2023-05-02T09:23:12Z",
+                    "value": "Echo Show 5"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "employee-1",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-05-02T09:23:12Z",
+                    "value": "Mara Nitschke"
+                },
+                {
+                    "name": "department",
+                    "time": "2023-05-02T09:23:12Z",
+                    "value": "Sales"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Order Confirmation",
+            "time": "2023-05-02T09:23:12Z",
+            "attributes": [
+                {
+                    "name": "confirmed_by",
+                    "value": "Mara Nitschke"
+                },
+                {
+                    "name": "time",
+                    "value": "2023-05-02T09:23:12Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o-990068",
+                    "qualifier": "order"
+                },
+                {
+                    "objectId": "employee-1",
+                    "qualifier": "confirmed_by"
+                }
+            ]
+        }
+    ]
+}

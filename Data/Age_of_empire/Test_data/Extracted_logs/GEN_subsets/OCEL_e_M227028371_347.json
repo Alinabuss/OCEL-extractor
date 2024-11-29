@@ -1,0 +1,112 @@
+{
+    "objectTypes": [
+        {
+            "name": "player",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "session",
+            "attributes": [
+                {
+                    "name": "session_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "match",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "activity",
+            "attributes": [
+                {
+                    "name": "activity_type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Player[P1472826]",
+            "type": "player",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "time": "2023-04-17T00:41:57Z",
+                    "value": "P1472826"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Session[S227028371_1472826]",
+            "type": "session",
+            "attributes": [
+                {
+                    "name": "session_id",
+                    "time": "2023-04-17T00:41:57Z",
+                    "value": "S227028371_1472826"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Player[P1472826]",
+                    "qualifier": "participated_in"
+                }
+            ]
+        },
+        {
+            "id": "Match[M227028371]",
+            "type": "match",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "time": "2023-04-17T00:41:57Z",
+                    "value": "M227028371"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "activity",
+            "time": "2023-04-17T00:41:57Z",
+            "attributes": [
+                {
+                    "name": "activity_type",
+                    "value": "gathering wood"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Session[S227028371_1472826]",
+                    "qualifier": "took_place_in"
+                },
+                {
+                    "objectId": "Player[P1472826]",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "Match[M227028371]",
+                    "qualifier": "during_match"
+                }
+            ]
+        }
+    ]
+}

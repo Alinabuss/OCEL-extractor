@@ -1,0 +1,134 @@
+{
+    "objectTypes": [
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "report_out_of_stock",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "i-880715",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-05-19T10:08:41Z",
+                    "value": "i-880715"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-05-19T10:08:41Z",
+                    "value": "149.99"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Echo Plus",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-05-19T10:08:41Z",
+                    "value": "Echo Plus"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-05-19T10:08:41Z",
+                    "value": "149.99"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Nina Graves",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-05-19T10:08:41Z",
+                    "value": "Nina Graves"
+                },
+                {
+                    "name": "role",
+                    "time": "2023-05-19T10:08:41Z",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "report_out_of_stock",
+            "time": "2023-05-19T10:08:41Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-05-19T10:08:41Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-880715",
+                    "qualifier": "reported_item"
+                },
+                {
+                    "objectId": "Echo Plus",
+                    "qualifier": "related_product"
+                },
+                {
+                    "objectId": "Nina Graves",
+                    "qualifier": "reporting_employee"
+                }
+            ]
+        }
+    ]
+}

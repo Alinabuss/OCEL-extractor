@@ -1,0 +1,85 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "type": "string"
+                },
+                {
+                    "name": "purchase_order",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase_order",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "goods_receipt_creation",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:149",
+            "type": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "time": "2022-06-30T07:41:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "purchase_order",
+                    "time": "2022-06-30T07:41:00Z",
+                    "value": "purchase_order:129"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2022-06-30T07:41:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:129",
+            "type": "purchase_order",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "goods_receipt_creation",
+            "time": "2022-06-30T07:41:00Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "completed"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:149",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,144 @@
+{
+    "objectTypes": [
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "package",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create_package",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "iPhone X",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-07-28T14:03:54Z",
+                    "value": "699.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "iPad",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-07-28T14:03:54Z",
+                    "value": "495.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-882104",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-07-28T14:03:54Z",
+                    "value": "738.91"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "iPhone X",
+                    "qualifier": "related"
+                }
+            ]
+        },
+        {
+            "id": "Echo Studio",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-07-28T14:03:54Z",
+                    "value": "199.99"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-882379",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-07-28T14:03:54Z",
+                    "value": "523.26"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "iPad",
+                    "qualifier": "associated"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create_package",
+            "time": "2023-07-28T14:03:54Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-07-28T14:03:54Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "iPhone X",
+                    "qualifier": "includes"
+                },
+                {
+                    "objectId": "iPad",
+                    "qualifier": "includes"
+                },
+                {
+                    "objectId": "i-882104",
+                    "qualifier": "includes"
+                },
+                {
+                    "objectId": "Echo Studio",
+                    "qualifier": "includes"
+                },
+                {
+                    "objectId": "i-882379",
+                    "qualifier": "includes"
+                }
+            ]
+        }
+    ]
+}

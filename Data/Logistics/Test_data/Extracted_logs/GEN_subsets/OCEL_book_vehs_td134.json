@@ -1,0 +1,180 @@
+{
+    "objectTypes": [
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "priority",
+                    "type": "string"
+                },
+                {
+                    "name": "departure_date",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "scheduling",
+            "attributes": [
+                {
+                    "name": "departure_date",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "TD[134]",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-09-04T13:17:42Z",
+                    "value": "TD[134]"
+                },
+                {
+                    "name": "containers",
+                    "time": "2023-09-04T13:17:42Z",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh[30]",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-09-08T11:00:00Z",
+                    "value": "vh[30]"
+                },
+                {
+                    "name": "priority",
+                    "time": "2023-09-08T11:00:00Z",
+                    "value": "high"
+                },
+                {
+                    "name": "departure_date",
+                    "time": "2023-09-08T11:00:00Z",
+                    "value": "2023-09-08T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "TD[134]",
+                    "qualifier": "booked_for"
+                }
+            ]
+        },
+        {
+            "id": "vh[33]",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-09-19T11:00:00Z",
+                    "value": "vh[33]"
+                },
+                {
+                    "name": "priority",
+                    "time": "2023-09-19T11:00:00Z",
+                    "value": "normal"
+                },
+                {
+                    "name": "departure_date",
+                    "time": "2023-09-19T11:00:00Z",
+                    "value": "2023-09-19T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "TD[134]",
+                    "qualifier": "booked_for"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2023-09-04T13:17:42Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-09-04T13:17:42Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "TD[134]",
+                    "qualifier": "document_created"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "scheduling",
+            "time": "2023-09-08T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "departure_date",
+                    "value": "2023-09-08T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh[30]",
+                    "qualifier": "scheduled"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "scheduling",
+            "time": "2023-09-19T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "departure_date",
+                    "value": "2023-09-19T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh[33]",
+                    "qualifier": "scheduled"
+                }
+            ]
+        }
+    ]
+}

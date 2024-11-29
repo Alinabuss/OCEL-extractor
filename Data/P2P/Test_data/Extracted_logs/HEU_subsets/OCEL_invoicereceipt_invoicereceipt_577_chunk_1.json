@@ -1,0 +1,164 @@
+{
+    "objectTypes": [
+        {
+            "name": "credit amount",
+            "attributes": []
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "float"
+                },
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create invoice receipt",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "perform two - way match",
+            "attributes": []
+        },
+        {
+            "name": "reaffirm credit amount",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:577",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:580",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "invoice receipt invoice receipt:577",
+            "type": "credit amount",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:577",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:580",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 686,
+            "type": "create invoice receipt",
+            "time": "2023-02-03T02:40:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Account Department Finance"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:577",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "invoice receipt invoice receipt:577",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 687,
+            "type": "perform two - way match",
+            "time": "2023-02-06T08:10:00Z",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": 688,
+            "type": "reaffirm credit amount",
+            "time": "2023-02-06T20:26:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:580",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 689,
+            "type": "perform two - way match",
+            "time": "2023-02-06T20:26:00Z",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": 690,
+            "type": "create invoice receipt",
+            "time": "2023-02-06T20:26:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Account Department Finance"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:577",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "invoice receipt invoice receipt:577",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

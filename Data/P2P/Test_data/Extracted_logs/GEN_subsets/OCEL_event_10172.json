@@ -1,0 +1,82 @@
+{
+    "objectTypes": [
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "type": "int"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Invoice Receipt Created",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Invoice Receipt",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "time": "2023-03-10T16:49:00Z",
+                    "value": "83700.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Goods Receipt",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "time": "2023-03-10T16:49:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Invoice Receipt Created",
+            "time": "2023-03-10T16:49:00Z",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "value": "83700.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Invoice Receipt",
+                    "qualifier": "created"
+                },
+                {
+                    "objectId": "Goods Receipt",
+                    "qualifier": "associated with"
+                }
+            ]
+        }
+    ]
+}

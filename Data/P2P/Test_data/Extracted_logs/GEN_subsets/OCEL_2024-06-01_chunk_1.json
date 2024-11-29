@@ -1,0 +1,136 @@
+{
+    "objectTypes": [
+        {
+            "name": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Purchase Order Approval",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "timestamp"
+                }
+            ]
+        },
+        {
+            "name": "Update Purchase Order Status",
+            "attributes": [
+                {
+                    "name": "New Status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:1355",
+            "type": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "",
+                    "value": "purchase_order:1355"
+                },
+                {
+                    "name": "Status",
+                    "time": "",
+                    "value": "completed"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "",
+                    "value": "005"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:796",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": "quotation:796",
+            "type": "Quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "",
+                    "value": "quotation:796"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "",
+                    "value": "005"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Purchase Order Approval",
+            "time": "2024-06-01T14:19:00Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2024-06-01T14:19:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1355",
+                    "qualifier": "approved"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Update Purchase Order Status",
+            "time": "2024-06-01T14:19:00Z",
+            "attributes": [
+                {
+                    "name": "New Status",
+                    "value": "completed"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1355",
+                    "qualifier": "status updated"
+                }
+            ]
+        }
+    ]
+}

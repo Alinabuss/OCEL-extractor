@@ -1,0 +1,131 @@
+{
+    "objectTypes": [
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Classification",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Booking",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "type": "timestamp"
+                }
+            ]
+        },
+        {
+            "name": "Departure",
+            "attributes": [
+                {
+                    "name": "Scheduled Time",
+                    "type": "timestamp"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td387",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-03-14T11:08:02Z",
+                    "value": "td387"
+                },
+                {
+                    "name": "Amount",
+                    "time": "2024-03-14T11:08:02Z",
+                    "value": "1.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh87",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "vh87",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-03-14T11:08:02Z",
+                    "value": "vh87"
+                },
+                {
+                    "name": "Classification",
+                    "time": "2024-03-14T11:08:02Z",
+                    "value": "regular"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Booking",
+            "time": "2024-03-14T11:08:02Z",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "value": "2024-03-14T11:08:02Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td387",
+                    "qualifier": "booked for"
+                },
+                {
+                    "objectId": "vh87",
+                    "qualifier": "booked"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Departure",
+            "time": "2024-03-26T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "Scheduled Time",
+                    "value": "2024-03-26T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh87",
+                    "qualifier": "scheduled to depart"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,235 @@
+{
+    "objectTypes": [
+        {
+            "name": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "number_of_containers",
+                    "type": "float"
+                },
+                {
+                    "name": "departure_date",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "CreateTransportDocument",
+            "attributes": [
+                {
+                    "name": "documentID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "BookVehicle",
+            "attributes": [
+                {
+                    "name": "documentID",
+                    "type": "string"
+                },
+                {
+                    "name": "vehicleID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td428",
+            "type": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-04-15T08:18:08Z",
+                    "value": "td428"
+                },
+                {
+                    "name": "number_of_containers",
+                    "time": "2024-04-15T08:18:08Z",
+                    "value": 2.0
+                },
+                {
+                    "name": "departure_date",
+                    "time": "2024-04-15T08:18:08Z",
+                    "value": "2024-04-19T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td429",
+            "type": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-04-15T11:50:33Z",
+                    "value": "td429"
+                },
+                {
+                    "name": "number_of_containers",
+                    "time": "2024-04-15T11:50:33Z",
+                    "value": 5.0
+                },
+                {
+                    "name": "departure_date",
+                    "time": "2024-04-15T11:50:33Z",
+                    "value": "2024-05-10T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh94",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-04-15T08:18:08Z",
+                    "value": "vh94"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh100",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-04-15T11:50:33Z",
+                    "value": "vh100"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "CreateTransportDocument",
+            "time": "2024-04-15T08:18:08Z",
+            "attributes": [
+                {
+                    "name": "documentID",
+                    "value": "td428"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td428",
+                    "qualifier": "created"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "BookVehicle",
+            "time": "2024-04-15T08:18:08Z",
+            "attributes": [
+                {
+                    "name": "documentID",
+                    "value": "td428"
+                },
+                {
+                    "name": "vehicleID",
+                    "value": "vh94"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh94",
+                    "qualifier": "booked_for"
+                },
+                {
+                    "objectId": "td428",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "CreateTransportDocument",
+            "time": "2024-04-15T11:50:33Z",
+            "attributes": [
+                {
+                    "name": "documentID",
+                    "value": "td429"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td429",
+                    "qualifier": "created"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "BookVehicle",
+            "time": "2024-04-15T11:50:33Z",
+            "attributes": [
+                {
+                    "name": "documentID",
+                    "value": "td429"
+                },
+                {
+                    "name": "vehicleID",
+                    "value": "vh100"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh100",
+                    "qualifier": "booked_for"
+                },
+                {
+                    "objectId": "td429",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "BookVehicle",
+            "time": "2024-04-15T11:50:33Z",
+            "attributes": [
+                {
+                    "name": "documentID",
+                    "value": "td429"
+                },
+                {
+                    "name": "vehicleID",
+                    "value": "vh94"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh94",
+                    "qualifier": "booked_for"
+                },
+                {
+                    "objectId": "td429",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

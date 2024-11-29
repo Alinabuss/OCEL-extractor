@@ -1,0 +1,138 @@
+{
+    "objectTypes": [
+        {
+            "name": "order",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "type": "string"
+                },
+                {
+                    "name": "customer_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "payment",
+            "attributes": [
+                {
+                    "name": "payment_id",
+                    "type": "string"
+                },
+                {
+                    "name": "amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Create Order",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "payment_method",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Make Payment",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "order:001",
+            "type": "order",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "time": "2023-01-01T10:00:00Z",
+                    "value": "001"
+                },
+                {
+                    "name": "customer_id",
+                    "time": "2023-01-01T10:00:00Z",
+                    "value": "C123"
+                }
+            ]
+        },
+        {
+            "id": "payment:1001",
+            "type": "payment",
+            "attributes": [
+                {
+                    "name": "payment_id",
+                    "time": "2023-01-01T11:00:00Z",
+                    "value": "1001"
+                },
+                {
+                    "name": "amount",
+                    "time": "2023-01-01T11:00:00Z",
+                    "value": 100.0
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "order:001",
+                    "qualifier": "related_order"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": "event_1",
+            "type": "Create Order",
+            "time": "2023-01-01T10:00:00Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "confirmed"
+                },
+                {
+                    "name": "payment_method",
+                    "value": "credit_card"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "order:001",
+                    "qualifier": "created_order"
+                }
+            ]
+        },
+        {
+            "id": "event_2",
+            "type": "Make Payment",
+            "time": "2023-01-01T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "completed"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "payment:1001",
+                    "qualifier": "made_payment"
+                },
+                {
+                    "objectId": "order:001",
+                    "qualifier": "payment_for_order"
+                }
+            ]
+        }
+    ]
+}

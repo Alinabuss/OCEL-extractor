@@ -1,0 +1,135 @@
+{
+  "objectTypes": [
+    {
+      "name": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "Vehicle",
+      "attributes": [
+        {
+          "name": "Departure Date",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Depart",
+      "attributes": []
+    }
+  ],
+  "objects": [
+    {
+      "id": "td265",
+      "type": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 2.0
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "vh61",
+          "qualifier": "Regular VH for TD"
+        }
+      ]
+    },
+    {
+      "id": "td282",
+      "type": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 2.0
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "vh61",
+          "qualifier": "High-Prio VH for TD"
+        }
+      ]
+    },
+    {
+      "id": "cr973",
+      "type": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "empty"
+        }
+      ]
+    },
+    {
+      "id": "cr958",
+      "type": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "empty"
+        }
+      ]
+    },
+    {
+      "id": "vh61",
+      "type": "Vehicle",
+      "attributes": [
+        {
+          "name": "Departure Date",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "2023-12-26 11:00:00"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "depart_vh61",
+      "type": "Depart",
+      "time": "2023-12-26T10:00:00Z",
+      "relationships": [
+        {
+          "objectId": "td265",
+          "qualifier": "TD with CR departure"
+        },
+        {
+          "objectId": "cr973",
+          "qualifier": "CR departed"
+        },
+        {
+          "objectId": "td282",
+          "qualifier": "TD with CR departure"
+        },
+        {
+          "objectId": "cr958",
+          "qualifier": "CR departed"
+        },
+        {
+          "objectId": "vh61",
+          "qualifier": "VH departed"
+        }
+      ]
+    }
+  ]
+}

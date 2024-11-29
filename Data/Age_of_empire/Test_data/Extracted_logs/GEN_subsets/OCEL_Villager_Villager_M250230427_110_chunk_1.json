@@ -1,0 +1,214 @@
+{
+    "objectTypes": [
+        {
+            "name": "Villager",
+            "attributes": [
+                {
+                    "name": "villager_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Town Center",
+            "attributes": [
+                {
+                    "name": "town_center_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Match",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Player",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Session",
+            "attributes": [
+                {
+                    "name": "session_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Command Queued",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "timestamp"
+                },
+                {
+                    "name": "command",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Resource Gathered",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "timestamp"
+                }
+            ]
+        },
+        {
+            "name": "Queue Completed",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "timestamp"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Villager_M250230427_110",
+            "type": "Villager",
+            "attributes": [
+                {
+                    "name": "villager_id",
+                    "time": "2023-07-31T00:00:00Z",
+                    "value": "M250230427_110"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "in_session"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "in_match"
+                }
+            ]
+        },
+        {
+            "id": "Town_Center_M250230427_1",
+            "type": "Town Center",
+            "attributes": [
+                {
+                    "name": "town_center_id",
+                    "time": "2023-07-31T00:00:00Z",
+                    "value": "M250230427_1"
+                }
+            ]
+        },
+        {
+            "id": "M250230427",
+            "type": "Match",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "time": "2023-07-31T00:00:00Z",
+                    "value": "M250230427"
+                }
+            ]
+        },
+        {
+            "id": "P2199669",
+            "type": "Player",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "time": "2023-07-31T00:00:00Z",
+                    "value": "P2199669"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Town_Center_M250230427_1",
+                    "qualifier": "controls"
+                }
+            ]
+        },
+        {
+            "id": "S250230427_2199669",
+            "type": "Session",
+            "attributes": [
+                {
+                    "name": "session_id",
+                    "time": "2023-07-31T00:00:00Z",
+                    "value": "S250230427_2199669"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Command Queued",
+            "time": "2023-07-31T00:13:39Z",
+            "attributes": [
+                {
+                    "name": "command",
+                    "value": "queued_command"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Villager_M250230427_110",
+                    "qualifier": "executed_by"
+                },
+                {
+                    "objectId": "P2199669",
+                    "qualifier": "initiated_by"
+                },
+                {
+                    "objectId": "Town_Center_M250230427_1",
+                    "qualifier": "executed_at"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Resource Gathered",
+            "time": "2023-07-31T00:14:11Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Villager_M250230427_110",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "Town_Center_M250230427_1",
+                    "qualifier": "performed_at"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Queue Completed",
+            "time": "2023-07-31T00:14:11Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Villager_M250230427_110",
+                    "qualifier": "completed_by"
+                },
+                {
+                    "objectId": "Town_Center_M250230427_1",
+                    "qualifier": "completed_at"
+                }
+            ]
+        }
+    ]
+}

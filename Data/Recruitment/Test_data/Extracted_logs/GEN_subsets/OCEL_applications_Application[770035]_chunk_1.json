@@ -1,0 +1,199 @@
+{
+    "objectTypes": [
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Position",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Consultation",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Interview Invitation",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Application[770035]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-02T09:19:34Z",
+                    "value": "770035"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Vacancy[550005]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-03T10:48:37Z",
+                    "value": "550005"
+                },
+                {
+                    "name": "Position",
+                    "time": "2019-07-03T10:48:37Z",
+                    "value": "Programmer"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Recruiter_Jana_Geisler",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-02T09:19:34Z",
+                    "value": "Jana Geisler"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Recruiter_Simon_Hense",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-03T10:48:37Z",
+                    "value": "Simon Hense"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Recruiter_Ed_Keane",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-03T10:48:37Z",
+                    "value": "Ed Keane"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Applicant_Sue_Jones",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-03T10:48:37Z",
+                    "value": "Sue Jones"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Consultation",
+            "time": "2019-07-02T09:19:34Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2019-07-02T09:19:34Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Recruiter_Jana_Geisler",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "Recruiter_Ed_Keane",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "Application[770035]",
+                    "qualifier": "related"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Interview Invitation",
+            "time": "2019-07-03T10:48:37Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2019-07-03T10:48:37Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Recruiter_Simon_Hense",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "Applicant_Sue_Jones",
+                    "qualifier": "related"
+                },
+                {
+                    "objectId": "Application[770035]",
+                    "qualifier": "related"
+                },
+                {
+                    "objectId": "Vacancy[550005]",
+                    "qualifier": "related"
+                }
+            ]
+        }
+    ]
+}

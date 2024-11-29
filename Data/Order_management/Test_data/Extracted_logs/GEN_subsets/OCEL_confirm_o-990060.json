@@ -1,0 +1,182 @@
+{
+    "objectTypes": [
+        {
+            "name": "order",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "type": "string"
+                },
+                {
+                    "name": "customer_name",
+                    "type": "string"
+                },
+                {
+                    "name": "sales_person",
+                    "type": "string"
+                },
+                {
+                    "name": "total_price",
+                    "type": "number"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                },
+                {
+                    "name": "product_name",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "number"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "order_confirmed",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o-1",
+            "type": "order",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "time": "2023-05-01T12:18:38Z",
+                    "value": "o-1"
+                },
+                {
+                    "name": "customer_name",
+                    "time": "2023-05-01T12:18:38Z",
+                    "value": "Christine von Dobbert"
+                },
+                {
+                    "name": "sales_person",
+                    "time": "2023-05-01T12:18:38Z",
+                    "value": "sales"
+                },
+                {
+                    "name": "total_price",
+                    "time": "2023-05-01T12:18:38Z",
+                    "value": 319.97
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-880258",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "2023-05-01T12:18:38Z",
+                    "value": "i-880258"
+                },
+                {
+                    "name": "product_name",
+                    "time": "2023-05-01T12:18:38Z",
+                    "value": "Fire Stick"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-05-01T12:18:38Z",
+                    "value": 39.99
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o-1",
+                    "qualifier": "part_of"
+                }
+            ]
+        },
+        {
+            "id": "i-880259",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "2023-05-01T12:18:38Z",
+                    "value": "i-880259"
+                },
+                {
+                    "name": "product_name",
+                    "time": "2023-05-01T12:18:38Z",
+                    "value": "Unnamed Item"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-05-01T12:18:38Z",
+                    "value": 79.99
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o-1",
+                    "qualifier": "part_of"
+                }
+            ]
+        },
+        {
+            "id": "i-880260",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "2023-05-01T12:18:38Z",
+                    "value": "i-880260"
+                },
+                {
+                    "name": "product_name",
+                    "time": "2023-05-01T12:18:38Z",
+                    "value": "Echo Studio"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-05-01T12:18:38Z",
+                    "value": 199.99
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o-1",
+                    "qualifier": "part_of"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "order_confirmed",
+            "time": "2023-05-01T12:18:38Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-05-01T12:18:38Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o-1",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

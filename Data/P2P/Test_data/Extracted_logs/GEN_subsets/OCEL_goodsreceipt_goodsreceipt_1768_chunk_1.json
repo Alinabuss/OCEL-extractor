@@ -1,0 +1,92 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "integer"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "invoice receipt created",
+            "attributes": [
+                {
+                    "name": "created by",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:1768",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "status",
+                    "time": "2024-07-24T10:34:00Z",
+                    "value": "complete"
+                },
+                {
+                    "name": "credit amount",
+                    "time": "2024-07-24T10:34:00Z",
+                    "value": "32500.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1768",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:1768",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2024-07-24T10:34:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "invoice receipt created",
+            "time": "2024-07-24T10:34:00Z",
+            "attributes": [
+                {
+                    "name": "created by",
+                    "value": "Finance/Account Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1768",
+                    "qualifier": "involved in"
+                }
+            ]
+        }
+    ]
+}

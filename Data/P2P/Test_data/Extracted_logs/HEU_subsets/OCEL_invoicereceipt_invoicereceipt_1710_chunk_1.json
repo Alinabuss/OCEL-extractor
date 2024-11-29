@@ -1,0 +1,137 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "float"
+                },
+                {
+                    "name": "movement type",
+                    "type": "float"
+                },
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "finalize creation",
+            "attributes": [
+                {
+                    "name": "goods receipts",
+                    "type": "string"
+                },
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "complete two - way match",
+            "attributes": [
+                {
+                    "name": "goods receipts",
+                    "type": "string"
+                },
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1708",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1707",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:1707",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "credit amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "1400.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 500,
+            "type": "finalize creation",
+            "time": "2024-07-09T20:53:00Z",
+            "attributes": [
+                {
+                    "name": "goods receipts",
+                    "value": ":"
+                },
+                {
+                    "name": "credit amount",
+                    "value": "1400.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1707",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 501,
+            "type": "complete two - way match",
+            "time": "2024-07-08T10:17:00Z",
+            "attributes": [
+                {
+                    "name": "goods receipts",
+                    "value": ":"
+                },
+                {
+                    "name": "credit amount",
+                    "value": "1400.0"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1708",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

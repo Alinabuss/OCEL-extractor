@@ -1,0 +1,91 @@
+{
+    "objectTypes": [
+        {
+            "name": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "processing",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Report",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "perform two - way match for goods receipt",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "Goods Receipt:242",
+            "type": "Report",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:242",
+            "type": "processing",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:239",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "invoice receipt:239",
+            "type": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "15,000.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 724,
+            "type": "perform two - way match for goods receipt",
+            "time": "2022-08-05T07:10:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:239",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "Goods Receipt:242",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:242",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

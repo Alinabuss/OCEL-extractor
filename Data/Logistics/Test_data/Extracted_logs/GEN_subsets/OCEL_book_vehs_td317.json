@@ -1,0 +1,117 @@
+{
+    "objectTypes": [
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "containers",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "departure_scheduled",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh70",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-01-18T13:19:05Z",
+                    "value": "vh70"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td317",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-01-18T13:19:05Z",
+                    "value": "td317"
+                },
+                {
+                    "name": "containers",
+                    "time": "2024-01-18T13:19:05Z",
+                    "value": "3.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2024-01-18T13:19:05Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2024-01-18T13:19:05Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh70",
+                    "qualifier": "booked_for"
+                },
+                {
+                    "objectId": "td317",
+                    "qualifier": "includes"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "departure_scheduled",
+            "time": "2024-01-26T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2024-01-26T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh70",
+                    "qualifier": "scheduled_departure"
+                }
+            ]
+        }
+    ]
+}

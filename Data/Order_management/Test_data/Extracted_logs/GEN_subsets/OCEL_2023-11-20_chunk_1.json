@@ -1,0 +1,181 @@
+{
+    "objectTypes": [
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                },
+                {
+                    "name": "product_type",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "number"
+                }
+            ]
+        },
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "item_picking",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "string"
+                },
+                {
+                    "name": "employee_name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "i-885005",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "2023-11-20T11:38:42Z",
+                    "value": "i-885005"
+                },
+                {
+                    "name": "product_type",
+                    "time": "2023-11-20T11:38:42Z",
+                    "value": "Kindle"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-11-20T11:38:42Z",
+                    "value": 87.81
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-884959",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "2023-11-20T13:45:44Z",
+                    "value": "i-884959"
+                },
+                {
+                    "name": "product_type",
+                    "time": "2023-11-20T13:45:44Z",
+                    "value": "iPad Pro"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-11-20T13:45:44Z",
+                    "value": 1206.37
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Benedikt Knopp",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-11-20T11:38:42Z",
+                    "value": "Benedikt Knopp"
+                },
+                {
+                    "name": "department",
+                    "time": "2023-11-20T11:38:42Z",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Christopher Schwanen",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-11-20T13:45:44Z",
+                    "value": "Christopher Schwanen"
+                },
+                {
+                    "name": "department",
+                    "time": "2023-11-20T13:45:44Z",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "item_picking",
+            "time": "2023-11-20T11:38:42Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-11-20T11:38:42Z"
+                },
+                {
+                    "name": "employee_name",
+                    "value": "Benedikt Knopp"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-885005",
+                    "qualifier": "picked_item"
+                },
+                {
+                    "objectId": "Benedikt Knopp",
+                    "qualifier": "picker"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "item_picking",
+            "time": "2023-11-20T13:45:44Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-11-20T13:45:44Z"
+                },
+                {
+                    "name": "employee_name",
+                    "value": "Christopher Schwanen"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-884959",
+                    "qualifier": "picked_item"
+                },
+                {
+                    "objectId": "Christopher Schwanen",
+                    "qualifier": "picker"
+                }
+            ]
+        }
+    ]
+}

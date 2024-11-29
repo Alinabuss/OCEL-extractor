@@ -1,0 +1,229 @@
+{
+    "objectTypes": [
+        {
+            "name": "Match",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Session",
+            "attributes": [
+                {
+                    "name": "session_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Player",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Town Center",
+            "attributes": [
+                {
+                    "name": "town_center_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Monastery",
+            "attributes": [
+                {
+                    "name": "monastery_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Gather Wood",
+            "attributes": [
+                {
+                    "name": "activity",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Set Gather Point",
+            "attributes": [
+                {
+                    "name": "gather_point",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Initiate Queue",
+            "attributes": [
+                {
+                    "name": "action",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "M250230427",
+            "type": "Match",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "time": "2023-07-31T00:00:00Z",
+                    "value": "M250230427"
+                }
+            ]
+        },
+        {
+            "id": "S250230427_2199669",
+            "type": "Session",
+            "attributes": [
+                {
+                    "name": "session_id",
+                    "time": "2023-07-31T00:00:00Z",
+                    "value": "S250230427_2199669"
+                }
+            ]
+        },
+        {
+            "id": "P2199669",
+            "type": "Player",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "time": "2023-07-31T00:00:00Z",
+                    "value": "P2199669"
+                }
+            ]
+        },
+        {
+            "id": "Town_Center_M250427_1",
+            "type": "Town Center",
+            "attributes": [
+                {
+                    "name": "town_center_id",
+                    "time": "2023-07-31T00:00:00Z",
+                    "value": "Town_Center_M250427_1"
+                }
+            ]
+        },
+        {
+            "id": "Monastery_M250427_1",
+            "type": "Monastery",
+            "attributes": [
+                {
+                    "name": "monastery_id",
+                    "time": "2023-07-31T00:00:00Z",
+                    "value": "Monastery_M250427_1"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Gather Wood",
+            "time": "2023-07-31T00:24:28Z",
+            "attributes": [
+                {
+                    "name": "activity",
+                    "value": "gathering wood"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "P2199669",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "in_session"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Gather Wood",
+            "time": "2023-07-31T00:24:29Z",
+            "attributes": [
+                {
+                    "name": "activity",
+                    "value": "gathering wood"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "P2199669",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "in_session"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Set Gather Point",
+            "time": "2023-07-31T00:25:33Z",
+            "attributes": [
+                {
+                    "name": "gather_point",
+                    "value": "none"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "P2199669",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "in_match"
+                },
+                {
+                    "objectId": "Town_Center_M250427_1",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Initiate Queue",
+            "time": "2023-07-31T00:25:54Z",
+            "attributes": [
+                {
+                    "name": "action",
+                    "value": "initiated"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "in_match"
+                },
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "in_session"
+                },
+                {
+                    "objectId": "Monastery_M250427_1",
+                    "qualifier": "linked_to"
+                }
+            ]
+        }
+    ]
+}

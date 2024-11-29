@@ -1,0 +1,113 @@
+{
+    "objectTypes": [
+        {
+            "name": "steel_sheet",
+            "attributes": [
+                {
+                    "name": "weight",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "machine",
+            "attributes": [
+                {
+                    "name": "electricity_consumed",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "split",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2_emission",
+                    "type": "float"
+                },
+                {
+                    "name": "steel_waste",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o_steelsheet_5275",
+            "type": "steel_sheet",
+            "attributes": [
+                {
+                    "name": "weight",
+                    "time": "2023-04-06T10:33:26Z",
+                    "value": "0.02108"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_steel_coil",
+                    "qualifier": "created_from"
+                }
+            ]
+        },
+        {
+            "id": "o_steel_coil",
+            "type": "steel_coil",
+            "attributes": [
+                {
+                    "name": "weight",
+                    "time": "2023-04-06T10:33:26Z",
+                    "value": "31.91076"
+                }
+            ]
+        },
+        {
+            "id": "Splitter01",
+            "type": "machine",
+            "attributes": [
+                {
+                    "name": "electricity_consumed",
+                    "time": "2023-04-06T10:33:26Z",
+                    "value": "0.0219403"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "split",
+            "time": "2023-04-06T10:33:26Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "14.36"
+                },
+                {
+                    "name": "CO2_emission",
+                    "value": "0.015016107"
+                },
+                {
+                    "name": "steel_waste",
+                    "value": "0.00042"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_steelsheet_5275",
+                    "qualifier": "processed_object"
+                },
+                {
+                    "objectId": "Splitter01",
+                    "qualifier": "performed_by"
+                }
+            ]
+        }
+    ]
+}

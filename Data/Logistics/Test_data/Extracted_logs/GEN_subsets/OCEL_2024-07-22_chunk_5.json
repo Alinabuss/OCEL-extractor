@@ -1,0 +1,279 @@
+{
+    "objectTypes": [
+        {
+            "name": "handling_unit",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "planned_departure_date",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "containers",
+                    "type": "float"
+                },
+                {
+                    "name": "vehicle_type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "collection",
+            "attributes": [
+                {
+                    "name": "handling_unit_ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "vehicle_ID",
+                    "type": "string"
+                },
+                {
+                    "name": "transport_document_ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "hu10023",
+            "type": "handling_unit",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-07-22T09:49:03Z",
+                    "value": "hu10023"
+                }
+            ]
+        },
+        {
+            "id": "hu10022",
+            "type": "handling_unit",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-07-22T09:54:59Z",
+                    "value": "hu10022"
+                }
+            ]
+        },
+        {
+            "id": "vh126",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-07-22T11:38:00Z",
+                    "value": "vh126"
+                },
+                {
+                    "name": "planned_departure_date",
+                    "time": "2024-08-09T11:00:00Z",
+                    "value": "2024-08-09T11:00:00Z"
+                }
+            ]
+        },
+        {
+            "id": "td559",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-07-22T11:38:00Z",
+                    "value": "td559"
+                },
+                {
+                    "name": "containers",
+                    "time": "2024-07-22T11:38:00Z",
+                    "value": 1.0
+                },
+                {
+                    "name": "vehicle_type",
+                    "time": "2024-07-22T11:38:00Z",
+                    "value": "regular"
+                }
+            ]
+        },
+        {
+            "id": "hu10029",
+            "type": "handling_unit",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-07-22T11:57:57Z",
+                    "value": "hu10029"
+                }
+            ]
+        },
+        {
+            "id": "vh128",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-07-22T12:45:09Z",
+                    "value": "vh128"
+                },
+                {
+                    "name": "planned_departure_date",
+                    "time": "2024-08-16T11:00:00Z",
+                    "value": "2024-08-16T11:00:00Z"
+                }
+            ]
+        },
+        {
+            "id": "td560",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-07-22T12:45:09Z",
+                    "value": "td560"
+                },
+                {
+                    "name": "containers",
+                    "time": "2024-07-22T12:45:09Z",
+                    "value": 4.0
+                },
+                {
+                    "name": "vehicle_type",
+                    "time": "2024-07-22T12:45:09Z",
+                    "value": "regular"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "collection",
+            "time": "2024-07-22T09:49:03Z",
+            "attributes": [
+                {
+                    "name": "handling_unit_ID",
+                    "value": "hu10023"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "hu10023",
+                    "qualifier": "collected"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "collection",
+            "time": "2024-07-22T09:54:59Z",
+            "attributes": [
+                {
+                    "name": "handling_unit_ID",
+                    "value": "hu10022"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "hu10022",
+                    "qualifier": "collected"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "booking",
+            "time": "2024-07-22T11:38:00Z",
+            "attributes": [
+                {
+                    "name": "vehicle_ID",
+                    "value": "vh126"
+                },
+                {
+                    "name": "transport_document_ID",
+                    "value": "td559"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh126",
+                    "qualifier": "booked"
+                },
+                {
+                    "objectId": "td559",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "collection",
+            "time": "2024-07-22T11:57:57Z",
+            "attributes": [
+                {
+                    "name": "handling_unit_ID",
+                    "value": "hu10029"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "hu10029",
+                    "qualifier": "collected"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "booking",
+            "time": "2024-07-22T12:45:09Z",
+            "attributes": [
+                {
+                    "name": "vehicle_ID",
+                    "value": "vh128"
+                },
+                {
+                    "name": "transport_document_ID",
+                    "value": "td560"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh128",
+                    "qualifier": "booked"
+                },
+                {
+                    "objectId": "td560",
+                    "qualifier": "associated_with"
+                }
+            ]
+        }
+    ]
+}

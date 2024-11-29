@@ -1,0 +1,87 @@
+{
+    "objectTypes": [
+        {
+            "name": "credit amount",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "movement type",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "perform two - way match",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:321",
+            "type": "movement type",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:319",
+            "type": "credit amount",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "47,500.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:319",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1065,
+            "type": "perform two - way match",
+            "time": "2022-09-12T07:10:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Finance / Account Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:321",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "invoice receipt:319",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

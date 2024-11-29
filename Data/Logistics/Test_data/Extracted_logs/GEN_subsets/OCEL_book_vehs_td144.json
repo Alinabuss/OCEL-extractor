@@ -1,0 +1,101 @@
+{
+    "objectTypes": [
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "departure_date",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh37",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-09-12T10:08:10Z",
+                    "value": "vh37"
+                },
+                {
+                    "name": "departure_date",
+                    "time": "2023-10-03T11:00:00Z",
+                    "value": "2023-10-03T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td144",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-09-12T10:08:10Z",
+                    "value": "td144"
+                },
+                {
+                    "name": "amount",
+                    "time": "2023-09-12T10:08:10Z",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh37",
+                    "qualifier": "linked_with"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2023-09-12T10:08:10Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-09-12T10:08:10Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td144",
+                    "qualifier": "booked_for"
+                }
+            ]
+        }
+    ]
+}

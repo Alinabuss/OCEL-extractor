@@ -1,0 +1,96 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods",
+            "attributes": [
+                {
+                    "name": "July",
+                    "type": "string"
+                },
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "invoice",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "perform two - way match",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1723",
+            "type": "goods",
+            "attributes": [
+                {
+                    "name": "July",
+                    "time": "2024-07-11T07:10:00Z",
+                    "value": "July"
+                },
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "receipt invoice receipt:1721",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "receipt invoice receipt:1721",
+            "type": "invoice",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "213,600.00"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 586,
+            "type": "perform two - way match",
+            "time": "2024-07-11T07:10:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Finance / Account Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "receipt invoice receipt:1721",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:1723",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

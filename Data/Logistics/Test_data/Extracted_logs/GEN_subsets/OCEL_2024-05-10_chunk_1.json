@@ -1,0 +1,240 @@
+{
+    "objectTypes": [
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "amount_of_containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "departure_date",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create_transport_document",
+            "attributes": [
+                {
+                    "name": "transport_document_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "process_transport_document",
+            "attributes": [
+                {
+                    "name": "transport_document_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "book_vehicle",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td463",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2024-05-10T07:55:52Z",
+                    "value": "td463"
+                },
+                {
+                    "name": "amount_of_containers",
+                    "time": "2024-05-10T07:55:52Z",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td464",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2024-05-10T09:48:18Z",
+                    "value": "td464"
+                },
+                {
+                    "name": "amount_of_containers",
+                    "time": "2024-05-10T09:48:18Z",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh101",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2024-05-10T07:55:52Z",
+                    "value": "vh101"
+                },
+                {
+                    "name": "departure_date",
+                    "time": "2024-05-14T11:00:00Z",
+                    "value": "2024-05-14T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh103",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2024-05-10T07:55:52Z",
+                    "value": "vh103"
+                },
+                {
+                    "name": "departure_date",
+                    "time": "2024-05-21T11:00:00Z",
+                    "value": "2024-05-21T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh107",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2024-05-10T09:48:18Z",
+                    "value": "vh107"
+                },
+                {
+                    "name": "departure_date",
+                    "time": "2024-06-04T11:00:00Z",
+                    "value": "2024-06-04T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create_transport_document",
+            "time": "2024-05-10T07:55:52Z",
+            "attributes": [
+                {
+                    "name": "transport_document_id",
+                    "value": "td463"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": 2,
+            "type": "book_vehicle",
+            "time": "2024-05-10T07:55:52Z",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "value": "vh101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td463",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "book_vehicle",
+            "time": "2024-05-10T07:55:52Z",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "value": "vh103"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td463",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "process_transport_document",
+            "time": "2024-05-10T09:48:18Z",
+            "attributes": [
+                {
+                    "name": "transport_document_id",
+                    "value": "td464"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": 5,
+            "type": "book_vehicle",
+            "time": "2024-05-10T09:48:18Z",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "value": "vh101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td464",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "type": "book_vehicle",
+            "time": "2024-05-10T09:48:18Z",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "value": "vh107"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td464",
+                    "qualifier": "associated_with"
+                }
+            ]
+        }
+    ]
+}

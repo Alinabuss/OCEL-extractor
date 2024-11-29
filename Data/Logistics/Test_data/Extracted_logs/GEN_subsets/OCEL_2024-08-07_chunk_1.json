@@ -1,0 +1,160 @@
+{
+    "objectTypes": [
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Number of Containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Priority",
+                    "type": "string"
+                },
+                {
+                    "name": "Departure Date",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Link Transport Document to Booking",
+            "attributes": [
+                {
+                    "name": "Transport Document ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Book Vehicle",
+            "attributes": [
+                {
+                    "name": "Vehicle ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Transport Document ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td573",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-08-07T09:12:18Z",
+                    "value": "td573"
+                },
+                {
+                    "name": "Number of Containers",
+                    "time": "2024-08-07T09:12:18Z",
+                    "value": "3.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td574",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-08-07T13:22:15Z",
+                    "value": "td574"
+                },
+                {
+                    "name": "Number of Containers",
+                    "time": "2024-08-07T13:22:15Z",
+                    "value": "3.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh126",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-08-07T13:22:15Z",
+                    "value": "vh126"
+                },
+                {
+                    "name": "Priority",
+                    "time": "2024-08-07T13:22:15Z",
+                    "value": "high-priority"
+                },
+                {
+                    "name": "Departure Date",
+                    "time": "2024-08-09T11:00:00Z",
+                    "value": "2024-08-09T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Link Transport Document to Booking",
+            "time": "2024-08-07T09:12:18Z",
+            "attributes": [
+                {
+                    "name": "Transport Document ID",
+                    "value": "td573"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td573",
+                    "qualifier": "linked"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Book Vehicle",
+            "time": "2024-08-07T13:22:15Z",
+            "attributes": [
+                {
+                    "name": "Vehicle ID",
+                    "value": "vh126"
+                },
+                {
+                    "name": "Transport Document ID",
+                    "value": "td574"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td574",
+                    "qualifier": "booked"
+                },
+                {
+                    "objectId": "vh126",
+                    "qualifier": "booked"
+                }
+            ]
+        }
+    ]
+}

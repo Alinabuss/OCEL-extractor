@@ -1,0 +1,95 @@
+{
+    "objectTypes": [
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "vehicle_type",
+                    "type": "string"
+                },
+                {
+                    "name": "departure_date",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "container_count",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "event_type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh111",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "vehicle_type",
+                    "time": "2024-06-18T11:00:00Z",
+                    "value": "regular"
+                },
+                {
+                    "name": "departure_date",
+                    "time": "2024-06-18T11:00:00Z",
+                    "value": "2024-06-18T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td483",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "container_count",
+                    "time": "2024-05-24T13:19:38Z",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2024-05-24T13:19:38Z",
+            "attributes": [
+                {
+                    "name": "event_type",
+                    "value": "vehicle_booking"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh111",
+                    "qualifier": "booked_vehicle"
+                },
+                {
+                    "objectId": "td483",
+                    "qualifier": "associated_transport_document"
+                }
+            ]
+        }
+    ]
+}

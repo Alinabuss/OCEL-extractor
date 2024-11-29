@@ -1,0 +1,109 @@
+{
+    "objectTypes": [
+        {
+            "name": "steel_sheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "workstation",
+            "attributes": []
+        },
+        {
+            "name": "machine",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "heating_process",
+            "attributes": [
+                {
+                    "name": "carbon_emissions",
+                    "type": "float"
+                },
+                {
+                    "name": "electricity_consumed",
+                    "type": "float"
+                },
+                {
+                    "name": "gas_input_emissions",
+                    "type": "float"
+                },
+                {
+                    "name": "duration",
+                    "type": "integer"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "SteelSheet[4429]",
+            "type": "steel_sheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-05T13:03:58Z",
+                    "value": "0.02118"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Workstation[1]",
+            "type": "workstation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Machine[oven01]",
+            "type": "machine",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "heating_process",
+            "time": "2023-04-05T13:03:58Z",
+            "attributes": [
+                {
+                    "name": "carbon_emissions",
+                    "value": "0.0138019093344"
+                },
+                {
+                    "name": "electricity_consumed",
+                    "value": "0.02"
+                },
+                {
+                    "name": "gas_input_emissions",
+                    "value": "0.49392"
+                },
+                {
+                    "name": "duration",
+                    "value": "900"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelSheet[4429]",
+                    "qualifier": "object"
+                },
+                {
+                    "objectId": "Workstation[1]",
+                    "qualifier": "occurs_at"
+                },
+                {
+                    "objectId": "Machine[oven01]",
+                    "qualifier": "uses"
+                }
+            ]
+        }
+    ]
+}

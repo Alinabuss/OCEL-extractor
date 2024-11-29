@@ -1,0 +1,150 @@
+{
+    "objectTypes": [
+        {
+            "name": "Purchasing Group",
+            "attributes": [
+                {
+                    "name": "label",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Purchase Requisition",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Quotation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Initiate Purchase Requisition",
+            "attributes": [
+                {
+                    "name": "requisition_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Create Quotation",
+            "attributes": [
+                {
+                    "name": "quotation_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "003",
+            "type": "Purchasing Group",
+            "attributes": [
+                {
+                    "name": "label",
+                    "time": "",
+                    "value": "003"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_requisition:269:pr_trigger_269",
+            "type": "Purchase Requisition",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "",
+                    "value": "purchase_requisition:269:pr_trigger_269"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "quotation:269",
+            "type": "Quotation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "",
+                    "value": "quotation:269"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "procurement_department",
+            "type": "Department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "",
+                    "value": "Procurement Department"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Initiate Purchase Requisition",
+            "time": "2023-01-01T23:45:00Z",
+            "attributes": [
+                {
+                    "name": "requisition_id",
+                    "value": "purchase_requisition:269:pr_trigger_269"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "003",
+                    "qualifier": "initiated_by"
+                },
+                {
+                    "objectId": "procurement_department",
+                    "qualifier": "executed_by"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Create Quotation",
+            "time": "2023-01-01T23:45:00Z",
+            "attributes": [
+                {
+                    "name": "quotation_id",
+                    "value": "quotation:269"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "003",
+                    "qualifier": "associated_with"
+                }
+            ]
+        }
+    ]
+}

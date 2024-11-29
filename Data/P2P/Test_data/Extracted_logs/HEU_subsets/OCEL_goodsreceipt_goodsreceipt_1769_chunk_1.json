@@ -1,0 +1,225 @@
+{
+    "objectTypes": [
+        {
+            "name": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "group purchase",
+            "attributes": [
+                {
+                    "name": "purchase orders",
+                    "type": "float"
+                },
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "purchase orders",
+                    "type": "string"
+                },
+                {
+                    "name": "Report on Goods Receipt",
+                    "type": "string"
+                },
+                {
+                    "name": "July",
+                    "type": "string"
+                },
+                {
+                    "name": "Department Warehouse",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "document goods receipt again",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1769",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "purchase orders",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "two"
+                },
+                {
+                    "name": "Report on Goods Receipt",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Receipt :"
+                },
+                {
+                    "name": "July",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "July"
+                },
+                {
+                    "name": "Department Warehouse",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase order purchase_order:1431",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:1434",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase order purchase_order:1431",
+            "type": "group purchase",
+            "attributes": [
+                {
+                    "name": "purchase orders",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "003"
+                },
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:1434",
+            "type": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1769",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 387,
+            "type": "create",
+            "time": "2024-07-22T23:33:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase order purchase_order:1431",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:1769",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 388,
+            "type": "document goods receipt again",
+            "time": "2024-07-26T16:06:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1434",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:1769",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 389,
+            "type": "create",
+            "time": "1769-09-22T23:33:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase order purchase_order:1431",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:1769",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 390,
+            "type": "document goods receipt again",
+            "time": "1769-09-22T16:06:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1434",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:1769",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

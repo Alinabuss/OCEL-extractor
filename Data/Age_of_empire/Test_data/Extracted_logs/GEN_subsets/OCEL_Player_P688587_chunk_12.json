@@ -1,0 +1,242 @@
+{
+    "objectTypes": [
+        {
+            "name": "player",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "match",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "villager",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "farm",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "town_center",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "session",
+            "attributes": [
+                {
+                    "name": "label",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "execute_command_queue",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "initiate_construction",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "object_type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "gathering_activity",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "resource_type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "set_gather_point",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "location",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Player[P688587]",
+            "type": "player",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Match[M250230427]",
+            "type": "match",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Villager[M250230427_28]",
+            "type": "villager",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Farm_M250230427_9",
+            "type": "farm",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Town Center[Town_Center_M250230427_2]",
+            "type": "town_center",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Session[S25043027_688587]",
+            "type": "session",
+            "attributes": [
+                {
+                    "name": "label",
+                    "time": "2023-07-31T00:00:00Z",
+                    "value": "Session[S25043027_688587]"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "execute_command_queue",
+            "time": "2023-07-31T00:26:55Z",
+            "attributes": [
+                {
+                    "name": "type",
+                    "value": "Villager command queue execution"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Player[P688587]",
+                    "qualifier": "executed"
+                },
+                {
+                    "objectId": "Town Center[Town_Center_M250230427_2]",
+                    "qualifier": "interacted_with"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "initiate_construction",
+            "time": "2023-07-31T00:26:57Z",
+            "attributes": [
+                {
+                    "name": "object_type",
+                    "value": "Farm"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Player[P688587]",
+                    "qualifier": "initiated"
+                },
+                {
+                    "objectId": "Farm_M250230427_9",
+                    "qualifier": "constructed"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "gathering_activity",
+            "time": "2023-07-31T00:27:03Z",
+            "attributes": [
+                {
+                    "name": "resource_type",
+                    "value": "wood"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Player[P688587]",
+                    "qualifier": "participated_in"
+                },
+                {
+                    "objectId": "Match[M250230427]",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "set_gather_point",
+            "time": "2023-07-31T00:27:06Z",
+            "attributes": [
+                {
+                    "name": "location",
+                    "value": "Town Center[Town_Center_M250230427_2]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Player[P688587]",
+                    "qualifier": "set"
+                },
+                {
+                    "objectId": "Town Center[Town_Center_M250230427_2]",
+                    "qualifier": "gather_point"
+                }
+            ]
+        }
+    ]
+}

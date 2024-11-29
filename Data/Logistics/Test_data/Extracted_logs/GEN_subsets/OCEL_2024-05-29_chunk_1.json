@@ -1,0 +1,113 @@
+{
+    "objectTypes": [
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "number_of_containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "departure_date",
+                    "type": "date"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Booking",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "type": "string"
+                },
+                {
+                    "name": "vehicle_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td488",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-05-29T12:50:02Z",
+                    "value": "td488"
+                },
+                {
+                    "name": "number_of_containers",
+                    "time": "2024-05-29T12:50:02Z",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh110",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "vh110",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-05-29T12:50:02Z",
+                    "value": "vh110"
+                },
+                {
+                    "name": "departure_date",
+                    "time": "2024-06-14T00:00:00Z",
+                    "value": "2024-06-14"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Booking",
+            "time": "2024-05-29T12:50:02Z",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "value": "td488"
+                },
+                {
+                    "name": "vehicle_id",
+                    "value": "vh110"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td488",
+                    "qualifier": "booked for"
+                },
+                {
+                    "objectId": "vh110",
+                    "qualifier": "booked vehicle"
+                }
+            ]
+        }
+    ]
+}

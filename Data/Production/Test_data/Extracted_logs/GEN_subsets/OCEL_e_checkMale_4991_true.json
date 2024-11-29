@@ -1,0 +1,133 @@
+{
+    "objectTypes": [
+        {
+            "name": "worker",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "part",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "workstation",
+            "attributes": [
+                {
+                    "name": "label",
+                    "type": "string"
+                },
+                {
+                    "name": "property",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "check",
+            "attributes": [
+                {
+                    "name": "carbon_dioxide_emission",
+                    "type": "float"
+                },
+                {
+                    "name": "compressed_air_used",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Worker[1]",
+            "type": "worker",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-06T11:35:13Z",
+                    "value": "Worker[1]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "MalePart[4991]",
+            "type": "part",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-06T11:35:13Z",
+                    "value": "MalePart[4991]"
+                },
+                {
+                    "name": "type",
+                    "time": "2023-04-06T11:35:13Z",
+                    "value": "male"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Workstation[2]",
+            "type": "workstation",
+            "attributes": [
+                {
+                    "name": "label",
+                    "time": "2023-04-06T11:35:13Z",
+                    "value": "Workstation[2]"
+                },
+                {
+                    "name": "property",
+                    "time": "2023-04-06T11:35:13Z",
+                    "value": "electric consumption from the grid"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "check",
+            "time": "2023-04-06T11:35:13Z",
+            "attributes": [
+                {
+                    "name": "carbon_dioxide_emission",
+                    "value": "0.00142956"
+                },
+                {
+                    "name": "compressed_air_used",
+                    "value": "0.022"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Worker[1]",
+                    "qualifier": "performed"
+                },
+                {
+                    "objectId": "MalePart[4991]",
+                    "qualifier": "checked"
+                },
+                {
+                    "objectId": "Workstation[2]",
+                    "qualifier": "used"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,139 @@
+{
+    "objectTypes": [
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Transaction",
+            "attributes": [
+                {
+                    "name": "transaction_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Order Confirmation",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Kindle",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-05-04T11:44:12Z",
+                    "value": "79.99"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "iPad",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-05-04T11:44:12Z",
+                    "value": "495.00"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Echo Studio",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-05-04T11:44:12Z",
+                    "value": "199.99"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-880356",
+            "type": "Transaction",
+            "attributes": [
+                {
+                    "name": "transaction_id",
+                    "time": "2023-05-04T11:44:12Z",
+                    "value": "i-880356"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Istvan Koren",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "role",
+                    "time": "2023-05-04T11:44:12Z",
+                    "value": "sales employee"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Order Confirmation",
+            "time": "2023-05-04T11:44:12Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-05-04T11:44:12Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-880356",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "Istvan Koren",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "Kindle",
+                    "qualifier": "includes"
+                },
+                {
+                    "objectId": "iPad",
+                    "qualifier": "includes"
+                },
+                {
+                    "objectId": "Echo Studio",
+                    "qualifier": "includes"
+                }
+            ]
+        }
+    ]
+}

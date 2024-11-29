@@ -1,0 +1,140 @@
+{
+    "objectTypes": [
+        {
+            "name": "steel sheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                },
+                {
+                    "name": "origin",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "machine",
+            "attributes": [
+                {
+                    "name": "identifier",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "workstation",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "splitting operation",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2 emitted",
+                    "type": "float"
+                },
+                {
+                    "name": "electricity consumed",
+                    "type": "float"
+                },
+                {
+                    "name": "steel waste",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o_steelsheet_292",
+            "type": "steel sheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-03T08:23:36Z",
+                    "value": "0.02104"
+                },
+                {
+                    "name": "origin",
+                    "time": "2023-04-03T08:23:36Z",
+                    "value": "31.91076"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "splitter01",
+            "type": "machine",
+            "attributes": [
+                {
+                    "name": "identifier",
+                    "time": "2023-04-03T08:23:36Z",
+                    "value": "splitter01"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "workstation_1",
+            "type": "workstation",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2023-04-03T08:23:36Z",
+                    "value": "specific site"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "splitting operation",
+            "time": "2023-04-03T08:23:36Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "14.228"
+                },
+                {
+                    "name": "CO2 emitted",
+                    "value": "0.0148771866"
+                },
+                {
+                    "name": "electricity consumed",
+                    "value": "0.0217372"
+                },
+                {
+                    "name": "steel waste",
+                    "value": "0.00042"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_steelsheet_292",
+                    "qualifier": "produces"
+                },
+                {
+                    "objectId": "workstation_1",
+                    "qualifier": "at"
+                },
+                {
+                    "objectId": "splitter01",
+                    "qualifier": "using"
+                }
+            ]
+        }
+    ]
+}

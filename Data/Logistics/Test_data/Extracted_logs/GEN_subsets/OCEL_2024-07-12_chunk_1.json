@@ -1,0 +1,163 @@
+{
+    "objectTypes": [
+        {
+            "name": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "ContainerCount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "DepartureTime",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "BookingCompleted",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "ContainerCount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td546",
+            "type": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-07-12T09:53:44Z",
+                    "value": "td546"
+                },
+                {
+                    "name": "ContainerCount",
+                    "time": "2024-07-12T09:53:44Z",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td547",
+            "type": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-07-12T15:19:20Z",
+                    "value": "td547"
+                },
+                {
+                    "name": "ContainerCount",
+                    "time": "2024-07-12T15:19:20Z",
+                    "value": "4.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh119",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-07-12T09:53:44Z",
+                    "value": "vh119"
+                },
+                {
+                    "name": "DepartureTime",
+                    "time": "2024-07-16T11:00:00Z",
+                    "value": "2024-07-16T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh124",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-07-12T09:53:44Z",
+                    "value": "vh124"
+                },
+                {
+                    "name": "DepartureTime",
+                    "time": "2024-08-02T11:00:00Z",
+                    "value": "2024-08-02T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "BookingCompleted",
+            "time": "2024-07-12T09:53:44Z",
+            "attributes": [
+                {
+                    "name": "ContainerCount",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td546",
+                    "qualifier": "relatedTo"
+                },
+                {
+                    "objectId": "vh119",
+                    "qualifier": "includes"
+                },
+                {
+                    "objectId": "vh124",
+                    "qualifier": "includes"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "BookingCompleted",
+            "time": "2024-07-12T15:19:20Z",
+            "attributes": [
+                {
+                    "name": "ContainerCount",
+                    "value": "4.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td547",
+                    "qualifier": "relatedTo"
+                },
+                {
+                    "objectId": "vh124",
+                    "qualifier": "includes"
+                }
+            ]
+        }
+    ]
+}

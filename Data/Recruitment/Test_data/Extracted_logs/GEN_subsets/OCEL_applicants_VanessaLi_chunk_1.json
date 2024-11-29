@@ -1,0 +1,175 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Offer",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "title",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Offer Accepted",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "recruiter",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Hired",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Vanessa Li",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-06-28T18:35:40Z",
+                    "value": "Vanessa Li"
+                }
+            ]
+        },
+        {
+            "id": "Dionne Hense",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-06-28T18:35:40Z",
+                    "value": "Dionne Hense"
+                }
+            ]
+        },
+        {
+            "id": "Offer[990005]",
+            "type": "Offer",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2019-06-28T18:35:40Z",
+                    "value": "990005"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770148]",
+                    "qualifier": "relatedTo"
+                },
+                {
+                    "objectId": "Vacancy[550014]",
+                    "qualifier": "forPosition"
+                }
+            ]
+        },
+        {
+            "id": "Application[770148]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2019-06-28T18:35:40Z",
+                    "value": "770148"
+                }
+            ]
+        },
+        {
+            "id": "Vacancy[550014]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "title",
+                    "time": "2019-06-28T18:35:40Z",
+                    "value": "Manager"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Offer Accepted",
+            "time": "2019-06-28T18:35:40Z",
+            "attributes": [
+                {
+                    "name": "recruiter",
+                    "value": "Dionne Hense"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vanessa Li",
+                    "qualifier": "pertainsTo"
+                },
+                {
+                    "objectId": "Offer[990005]",
+                    "qualifier": "acceptedOffer"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Hired",
+            "time": "2019-06-28T18:35:40Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Vanessa Li",
+                    "qualifier": "wasHired"
+                }
+            ]
+        }
+    ]
+}

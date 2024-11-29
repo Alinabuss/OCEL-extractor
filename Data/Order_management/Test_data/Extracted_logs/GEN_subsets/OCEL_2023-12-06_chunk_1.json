@@ -1,0 +1,141 @@
+{
+    "objectTypes": [
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "picking",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "picked_price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "i-885109",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-12-06T12:30:14Z",
+                    "value": "iPad Air"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-12-06T12:30:14Z",
+                    "value": "522.5"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-885039",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-12-06T16:03:59Z",
+                    "value": "iPad Pro"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-12-06T16:03:59Z",
+                    "value": "1206.37"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Nina Graves",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "role",
+                    "time": "2023-12-06T00:00:00Z",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "picking",
+            "time": "2023-12-06T12:30:14Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-12-06T12:30:14Z"
+                },
+                {
+                    "name": "picked_price",
+                    "value": "522.5"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-885109",
+                    "qualifier": "picked_item"
+                },
+                {
+                    "objectId": "Nina Graves",
+                    "qualifier": "conducted_by"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "picking",
+            "time": "2023-12-06T16:03:59Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-12-06T16:03:59Z"
+                },
+                {
+                    "name": "picked_price",
+                    "value": "1206.37"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-885039",
+                    "qualifier": "picked_item"
+                },
+                {
+                    "objectId": "Nina Graves",
+                    "qualifier": "conducted_by"
+                }
+            ]
+        }
+    ]
+}

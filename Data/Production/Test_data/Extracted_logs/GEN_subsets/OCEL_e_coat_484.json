@@ -1,0 +1,146 @@
+{
+    "objectTypes": [
+        {
+            "name": "formed_part",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "workstation",
+            "attributes": [
+                {
+                    "name": "label",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "machine",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "coating_process",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "integer"
+                },
+                {
+                    "name": "co2_emission",
+                    "type": "float"
+                },
+                {
+                    "name": "electricity_consumed",
+                    "type": "float"
+                },
+                {
+                    "name": "coating_material_input",
+                    "type": "float"
+                },
+                {
+                    "name": "waste_produced",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o_formedpart_484",
+            "type": "formed_part",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-04-03T09:26:36Z",
+                    "value": "o_formedpart_484"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "coated_at"
+                }
+            ]
+        },
+        {
+            "id": "o_workstation_1",
+            "type": "workstation",
+            "attributes": [
+                {
+                    "name": "label",
+                    "time": "2023-04-03T09:26:36Z",
+                    "value": "o_workstation_1"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_machine_coater03",
+                    "qualifier": "contains"
+                }
+            ]
+        },
+        {
+            "id": "o_machine_coater03",
+            "type": "machine",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-04-03T09:26:36Z",
+                    "value": "o_machine_coater03"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "located_at"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "coating_process",
+            "time": "2023-04-03T09:26:36Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": 300
+                },
+                {
+                    "name": "co2_emission",
+                    "value": 0.175
+                },
+                {
+                    "name": "electricity_consumed",
+                    "value": 0.25
+                },
+                {
+                    "name": "coating_material_input",
+                    "value": 0.0004
+                },
+                {
+                    "name": "waste_produced",
+                    "value": 0.0001
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_formedpart_484",
+                    "qualifier": "processed"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,119 @@
+{
+    "objectTypes": [
+        {
+            "name": "Steel Coil",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Steel Sheet",
+            "attributes": [
+                {
+                    "name": "weight",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Splitting Process",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2 output",
+                    "type": "float"
+                },
+                {
+                    "name": "electricity consumption",
+                    "type": "float"
+                },
+                {
+                    "name": "steel waste",
+                    "type": "float"
+                },
+                {
+                    "name": "destination",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "steel_coil_1",
+            "type": "Steel Coil",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-04T12:10:59Z",
+                    "value": "31.91076"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_steelsheet_2731",
+            "type": "Steel Sheet",
+            "attributes": [
+                {
+                    "name": "weight",
+                    "time": "2023-04-04T12:10:59Z",
+                    "value": "0.02107"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "steel_coil_1",
+                    "qualifier": "resulted from"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Splitting Process",
+            "time": "2023-04-04T12:10:59Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "14.59978"
+                },
+                {
+                    "name": "CO2 output",
+                    "value": "0.0152656986"
+                },
+                {
+                    "name": "electricity consumption",
+                    "value": "0.0223052"
+                },
+                {
+                    "name": "steel waste",
+                    "value": "0.00042"
+                },
+                {
+                    "name": "destination",
+                    "value": "recycling"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "steel_coil_1",
+                    "qualifier": "input"
+                },
+                {
+                    "objectId": "o_steelsheet_2731",
+                    "qualifier": "output"
+                }
+            ]
+        }
+    ]
+}

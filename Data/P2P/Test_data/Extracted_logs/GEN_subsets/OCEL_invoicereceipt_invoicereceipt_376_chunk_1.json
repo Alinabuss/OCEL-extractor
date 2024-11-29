@@ -1,0 +1,123 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "type": "int"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create_invoice_receipt",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "complete_invoice_receipt",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice_receipt:376",
+            "type": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "time": "2022-09-27T03:19:00Z",
+                    "value": "47350.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods_receipt:356",
+                    "qualifier": "linked_to"
+                },
+                {
+                    "objectId": "goods_receipt:358",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": "goods_receipt:356",
+            "type": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "time": "2022-09-27T03:19:00Z",
+                    "value": "101"
+                }
+            ]
+        },
+        {
+            "id": "goods_receipt:358",
+            "type": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "time": "2022-09-27T07:13:00Z",
+                    "value": "101"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create_invoice_receipt",
+            "time": "2022-09-27T03:19:00Z",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "value": "47350.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice_receipt:376",
+                    "qualifier": "created"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "complete_invoice_receipt",
+            "time": "2022-09-27T07:13:00Z",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "value": "47350.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice_receipt:376",
+                    "qualifier": "completed"
+                }
+            ]
+        }
+    ]
+}

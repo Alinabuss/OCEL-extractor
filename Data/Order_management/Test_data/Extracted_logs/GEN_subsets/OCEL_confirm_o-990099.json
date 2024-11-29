@@ -1,0 +1,145 @@
+{
+    "objectTypes": [
+        {
+            "name": "order",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "customer",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "order_confirmed",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o-990099",
+            "type": "order",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-05-08T06:24:37Z",
+                    "value": "174.98"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Kindle",
+                    "qualifier": "includes"
+                },
+                {
+                    "objectId": "Echo Show 5",
+                    "qualifier": "includes"
+                },
+                {
+                    "objectId": "Balkan Minerals d.o.o.",
+                    "qualifier": "customer"
+                }
+            ]
+        },
+        {
+            "id": "Kindle",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-05-08T06:24:37Z",
+                    "value": "79.99"
+                }
+            ]
+        },
+        {
+            "id": "Echo Show 5",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-05-08T06:24:37Z",
+                    "value": "89.99"
+                }
+            ]
+        },
+        {
+            "id": "Balkan Minerals d.o.o.",
+            "type": "customer",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-05-08T06:24:37Z",
+                    "value": "Balkan Minerals d.o.o."
+                }
+            ]
+        },
+        {
+            "id": "Christine von Dobbert",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "role",
+                    "time": "2023-05-08T06:24:37Z",
+                    "value": "sales"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "order_confirmed",
+            "time": "2023-05-08T06:24:37Z",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "value": "o-990099"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o-990099",
+                    "qualifier": "confirmed"
+                },
+                {
+                    "objectId": "Christine von Dobbert",
+                    "qualifier": "confirmed_by"
+                }
+            ]
+        }
+    ]
+}

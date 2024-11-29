@@ -1,0 +1,138 @@
+{
+    "objectTypes": [
+        {
+            "name": "player",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "villager",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "match",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "session",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "town_center",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "command_issued",
+            "attributes": [
+                {
+                    "name": "action",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Player[767395]",
+            "type": "player",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Villager[M227028371_151]",
+            "type": "villager",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Town_Center[M227028371_6]",
+                    "qualifier": "belongs_to"
+                }
+            ]
+        },
+        {
+            "id": "Match[M227028371]",
+            "type": "match",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Session[S227028371_767395]",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": "Session[S227028371_767395]",
+            "type": "session",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Town_Center[M227028371_6]",
+            "type": "town_center",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Match[M227028371]",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "command_issued",
+            "time": "2023-04-17T01:05:05Z",
+            "attributes": [
+                {
+                    "name": "action",
+                    "value": "queue_villager"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Player[767395]",
+                    "qualifier": "issued_by"
+                },
+                {
+                    "objectId": "Villager[M227028371_151]",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "Match[M227028371]",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "Session[S227028371_767395]",
+                    "qualifier": "in"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,138 @@
+{
+    "objectTypes": [
+        {
+            "name": "worker",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "part",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "mass",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "workstation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "power_consumption",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "check",
+            "attributes": [
+                {
+                    "name": "emission",
+                    "type": "float"
+                },
+                {
+                    "name": "compressed_air_used",
+                    "type": "float"
+                },
+                {
+                    "name": "duration",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o_worker_1",
+            "type": "worker",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-04-06T15:15:15Z",
+                    "value": "o_worker_1"
+                }
+            ]
+        },
+        {
+            "id": "o_malepart_5571",
+            "type": "part",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-04-06T15:15:15Z",
+                    "value": "o_malepart_5571"
+                },
+                {
+                    "name": "mass",
+                    "time": "2023-04-06T15:15:15Z",
+                    "value": "unspecified"
+                }
+            ]
+        },
+        {
+            "id": "o_workstation_2",
+            "type": "workstation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-04-06T15:15:15Z",
+                    "value": "o_workstation_2"
+                },
+                {
+                    "name": "power_consumption",
+                    "time": "2023-04-06T15:15:15Z",
+                    "value": "labeled under o_workstation_2"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "check",
+            "time": "2023-04-06T15:15:15Z",
+            "attributes": [
+                {
+                    "name": "emission",
+                    "value": 0.00103968
+                },
+                {
+                    "name": "compressed_air_used",
+                    "value": 0.016
+                },
+                {
+                    "name": "duration",
+                    "value": "unspecified"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_worker_1",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "o_malepart_5571",
+                    "qualifier": "checked"
+                },
+                {
+                    "objectId": "o_workstation_2",
+                    "qualifier": "at"
+                }
+            ]
+        }
+    ]
+}

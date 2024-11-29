@@ -1,0 +1,86 @@
+{
+    "objectTypes": [
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "departure_date",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "containers",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh29",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "departure_date",
+                    "time": "2023-09-05T11:00:00Z",
+                    "value": "2023-09-05T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td116",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "containers",
+                    "time": "2023-08-25T07:08:45Z",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2023-08-25T07:08:45Z",
+            "attributes": [
+                {
+                    "name": "transport_document_id",
+                    "value": "td116"
+                },
+                {
+                    "name": "vehicle_id",
+                    "value": "vh29"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td116",
+                    "qualifier": "associated_with"
+                },
+                {
+                    "objectId": "vh29",
+                    "qualifier": "booked_for"
+                }
+            ]
+        }
+    ]
+}

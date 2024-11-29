@@ -1,0 +1,92 @@
+{
+    "objectTypes": [
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Create Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt[1059]",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2023-09-17T12:19:00Z",
+                    "value": "13500.0"
+                },
+                {
+                    "name": "lifecycle",
+                    "time": "2023-09-17T12:19:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt[1065]",
+                    "qualifier": "linked to"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt[1065]",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2023-09-17T12:19:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Create Invoice Receipt",
+            "time": "2023-09-17T12:19:00Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "success"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt[1059]",
+                    "qualifier": "produced"
+                }
+            ]
+        }
+    ]
+}

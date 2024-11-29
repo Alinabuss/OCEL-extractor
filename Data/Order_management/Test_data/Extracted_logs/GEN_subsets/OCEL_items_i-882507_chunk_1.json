@@ -1,0 +1,102 @@
+{
+    "objectTypes": [
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "reorder",
+            "attributes": [
+                {
+                    "name": "product_id",
+                    "type": "string"
+                },
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "iPhone 11",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-08-09T07:23:29Z",
+                    "value": "799.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-882507",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-08-09T07:23:29Z",
+                    "value": "864.52"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Detlef Wetzeler",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "time": "2023-08-09T07:23:29Z",
+                    "value": "warehousing"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "reorder",
+            "time": "2023-08-09T07:23:29Z",
+            "attributes": [
+                {
+                    "name": "product_id",
+                    "value": "iPhone 11"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Detlef Wetzeler",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "iPhone 11",
+                    "qualifier": "ordered_product"
+                },
+                {
+                    "objectId": "i-882507",
+                    "qualifier": "ordered_product"
+                }
+            ]
+        }
+    ]
+}

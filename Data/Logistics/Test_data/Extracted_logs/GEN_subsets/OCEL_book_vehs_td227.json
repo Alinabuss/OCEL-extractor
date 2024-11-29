@@ -1,0 +1,126 @@
+{
+    "objectTypes": [
+        {
+            "name": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "scheduledDepartureDate",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "DocumentCreated",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "VehicleBooked",
+            "attributes": [
+                {
+                    "name": "qualifier",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td227",
+            "type": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-11-13T09:58:11Z",
+                    "value": "td227"
+                },
+                {
+                    "name": "amount",
+                    "time": "2023-11-13T09:58:11Z",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh53",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-11-13T09:58:11Z",
+                    "value": "vh53"
+                },
+                {
+                    "name": "scheduledDepartureDate",
+                    "time": "2023-11-13T09:58:11Z",
+                    "value": "2023-11-28T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "DocumentCreated",
+            "time": "2023-11-13T09:58:11Z",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td227",
+                    "qualifier": "created"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "VehicleBooked",
+            "time": "2023-11-13T09:58:11Z",
+            "attributes": [
+                {
+                    "name": "qualifier",
+                    "value": "regular"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh53",
+                    "qualifier": "booked"
+                },
+                {
+                    "objectId": "td227",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        }
+    ]
+}

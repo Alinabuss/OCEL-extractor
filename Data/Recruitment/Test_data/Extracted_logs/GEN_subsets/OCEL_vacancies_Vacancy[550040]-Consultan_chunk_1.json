@@ -1,0 +1,124 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "title",
+                    "type": "string"
+                },
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "submit_application",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "timestamp"
+                },
+                {
+                    "name": "applicant_name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Dave Wagner",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-02T07:35:59Z",
+                    "value": "Dave Wagner"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Vacancy[550040]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "title",
+                    "time": "2019-07-02T07:35:59Z",
+                    "value": "Consultant"
+                },
+                {
+                    "name": "id",
+                    "time": "2019-07-02T07:35:59Z",
+                    "value": "550040"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770376]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2019-07-02T07:35:59Z",
+                    "value": "770376"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "submit_application",
+            "time": "2019-07-02T07:35:59Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2019-07-02T07:35:59Z"
+                },
+                {
+                    "name": "applicant_name",
+                    "value": "Dave Wagner"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770376]",
+                    "qualifier": "submitted"
+                },
+                {
+                    "objectId": "Vacancy[550040]",
+                    "qualifier": "for"
+                },
+                {
+                    "objectId": "Dave Wagner",
+                    "qualifier": "submitted_by"
+                }
+            ]
+        }
+    ]
+}

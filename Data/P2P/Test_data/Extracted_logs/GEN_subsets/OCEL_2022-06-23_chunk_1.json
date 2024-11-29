@@ -1,0 +1,136 @@
+{
+    "objectTypes": [
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "movement type",
+                    "type": "integer"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Create Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Two-Way Match",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:135",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2022-06-23T02:09:00Z",
+                    "value": "invoice receipt:135"
+                },
+                {
+                    "name": "credit amount",
+                    "time": "2022-06-23T02:09:00Z",
+                    "value": "76000.00"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:140",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:140",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2022-06-23T02:09:00Z",
+                    "value": "goods receipt:140"
+                },
+                {
+                    "name": "movement type",
+                    "time": "2022-06-23T02:09:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:135",
+                    "qualifier": "associated with"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Create Invoice Receipt",
+            "time": "2022-06-23T02:09:00Z",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "value": "76000.00"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:135",
+                    "qualifier": "created"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Two-Way Match",
+            "time": "2022-06-23T07:10:00Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:135",
+                    "qualifier": "involved in"
+                },
+                {
+                    "objectId": "goods receipt:140",
+                    "qualifier": "involved in"
+                }
+            ]
+        }
+    ]
+}

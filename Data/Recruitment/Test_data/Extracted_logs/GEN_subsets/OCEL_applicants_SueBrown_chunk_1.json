@@ -1,0 +1,125 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "vacancy_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "label",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Application Submitted",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Sue Brown",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-04T13:02:11Z",
+                    "value": "Sue Brown"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770402]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2019-07-04T13:02:11Z",
+                    "value": "Application[770402]"
+                },
+                {
+                    "name": "vacancy_id",
+                    "time": "2019-07-04T13:02:11Z",
+                    "value": "Vacancy[550060]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Vacancy[550060]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2019-07-04T13:02:11Z",
+                    "value": "Vacancy[550060]"
+                },
+                {
+                    "name": "label",
+                    "time": "2019-07-04T13:02:11Z",
+                    "value": "Consultant"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Application Submitted",
+            "time": "2019-07-04T13:02:11Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2019-07-04T13:02:11Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Sue Brown",
+                    "qualifier": "submitted"
+                },
+                {
+                    "objectId": "Application[770402]",
+                    "qualifier": "refers_to"
+                },
+                {
+                    "objectId": "Vacancy[550060]",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

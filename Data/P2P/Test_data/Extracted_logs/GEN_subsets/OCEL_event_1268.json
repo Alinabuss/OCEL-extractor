@@ -1,0 +1,110 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle_status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "material",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "net_price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "purchase_requisition_created",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_requisition:59:pr_trigger_59",
+            "type": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-05-20T23:56:00Z",
+                    "value": "purchase_requisition:59:pr_trigger_59"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2022-05-20T23:56:00Z",
+                    "value": "001"
+                },
+                {
+                    "name": "lifecycle_status",
+                    "time": "2022-05-20T23:56:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "material:141",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": "material:141",
+            "type": "material",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-05-20T23:56:00Z",
+                    "value": "material:141"
+                },
+                {
+                    "name": "net_price",
+                    "time": "2022-05-20T23:56:00Z",
+                    "value": 250.0
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "purchase_requisition_created",
+            "time": "2022-05-20T23:56:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Manufacturing Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:59:pr_trigger_59",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

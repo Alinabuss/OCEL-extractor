@@ -1,0 +1,83 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "int"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create",
+            "attributes": [
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:1916",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "time": "2024-10-08T21:20:00Z",
+                    "value": "27550.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1921",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:1921",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2024-10-08T21:20:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create",
+            "time": "2024-10-08T21:20:00Z",
+            "attributes": [
+                {
+                    "name": "type",
+                    "value": "invoice receipt"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1916",
+                    "qualifier": "involves"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,105 @@
+{
+  "objectTypes": [
+    {
+      "name": "items",
+      "attributes": [
+        {
+          "name": "price",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "orders",
+      "attributes": [
+        {
+          "name": "price",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "products",
+      "attributes": [
+        {
+          "name": "price",
+          "type": "float"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "pay order",
+      "attributes": []
+    }
+  ],
+  "objects": [
+    {
+      "id": "o-990620",
+      "type": "orders",
+      "attributes": [
+        {
+          "name": "price",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 1194.12
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "i-882512",
+          "qualifier": "comprises"
+        }
+      ]
+    },
+    {
+      "id": "i-882512",
+      "type": "items",
+      "attributes": [
+        {
+          "name": "price",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 1189.12
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "iPad Pro",
+          "qualifier": "is a"
+        }
+      ]
+    },
+    {
+      "id": "iPad Pro",
+      "type": "products",
+      "attributes": [
+        {
+          "name": "price",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 1099.0
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "pay_o-990620",
+      "type": "pay order",
+      "time": "2023-08-08T16:53:32Z",
+      "relationships": [
+        {
+          "objectId": "o-990620",
+          "qualifier": "order"
+        },
+        {
+          "objectId": "iPad Pro",
+          "qualifier": "product"
+        },
+        {
+          "objectId": "i-882512",
+          "qualifier": "item"
+        }
+      ]
+    }
+  ]
+}

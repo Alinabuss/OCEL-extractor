@@ -1,0 +1,116 @@
+{
+    "objectTypes": [
+        {
+            "name": "part",
+            "attributes": []
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase order",
+                    "type": "float"
+                },
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "receipt goods",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "approve report",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "create goods receipt",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1710",
+            "type": "receipt goods",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1405",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:1405",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase order",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "003"
+                },
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:822",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "quotation:822",
+            "type": "part",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 221,
+            "type": "approve report",
+            "time": "2024-07-02T14:54:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Order Manager Procurement"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:822",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:1405",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 222,
+            "type": "create goods receipt",
+            "time": "2024-07-06T13:33:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1710",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

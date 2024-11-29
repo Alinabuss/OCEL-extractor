@@ -1,0 +1,143 @@
+{
+    "objectTypes": [
+        {
+            "name": "emissions burn",
+            "attributes": [
+                {
+                    "name": "electricity kWh",
+                    "type": "string"
+                },
+                {
+                    "name": "input Wh of gas",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "specify site",
+            "attributes": []
+        },
+        {
+            "name": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "kg",
+                    "type": "float"
+                },
+                {
+                    "name": "carbon dioxide emissions",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "undergo heating",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "heating",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "Machine o_machine_oven01",
+            "type": "emissions burn",
+            "attributes": [
+                {
+                    "name": "electricity kWh",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "about"
+                },
+                {
+                    "name": "input Wh of gas",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "0.49392 Wh"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Workstation o_workstation_1",
+            "type": "specify site",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "o_steelsheet_2342",
+            "type": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "kg",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "0.0213"
+                },
+                {
+                    "name": "carbon dioxide emissions",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "approximately 0.0138019093344 kg"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1441,
+            "type": "undergo heating",
+            "time": "2023-04-04T10:39:21Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "SteelSheet"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_steelsheet_2342",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1442,
+            "type": "undergo heating",
+            "time": "2023-04-04T23:45:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "SteelSheet"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_steelsheet_2342",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1443,
+            "type": "heating",
+            "time": "2023-04-04T23:45:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Machine o_machine_oven01",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "Workstation o_workstation_1",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,217 @@
+{
+    "objectTypes": [
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "vacancy_id",
+                    "type": "string"
+                },
+                {
+                    "name": "title",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Manager",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Candidate",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Consultation",
+            "attributes": [
+                {
+                    "name": "recruiter_name",
+                    "type": "string"
+                },
+                {
+                    "name": "manager_name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Invitation_Extended",
+            "attributes": [
+                {
+                    "name": "invitee_name",
+                    "type": "string"
+                },
+                {
+                    "name": "invitee_application_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Application[770213]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "time": "2019-06-29T13:27:05Z",
+                    "value": "770213"
+                }
+            ]
+        },
+        {
+            "id": "Vacancy[550017]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "vacancy_id",
+                    "time": "2019-07-02T06:55:30Z",
+                    "value": "550017"
+                },
+                {
+                    "name": "title",
+                    "time": "2019-07-02T06:55:30Z",
+                    "value": "Consultant"
+                }
+            ]
+        },
+        {
+            "id": "Recruiter[Dionne_Keane]",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-06-29T13:27:05Z",
+                    "value": "Dionne Keane"
+                }
+            ]
+        },
+        {
+            "id": "Manager[Bastian_Nominacher]",
+            "type": "Manager",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-06-29T13:27:05Z",
+                    "value": "Bastian Nominacher"
+                }
+            ]
+        },
+        {
+            "id": "Recruiter[Jana_Geisler]",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-02T06:55:30Z",
+                    "value": "Jana Geisler"
+                }
+            ]
+        },
+        {
+            "id": "Recruiter[Simon_Geisler]",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-02T06:55:30Z",
+                    "value": "Simon Geisler"
+                }
+            ]
+        },
+        {
+            "id": "Candidate[Sonia_Wang]",
+            "type": "Candidate",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-02T06:55:30Z",
+                    "value": "Sonia Wang"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Consultation",
+            "time": "2019-06-29T13:27:05Z",
+            "attributes": [
+                {
+                    "name": "recruiter_name",
+                    "value": "Dionne Keane"
+                },
+                {
+                    "name": "manager_name",
+                    "value": "Bastian Nominacher"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770213]",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Invitation_Extended",
+            "time": "2019-07-02T06:55:30Z",
+            "attributes": [
+                {
+                    "name": "invitee_name",
+                    "value": "Sonia Wang"
+                },
+                {
+                    "name": "invitee_application_id",
+                    "value": "770213"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550017]",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "Application[770213]",
+                    "qualifier": "from_application"
+                },
+                {
+                    "objectId": "Candidate[Sonia_Wang]",
+                    "qualifier": "to_candidate"
+                }
+            ]
+        }
+    ]
+}

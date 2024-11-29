@@ -1,0 +1,92 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "lifecycle_status",
+                    "type": "string"
+                },
+                {
+                    "name": "movement_type",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create",
+            "attributes": [
+                {
+                    "name": "activity",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods_receipt:191",
+            "type": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "lifecycle_status",
+                    "time": "2022-07-24T06:47:00Z",
+                    "value": "complete"
+                },
+                {
+                    "name": "movement_type",
+                    "time": "2022-07-24T06:47:00Z",
+                    "value": 101
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:175",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:175",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "purchasing_group",
+                    "time": "2022-07-24T06:47:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create",
+            "time": "2022-07-24T06:47:00Z",
+            "attributes": [
+                {
+                    "name": "activity",
+                    "value": "managed by Warehouse Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods_receipt:191",
+                    "qualifier": "involves"
+                }
+            ]
+        }
+    ]
+}

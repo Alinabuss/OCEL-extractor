@@ -1,0 +1,124 @@
+{
+    "objectTypes": [
+        {
+            "name": "material",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                },
+                {
+                    "name": "approval",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "requisition",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "initiate purchase requisition",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "approve purchase requisition",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "Material:426",
+            "type": "material",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "material:426",
+            "type": "material",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "1400.0"
+                },
+                {
+                    "name": "approval",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:177 : pr_trigger_177",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_requisition:177 : pr_trigger_177",
+            "type": "requisition",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "material:426",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 708,
+            "type": "approve purchase requisition",
+            "time": "2022-09-08T11:21:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:177 : pr_trigger_177",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 709,
+            "type": "initiate purchase requisition",
+            "time": "2022-09-05T08:53:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Manufacturing Department"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "material:426",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_requisition:177 : pr_trigger_177",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "Material:426",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

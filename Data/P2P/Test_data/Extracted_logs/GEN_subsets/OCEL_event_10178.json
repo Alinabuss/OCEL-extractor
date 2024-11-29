@@ -1,0 +1,133 @@
+{
+    "objectTypes": [
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Movement Type",
+                    "type": "int"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Resource",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Create Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:646",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-03-11T00:20:00Z",
+                    "value": "goods receipt:646"
+                },
+                {
+                    "name": "Movement Type",
+                    "time": "2023-03-11T00:20:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "Status",
+                    "time": "2023-03-11T00:20:00Z",
+                    "value": "Complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:537",
+                    "qualifier": "associated_with"
+                },
+                {
+                    "objectId": "Warehouse Department",
+                    "qualifier": "managed_by"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:537",
+            "type": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-03-11T00:20:00Z",
+                    "value": "purchase_order:537"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "2023-03-11T00:20:00Z",
+                    "value": "003"
+                }
+            ]
+        },
+        {
+            "id": "Warehouse Department",
+            "type": "Resource",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2023-03-11T00:20:00Z",
+                    "value": "Warehouse Department"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Create Goods Receipt",
+            "time": "2023-03-11T00:20:00Z",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "value": "2023-03-11T00:20:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:646",
+                    "qualifier": "creates"
+                }
+            ]
+        }
+    ]
+}

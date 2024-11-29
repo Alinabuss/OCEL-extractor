@@ -1,0 +1,188 @@
+{
+  "objectTypes": [
+    {
+      "name": "FormedPart",
+      "attributes": [
+        {
+          "name": "p_mass[kg]",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Machine",
+      "attributes": [
+        {
+          "name": "P_electric-from-grid-de[kWh]",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "MalePart",
+      "attributes": [
+        {
+          "name": "p_mass[kg]",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Workstation",
+      "attributes": [
+        {
+          "name": "P_electric-from-grid-de[kWh]",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "CuttMalePart",
+      "attributes": [
+        {
+          "name": "p_duration[s]",
+          "type": "string"
+        },
+        {
+          "name": "s_co2e[kg]",
+          "type": "string"
+        },
+        {
+          "name": "i_electric-from-grid-de[kWh]",
+          "type": "float"
+        },
+        {
+          "name": "i_compressed-air[m3]",
+          "type": "float"
+        },
+        {
+          "name": "i_gas-n2-used[m3]",
+          "type": "float"
+        },
+        {
+          "name": "i_gas-n2-emiited-to-air[m3]",
+          "type": "float"
+        },
+        {
+          "name": "i_steel-waste[kg]",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "id": "o_formedpart_2713",
+      "type": "FormedPart",
+      "attributes": [
+        {
+          "name": "p_mass[kg]",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "?"
+        }
+      ]
+    },
+    {
+      "id": "o_machine_cutter01",
+      "type": "Machine",
+      "attributes": [
+        {
+          "name": "P_electric-from-grid-de[kWh]",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "(Pointer-M-electr-cutter01)"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "o_workstation_2",
+          "qualifier": "located at"
+        }
+      ]
+    },
+    {
+      "id": "o_malepart_2713",
+      "type": "MalePart",
+      "attributes": [
+        {
+          "name": "p_mass[kg]",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "?"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "o_formedpart_2713",
+          "qualifier": "created from"
+        }
+      ]
+    },
+    {
+      "id": "o_workstation_2",
+      "type": "Workstation",
+      "attributes": [
+        {
+          "name": "P_electric-from-grid-de[kWh]",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "o_workstation_2"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "e_formmale_2713",
+      "type": "CuttMalePart",
+      "time": "2023-04-04T14:27:51Z",
+      "attributes": [
+        {
+          "name": "p_duration[s]",
+          "value": "9.99207171622"
+        },
+        {
+          "name": "s_co2e[kg]",
+          "value": "0.0685305476889"
+        },
+        {
+          "name": "i_electric-from-grid-de[kWh]",
+          "value": 0.0152657
+        },
+        {
+          "name": "i_compressed-air[m3]",
+          "value": 0.06
+        },
+        {
+          "name": "i_gas-n2-used[m3]",
+          "value": 0.061
+        },
+        {
+          "name": "i_gas-n2-emiited-to-air[m3]",
+          "value": 0.061
+        },
+        {
+          "name": "i_steel-waste[kg]",
+          "value": "?"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "o_formedpart_2713",
+          "qualifier": "input"
+        },
+        {
+          "objectId": "o_machine_cutter01",
+          "qualifier": "with"
+        },
+        {
+          "objectId": "o_malepart_2713",
+          "qualifier": "output"
+        },
+        {
+          "objectId": "o_workstation_2",
+          "qualifier": "located at"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "Title",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Application Rejection",
+            "attributes": [
+                {
+                    "name": "Message",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application Submission",
+            "attributes": [
+                {
+                    "name": "Message",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Pete Wang",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-04T14:12:36Z",
+                    "value": "Pete Wang"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Dionne Hense",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-04T14:12:36Z",
+                    "value": "Dionne Hense"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770211]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-04T14:12:36Z",
+                    "value": "Application[770211]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770406]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-04T17:25:49Z",
+                    "value": "Application[770406]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550050]",
+                    "qualifier": "submitted for"
+                }
+            ]
+        },
+        {
+            "id": "Vacancy[550050]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "Title",
+                    "time": "2019-07-04T17:25:49Z",
+                    "value": "Manager"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Application Rejection",
+            "time": "2019-07-04T14:12:36Z",
+            "attributes": [
+                {
+                    "name": "Message",
+                    "value": "Rejection regarding Application[770211]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Pete Wang",
+                    "qualifier": "received"
+                },
+                {
+                    "objectId": "Dionne Hense",
+                    "qualifier": "sent by"
+                },
+                {
+                    "objectId": "Application[770211]",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Application Submission",
+            "time": "2019-07-04T17:25:49Z",
+            "attributes": [
+                {
+                    "name": "Message",
+                    "value": "Submitted new application Application[770406] for Vacancy[550050]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Pete Wang",
+                    "qualifier": "submitted by"
+                },
+                {
+                    "objectId": "Application[770406]",
+                    "qualifier": "submitted"
+                },
+                {
+                    "objectId": "Vacancy[550050]",
+                    "qualifier": "for"
+                }
+            ]
+        }
+    ]
+}

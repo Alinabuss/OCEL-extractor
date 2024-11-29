@@ -1,0 +1,101 @@
+{
+    "objectTypes": [
+        {
+            "name": "Purchase Requisition",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Request for Quotation",
+            "attributes": [
+                {
+                    "name": "Lifecycle Status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_requisition:335:pr_trigger_335",
+            "type": "Purchase Requisition",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-03-01T17:42:00Z",
+                    "value": "purchase_requisition:335:pr_trigger_335"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "2023-03-01T17:42:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:333",
+                    "qualifier": "linked to"
+                }
+            ]
+        },
+        {
+            "id": "quotation:333",
+            "type": "Quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-03-01T17:42:00Z",
+                    "value": "quotation:333"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "2023-03-01T17:42:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Request for Quotation",
+            "time": "2023-03-01T17:42:00Z",
+            "attributes": [
+                {
+                    "name": "Lifecycle Status",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:335:pr_trigger_335",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ]
+}

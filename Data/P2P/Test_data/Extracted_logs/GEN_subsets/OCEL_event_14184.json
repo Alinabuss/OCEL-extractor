@@ -1,0 +1,109 @@
+{
+    "objectTypes": [
+        {
+            "name": "PurchaseOrder",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "PurchasingGroup",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "PurchasingGroup",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Approval",
+            "attributes": [
+                {
+                    "name": "Status",
+                    "type": "string"
+                },
+                {
+                    "name": "ApprovedBy",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:786",
+            "type": "PurchaseOrder",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "",
+                    "value": "purchase_order:786"
+                },
+                {
+                    "name": "PurchasingGroup",
+                    "time": "",
+                    "value": "004"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:463",
+                    "qualifier": "linkedTo"
+                }
+            ]
+        },
+        {
+            "id": "quotation:463",
+            "type": "Quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "",
+                    "value": "quotation:463"
+                },
+                {
+                    "name": "PurchasingGroup",
+                    "time": "",
+                    "value": "004"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Approval",
+            "time": "2023-07-22T01:06:00Z",
+            "attributes": [
+                {
+                    "name": "Status",
+                    "value": "complete"
+                },
+                {
+                    "name": "ApprovedBy",
+                    "value": "Procurement Order Manager"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:786",
+                    "qualifier": "approved"
+                }
+            ]
+        }
+    ]
+}

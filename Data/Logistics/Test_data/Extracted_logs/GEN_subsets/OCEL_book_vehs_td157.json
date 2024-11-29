@@ -1,0 +1,113 @@
+{
+    "objectTypes": [
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "type": "string"
+                },
+                {
+                    "name": "scheduled_departure",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "type": "string"
+                },
+                {
+                    "name": "containers_count",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "type": "string"
+                },
+                {
+                    "name": "document_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh39",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "time": "2023-09-20T07:07:45Z",
+                    "value": "vh39"
+                },
+                {
+                    "name": "scheduled_departure",
+                    "time": "2023-10-10T11:00:00Z",
+                    "value": "2023-10-10T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td157",
+                    "qualifier": "regular_vehicle_for"
+                }
+            ]
+        },
+        {
+            "id": "td157",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "time": "2023-09-20T07:07:45Z",
+                    "value": "td157"
+                },
+                {
+                    "name": "containers_count",
+                    "time": "2023-09-20T07:07:45Z",
+                    "value": "3.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2023-09-20T07:07:45Z",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "value": "vh39"
+                },
+                {
+                    "name": "document_id",
+                    "value": "td157"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh39",
+                    "qualifier": "booked_vehicle"
+                },
+                {
+                    "objectId": "td157",
+                    "qualifier": "linked_to_document"
+                }
+            ]
+        }
+    ]
+}

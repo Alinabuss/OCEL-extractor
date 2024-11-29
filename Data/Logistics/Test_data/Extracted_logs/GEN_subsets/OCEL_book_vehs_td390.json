@@ -1,0 +1,107 @@
+{
+    "objectTypes": [
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "amount_of_containers",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "departure_scheduled",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh88",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-03-14T13:52:53Z",
+                    "value": "vh88"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td390",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-03-14T13:52:53Z",
+                    "value": "td390"
+                },
+                {
+                    "name": "amount_of_containers",
+                    "time": "2024-03-14T13:52:53Z",
+                    "value": "4.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2024-03-14T13:52:53Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "vh88",
+                    "qualifier": "booked_for"
+                },
+                {
+                    "objectId": "td390",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "departure_scheduled",
+            "time": "2024-03-29T11:00:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "vh88",
+                    "qualifier": "scheduled_departure"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,89 @@
+{
+    "objectTypes": [
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                },
+                {
+                    "name": "inventory_item",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Report Out of Stock",
+            "attributes": [
+                {
+                    "name": "item_name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Fire Stick",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2024-03-08T12:37:49Z",
+                    "value": "39.99"
+                },
+                {
+                    "name": "inventory_item",
+                    "time": "2024-03-08T12:37:49Z",
+                    "value": "i-887276"
+                }
+            ]
+        },
+        {
+            "id": "Nina Graves",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "time": "2024-03-08T12:37:49Z",
+                    "value": "Warehousing"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Report Out of Stock",
+            "time": "2024-03-08T12:37:49Z",
+            "attributes": [
+                {
+                    "name": "item_name",
+                    "value": "Fire Stick"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Fire Stick",
+                    "qualifier": "reported"
+                },
+                {
+                    "objectId": "Nina Graves",
+                    "qualifier": "reported by"
+                }
+            ]
+        }
+    ]
+}

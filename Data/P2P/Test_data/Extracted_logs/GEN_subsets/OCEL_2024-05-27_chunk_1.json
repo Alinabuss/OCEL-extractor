@@ -1,0 +1,179 @@
+{
+    "objectTypes": [
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Movement Type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Credit Amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Create Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Complete Two-Way Match",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1584",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-05-27T00:56:00Z",
+                    "value": "goods receipt:1584"
+                },
+                {
+                    "name": "Movement Type",
+                    "time": "2024-05-27T00:56:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1301",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:1301",
+            "type": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-05-27T00:56:00Z",
+                    "value": "purchase_order:1301"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "2024-05-27T00:56:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:1610",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-05-27T07:10:00Z",
+                    "value": "goods receipt:1610"
+                },
+                {
+                    "name": "Movement Type",
+                    "time": "2024-05-27T07:10:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1613",
+                    "qualifier": "matched with"
+                }
+            ]
+        },
+        {
+            "id": "invoice receipt:1613",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-05-27T07:10:00Z",
+                    "value": "invoice receipt:1613"
+                },
+                {
+                    "name": "Credit Amount",
+                    "time": "2024-05-27T07:10:00Z",
+                    "value": 115000.0
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Create Goods Receipt",
+            "time": "2024-05-27T00:56:00Z",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1584",
+                    "qualifier": "created"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Complete Two-Way Match",
+            "time": "2024-05-27T07:10:00Z",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "value": 115000.0
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1610",
+                    "qualifier": "completed"
+                }
+            ]
+        }
+    ]
+}

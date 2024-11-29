@@ -1,0 +1,141 @@
+{
+    "objectTypes": [
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "product_id",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                },
+                {
+                    "name": "reorder_price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "reorder",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "string"
+                },
+                {
+                    "name": "item_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "iPhone 11",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "product_id",
+                    "time": "",
+                    "value": "iPhone 11"
+                },
+                {
+                    "name": "price",
+                    "time": "",
+                    "value": "799.00"
+                }
+            ]
+        },
+        {
+            "id": "i-882088",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "",
+                    "value": "i-882088"
+                },
+                {
+                    "name": "reorder_price",
+                    "time": "",
+                    "value": "844.62"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "iPhone 11",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "Marco Pegoraro",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "",
+                    "value": "Marco Pegoraro"
+                },
+                {
+                    "name": "department",
+                    "time": "",
+                    "value": "Warehousing"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "reorder",
+            "time": "2023-07-20T13:38:38Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-07-20T13:38:38Z"
+                },
+                {
+                    "name": "item_id",
+                    "value": "i-882088"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Marco Pegoraro",
+                    "qualifier": "initiated_by"
+                },
+                {
+                    "objectId": "i-882088",
+                    "qualifier": "reordered_item"
+                }
+            ]
+        }
+    ]
+}

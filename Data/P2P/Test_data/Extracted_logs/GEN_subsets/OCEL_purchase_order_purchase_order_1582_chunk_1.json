@@ -1,0 +1,94 @@
+{
+    "objectTypes": [
+        {
+            "name": "PurchaseOrder",
+            "attributes": [
+                {
+                    "name": "purchase_order_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Quotation",
+            "attributes": [
+                {
+                    "name": "quotation_id",
+                    "type": "string"
+                }
+            ],
+            "relationships": [
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Creation",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:1582",
+            "type": "PurchaseOrder",
+            "attributes": [
+                {
+                    "name": "purchase_order_id",
+                    "time": "2024-09-27T12:41:00Z",
+                    "value": "purchase_order:1582"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:919",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "quotation:919",
+            "type": "Quotation",
+            "attributes": [
+                {
+                    "name": "quotation_id",
+                    "time": "2024-09-27T12:41:00Z",
+                    "value": "quotation:919"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "003",
+                    "qualifier": "purchasing_group"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Creation",
+            "time": "2024-09-27T12:41:00Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "completed"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1582",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

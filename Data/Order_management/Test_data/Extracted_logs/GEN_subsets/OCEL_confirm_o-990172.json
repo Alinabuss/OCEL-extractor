@@ -1,0 +1,141 @@
+{
+    "objectTypes": [
+        {
+            "name": "Customer",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                },
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Order",
+            "attributes": [
+                {
+                    "name": "confirmation_time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Order Confirmation",
+            "attributes": [
+                {
+                    "name": "customer_name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Iberian Sun Solaridades SA",
+            "type": "Customer",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "",
+                    "value": "Iberian Sun Solaridades SA"
+                }
+            ]
+        },
+        {
+            "id": "Kindle",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "",
+                    "value": "Kindle"
+                },
+                {
+                    "name": "price",
+                    "time": "",
+                    "value": "79.99"
+                },
+                {
+                    "name": "ID",
+                    "time": "",
+                    "value": "i-880702"
+                }
+            ]
+        },
+        {
+            "id": "iPad",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "",
+                    "value": "iPad"
+                },
+                {
+                    "name": "price",
+                    "time": "",
+                    "value": "495.00"
+                },
+                {
+                    "name": "ID",
+                    "time": "",
+                    "value": "i-880710"
+                }
+            ]
+        },
+        {
+            "id": "order_1",
+            "type": "Order",
+            "attributes": [
+                {
+                    "name": "confirmation_time",
+                    "time": "",
+                    "value": "2023-05-18T18:07:10Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Iberian Sun Solaridades SA",
+                    "qualifier": "confirmed_by"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Order Confirmation",
+            "time": "2023-05-18T18:07:10Z",
+            "attributes": [
+                {
+                    "name": "customer_name",
+                    "value": "Iberian Sun Solaridades SA"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "order_1",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

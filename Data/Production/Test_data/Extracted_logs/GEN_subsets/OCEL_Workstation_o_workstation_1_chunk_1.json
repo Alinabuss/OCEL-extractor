@@ -1,0 +1,398 @@
+{
+    "objectTypes": [
+        {
+            "name": "workstation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "machine",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "steelSheet",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "steelCoil",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Heating",
+            "attributes": [
+                {
+                    "name": "operation",
+                    "type": "string"
+                },
+                {
+                    "name": "energy_grid",
+                    "type": "float"
+                },
+                {
+                    "name": "energy_gas",
+                    "type": "float"
+                },
+                {
+                    "name": "emissions",
+                    "type": "float"
+                },
+                {
+                    "name": "duration",
+                    "type": "int"
+                }
+            ]
+        },
+        {
+            "name": "Splitting",
+            "attributes": [
+                {
+                    "name": "operation",
+                    "type": "string"
+                },
+                {
+                    "name": "energy_grid",
+                    "type": "float"
+                },
+                {
+                    "name": "emissions",
+                    "type": "float"
+                },
+                {
+                    "name": "waste",
+                    "type": "float"
+                },
+                {
+                    "name": "duration",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o_workstation_1",
+            "type": "workstation",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "o_machine_oven01",
+                    "qualifier": "equippedWith"
+                },
+                {
+                    "objectId": "o_machine_splitter01",
+                    "qualifier": "equippedWith"
+                }
+            ]
+        },
+        {
+            "id": "o_machine_oven01",
+            "type": "machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "o_machine_splitter01",
+            "type": "machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "o_steelsheet_99",
+            "type": "steelSheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-03T07:50:39Z",
+                    "value": "0.02123"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "SteelSheet[151]",
+            "type": "steelSheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-03T07:55:26Z",
+                    "value": "0.021"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "SteelSheet[o_steelsheet_162]",
+            "type": "steelSheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-03T07:56:39Z",
+                    "value": "0.02112"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_steelsheet_211",
+            "type": "steelSheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-03T08:05:16Z",
+                    "value": "0.02126"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_steelsheet_240",
+            "type": "steelSheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-03T08:11:15Z",
+                    "value": "0.021"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "SteelCoil[4]",
+            "type": "steelCoil",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-03T07:55:26Z",
+                    "value": "31.91076"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "SteelCoil[o_steelcoil_4]",
+            "type": "steelCoil",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-03T07:56:39Z",
+                    "value": "31.91076"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_steelcoil_4",
+            "type": "steelCoil",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Heating",
+            "time": "2023-04-03T07:50:39Z",
+            "attributes": [
+                {
+                    "name": "operation",
+                    "value": "HeatSteelSheet"
+                },
+                {
+                    "name": "energy_grid",
+                    "value": "0.02"
+                },
+                {
+                    "name": "energy_gas",
+                    "value": "0.49392"
+                },
+                {
+                    "name": "emissions",
+                    "value": "0.0138019093344"
+                },
+                {
+                    "name": "duration",
+                    "value": "900"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_steelsheet_99",
+                    "qualifier": "input"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Splitting",
+            "time": "2023-04-03T07:55:26Z",
+            "attributes": [
+                {
+                    "name": "operation",
+                    "value": "Splitting of steel sheet"
+                },
+                {
+                    "name": "energy_grid",
+                    "value": "0.0103219"
+                },
+                {
+                    "name": "emissions",
+                    "value": "0.0070691214"
+                },
+                {
+                    "name": "waste",
+                    "value": "0.00042"
+                },
+                {
+                    "name": "duration",
+                    "value": "6.76"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelCoil[4]",
+                    "qualifier": "input"
+                },
+                {
+                    "objectId": "SteelSheet[151]",
+                    "qualifier": "output"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Splitting",
+            "time": "2023-04-03T07:56:39Z",
+            "attributes": [
+                {
+                    "name": "operation",
+                    "value": "SplitSteelSheet"
+                },
+                {
+                    "name": "energy_grid",
+                    "value": "0.0101204"
+                },
+                {
+                    "name": "emissions",
+                    "value": "0.0069312954"
+                },
+                {
+                    "name": "waste",
+                    "value": "0.00042"
+                },
+                {
+                    "name": "duration",
+                    "value": "6.624"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelCoil[o_steelcoil_4]",
+                    "qualifier": "input"
+                },
+                {
+                    "objectId": "SteelSheet[o_steelsheet_162]",
+                    "qualifier": "output"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Heating",
+            "time": "2023-04-03T08:05:16Z",
+            "attributes": [
+                {
+                    "name": "operation",
+                    "value": "Heating of steel sheet"
+                },
+                {
+                    "name": "energy_grid",
+                    "value": "0.02"
+                },
+                {
+                    "name": "energy_gas",
+                    "value": "0.49392"
+                },
+                {
+                    "name": "emissions",
+                    "value": "0.0138019093344"
+                },
+                {
+                    "name": "duration",
+                    "value": "900"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_steelsheet_211",
+                    "qualifier": "input"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "Splitting",
+            "time": "2023-04-03T08:11:15Z",
+            "attributes": [
+                {
+                    "name": "operation",
+                    "value": "Splitting of steel sheet"
+                },
+                {
+                    "name": "energy_grid",
+                    "value": "0.0219376"
+                },
+                {
+                    "name": "emissions",
+                    "value": "0.015"
+                },
+                {
+                    "name": "waste",
+                    "value": "0.00042"
+                },
+                {
+                    "name": "duration",
+                    "value": "14.36"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_steelcoil_4",
+                    "qualifier": "input"
+                },
+                {
+                    "objectId": "o_steelsheet_240",
+                    "qualifier": "output"
+                }
+            ]
+        }
+    ]
+}

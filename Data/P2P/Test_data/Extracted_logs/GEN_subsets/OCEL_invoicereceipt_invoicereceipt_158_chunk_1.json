@@ -1,0 +1,82 @@
+{
+    "objectTypes": [
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "type": "int"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Invoice Receipt Completed",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:158",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "time": "2022-07-03T04:10:00Z",
+                    "value": "8000.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:154",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:154",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "time": "2022-07-03T04:10:00Z",
+                    "value": "101"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Invoice Receipt Completed",
+            "time": "2022-07-03T04:10:00Z",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "value": "8000.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:158",
+                    "qualifier": "to"
+                }
+            ]
+        }
+    ]
+}

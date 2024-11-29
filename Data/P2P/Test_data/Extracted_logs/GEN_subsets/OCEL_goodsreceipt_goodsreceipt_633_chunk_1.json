@@ -1,0 +1,109 @@
+{
+    "objectTypes": [
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "String"
+                },
+                {
+                    "name": "Credit Amount",
+                    "type": "Decimal"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "String"
+                },
+                {
+                    "name": "Movement Type",
+                    "type": "String"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Invoice Receipt Created",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "type": "Decimal"
+                },
+                {
+                    "name": "Associated Resource",
+                    "type": "String"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:630",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-03-02T17:54:00Z",
+                    "value": "630"
+                },
+                {
+                    "name": "Credit Amount",
+                    "time": "2023-03-02T17:54:00Z",
+                    "value": "218000.00"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:633",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:633",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "",
+                    "value": "633"
+                },
+                {
+                    "name": "Movement Type",
+                    "time": "",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Invoice Receipt Created",
+            "time": "2023-03-02T17:54:00Z",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "value": "218000.00"
+                },
+                {
+                    "name": "Associated Resource",
+                    "value": "Finance/Account Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:630",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

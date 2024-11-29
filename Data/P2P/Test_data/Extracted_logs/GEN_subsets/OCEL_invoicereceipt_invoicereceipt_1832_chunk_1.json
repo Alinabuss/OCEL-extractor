@@ -1,0 +1,111 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                },
+                {
+                    "name": "lifecycle status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "finalize invoice",
+            "attributes": [
+                {
+                    "name": "invoice receipt ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:1832",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2024-09-09T20:50:00Z",
+                    "value": "147300.0"
+                },
+                {
+                    "name": "lifecycle status",
+                    "time": "2024-09-09T20:50:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1832",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:1832",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2024-09-09T20:50:00Z",
+                    "value": "101"
+                }
+            ]
+        },
+        {
+            "id": "Finance/Account Department",
+            "type": "department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2024-09-09T20:50:00Z",
+                    "value": "Finance/Account Department"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "finalize invoice",
+            "time": "2024-09-09T20:50:00Z",
+            "attributes": [
+                {
+                    "name": "invoice receipt ID",
+                    "value": "invoice receipt:1832"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Finance/Account Department",
+                    "qualifier": "executed by"
+                }
+            ]
+        }
+    ]
+}

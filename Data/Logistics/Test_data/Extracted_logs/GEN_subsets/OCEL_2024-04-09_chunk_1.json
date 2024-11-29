@@ -1,0 +1,209 @@
+{
+    "objectTypes": [
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "type": "string"
+                },
+                {
+                    "name": "designation",
+                    "type": "string"
+                },
+                {
+                    "name": "departure_date",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "type": "string"
+                },
+                {
+                    "name": "classification",
+                    "type": "string"
+                },
+                {
+                    "name": "amount",
+                    "type": "double"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Booking",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh96",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "time": "2024-04-09T12:55:23Z",
+                    "value": "vh96"
+                },
+                {
+                    "name": "designation",
+                    "time": "2024-04-09T12:55:23Z",
+                    "value": "regular"
+                },
+                {
+                    "name": "departure_date",
+                    "time": "2024-04-26T11:00:00Z",
+                    "value": "2024-04-26T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td421",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "time": "2024-04-09T12:55:23Z",
+                    "value": "td421"
+                },
+                {
+                    "name": "classification",
+                    "time": "2024-04-09T12:55:23Z",
+                    "value": "Transport Document"
+                },
+                {
+                    "name": "amount",
+                    "time": "2024-04-09T12:55:23Z",
+                    "value": 5.0
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "VH[92]",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "time": "2024-04-09T16:37:08Z",
+                    "value": "VH[92]"
+                },
+                {
+                    "name": "designation",
+                    "time": "2024-04-09T16:37:08Z",
+                    "value": "booked"
+                },
+                {
+                    "name": "departure_date",
+                    "time": "2024-04-12T11:00:00Z",
+                    "value": "2024-04-12T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "VH[94]",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "time": "2024-04-09T16:37:08Z",
+                    "value": "VH[94]"
+                },
+                {
+                    "name": "designation",
+                    "time": "2024-04-09T16:37:08Z",
+                    "value": "booked"
+                },
+                {
+                    "name": "departure_date",
+                    "time": "2024-04-19T11:00:00Z",
+                    "value": "2024-04-19T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "TD[422]",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "time": "2024-04-09T16:37:08Z",
+                    "value": "TD[422]"
+                },
+                {
+                    "name": "classification",
+                    "time": "2024-04-09T16:37:08Z",
+                    "value": "Transport Document"
+                },
+                {
+                    "name": "amount",
+                    "time": "2024-04-09T16:37:08Z",
+                    "value": 4.0
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Booking",
+            "time": "2024-04-09T12:55:23Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2024-04-09T12:55:23Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh96",
+                    "qualifier": "booked_for"
+                },
+                {
+                    "objectId": "td421",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Booking",
+            "time": "2024-04-09T16:37:08Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2024-04-09T16:37:08Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "VH[92]",
+                    "qualifier": "booked_for"
+                },
+                {
+                    "objectId": "VH[94]",
+                    "qualifier": "booked_for"
+                },
+                {
+                    "objectId": "TD[422]",
+                    "qualifier": "associated_with"
+                }
+            ]
+        }
+    ]
+}

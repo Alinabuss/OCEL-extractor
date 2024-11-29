@@ -1,0 +1,87 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit creation of amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "type movement",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "creation",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt[655",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "type movement",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "receipt[653",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit creation of amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "18900.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt[655",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 960,
+            "type": "creation",
+            "time": "2023-03-09T17:47:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt[655",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "receipt[653",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

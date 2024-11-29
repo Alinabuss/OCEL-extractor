@@ -1,0 +1,129 @@
+{
+  "objectTypes": [
+    {
+      "name": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "Vehicle",
+      "attributes": [
+        {
+          "name": "Departure Date",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Depart",
+      "attributes": []
+    }
+  ],
+  "objects": [
+    {
+      "id": "td465",
+      "type": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 5.0
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "vh102",
+          "qualifier": "High-Prio VH for TD"
+        }
+      ]
+    },
+    {
+      "id": "cr1572",
+      "type": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "empty"
+        }
+      ]
+    },
+    {
+      "id": "cr1592",
+      "type": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "empty"
+        }
+      ]
+    },
+    {
+      "id": "cr1604",
+      "type": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "empty"
+        }
+      ]
+    },
+    {
+      "id": "vh102",
+      "type": "Vehicle",
+      "attributes": [
+        {
+          "name": "Departure Date",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "2024-05-17 11:00:00"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "depart_vh102",
+      "type": "Depart",
+      "time": "2024-05-17T09:00:00Z",
+      "relationships": [
+        {
+          "objectId": "td465",
+          "qualifier": "TD with CR departure"
+        },
+        {
+          "objectId": "vh102",
+          "qualifier": "VH departed"
+        },
+        {
+          "objectId": "cr1572",
+          "qualifier": "CR departed"
+        },
+        {
+          "objectId": "cr1604",
+          "qualifier": "CR departed"
+        },
+        {
+          "objectId": "cr1592",
+          "qualifier": "CR departed"
+        }
+      ]
+    }
+  ]
+}

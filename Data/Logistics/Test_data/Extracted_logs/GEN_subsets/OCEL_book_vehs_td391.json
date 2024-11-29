@@ -1,0 +1,105 @@
+{
+    "objectTypes": [
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "scheduledDeparture",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "containers",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "eventTime",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh86",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-03-15T07:53:38Z",
+                    "value": "vh86"
+                },
+                {
+                    "name": "scheduledDeparture",
+                    "time": "2024-03-22T11:00:00Z",
+                    "value": "2024-03-22T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td391",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "td391",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-03-15T07:53:38Z",
+                    "value": "td391"
+                },
+                {
+                    "name": "containers",
+                    "time": "2024-03-15T07:53:38Z",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2024-03-15T07:53:38Z",
+            "attributes": [
+                {
+                    "name": "eventTime",
+                    "value": "2024-03-15T07:53:38Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh86",
+                    "qualifier": "booked_for"
+                },
+                {
+                    "objectId": "td391",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

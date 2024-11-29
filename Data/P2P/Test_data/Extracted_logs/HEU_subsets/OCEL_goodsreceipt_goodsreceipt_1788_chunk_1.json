@@ -1,0 +1,113 @@
+{
+    "objectTypes": [
+        {
+            "name": "order purchase",
+            "attributes": [
+                {
+                    "name": "order purchase",
+                    "type": "string"
+                },
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Object_type_not_identified",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "reflect status",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "create goods",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:1472",
+            "type": "order purchase",
+            "attributes": [
+                {
+                    "name": "order purchase",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "group 001"
+                },
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "receipt:1788",
+            "type": "Object_type_not_identified",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1472",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "Goods Receipt:1788",
+            "type": "Object_type_not_identified",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1488,
+            "type": "create goods",
+            "time": "2024-08-08T09:35:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "receipt:1788",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1489,
+            "type": "reflect status",
+            "time": "2024-08-08T09:35:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1472",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

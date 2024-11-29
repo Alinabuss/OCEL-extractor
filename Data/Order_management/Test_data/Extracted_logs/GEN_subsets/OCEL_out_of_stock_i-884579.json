@@ -1,0 +1,107 @@
+{
+    "objectTypes": [
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "ItemOutOfStock",
+            "attributes": [
+                {
+                    "name": "incidentReportedBy",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "iPad",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-11-06T11:26:16Z",
+                    "value": "495.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-884579",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-11-06T11:26:16Z",
+                    "value": "543.36"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Nina Graves",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "time": "2023-11-06T11:26:16Z",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "ItemOutOfStock",
+            "time": "2023-11-06T11:26:16Z",
+            "attributes": [
+                {
+                    "name": "incidentReportedBy",
+                    "value": "Nina Graves"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-884579",
+                    "qualifier": "involvedItem"
+                },
+                {
+                    "objectId": "iPad",
+                    "qualifier": "relatedProduct"
+                },
+                {
+                    "objectId": "Nina Graves",
+                    "qualifier": "reportedBy"
+                }
+            ]
+        }
+    ]
+}

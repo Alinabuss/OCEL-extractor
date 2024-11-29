@@ -1,0 +1,188 @@
+{
+    "objectTypes": [
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "type": "string"
+                },
+                {
+                    "name": "departure_time",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "type": "string"
+                },
+                {
+                    "name": "amount_of_containers",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Booking",
+            "attributes": [
+                {
+                    "name": "event_time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "number_of_vehicles",
+                    "type": "integer"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh124",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "time": "2024-07-11T11:22:43Z",
+                    "value": "vh124"
+                },
+                {
+                    "name": "departure_time",
+                    "time": "2024-07-11T11:22:43Z",
+                    "value": "2024-08-02T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "VH[119]",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "time": "2024-07-11T13:40:10Z",
+                    "value": "VH[119]"
+                },
+                {
+                    "name": "departure_time",
+                    "time": "2024-07-11T13:40:10Z",
+                    "value": "2024-07-16T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "VH[120]",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "time": "2024-07-11T13:40:10Z",
+                    "value": "VH[120]"
+                },
+                {
+                    "name": "departure_time",
+                    "time": "2024-07-11T13:40:10Z",
+                    "value": "2024-07-19T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td544",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "time": "2024-07-11T11:22:43Z",
+                    "value": "td544"
+                },
+                {
+                    "name": "amount_of_containers",
+                    "time": "2024-07-11T11:22:43Z",
+                    "value": 3.0
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "TD[545]",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "time": "2024-07-11T13:40:10Z",
+                    "value": "TD[545]"
+                },
+                {
+                    "name": "amount_of_containers",
+                    "time": "2024-07-11T13:40:10Z",
+                    "value": 5.0
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Booking",
+            "time": "2024-07-11T11:22:43Z",
+            "attributes": [
+                {
+                    "name": "event_time",
+                    "value": "2024-07-11T11:22:43Z"
+                },
+                {
+                    "name": "number_of_vehicles",
+                    "value": 1
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh124",
+                    "qualifier": "booked_for"
+                },
+                {
+                    "objectId": "td544",
+                    "qualifier": "involves"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Booking",
+            "time": "2024-07-11T13:40:10Z",
+            "attributes": [
+                {
+                    "name": "event_time",
+                    "value": "2024-07-11T13:40:10Z"
+                },
+                {
+                    "name": "number_of_vehicles",
+                    "value": 2
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "VH[119]",
+                    "qualifier": "allocated_to"
+                },
+                {
+                    "objectId": "VH[120]",
+                    "qualifier": "allocated_to"
+                },
+                {
+                    "objectId": "TD[545]",
+                    "qualifier": "involves"
+                }
+            ]
+        }
+    ]
+}

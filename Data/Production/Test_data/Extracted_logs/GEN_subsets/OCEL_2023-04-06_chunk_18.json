@@ -1,0 +1,408 @@
+{
+    "objectTypes": [
+        {
+            "name": "Steel Sheet",
+            "attributes": [
+                {
+                    "name": "weight",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Formed Part",
+            "attributes": []
+        },
+        {
+            "name": "Female Part",
+            "attributes": []
+        },
+        {
+            "name": "Machine",
+            "attributes": []
+        },
+        {
+            "name": "Workstation",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Forming",
+            "attributes": [
+                {
+                    "name": "electricity_consumed",
+                    "type": "float"
+                },
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2_emitted",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Coating",
+            "attributes": [
+                {
+                    "name": "electricity_consumed",
+                    "type": "float"
+                },
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "coating_material_used",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2_emitted",
+                    "type": "float"
+                },
+                {
+                    "name": "coating_material_waste",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Cutting",
+            "attributes": [
+                {
+                    "name": "electricity_consumed",
+                    "type": "float"
+                },
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "compressed_air_used",
+                    "type": "float"
+                },
+                {
+                    "name": "nitrogen_gas_used",
+                    "type": "float"
+                },
+                {
+                    "name": "steel_waste",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2_emitted",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "SteelSheet[5858]",
+            "type": "Steel Sheet",
+            "attributes": [
+                {
+                    "name": "weight",
+                    "time": "2023-04-06T13:09:02Z",
+                    "value": "0.02118"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "FormedPart[5858]",
+            "type": "Formed Part",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "SteelSheet[5858]",
+                    "qualifier": "produced_by"
+                }
+            ]
+        },
+        {
+            "id": "o_formedpart_5862",
+            "type": "Formed Part",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "FormedPart[5874]",
+            "type": "Formed Part",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "FemalePart[5502]",
+            "type": "Female Part",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "5575",
+            "type": "Female Part",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Machine[former02]",
+            "type": "Machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Machine[o_machine_coater03]",
+            "type": "Machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Machine[coater03]",
+            "type": "Machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Machine[cutter01]",
+            "type": "Machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Workstation[1]",
+            "type": "Workstation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Workstation[2]",
+            "type": "Workstation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "o_workstation_1",
+            "type": "Workstation",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Forming",
+            "time": "2023-04-06T13:09:02Z",
+            "attributes": [
+                {
+                    "name": "electricity_consumed",
+                    "value": "0.0041667"
+                },
+                {
+                    "name": "duration",
+                    "value": "5"
+                },
+                {
+                    "name": "CO2_emitted",
+                    "value": "0.0028500228"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelSheet[5858]",
+                    "qualifier": "input"
+                },
+                {
+                    "objectId": "FormedPart[5858]",
+                    "qualifier": "output"
+                },
+                {
+                    "objectId": "Machine[former02]",
+                    "qualifier": "executed_by"
+                },
+                {
+                    "objectId": "Workstation[1]",
+                    "qualifier": "performed_at"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Coating",
+            "time": "2023-04-06T13:10:08Z",
+            "attributes": [
+                {
+                    "name": "electricity_consumed",
+                    "value": "0.25"
+                },
+                {
+                    "name": "duration",
+                    "value": "300"
+                },
+                {
+                    "name": "coating_material_used",
+                    "value": "0.0004"
+                },
+                {
+                    "name": "CO2_emitted",
+                    "value": "0.1751156951"
+                },
+                {
+                    "name": "coating_material_waste",
+                    "value": "0.0001"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_formedpart_5862",
+                    "qualifier": "input"
+                },
+                {
+                    "objectId": "Machine[o_machine_coater03]",
+                    "qualifier": "executed_by"
+                },
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "performed_at"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Coating",
+            "time": "2023-04-06T13:13:11Z",
+            "attributes": [
+                {
+                    "name": "electricity_consumed",
+                    "value": "0.25"
+                },
+                {
+                    "name": "duration",
+                    "value": "300"
+                },
+                {
+                    "name": "coating_material_used",
+                    "value": "0.0004"
+                },
+                {
+                    "name": "CO2_emitted",
+                    "value": "0.1751156951"
+                },
+                {
+                    "name": "coating_material_waste",
+                    "value": "0.0001"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "FormedPart[5874]",
+                    "qualifier": "input"
+                },
+                {
+                    "objectId": "Machine[coater03]",
+                    "qualifier": "executed_by"
+                },
+                {
+                    "objectId": "Workstation[1]",
+                    "qualifier": "performed_at"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Cutting",
+            "time": "2023-04-06T13:27:28Z",
+            "attributes": [
+                {
+                    "name": "electricity_consumed",
+                    "value": "0.0191324"
+                },
+                {
+                    "name": "duration",
+                    "value": "12.52"
+                },
+                {
+                    "name": "compressed_air_used",
+                    "value": "0.074"
+                },
+                {
+                    "name": "nitrogen_gas_used",
+                    "value": "0.077"
+                },
+                {
+                    "name": "steel_waste",
+                    "value": "0.00254"
+                },
+                {
+                    "name": "CO2_emitted",
+                    "value": "0.085"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "FormedPart[5502]",
+                    "qualifier": "input"
+                },
+                {
+                    "objectId": "FemalePart[5502]",
+                    "qualifier": "output"
+                },
+                {
+                    "objectId": "Machine[cutter01]",
+                    "qualifier": "executed_by"
+                },
+                {
+                    "objectId": "Workstation[2]",
+                    "qualifier": "performed_at"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "Cutting",
+            "time": "2023-04-06T13:28:35Z",
+            "attributes": [
+                {
+                    "name": "electricity_consumed",
+                    "value": "0.019053"
+                },
+                {
+                    "name": "duration",
+                    "value": "12.47"
+                },
+                {
+                    "name": "compressed_air_used",
+                    "value": "0.083"
+                },
+                {
+                    "name": "nitrogen_gas_used",
+                    "value": "0.076"
+                },
+                {
+                    "name": "steel_waste",
+                    "value": "0.00254"
+                },
+                {
+                    "name": "CO2_emitted",
+                    "value": "0.0878675942222"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "5575",
+                    "qualifier": "input"
+                },
+                {
+                    "objectId": "Machine[cutter01]",
+                    "qualifier": "executed_by"
+                },
+                {
+                    "objectId": "Workstation[2]",
+                    "qualifier": "performed_at"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,185 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "vacancy_id",
+                    "type": "string"
+                },
+                {
+                    "name": "position",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Submit Application",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "timestamp"
+                }
+            ]
+        },
+        {
+            "name": "Assign Recruiters",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "timestamp"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Stephan Lemmens",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-03T14:30:00Z",
+                    "value": "Stephan Lemmens"
+                }
+            ]
+        },
+        {
+            "id": "Application[770392]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "time": "2019-07-03T14:30:00Z",
+                    "value": "770392"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Vacancy[550053]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "vacancy_id",
+                    "time": "2019-07-03T14:30:00Z",
+                    "value": "550053"
+                },
+                {
+                    "name": "position",
+                    "time": "2019-07-03T14:30:00Z",
+                    "value": "Manager"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Ed Hense",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-05T06:32:36Z",
+                    "value": "Ed Hense"
+                }
+            ]
+        },
+        {
+            "id": "Jana Geisler",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-05T06:32:36Z",
+                    "value": "Jana Geisler"
+                }
+            ]
+        },
+        {
+            "id": "Dionne Geisler",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-05T06:32:36Z",
+                    "value": "Dionne Geisler"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Submit Application",
+            "time": "2019-07-03T14:30:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Application[770392]",
+                    "qualifier": "submitted_by"
+                },
+                {
+                    "objectId": "Vacancy[550053]",
+                    "qualifier": "for_vacancy"
+                },
+                {
+                    "objectId": "Stephan Lemmens",
+                    "qualifier": "by_applicant"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Assign Recruiters",
+            "time": "2019-07-05T06:32:36Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Application[770392]",
+                    "qualifier": "assigned_to"
+                },
+                {
+                    "objectId": "Ed Hense",
+                    "qualifier": "recruiter"
+                },
+                {
+                    "objectId": "Jana Geisler",
+                    "qualifier": "recruiter"
+                },
+                {
+                    "objectId": "Dionne Geisler",
+                    "qualifier": "recruiter"
+                }
+            ]
+        }
+    ]
+}

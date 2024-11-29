@@ -1,0 +1,101 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "label",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "request_for_quotation",
+            "attributes": [
+                {
+                    "name": "identifier",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create_request_for_quotation",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_requisition:794:pr_trigger_794",
+            "type": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "label",
+                    "time": "2024-05-25T21:42:00Z",
+                    "value": "purchase_requisition:794:pr_trigger_794"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2024-05-25T21:42:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "quotation:792",
+            "type": "request_for_quotation",
+            "attributes": [
+                {
+                    "name": "identifier",
+                    "time": "2024-05-25T21:42:00Z",
+                    "value": "quotation:792"
+                },
+                {
+                    "name": "status",
+                    "time": "2024-05-25T21:42:00Z",
+                    "value": "completed"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:794:pr_trigger_794",
+                    "qualifier": "associated_with"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create_request_for_quotation",
+            "time": "2024-05-25T21:42:00Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2024-05-25T21:42:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:792",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,174 @@
+{
+    "objectTypes": [
+        {
+            "name": "Machine",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Material",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Mass",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Splitting Operation",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2 Equivalent",
+                    "type": "float"
+                },
+                {
+                    "name": "Electricity Consumed",
+                    "type": "float"
+                },
+                {
+                    "name": "Steel Waste Produced",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Splitter01",
+            "type": "Machine",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-06T07:40:02Z",
+                    "value": "Splitter01"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "SteelCoil[1]",
+            "type": "Material",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-06T07:40:02Z",
+                    "value": "SteelCoil[1]"
+                },
+                {
+                    "name": "Weight",
+                    "time": "2023-04-06T07:40:02Z",
+                    "value": "31.91076"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Workstation[1]",
+            "type": "Workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-06T07:40:02Z",
+                    "value": "Workstation[1]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "SteelSheet[4447]",
+            "type": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-06T07:40:02Z",
+                    "value": "SteelSheet[4447]"
+                },
+                {
+                    "name": "Mass",
+                    "time": "2023-04-06T07:40:02Z",
+                    "value": "0.02106"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Splitting Operation",
+            "time": "2023-04-06T07:40:02Z",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "value": "6.62279395854"
+                },
+                {
+                    "name": "CO2 Equivalent",
+                    "value": "0.0069297906"
+                },
+                {
+                    "name": "Electricity Consumed",
+                    "value": "0.0101182"
+                },
+                {
+                    "name": "Steel Waste Produced",
+                    "value": "0.00042"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Splitter01",
+                    "qualifier": "performed"
+                },
+                {
+                    "objectId": "SteelCoil[1]",
+                    "qualifier": "processed"
+                },
+                {
+                    "objectId": "SteelSheet[4447]",
+                    "qualifier": "produced"
+                },
+                {
+                    "objectId": "Workstation[1]",
+                    "qualifier": "at"
+                }
+            ]
+        }
+    ]
+}

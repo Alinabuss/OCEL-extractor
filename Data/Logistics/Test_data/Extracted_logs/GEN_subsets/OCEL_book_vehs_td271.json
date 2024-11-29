@@ -1,0 +1,114 @@
+{
+    "objectTypes": [
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "scheduledDeparture",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "transportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "containers",
+                    "type": "number"
+                },
+                {
+                    "name": "vehicleType",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "vehicleBooked",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh63",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-12-18T14:48:40Z",
+                    "value": "vh63"
+                },
+                {
+                    "name": "scheduledDeparture",
+                    "time": "2023-12-18T14:48:40Z",
+                    "value": "2024-01-02T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td271",
+            "type": "transportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-12-18T14:48:40Z",
+                    "value": "td271"
+                },
+                {
+                    "name": "containers",
+                    "time": "2023-12-18T14:48:40Z",
+                    "value": 2.0
+                },
+                {
+                    "name": "vehicleType",
+                    "time": "2023-12-18T14:48:40Z",
+                    "value": "regular"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh63",
+                    "qualifier": "associatedWith"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "vehicleBooked",
+            "time": "2023-12-18T14:48:40Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-12-18T14:48:40Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh63",
+                    "qualifier": "bookedFor"
+                },
+                {
+                    "objectId": "td271",
+                    "qualifier": "bookedWith"
+                }
+            ]
+        }
+    ]
+}

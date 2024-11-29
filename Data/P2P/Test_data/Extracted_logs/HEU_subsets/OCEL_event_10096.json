@@ -1,0 +1,104 @@
+{
+    "objectTypes": [
+        {
+            "name": "order purchase",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "March",
+                    "type": "string"
+                },
+                {
+                    "name": "type movement",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt[655",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "March",
+                    "time": "2023-03-09T02:20:00Z",
+                    "value": "March"
+                },
+                {
+                    "name": "type movement",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order[531",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_order[531",
+            "type": "order purchase",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 762,
+            "type": "create",
+            "time": "2023-03-09T02:20:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Department Warehouse"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order[531",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt[655",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

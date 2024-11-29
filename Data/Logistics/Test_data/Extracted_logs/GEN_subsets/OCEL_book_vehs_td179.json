@@ -1,0 +1,120 @@
+{
+    "objectTypes": [
+        {
+            "name": "Transportation Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Booking",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Departure",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td179",
+            "type": "Transportation Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-10-09T13:40:40Z",
+                    "value": "td179"
+                },
+                {
+                    "name": "Amount",
+                    "time": "2023-10-09T13:40:40Z",
+                    "value": "4.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh44",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-10-09T13:40:40Z",
+                    "value": "vh44"
+                },
+                {
+                    "name": "Type",
+                    "time": "2023-10-09T13:40:40Z",
+                    "value": "Regular"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Booking",
+            "time": "2023-10-09T13:40:40Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "td179",
+                    "qualifier": "booked"
+                },
+                {
+                    "objectId": "vh44",
+                    "qualifier": "associated"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Departure",
+            "time": "2023-10-27T11:00:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "td179",
+                    "qualifier": "scheduled"
+                },
+                {
+                    "objectId": "vh44",
+                    "qualifier": "scheduled"
+                }
+            ]
+        }
+    ]
+}

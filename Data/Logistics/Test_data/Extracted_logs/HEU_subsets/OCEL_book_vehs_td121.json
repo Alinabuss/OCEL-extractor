@@ -1,0 +1,109 @@
+{
+    "objectTypes": [
+        {
+            "name": "transport document",
+            "attributes": [
+                {
+                    "name": "amount of containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "vehicle have",
+            "attributes": [
+                {
+                    "name": "amount of containers",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "confirm vehicle",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "take place",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "transport document td121",
+            "type": "transport document",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "vh30",
+            "type": "vehicle have",
+            "attributes": [
+                {
+                    "name": "amount of containers",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td121",
+            "type": "transport document",
+            "attributes": [
+                {
+                    "name": "amount of containers",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh30",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1164,
+            "type": "take place",
+            "time": "2023-08-29T06:37:20Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "vh30",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1165,
+            "type": "confirm vehicle",
+            "time": "2023-09-08T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "schedule"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td121",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "transport document td121",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,184 @@
+{
+    "objectTypes": [
+        {
+            "name": "part",
+            "attributes": [
+                {
+                    "name": "queue at Town Center",
+                    "type": "string"
+                },
+                {
+                    "name": "queue at Town Center",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "queue",
+            "attributes": [
+                {
+                    "name": "queue at Town Center",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "construction",
+            "attributes": []
+        },
+        {
+            "name": "session",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "enter queue",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "construction of the mining camp",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "session S250230427_2199669",
+            "type": "session",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Town_Center_M250230427_2",
+            "type": "queue",
+            "attributes": [
+                {
+                    "name": "queue at Town Center",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Town Center"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "S250230427_688587",
+            "type": "part",
+            "attributes": [
+                {
+                    "name": "queue at Town Center",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Town Center"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "M250230427",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "M250230427",
+            "type": "part",
+            "attributes": [
+                {
+                    "name": "queue at Town Center",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Town Center"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Mining_Camp_M250230427_2",
+            "type": "construction",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "match M250230427",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "match M250230427",
+            "type": "construction",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1244,
+            "type": "enter queue",
+            "time": "2023-07-31T00:19:35Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Villager_M250230427_22"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Town_Center_M250230427_2",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "S250230427_688587",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1245,
+            "type": "construction of the mining camp",
+            "time": "2023-07-31T00:19:56Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Villager_M250230427_22"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "session S250230427_2199669",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "Mining_Camp_M250230427_2",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "match M250230427",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

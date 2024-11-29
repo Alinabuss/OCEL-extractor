@@ -1,0 +1,106 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "lifecycle status",
+                    "type": "string"
+                },
+                {
+                    "name": "movement type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "warehouse department",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "goods receipt created",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1794",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "lifecycle status",
+                    "time": "2024-08-15T01:47:00Z",
+                    "value": "complete"
+                },
+                {
+                    "name": "movement type",
+                    "time": "2024-08-15T01:47:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1474",
+                    "qualifier": "associated with"
+                },
+                {
+                    "objectId": "warehouse department",
+                    "qualifier": "responsible resource"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:1474",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "time": "2024-08-15T01:47:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "warehouse department",
+            "type": "warehouse department",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "goods receipt created",
+            "time": "2024-08-15T01:47:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1794",
+                    "qualifier": "involved"
+                }
+            ]
+        }
+    ]
+}

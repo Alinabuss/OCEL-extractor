@@ -1,0 +1,102 @@
+{
+    "objectTypes": [
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "type": "decimal"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Invoice Receipt Creation",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "type": "decimal"
+                }
+            ]
+        },
+        {
+            "name": "Two-Way Match",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt[203]",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "time": "2022-07-23T03:48:00Z",
+                    "value": "28200.00"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt[185]",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "time": "",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Invoice Receipt Creation",
+            "time": "2022-07-23T03:48:00Z",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "value": "28200.00"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt[203]",
+                    "qualifier": "created"
+                },
+                {
+                    "objectId": "goods receipt[185]",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Two-Way Match",
+            "time": "2022-07-25T07:10:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt[203]",
+                    "qualifier": "matched with"
+                },
+                {
+                    "objectId": "goods receipt[185]",
+                    "qualifier": "matched with"
+                }
+            ]
+        }
+    ]
+}

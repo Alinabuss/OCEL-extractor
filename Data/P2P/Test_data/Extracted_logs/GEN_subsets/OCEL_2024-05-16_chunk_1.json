@@ -1,0 +1,186 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "decimal"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "two-way match completed",
+            "attributes": [
+                {
+                    "name": "invoice receipt ID",
+                    "type": "string"
+                },
+                {
+                    "name": "goods receipt ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt created",
+            "attributes": [
+                {
+                    "name": "goods receipt ID",
+                    "type": "string"
+                },
+                {
+                    "name": "purchase order ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:1589",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2024-05-16T07:10:00Z",
+                    "value": "72500.00"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:1593",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2024-05-16T07:10:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:1595",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2024-05-16T23:06:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:1306",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "time": "2024-05-16T23:06:00Z",
+                    "value": "001"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "department:Finance/Account",
+            "type": "department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2024-05-16T07:10:00Z",
+                    "value": "Finance/Account"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "department:Warehouse",
+            "type": "department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2024-05-16T23:06:00Z",
+                    "value": "Warehouse"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "two-way match completed",
+            "time": "2024-05-16T07:10:00Z",
+            "attributes": [
+                {
+                    "name": "invoice receipt ID",
+                    "value": "invoice receipt:1589"
+                },
+                {
+                    "name": "goods receipt ID",
+                    "value": "goods receipt:1593"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "department:Finance/Account",
+                    "qualifier": "performed by"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "goods receipt created",
+            "time": "2024-05-16T23:06:00Z",
+            "attributes": [
+                {
+                    "name": "goods receipt ID",
+                    "value": "goods receipt:1595"
+                },
+                {
+                    "name": "purchase order ID",
+                    "value": "purchase_order:1306"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "department:Warehouse",
+                    "qualifier": "performed by"
+                }
+            ]
+        }
+    ]
+}

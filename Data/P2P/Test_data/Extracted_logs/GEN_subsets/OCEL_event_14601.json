@@ -1,0 +1,83 @@
+{
+    "objectTypes": [
+        {
+            "name": "InvoiceReceipt",
+            "attributes": [
+                {
+                    "name": "CreditAmount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "GoodsReceipt",
+            "attributes": [
+                {
+                    "name": "MovementType",
+                    "type": "int"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "InvoiceCreated",
+            "attributes": [
+                {
+                    "name": "CreditAmount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:955",
+            "type": "InvoiceReceipt",
+            "attributes": [
+                {
+                    "name": "CreditAmount",
+                    "time": "2023-08-03T17:42:00Z",
+                    "value": "10000.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:954",
+                    "qualifier": "linkedTo"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:954",
+            "type": "GoodsReceipt",
+            "attributes": [
+                {
+                    "name": "MovementType",
+                    "time": "2023-08-03T17:42:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "InvoiceCreated",
+            "time": "2023-08-03T17:42:00Z",
+            "attributes": [
+                {
+                    "name": "CreditAmount",
+                    "value": "10000.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:955",
+                    "qualifier": "pertainsTo"
+                }
+            ]
+        }
+    ]
+}

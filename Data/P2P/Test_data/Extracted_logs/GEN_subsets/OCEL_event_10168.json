@@ -1,0 +1,82 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "two-way match process completion",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:661",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2023-03-10T15:08:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:658",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2023-03-10T15:08:00Z",
+                    "value": "83700.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "two-way match process completion",
+            "time": "2023-03-10T15:08:00Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-03-10T15:08:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:661",
+                    "qualifier": "matched with"
+                },
+                {
+                    "objectId": "invoice receipt:658",
+                    "qualifier": "matched with"
+                }
+            ]
+        }
+    ]
+}

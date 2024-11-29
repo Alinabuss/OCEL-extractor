@@ -1,0 +1,142 @@
+{
+  "objectTypes": [
+    {
+      "name": "FormedPart",
+      "attributes": [
+        {
+          "name": "p_mass[kg]",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Machine",
+      "attributes": [
+        {
+          "name": "P_electric-from-grid-de[kWh]",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Workstation",
+      "attributes": [
+        {
+          "name": "P_electric-from-grid-de[kWh]",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "CoatPart",
+      "attributes": [
+        {
+          "name": "p_duration[s]",
+          "type": "string"
+        },
+        {
+          "name": "s_co2e[kg]",
+          "type": "string"
+        },
+        {
+          "name": "i_electric-from-grid-de[kWh]",
+          "type": "float"
+        },
+        {
+          "name": "i_coating-material[kg]",
+          "type": "float"
+        },
+        {
+          "name": "i_coating-material-waste[kg]",
+          "type": "float"
+        }
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "id": "o_formedpart_4412",
+      "type": "FormedPart",
+      "attributes": [
+        {
+          "name": "p_mass[kg]",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "?"
+        }
+      ]
+    },
+    {
+      "id": "o_machine_coater03",
+      "type": "Machine",
+      "attributes": [
+        {
+          "name": "P_electric-from-grid-de[kWh]",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "(Pointer-M-electr-coater03)"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "o_workstation_1",
+          "qualifier": "located at"
+        }
+      ]
+    },
+    {
+      "id": "o_workstation_1",
+      "type": "Workstation",
+      "attributes": [
+        {
+          "name": "P_electric-from-grid-de[kWh]",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "o_workstation_1"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "e_coat_4412",
+      "type": "CoatPart",
+      "time": "2023-04-05T13:16:40Z",
+      "attributes": [
+        {
+          "name": "p_duration[s]",
+          "value": "300.0"
+        },
+        {
+          "name": "s_co2e[kg]",
+          "value": "0.1751156951"
+        },
+        {
+          "name": "i_electric-from-grid-de[kWh]",
+          "value": 0.25
+        },
+        {
+          "name": "i_coating-material[kg]",
+          "value": 0.0004
+        },
+        {
+          "name": "i_coating-material-waste[kg]",
+          "value": 0.0001
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "o_formedpart_4412",
+          "qualifier": "on"
+        },
+        {
+          "objectId": "o_workstation_1",
+          "qualifier": "located at"
+        },
+        {
+          "objectId": "o_machine_coater03",
+          "qualifier": "with"
+        }
+      ]
+    }
+  ]
+}

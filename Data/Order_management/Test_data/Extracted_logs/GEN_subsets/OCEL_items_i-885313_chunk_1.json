@@ -1,0 +1,131 @@
+{
+    "objectTypes": [
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "order",
+            "attributes": [
+                {
+                    "name": "total_price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "payment_reminder",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "i-885313",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-12-25T14:54:44Z",
+                    "value": "44.95"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-885312",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-12-25T14:54:44Z",
+                    "value": "168.57"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-885315",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-12-25T14:54:44Z",
+                    "value": "2472.80"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-885316",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-12-25T14:54:44Z",
+                    "value": "1235.27"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o-991344",
+            "type": "order",
+            "attributes": [
+                {
+                    "name": "total_price",
+                    "time": "2023-12-25T14:54:44Z",
+                    "value": "4611.10"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-885313",
+                    "qualifier": "contains"
+                },
+                {
+                    "objectId": "i-885312",
+                    "qualifier": "contains"
+                },
+                {
+                    "objectId": "i-885315",
+                    "qualifier": "contains"
+                },
+                {
+                    "objectId": "i-885316",
+                    "qualifier": "contains"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "payment_reminder",
+            "time": "2023-12-25T14:54:44Z",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "value": "4611.10"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o-991344",
+                    "qualifier": "reminded"
+                }
+            ]
+        }
+    ]
+}

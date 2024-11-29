@@ -1,0 +1,143 @@
+{
+    "objectTypes": [
+        {
+            "name": "Workstation",
+            "attributes": [
+                {
+                    "name": "electric consumption",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "SteelPin",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "FemalePart",
+            "attributes": []
+        },
+        {
+            "name": "MalePart",
+            "attributes": []
+        },
+        {
+            "name": "Hinge",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "AssemblyProcess",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2 emissions",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Workstation 3",
+            "type": "Workstation",
+            "attributes": [
+                {
+                    "name": "electric consumption",
+                    "time": "2023-04-06T14:21:42Z",
+                    "value": "P_electric-from-grid-de[kWh]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_steelpin_1218",
+            "type": "SteelPin",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-06T14:21:42Z",
+                    "value": "0.001"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_femalepart_5365",
+            "type": "FemalePart",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "o_malepart_5560",
+            "type": "MalePart",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "o_hinge_5365",
+            "type": "Hinge",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-06T14:21:42Z",
+                    "value": "0.1858"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "AssemblyProcess",
+            "time": "2023-04-06T14:21:42Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "5.0"
+                },
+                {
+                    "name": "CO2 emissions",
+                    "value": "unspecified"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Workstation 3",
+                    "qualifier": "happened_at"
+                },
+                {
+                    "objectId": "o_steelpin_1218",
+                    "qualifier": "used_in"
+                },
+                {
+                    "objectId": "o_femalepart_5365",
+                    "qualifier": "used_in"
+                },
+                {
+                    "objectId": "o_malepart_5560",
+                    "qualifier": "used_in"
+                },
+                {
+                    "objectId": "o_hinge_5365",
+                    "qualifier": "produced"
+                }
+            ]
+        }
+    ]
+}

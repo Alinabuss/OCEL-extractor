@@ -1,0 +1,92 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create",
+            "attributes": [
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:1595",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "status",
+                    "time": "2024-10-18T05:38:00Z",
+                    "value": "complete"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2024-10-18T05:38:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:925",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": "quotation:925",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "purchasing_group",
+                    "time": "2024-10-18T05:38:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create",
+            "time": "2024-10-18T05:38:00Z",
+            "attributes": [
+                {
+                    "name": "type",
+                    "value": "purchase_order"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1595",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

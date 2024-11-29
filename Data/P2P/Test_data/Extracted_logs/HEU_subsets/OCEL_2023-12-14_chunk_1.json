@@ -1,0 +1,150 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount match",
+                    "type": "string"
+                },
+                {
+                    "name": "invoice receipt",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "receipt goods",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create invoice receipt",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "create invoice receipt",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1256",
+            "type": "receipt goods",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:1254",
+            "type": "receipt goods",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1261",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:1262",
+            "type": "receipt goods",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:1259",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount match",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "93,150.0"
+                },
+                {
+                    "name": "invoice receipt",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "40,300.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1254",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "invoice receipt:1261",
+            "type": "invoice receipt",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1262",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1380,
+            "type": "create invoice receipt",
+            "time": "2023-12-14T17:28:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Account Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1254",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1381,
+            "type": "create invoice receipt",
+            "time": "2023-12-14T23:34:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1262",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "invoice receipt:1261",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

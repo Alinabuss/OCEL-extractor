@@ -1,0 +1,245 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "vacancy",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "title",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Interview Conducted",
+            "attributes": [
+                {
+                    "name": "result",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Rejection Sent",
+            "attributes": []
+        },
+        {
+            "name": "Application Submitted",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "Toon Lopez",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "",
+                    "value": "Toon Lopez"
+                }
+            ]
+        },
+        {
+            "id": "Dionne Kershaw",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "",
+                    "value": "Dionne Kershaw"
+                }
+            ]
+        },
+        {
+            "id": "Application[770056]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "",
+                    "value": "770056"
+                },
+                {
+                    "name": "vacancy",
+                    "time": "",
+                    "value": "550007"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550007]",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "Application[770403]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "",
+                    "value": "770403"
+                },
+                {
+                    "name": "vacancy",
+                    "time": "",
+                    "value": "550065"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550065]",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "Vacancy[550007]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "",
+                    "value": "550007"
+                },
+                {
+                    "name": "title",
+                    "time": "",
+                    "value": "Consultant"
+                }
+            ]
+        },
+        {
+            "id": "Vacancy[550065]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "",
+                    "value": "550065"
+                },
+                {
+                    "name": "title",
+                    "time": "",
+                    "value": "Manager"
+                }
+            ]
+        },
+        {
+            "id": "Alexander Rinke",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "",
+                    "value": "Alexander Rinke"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Interview Conducted",
+            "time": "2019-07-01T16:15:45Z",
+            "attributes": [
+                {
+                    "name": "result",
+                    "value": "conducted"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Toon Lopez",
+                    "qualifier": "applicant"
+                },
+                {
+                    "objectId": "Dionne Kershaw",
+                    "qualifier": "recruiter"
+                },
+                {
+                    "objectId": "Application[770056]",
+                    "qualifier": "application"
+                },
+                {
+                    "objectId": "Vacancy[550007]",
+                    "qualifier": "vacancy"
+                },
+                {
+                    "objectId": "Alexander Rinke",
+                    "qualifier": "manager_present"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Rejection Sent",
+            "time": "2019-07-01T18:30:30Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Toon Lopez",
+                    "qualifier": "applicant"
+                },
+                {
+                    "objectId": "Application[770056]",
+                    "qualifier": "application"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Application Submitted",
+            "time": "2019-07-04T13:46:31Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Toon Lopez",
+                    "qualifier": "applicant"
+                },
+                {
+                    "objectId": "Application[770403]",
+                    "qualifier": "application"
+                }
+            ]
+        }
+    ]
+}

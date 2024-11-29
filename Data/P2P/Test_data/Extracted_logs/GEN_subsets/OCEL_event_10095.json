@@ -1,0 +1,109 @@
+{
+    "objectTypes": [
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Movement Type",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Create Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Created By",
+                    "type": "string"
+                },
+                {
+                    "name": "Lifecycle Status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods_receipt:647",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-03-09T00:28:00Z",
+                    "value": "goods_receipt:647"
+                },
+                {
+                    "name": "Movement Type",
+                    "time": "2023-03-09T00:28:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:538",
+                    "qualifier": "corresponds to"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:538",
+            "type": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-03-09T00:28:00Z",
+                    "value": "purchase_order:538"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "2023-03-09T00:28:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Create Goods Receipt",
+            "time": "2023-03-09T00:28:00Z",
+            "attributes": [
+                {
+                    "name": "Created By",
+                    "value": "Warehouse Department"
+                },
+                {
+                    "name": "Lifecycle Status",
+                    "value": "Complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods_receipt:647",
+                    "qualifier": "affects"
+                }
+            ]
+        }
+    ]
+}

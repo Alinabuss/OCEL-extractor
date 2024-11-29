@@ -1,0 +1,89 @@
+{
+    "objectTypes": [
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "type": "float"
+                },
+                {
+                    "name": "Movement Type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Invoice Receipt Created",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "type": "float"
+                },
+                {
+                    "name": "Movement Type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:527",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "time": "2023-01-10T03:58:00Z",
+                    "value": "25200.0"
+                },
+                {
+                    "name": "Movement Type",
+                    "time": "2023-01-10T03:58:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:530",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:530",
+            "type": "Goods Receipt",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Invoice Receipt Created",
+            "time": "2023-01-10T03:58:00Z",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "value": "25200.0"
+                },
+                {
+                    "name": "Movement Type",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:527",
+                    "qualifier": "creates"
+                }
+            ]
+        }
+    ]
+}

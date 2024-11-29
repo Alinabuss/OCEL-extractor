@@ -1,0 +1,220 @@
+{
+    "objectTypes": [
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Type",
+                    "type": "string"
+                },
+                {
+                    "name": "Scheduled Departure",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Associate Document",
+            "attributes": [
+                {
+                    "name": "Document ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Number of Containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Process Document",
+            "attributes": [
+                {
+                    "name": "Document ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Number of Containers",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td466",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-05-13T09:17:07Z",
+                    "value": "td466"
+                },
+                {
+                    "name": "Containers",
+                    "time": "2024-05-13T09:17:07Z",
+                    "value": "4.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td465",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-05-13T11:45:58Z",
+                    "value": "td465"
+                },
+                {
+                    "name": "Containers",
+                    "time": "2024-05-13T11:45:58Z",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh103",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-05-13T09:17:07Z",
+                    "value": "vh103"
+                },
+                {
+                    "name": "Type",
+                    "time": "2024-05-13T09:17:07Z",
+                    "value": "Regular"
+                },
+                {
+                    "name": "Scheduled Departure",
+                    "time": "2024-05-21T11:00:00Z",
+                    "value": "2024-05-21T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh102",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-05-13T11:45:58Z",
+                    "value": "vh102"
+                },
+                {
+                    "name": "Type",
+                    "time": "2024-05-13T11:45:58Z",
+                    "value": "High-Priority"
+                },
+                {
+                    "name": "Scheduled Departure",
+                    "time": "2024-05-17T11:00:00Z",
+                    "value": "2024-05-17T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh105",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-05-13T11:45:58Z",
+                    "value": "vh105"
+                },
+                {
+                    "name": "Type",
+                    "time": "2024-05-13T11:45:58Z",
+                    "value": "Regular"
+                },
+                {
+                    "name": "Scheduled Departure",
+                    "time": "2024-05-28T11:00:00Z",
+                    "value": "2024-05-28T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Associate Document",
+            "time": "2024-05-13T09:17:07Z",
+            "attributes": [
+                {
+                    "name": "Document ID",
+                    "value": "td466"
+                },
+                {
+                    "name": "Number of Containers",
+                    "value": "4.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td466",
+                    "qualifier": "Associated with"
+                },
+                {
+                    "objectId": "vh103",
+                    "qualifier": "Booked"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Process Document",
+            "time": "2024-05-13T11:45:58Z",
+            "attributes": [
+                {
+                    "name": "Document ID",
+                    "value": "td465"
+                },
+                {
+                    "name": "Number of Containers",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td465",
+                    "qualifier": "Processed"
+                },
+                {
+                    "objectId": "vh102",
+                    "qualifier": "Assigned"
+                },
+                {
+                    "objectId": "vh105",
+                    "qualifier": "Assigned"
+                }
+            ]
+        }
+    ]
+}

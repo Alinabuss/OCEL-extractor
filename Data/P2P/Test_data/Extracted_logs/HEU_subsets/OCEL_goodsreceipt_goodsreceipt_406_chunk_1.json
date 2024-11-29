@@ -1,0 +1,144 @@
+{
+    "objectTypes": [
+        {
+            "name": "orders purchase",
+            "attributes": [
+                {
+                    "name": "purchasing group designation receipt",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "purchasing group designation receipt",
+                    "type": "float"
+                },
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "initiate creation of a goods receipt",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:406",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "purchasing group designation receipt",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "003"
+                },
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:344",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:343",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:344",
+            "type": "orders purchase",
+            "attributes": [
+                {
+                    "name": "purchasing group designation receipt",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:343",
+            "type": "goods receipt",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1624,
+            "type": "goods receipt",
+            "time": "2022-10-04T15:12:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Department Warehouse"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:406",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:343",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1625,
+            "type": "initiate creation of a goods receipt",
+            "time": "2022-10-04T07:15:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Department Warehouse"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:344",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:406",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

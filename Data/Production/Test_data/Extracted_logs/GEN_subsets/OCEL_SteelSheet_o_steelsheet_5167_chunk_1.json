@@ -1,0 +1,163 @@
+{
+    "objectTypes": [
+        {
+            "name": "Machine",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "weight",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "SteelCoil",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Electricity",
+            "attributes": [
+                {
+                    "name": "consumption",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "SteelWaste",
+            "attributes": [
+                {
+                    "name": "weight",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "SplittingOperation",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2Equivalent",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Splitter01",
+            "type": "Machine",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2023-04-06T10:07:53Z",
+                    "value": "Workstation[1]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "SteelSheet[5167]",
+            "type": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "weight",
+                    "time": "2023-04-06T10:07:53Z",
+                    "value": "0.02116"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelCoil[1]",
+                    "qualifier": "produced_from"
+                }
+            ]
+        },
+        {
+            "id": "SteelCoil[1]",
+            "type": "SteelCoil",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-06T10:07:53Z",
+                    "value": "31.91076"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Electricity",
+            "type": "Electricity",
+            "attributes": [
+                {
+                    "name": "consumption",
+                    "time": "2023-04-06T10:07:53Z",
+                    "value": "0.02249"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "SteelWaste",
+            "type": "SteelWaste",
+            "attributes": [
+                {
+                    "name": "weight",
+                    "time": "2023-04-06T10:07:53Z",
+                    "value": "0.00042"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelSheet[5167]",
+                    "qualifier": "generated_from"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "SplittingOperation",
+            "time": "2023-04-06T10:07:53Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "14.72"
+                },
+                {
+                    "name": "CO2Equivalent",
+                    "value": "0.01539"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Splitter01",
+                    "qualifier": "executed_by"
+                },
+                {
+                    "objectId": "SteelSheet[5167]",
+                    "qualifier": "processed"
+                }
+            ]
+        }
+    ]
+}

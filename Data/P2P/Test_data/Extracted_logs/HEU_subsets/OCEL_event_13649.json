@@ -1,0 +1,101 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": []
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "perform two - way match",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "note credit amount",
+            "attributes": []
+        },
+        {
+            "name": "involve goods receipt",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:879",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:886",
+            "type": "invoice receipt",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1231,
+            "type": "note credit amount",
+            "time": "2023-07-03T15:54:50Z",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": 1232,
+            "type": "involve goods receipt",
+            "time": "2023-07-03T15:54:50Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:879",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "invoice receipt:886",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1233,
+            "type": "perform two - way match",
+            "time": "2023-07-03T07:10:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Finance / Account Department"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": []
+        }
+    ]
+}

@@ -1,0 +1,156 @@
+{
+    "objectTypes": [
+        {
+            "name": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "weight",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "SteelCoil",
+            "attributes": [
+                {
+                    "name": "initial_mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Workstation",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Machine",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Processing",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "energy_consumed",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2_emissions",
+                    "type": "float"
+                },
+                {
+                    "name": "waste_produced",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "SteelSheet[5134]",
+            "type": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "weight",
+                    "time": "2023-04-06T10:00:03Z",
+                    "value": "0.02122"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "SteelCoil[1]",
+            "type": "SteelCoil",
+            "attributes": [
+                {
+                    "name": "initial_mass",
+                    "time": "2023-04-06T10:00:03Z",
+                    "value": "31.91076"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Workstation[1]",
+            "type": "Workstation",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-04-06T10:00:03Z",
+                    "value": "Workstation[1]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Machine[Splitter01]",
+            "type": "Machine",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-04-06T10:00:03Z",
+                    "value": "Splitter01"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Processing",
+            "time": "2023-04-06T10:00:03Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "15.02"
+                },
+                {
+                    "name": "energy_consumed",
+                    "value": "0.0229427"
+                },
+                {
+                    "name": "CO2_emissions",
+                    "value": "0.0157"
+                },
+                {
+                    "name": "waste_produced",
+                    "value": "0.00042"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelSheet[5134]",
+                    "qualifier": "produced"
+                },
+                {
+                    "objectId": "SteelCoil[1]",
+                    "qualifier": "consumed"
+                },
+                {
+                    "objectId": "Workstation[1]",
+                    "qualifier": "executed_at"
+                },
+                {
+                    "objectId": "Machine[Splitter01]",
+                    "qualifier": "utilized"
+                }
+            ]
+        }
+    ]
+}

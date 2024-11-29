@@ -1,0 +1,125 @@
+{
+    "objectTypes": [
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                },
+                {
+                    "name": "category",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "retail_price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "reorder",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                },
+                {
+                    "name": "employee_name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "i-882004",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-07-14T08:28:18Z",
+                    "value": "474.64"
+                },
+                {
+                    "name": "category",
+                    "time": "2023-07-14T08:28:18Z",
+                    "value": "iPad mini"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Detlef Wetzeler",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "time": "2023-07-14T08:28:18Z",
+                    "value": "warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "iPad mini",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "retail_price",
+                    "time": "2023-07-14T08:28:18Z",
+                    "value": "449.00"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-882004",
+                    "qualifier": "part_of_inventory"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "reorder",
+            "time": "2023-07-14T08:28:18Z",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "value": "i-882004"
+                },
+                {
+                    "name": "employee_name",
+                    "value": "Detlef Wetzeler"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-882004",
+                    "qualifier": "reordered_item"
+                },
+                {
+                    "objectId": "Detlef Wetzeler",
+                    "qualifier": "reordered_by"
+                }
+            ]
+        }
+    ]
+}

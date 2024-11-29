@@ -1,0 +1,156 @@
+{
+    "objectTypes": [
+        {
+            "name": "vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "invitation_sent",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "timestamp"
+                },
+                {
+                    "name": "position",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Vacancy[550001]",
+            "type": "vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-06-21T06:44:02Z",
+                    "value": "550001"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770240]",
+            "type": "application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-06-21T06:44:02Z",
+                    "value": "770240"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Lisa Johnson",
+            "type": "applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-06-21T06:44:02Z",
+                    "value": "Lisa Johnson"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Ed Kershaw",
+            "type": "recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-06-21T06:44:02Z",
+                    "value": "Ed Kershaw"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Simon Hense",
+            "type": "recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-06-21T06:44:02Z",
+                    "value": "Simon Hense"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "invitation_sent",
+            "time": "2019-06-21T06:44:02Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2019-06-21T06:44:02Z"
+                },
+                {
+                    "name": "position",
+                    "value": "Manager"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lisa Johnson",
+                    "qualifier": "invited"
+                },
+                {
+                    "objectId": "Vacancy[550001]",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "Application[770240]",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "Ed Kershaw",
+                    "qualifier": "sent_by"
+                },
+                {
+                    "objectId": "Simon Hense",
+                    "qualifier": "sent_by"
+                }
+            ]
+        }
+    ]
+}

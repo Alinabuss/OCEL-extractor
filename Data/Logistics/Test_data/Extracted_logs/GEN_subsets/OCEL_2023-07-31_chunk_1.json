@@ -1,0 +1,101 @@
+{
+    "objectTypes": [
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Total Containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Scheduled Departure",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Process Document",
+            "attributes": [
+                {
+                    "name": "Processed At",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td85",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-07-31T09:20:37Z",
+                    "value": "td85"
+                },
+                {
+                    "name": "Total Containers",
+                    "time": "2023-07-31T09:20:37Z",
+                    "value": 5.0
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh26",
+                    "qualifier": "assigned vehicle"
+                }
+            ]
+        },
+        {
+            "id": "vh26",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-07-31T09:20:37Z",
+                    "value": "vh26"
+                },
+                {
+                    "name": "Scheduled Departure",
+                    "time": "2023-07-31T09:20:37Z",
+                    "value": "2023-08-25T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Process Document",
+            "time": "2023-07-31T09:20:37Z",
+            "attributes": [
+                {
+                    "name": "Processed At",
+                    "value": "2023-07-31T09:20:37Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td85",
+                    "qualifier": "processed"
+                }
+            ]
+        }
+    ]
+}

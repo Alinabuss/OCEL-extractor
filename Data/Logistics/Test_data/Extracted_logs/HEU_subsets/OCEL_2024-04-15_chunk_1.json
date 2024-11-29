@@ -1,0 +1,185 @@
+{
+    "objectTypes": [
+        {
+            "name": "departure",
+            "attributes": []
+        },
+        {
+            "name": "transport document",
+            "attributes": [
+                {
+                    "name": "containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "containers",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "set",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "create transport document",
+            "attributes": []
+        },
+        {
+            "name": "book vehicles under a transport document",
+            "attributes": []
+        },
+        {
+            "name": "schedule",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh94",
+            "type": "vehicle",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "dates : vh94",
+            "type": "departure",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "td428",
+            "type": "transport document",
+            "attributes": [
+                {
+                    "name": "containers",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td429",
+            "type": "transport document",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "vh100",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "vh100",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "containers",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1858,
+            "type": "create transport document",
+            "time": "2024-04-15T08:18:08Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "vh94",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "td428",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1859,
+            "type": "book vehicles under a transport document",
+            "time": "2024-04-19T11:50:33Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "td429",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1860,
+            "type": "set",
+            "time": "2024-05-10T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "schedule"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh100",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1861,
+            "type": "schedule",
+            "time": "2024-05-10T11:00:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "vh100",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "vh94",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "dates : vh94",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1862,
+            "type": "schedule",
+            "time": "2024-04-19T11:00:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "vh100",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "vh94",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "dates : vh94",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

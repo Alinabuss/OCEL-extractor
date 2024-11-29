@@ -1,0 +1,161 @@
+{
+    "objectTypes": [
+        {
+            "name": "order",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                },
+                {
+                    "name": "product_name",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "customer",
+            "attributes": [
+                {
+                    "name": "customer_name",
+                    "type": "string"
+                },
+                {
+                    "name": "sales_representative",
+                    "type": "string"
+                },
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "order_confirmed",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "type": "string"
+                },
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o-990089",
+            "type": "order",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "time": "2023-05-05T08:22:53Z",
+                    "value": "o-990089"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-05-05T08:22:53Z",
+                    "value": 2404.99
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-880385",
+                    "qualifier": "comprises"
+                },
+                {
+                    "objectId": "balkan_minerals",
+                    "qualifier": "placed_by"
+                }
+            ]
+        },
+        {
+            "id": "i-880385",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "2023-05-05T08:22:53Z",
+                    "value": "i-880385"
+                },
+                {
+                    "name": "product_name",
+                    "time": "2023-05-05T08:22:53Z",
+                    "value": "Echo Studio"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-05-05T08:22:53Z",
+                    "value": 199.99
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "balkan_minerals",
+            "type": "customer",
+            "attributes": [
+                {
+                    "name": "customer_name",
+                    "time": "2023-05-05T08:22:53Z",
+                    "value": "Balkan Minerals d.o.o."
+                },
+                {
+                    "name": "sales_representative",
+                    "time": "2023-05-05T08:22:53Z",
+                    "value": "Christine von Dobbert"
+                },
+                {
+                    "name": "role",
+                    "time": "2023-05-05T08:22:53Z",
+                    "value": "Sales"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "order_confirmed",
+            "time": "2023-05-05T08:22:53Z",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "value": "o-990089"
+                },
+                {
+                    "name": "timestamp",
+                    "value": "2023-05-05T08:22:53Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o-990089",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

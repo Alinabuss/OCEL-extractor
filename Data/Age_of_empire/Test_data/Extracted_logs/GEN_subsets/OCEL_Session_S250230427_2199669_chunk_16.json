@@ -1,0 +1,276 @@
+{
+    "objectTypes": [
+        {
+            "name": "Match",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Session",
+            "attributes": [
+                {
+                    "name": "session_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Player",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Villager",
+            "attributes": [
+                {
+                    "name": "villager_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Town Center",
+            "attributes": [
+                {
+                    "name": "town_center_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Gather Wood",
+            "attributes": [
+                {
+                    "name": "actor_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Queue at Town Center",
+            "attributes": [
+                {
+                    "name": "villager_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Establish Gathering Point",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Match[M250230427]",
+            "type": "Match",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "value": "M250230427",
+                    "time": "2023-07-31T00:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "S250230427_2199669",
+            "type": "Session",
+            "attributes": [
+                {
+                    "name": "session_id",
+                    "value": "S250230427_2199669",
+                    "time": "2023-07-31T00:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Match[M250230427]",
+                    "qualifier": "involves"
+                }
+            ]
+        },
+        {
+            "id": "Player[P2199669]",
+            "type": "Player",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "value": "P2199669",
+                    "time": "2023-07-31T00:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Villager_M250230427_116",
+            "type": "Villager",
+            "attributes": [
+                {
+                    "name": "villager_id",
+                    "value": "M250230427_116",
+                    "time": "2023-07-31T00:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Villager_M250230427_117",
+            "type": "Villager",
+            "attributes": [
+                {
+                    "name": "villager_id",
+                    "value": "M250230427_117",
+                    "time": "2023-07-31T00:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Villager_M250230427_118",
+            "type": "Villager",
+            "attributes": [
+                {
+                    "name": "villager_id",
+                    "value": "M250230427_118",
+                    "time": "2023-07-31T00:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Town_Center_M250230427_1",
+            "type": "Town Center",
+            "attributes": [
+                {
+                    "name": "town_center_id",
+                    "value": "Town_Center_M250230427_1",
+                    "time": "2023-07-31T00:00:00Z"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Gather Wood",
+            "time": "2023-07-31T00:16:20Z",
+            "attributes": [
+                {
+                    "name": "actor_id",
+                    "value": "Player[P2199669]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "part_of"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Gather Wood",
+            "time": "2023-07-31T00:16:42Z",
+            "attributes": [
+                {
+                    "name": "actor_id",
+                    "value": "Villager_M250230427_116"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "part_of"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Queue at Town Center",
+            "time": "2023-07-31T00:16:42Z",
+            "attributes": [
+                {
+                    "name": "villager_id",
+                    "value": "Villager_M250230427_117"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Town_Center_M250230427_1",
+                    "qualifier": "at"
+                },
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "part_of"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Queue at Town Center",
+            "time": "2023-07-31T00:16:43Z",
+            "attributes": [
+                {
+                    "name": "villager_id",
+                    "value": "Villager_M250230427_118"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Town_Center_M250230427_1",
+                    "qualifier": "at"
+                },
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "part_of"
+                },
+                {
+                    "objectId": "Player[P2199669]",
+                    "qualifier": "controlled_by"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "Establish Gathering Point",
+            "time": "2023-07-31T00:16:47Z",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "value": "Player[P2199669]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Town_Center_M250230427_1",
+                    "qualifier": "associated_with"
+                },
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "part_of"
+                },
+                {
+                    "objectId": "Match[M250230427]",
+                    "qualifier": "involves"
+                }
+            ]
+        }
+    ]
+}

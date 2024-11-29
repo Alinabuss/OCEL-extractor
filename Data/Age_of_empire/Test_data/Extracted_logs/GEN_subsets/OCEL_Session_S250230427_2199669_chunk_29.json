@@ -1,0 +1,352 @@
+{
+    "objectTypes": [
+        {
+            "name": "session",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "match",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "player",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "villager",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "town_center",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "farm",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "participate",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "type": "string"
+                },
+                {
+                    "name": "initial_gathering_point",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "set_gathering_point",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "type": "string"
+                },
+                {
+                    "name": "point_type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "villager_activity",
+            "attributes": [
+                {
+                    "name": "villager_id",
+                    "type": "string"
+                },
+                {
+                    "name": "town_center_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "complete_construction",
+            "attributes": [
+                {
+                    "name": "villager_id",
+                    "type": "string"
+                },
+                {
+                    "name": "farm_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "S250230427_2199669",
+            "type": "session",
+            "attributes": [
+                {
+                    "name": "id",
+                    "value": "S250230427_2199669"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "M250230427",
+            "type": "match",
+            "attributes": [
+                {
+                    "name": "id",
+                    "value": "M250230427"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "linked_to_session"
+                }
+            ]
+        },
+        {
+            "id": "P2199669",
+            "type": "player",
+            "attributes": [
+                {
+                    "name": "id",
+                    "value": "P2199669"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Villager_M250230427_169",
+            "type": "villager",
+            "attributes": [
+                {
+                    "name": "id",
+                    "value": "Villager_M250230427_169"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Town_Center_M250230427_1",
+            "type": "town_center",
+            "attributes": [
+                {
+                    "name": "id",
+                    "value": "Town_Center_M250230427_1"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "linked_to_session"
+                }
+            ]
+        },
+        {
+            "id": "Town_Center_M250230427_3",
+            "type": "town_center",
+            "attributes": [
+                {
+                    "name": "id",
+                    "value": "Town_Center_M250230427_3"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Villager_M250230427_10",
+            "type": "villager",
+            "attributes": [
+                {
+                    "name": "id",
+                    "value": "Villager_M250230427_10"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Farm_M250230427_11",
+            "type": "farm",
+            "attributes": [
+                {
+                    "name": "id",
+                    "value": "Farm_M250230427_11"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "linked_to_match"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "participate",
+            "time": "2023-07-31T00:27:18Z",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "value": "P2199669"
+                },
+                {
+                    "name": "initial_gathering_point",
+                    "value": "none"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "related_to_session"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "related_to_match"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "set_gathering_point",
+            "time": "2023-07-31T00:27:28Z",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "value": "P2199669"
+                },
+                {
+                    "name": "point_type",
+                    "value": "gold gathering Point at Town Center_M250230427_1"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Town_Center_M250230427_1",
+                    "qualifier": "related_to_town_center"
+                },
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "related_to_session"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "related_to_match"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "villager_activity",
+            "time": "2023-07-31T00:27:28Z",
+            "attributes": [
+                {
+                    "name": "villager_id",
+                    "value": "Villager_M250230427_169"
+                },
+                {
+                    "name": "town_center_id",
+                    "value": "Town_Center_M250230427_3"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "related_to_session"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "related_to_match"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "set_gathering_point",
+            "time": "2023-07-31T00:27:29Z",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "value": "P2199669"
+                },
+                {
+                    "name": "point_type",
+                    "value": "wood gathering Point at Town Center_M250230427_1"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Town_Center_M250230427_1",
+                    "qualifier": "related_to_town_center"
+                },
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "related_to_session"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "related_to_match"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "complete_construction",
+            "time": "2023-07-31T00:27:38Z",
+            "attributes": [
+                {
+                    "name": "villager_id",
+                    "value": "Villager_M250230427_10"
+                },
+                {
+                    "name": "farm_id",
+                    "value": "Farm_M250230427_11"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "related_to_session"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "linked_to_match"
+                }
+            ]
+        }
+    ]
+}

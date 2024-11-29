@@ -1,0 +1,94 @@
+{
+    "objectTypes": [
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "type": "string"
+                },
+                {
+                    "name": "departure_date",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "type": "string"
+                },
+                {
+                    "name": "amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Booking",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "vehicle_type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh67",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "departure_date",
+                    "time": "2024-01-16T11:00:00Z",
+                    "value": "2024-01-16T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td301",
+            "type": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "time": "2024-01-08T14:50:49Z",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Booking",
+            "time": "2024-01-08T14:50:49Z",
+            "attributes": [
+                {
+                    "name": "vehicle_type",
+                    "value": "regular"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh67",
+                    "qualifier": "booked_for"
+                },
+                {
+                    "objectId": "td301",
+                    "qualifier": "for_document"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,115 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "two_way_match",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "type": "integer"
+                },
+                {
+                    "name": "credit_amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "1863",
+            "type": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2024-09-17T12:33:00Z",
+                    "value": "1863"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "1860",
+            "type": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2024-09-17T12:33:00Z",
+                    "value": "1860"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Finance/Account_Department",
+            "type": "department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2024-09-17T12:33:00Z",
+                    "value": "Finance/Account Department"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "two_way_match",
+            "time": "2024-09-17T12:33:00Z",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "value": "101"
+                },
+                {
+                    "name": "credit_amount",
+                    "value": "106250.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "1863",
+                    "qualifier": "goods_receipt"
+                },
+                {
+                    "objectId": "1860",
+                    "qualifier": "invoice_receipt"
+                },
+                {
+                    "objectId": "Finance/Account_Department",
+                    "qualifier": "conducted_by"
+                }
+            ]
+        }
+    ]
+}

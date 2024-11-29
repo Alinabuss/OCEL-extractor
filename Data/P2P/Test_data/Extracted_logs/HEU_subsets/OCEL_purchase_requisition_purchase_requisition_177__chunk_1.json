@@ -1,0 +1,105 @@
+{
+    "objectTypes": [
+        {
+            "name": "material",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                },
+                {
+                    "name": "purchase group",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "requisition",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create purchase requisition",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "approve",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase requisition purchase_requisition:177 : pr_trigger_177",
+            "type": "requisition",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "material:426",
+            "type": "material",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "1400.0"
+                },
+                {
+                    "name": "purchase group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase requisition purchase_requisition:177 : pr_trigger_177",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1011,
+            "type": "create purchase requisition",
+            "time": "2022-09-05T08:53:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Manufacturing Department"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "material:426",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1012,
+            "type": "approve",
+            "time": "2022-09-08T11:21:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "purchase requisition purchase_requisition:177 : pr_trigger_177",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,180 @@
+{
+    "objectTypes": [
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Total Containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Scheduled Departure",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Vehicle Booking",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "Document ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Document Association",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "Document ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "TD[531]",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-07-02T10:09:57Z",
+                    "value": "TD[531]"
+                },
+                {
+                    "name": "Total Containers",
+                    "time": "2024-07-02T10:09:57Z",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "TD[532]",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-07-02T14:56:25Z",
+                    "value": "TD[532]"
+                },
+                {
+                    "name": "Total Containers",
+                    "time": "2024-07-02T14:56:25Z",
+                    "value": "3.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "VH[121]",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-07-02T10:09:57Z",
+                    "value": "VH[121]"
+                },
+                {
+                    "name": "Scheduled Departure",
+                    "time": "2024-07-23T11:00:00Z",
+                    "value": "2024-07-23T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "VH[119]",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-07-02T14:56:25Z",
+                    "value": "VH[119]"
+                },
+                {
+                    "name": "Scheduled Departure",
+                    "time": "2024-07-16T11:00:00Z",
+                    "value": "2024-07-16T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Vehicle Booking",
+            "time": "2024-07-02T10:09:57Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2024-07-02T10:09:57Z"
+                },
+                {
+                    "name": "Document ID",
+                    "value": "TD[531]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "TD[531]",
+                    "qualifier": "relatedTo"
+                },
+                {
+                    "objectId": "VH[121]",
+                    "qualifier": "bookedFor"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Document Association",
+            "time": "2024-07-02T14:56:25Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2024-07-02T14:56:25Z"
+                },
+                {
+                    "name": "Document ID",
+                    "value": "TD[532]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "TD[532]",
+                    "qualifier": "associatedWith"
+                },
+                {
+                    "objectId": "VH[119]",
+                    "qualifier": "assignedTo"
+                }
+            ]
+        }
+    ]
+}

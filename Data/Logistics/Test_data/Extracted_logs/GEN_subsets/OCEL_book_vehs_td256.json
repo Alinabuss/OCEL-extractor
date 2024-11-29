@@ -1,0 +1,71 @@
+{
+    "objectTypes": [
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "vehicle",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "scheduled_departure",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td256",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "time": "2023-12-05T13:44:43Z",
+                    "value": "3.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh59",
+            "type": "vehicle",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2023-12-05T13:44:43Z",
+            "attributes": [
+                {
+                    "name": "scheduled_departure",
+                    "value": "2023-12-19T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td256",
+                    "qualifier": "associated_with"
+                },
+                {
+                    "objectId": "vh59",
+                    "qualifier": "booked_for"
+                }
+            ]
+        }
+    ]
+}

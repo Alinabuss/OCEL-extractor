@@ -1,0 +1,127 @@
+{
+    "objectTypes": [
+        {
+            "name": "approval",
+            "attributes": []
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "quotation",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "purchase order",
+                    "type": "string"
+                },
+                {
+                    "name": "goods receipt type",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create goods receipt",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "finalize approval of a purchase order",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "quotation:551",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "quotation",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "purchasing group 002"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1140",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:1140",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "purchase order",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "group 001"
+                },
+                {
+                    "name": "goods receipt type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:941",
+            "type": "approval",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation:551",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1245,
+            "type": "finalize approval of a purchase order",
+            "time": "2023-10-23T02:00:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation:551",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:941",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1246,
+            "type": "create goods receipt",
+            "time": "2023-10-23T19:46:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Department Warehouse"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1140",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

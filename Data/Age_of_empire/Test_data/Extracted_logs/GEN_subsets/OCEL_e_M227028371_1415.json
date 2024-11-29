@@ -1,0 +1,135 @@
+{
+    "objectTypes": [
+        {
+            "name": "archery_match",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "archery_range",
+            "attributes": [
+                {
+                    "name": "range_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "session",
+            "attributes": [
+                {
+                    "name": "session_label",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "match_occurred",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "session_completed",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "M227028371",
+            "type": "archery_match",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "time": "2023-04-17T01:01:37Z",
+                    "value": "M227028371"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Archery_Range_M227028371_1",
+                    "qualifier": "held_at"
+                }
+            ]
+        },
+        {
+            "id": "Archery_Range_M227028371_1",
+            "type": "archery_range",
+            "attributes": [
+                {
+                    "name": "range_id",
+                    "time": "2023-04-17T01:01:37Z",
+                    "value": "Archery_Range_M227028371_1"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "S227028371_1472826",
+            "type": "session",
+            "attributes": [
+                {
+                    "name": "session_label",
+                    "time": "2023-04-17T01:01:37Z",
+                    "value": "S227028371_1472826"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "M227028371",
+                    "qualifier": "completed_in"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "match_occurred",
+            "time": "2023-04-17T01:01:37Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-04-17T01:01:37Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "M227028371",
+                    "qualifier": "match"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "session_completed",
+            "time": "2023-04-17T01:01:37Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-04-17T01:01:37Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "S227028371_1472826",
+                    "qualifier": "session"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,135 @@
+{
+    "objectTypes": [
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "itemID",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "number"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "productName",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "number"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "reorder",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Detlef Wetzeler",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-06-14T10:00:06Z",
+                    "value": "Detlef Wetzeler"
+                },
+                {
+                    "name": "department",
+                    "time": "2023-06-14T10:00:06Z",
+                    "value": "warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-881212",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "itemID",
+                    "time": "2023-06-14T10:00:06Z",
+                    "value": "i-881212"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-06-14T10:00:06Z",
+                    "value": 84.56
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Kindle",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "Kindle",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "productName",
+                    "time": "2023-06-14T10:00:06Z",
+                    "value": "Kindle"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-06-14T10:00:06Z",
+                    "value": 79.99
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "reorder",
+            "time": "2023-06-14T10:00:06Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-06-14T10:00:06Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Detlef Wetzeler",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "i-881212",
+                    "qualifier": "reordered_item"
+                }
+            ]
+        }
+    ]
+}

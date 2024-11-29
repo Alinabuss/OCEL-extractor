@@ -1,0 +1,190 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "credit amount",
+                    "type": "decimal"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "movement type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "completed two-way match",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "decimal"
+                }
+            ]
+        },
+        {
+            "name": "created invoice receipt",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "credit amount",
+                    "type": "decimal"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:1768",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-07-24T00:00:00Z",
+                    "value": "1768"
+                },
+                {
+                    "name": "status",
+                    "time": "2024-07-24T10:34:00Z",
+                    "value": "complete"
+                },
+                {
+                    "name": "credit amount",
+                    "time": "2024-07-24T00:00:00Z",
+                    "value": "32500.00"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1768",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:1770",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-07-24T00:00:00Z",
+                    "value": "1770"
+                },
+                {
+                    "name": "movement type",
+                    "time": "2024-07-24T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:1768",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-07-24T00:00:00Z",
+                    "value": "1768"
+                },
+                {
+                    "name": "movement type",
+                    "time": "2024-07-24T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Finance/Account Department",
+            "type": "department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2024-07-24T00:00:00Z",
+                    "value": "Finance/Account Department"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "completed two-way match",
+            "time": "2024-07-24T07:10:00Z",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "value": "32500.00"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1768",
+                    "qualifier": "related to"
+                },
+                {
+                    "objectId": "goods receipt:1770",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "created invoice receipt",
+            "time": "2024-07-24T10:34:00Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "complete"
+                },
+                {
+                    "name": "credit amount",
+                    "value": "32500.00"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1768",
+                    "qualifier": "created"
+                },
+                {
+                    "objectId": "Finance/Account Department",
+                    "qualifier": "created by"
+                }
+            ]
+        }
+    ]
+}

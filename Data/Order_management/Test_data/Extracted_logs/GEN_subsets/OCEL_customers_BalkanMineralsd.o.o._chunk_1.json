@@ -1,0 +1,151 @@
+{
+    "objectTypes": [
+        {
+            "name": "customer",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "number"
+                }
+            ]
+        },
+        {
+            "name": "order",
+            "attributes": [
+                {
+                    "name": "total_items",
+                    "type": "number"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "order_placed",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Balkan Minerals d.o.o.",
+            "type": "customer",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2024-02-02T22:43:14Z",
+                    "value": "Balkan Minerals d.o.o."
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-886639",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2024-02-02T22:43:14Z",
+                    "value": "941.7"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-886640",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2024-02-02T22:43:14Z",
+                    "value": "623.48"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-886641",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2024-02-02T22:43:14Z",
+                    "value": "1354.22"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-886642",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2024-02-02T22:43:14Z",
+                    "value": "106.06"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "order_1",
+            "type": "order",
+            "attributes": [
+                {
+                    "name": "total_items",
+                    "time": "2024-02-02T22:43:14Z",
+                    "value": "5"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Balkan Minerals d.o.o.",
+                    "qualifier": "placed_by"
+                },
+                {
+                    "objectId": "i-886639",
+                    "qualifier": "contains"
+                },
+                {
+                    "objectId": "i-886640",
+                    "qualifier": "contains"
+                },
+                {
+                    "objectId": "i-886641",
+                    "qualifier": "contains"
+                },
+                {
+                    "objectId": "i-886642",
+                    "qualifier": "contains"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "order_placed",
+            "time": "2024-02-02T22:43:14Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "order_1",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

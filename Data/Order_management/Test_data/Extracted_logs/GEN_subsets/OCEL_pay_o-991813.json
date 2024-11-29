@@ -1,0 +1,109 @@
+{
+    "objectTypes": [
+        {
+            "name": "Order",
+            "attributes": [
+                {
+                    "name": "total_price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Payment",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Order[o-991813]",
+            "type": "Order",
+            "attributes": [
+                {
+                    "name": "total_price",
+                    "time": "2024-02-28T16:35:53Z",
+                    "value": "40.35"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Item[i-886984]",
+                    "qualifier": "comprises"
+                }
+            ]
+        },
+        {
+            "id": "Item[i-886984]",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2024-02-28T16:35:53Z",
+                    "value": "35.35"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Product[Echo Dot]",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": "Product[Echo Dot]",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2024-02-28T16:35:53Z",
+                    "value": "29.99"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Payment",
+            "time": "2024-02-28T16:35:53Z",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "value": "40.35"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Order[o-991813]",
+                    "qualifier": "processed_for"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,188 @@
+{
+    "objectTypes": [
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "type": "string"
+                },
+                {
+                    "name": "submitted_by",
+                    "type": "string"
+                },
+                {
+                    "name": "vacancy_title",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "vacancy_id",
+                    "type": "string"
+                },
+                {
+                    "name": "title",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Application Submitted",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Application Assigned",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Application[770406]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "time": "2019-07-04T17:25:49Z",
+                    "value": "770406"
+                },
+                {
+                    "name": "submitted_by",
+                    "time": "2019-07-04T17:25:49Z",
+                    "value": "Pete Wang"
+                },
+                {
+                    "name": "vacancy_title",
+                    "time": "2019-07-04T17:25:49Z",
+                    "value": "Vacancy[550050]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Vacancy[550050]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "vacancy_id",
+                    "time": "2019-07-04T17:25:49Z",
+                    "value": "550050"
+                },
+                {
+                    "name": "title",
+                    "time": "2019-07-04T17:25:49Z",
+                    "value": "Manager"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Recruiter[Simon Hense]",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-05T07:53:28Z",
+                    "value": "Simon Hense"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Recruiter[Simon Kershaw]",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-05T07:53:28Z",
+                    "value": "Simon Kershaw"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Recruiter[Simon Meister]",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-05T07:53:28Z",
+                    "value": "Simon Meister"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Application Submitted",
+            "time": "2019-07-04T17:25:49Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2019-07-04T17:25:49Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770406]",
+                    "qualifier": "submitted"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Application Assigned",
+            "time": "2019-07-05T07:53:28Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2019-07-05T07:53:28Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770406]",
+                    "qualifier": "assigned"
+                },
+                {
+                    "objectId": "Recruiter[Simon Hense]",
+                    "qualifier": "assigned_to"
+                },
+                {
+                    "objectId": "Recruiter[Simon Kershaw]",
+                    "qualifier": "assigned_to"
+                },
+                {
+                    "objectId": "Recruiter[Simon Meister]",
+                    "qualifier": "assigned_to"
+                }
+            ]
+        }
+    ]
+}

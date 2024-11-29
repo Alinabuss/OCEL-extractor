@@ -1,0 +1,94 @@
+{
+  "objectTypes": [
+    {
+      "name": "purchase_requisition",
+      "attributes": [
+        {
+          "name": "Purchasing Group (EBAN-EKGRP)",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "quotation",
+      "attributes": [
+        {
+          "name": "Purchasing Group (EBAN-EKGRP)",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Create Request for Quotation",
+      "attributes": [
+        {
+          "name": "lifecycle",
+          "type": "string"
+        },
+        {
+          "name": "resource",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "id": "purchase_requisition:712:pr_trigger_712",
+      "type": "purchase_requisition",
+      "attributes": [
+        {
+          "name": "Purchasing Group (EBAN-EKGRP)",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "003"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "quotation:708",
+          "qualifier": "Quotation of PR"
+        }
+      ]
+    },
+    {
+      "id": "quotation:708",
+      "type": "quotation",
+      "attributes": [
+        {
+          "name": "Purchasing Group (EBAN-EKGRP)",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "003"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "event_22127",
+      "type": "Create Request for Quotation",
+      "time": "2024-03-05T11:28:00Z",
+      "attributes": [
+        {
+          "name": "lifecycle",
+          "value": "complete"
+        },
+        {
+          "name": "resource",
+          "value": "Procurement Department"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "quotation:708",
+          "qualifier": "quotation"
+        },
+        {
+          "objectId": "purchase_requisition:712:pr_trigger_712",
+          "qualifier": "purchase_requisition"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,155 @@
+{
+    "objectTypes": [
+        {
+            "name": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "type movement",
+                    "type": "float"
+                },
+                {
+                    "name": "amount record credit",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "two - way match",
+            "attributes": [
+                {
+                    "name": "type movement",
+                    "type": "float"
+                },
+                {
+                    "name": "amount record credit",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "invoice",
+            "attributes": [
+                {
+                    "name": "amount record credit",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create invoice",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "confirm credit amount",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1770",
+            "type": "two - way match",
+            "attributes": [
+                {
+                    "name": "type movement",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "amount record credit",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "32,500.00"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "receipt:1768",
+            "type": "invoice",
+            "attributes": [
+                {
+                    "name": "amount record credit",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "32,500.00"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1768",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:1768",
+            "type": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "type movement",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "amount record credit",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "32,500.00"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 91,
+            "type": "create invoice",
+            "time": "2024-07-24T10:34:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Account Department"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1768",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "receipt:1768",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 92,
+            "type": "confirm credit amount",
+            "time": "2024-07-24T07:10:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": []
+        }
+    ]
+}

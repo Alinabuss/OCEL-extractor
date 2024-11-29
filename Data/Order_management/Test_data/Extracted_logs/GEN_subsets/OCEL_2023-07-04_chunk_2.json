@@ -1,0 +1,143 @@
+{
+    "objectTypes": [
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Overall Picking Activity",
+            "attributes": [
+                {
+                    "name": "Product Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Total Value",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Picking Process",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "i-881706",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-07-04T14:35:15Z",
+                    "value": "i-881706"
+                },
+                {
+                    "name": "Name",
+                    "time": "2023-07-04T14:35:15Z",
+                    "value": "MacBook Air"
+                },
+                {
+                    "name": "Price",
+                    "time": "2023-07-04T14:35:15Z",
+                    "value": 2325.62
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "overall_picking_activity_1",
+            "type": "Overall Picking Activity",
+            "attributes": [
+                {
+                    "name": "Product Name",
+                    "time": "2023-07-04T14:35:15Z",
+                    "value": "MacBook Air"
+                },
+                {
+                    "name": "Total Value",
+                    "time": "2023-07-04T14:35:15Z",
+                    "value": 2200.0
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Detlef_Wetzeler",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2023-07-04T14:35:15Z",
+                    "value": "Detlef Wetzeler"
+                },
+                {
+                    "name": "Department",
+                    "time": "2023-07-04T14:35:15Z",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Picking Process",
+            "time": "2023-07-04T14:35:15Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2023-07-04T14:35:15Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-881706",
+                    "qualifier": "picked_item"
+                },
+                {
+                    "objectId": "overall_picking_activity_1",
+                    "qualifier": "part_of"
+                },
+                {
+                    "objectId": "Detlef_Wetzeler",
+                    "qualifier": "executed_by"
+                }
+            ]
+        }
+    ]
+}

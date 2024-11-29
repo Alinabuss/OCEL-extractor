@@ -1,0 +1,76 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": []
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "complete two - way match",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:519",
+            "type": "invoice receipt",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:522",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:522",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1599,
+            "type": "complete two - way match",
+            "time": "2023-01-06T08:10:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:522",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "invoice receipt:519",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

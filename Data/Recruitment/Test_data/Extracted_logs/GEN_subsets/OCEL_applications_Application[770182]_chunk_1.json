@@ -1,0 +1,217 @@
+{
+    "objectTypes": [
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Position",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Person",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Role",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Interview Conducted",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "timestamp"
+                },
+                {
+                    "name": "Outcome",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Rejection Sent",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "timestamp"
+                },
+                {
+                    "name": "Reason",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Application[770182]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-02T12:36:31Z",
+                    "value": "770182"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Vacancy[550009]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-02T12:36:31Z",
+                    "value": "550009"
+                },
+                {
+                    "name": "Position",
+                    "time": "2019-07-02T12:36:31Z",
+                    "value": "Programmer"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Person[Martin Klenk]",
+            "type": "Person",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-02T12:36:31Z",
+                    "value": "Martin Klenk"
+                },
+                {
+                    "name": "Role",
+                    "time": "2019-07-02T12:36:31Z",
+                    "value": "Manager"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Person[Jana Meister]",
+            "type": "Person",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-02T12:36:31Z",
+                    "value": "Jana Meister"
+                },
+                {
+                    "name": "Role",
+                    "time": "2019-07-02T12:36:31Z",
+                    "value": "Recruiter"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Person[Sue Wang]",
+            "type": "Person",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-02T12:36:31Z",
+                    "value": "Sue Wang"
+                },
+                {
+                    "name": "Role",
+                    "time": "2019-07-02T12:36:31Z",
+                    "value": "Applicant"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Interview Conducted",
+            "time": "2019-07-02T12:36:31Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2019-07-02T12:36:31Z"
+                },
+                {
+                    "name": "Outcome",
+                    "value": "Interview held"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770182]",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "Vacancy[550009]",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "Person[Martin Klenk]",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "Person[Jana Meister]",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "Person[Sue Wang]",
+                    "qualifier": "involved"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Rejection Sent",
+            "time": "2019-07-04T07:33:38Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2019-07-04T07:33:38Z"
+                },
+                {
+                    "name": "Reason",
+                    "value": "Application rejected"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770182]",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "Person[Sue Wang]",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "Person[Jana Meister]",
+                    "qualifier": "involved"
+                }
+            ]
+        }
+    ]
+}

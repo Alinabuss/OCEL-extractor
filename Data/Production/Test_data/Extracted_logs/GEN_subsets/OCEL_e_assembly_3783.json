@@ -1,0 +1,134 @@
+{
+    "objectTypes": [
+        {
+            "name": "part",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "workstation",
+            "attributes": [
+                {
+                    "name": "power_consumption",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "hinge",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "assembly",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "female_part",
+            "type": "part",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-05T15:43:06Z",
+                    "value": "unspecified"
+                }
+            ]
+        },
+        {
+            "id": "male_part",
+            "type": "part",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-05T15:43:06Z",
+                    "value": "unspecified"
+                }
+            ]
+        },
+        {
+            "id": "steel_pin",
+            "type": "part",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-05T15:43:06Z",
+                    "value": "0.001"
+                }
+            ]
+        },
+        {
+            "id": "hinge",
+            "type": "hinge",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-05T15:43:06Z",
+                    "value": "0.18563"
+                }
+            ]
+        },
+        {
+            "id": "workstation_3",
+            "type": "workstation",
+            "attributes": [
+                {
+                    "name": "power_consumption",
+                    "time": "2023-04-05T15:43:06Z",
+                    "value": "linked to grid"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "assembly",
+            "time": "2023-04-05T15:43:06Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "female_part",
+                    "qualifier": "involves"
+                },
+                {
+                    "objectId": "male_part",
+                    "qualifier": "involves"
+                },
+                {
+                    "objectId": "steel_pin",
+                    "qualifier": "involves"
+                },
+                {
+                    "objectId": "hinge",
+                    "qualifier": "results_in"
+                },
+                {
+                    "objectId": "workstation_3",
+                    "qualifier": "takes_place_at"
+                }
+            ]
+        }
+    ]
+}

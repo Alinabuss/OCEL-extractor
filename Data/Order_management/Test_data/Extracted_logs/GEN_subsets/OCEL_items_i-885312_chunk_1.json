@@ -1,0 +1,173 @@
+{
+    "objectTypes": [
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "order",
+            "attributes": [
+                {
+                    "name": "total",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "item picked",
+            "attributes": [
+                {
+                    "name": "employee",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "payment reminder issued",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "i-885312",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-12-05T13:17:16Z",
+                    "value": "168.57"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Echo Plus",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "o-991344",
+            "type": "order",
+            "attributes": [
+                {
+                    "name": "total",
+                    "time": "2023-12-25T14:54:44Z",
+                    "value": "4611.10"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-885312",
+                    "qualifier": "includes"
+                },
+                {
+                    "objectId": "i-885313",
+                    "qualifier": "includes"
+                },
+                {
+                    "objectId": "i-885315",
+                    "qualifier": "includes"
+                },
+                {
+                    "objectId": "i-885316",
+                    "qualifier": "includes"
+                }
+            ]
+        },
+        {
+            "id": "Echo Plus",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-12-05T13:17:16Z",
+                    "value": "149.99"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-885313",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-12-25T14:54:44Z",
+                    "value": "44.95"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-885315",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-12-25T14:54:44Z",
+                    "value": "2472.80"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-885316",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-12-25T14:54:44Z",
+                    "value": "1235.27"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "item picked",
+            "time": "2023-12-05T13:17:16Z",
+            "attributes": [
+                {
+                    "name": "employee",
+                    "value": "Benedikt Knopp"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-885312",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "payment reminder issued",
+            "time": "2023-12-25T14:54:44Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "o-991344",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ]
+}

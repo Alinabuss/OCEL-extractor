@@ -1,0 +1,160 @@
+{
+    "objectTypes": [
+        {
+            "name": "Hinge",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Steel Pin",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Male Part",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Female Part",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Workstation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "int"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Assembly Process",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "output",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "hinge",
+            "type": "Hinge",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-04T15:21:52Z",
+                    "value": "0.18584"
+                }
+            ]
+        },
+        {
+            "id": "steel_pin",
+            "type": "Steel Pin",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-04T15:21:52Z",
+                    "value": "0.001"
+                }
+            ]
+        },
+        {
+            "id": "male_part",
+            "type": "Male Part",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-04T15:21:52Z",
+                    "value": "unspecified"
+                }
+            ]
+        },
+        {
+            "id": "female_part",
+            "type": "Female Part",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-04T15:21:52Z",
+                    "value": "unspecified"
+                }
+            ]
+        },
+        {
+            "id": "workstation_3",
+            "type": "Workstation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-04-04T15:21:52Z",
+                    "value": "3"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Assembly Process",
+            "time": "2023-04-04T15:21:52Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "5.0"
+                },
+                {
+                    "name": "output",
+                    "value": "hinge"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "hinge",
+                    "qualifier": "produced"
+                },
+                {
+                    "objectId": "steel_pin",
+                    "qualifier": "used"
+                },
+                {
+                    "objectId": "male_part",
+                    "qualifier": "used"
+                },
+                {
+                    "objectId": "female_part",
+                    "qualifier": "used"
+                },
+                {
+                    "objectId": "workstation_3",
+                    "qualifier": "executed_at"
+                }
+            ]
+        }
+    ]
+}

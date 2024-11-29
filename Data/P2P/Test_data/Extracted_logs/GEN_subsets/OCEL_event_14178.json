@@ -1,0 +1,105 @@
+{
+    "objectTypes": [
+        {
+            "name": "Purchase Requisition",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Assigned Material",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Material",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Net Price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Purchase Requisition Created",
+            "attributes": [
+                {
+                    "name": "Requisition ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_requisition:470:pr_trigger_470",
+            "type": "Purchase Requisition",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-07-21T09:21:00Z",
+                    "value": "purchase_requisition:470:pr_trigger_470"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "2023-07-21T09:21:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "material:1160",
+                    "qualifier": "assigned_material"
+                }
+            ]
+        },
+        {
+            "id": "material:1160",
+            "type": "Material",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-07-21T09:21:00Z",
+                    "value": "material:1160"
+                },
+                {
+                    "name": "Net Price",
+                    "time": "2023-07-21T09:21:00Z",
+                    "value": 750.0
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Purchase Requisition Created",
+            "time": "2023-07-21T09:21:00Z",
+            "attributes": [
+                {
+                    "name": "Requisition ID",
+                    "value": "purchase_requisition:470:pr_trigger_470"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:470:pr_trigger_470",
+                    "qualifier": "involved"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,304 @@
+{
+    "objectTypes": [
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Credit Amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Movement Type",
+                    "type": "int"
+                }
+            ]
+        },
+        {
+            "name": "Purchase Requisition",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Two-Way Match Completed",
+            "attributes": [
+                {
+                    "name": "Invoice ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Goods Receipt ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Purchase Requisition Created",
+            "attributes": [
+                {
+                    "name": "Requisition ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Quotation Created",
+            "attributes": [
+                {
+                    "name": "Quotation ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Purchase Order Created",
+            "attributes": [
+                {
+                    "name": "Order ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Quotation ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "1126",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-10-16T07:10:00Z",
+                    "value": "1126"
+                },
+                {
+                    "name": "Credit Amount",
+                    "time": "2023-10-16T07:10:00Z",
+                    "value": "24700.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "1128",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-10-16T07:10:00Z",
+                    "value": "1128"
+                },
+                {
+                    "name": "Movement Type",
+                    "time": "2023-10-16T07:10:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_requisition:550:pr_trigger_550",
+            "type": "Purchase Requisition",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-10-16T13:52:00Z",
+                    "value": "purchase_requisition:550:pr_trigger_550"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "2023-10-16T13:52:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "quotation:552",
+            "type": "Quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-10-16T13:52:00Z",
+                    "value": "quotation:552"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "2023-10-16T13:52:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:949",
+            "type": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-10-16T22:31:00Z",
+                    "value": "purchase_order:949"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "2023-10-16T22:31:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Two-Way Match Completed",
+            "time": "2023-10-16T07:10:00Z",
+            "attributes": [
+                {
+                    "name": "Invoice ID",
+                    "value": "1126"
+                },
+                {
+                    "name": "Goods Receipt ID",
+                    "value": "1128"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "1126",
+                    "qualifier": "related-to"
+                },
+                {
+                    "objectId": "1128",
+                    "qualifier": "related-to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Purchase Requisition Created",
+            "time": "2023-10-16T13:52:00Z",
+            "attributes": [
+                {
+                    "name": "Requisition ID",
+                    "value": "purchase_requisition:550:pr_trigger_550"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "value": "004"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:550:pr_trigger_550",
+                    "qualifier": "created"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Quotation Created",
+            "time": "2023-10-16T13:52:00Z",
+            "attributes": [
+                {
+                    "name": "Quotation ID",
+                    "value": "quotation:552"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "value": "004"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:552",
+                    "qualifier": "created"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Purchase Order Created",
+            "time": "2023-10-16T22:31:00Z",
+            "attributes": [
+                {
+                    "name": "Order ID",
+                    "value": "purchase_order:949"
+                },
+                {
+                    "name": "Quotation ID",
+                    "value": "quotation:552"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:949",
+                    "qualifier": "created"
+                },
+                {
+                    "objectId": "quotation:552",
+                    "qualifier": "linked-to"
+                }
+            ]
+        }
+    ]
+}

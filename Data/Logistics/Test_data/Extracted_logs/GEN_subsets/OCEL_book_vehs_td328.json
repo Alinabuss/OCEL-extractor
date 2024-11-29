@@ -1,0 +1,131 @@
+{
+    "objectTypes": [
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Number of Containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Priority",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Booking",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Departure Scheduled",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td328",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "",
+                    "value": "td328"
+                },
+                {
+                    "name": "Number of Containers",
+                    "time": "",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh73",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "vh73",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "",
+                    "value": "vh73"
+                },
+                {
+                    "name": "Priority",
+                    "time": "",
+                    "value": "high-priority"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Booking",
+            "time": "2024-01-29T14:03:34Z",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "value": "2024-01-29T14:03:34Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td328",
+                    "qualifier": "booked"
+                },
+                {
+                    "objectId": "vh73",
+                    "qualifier": "booked"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Departure Scheduled",
+            "time": "2024-02-06T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "value": "2024-02-06T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh73",
+                    "qualifier": "scheduled for departure"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,104 @@
+{
+    "objectTypes": [
+        {
+            "name": "part",
+            "attributes": [
+                {
+                    "name": "gender",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "worker",
+            "attributes": []
+        },
+        {
+            "name": "workstation",
+            "attributes": [
+                {
+                    "name": "electric_consumption",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "check",
+            "attributes": [
+                {
+                    "name": "carbon_dioxide_emission",
+                    "type": "float"
+                },
+                {
+                    "name": "compressed_air_usage",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o_femalepart_1768",
+            "type": "part",
+            "attributes": [
+                {
+                    "name": "gender",
+                    "time": "2023-04-04T10:15:16Z",
+                    "value": "female"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_worker_1",
+            "type": "worker",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "o_workstation_2",
+            "type": "workstation",
+            "attributes": [
+                {
+                    "name": "electric_consumption",
+                    "time": "2023-04-04T10:15:16Z",
+                    "value": null
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "check",
+            "time": "2023-04-04T10:15:16Z",
+            "attributes": [
+                {
+                    "name": "carbon_dioxide_emission",
+                    "value": "0.00103968"
+                },
+                {
+                    "name": "compressed_air_usage",
+                    "value": "0.016"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_femalepart_1768",
+                    "qualifier": "performed_on"
+                },
+                {
+                    "objectId": "o_worker_1",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "o_workstation_2",
+                    "qualifier": "performed_at"
+                }
+            ]
+        }
+    ]
+}

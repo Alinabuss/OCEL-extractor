@@ -1,0 +1,118 @@
+{
+    "objectTypes": [
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                },
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "reorder_price",
+                    "type": "float"
+                },
+                {
+                    "name": "previous_price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "reorder_initiated",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "i-881561",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "2023-06-26T13:20:22Z",
+                    "value": "i-881561"
+                },
+                {
+                    "name": "name",
+                    "time": "2023-06-26T13:20:22Z",
+                    "value": "MacBook Pro"
+                },
+                {
+                    "name": "reorder_price",
+                    "time": "2023-06-26T13:20:22Z",
+                    "value": 2500.0
+                },
+                {
+                    "name": "previous_price",
+                    "time": "2023-06-26T13:20:22Z",
+                    "value": 2642.75
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Marco_Pegoraro",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-06-26T13:20:22Z",
+                    "value": "Marco Pegoraro"
+                },
+                {
+                    "name": "department",
+                    "time": "2023-06-26T13:20:22Z",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "reorder_initiated",
+            "time": "2023-06-26T13:20:22Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-06-26T13:20:22Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-881561",
+                    "qualifier": "item"
+                },
+                {
+                    "objectId": "Marco_Pegoraro",
+                    "qualifier": "initiated_by"
+                }
+            ]
+        }
+    ]
+}

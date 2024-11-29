@@ -1,0 +1,380 @@
+{
+    "objectTypes": [
+        {
+            "name": "Machine",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Workstation",
+            "attributes": []
+        },
+        {
+            "name": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "weight",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "FormedPart",
+            "attributes": []
+        },
+        {
+            "name": "MalePart",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Processing",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "energy_consumed_kWh",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2_emitted_kg",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Coating",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "coating_applied_kg",
+                    "type": "float"
+                },
+                {
+                    "name": "coating_wasted_kg",
+                    "type": "float"
+                },
+                {
+                    "name": "energy_consumed_kWh",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2_emitted_kg",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Cutting",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "energy_consumed_kWh",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2_emitted_kg",
+                    "type": "float"
+                },
+                {
+                    "name": "compressed_air_m3",
+                    "type": "float"
+                },
+                {
+                    "name": "nitrogen_gas_m3",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Machine[former02]",
+            "type": "Machine",
+            "attributes": [
+                {
+                    "name": "location",
+                    "value": "Workstation[1]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Machine[coater03]",
+            "type": "Machine",
+            "attributes": [
+                {
+                    "name": "location",
+                    "value": "Workstation[1]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Machine[01]",
+            "type": "Machine",
+            "attributes": [
+                {
+                    "name": "location",
+                    "value": "Workstation[2]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Machine[cutter01]",
+            "type": "Machine",
+            "attributes": [
+                {
+                    "name": "location",
+                    "value": "Workstation[2]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "SteelSheet[631]",
+            "type": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "weight",
+                    "value": "0.02108"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "FormedPart[631]",
+            "type": "FormedPart",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "SteelSheet[631]",
+                    "qualifier": "created_from"
+                }
+            ]
+        },
+        {
+            "id": "FormedPart[643]",
+            "type": "FormedPart",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "SteelSheet[652]",
+            "type": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "weight",
+                    "value": "0.0213"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "FormedPart[652]",
+            "type": "FormedPart",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "SteelSheet[652]",
+                    "qualifier": "created_from"
+                }
+            ]
+        },
+        {
+            "id": "MalePart[403]",
+            "type": "MalePart",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "FormedPart[403]",
+                    "qualifier": "originated_from"
+                }
+            ]
+        },
+        {
+            "id": "MalePart[328]",
+            "type": "MalePart",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "FormedPart[328]",
+                    "qualifier": "originated_from"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Processing",
+            "time": "2023-04-03T10:01:16Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "5.0"
+                },
+                {
+                    "name": "energy_consumed_kWh",
+                    "value": "0.0041667"
+                },
+                {
+                    "name": "CO2_emitted_kg",
+                    "value": "0.0028500228"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelSheet[631]",
+                    "qualifier": "processed"
+                },
+                {
+                    "objectId": "FormedPart[631]",
+                    "qualifier": "result"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Coating",
+            "time": "2023-04-03T10:04:31Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "300"
+                },
+                {
+                    "name": "coating_applied_kg",
+                    "value": "0.0004"
+                },
+                {
+                    "name": "coating_wasted_kg",
+                    "value": "0.0001"
+                },
+                {
+                    "name": "energy_consumed_kWh",
+                    "value": "0.25"
+                },
+                {
+                    "name": "CO2_emitted_kg",
+                    "value": "0.175"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "FormedPart[643]",
+                    "qualifier": "coated"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Processing",
+            "time": "2023-04-03T10:05:40Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "5"
+                },
+                {
+                    "name": "energy_consumed_kWh",
+                    "value": "0.0041667"
+                },
+                {
+                    "name": "CO2_emitted_kg",
+                    "value": "0.0028500228"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelSheet[652]",
+                    "qualifier": "processed"
+                },
+                {
+                    "objectId": "FormedPart[652]",
+                    "qualifier": "result"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Cutting",
+            "time": "2023-04-03T10:06:52Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "9.94"
+                },
+                {
+                    "name": "energy_consumed_kWh",
+                    "value": "0.01518"
+                },
+                {
+                    "name": "CO2_emitted_kg",
+                    "value": "0.07488"
+                },
+                {
+                    "name": "compressed_air_m3",
+                    "value": "0.076"
+                },
+                {
+                    "name": "nitrogen_gas_m3",
+                    "value": "0.061"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "MalePart[403]",
+                    "qualifier": "cut"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "Cutting",
+            "time": "2023-04-03T10:12:30Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "10.11"
+                },
+                {
+                    "name": "energy_consumed_kWh",
+                    "value": "0.0154422"
+                },
+                {
+                    "name": "CO2_emitted_kg",
+                    "value": "0.07107"
+                },
+                {
+                    "name": "compressed_air_m3",
+                    "value": "0.065"
+                },
+                {
+                    "name": "nitrogen_gas_m3",
+                    "value": "0.062"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "MalePart[328]",
+                    "qualifier": "cut"
+                }
+            ]
+        }
+    ]
+}

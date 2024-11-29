@@ -1,0 +1,272 @@
+{
+    "objectTypes": [
+        {
+            "name": "quotation",
+            "attributes": []
+        },
+        {
+            "name": "order purchase",
+            "attributes": [
+                {
+                    "name": "order with part of Purchasing Group",
+                    "type": "string"
+                },
+                {
+                    "name": "Procurement Department",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "float"
+                },
+                {
+                    "name": "invoice receipt",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "approve purchase order",
+            "attributes": [
+                {
+                    "name": "quotation",
+                    "type": "string"
+                },
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "approve purchase order",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "reconciliation",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "create purchase order",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "reflect credit amount",
+            "attributes": []
+        },
+        {
+            "name": "reconcile with an invoice receipt",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "quotation:672",
+            "type": "quotation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "quotation:668",
+            "type": "quotation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:1381",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "invoice receipt",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "invoice receipt:1386"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:1148",
+            "type": "order purchase",
+            "attributes": [
+                {
+                    "name": "order with part of Purchasing Group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Purchasing Group 005"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:1157",
+            "type": "order purchase",
+            "attributes": [
+                {
+                    "name": "Procurement Department",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Procurement Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:672",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1002,
+            "type": "approve purchase order",
+            "time": "1150-09-22T23:01:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Manager Procurement Order"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:668",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:1148",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1003,
+            "type": "approve purchase order",
+            "time": "1150-09-22T09:42:00Z",
+            "attributes": [
+                {
+                    "name": "quotation",
+                    "value": "Purchasing Group 004"
+                },
+                {
+                    "name": "resource",
+                    "value": "Manager Procurement Order"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": 1004,
+            "type": "reconciliation",
+            "time": "1150-09-22T10:26:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Account Department Finance"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": 1005,
+            "type": "reflect credit amount",
+            "time": "1150-09-22T20:10:00Z",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": 1006,
+            "type": "reconcile with an invoice receipt",
+            "time": "1150-09-22T20:10:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1381",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1007,
+            "type": "create purchase order",
+            "time": "1150-09-22T14:18:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:672",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:1157",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1008,
+            "type": "create purchase order",
+            "time": "2024-02-06T14:18:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:672",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:1157",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,199 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "movement_type",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "credit_amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "purchase_order_approved",
+            "attributes": [
+                {
+                    "name": "purchase_order_ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "two_way_match",
+            "attributes": [
+                {
+                    "name": "goods_receipt_ID",
+                    "type": "string"
+                },
+                {
+                    "name": "invoice_receipt_ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:1367",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-06-05T02:09:00Z",
+                    "value": "purchase_order:1367"
+                },
+                {
+                    "name": "status",
+                    "time": "2024-06-05T02:09:00Z",
+                    "value": "complete"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2024-06-05T02:09:00Z",
+                    "value": "001"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "quotation:800",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-06-05T02:09:00Z",
+                    "value": "quotation:800"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1367",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": "goods_receipt:1626",
+            "type": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-06-05T07:10:00Z",
+                    "value": "goods_receipt:1626"
+                },
+                {
+                    "name": "movement_type",
+                    "time": "2024-06-05T07:10:00Z",
+                    "value": 101
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice_receipt:1626",
+            "type": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-06-05T07:10:00Z",
+                    "value": "invoice_receipt:1626"
+                },
+                {
+                    "name": "credit_amount",
+                    "time": "2024-06-05T07:10:00Z",
+                    "value": 41600.0
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "purchase_order_approved",
+            "time": "2024-06-05T02:09:00Z",
+            "attributes": [
+                {
+                    "name": "purchase_order_ID",
+                    "value": "purchase_order:1367"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1367",
+                    "qualifier": "resulting_from"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "two_way_match",
+            "time": "2024-06-05T07:10:00Z",
+            "attributes": [
+                {
+                    "name": "goods_receipt_ID",
+                    "value": "goods_receipt:1626"
+                },
+                {
+                    "name": "invoice_receipt_ID",
+                    "value": "invoice_receipt:1626"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods_receipt:1626",
+                    "qualifier": "resulting_from"
+                },
+                {
+                    "objectId": "invoice_receipt:1626",
+                    "qualifier": "resulting_from"
+                }
+            ]
+        }
+    ]
+}

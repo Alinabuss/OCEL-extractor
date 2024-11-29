@@ -1,0 +1,105 @@
+{
+    "objectTypes": [
+        {
+            "name": "Request for Quotation",
+            "attributes": [
+                {
+                    "name": "Quotation ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchase Requisition ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Purchase Requisition",
+            "attributes": [
+                {
+                    "name": "Purchase Requisition ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Quotation Created",
+            "attributes": [
+                {
+                    "name": "Lifecycle Status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "quotation[86]",
+            "type": "Request for Quotation",
+            "attributes": [
+                {
+                    "name": "Quotation ID",
+                    "time": "2022-06-30T10:24:00Z",
+                    "value": "quotation[86]"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "2022-06-30T10:24:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition[87:pr_trigger_87]",
+                    "qualifier": "linked to"
+                }
+            ]
+        },
+        {
+            "id": "purchase_requisition[87:pr_trigger_87]",
+            "type": "Purchase Requisition",
+            "attributes": [
+                {
+                    "name": "Purchase Requisition ID",
+                    "time": "2022-06-30T10:24:00Z",
+                    "value": "purchase_requisition[87:pr_trigger_87]"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "2022-06-30T10:24:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Quotation Created",
+            "time": "2022-06-30T10:24:00Z",
+            "attributes": [
+                {
+                    "name": "Lifecycle Status",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation[86]",
+                    "qualifier": "refers to"
+                }
+            ]
+        }
+    ]
+}

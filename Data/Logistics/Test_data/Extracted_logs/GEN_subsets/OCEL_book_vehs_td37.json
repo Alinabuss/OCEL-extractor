@@ -1,0 +1,114 @@
+{
+    "objectTypes": [
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "departure_date",
+                    "type": "datetime"
+                },
+                {
+                    "name": "designation",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td37",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "time": "2023-06-22T09:19:36Z",
+                    "value": "4.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh10",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "departure_date",
+                    "time": "2023-06-22T09:19:36Z",
+                    "value": "2023-06-30T11:00:00Z"
+                },
+                {
+                    "name": "designation",
+                    "time": "2023-06-22T09:19:36Z",
+                    "value": "regular"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td37",
+                    "qualifier": "designated_for"
+                }
+            ]
+        },
+        {
+            "id": "vh9",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "departure_date",
+                    "time": "2023-06-22T09:19:36Z",
+                    "value": "2023-06-27T11:00:00Z"
+                },
+                {
+                    "name": "designation",
+                    "time": "2023-06-22T09:19:36Z",
+                    "value": "regular"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td37",
+                    "qualifier": "booked_for"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2023-06-22T09:19:36Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-06-22T09:19:36Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td37",
+                    "qualifier": "booked_document"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,128 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "type": "string"
+                },
+                {
+                    "name": "vacancy_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "vacancy_id",
+                    "type": "string"
+                },
+                {
+                    "name": "title",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "SubmitApplication",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "applicant_name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Mary Li",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-06-21T19:55:45Z",
+                    "value": "Mary Li"
+                }
+            ]
+        },
+        {
+            "id": "Application[770297]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "time": "2019-06-21T19:55:45Z",
+                    "value": "Application[770297]"
+                },
+                {
+                    "name": "vacancy_id",
+                    "time": "2019-06-21T19:55:45Z",
+                    "value": "Vacancy[550024]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550024]",
+                    "qualifier": "applies_for"
+                }
+            ]
+        },
+        {
+            "id": "Vacancy[550024]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "vacancy_id",
+                    "time": "2019-06-21T19:55:45Z",
+                    "value": "Vacancy[550024]"
+                },
+                {
+                    "name": "title",
+                    "time": "2019-06-21T19:55:45Z",
+                    "value": "Consultant"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "SubmitApplication",
+            "time": "2019-06-21T19:55:45Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2019-06-21T19:55:45Z"
+                },
+                {
+                    "name": "applicant_name",
+                    "value": "Mary Li"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770297]",
+                    "qualifier": "submitted"
+                }
+            ]
+        }
+    ]
+}

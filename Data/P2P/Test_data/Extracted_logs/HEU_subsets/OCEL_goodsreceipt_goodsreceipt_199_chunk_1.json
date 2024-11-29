@@ -1,0 +1,85 @@
+{
+    "objectTypes": [
+        {
+            "name": "order purchase",
+            "attributes": [
+                {
+                    "name": "order purchase",
+                    "type": "float"
+                },
+                {
+                    "name": "group purchase",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create goods receipt",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:199",
+            "type": "goods receipt",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:177",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:177",
+            "type": "order purchase",
+            "attributes": [
+                {
+                    "name": "order purchase",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "group purchase",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1349,
+            "type": "create goods receipt",
+            "time": "2022-07-24T13:14:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:177",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:199",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

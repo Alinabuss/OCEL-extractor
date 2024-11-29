@@ -1,0 +1,99 @@
+{
+    "objectTypes": [
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "type": "string"
+                },
+                {
+                    "name": "ScheduledDepartureDate",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "TotalContainers",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Booking",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "VehicleType",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh38",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "time": "2023-10-06T11:00:00Z",
+                    "value": "Regular"
+                },
+                {
+                    "name": "ScheduledDepartureDate",
+                    "time": "2023-10-06T11:00:00Z",
+                    "value": "2023-10-06T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td168",
+            "type": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "TotalContainers",
+                    "time": "2023-09-28T12:53:54Z",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Booking",
+            "time": "2023-09-28T12:53:54Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2023-09-28T12:53:54Z"
+                },
+                {
+                    "name": "VehicleType",
+                    "value": "Regular"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh38",
+                    "qualifier": "bookedFor"
+                },
+                {
+                    "objectId": "td168",
+                    "qualifier": "associatedWith"
+                }
+            ]
+        }
+    ]
+}

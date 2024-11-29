@@ -1,0 +1,224 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "material",
+            "attributes": [
+                {
+                    "name": "net_price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "purchase_order_created",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "requisition_approval_delegated",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:126",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-06-17T09:42:00Z",
+                    "value": "purchase_order:126"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2022-06-17T09:42:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:78",
+                    "qualifier": "related"
+                }
+            ]
+        },
+        {
+            "id": "quotation:78",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-06-17T09:42:00Z",
+                    "value": "quotation:78"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2022-06-17T09:42:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_requisition:89:pr_trigger_89",
+            "type": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-06-17T12:44:00Z",
+                    "value": "purchase_requisition:89:pr_trigger_89"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2022-06-17T12:44:00Z",
+                    "value": "001"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "material_001",
+            "type": "material",
+            "attributes": [
+                {
+                    "name": "net_price",
+                    "time": "2022-06-17T12:44:00Z",
+                    "value": 150.0
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:89:pr_trigger_89",
+                    "qualifier": "assigned_to"
+                }
+            ]
+        },
+        {
+            "id": "Procurement_Department",
+            "type": "department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2022-06-17T09:42:00Z",
+                    "value": "Procurement Department"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Manufacturing_Department",
+            "type": "department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2022-06-17T12:44:00Z",
+                    "value": "Manufacturing Department"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "purchase_order_created",
+            "time": "2022-06-17T09:42:00Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2022-06-17T09:42:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:126",
+                    "qualifier": "created"
+                },
+                {
+                    "objectId": "Procurement_Department",
+                    "qualifier": "performed_by"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "requisition_approval_delegated",
+            "time": "2022-06-17T12:44:00Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2022-06-17T12:44:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:89:pr_trigger_89",
+                    "qualifier": "approved"
+                },
+                {
+                    "objectId": "Manufacturing_Department",
+                    "qualifier": "performed_by"
+                }
+            ]
+        }
+    ]
+}

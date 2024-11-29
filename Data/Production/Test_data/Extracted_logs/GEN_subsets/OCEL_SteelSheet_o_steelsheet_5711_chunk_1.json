@@ -1,0 +1,134 @@
+{
+    "objectTypes": [
+        {
+            "name": "steel_sheet",
+            "attributes": [
+                {
+                    "name": "weight",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "steel_coil",
+            "attributes": [
+                {
+                    "name": "weight",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "machine",
+            "attributes": []
+        },
+        {
+            "name": "workstation",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "processing",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2_emission",
+                    "type": "float"
+                },
+                {
+                    "name": "energy_consumption",
+                    "type": "float"
+                },
+                {
+                    "name": "waste_generated",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o_steelsheet_5711",
+            "type": "steel_sheet",
+            "attributes": [
+                {
+                    "name": "weight",
+                    "time": "2023-04-06T12:16:53Z",
+                    "value": "0.02125"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "steelcoil_1",
+            "type": "steel_coil",
+            "attributes": [
+                {
+                    "name": "weight",
+                    "time": "2023-04-06T12:16:53Z",
+                    "value": "31.91076"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "splitter01",
+            "type": "machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "workstation_1",
+            "type": "workstation",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "processing",
+            "time": "2023-04-06T12:16:53Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "13.785"
+                },
+                {
+                    "name": "CO2_emission",
+                    "value": "0.014414"
+                },
+                {
+                    "name": "energy_consumption",
+                    "value": "0.0210607"
+                },
+                {
+                    "name": "waste_generated",
+                    "value": "0.00042"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "steelcoil_1",
+                    "qualifier": "processed"
+                },
+                {
+                    "objectId": "o_steelsheet_5711",
+                    "qualifier": "produced"
+                },
+                {
+                    "objectId": "splitter01",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "workstation_1",
+                    "qualifier": "located_at"
+                }
+            ]
+        }
+    ]
+}

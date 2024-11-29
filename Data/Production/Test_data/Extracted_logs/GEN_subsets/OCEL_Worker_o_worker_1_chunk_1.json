@@ -1,0 +1,126 @@
+{
+    "objectTypes": [
+        {
+            "name": "Facility",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Worker",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Metadata",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Move Parts",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "type": "integer"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "DE01",
+            "type": "Facility",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-03T10:16:17Z",
+                    "value": "DE01"
+                }
+            ]
+        },
+        {
+            "id": "Worker[1]",
+            "type": "Worker",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-04T09:58:29Z",
+                    "value": "Worker[1]"
+                },
+                {
+                    "name": "Metadata",
+                    "time": "2023-04-04T09:58:29Z",
+                    "value": "specified"
+                }
+            ]
+        },
+        {
+            "id": "Worker[0]",
+            "type": "Worker",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-03T10:16:17Z",
+                    "value": "Worker[0]"
+                },
+                {
+                    "name": "Metadata",
+                    "time": "2023-04-03T10:16:17Z",
+                    "value": "unspecified"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Move Parts",
+            "time": "2023-04-03T10:16:17Z",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "value": "900"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "DE01",
+                    "qualifier": "at"
+                },
+                {
+                    "objectId": "Worker[0]",
+                    "qualifier": "performed by"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Move Parts",
+            "time": "2023-04-04T09:58:29Z",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "value": "900"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "DE01",
+                    "qualifier": "at"
+                },
+                {
+                    "objectId": "Worker[1]",
+                    "qualifier": "performed by"
+                }
+            ]
+        }
+    ]
+}

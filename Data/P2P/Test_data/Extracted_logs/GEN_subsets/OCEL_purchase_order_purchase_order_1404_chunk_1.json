@@ -1,0 +1,100 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "approval_complete",
+            "attributes": [
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:1404",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2024-06-29T06:19:00Z",
+                    "value": "purchase_order:1404"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2024-06-29T06:19:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:822",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": "quotation:822",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2024-06-29T06:19:00Z",
+                    "value": "quotation:822"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2024-06-29T06:19:00Z",
+                    "value": "003"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "approval_complete",
+            "time": "2024-06-29T06:19:00Z",
+            "attributes": [
+                {
+                    "name": "role",
+                    "value": "Procurement Order Manager"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1404",
+                    "qualifier": "affected"
+                }
+            ]
+        }
+    ]
+}

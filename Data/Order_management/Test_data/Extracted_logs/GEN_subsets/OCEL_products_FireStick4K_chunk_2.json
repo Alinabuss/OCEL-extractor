@@ -1,0 +1,290 @@
+{
+    "objectTypes": [
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Customer",
+            "attributes": []
+        },
+        {
+            "name": "Employee",
+            "attributes": []
+        },
+        {
+            "name": "Order",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Reorder",
+            "attributes": [
+                {
+                    "name": "itemID",
+                    "type": "string"
+                },
+                {
+                    "name": "itemPrice",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "CustomerOrder",
+            "attributes": [
+                {
+                    "name": "orderItems",
+                    "type": "string"
+                },
+                {
+                    "name": "totalPrice",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Fire Stick 4K",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-06-05T00:00:00Z",
+                    "value": "89.99"
+                }
+            ]
+        },
+        {
+            "id": "i-881108",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-06-05T00:00:00Z",
+                    "value": "95.13"
+                }
+            ]
+        },
+        {
+            "id": "i-881220",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-06-14T00:00:00Z",
+                    "value": "95.13"
+                }
+            ]
+        },
+        {
+            "id": "i-881253",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-06-20T00:00:00Z",
+                    "value": "95.13"
+                }
+            ]
+        },
+        {
+            "id": "i-881492",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-06-21T00:00:00Z",
+                    "value": "31.70"
+                }
+            ]
+        },
+        {
+            "id": "iPhone 11 Pro",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-06-21T00:00:00Z",
+                    "value": "1149.00"
+                }
+            ]
+        },
+        {
+            "id": "Echo Show 5",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-06-21T00:00:00Z",
+                    "value": "89.99"
+                }
+            ]
+        },
+        {
+            "id": "i-882714",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-08-21T00:00:00Z",
+                    "value": "97.37"
+                }
+            ]
+        },
+        {
+            "id": "Marco Pegoraro",
+            "type": "Employee",
+            "attributes": []
+        },
+        {
+            "id": "Mahsa Bafrani",
+            "type": "Employee",
+            "attributes": []
+        },
+        {
+            "id": "Christopher Schwanen",
+            "type": "Employee",
+            "attributes": []
+        },
+        {
+            "id": "SwissPeak Timepieces AG",
+            "type": "Customer",
+            "attributes": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Reorder",
+            "time": "2023-06-05T12:36:15Z",
+            "attributes": [
+                {
+                    "name": "itemID",
+                    "value": "i-881108"
+                },
+                {
+                    "name": "itemPrice",
+                    "value": "95.13"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Marco Pegoraro",
+                    "qualifier": "performedBy"
+                },
+                {
+                    "objectId": "Fire Stick 4K",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Reorder",
+            "time": "2023-06-14T15:27:53Z",
+            "attributes": [
+                {
+                    "name": "itemID",
+                    "value": "i-881220"
+                },
+                {
+                    "name": "itemPrice",
+                    "value": "95.13"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Marco Pegoraro",
+                    "qualifier": "performedBy"
+                },
+                {
+                    "objectId": "Fire Stick 4K",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Reorder",
+            "time": "2023-06-20T09:56:39Z",
+            "attributes": [
+                {
+                    "name": "itemID",
+                    "value": "i-881253"
+                },
+                {
+                    "name": "itemPrice",
+                    "value": "95.13"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Mahsa Bafrani",
+                    "qualifier": "performedBy"
+                },
+                {
+                    "objectId": "Fire Stick 4K",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "CustomerOrder",
+            "time": "2023-06-21T00:00:00Z",
+            "attributes": [
+                {
+                    "name": "orderItems",
+                    "value": "Fire Stick 4K, iPhone 11 Pro, Echo Show 5"
+                },
+                {
+                    "name": "totalPrice",
+                    "value": "1319.68"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SwissPeak Timepieces AG",
+                    "qualifier": "placedBy"
+                },
+                {
+                    "objectId": "Fire Stick 4K",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "Reorder",
+            "time": "2023-08-21T09:54:23Z",
+            "attributes": [
+                {
+                    "name": "itemID",
+                    "value": "i-882714"
+                },
+                {
+                    "name": "itemPrice",
+                    "value": "97.37"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Christopher Schwanen",
+                    "qualifier": "performedBy"
+                },
+                {
+                    "objectId": "Fire Stick 4K",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        }
+    ]
+}

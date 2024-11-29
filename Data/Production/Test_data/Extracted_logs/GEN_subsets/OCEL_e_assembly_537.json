@@ -1,0 +1,172 @@
+{
+    "objectTypes": [
+        {
+            "name": "component",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "energy_source",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "assembly_process",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "malePart[473]",
+            "type": "component",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-03T11:42:36Z",
+                    "value": "malePart[473]"
+                },
+                {
+                    "name": "type",
+                    "time": "2023-04-03T11:42:36Z",
+                    "value": "male part"
+                }
+            ]
+        },
+        {
+            "id": "femalePart[537]",
+            "type": "component",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-03T11:42:36Z",
+                    "value": "femalePart[537]"
+                },
+                {
+                    "name": "type",
+                    "time": "2023-04-03T11:42:36Z",
+                    "value": "female part"
+                }
+            ]
+        },
+        {
+            "id": "steelPin[1557]",
+            "type": "component",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-03T11:42:36Z",
+                    "value": "steelPin[1557]"
+                },
+                {
+                    "name": "type",
+                    "time": "2023-04-03T11:42:36Z",
+                    "value": "steel pin"
+                }
+            ]
+        },
+        {
+            "id": "hinge[537]",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-03T11:42:36Z",
+                    "value": "hinge[537]"
+                },
+                {
+                    "name": "mass",
+                    "time": "2023-04-03T11:42:36Z",
+                    "value": 0.18544
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "workstation[3]",
+            "type": "workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-03T11:42:36Z",
+                    "value": "workstation[3]"
+                },
+                {
+                    "name": "energy_source",
+                    "time": "2023-04-03T11:42:36Z",
+                    "value": "grid"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "assembly_process",
+            "time": "2023-04-03T11:42:36Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": 5.0
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "hinge[537]",
+                    "qualifier": "produced"
+                },
+                {
+                    "objectId": "workstation[3]",
+                    "qualifier": "performed_at"
+                },
+                {
+                    "objectId": "malePart[473]",
+                    "qualifier": "used_in"
+                },
+                {
+                    "objectId": "femalePart[537]",
+                    "qualifier": "used_in"
+                },
+                {
+                    "objectId": "steelPin[1557]",
+                    "qualifier": "used_in"
+                }
+            ]
+        }
+    ]
+}

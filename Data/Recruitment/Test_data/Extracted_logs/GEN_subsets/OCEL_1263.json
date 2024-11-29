@@ -1,0 +1,118 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "title",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Application Submitted",
+            "attributes": [
+                {
+                    "name": "submission_time",
+                    "type": "timestamp"
+                },
+                {
+                    "name": "application_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Applicant[Toon Park]",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-06-24T09:46:00Z",
+                    "value": "Toon Park"
+                }
+            ]
+        },
+        {
+            "id": "Vacancy[550010]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "title",
+                    "time": "2019-06-24T09:46:00Z",
+                    "value": "Programmer"
+                }
+            ]
+        },
+        {
+            "id": "Application[770305]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "status",
+                    "time": "2019-06-24T09:46:00Z",
+                    "value": "submitted"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Applicant[Toon Park]",
+                    "qualifier": "submitted by"
+                },
+                {
+                    "objectId": "Vacancy[550010]",
+                    "qualifier": "for"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Application Submitted",
+            "time": "2019-06-24T09:46:00Z",
+            "attributes": [
+                {
+                    "name": "submission_time",
+                    "value": "2019-06-24T09:46:00Z"
+                },
+                {
+                    "name": "application_id",
+                    "value": "Application[770305]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770305]",
+                    "qualifier": "application"
+                }
+            ]
+        }
+    ]
+}

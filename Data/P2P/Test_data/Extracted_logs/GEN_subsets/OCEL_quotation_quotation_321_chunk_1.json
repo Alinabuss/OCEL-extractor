@@ -1,0 +1,105 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create_purchase_order",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "dateTime"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Purchase Order[533]",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-02-27T16:45:00Z",
+                    "value": "Purchase Order[533]"
+                },
+                {
+                    "name": "status",
+                    "time": "2023-02-27T16:45:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Quotation[321]",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": "Quotation[321]",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-02-27T16:45:00Z",
+                    "value": "Quotation[321]"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2023-02-27T16:45:00Z",
+                    "value": "001"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create_purchase_order",
+            "time": "2023-02-27T16:45:00Z",
+            "attributes": [
+                {
+                    "name": "department",
+                    "value": "Procurement Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Purchase Order[533]",
+                    "qualifier": "involved"
+                }
+            ]
+        }
+    ]
+}

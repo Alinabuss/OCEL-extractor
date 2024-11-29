@@ -1,0 +1,113 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "Receipts qualifier of Good",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "receipt goods",
+            "attributes": [
+                {
+                    "name": "March",
+                    "type": "string"
+                },
+                {
+                    "name": "group purchase",
+                    "type": "float"
+                },
+                {
+                    "name": "group purchase",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create goods receipt",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1480",
+            "type": "receipt goods",
+            "attributes": [
+                {
+                    "name": "March",
+                    "time": "2024-03-15T03:50:00Z",
+                    "value": "March"
+                },
+                {
+                    "name": "group purchase",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "group purchase",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1225",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:1225",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "Receipts qualifier of Good",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Good Receipts"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 963,
+            "type": "create goods receipt",
+            "time": "2024-03-15T03:50:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Warehouse Department"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1225",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:1480",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

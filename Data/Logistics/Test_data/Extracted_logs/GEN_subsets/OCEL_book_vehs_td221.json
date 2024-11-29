@@ -1,0 +1,102 @@
+{
+    "objectTypes": [
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Booking",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Departure Scheduled",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td221",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "time": "2023-11-08T06:25:45Z",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh52",
+                    "qualifier": "linked to"
+                }
+            ]
+        },
+        {
+            "id": "vh52",
+            "type": "Vehicle",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Booking",
+            "time": "2023-11-08T06:25:45Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-11-08T06:25:45Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td221",
+                    "qualifier": "booked for"
+                },
+                {
+                    "objectId": "vh52",
+                    "qualifier": "booked"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Departure Scheduled",
+            "time": "2023-11-24T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-11-24T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh52",
+                    "qualifier": "scheduled for"
+                }
+            ]
+        }
+    ]
+}

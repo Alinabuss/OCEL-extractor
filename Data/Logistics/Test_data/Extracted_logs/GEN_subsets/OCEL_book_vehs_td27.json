@@ -1,0 +1,164 @@
+{
+    "objectTypes": [
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Designation",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Transport Document Created",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle Booked",
+            "attributes": [
+                {
+                    "name": "Vehicle ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Designation",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle Departure Scheduled",
+            "attributes": [
+                {
+                    "name": "Departure Time",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td27",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-06-12T15:06:40Z",
+                    "value": "td27"
+                },
+                {
+                    "name": "Amount",
+                    "time": "2023-06-12T15:06:40Z",
+                    "value": "3.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh8",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-06-12T15:06:40Z",
+                    "value": "vh8"
+                },
+                {
+                    "name": "Designation",
+                    "time": "2023-06-12T15:06:40Z",
+                    "value": "Regular"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Transport Document Created",
+            "time": "2023-06-12T15:06:40Z",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "value": "td27"
+                },
+                {
+                    "name": "Amount",
+                    "value": "3.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td27",
+                    "qualifier": "created"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Vehicle Booked",
+            "time": "2023-06-12T15:06:40Z",
+            "attributes": [
+                {
+                    "name": "Vehicle ID",
+                    "value": "vh8"
+                },
+                {
+                    "name": "Designation",
+                    "value": "Regular"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td27",
+                    "qualifier": "booked"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Vehicle Departure Scheduled",
+            "time": "2023-06-23T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "Departure Time",
+                    "value": "2023-06-23T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh8",
+                    "qualifier": "scheduled"
+                }
+            ]
+        }
+    ]
+}

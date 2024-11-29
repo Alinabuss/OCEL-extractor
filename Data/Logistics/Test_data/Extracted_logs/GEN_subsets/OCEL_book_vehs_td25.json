@@ -1,0 +1,131 @@
+{
+    "objectTypes": [
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Departure Date",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Booking Completed",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td25",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-06-09T15:55:57Z",
+                    "value": "td25"
+                },
+                {
+                    "name": "Containers",
+                    "time": "2023-06-09T15:55:57Z",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh5",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-06-09T15:55:57Z",
+                    "value": "vh5"
+                },
+                {
+                    "name": "Departure Date",
+                    "time": "2023-06-09T15:55:57Z",
+                    "value": "2023-06-13T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td25",
+                    "qualifier": "booked for"
+                }
+            ]
+        },
+        {
+            "id": "vh12",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-06-09T15:55:57Z",
+                    "value": "vh12"
+                },
+                {
+                    "name": "Departure Date",
+                    "time": "2023-06-09T15:55:57Z",
+                    "value": "2023-07-07T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td25",
+                    "qualifier": "booked for"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Booking Completed",
+            "time": "2023-06-09T15:55:57Z",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "value": "2023-06-09T15:55:57Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td25",
+                    "qualifier": "booking for"
+                },
+                {
+                    "objectId": "vh5",
+                    "qualifier": "involved in"
+                },
+                {
+                    "objectId": "vh12",
+                    "qualifier": "involved in"
+                }
+            ]
+        }
+    ]
+}

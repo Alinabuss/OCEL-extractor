@@ -1,0 +1,123 @@
+{
+    "objectTypes": [
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Assign Vacancy",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "timestamp"
+                }
+            ]
+        },
+        {
+            "name": "Screening",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "timestamp"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Vacancy[550044]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-02T10:00:59Z",
+                    "value": "550044"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770202]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-02T10:00:59Z",
+                    "value": "770202"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Jana Geisler",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-04T13:01:08Z",
+                    "value": "Jana Geisler"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Assign Vacancy",
+            "time": "2019-07-02T10:00:59Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550044]",
+                    "qualifier": "assigned_to"
+                },
+                {
+                    "objectId": "Application[770202]",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Screening",
+            "time": "2019-07-04T13:01:08Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Application[770202]",
+                    "qualifier": "screened_by"
+                },
+                {
+                    "objectId": "Jana Geisler",
+                    "qualifier": "conducted_by"
+                }
+            ]
+        }
+    ]
+}

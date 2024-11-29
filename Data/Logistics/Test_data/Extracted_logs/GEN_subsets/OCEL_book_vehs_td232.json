@@ -1,0 +1,98 @@
+{
+    "objectTypes": [
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "departure_date",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "container_count",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh50",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "departure_date",
+                    "time": "2023-11-17T11:00:00Z",
+                    "value": "2023-11-17T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh53",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "departure_date",
+                    "time": "2023-11-28T11:00:00Z",
+                    "value": "2023-11-28T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td232",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "container_count",
+                    "time": "2023-11-15T09:35:12Z",
+                    "value": "3.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2023-11-15T09:35:12Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-11-15T09:35:12Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td232",
+                    "qualifier": "booked_by"
+                },
+                {
+                    "objectId": "vh50",
+                    "qualifier": "assigned_vehicle"
+                },
+                {
+                    "objectId": "vh53",
+                    "qualifier": "assigned_vehicle"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,99 @@
+{
+    "objectTypes": [
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "decimal"
+                }
+            ]
+        },
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "ReportOutOfStock",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "productName",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Echo Show 5",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-05-18T09:12:18Z",
+                    "value": "89.99"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Nina Graves",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-05-18T09:12:18Z",
+                    "value": "Nina Graves"
+                },
+                {
+                    "name": "department",
+                    "time": "2023-05-18T09:12:18Z",
+                    "value": "warehousing"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "ReportOutOfStock",
+            "time": "2023-05-18T09:12:18Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-05-18T09:12:18Z"
+                },
+                {
+                    "name": "productName",
+                    "value": "Echo Show 5"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Echo Show 5",
+                    "qualifier": "reportedProduct"
+                },
+                {
+                    "objectId": "Nina Graves",
+                    "qualifier": "reporter"
+                }
+            ]
+        }
+    ]
+}

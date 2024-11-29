@@ -1,0 +1,118 @@
+{
+    "objectTypes": [
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "transport document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "containers",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "departure",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh59",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-12-08T08:06:58Z",
+                    "value": "vh59"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td259",
+                    "qualifier": "booked for"
+                }
+            ]
+        },
+        {
+            "id": "td259",
+            "type": "transport document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-12-08T08:06:58Z",
+                    "value": "td259"
+                },
+                {
+                    "name": "containers",
+                    "time": "2023-12-08T08:06:58Z",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2023-12-08T08:06:58Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2023-12-08T08:06:58Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td259",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "departure",
+            "time": "2023-12-19T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2023-12-19T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh59",
+                    "qualifier": "scheduled for"
+                }
+            ]
+        }
+    ]
+}

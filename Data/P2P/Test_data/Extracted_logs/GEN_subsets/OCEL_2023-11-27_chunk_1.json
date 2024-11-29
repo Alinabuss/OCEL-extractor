@@ -1,0 +1,166 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "purchase requisition",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "two-way match completion",
+            "attributes": [
+                {
+                    "name": "goods receipt ID",
+                    "type": "string"
+                },
+                {
+                    "name": "invoice receipt ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "request for quotation completion",
+            "attributes": [
+                {
+                    "name": "purchase requisition ID",
+                    "type": "string"
+                },
+                {
+                    "name": "quotation ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1212",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2023-11-27T13:54:00Z",
+                    "value": "101"
+                }
+            ]
+        },
+        {
+            "id": "invoice receipt:1210",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2023-11-27T13:54:00Z",
+                    "value": "21000.00"
+                }
+            ]
+        },
+        {
+            "id": "purchase_requisition:592:pr_trigger_592",
+            "type": "purchase requisition",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "time": "2023-11-27T23:23:00Z",
+                    "value": "004"
+                }
+            ]
+        },
+        {
+            "id": "quotation:591",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "time": "2023-11-27T23:23:00Z",
+                    "value": "004"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "two-way match completion",
+            "time": "2023-11-27T13:54:00Z",
+            "attributes": [
+                {
+                    "name": "goods receipt ID",
+                    "value": "goods receipt:1212"
+                },
+                {
+                    "name": "invoice receipt ID",
+                    "value": "invoice receipt:1210"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1212",
+                    "qualifier": "matched with"
+                },
+                {
+                    "objectId": "invoice receipt:1210",
+                    "qualifier": "matched with"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "request for quotation completion",
+            "time": "2023-11-27T23:23:00Z",
+            "attributes": [
+                {
+                    "name": "purchase requisition ID",
+                    "value": "purchase_requisition:592:pr_trigger_592"
+                },
+                {
+                    "name": "quotation ID",
+                    "value": "quotation:591"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:592:pr_trigger_592",
+                    "qualifier": "created"
+                },
+                {
+                    "objectId": "quotation:591",
+                    "qualifier": "resulted from"
+                }
+            ]
+        }
+    ]
+}

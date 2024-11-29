@@ -1,0 +1,118 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "receiving_id",
+                    "type": "string"
+                },
+                {
+                    "name": "movement_type",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchasing_group",
+            "attributes": [
+                {
+                    "name": "group_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "creation",
+            "attributes": [
+                {
+                    "name": "receiving_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1922",
+            "type": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "receiving_id",
+                    "time": "2024-10-16T00:14:00Z",
+                    "value": "1922"
+                },
+                {
+                    "name": "movement_type",
+                    "time": "2024-10-16T00:14:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1561",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:1561",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "time": "2024-10-16T00:14:00Z",
+                    "value": "1561"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchasing_group:004",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": "purchasing_group:004",
+            "type": "purchasing_group",
+            "attributes": [
+                {
+                    "name": "group_id",
+                    "time": "2024-10-16T00:14:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "creation",
+            "time": "2024-10-16T00:14:00Z",
+            "attributes": [
+                {
+                    "name": "receiving_id",
+                    "value": "1922"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1922",
+                    "qualifier": "of"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,178 @@
+{
+    "objectTypes": [
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "Product Price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "Item Price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "Role",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Pick",
+            "attributes": [
+                {
+                    "name": "Employee Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Action",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Fire Stick 4K",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "Product Price",
+                    "time": "2024-03-19T14:36:34Z",
+                    "value": "89.99"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-887531",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "Item Price",
+                    "time": "2024-03-19T14:36:34Z",
+                    "value": "106.06"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Fire Stick 4K",
+                    "qualifier": "is_a"
+                }
+            ]
+        },
+        {
+            "id": "i-887386",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "Item Price",
+                    "time": "2024-03-20T08:41:32Z",
+                    "value": "106.06"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Fire Stick 4K",
+                    "qualifier": "is_a"
+                }
+            ]
+        },
+        {
+            "id": "Christopher Schwanen",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "Role",
+                    "time": "2024-03-19T14:36:34Z",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Marco Pegoraro",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "Role",
+                    "time": "2024-03-20T08:41:32Z",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Pick",
+            "time": "2024-03-19T14:36:34Z",
+            "attributes": [
+                {
+                    "name": "Employee Name",
+                    "value": "Christopher Schwanen"
+                },
+                {
+                    "name": "Action",
+                    "value": "Picked"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-887531",
+                    "qualifier": "involves"
+                },
+                {
+                    "objectId": "Fire Stick 4K",
+                    "qualifier": "involves"
+                },
+                {
+                    "objectId": "Christopher Schwanen",
+                    "qualifier": "performed_by"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Pick",
+            "time": "2024-03-20T08:41:32Z",
+            "attributes": [
+                {
+                    "name": "Employee Name",
+                    "value": "Marco Pegoraro"
+                },
+                {
+                    "name": "Action",
+                    "value": "Picked"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-887386",
+                    "qualifier": "involves"
+                },
+                {
+                    "objectId": "Fire Stick 4K",
+                    "qualifier": "involves"
+                },
+                {
+                    "objectId": "Marco Pegoraro",
+                    "qualifier": "performed_by"
+                }
+            ]
+        }
+    ]
+}

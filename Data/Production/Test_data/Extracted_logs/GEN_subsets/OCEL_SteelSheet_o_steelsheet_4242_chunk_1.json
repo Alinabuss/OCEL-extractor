@@ -1,0 +1,129 @@
+{
+    "objectTypes": [
+        {
+            "name": "machine",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "steel_sheet",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "workstation",
+            "attributes": [
+                {
+                    "name": "electric_consumption",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "heating_operation",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "int"
+                },
+                {
+                    "name": "co2_emission",
+                    "type": "float"
+                },
+                {
+                    "name": "electricity_consumed",
+                    "type": "float"
+                },
+                {
+                    "name": "gas_consumed",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "oven01",
+            "type": "machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "o_steelsheet_4242",
+            "type": "steel_sheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-05T12:19:29Z",
+                    "value": "0.02124"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "workstation_heating",
+            "type": "workstation",
+            "attributes": [
+                {
+                    "name": "electric_consumption",
+                    "time": "2023-04-05T12:19:29Z",
+                    "value": "specific electric consumption attributes"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "heating_operation",
+            "time": "2023-04-05T12:19:29Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "900"
+                },
+                {
+                    "name": "co2_emission",
+                    "value": "0.0138019093344"
+                },
+                {
+                    "name": "electricity_consumed",
+                    "value": "0.02"
+                },
+                {
+                    "name": "gas_consumed",
+                    "value": "0.49392"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "oven01",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "o_steelsheet_4242",
+                    "qualifier": "processed"
+                },
+                {
+                    "objectId": "workstation_heating",
+                    "qualifier": "involved"
+                }
+            ]
+        }
+    ]
+}

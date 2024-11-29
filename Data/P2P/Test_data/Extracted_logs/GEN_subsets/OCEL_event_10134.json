@@ -1,0 +1,109 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "movement type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create",
+            "attributes": [
+                {
+                    "name": "associated_purchase_order",
+                    "type": "string"
+                },
+                {
+                    "name": "managed_by",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:663",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-03-09T22:22:00Z",
+                    "value": "goods receipt:663"
+                },
+                {
+                    "name": "movement type",
+                    "time": "2023-03-09T22:22:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:546",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:546",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-03-09T22:22:00Z",
+                    "value": "purchase_order:546"
+                },
+                {
+                    "name": "purchasing group",
+                    "time": "2023-03-09T22:22:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create",
+            "time": "2023-03-09T22:22:00Z",
+            "attributes": [
+                {
+                    "name": "associated_purchase_order",
+                    "value": "purchase_order:546"
+                },
+                {
+                    "name": "managed_by",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:663",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

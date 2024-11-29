@@ -1,0 +1,160 @@
+{
+    "objectTypes": [
+        {
+            "name": "Machine",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Workstation",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "SteelCoil",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "SplittingOperation",
+            "attributes": [
+                {
+                    "name": "operationName",
+                    "type": "string"
+                },
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2Generated",
+                    "type": "float"
+                },
+                {
+                    "name": "electricityConsumed",
+                    "type": "float"
+                },
+                {
+                    "name": "steelWasteSetAside",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Machine[splitter01]",
+            "type": "Machine",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-04-04T08:30:18Z",
+                    "value": "Machine[splitter01]"
+                }
+            ]
+        },
+        {
+            "id": "Workstation[1]",
+            "type": "Workstation",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-04-04T08:30:18Z",
+                    "value": "Workstation[1]"
+                }
+            ]
+        },
+        {
+            "id": "SteelCoil[3]",
+            "type": "SteelCoil",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-04T08:30:18Z",
+                    "value": "31.91076"
+                }
+            ]
+        },
+        {
+            "id": "SteelSheet[1801]",
+            "type": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-04T08:30:18Z",
+                    "value": "0.02119"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "SplittingOperation",
+            "time": "2023-04-04T08:30:18Z",
+            "attributes": [
+                {
+                    "name": "operationName",
+                    "value": "SplittingSteelSheet"
+                },
+                {
+                    "name": "duration",
+                    "value": "15.31"
+                },
+                {
+                    "name": "CO2Generated",
+                    "value": "0.0160"
+                },
+                {
+                    "name": "electricityConsumed",
+                    "value": "0.0234"
+                },
+                {
+                    "name": "steelWasteSetAside",
+                    "value": "0.00042"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Machine[splitter01]",
+                    "qualifier": "performedBy"
+                },
+                {
+                    "objectId": "Workstation[1]",
+                    "qualifier": "at"
+                },
+                {
+                    "objectId": "SteelCoil[3]",
+                    "qualifier": "from"
+                },
+                {
+                    "objectId": "SteelSheet[1801]",
+                    "qualifier": "produced"
+                }
+            ]
+        }
+    ]
+}

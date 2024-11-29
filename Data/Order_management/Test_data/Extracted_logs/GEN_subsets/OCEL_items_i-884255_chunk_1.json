@@ -1,0 +1,133 @@
+{
+    "objectTypes": [
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "identifier",
+                    "type": "string"
+                },
+                {
+                    "name": "value",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "identifier",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "reorder",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Mahsa Bafrani",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-10-25T11:39:58Z",
+                    "value": "Mahsa Bafrani"
+                },
+                {
+                    "name": "role",
+                    "time": "2023-10-25T11:39:58Z",
+                    "value": "warehousing employee"
+                }
+            ]
+        },
+        {
+            "id": "i-884255",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "identifier",
+                    "time": "2023-10-25T11:39:58Z",
+                    "value": "i-884255"
+                },
+                {
+                    "name": "value",
+                    "time": "2023-10-25T11:39:58Z",
+                    "value": "877.06"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "product-iPhone-11",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "product-iPhone-11",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "identifier",
+                    "time": "2023-10-25T11:39:58Z",
+                    "value": "iPhone 11"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-10-25T11:39:58Z",
+                    "value": "799.0"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "reorder",
+            "time": "2023-10-25T11:39:58Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2023-10-25T11:39:58Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Mahsa Bafrani",
+                    "qualifier": "initiated_by"
+                },
+                {
+                    "objectId": "i-884255",
+                    "qualifier": "reordered"
+                }
+            ]
+        }
+    ]
+}

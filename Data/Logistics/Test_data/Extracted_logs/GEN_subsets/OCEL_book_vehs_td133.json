@@ -1,0 +1,109 @@
+{
+    "objectTypes": [
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "scheduled_departure",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "type": "string"
+                },
+                {
+                    "name": "containers",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "booking_time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh32",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "time": "2023-09-04T12:25:58Z",
+                    "value": "vh32"
+                },
+                {
+                    "name": "status",
+                    "time": "2023-09-04T12:25:58Z",
+                    "value": "booked"
+                },
+                {
+                    "name": "scheduled_departure",
+                    "time": "2023-09-04T12:25:58Z",
+                    "value": "2023-09-15T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td133",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "time": "2023-09-04T12:25:58Z",
+                    "value": "td133"
+                },
+                {
+                    "name": "containers",
+                    "time": "2023-09-04T12:25:58Z",
+                    "value": "3.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2023-09-04T12:25:58Z",
+            "attributes": [
+                {
+                    "name": "booking_time",
+                    "value": "2023-09-04T12:25:58Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh32",
+                    "qualifier": "booked_for"
+                },
+                {
+                    "objectId": "td133",
+                    "qualifier": "associated_with"
+                }
+            ]
+        }
+    ]
+}

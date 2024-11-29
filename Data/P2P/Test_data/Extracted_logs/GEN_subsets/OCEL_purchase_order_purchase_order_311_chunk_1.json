@@ -1,0 +1,168 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "purchase_order_id",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "quotation_id",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchasing_group",
+            "attributes": [
+                {
+                    "name": "group_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "purchase_order_creation",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "result",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase_order_approval",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "result",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:311",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "purchase_order_id",
+                    "time": "2022-09-13T08:45:00Z",
+                    "value": "purchase_order:311"
+                },
+                {
+                    "name": "status",
+                    "time": "2022-09-13T08:45:00Z",
+                    "value": "completed"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:188",
+                    "qualifier": "associated_with"
+                },
+                {
+                    "objectId": "001",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": "quotation:188",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "quotation_id",
+                    "time": "2022-09-13T08:45:00Z",
+                    "value": "quotation:188"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2022-09-13T08:45:00Z",
+                    "value": "001"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "001",
+            "type": "purchasing_group",
+            "attributes": [
+                {
+                    "name": "group_id",
+                    "time": "2022-09-13T08:45:00Z",
+                    "value": "001"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "purchase_order_creation",
+            "time": "2022-09-13T08:45:00Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2022-09-13T08:45:00Z"
+                },
+                {
+                    "name": "result",
+                    "value": "completed"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:311",
+                    "qualifier": "affects"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "purchase_order_approval",
+            "time": "2022-09-13T11:52:00Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2022-09-13T11:52:00Z"
+                },
+                {
+                    "name": "result",
+                    "value": "completed"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:311",
+                    "qualifier": "affects"
+                }
+            ]
+        }
+    ]
+}

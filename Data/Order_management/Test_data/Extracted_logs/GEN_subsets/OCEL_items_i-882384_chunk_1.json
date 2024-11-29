@@ -1,0 +1,135 @@
+{
+    "objectTypes": [
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "reorder",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Detlef Wetzeler",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-07-28T09:31:19Z",
+                    "value": "Detlef Wetzeler"
+                },
+                {
+                    "name": "department",
+                    "time": "2023-07-28T09:31:19Z",
+                    "value": "warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-882384",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-07-28T09:31:19Z",
+                    "value": "i-882384"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-07-28T09:31:19Z",
+                    "value": 1214.61
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "iPhone 11 Pro",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "iPhone 11 Pro",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-07-28T09:31:19Z",
+                    "value": "iPhone 11 Pro"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-07-28T09:31:19Z",
+                    "value": 1149.0
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "reorder",
+            "time": "2023-07-28T09:31:19Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-07-28T09:31:19Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Detlef Wetzeler",
+                    "qualifier": "initiated_by"
+                },
+                {
+                    "objectId": "i-882384",
+                    "qualifier": "reordered_item"
+                }
+            ]
+        }
+    ]
+}

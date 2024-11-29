@@ -1,0 +1,117 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "label",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "request_for_quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "generate_request_for_quotation",
+            "attributes": [
+                {
+                    "name": "request_ID",
+                    "type": "string"
+                },
+                {
+                    "name": "purchase_requisition_ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_requisition:626:pr_trigger_626",
+            "type": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "",
+                    "value": "purchase_requisition:626:pr_trigger_626"
+                },
+                {
+                    "name": "label",
+                    "time": "",
+                    "value": "purchase_requisition:626"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "",
+                    "value": "004"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "quotation:622",
+            "type": "request_for_quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "",
+                    "value": "quotation:622"
+                },
+                {
+                    "name": "department",
+                    "time": "",
+                    "value": "Procurement Department"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "generate_request_for_quotation",
+            "time": "2023-12-20T11:16:00Z",
+            "attributes": [
+                {
+                    "name": "request_ID",
+                    "value": "quotation:622"
+                },
+                {
+                    "name": "purchase_requisition_ID",
+                    "value": "purchase_requisition:626:pr_trigger_626"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:622",
+                    "qualifier": "generated_from"
+                },
+                {
+                    "objectId": "purchase_requisition:626:pr_trigger_626",
+                    "qualifier": "linked_to"
+                }
+            ]
+        }
+    ]
+}

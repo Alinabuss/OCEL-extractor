@@ -1,0 +1,148 @@
+{
+    "objectTypes": [
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "product_name",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "standalone_price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "item_picked",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "dateTime"
+                },
+                {
+                    "name": "employee_name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Marco Pegoraro",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "",
+                    "value": "Marco Pegoraro"
+                },
+                {
+                    "name": "role",
+                    "time": "",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-885724",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "",
+                    "value": "i-885724"
+                },
+                {
+                    "name": "product_name",
+                    "time": "",
+                    "value": "Echo Studio"
+                },
+                {
+                    "name": "price",
+                    "time": "",
+                    "value": "224.79"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Echo Studio",
+                    "qualifier": "is_associated_with"
+                }
+            ]
+        },
+        {
+            "id": "Echo Studio",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "",
+                    "value": "Echo Studio"
+                },
+                {
+                    "name": "standalone_price",
+                    "time": "",
+                    "value": "199.99"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "item_picked",
+            "time": "2024-01-09T09:40:41Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2024-01-09T09:40:41Z"
+                },
+                {
+                    "name": "employee_name",
+                    "value": "Marco Pegoraro"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-885724",
+                    "qualifier": "was_picked"
+                }
+            ]
+        }
+    ]
+}

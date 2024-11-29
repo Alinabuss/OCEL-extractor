@@ -1,0 +1,93 @@
+{
+    "objectTypes": [
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "type": "number"
+                }
+            ]
+        },
+        {
+            "name": "vehicle",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "departure",
+            "attributes": [
+                {
+                    "name": "departure_time",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td268",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "time": "2023-12-12T15:51:09Z",
+                    "value": "3.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh62",
+            "type": "vehicle",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2023-12-12T15:51:09Z",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "value": "vh62"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td268",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "departure",
+            "time": "2023-12-29T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "departure_time",
+                    "value": "2023-12-29T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh62",
+                    "qualifier": "scheduled_for"
+                }
+            ]
+        }
+    ]
+}

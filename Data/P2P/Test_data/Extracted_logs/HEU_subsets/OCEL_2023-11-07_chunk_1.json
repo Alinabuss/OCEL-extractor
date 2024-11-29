@@ -1,0 +1,240 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "type": "string"
+                },
+                {
+                    "name": "Finance",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Object_type_not_identified",
+            "attributes": []
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase order",
+                    "type": "float"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                },
+                {
+                    "name": "purchase order",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "creation of an invoice receipt",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "create goods receipt",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "create goods receipt",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt[1159",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "89,450.00"
+                },
+                {
+                    "name": "Finance",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Finance"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt[1161",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:960",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "goods receipt[1161",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:1169",
+            "type": "goods receipt",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:960",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase order",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "005"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Purchasing Group"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "receipt:1174",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:967",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase order",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "receipt:1174",
+            "type": "Object_type_not_identified",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:967",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 451,
+            "type": "creation of an invoice receipt",
+            "time": "2023-11-07T04:17:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Account Department"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt[1161",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "invoice receipt[1159",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 452,
+            "type": "create goods receipt",
+            "time": "2023-11-07T15:00:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Department Warehouse"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:960",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:1169",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 453,
+            "type": "create goods receipt",
+            "time": "2023-11-07T21:18:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Department Warehouse"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:967",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "receipt:1174",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

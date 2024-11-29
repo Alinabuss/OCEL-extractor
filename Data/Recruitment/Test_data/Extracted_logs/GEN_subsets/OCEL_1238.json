@@ -1,0 +1,114 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "vacancy_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Application Submitted",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "vacancy_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Lisa Wang",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-06-24T03:25:30Z",
+                    "value": "Lisa Wang"
+                }
+            ]
+        },
+        {
+            "id": "Application[770302]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "time": "2019-06-24T03:25:30Z",
+                    "value": "Application[770302]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lisa Wang",
+                    "qualifier": "submitted by"
+                }
+            ]
+        },
+        {
+            "id": "Vacancy[550039]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "vacancy_id",
+                    "time": "2019-06-24T03:25:30Z",
+                    "value": "Vacancy[550039]"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Application Submitted",
+            "time": "2019-06-24T03:25:30Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2019-06-24T03:25:30Z"
+                },
+                {
+                    "name": "vacancy_id",
+                    "value": "Vacancy[550039]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770302]",
+                    "qualifier": "related to"
+                },
+                {
+                    "objectId": "Vacancy[550039]",
+                    "qualifier": "for"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,238 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase",
+            "attributes": []
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "define status",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "purchase order corresponding",
+                    "type": "string"
+                },
+                {
+                    "name": "purchase order corresponding",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "purchase order corresponding",
+            "attributes": [
+                {
+                    "name": "purchase order corresponding",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "request",
+            "attributes": [
+                {
+                    "name": "purchase order corresponding",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create request for quotation",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "finalize creation of a goods receipt",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "approval",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "quotation:595",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "purchase order corresponding",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "group 001"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1222",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "quotation quotation:594",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "purchase order corresponding",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:1222",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "define status",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase order purchase_order:1020",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase order purchase_order:1020",
+            "type": "purchase",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation quotation:594",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_requisition:599 : pr_trigger_599",
+            "type": "request",
+            "attributes": [
+                {
+                    "name": "purchase order corresponding",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "group 001"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:595",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:1000",
+            "type": "purchase order corresponding",
+            "attributes": [
+                {
+                    "name": "purchase order corresponding",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "group 002"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1173,
+            "type": "create request for quotation",
+            "time": "2023-12-01T04:47:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Department Procurement"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:595",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_requisition:599 : pr_trigger_599",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1174,
+            "type": "finalize creation of a goods receipt",
+            "time": "2023-12-01T10:16:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1000",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:1222",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1175,
+            "type": "approval",
+            "time": "2023-12-01T16:03:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation quotation:594",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase order purchase_order:1020",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

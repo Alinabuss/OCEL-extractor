@@ -1,0 +1,85 @@
+{
+    "objectTypes": [
+        {
+            "name": "creation",
+            "attributes": []
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "float"
+                },
+                {
+                    "name": "purchase",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "creation of a goods receipt",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:858",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "purchase",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:699",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:699",
+            "type": "creation",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 366,
+            "type": "creation of a goods receipt",
+            "time": "2023-06-10T16:10:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:858",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:699",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

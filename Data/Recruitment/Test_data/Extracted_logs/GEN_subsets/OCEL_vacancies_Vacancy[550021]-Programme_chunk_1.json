@@ -1,0 +1,133 @@
+{
+    "objectTypes": [
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "Position",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "Application ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Application Assigned",
+            "attributes": [
+                {
+                    "name": "Application ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy Closed",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "Vacancy[550021]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "Position",
+                    "time": "2019-07-01T00:00:00Z",
+                    "value": "Programmer"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770176]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "Application ID",
+                    "time": "2019-07-01T00:00:00Z",
+                    "value": "770176"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550021]",
+                    "qualifier": "assigned to"
+                }
+            ]
+        },
+        {
+            "id": "Application[770251]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "Application ID",
+                    "time": "2019-07-02T00:00:00Z",
+                    "value": "770251"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550021]",
+                    "qualifier": "assigned to"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Application Assigned",
+            "time": "2019-07-01T11:19:09Z",
+            "attributes": [
+                {
+                    "name": "Application ID",
+                    "value": "770176"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550021]",
+                    "qualifier": "refers to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Application Assigned",
+            "time": "2019-07-02T10:39:36Z",
+            "attributes": [
+                {
+                    "name": "Application ID",
+                    "value": "770251"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550021]",
+                    "qualifier": "refers to"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Vacancy Closed",
+            "time": "2019-07-03T12:11:34Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550021]",
+                    "qualifier": "refers to"
+                }
+            ]
+        }
+    ]
+}

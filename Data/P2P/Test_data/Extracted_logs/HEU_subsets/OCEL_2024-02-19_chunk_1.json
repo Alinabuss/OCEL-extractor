@@ -1,0 +1,143 @@
+{
+    "objectTypes": [
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "purchase group",
+                    "type": "float"
+                },
+                {
+                    "name": "group for purchase order",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "creation",
+            "attributes": []
+        },
+        {
+            "name": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "approval",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "creation of a purchase order",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "finalize approval for another purchase order",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "quotation:680",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "purchase group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1179",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "quotation:687",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "group for purchase order",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:1178",
+            "type": "creation",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation:680",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:1179",
+            "type": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "approval",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "one"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:687",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 657,
+            "type": "creation of a purchase order",
+            "time": "2024-02-19T09:44:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:680",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:1178",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 658,
+            "type": "finalize approval for another purchase order",
+            "time": "2024-02-19T13:24:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation:687",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:1179",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

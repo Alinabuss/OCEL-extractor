@@ -1,0 +1,188 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "two-way match completion",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase order approval",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1361",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2024-01-26T08:10:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:1354",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2024-01-26T08:10:00Z",
+                    "value": "83800.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:1363",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2024-01-26T08:10:00Z",
+                    "value": "25900.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:1351",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2024-01-26T08:10:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:1138",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "status",
+                    "time": "2024-01-26T14:49:00Z",
+                    "value": "approved"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "quotation:656",
+            "type": "quotation",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "two-way match completion",
+            "time": "2024-01-26T08:10:00Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1361",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "invoice receipt:1354",
+                    "qualifier": "involved"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "two-way match completion",
+            "time": "2024-01-26T08:10:00Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1363",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "goods receipt:1351",
+                    "qualifier": "involved"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "purchase order approval",
+            "time": "2024-01-26T14:49:00Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "completed"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1138",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "quotation:656",
+                    "qualifier": "involved"
+                }
+            ]
+        }
+    ]
+}

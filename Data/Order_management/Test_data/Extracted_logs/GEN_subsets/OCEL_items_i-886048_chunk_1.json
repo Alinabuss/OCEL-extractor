@@ -1,0 +1,161 @@
+{
+    "objectTypes": [
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "reorder",
+            "attributes": [
+                {
+                    "name": "employee_name",
+                    "type": "string"
+                },
+                {
+                    "name": "item_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "pick",
+            "attributes": [
+                {
+                    "name": "employee_name",
+                    "type": "string"
+                },
+                {
+                    "name": "item_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "i-886048",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2024-01-04T13:09:27Z",
+                    "value": "594.6"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "iPhone 8",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2024-01-04T13:09:27Z",
+                    "value": "529.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Christopher Schwanen",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "role",
+                    "time": "2024-01-04T13:09:27Z",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Benedikt Knopp",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "role",
+                    "time": "2024-01-10T16:49:26Z",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "reorder",
+            "time": "2024-01-04T13:09:27Z",
+            "attributes": [
+                {
+                    "name": "employee_name",
+                    "value": "Christopher Schwanen"
+                },
+                {
+                    "name": "item_id",
+                    "value": "i-886048"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-886048",
+                    "qualifier": "reordered_item"
+                },
+                {
+                    "objectId": "Christopher Schwanen",
+                    "qualifier": "employee"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "pick",
+            "time": "2024-01-10T16:49:26Z",
+            "attributes": [
+                {
+                    "name": "employee_name",
+                    "value": "Benedikt Knopp"
+                },
+                {
+                    "name": "item_id",
+                    "value": "i-886048"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-886048",
+                    "qualifier": "picked_item"
+                },
+                {
+                    "objectId": "Benedikt Knopp",
+                    "qualifier": "employee"
+                }
+            ]
+        }
+    ]
+}

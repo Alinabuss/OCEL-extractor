@@ -1,0 +1,63 @@
+{
+  "objectTypes": [
+    {
+      "name": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Truck",
+      "attributes": []
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Drive to Terminal",
+      "attributes": []
+    }
+  ],
+  "objects": [
+    {
+      "id": "cr1",
+      "type": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "empty"
+        }
+      ]
+    },
+    {
+      "id": "tr2",
+      "type": "Truck",
+      "relationships": [
+        {
+          "objectId": "cr1",
+          "qualifier": "TR loads CR"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "drive_term_cr1",
+      "type": "Drive to Terminal",
+      "time": "2023-05-30T08:58:48Z",
+      "relationships": [
+        {
+          "objectId": "tr2",
+          "qualifier": "TR moved"
+        },
+        {
+          "objectId": "cr1",
+          "qualifier": "CR moved"
+        }
+      ]
+    }
+  ]
+}

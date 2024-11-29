@@ -1,0 +1,132 @@
+{
+    "objectTypes": [
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "containers",
+                    "type": "float"
+                },
+                {
+                    "name": "priority_vehicle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "scheduled_departure",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Document Association",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "TD457",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-05-06T14:54:47Z",
+                    "value": "TD457"
+                },
+                {
+                    "name": "containers",
+                    "time": "2024-05-06T14:54:47Z",
+                    "value": "3.0"
+                },
+                {
+                    "name": "priority_vehicle",
+                    "time": "2024-05-06T14:54:47Z",
+                    "value": "VH100"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "VH100",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-05-06T14:54:47Z",
+                    "value": "VH100"
+                },
+                {
+                    "name": "scheduled_departure",
+                    "time": "2024-05-06T14:54:47Z",
+                    "value": "2024-05-10T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "TD457",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "VH105",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-05-06T14:54:47Z",
+                    "value": "VH105"
+                },
+                {
+                    "name": "scheduled_departure",
+                    "time": "2024-05-06T14:54:47Z",
+                    "value": "2024-05-28T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "TD457",
+                    "qualifier": "associated_with"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Document Association",
+            "time": "2024-05-06T14:54:47Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2024-05-06T14:54:47Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "TD457",
+                    "qualifier": "associated_with"
+                }
+            ]
+        }
+    ]
+}

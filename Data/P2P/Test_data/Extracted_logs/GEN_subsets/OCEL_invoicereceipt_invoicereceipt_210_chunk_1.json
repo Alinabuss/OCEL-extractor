@@ -1,0 +1,118 @@
+{
+    "objectTypes": [
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Credit Amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Movement Type",
+                    "type": "int"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Invoice Created",
+            "attributes": [
+                {
+                    "name": "Department",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Two-Way Match",
+            "attributes": [
+                {
+                    "name": "Status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:210",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "time": "2022-07-26T21:36:00Z",
+                    "value": "141000.0"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:214",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "time": "2022-07-26T21:36:00Z",
+                    "value": "101"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Invoice Created",
+            "time": "2022-07-26T21:36:00Z",
+            "attributes": [
+                {
+                    "name": "Department",
+                    "value": "Finance/Account"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:210",
+                    "qualifier": "created"
+                },
+                {
+                    "objectId": "goods receipt:214",
+                    "qualifier": "linked to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Two-Way Match",
+            "time": "2022-07-27T07:10:00Z",
+            "attributes": [
+                {
+                    "name": "Status",
+                    "value": "Complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:210",
+                    "qualifier": "matched"
+                },
+                {
+                    "objectId": "goods receipt:214",
+                    "qualifier": "matched"
+                }
+            ]
+        }
+    ]
+}

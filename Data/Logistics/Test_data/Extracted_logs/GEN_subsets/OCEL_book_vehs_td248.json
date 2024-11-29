@@ -1,0 +1,118 @@
+{
+    "objectTypes": [
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "vehicleID",
+                    "type": "string"
+                },
+                {
+                    "name": "description",
+                    "type": "string"
+                },
+                {
+                    "name": "departureDate",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "documentID",
+                    "type": "string"
+                },
+                {
+                    "name": "amount",
+                    "type": "float"
+                },
+                {
+                    "name": "assignedVehicle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh58",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "vehicleID",
+                    "time": "2023-12-15T11:00:00Z",
+                    "value": "vh58"
+                },
+                {
+                    "name": "description",
+                    "time": "2023-11-28T13:48:19Z",
+                    "value": "Regular VH for TD"
+                },
+                {
+                    "name": "departureDate",
+                    "time": "2023-12-15T11:00:00Z",
+                    "value": "2023-12-15T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td248",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "documentID",
+                    "time": "2023-11-28T13:48:19Z",
+                    "value": "td248"
+                },
+                {
+                    "name": "amount",
+                    "time": "2023-11-28T13:48:19Z",
+                    "value": "2.0"
+                },
+                {
+                    "name": "assignedVehicle",
+                    "time": "2023-11-28T13:48:19Z",
+                    "value": "Regular VH for TD"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2023-11-28T13:48:19Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2023-11-28T13:48:19Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td248",
+                    "qualifier": "relatedTo"
+                },
+                {
+                    "objectId": "vh58",
+                    "qualifier": "assignedTo"
+                }
+            ]
+        }
+    ]
+}

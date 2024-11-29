@@ -1,0 +1,176 @@
+{
+    "objectTypes": [
+        {
+            "name": "Villager",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Town Center",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Match",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Session",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Queue Start",
+            "attributes": [
+                {
+                    "name": "Villager ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Queue Complete",
+            "attributes": [
+                {
+                    "name": "Villager ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Villager_M250230427_119",
+            "type": "Villager",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "",
+                    "value": "Villager_M250230427_119"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Town_Center_M250230427_1",
+                    "qualifier": "queued_at"
+                }
+            ]
+        },
+        {
+            "id": "Town_Center_M250230427_1",
+            "type": "Town Center",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "",
+                    "value": "Town_Center_M250230427_1"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "linked_to"
+                },
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "part_of_session"
+                }
+            ]
+        },
+        {
+            "id": "M250230427",
+            "type": "Match",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "",
+                    "value": "M250230427"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "S250230427_2199669",
+            "type": "Session",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "",
+                    "value": "S250230427_2199669"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Queue Start",
+            "time": "2023-07-31T00:17:32Z",
+            "attributes": [
+                {
+                    "name": "Villager ID",
+                    "value": "Villager_M250230427_119"
+                },
+                {
+                    "name": "Time",
+                    "value": "2023-07-31T00:17:32Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Town_Center_M250230427_1",
+                    "qualifier": "occurs_at"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Queue Complete",
+            "time": "2023-07-31T00:17:57Z",
+            "attributes": [
+                {
+                    "name": "Villager ID",
+                    "value": "Villager_M250230427_119"
+                },
+                {
+                    "name": "Time",
+                    "value": "2023-07-31T00:17:57Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Town_Center_M250230427_1",
+                    "qualifier": "completed_at"
+                }
+            ]
+        }
+    ]
+}

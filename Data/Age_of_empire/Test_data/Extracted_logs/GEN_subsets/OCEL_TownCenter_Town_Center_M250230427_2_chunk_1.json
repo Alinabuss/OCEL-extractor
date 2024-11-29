@@ -1,0 +1,206 @@
+{
+    "objectTypes": [
+        {
+            "name": "Town Center",
+            "attributes": [
+                {
+                    "name": "match ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Villager",
+            "attributes": [
+                {
+                    "name": "session ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Player",
+            "attributes": [
+                {
+                    "name": "session ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Initiate Queue",
+            "attributes": [
+                {
+                    "name": "player ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Execute Command Queue",
+            "attributes": [
+                {
+                    "name": "villager ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Set Gather Point",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Food Gathering",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "Town_Center_M250230427_2",
+            "type": "Town Center",
+            "attributes": [
+                {
+                    "name": "match ID",
+                    "time": "2023-07-31T00:00:00Z",
+                    "value": "M250230427"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Villager_M250230427_1",
+            "type": "Villager",
+            "attributes": [
+                {
+                    "name": "session ID",
+                    "time": "2023-07-31T00:00:00Z",
+                    "value": "S250230427_688587"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Villager_M250230427_2",
+            "type": "Villager",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "P688587",
+            "type": "Player",
+            "attributes": [
+                {
+                    "name": "session ID",
+                    "time": "2023-07-31T00:00:00Z",
+                    "value": "S250230427_688587"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Initiate Queue",
+            "time": "2023-07-31T00:10:50Z",
+            "attributes": [
+                {
+                    "name": "player ID",
+                    "value": "Villager_M250230427_1"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Town_Center_M250230427_2",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Execute Command Queue",
+            "time": "2023-07-31T00:10:58Z",
+            "attributes": [
+                {
+                    "name": "villager ID",
+                    "value": "Villager_M250230427_2"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "P688587",
+                    "qualifier": "initiated by"
+                },
+                {
+                    "objectId": "Town_Center_M250230427_2",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Set Gather Point",
+            "time": "2023-07-31T00:11:06Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "food"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "P688587",
+                    "qualifier": "executed by"
+                },
+                {
+                    "objectId": "Town_Center_M250230427_2",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Set Gather Point",
+            "time": "2023-07-31T00:11:09Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "food"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "P688587",
+                    "qualifier": "executed by"
+                },
+                {
+                    "objectId": "Town_Center_M250230427_2",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "Food Gathering",
+            "time": "2023-07-31T00:11:15Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Villager_M250230427_1",
+                    "qualifier": "participated by"
+                },
+                {
+                    "objectId": "Town_Center_M250230427_2",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ]
+}

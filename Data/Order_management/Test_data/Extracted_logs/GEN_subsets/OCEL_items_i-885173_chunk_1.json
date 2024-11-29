@@ -1,0 +1,119 @@
+{
+    "objectTypes": [
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ],
+            "relationships": [
+                {
+                    "name": "associated_with",
+                    "type": "item"
+                }
+            ]
+        },
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "pick_item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "i-885173",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-11-28T16:28:37Z",
+                    "value": "495.00"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "product-i-885173",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-11-28T16:28:37Z",
+                    "value": "543.36"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-885173",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "Leah Tacke genannt Unterberg",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-11-28T16:28:37Z",
+                    "value": "Leah Tacke genannt Unterberg"
+                },
+                {
+                    "name": "role",
+                    "time": "2023-11-28T16:28:37Z",
+                    "value": "warehousing"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "pick_item",
+            "time": "2023-11-28T16:28:37Z",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "value": "i-885173"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Leah Tacke genannt Unterberg",
+                    "qualifier": "performed_by"
+                }
+            ]
+        }
+    ]
+}

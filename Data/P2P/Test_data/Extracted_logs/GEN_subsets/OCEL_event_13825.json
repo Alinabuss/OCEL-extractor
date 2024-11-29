@@ -1,0 +1,82 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "number"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "two-way match completion",
+            "attributes": [
+                {
+                    "name": "completion time",
+                    "type": "timestamp"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:898",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:902",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "",
+                    "value": "76800.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "two-way match completion",
+            "time": "2023-07-07T15:05:00Z",
+            "attributes": [
+                {
+                    "name": "completion time",
+                    "value": "2023-07-07T15:05:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:898",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "invoice receipt:902",
+                    "qualifier": "involved"
+                }
+            ]
+        }
+    ]
+}

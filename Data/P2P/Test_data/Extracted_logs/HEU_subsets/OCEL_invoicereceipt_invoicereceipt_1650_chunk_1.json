@@ -1,0 +1,132 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "creation",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "creation",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:1650",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2024-06-10T13:41:00Z",
+                    "value": "5400.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1645",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:1647",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:1645",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1650",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:1647",
+            "type": "goods receipt",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 101,
+            "type": "creation",
+            "time": "2024-06-10T14:12:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1647",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "invoice receipt:1650",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 102,
+            "type": "creation",
+            "time": "2024-06-10T13:41:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1645",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "invoice receipt:1650",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

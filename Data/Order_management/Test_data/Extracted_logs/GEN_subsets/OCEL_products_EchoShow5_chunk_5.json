@@ -1,0 +1,230 @@
+{
+    "objectTypes": [
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "product_id",
+                    "type": "string"
+                },
+                {
+                    "name": "product_price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "employee_name",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "order",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "type": "string"
+                },
+                {
+                    "name": "order_value",
+                    "type": "float"
+                },
+                {
+                    "name": "order_time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "item_picked",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                },
+                {
+                    "name": "item_value",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Echo Show 5",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "product_id",
+                    "value": "i-886129"
+                },
+                {
+                    "name": "product_price",
+                    "value": 89.99
+                }
+            ]
+        },
+        {
+            "id": "Nina Graves",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "employee_name",
+                    "value": "Nina Graves"
+                },
+                {
+                    "name": "department",
+                    "value": "Warehousing"
+                }
+            ]
+        },
+        {
+            "id": "Detlef Wetzeler",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "employee_name",
+                    "value": "Detlef Wetzeler"
+                },
+                {
+                    "name": "department",
+                    "value": "Warehousing"
+                }
+            ]
+        },
+        {
+            "id": "order_2024",
+            "type": "order",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "value": "order_2024"
+                },
+                {
+                    "name": "order_value",
+                    "value": 89.99
+                },
+                {
+                    "name": "order_time",
+                    "value": "2024-01-08T20:45:47Z"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "item_picked",
+            "time": "2024-01-10T10:32:11Z",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "value": "i-886129"
+                },
+                {
+                    "name": "item_value",
+                    "value": 101.15
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Nina Graves",
+                    "qualifier": "picked"
+                },
+                {
+                    "objectId": "Echo Show 5",
+                    "qualifier": "item"
+                },
+                {
+                    "objectId": "order_2024",
+                    "qualifier": "part_of"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "item_picked",
+            "time": "2024-01-17T09:30:51Z",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "value": "i-886037"
+                },
+                {
+                    "name": "item_value",
+                    "value": 101.15
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Nina Graves",
+                    "qualifier": "picked"
+                },
+                {
+                    "objectId": "Echo Show 5",
+                    "qualifier": "item"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "item_picked",
+            "time": "2024-01-23T07:42:55Z",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "value": "i-886359"
+                },
+                {
+                    "name": "item_value",
+                    "value": 101.15
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Detlef Wetzeler",
+                    "qualifier": "picked"
+                },
+                {
+                    "objectId": "Echo Show 5",
+                    "qualifier": "item"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "item_picked",
+            "time": "2024-01-29T16:56:08Z",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "value": "i-886490"
+                },
+                {
+                    "name": "item_value",
+                    "value": 101.15
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Nina Graves",
+                    "qualifier": "picked"
+                },
+                {
+                    "objectId": "Echo Show 5",
+                    "qualifier": "item"
+                }
+            ]
+        }
+    ]
+}

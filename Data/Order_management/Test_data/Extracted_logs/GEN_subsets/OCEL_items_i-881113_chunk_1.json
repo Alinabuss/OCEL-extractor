@@ -1,0 +1,135 @@
+{
+    "objectTypes": [
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "itemID",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "productName",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Reorder",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Detlef Wetzeler",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-06-08T10:05:54Z",
+                    "value": "Detlef Wetzeler"
+                },
+                {
+                    "name": "role",
+                    "time": "2023-06-08T10:05:54Z",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-881113",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "itemID",
+                    "time": "2023-06-08T10:05:54Z",
+                    "value": "i-881113"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-06-08T10:05:54Z",
+                    "value": "136.37"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Kindle Paperwhite",
+                    "qualifier": "associatedWith"
+                }
+            ]
+        },
+        {
+            "id": "Kindle Paperwhite",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "productName",
+                    "time": "2023-06-08T10:05:54Z",
+                    "value": "Kindle Paperwhite"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-06-08T10:05:54Z",
+                    "value": "129.00"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Reorder",
+            "time": "2023-06-08T10:05:54Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-06-08T10:05:54Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Detlef Wetzeler",
+                    "qualifier": "performedBy"
+                },
+                {
+                    "objectId": "i-881113",
+                    "qualifier": "reorderedItem"
+                }
+            ]
+        }
+    ]
+}

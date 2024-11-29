@@ -1,0 +1,263 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "Label",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Manager",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Interview",
+            "attributes": [
+                {
+                    "name": "Date",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Rejection",
+            "attributes": [
+                {
+                    "name": "Date",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application Submission",
+            "attributes": [
+                {
+                    "name": "Date",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Ray Jansen",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-06-28T15:53:46Z",
+                    "value": "Ray Jansen"
+                }
+            ]
+        },
+        {
+            "id": "Application[770044]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-06-28T15:53:46Z",
+                    "value": "770044"
+                },
+                {
+                    "name": "Status",
+                    "time": "2019-07-02T07:53:17Z",
+                    "value": "Rejected"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Ray Jansen",
+                    "qualifier": "submitted by"
+                }
+            ]
+        },
+        {
+            "id": "Vacancy[550004]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "Label",
+                    "time": "2019-06-28T15:53:46Z",
+                    "value": "Vacancy[550004] - Programmer"
+                }
+            ]
+        },
+        {
+            "id": "Martin Klenk",
+            "type": "Manager",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-06-28T15:53:46Z",
+                    "value": "Martin Klenk"
+                }
+            ]
+        },
+        {
+            "id": "Jana Kershaw",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-06-28T15:53:46Z",
+                    "value": "Jana Kershaw"
+                }
+            ]
+        },
+        {
+            "id": "Application[770378]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-02T10:36:55Z",
+                    "value": "770378"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Ray Jansen",
+                    "qualifier": "submitted by"
+                }
+            ]
+        },
+        {
+            "id": "Vacancy[550050]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "Label",
+                    "time": "2019-07-02T10:36:55Z",
+                    "value": "Vacancy[550050] - Manager"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Interview",
+            "time": "2019-06-28T15:53:46Z",
+            "attributes": [
+                {
+                    "name": "Date",
+                    "value": "2019-06-28T15:53:46Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770044]",
+                    "qualifier": "related to"
+                },
+                {
+                    "objectId": "Vacancy[550004]",
+                    "qualifier": "related to"
+                },
+                {
+                    "objectId": "Martin Klenk",
+                    "qualifier": "conducted by"
+                },
+                {
+                    "objectId": "Jana Kershaw",
+                    "qualifier": "present"
+                },
+                {
+                    "objectId": "Ray Jansen",
+                    "qualifier": "participant"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Rejection",
+            "time": "2019-07-02T07:53:17Z",
+            "attributes": [
+                {
+                    "name": "Date",
+                    "value": "2019-07-02T07:53:17Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770044]",
+                    "qualifier": "related to"
+                },
+                {
+                    "objectId": "Ray Jansen",
+                    "qualifier": "notified"
+                },
+                {
+                    "objectId": "Jana Kershaw",
+                    "qualifier": "action by"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Application Submission",
+            "time": "2019-07-02T10:36:55Z",
+            "attributes": [
+                {
+                    "name": "Date",
+                    "value": "2019-07-02T10:36:55Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770378]",
+                    "qualifier": "related to"
+                },
+                {
+                    "objectId": "Vacancy[550050]",
+                    "qualifier": "related to"
+                },
+                {
+                    "objectId": "Ray Jansen",
+                    "qualifier": "submitted by"
+                }
+            ]
+        }
+    ]
+}

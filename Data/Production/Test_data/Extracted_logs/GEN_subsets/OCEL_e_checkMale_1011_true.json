@@ -1,0 +1,132 @@
+{
+    "objectTypes": [
+        {
+            "name": "Worker",
+            "attributes": [
+                {
+                    "name": "workerId",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Part",
+            "attributes": [
+                {
+                    "name": "partId",
+                    "type": "string"
+                },
+                {
+                    "name": "partType",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Workstation",
+            "attributes": [
+                {
+                    "name": "workstationId",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Examination",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "string"
+                },
+                {
+                    "name": "co2Emitted",
+                    "type": "float"
+                },
+                {
+                    "name": "compressedAirUsed",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Worker[1]",
+            "type": "Worker",
+            "attributes": [
+                {
+                    "name": "workerId",
+                    "time": "2023-04-03T14:51:42Z",
+                    "value": "1"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "MalePart[1011]",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "partId",
+                    "time": "2023-04-03T14:51:42Z",
+                    "value": "1011"
+                },
+                {
+                    "name": "partType",
+                    "time": "2023-04-03T14:51:42Z",
+                    "value": "male"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Workstation[2]",
+            "type": "Workstation",
+            "attributes": [
+                {
+                    "name": "workstationId",
+                    "time": "2023-04-03T14:51:42Z",
+                    "value": "2"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Examination",
+            "time": "2023-04-03T14:51:42Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "unspecified"
+                },
+                {
+                    "name": "co2Emitted",
+                    "value": "0.00168948"
+                },
+                {
+                    "name": "compressedAirUsed",
+                    "value": "0.026"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Worker[1]",
+                    "qualifier": "performed"
+                },
+                {
+                    "objectId": "MalePart[1011]",
+                    "qualifier": "checked"
+                },
+                {
+                    "objectId": "Workstation[2]",
+                    "qualifier": "at"
+                }
+            ]
+        }
+    ]
+}

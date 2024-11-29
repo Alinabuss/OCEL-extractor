@@ -1,0 +1,109 @@
+{
+    "objectTypes": [
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "Amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "Scheduled Departure",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Create Transport Document",
+            "attributes": [
+                {
+                    "name": "Amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Book Vehicle",
+            "attributes": [
+                {
+                    "name": "Scheduled Departure",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "TD[td236]",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "Amount",
+                    "time": "2023-11-17T14:58:02Z",
+                    "value": "3.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "VH[vh53]",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "Scheduled Departure",
+                    "time": "2023-11-28T11:00:00Z",
+                    "value": ""
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "TD[td236]",
+                    "qualifier": "Regular Vehicle"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Create Transport Document",
+            "time": "2023-11-17T14:58:02Z",
+            "attributes": [
+                {
+                    "name": "Amount",
+                    "value": "3.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "TD[td236]",
+                    "qualifier": "Created"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Book Vehicle",
+            "time": "2023-11-17T14:58:02Z",
+            "attributes": [
+                {
+                    "name": "Scheduled Departure",
+                    "value": "2023-11-28T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "VH[vh53]",
+                    "qualifier": "Booked"
+                }
+            ]
+        }
+    ]
+}

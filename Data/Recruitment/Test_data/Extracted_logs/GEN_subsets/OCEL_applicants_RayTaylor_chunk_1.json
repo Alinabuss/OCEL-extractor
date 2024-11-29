@@ -1,0 +1,188 @@
+{
+    "objectTypes": [
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Person",
+            "attributes": [
+                {
+                    "name": "Role",
+                    "type": "string"
+                },
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Interview Conducted",
+            "attributes": [
+                {
+                    "name": "Interviewee",
+                    "type": "string"
+                },
+                {
+                    "name": "Interviewer",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application Rejected",
+            "attributes": [
+                {
+                    "name": "Rejection Recipient",
+                    "type": "string"
+                },
+                {
+                    "name": "Rejection Initiator",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Vacancy[550002]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "value": "550002",
+                    "time": "2019-07-03T15:40:47Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770047]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "value": "770047",
+                    "time": "2019-07-03T15:40:47Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Bastian Nominacher",
+            "type": "Person",
+            "attributes": [
+                {
+                    "name": "Role",
+                    "value": "Manager",
+                    "time": "2019-07-03T15:40:47Z"
+                },
+                {
+                    "name": "Name",
+                    "value": "Bastian Nominacher",
+                    "time": "2019-07-03T15:40:47Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Ray Taylor",
+            "type": "Person",
+            "attributes": [
+                {
+                    "name": "Role",
+                    "value": "Applicant",
+                    "time": "2019-07-03T15:40:47Z"
+                },
+                {
+                    "name": "Name",
+                    "value": "Ray Taylor",
+                    "time": "2019-07-03T15:40:47Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Jana Keane",
+            "type": "Person",
+            "attributes": [
+                {
+                    "name": "Role",
+                    "value": "Recruiter",
+                    "time": "2019-07-04T14:25:13Z"
+                },
+                {
+                    "name": "Name",
+                    "value": "Jana Keane",
+                    "time": "2019-07-04T14:25:13Z"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Interview Conducted",
+            "time": "2019-07-03T15:40:47Z",
+            "attributes": [
+                {
+                    "name": "Interviewee",
+                    "value": "Ray Taylor"
+                },
+                {
+                    "name": "Interviewer",
+                    "value": "Bastian Nominacher"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770047]",
+                    "qualifier": "conducted_for"
+                },
+                {
+                    "objectId": "Vacancy[550002]",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Application Rejected",
+            "time": "2019-07-04T14:25:13Z",
+            "attributes": [
+                {
+                    "name": "Rejection Recipient",
+                    "value": "Ray Taylor"
+                },
+                {
+                    "name": "Rejection Initiator",
+                    "value": "Jana Keane"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770047]",
+                    "qualifier": "rejected"
+                }
+            ]
+        }
+    ]
+}

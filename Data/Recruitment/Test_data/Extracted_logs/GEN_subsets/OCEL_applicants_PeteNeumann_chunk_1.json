@@ -1,0 +1,139 @@
+{
+    "objectTypes": [
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Rejection Sent",
+            "attributes": [
+                {
+                    "name": "reason",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application Submitted",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "Application[770323]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "time": "2019-07-03T07:10:41Z",
+                    "value": "Application[770323]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770408]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "time": "2019-07-04T21:09:13Z",
+                    "value": "Application[770408]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Pete Neumann",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-03T07:10:41Z",
+                    "value": "Pete Neumann"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Dionne Hense",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-03T07:10:41Z",
+                    "value": "Dionne Hense"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Rejection Sent",
+            "time": "2019-07-03T07:10:41Z",
+            "attributes": [
+                {
+                    "name": "reason",
+                    "value": "rejection"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770323]",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "Pete Neumann",
+                    "qualifier": "sent_to"
+                },
+                {
+                    "objectId": "Dionne Hense",
+                    "qualifier": "sent_by"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Application Submitted",
+            "time": "2019-07-04T21:09:13Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Application[770408]",
+                    "qualifier": "submitted_by"
+                },
+                {
+                    "objectId": "Pete Neumann",
+                    "qualifier": "submitted_by"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,104 @@
+{
+    "objectTypes": [
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Purchase Order",
+            "attributes": []
+        },
+        {
+            "name": "Department",
+            "attributes": []
+        },
+        {
+            "name": "Purchasing Group",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Goods Receipt Created",
+            "attributes": [
+                {
+                    "name": "Goods Receipt ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:709",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "time": "2023-03-24T23:04:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:581",
+                    "qualifier": "associated_with"
+                },
+                {
+                    "objectId": "Department:Warehouse",
+                    "qualifier": "initiated_by"
+                },
+                {
+                    "objectId": "Purchasing Group:002",
+                    "qualifier": "belongs_to"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:581",
+            "type": "Purchase Order",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Department:Warehouse",
+            "type": "Department",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Purchasing Group:002",
+            "type": "Purchasing Group",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Goods Receipt Created",
+            "time": "2023-03-24T23:04:00Z",
+            "attributes": [
+                {
+                    "name": "Goods Receipt ID",
+                    "value": "goods receipt:709"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:709",
+                    "qualifier": "refers_to"
+                }
+            ]
+        }
+    ]
+}

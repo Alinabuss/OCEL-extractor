@@ -1,0 +1,136 @@
+{
+    "objectTypes": [
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "shipment",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "package_sent",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "timestamp"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Kindle",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-10-19T12:44:13Z",
+                    "value": "79.99"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Echo",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-10-19T12:44:13Z",
+                    "value": "99.99"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Echo Studio",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-10-19T12:44:13Z",
+                    "value": "199.99"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-884173",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-10-19T12:44:13Z",
+                    "value": "98.78"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-884005",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-10-19T12:44:13Z",
+                    "value": "98.78"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "package_1",
+            "type": "shipment",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Kindle",
+                    "qualifier": "contains"
+                },
+                {
+                    "objectId": "Echo",
+                    "qualifier": "contains"
+                },
+                {
+                    "objectId": "Echo Studio",
+                    "qualifier": "contains"
+                },
+                {
+                    "objectId": "i-884173",
+                    "qualifier": "contains"
+                },
+                {
+                    "objectId": "i-884005",
+                    "qualifier": "contains"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "package_sent",
+            "time": "2023-10-19T12:44:13Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2023-10-19T12:44:13Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "package_1",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

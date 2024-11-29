@@ -1,0 +1,112 @@
+{
+    "objectTypes": [
+        {
+            "name": "worker",
+            "attributes": [
+                {
+                    "name": "gender",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "part",
+            "attributes": [
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "workstation",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "quality_check",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2_emissions",
+                    "type": "float"
+                },
+                {
+                    "name": "compressed_air_usage",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o_worker_1",
+            "type": "worker",
+            "attributes": [
+                {
+                    "name": "gender",
+                    "time": "2023-04-04T14:42:17Z",
+                    "value": "male"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_femalepart_2633",
+            "type": "part",
+            "attributes": [
+                {
+                    "name": "type",
+                    "time": "2023-04-04T14:42:17Z",
+                    "value": "female"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_workstation_2",
+            "type": "workstation",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "quality_check",
+            "time": "2023-04-04T14:42:17Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": null
+                },
+                {
+                    "name": "CO2_emissions",
+                    "value": 0.00123462
+                },
+                {
+                    "name": "compressed_air_usage",
+                    "value": 0.019
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_worker_1",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "o_femalepart_2633",
+                    "qualifier": "inspected_item"
+                },
+                {
+                    "objectId": "o_workstation_2",
+                    "qualifier": "location"
+                }
+            ]
+        }
+    ]
+}

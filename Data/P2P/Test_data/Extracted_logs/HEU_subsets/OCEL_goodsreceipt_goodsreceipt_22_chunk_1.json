@@ -1,0 +1,163 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase order",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "float"
+                },
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                },
+                {
+                    "name": "movement type",
+                    "type": "float"
+                },
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "perform two - way match",
+            "attributes": [
+                {
+                    "name": "Account",
+                    "type": "string"
+                },
+                {
+                    "name": "Account",
+                    "type": "string"
+                },
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "create goods receipt",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt[22",
+            "type": "receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "credit amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "6500.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order[20",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "invoice receipt[24",
+            "type": "receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "credit amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "6500.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order[20",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase order",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 419,
+            "type": "create goods receipt",
+            "time": "2022-05-01T10:03:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order[20",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt[22",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 420,
+            "type": "perform two - way match",
+            "time": "2022-05-03T08:08:00Z",
+            "attributes": [
+                {
+                    "name": "Account",
+                    "value": "Finance"
+                },
+                {
+                    "name": "Account",
+                    "value": "Account"
+                },
+                {
+                    "name": "resource",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt[24",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

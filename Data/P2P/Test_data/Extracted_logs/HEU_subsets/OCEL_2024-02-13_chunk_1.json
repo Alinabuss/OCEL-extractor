@@ -1,0 +1,153 @@
+{
+    "objectTypes": [
+        {
+            "name": "approval",
+            "attributes": []
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "receipt type for goods",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "approval of a purchase order",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "create goods receipt",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "quotation:666",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:1406",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "receipt type for goods",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "type 101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1156",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:1156",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:1153",
+            "type": "approval",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation:666",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 476,
+            "type": "approval of a purchase order",
+            "time": "2024-02-13T07:43:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:666",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:1153",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 477,
+            "type": "create goods receipt",
+            "time": "2024-02-13T21:30:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1156",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:1406",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

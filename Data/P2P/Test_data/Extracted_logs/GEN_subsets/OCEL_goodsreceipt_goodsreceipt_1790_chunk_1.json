@@ -1,0 +1,83 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "creation",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:1787",
+            "type": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "time": "2024-08-06T08:55:00Z",
+                    "value": "16800.00"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1790",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:1790",
+            "type": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "time": "2024-08-06T08:55:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "creation",
+            "time": "2024-08-06T08:55:00Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2024-08-06T08:55:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1787",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

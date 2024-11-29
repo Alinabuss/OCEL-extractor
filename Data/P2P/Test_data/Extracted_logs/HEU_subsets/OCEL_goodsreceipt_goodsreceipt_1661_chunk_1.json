@@ -1,0 +1,104 @@
+{
+    "objectTypes": [
+        {
+            "name": "associated invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                },
+                {
+                    "name": "receipt with movement type",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "receipt goods",
+            "attributes": [
+                {
+                    "name": "June",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "complete two - way match",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1661",
+            "type": "receipt goods",
+            "attributes": [
+                {
+                    "name": "June",
+                    "time": "2024-06-11T07:10:00Z",
+                    "value": "June"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1660",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "invoice receipt:1660",
+            "type": "associated invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "4200.0"
+                },
+                {
+                    "name": "receipt with movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 182,
+            "type": "complete two - way match",
+            "time": "2024-06-11T07:10:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Finance / Account Department"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1660",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:1661",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

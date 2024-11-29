@@ -1,0 +1,91 @@
+{
+    "objectTypes": [
+        {
+            "name": "two - way match",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "receipt invoice",
+            "attributes": [
+                {
+                    "name": "receipt with amount credit",
+                    "type": "string"
+                },
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "complete two - way match",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:832",
+            "type": "receipt invoice",
+            "attributes": [
+                {
+                    "name": "receipt with amount credit",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "20,100.0"
+                },
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:833",
+            "type": "two - way match",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 229,
+            "type": "complete two - way match",
+            "time": "2023-06-02T07:10:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:832",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:833",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

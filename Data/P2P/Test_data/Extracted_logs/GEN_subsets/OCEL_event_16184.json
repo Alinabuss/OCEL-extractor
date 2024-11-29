@@ -1,0 +1,108 @@
+{
+    "objectTypes": [
+        {
+            "name": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Approval",
+            "attributes": [
+                {
+                    "name": "Role",
+                    "type": "string"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:892",
+            "type": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-09-15T11:14:00Z",
+                    "value": "purchase_order:892"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "2023-09-15T11:14:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:523",
+                    "qualifier": "is associated with"
+                }
+            ]
+        },
+        {
+            "id": "quotation:523",
+            "type": "Quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-09-15T11:14:00Z",
+                    "value": "quotation:523"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "2023-09-15T11:14:00Z",
+                    "value": "003"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Approval",
+            "time": "2023-09-15T11:14:00Z",
+            "attributes": [
+                {
+                    "name": "Role",
+                    "value": "Procurement Order Manager"
+                },
+                {
+                    "name": "Status",
+                    "value": "Approved"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:892",
+                    "qualifier": "approves"
+                }
+            ]
+        }
+    ]
+}

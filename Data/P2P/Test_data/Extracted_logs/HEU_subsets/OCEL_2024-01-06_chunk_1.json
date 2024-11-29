@@ -1,0 +1,132 @@
+{
+    "objectTypes": [
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "purchasing group quotation",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Object_type_not_identified",
+            "attributes": []
+        },
+        {
+            "name": "order",
+            "attributes": [
+                {
+                    "name": "part of purchase order",
+                    "type": "float"
+                },
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "approve purchase order",
+            "attributes": []
+        },
+        {
+            "name": "create goods receipt",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "quotation:642",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "purchasing group quotation",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1327",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:1102",
+            "type": "order",
+            "attributes": [
+                {
+                    "name": "part of purchase order",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "002"
+                },
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:1114",
+            "type": "order",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation:642",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:1327",
+            "type": "Object_type_not_identified",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1102",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 135,
+            "type": "approve purchase order",
+            "time": "2024-01-06T05:35:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation:642",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:1114",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 136,
+            "type": "create goods receipt",
+            "time": "2024-01-06T18:57:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1102",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:1327",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

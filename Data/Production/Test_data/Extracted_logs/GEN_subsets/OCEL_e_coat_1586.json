@@ -1,0 +1,136 @@
+{
+    "objectTypes": [
+        {
+            "name": "formedpart",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "workstation",
+            "attributes": [
+                {
+                    "name": "electric_consumption",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "machine",
+            "attributes": [
+                {
+                    "name": "electric_consumption",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "coating_process",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "integer"
+                },
+                {
+                    "name": "carbon_dioxide_emissions",
+                    "type": "float"
+                },
+                {
+                    "name": "electricity_consumed",
+                    "type": "float"
+                },
+                {
+                    "name": "coating_material_used",
+                    "type": "float"
+                },
+                {
+                    "name": "coating_material_waste",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o_formedpart_1586",
+            "type": "formedpart",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2023-04-04T08:08:01Z",
+                    "value": "o_workstation_1"
+                }
+            ]
+        },
+        {
+            "id": "o_workstation_1",
+            "type": "workstation",
+            "attributes": [
+                {
+                    "name": "electric_consumption",
+                    "time": "2023-04-04T08:08:01Z",
+                    "value": "P_electric-from-grid-de[kWh]"
+                }
+            ]
+        },
+        {
+            "id": "o_machine_coater03",
+            "type": "machine",
+            "attributes": [
+                {
+                    "name": "electric_consumption",
+                    "time": "2023-04-04T08:08:01Z",
+                    "value": "P_electric-from-grid-de[kWh]"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "coating_process",
+            "time": "2023-04-04T08:08:01Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "300"
+                },
+                {
+                    "name": "carbon_dioxide_emissions",
+                    "value": "0.1751156951"
+                },
+                {
+                    "name": "electricity_consumed",
+                    "value": "0.25"
+                },
+                {
+                    "name": "coating_material_used",
+                    "value": "0.0004"
+                },
+                {
+                    "name": "coating_material_waste",
+                    "value": "0.0001"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_formedpart_1586",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "performed_at"
+                },
+                {
+                    "objectId": "o_machine_coater03",
+                    "qualifier": "utilized"
+                }
+            ]
+        }
+    ]
+}

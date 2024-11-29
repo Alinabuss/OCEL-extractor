@@ -1,0 +1,133 @@
+{
+    "objectTypes": [
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Movement Type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Department",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Completed Two-Way Match",
+            "attributes": [
+                {
+                    "name": "Date",
+                    "type": "date"
+                },
+                {
+                    "name": "Time",
+                    "type": "time"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1542",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-04-23T07:10:00Z",
+                    "value": "goods receipt:1542"
+                },
+                {
+                    "name": "Movement Type",
+                    "time": "2024-04-23T07:10:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:1539",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-04-23T07:10:00Z",
+                    "value": "invoice receipt:1539"
+                },
+                {
+                    "name": "Amount",
+                    "time": "2024-04-23T07:10:00Z",
+                    "value": "27250.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Finance/Account Department",
+            "type": "Department",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2024-04-23T07:10:00Z",
+                    "value": "Finance/Account Department"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Completed Two-Way Match",
+            "time": "2024-04-23T07:10:00Z",
+            "attributes": [
+                {
+                    "name": "Date",
+                    "value": "2024-04-23"
+                },
+                {
+                    "name": "Time",
+                    "value": "07:10:00"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1542",
+                    "qualifier": "involved in"
+                },
+                {
+                    "objectId": "invoice receipt:1539",
+                    "qualifier": "involved in"
+                },
+                {
+                    "objectId": "Finance/Account Department",
+                    "qualifier": "performed by"
+                }
+            ]
+        }
+    ]
+}

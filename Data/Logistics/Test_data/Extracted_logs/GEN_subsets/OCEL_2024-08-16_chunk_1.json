@@ -1,0 +1,164 @@
+{
+    "objectTypes": [
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "Document ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "Vehicle ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Priority",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Transport Document Created",
+            "attributes": [
+                {
+                    "name": "Document ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Time",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle Booked",
+            "attributes": [
+                {
+                    "name": "Vehicle ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Time",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle Departure Scheduled",
+            "attributes": [
+                {
+                    "name": "Vehicle ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Departure Time",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td586",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "Document ID",
+                    "time": "2024-08-16T12:45:38Z",
+                    "value": "td586"
+                },
+                {
+                    "name": "Containers",
+                    "time": "2024-08-16T12:45:38Z",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh129",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "Vehicle ID",
+                    "time": "2024-08-20T11:00:00Z",
+                    "value": "vh129"
+                },
+                {
+                    "name": "Priority",
+                    "time": "2024-08-20T11:00:00Z",
+                    "value": "high-priority"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Transport Document Created",
+            "time": "2024-08-16T12:45:38Z",
+            "attributes": [
+                {
+                    "name": "Document ID",
+                    "value": "td586"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td586",
+                    "qualifier": "created"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Vehicle Booked",
+            "time": "2024-08-20T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "Vehicle ID",
+                    "value": "vh129"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh129",
+                    "qualifier": "booked-for"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Vehicle Departure Scheduled",
+            "time": "2024-08-20T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "Vehicle ID",
+                    "value": "vh129"
+                },
+                {
+                    "name": "Departure Time",
+                    "value": "2024-08-20T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh129",
+                    "qualifier": "scheduled-for-departure"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,104 @@
+{
+    "objectTypes": [
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "type": "float"
+                },
+                {
+                    "name": "Movement Type",
+                    "type": "int"
+                },
+                {
+                    "name": "Lifecycle Status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": []
+        },
+        {
+            "name": "Department",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Finalize Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:1832",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "time": "2024-09-09T20:50:00Z",
+                    "value": "147300.0"
+                },
+                {
+                    "name": "Movement Type",
+                    "time": "2024-09-09T20:50:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "Lifecycle Status",
+                    "time": "2024-09-09T20:50:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1832",
+                    "qualifier": "related to"
+                },
+                {
+                    "objectId": "Finance/Account Department",
+                    "qualifier": "created by"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:1832",
+            "type": "Goods Receipt",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Finance/Account Department",
+            "type": "Department",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Finalize Invoice Receipt",
+            "time": "2024-09-09T20:50:00Z",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "value": "2024-09-09T20:50:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1832",
+                    "qualifier": "finalized"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,202 @@
+{
+    "objectTypes": [
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Manager",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "position",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Job Offer",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Interview Conducted",
+            "attributes": [
+                {
+                    "name": "applicant",
+                    "type": "string"
+                },
+                {
+                    "name": "position",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Job Offer Declined",
+            "attributes": [
+                {
+                    "name": "applicant",
+                    "type": "string"
+                },
+                {
+                    "name": "vacancy",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Application[770166]",
+            "type": "Application",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Detlef Wagner",
+            "type": "Applicant",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Simon Geisler",
+            "type": "Recruiter",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Miguel Milano",
+            "type": "Manager",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Vacancy[550011]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "position",
+                    "time": "",
+                    "value": "Programmer"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Vacancy[550003]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "position",
+                    "time": "",
+                    "value": "Programmer"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Offer[990006]",
+            "type": "Job Offer",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Interview Conducted",
+            "time": "2019-07-01T09:50:53Z",
+            "attributes": [
+                {
+                    "name": "applicant",
+                    "value": "Detlef Wagner"
+                },
+                {
+                    "name": "position",
+                    "value": "Programmer"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770166]",
+                    "qualifier": "associatedWith"
+                },
+                {
+                    "objectId": "Simon Geisler",
+                    "qualifier": "conductedBy"
+                },
+                {
+                    "objectId": "Miguel Milano",
+                    "qualifier": "involved"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Job Offer Declined",
+            "time": "2019-07-03T09:14:37Z",
+            "attributes": [
+                {
+                    "name": "applicant",
+                    "value": "Detlef Wagner"
+                },
+                {
+                    "name": "vacancy",
+                    "value": "Vacancy[550003]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770166]",
+                    "qualifier": "relatedTo"
+                },
+                {
+                    "objectId": "Offer[990006]",
+                    "qualifier": "connectedTo"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,113 @@
+{
+    "objectTypes": [
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Total Containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Category",
+                    "type": "string"
+                },
+                {
+                    "name": "Scheduled Departure",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Booking Processed",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td65",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-07-13T10:14:29Z",
+                    "value": "td65"
+                },
+                {
+                    "name": "Total Containers",
+                    "time": "2023-07-13T10:14:29Z",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh17",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "vh17",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-07-13T10:14:29Z",
+                    "value": "vh17"
+                },
+                {
+                    "name": "Category",
+                    "time": "2023-07-13T10:14:29Z",
+                    "value": "Regular"
+                },
+                {
+                    "name": "Scheduled Departure",
+                    "time": "2023-07-13T10:14:29Z",
+                    "value": "2023-07-25T11:00:00Z"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Booking Processed",
+            "time": "2023-07-13T10:14:29Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2023-07-13T10:14:29Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td65",
+                    "qualifier": "processed"
+                },
+                {
+                    "objectId": "vh17",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ]
+}

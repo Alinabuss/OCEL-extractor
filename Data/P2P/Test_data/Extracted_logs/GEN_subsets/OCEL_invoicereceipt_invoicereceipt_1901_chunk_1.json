@@ -1,0 +1,101 @@
+{
+    "objectTypes": [
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "type": "float"
+                },
+                {
+                    "name": "Lifecycle Stage",
+                    "type": "string"
+                },
+                {
+                    "name": "Executed By",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Invoice Receipt Created",
+            "attributes": [
+                {
+                    "name": "Amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt[1901]",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "time": "2024-10-04T00:16:00Z",
+                    "value": "15000.0"
+                },
+                {
+                    "name": "Lifecycle Stage",
+                    "time": "2024-10-04T00:16:00Z",
+                    "value": "Complete"
+                },
+                {
+                    "name": "Executed By",
+                    "time": "2024-10-04T00:16:00Z",
+                    "value": "Finance/Account Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt[1909]",
+                    "qualifier": "linkedTo"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt[1909]",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "time": "2024-10-04T00:16:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Invoice Receipt Created",
+            "time": "2024-10-04T00:16:00Z",
+            "attributes": [
+                {
+                    "name": "Amount",
+                    "value": "15000.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt[1901]",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

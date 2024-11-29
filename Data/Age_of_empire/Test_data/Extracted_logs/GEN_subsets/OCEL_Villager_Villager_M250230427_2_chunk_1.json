@@ -1,0 +1,180 @@
+{
+    "objectTypes": [
+        {
+            "name": "Villager",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "type": "string"
+                },
+                {
+                    "name": "session_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Town Center",
+            "attributes": [
+                {
+                    "name": "location_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "House",
+            "attributes": [
+                {
+                    "name": "house_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Command Execution",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "type": "string"
+                },
+                {
+                    "name": "command_type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Construction Completion",
+            "attributes": [
+                {
+                    "name": "house_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Food Gathering",
+            "attributes": [
+                {
+                    "name": "food_type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Villager_M250230427_2",
+            "type": "Villager",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "time": "2023-07-31T00:10:58Z",
+                    "value": "P688587"
+                },
+                {
+                    "name": "session_id",
+                    "time": "2023-07-31T00:10:58Z",
+                    "value": "S250230427_688587"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Town_Center_M250230427_2",
+            "type": "Town Center",
+            "attributes": [
+                {
+                    "name": "location_id",
+                    "time": "2023-07-31T00:10:58Z",
+                    "value": "Town_Center_M250230427_2"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "House_M250230427_1",
+            "type": "House",
+            "attributes": [
+                {
+                    "name": "house_id",
+                    "time": "2023-07-31T00:11:09Z",
+                    "value": "House_M250230427_1"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Command Execution",
+            "time": "2023-07-31T00:10:58Z",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "value": "P688587"
+                },
+                {
+                    "name": "command_type",
+                    "value": "Queue"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Villager_M250230427_2",
+                    "qualifier": "executed"
+                },
+                {
+                    "objectId": "Town_Center_M250230427_2",
+                    "qualifier": "at"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Construction Completion",
+            "time": "2023-07-31T00:11:09Z",
+            "attributes": [
+                {
+                    "name": "house_id",
+                    "value": "House_M250230427_1"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Villager_M250230427_2",
+                    "qualifier": "completed"
+                },
+                {
+                    "objectId": "Villager_M250230427_1",
+                    "qualifier": "alongside"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Food Gathering",
+            "time": "2023-07-31T00:11:40Z",
+            "attributes": [
+                {
+                    "name": "food_type",
+                    "value": "General"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Villager_M250230427_2",
+                    "qualifier": "gathered"
+                },
+                {
+                    "objectId": "Town_Center_M250230427_2",
+                    "qualifier": "at"
+                }
+            ]
+        }
+    ]
+}

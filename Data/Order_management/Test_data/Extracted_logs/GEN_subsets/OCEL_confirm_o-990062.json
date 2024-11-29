@@ -1,0 +1,139 @@
+{
+    "objectTypes": [
+        {
+            "name": "customer",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "product_id",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "order",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "type": "string"
+                },
+                {
+                    "name": "date",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "order_confirmation",
+            "attributes": [
+                {
+                    "name": "total_price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Mediterranea Luxury Cruises S.p.A.",
+            "type": "customer",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-05-02T17:23:34Z",
+                    "value": "Mediterranea Luxury Cruises S.p.A."
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-880267",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "product_id",
+                    "time": "2023-05-02T17:23:34Z",
+                    "value": "i-880267"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-05-02T17:23:34Z",
+                    "value": "476.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-880268",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "product_id",
+                    "time": "2023-05-02T17:23:34Z",
+                    "value": "i-880268"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-05-02T17:23:34Z",
+                    "value": "39.99"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "order-1",
+            "type": "order",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "time": "2023-05-02T17:23:34Z",
+                    "value": "order-1"
+                },
+                {
+                    "name": "date",
+                    "time": "2023-05-02T17:23:34Z",
+                    "value": "2023-05-02T17:23:34Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Mediterranea Luxury Cruises S.p.A.",
+                    "qualifier": "confirmed_by"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "order_confirmation",
+            "time": "2023-05-02T17:23:34Z",
+            "attributes": [
+                {
+                    "name": "total_price",
+                    "value": "515.99"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "order-1",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

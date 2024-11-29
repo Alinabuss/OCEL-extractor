@@ -1,0 +1,96 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "group purchasing order",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "receipt goods",
+            "attributes": [
+                {
+                    "name": "receipt goods",
+                    "type": "string"
+                },
+                {
+                    "name": "March",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create goods receipt",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:661",
+            "type": "receipt goods",
+            "attributes": [
+                {
+                    "name": "receipt goods",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "movement type 101"
+                },
+                {
+                    "name": "March",
+                    "time": "2023-03-09T13:46:00Z",
+                    "value": "March"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:547",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:547",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "group purchasing order",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 801,
+            "type": "create goods receipt",
+            "time": "2023-03-09T13:46:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "receipt goods Warehouse Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:547",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:661",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,96 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "receipt goods",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "float"
+                },
+                {
+                    "name": "July",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "complete two - way match",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1721",
+            "type": "receipt goods",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "July",
+                    "time": "2024-07-11T07:10:00Z",
+                    "value": "July"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "receipt:1716",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "receipt:1716",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "24,850.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 465,
+            "type": "complete two - way match",
+            "time": "2024-07-11T07:10:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "receipt:1716",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:1721",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

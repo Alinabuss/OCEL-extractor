@@ -1,0 +1,232 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchasing_group",
+            "attributes": [
+                {
+                    "name": "code",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create_request_for_quotation",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "timestamp"
+                },
+                {
+                    "name": "responsible",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "create_purchase_order",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "timestamp"
+                },
+                {
+                    "name": "responsible",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "approve_purchase_order",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "timestamp"
+                },
+                {
+                    "name": "responsible",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_requisition:141:pr_trigger_141",
+            "type": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-08-16T01:43:00Z",
+                    "value": "purchase_requisition:141:pr_trigger_141"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "quotation:141",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-08-16T01:43:00Z",
+                    "value": "quotation:141"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:141:pr_trigger_141",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:243",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-08-16T17:50:00Z",
+                    "value": "purchase_order:243"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:141",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:242",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-08-19T06:35:00Z",
+                    "value": "purchase_order:242"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:141",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": "purchasing_group:004",
+            "type": "purchasing_group",
+            "attributes": [
+                {
+                    "name": "code",
+                    "time": "",
+                    "value": "004"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "department:Procurement",
+            "type": "department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "",
+                    "value": "Procurement"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create_request_for_quotation",
+            "time": "2022-08-16T01:43:00Z",
+            "attributes": [
+                {
+                    "name": "responsible",
+                    "value": "Procurement Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:141:pr_trigger_141",
+                    "qualifier": "created"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "create_purchase_order",
+            "time": "2022-08-16T17:50:00Z",
+            "attributes": [
+                {
+                    "name": "responsible",
+                    "value": "Procurement Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:243",
+                    "qualifier": "created"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "approve_purchase_order",
+            "time": "2022-08-19T06:35:00Z",
+            "attributes": [
+                {
+                    "name": "responsible",
+                    "value": "Procurement Order Manager"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:242",
+                    "qualifier": "approved"
+                }
+            ]
+        }
+    ]
+}

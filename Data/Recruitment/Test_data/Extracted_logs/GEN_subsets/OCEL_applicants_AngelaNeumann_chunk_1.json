@@ -1,0 +1,220 @@
+{
+    "objectTypes": [
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Position",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Title",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Person",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Role",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Application Rejection",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "From",
+                    "type": "string"
+                },
+                {
+                    "name": "To",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application Submission",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "From",
+                    "type": "string"
+                },
+                {
+                    "name": "Vacancy ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Application[770097]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-06-28T19:30:55Z",
+                    "value": "Application[770097]"
+                },
+                {
+                    "name": "Position",
+                    "time": "2019-06-28T19:30:55Z",
+                    "value": "N/A"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Angela Neumann",
+                    "qualifier": "submitted"
+                }
+            ]
+        },
+        {
+            "id": "Application[770380]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-02T13:40:40Z",
+                    "value": "Application[770380]"
+                },
+                {
+                    "name": "Position",
+                    "time": "2019-07-02T13:40:40Z",
+                    "value": "Programmer"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550034]",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "Vacancy[550034]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-02T13:40:40Z",
+                    "value": "Vacancy[550034]"
+                },
+                {
+                    "name": "Title",
+                    "time": "2019-07-02T13:40:40Z",
+                    "value": "Programmer"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Angela Neumann",
+            "type": "Person",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-06-28T19:30:55Z",
+                    "value": "Angela Neumann"
+                },
+                {
+                    "name": "Role",
+                    "time": "2019-06-28T19:30:55Z",
+                    "value": "Applicant"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Simon Meister",
+            "type": "Person",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-06-28T19:30:55Z",
+                    "value": "Simon Meister"
+                },
+                {
+                    "name": "Role",
+                    "time": "2019-06-28T19:30:55Z",
+                    "value": "Recruiter"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Application Rejection",
+            "time": "2019-06-28T19:30:55Z",
+            "attributes": [
+                {
+                    "name": "From",
+                    "value": "Simon Meister"
+                },
+                {
+                    "name": "To",
+                    "value": "Angela Neumann"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770097]",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Application Submission",
+            "time": "2019-07-02T13:40:40Z",
+            "attributes": [
+                {
+                    "name": "From",
+                    "value": "Angela Neumann"
+                },
+                {
+                    "name": "Vacancy ID",
+                    "value": "Vacancy[550034]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770380]",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,144 @@
+{
+    "objectTypes": [
+        {
+            "name": "Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Payment",
+            "attributes": [
+                {
+                    "name": "OrderID",
+                    "type": "string"
+                },
+                {
+                    "name": "Amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o-990746",
+            "type": "Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-09-01T14:00:41Z",
+                    "value": "o-990746"
+                },
+                {
+                    "name": "Amount",
+                    "time": "2023-09-01T14:00:41Z",
+                    "value": "520.03"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-883005",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-09-01T14:00:41Z",
+                    "value": "i-883005"
+                },
+                {
+                    "name": "Price",
+                    "time": "2023-09-01T14:00:41Z",
+                    "value": "515.03"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o-990746",
+                    "qualifier": "comprises"
+                }
+            ]
+        },
+        {
+            "id": "iPad Air",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2023-09-01T14:00:41Z",
+                    "value": "iPad Air"
+                },
+                {
+                    "name": "Price",
+                    "time": "2023-09-01T14:00:41Z",
+                    "value": "476.00"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-883005",
+                    "qualifier": "is associated with"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Payment",
+            "time": "2023-09-01T14:00:41Z",
+            "attributes": [
+                {
+                    "name": "OrderID",
+                    "value": "o-990746"
+                },
+                {
+                    "name": "Amount",
+                    "value": "520.03"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o-990746",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ]
+}

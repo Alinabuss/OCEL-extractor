@@ -1,0 +1,82 @@
+{
+    "objectTypes": [
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Goods Receipt Creation",
+            "attributes": [
+                {
+                    "name": "Goods Receipt ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Goods Receipt[651]",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "time": "2023-03-07T18:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Purchase Order[543]",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "Purchase Order[543]",
+            "type": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "Purchasing Group",
+                    "time": "2023-03-07T18:00:00Z",
+                    "value": "005"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Goods Receipt Creation",
+            "time": "2023-03-07T18:00:00Z",
+            "attributes": [
+                {
+                    "name": "Goods Receipt ID",
+                    "value": "Goods Receipt[651]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Goods Receipt[651]",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,105 @@
+{
+  "objectTypes": [
+    {
+      "name": "items",
+      "attributes": [
+        {
+          "name": "price",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "orders",
+      "attributes": [
+        {
+          "name": "price",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "products",
+      "attributes": [
+        {
+          "name": "price",
+          "type": "float"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "payment reminder",
+      "attributes": []
+    }
+  ],
+  "objects": [
+    {
+      "id": "o-991001",
+      "type": "orders",
+      "attributes": [
+        {
+          "name": "price",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 585.69
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "i-883991",
+          "qualifier": "comprises"
+        }
+      ]
+    },
+    {
+      "id": "i-883991",
+      "type": "items",
+      "attributes": [
+        {
+          "name": "price",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 580.69
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "iPhone 8",
+          "qualifier": "is a"
+        }
+      ]
+    },
+    {
+      "id": "iPhone 8",
+      "type": "products",
+      "attributes": [
+        {
+          "name": "price",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 529.0
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "reminder_o-991001_309",
+      "type": "payment reminder",
+      "time": "2023-11-15T09:29:15Z",
+      "relationships": [
+        {
+          "objectId": "o-991001",
+          "qualifier": "order"
+        },
+        {
+          "objectId": "i-883991",
+          "qualifier": "item"
+        },
+        {
+          "objectId": "iPhone 8",
+          "qualifier": "product"
+        }
+      ]
+    }
+  ]
+}

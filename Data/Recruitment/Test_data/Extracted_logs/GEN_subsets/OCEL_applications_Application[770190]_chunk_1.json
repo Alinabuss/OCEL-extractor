@@ -1,0 +1,104 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Rejection Notification",
+            "attributes": [
+                {
+                    "name": "message",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Applicant[Vanessa Brown]",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-03T10:12:15Z",
+                    "value": "Vanessa Brown"
+                }
+            ]
+        },
+        {
+            "id": "Application[770190]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2019-07-03T10:12:15Z",
+                    "value": "Application[770190]"
+                }
+            ]
+        },
+        {
+            "id": "Recruiter[Jana Kershaw]",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-03T10:12:15Z",
+                    "value": "Jana Kershaw"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Rejection Notification",
+            "time": "2019-07-03T10:12:15Z",
+            "attributes": [
+                {
+                    "name": "message",
+                    "value": "Rejection communicated to applicant"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Applicant[Vanessa Brown]",
+                    "qualifier": "rejected"
+                },
+                {
+                    "objectId": "Application[770190]",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "Recruiter[Jana Kershaw]",
+                    "qualifier": "communicated_by"
+                }
+            ]
+        }
+    ]
+}

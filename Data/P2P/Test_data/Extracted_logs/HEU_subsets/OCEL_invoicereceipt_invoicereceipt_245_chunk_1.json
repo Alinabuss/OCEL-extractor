@@ -1,0 +1,162 @@
+{
+    "objectTypes": [
+        {
+            "name": "Summary Report",
+            "attributes": [
+                {
+                    "name": "amount of 91,200.00",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "amount of 91,200.00",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "float"
+                },
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create invoice receipt",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "record",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:245",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:247",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Invoice Receipt:245",
+            "type": "Summary Report",
+            "attributes": [
+                {
+                    "name": "amount of 91,200.00",
+                    "time": "2022-08-08T13:54:00Z",
+                    "value": "91,200.00"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:245",
+            "type": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "amount of 91,200.00",
+                    "time": "2022-08-08T13:54:00Z",
+                    "value": "91,200.00"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:245",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:247",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 13,
+            "type": "create invoice receipt",
+            "time": "2022-08-08T12:57:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Account Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:245",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "Invoice Receipt:245",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "invoice receipt:245",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 14,
+            "type": "record",
+            "time": "2022-08-08T13:54:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:247",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "invoice receipt:245",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

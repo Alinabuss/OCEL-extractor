@@ -1,0 +1,149 @@
+{
+    "objectTypes": [
+        {
+            "name": "machine",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "workstation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "steel_sheet",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "origin_coil_id",
+                    "type": "string"
+                },
+                {
+                    "name": "weight",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "splitting process",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "co2_generated",
+                    "type": "float"
+                },
+                {
+                    "name": "power_consumption",
+                    "type": "float"
+                },
+                {
+                    "name": "waste_recycled",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "splitter01",
+            "type": "machine",
+            "attributes": [
+                {
+                    "name": "name",
+                    "value": "splitter01",
+                    "time": "2023-04-03T11:34:20Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "workstation 1",
+            "type": "workstation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "value": "1",
+                    "time": "2023-04-03T11:34:20Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_steelsheet_1096",
+            "type": "steel_sheet",
+            "attributes": [
+                {
+                    "name": "id",
+                    "value": "o_steelsheet_1096",
+                    "time": "2023-04-03T11:34:20Z"
+                },
+                {
+                    "name": "origin_coil_id",
+                    "value": "4",
+                    "time": "2023-04-03T11:34:20Z"
+                },
+                {
+                    "name": "weight",
+                    "value": "0.0151513338",
+                    "time": "2023-04-03T11:34:20Z"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "splitting process",
+            "time": "2023-04-03T11:34:20Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "14.4903408104"
+                },
+                {
+                    "name": "co2_generated",
+                    "value": "0.0151513338"
+                },
+                {
+                    "name": "power_consumption",
+                    "value": "0.022138"
+                },
+                {
+                    "name": "waste_recycled",
+                    "value": "0.00042"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_steelsheet_1096",
+                    "qualifier": "produced"
+                },
+                {
+                    "objectId": "splitter01",
+                    "qualifier": "employed"
+                },
+                {
+                    "objectId": "workstation 1",
+                    "qualifier": "at"
+                }
+            ]
+        }
+    ]
+}

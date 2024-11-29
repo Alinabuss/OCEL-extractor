@@ -1,0 +1,178 @@
+{
+    "objectTypes": [
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "Document ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Number of Containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "Vehicle ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Priority",
+                    "type": "string"
+                },
+                {
+                    "name": "Departure Date",
+                    "type": "dateTime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Vehicle Booking",
+            "attributes": [
+                {
+                    "name": "Booking Time",
+                    "type": "dateTime"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle Departure",
+            "attributes": [
+                {
+                    "name": "Departure Time",
+                    "type": "dateTime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "TD[286]",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "Document ID",
+                    "time": "",
+                    "value": "TD[286]"
+                },
+                {
+                    "name": "Number of Containers",
+                    "time": "",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "VH[62]",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "Vehicle ID",
+                    "time": "",
+                    "value": "VH[62]"
+                },
+                {
+                    "name": "Priority",
+                    "time": "",
+                    "value": "High"
+                },
+                {
+                    "name": "Departure Date",
+                    "time": "",
+                    "value": "2023-12-29T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "VH[64]",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "Vehicle ID",
+                    "time": "",
+                    "value": "VH[64]"
+                },
+                {
+                    "name": "Priority",
+                    "time": "",
+                    "value": "Normal"
+                },
+                {
+                    "name": "Departure Date",
+                    "time": "",
+                    "value": "2024-01-05T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Vehicle Booking",
+            "time": "2023-12-26T14:37:45Z",
+            "attributes": [
+                {
+                    "name": "Booking Time",
+                    "value": "2023-12-26T14:37:45Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "TD[286]",
+                    "qualifier": "booked"
+                },
+                {
+                    "objectId": "VH[62]",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "VH[64]",
+                    "qualifier": "involved"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Vehicle Departure",
+            "time": "2023-12-29T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "Departure Time",
+                    "value": "2023-12-29T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "VH[62]",
+                    "qualifier": "departing"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Vehicle Departure",
+            "time": "2024-01-05T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "Departure Time",
+                    "value": "2024-01-05T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "VH[64]",
+                    "qualifier": "departing"
+                }
+            ]
+        }
+    ]
+}

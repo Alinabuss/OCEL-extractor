@@ -1,0 +1,108 @@
+{
+    "objectTypes": [
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "decimal"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "decimal"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "pick",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "timestamp"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Nina Graves",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "role",
+                    "time": "2023-06-01T06:56:36Z",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-880914",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-06-01T06:56:36Z",
+                    "value": "199.99"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Echo Studio",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "Echo Studio",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-06-01T06:56:36Z",
+                    "value": "199.99"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "pick",
+            "time": "2023-06-01T06:56:36Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-06-01T06:56:36Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Nina Graves",
+                    "qualifier": "performed by"
+                },
+                {
+                    "objectId": "i-880914",
+                    "qualifier": "picked"
+                }
+            ]
+        }
+    ]
+}

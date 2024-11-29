@@ -1,0 +1,92 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                },
+                {
+                    "name": "net_price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "material",
+            "attributes": [
+                {
+                    "name": "material_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "approve_purchase_requisition",
+            "attributes": [
+                {
+                    "name": "approver",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_requisition:867:pr_trigger_867",
+            "type": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "purchasing_group",
+                    "time": "2024-08-21T12:15:00Z",
+                    "value": "004"
+                },
+                {
+                    "name": "net_price",
+                    "time": "2024-08-21T12:15:00Z",
+                    "value": "950.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "material:2153",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "material:2153",
+            "type": "material",
+            "attributes": [
+                {
+                    "name": "material_id",
+                    "time": "2024-08-21T12:15:00Z",
+                    "value": "2153"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "approve_purchase_requisition",
+            "time": "2024-08-21T12:15:00Z",
+            "attributes": [
+                {
+                    "name": "approver",
+                    "value": "Procurement Requisition Manager"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:867:pr_trigger_867",
+                    "qualifier": "approved"
+                }
+            ]
+        }
+    ]
+}

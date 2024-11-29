@@ -1,0 +1,86 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "decimal"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "integer"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create invoice receipt",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:1679",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2024-06-20T08:23:00Z",
+                    "value": "96750.00"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:1669",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2024-06-20T08:23:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create invoice receipt",
+            "time": "2024-06-20T08:23:00Z",
+            "attributes": [
+                {
+                    "name": "department",
+                    "value": "Finance/Account"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1679",
+                    "qualifier": "creates"
+                },
+                {
+                    "objectId": "goods receipt:1669",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ]
+}

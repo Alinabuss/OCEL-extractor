@@ -1,0 +1,135 @@
+{
+    "objectTypes": [
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "product_name",
+                    "type": "string"
+                },
+                {
+                    "name": "product_price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "employee_name",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "out_of_stock",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "i-883474",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "2023-09-14T17:40:03Z",
+                    "value": "i-883474"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-09-14T17:40:03Z",
+                    "value": "140.65"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Echo Show 8",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "Echo Show 8",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "product_name",
+                    "time": "2023-09-14T17:40:03Z",
+                    "value": "Echo Show 8"
+                },
+                {
+                    "name": "product_price",
+                    "time": "2023-09-14T17:40:03Z",
+                    "value": "129.99"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Benedikt Knopp",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "employee_name",
+                    "time": "2023-09-14T17:40:03Z",
+                    "value": "Benedikt Knopp"
+                },
+                {
+                    "name": "department",
+                    "time": "2023-09-14T17:40:03Z",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "out_of_stock",
+            "time": "2023-09-14T17:40:03Z",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "value": "i-883474"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-883474",
+                    "qualifier": "affected_item"
+                },
+                {
+                    "objectId": "Benedikt Knopp",
+                    "qualifier": "reported_by"
+                }
+            ]
+        }
+    ]
+}

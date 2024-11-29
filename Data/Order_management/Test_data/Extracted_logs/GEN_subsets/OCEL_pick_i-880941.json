@@ -1,0 +1,135 @@
+{
+    "objectTypes": [
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                },
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "pick_item",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Marco Pegoraro",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-05-29T10:26:52Z",
+                    "value": "Marco Pegoraro"
+                },
+                {
+                    "name": "department",
+                    "time": "2023-05-29T10:26:52Z",
+                    "value": "warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-880941",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "2023-05-29T10:26:52Z",
+                    "value": "i-880941"
+                },
+                {
+                    "name": "name",
+                    "time": "2023-05-29T10:26:52Z",
+                    "value": "iPhone X"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-05-29T10:26:52Z",
+                    "value": 699.0
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-880941",
+                    "qualifier": "is_product_of"
+                }
+            ]
+        },
+        {
+            "id": "iPhone X",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-05-29T10:26:52Z",
+                    "value": 699.0
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "pick_item",
+            "time": "2023-05-29T10:26:52Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-05-29T10:26:52Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Marco Pegoraro",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "i-880941",
+                    "qualifier": "picked_item"
+                }
+            ]
+        }
+    ]
+}

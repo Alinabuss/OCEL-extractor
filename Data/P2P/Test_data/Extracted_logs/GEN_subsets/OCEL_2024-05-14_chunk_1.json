@@ -1,0 +1,104 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "register goods receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "create invoice receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1594",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2024-05-14T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:1586",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2024-05-14T19:53:00Z",
+                    "value": "6000.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1594",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "register goods receipt",
+            "time": "2024-05-14T00:00:00Z",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "value": "goods receipt:1594"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": 2,
+            "type": "create invoice receipt",
+            "time": "2024-05-14T19:53:00Z",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "value": "invoice receipt:1586"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1594",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ]
+}

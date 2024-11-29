@@ -1,0 +1,146 @@
+{
+    "objectTypes": [
+        {
+            "name": "operation",
+            "attributes": [
+                {
+                    "name": "operation",
+                    "type": "float"
+                },
+                {
+                    "name": "emission of hours of gas",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "steel sheet",
+            "attributes": [
+                {
+                    "name": "kg mass",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "kg",
+            "attributes": [
+                {
+                    "name": "kg mass",
+                    "type": "string"
+                },
+                {
+                    "name": "kg of emissions",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "report",
+            "attributes": []
+        },
+        {
+            "name": "perform heating on the steel sheet",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "o_steelsheet_5337",
+            "type": "steel sheet",
+            "attributes": [
+                {
+                    "name": "kg mass",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "kg"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CO2",
+            "type": "kg",
+            "attributes": [
+                {
+                    "name": "kg mass",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "kg"
+                },
+                {
+                    "name": "kg of emissions",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "approximately 0.0138019093344"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_workstation_1",
+            "type": "operation",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "machine o_machine_oven01",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "machine o_machine_oven01",
+            "type": "operation",
+            "attributes": [
+                {
+                    "name": "operation",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "0.02"
+                },
+                {
+                    "name": "emission of hours of gas",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "0.49392"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 637,
+            "type": "report",
+            "time": "2023-04-06T10:49:02Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "o_steelsheet_5337",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 638,
+            "type": "perform heating on the steel sheet",
+            "time": "2023-04-06T10:49:02Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "machine o_machine_oven01",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "CO2",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "o_steelsheet_5337",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

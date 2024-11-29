@@ -1,0 +1,119 @@
+{
+    "objectTypes": [
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Lifecycle",
+                    "type": "string"
+                },
+                {
+                    "name": "Resource",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Movement Type",
+                    "type": "integer"
+                },
+                {
+                    "name": "Credit Amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Invoice Receipt Created",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:1926",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-10-08T12:35:00Z",
+                    "value": "invoice receipt:1926"
+                },
+                {
+                    "name": "Lifecycle",
+                    "time": "2024-10-08T12:35:00Z",
+                    "value": "complete"
+                },
+                {
+                    "name": "Resource",
+                    "time": "2024-10-08T12:35:00Z",
+                    "value": "Finance/Account Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1925",
+                    "qualifier": "context of"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:1925",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-10-08T12:35:00Z",
+                    "value": "goods receipt:1925"
+                },
+                {
+                    "name": "Movement Type",
+                    "time": "2024-10-08T12:35:00Z",
+                    "value": 101
+                },
+                {
+                    "name": "Credit Amount",
+                    "time": "2024-10-08T12:35:00Z",
+                    "value": 123200.0
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Invoice Receipt Created",
+            "time": "2024-10-08T12:35:00Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2024-10-08T12:35:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1926",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

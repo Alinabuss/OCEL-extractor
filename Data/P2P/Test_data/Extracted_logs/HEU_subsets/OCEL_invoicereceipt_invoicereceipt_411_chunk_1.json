@@ -1,0 +1,77 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "invoice",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create invoice in relation",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:410",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "receipt:411",
+            "type": "invoice",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "161,500.00"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:410",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 906,
+            "type": "create invoice in relation",
+            "time": "2022-10-12T19:47:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "receipt:411",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:410",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

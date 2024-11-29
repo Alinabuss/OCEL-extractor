@@ -1,0 +1,138 @@
+{
+    "objectTypes": [
+        {
+            "name": "order",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "decimal"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "decimal"
+                },
+                {
+                    "name": "product_name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "customer",
+            "attributes": [
+                {
+                    "name": "sales_representative",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "order_confirmation",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "decimal"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o-990052",
+            "type": "order",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-04-27T15:18:16Z",
+                    "value": "2514.97"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-880225",
+                    "qualifier": "contains"
+                },
+                {
+                    "objectId": "Iberian Sun Solaridades SA",
+                    "qualifier": "placed_by"
+                }
+            ]
+        },
+        {
+            "id": "i-880225",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-04-27T15:18:16Z",
+                    "value": "149.99"
+                },
+                {
+                    "name": "product_name",
+                    "time": "2023-04-27T15:18:16Z",
+                    "value": "Kindle"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Iberian Sun Solaridades SA",
+            "type": "customer",
+            "attributes": [
+                {
+                    "name": "sales_representative",
+                    "time": "2023-04-27T15:18:16Z",
+                    "value": "Christine von Dobbert"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Christine von Dobbert",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "role",
+                    "time": "2023-04-27T15:18:16Z",
+                    "value": "sales"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "order_confirmation",
+            "time": "2023-04-27T15:18:16Z",
+            "attributes": [
+                {
+                    "name": "price",
+                    "value": "2514.97"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o-990052",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

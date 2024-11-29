@@ -1,0 +1,132 @@
+{
+  "objectTypes": [
+    {
+      "name": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "type": "float"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Depart",
+      "attributes": []
+    }
+  ],
+  "objects": [
+    {
+      "id": "td1",
+      "type": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 5.0
+        }
+      ]
+    },
+    {
+      "id": "td4",
+      "type": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 5.0
+        }
+      ]
+    },
+    {
+      "id": "cr2",
+      "type": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "empty"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "td1",
+          "qualifier": "CR for TD"
+        }
+      ]
+    },
+    {
+      "id": "cr3",
+      "type": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "empty"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "td1",
+          "qualifier": "CR for TD"
+        }
+      ]
+    },
+    {
+      "id": "cr16",
+      "type": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "empty"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "td4",
+          "qualifier": "CR for TD"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "depart_vh1",
+      "type": "Depart",
+      "time": "2023-05-30T09:00:00Z",
+      "relationships": [
+        {
+          "objectId": "cr3",
+          "qualifier": "CR departed"
+        },
+        {
+          "objectId": "td1",
+          "qualifier": "TD with CR departure"
+        },
+        {
+          "objectId": "td4",
+          "qualifier": "TD with CR departure"
+        },
+        {
+          "objectId": "cr16",
+          "qualifier": "CR departed"
+        },
+        {
+          "objectId": "cr2",
+          "qualifier": "CR departed"
+        }
+      ]
+    }
+  ]
+}

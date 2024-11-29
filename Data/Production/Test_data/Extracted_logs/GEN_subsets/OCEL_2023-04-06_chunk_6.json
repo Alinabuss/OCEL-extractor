@@ -1,0 +1,415 @@
+{
+    "objectTypes": [
+        {
+            "name": "formed part",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "female part",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "machine",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "steel sheet",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "coating",
+            "attributes": [
+                {
+                    "name": "energy consumption",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2 emissions",
+                    "type": "float"
+                },
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "coating material",
+                    "type": "float"
+                },
+                {
+                    "name": "waste generated",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "processing",
+            "attributes": [
+                {
+                    "name": "energy consumption",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2 emissions",
+                    "type": "float"
+                },
+                {
+                    "name": "duration",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "cutting",
+            "attributes": [
+                {
+                    "name": "energy consumption",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2 emissions",
+                    "type": "float"
+                },
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "compressed air",
+                    "type": "float"
+                },
+                {
+                    "name": "nitrogen gas",
+                    "type": "float"
+                },
+                {
+                    "name": "waste generated",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o_formedpart_5136",
+            "type": "formed part",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "SteelSheet[5175]",
+            "type": "steel sheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "",
+                    "value": "0.02116"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_formedpart_5175",
+            "type": "formed part",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "o_formedpart_5180",
+            "type": "formed part",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "o_femalepart_4975",
+            "type": "female part",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "FemalePart[4885]",
+            "type": "female part",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "o_machine_coater03",
+            "type": "machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "o_machine_cutter01",
+            "type": "machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Machine[cutter01]",
+            "type": "machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "o_workstation_1",
+            "type": "workstation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "o_workstation_2",
+            "type": "workstation",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "coating",
+            "time": "2023-04-06T10:19:01Z",
+            "attributes": [
+                {
+                    "name": "energy consumption",
+                    "value": "0.25"
+                },
+                {
+                    "name": "CO2 emissions",
+                    "value": "0.1751156951"
+                },
+                {
+                    "name": "duration",
+                    "value": "300"
+                },
+                {
+                    "name": "coating material",
+                    "value": "0.0004"
+                },
+                {
+                    "name": "waste generated",
+                    "value": "0.0001"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_formedpart_5136",
+                    "qualifier": "produced"
+                },
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "performed at"
+                },
+                {
+                    "objectId": "o_machine_coater03",
+                    "qualifier": "utilized"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "processing",
+            "time": "2023-04-06T10:27:12Z",
+            "attributes": [
+                {
+                    "name": "energy consumption",
+                    "value": "0.0041667"
+                },
+                {
+                    "name": "CO2 emissions",
+                    "value": "0.0028500228"
+                },
+                {
+                    "name": "duration",
+                    "value": "5"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_formedpart_5175",
+                    "qualifier": "produced"
+                },
+                {
+                    "objectId": "SteelSheet[5175]",
+                    "qualifier": "input"
+                },
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "performed at"
+                },
+                {
+                    "objectId": "Machine[former02]",
+                    "qualifier": "utilized"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "coating",
+            "time": "2023-04-06T10:28:16Z",
+            "attributes": [
+                {
+                    "name": "energy consumption",
+                    "value": "0.25"
+                },
+                {
+                    "name": "CO2 emissions",
+                    "value": "0.1751156951"
+                },
+                {
+                    "name": "duration",
+                    "value": "300"
+                },
+                {
+                    "name": "coating material",
+                    "value": "0.0004"
+                },
+                {
+                    "name": "waste generated",
+                    "value": "0.0001"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_formedpart_5180",
+                    "qualifier": "produced"
+                },
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "performed at"
+                },
+                {
+                    "objectId": "o_machine_coater03",
+                    "qualifier": "utilized"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "cutting",
+            "time": "2023-04-06T10:28:28Z",
+            "attributes": [
+                {
+                    "name": "energy consumption",
+                    "value": "0.019073"
+                },
+                {
+                    "name": "CO2 emissions",
+                    "value": "0.07777"
+                },
+                {
+                    "name": "duration",
+                    "value": "12.48"
+                },
+                {
+                    "name": "compressed air",
+                    "value": "0.059"
+                },
+                {
+                    "name": "nitrogen gas",
+                    "value": "0.076"
+                },
+                {
+                    "name": "waste generated",
+                    "value": "0.00254"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_femalepart_4975",
+                    "qualifier": "produced"
+                },
+                {
+                    "objectId": "o_formedpart_4975",
+                    "qualifier": "input"
+                },
+                {
+                    "objectId": "o_workstation_2",
+                    "qualifier": "performed at"
+                },
+                {
+                    "objectId": "o_machine_cutter01",
+                    "qualifier": "utilized"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "cutting",
+            "time": "2023-04-06T10:29:13Z",
+            "attributes": [
+                {
+                    "name": "energy consumption",
+                    "value": "0.0190379"
+                },
+                {
+                    "name": "CO2 emissions",
+                    "value": "0.08666"
+                },
+                {
+                    "name": "duration",
+                    "value": "12.46"
+                },
+                {
+                    "name": "compressed air",
+                    "value": "0.078"
+                },
+                {
+                    "name": "nitrogen gas",
+                    "value": "0.076"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "FormedPart[4885]",
+                    "qualifier": "produced"
+                },
+                {
+                    "objectId": "FemalePart[4885]",
+                    "qualifier": "input"
+                },
+                {
+                    "objectId": "o_workstation_2",
+                    "qualifier": "performed at"
+                },
+                {
+                    "objectId": "Machine[cutter01]",
+                    "qualifier": "utilized"
+                }
+            ]
+        }
+    ]
+}

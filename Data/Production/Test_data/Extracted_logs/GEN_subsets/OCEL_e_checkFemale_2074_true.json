@@ -1,0 +1,149 @@
+{
+    "objectTypes": [
+        {
+            "name": "Worker",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Part",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Energy Consumption Source",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Check",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "Duration",
+                    "type": "string"
+                },
+                {
+                    "name": "CO2 Emissions",
+                    "type": "float"
+                },
+                {
+                    "name": "Compressed Air Usage",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Worker[1]",
+            "type": "Worker",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-04T11:55:48Z",
+                    "value": "Worker[1]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "FemalePart[2074]",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-04T11:55:48Z",
+                    "value": "FemalePart[2074]"
+                },
+                {
+                    "name": "Type",
+                    "time": "2023-04-04T11:55:48Z",
+                    "value": "Female"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Workstation[2]",
+            "type": "Workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-04T11:55:48Z",
+                    "value": "Workstation[2]"
+                },
+                {
+                    "name": "Energy Consumption Source",
+                    "time": "2023-04-04T11:55:48Z",
+                    "value": "Grid"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Check",
+            "time": "2023-04-04T11:55:48Z",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "value": "2023-04-04T11:55:48Z"
+                },
+                {
+                    "name": "Duration",
+                    "value": "unspecified"
+                },
+                {
+                    "name": "CO2 Emissions",
+                    "value": "0.00084474"
+                },
+                {
+                    "name": "Compressed Air Usage",
+                    "value": "0.013"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Worker[1]",
+                    "qualifier": "performed"
+                },
+                {
+                    "objectId": "FemalePart[2074]",
+                    "qualifier": "checked"
+                },
+                {
+                    "objectId": "Workstation[2]",
+                    "qualifier": "conducted_at"
+                }
+            ]
+        }
+    ]
+}

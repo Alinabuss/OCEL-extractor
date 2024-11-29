@@ -1,0 +1,191 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": []
+        },
+        {
+            "name": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "purchasing",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "approval",
+            "attributes": [
+                {
+                    "name": "purchasing",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "approval of the purchase order",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "create",
+            "attributes": []
+        },
+        {
+            "name": "perform involve goods receipt",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:121",
+            "type": "goods receipt",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "purchase order purchase_order:98",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:115",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:113",
+            "type": "invoice receipt",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:112",
+            "type": "approval",
+            "attributes": [
+                {
+                    "name": "purchasing",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "group \" 005"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation quotation:69",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "quotation quotation:69",
+            "type": "Object_type_not_identified",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "purchase order purchase_order:98",
+            "type": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "purchasing",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "group \" 003"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 520,
+            "type": "approval of the purchase order",
+            "time": "2022-06-10T03:10:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation quotation:69",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:112",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 521,
+            "type": "create",
+            "time": "2022-06-10T04:43:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "purchase order purchase_order:98",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:121",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 522,
+            "type": "perform involve goods receipt",
+            "time": "2022-06-10T07:10:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:115",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "invoice receipt:113",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 523,
+            "type": "perform involve goods receipt",
+            "time": "2022-06-10T10:29:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:115",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "invoice receipt:113",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

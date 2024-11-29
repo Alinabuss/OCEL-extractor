@@ -1,0 +1,107 @@
+{
+    "objectTypes": [
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "containers",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "departure_scheduled",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh66",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "",
+                    "value": "vh66"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td272",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "",
+                    "value": "td272"
+                },
+                {
+                    "name": "containers",
+                    "time": "",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2023-12-18T16:32:12Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "vh66",
+                    "qualifier": "booked_for"
+                },
+                {
+                    "objectId": "td272",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "departure_scheduled",
+            "time": "2024-01-12T11:00:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "vh66",
+                    "qualifier": "scheduled_for"
+                }
+            ]
+        }
+    ]
+}

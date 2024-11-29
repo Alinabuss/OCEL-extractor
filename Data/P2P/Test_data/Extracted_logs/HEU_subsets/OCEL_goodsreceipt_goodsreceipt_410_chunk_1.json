@@ -1,0 +1,171 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": []
+        },
+        {
+            "name": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "type",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "movement type",
+            "attributes": [
+                {
+                    "name": "type",
+                    "type": "float"
+                },
+                {
+                    "name": "group for purchase order",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "mark creation",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "create receipt in relation",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:411",
+            "type": "invoice receipt",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:410",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:410",
+            "type": "movement type",
+            "attributes": [
+                {
+                    "name": "type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "group for purchase order",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase order purchase_order:349",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase order purchase_order:349",
+            "type": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:411",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "Goods Receipt:410",
+            "type": "Object_type_not_identified",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1168,
+            "type": "create",
+            "time": "2022-10-08T04:26:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase order purchase_order:349",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:410",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1169,
+            "type": "create receipt in relation",
+            "time": "2022-10-12T19:47:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:410",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "invoice receipt:411",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1170,
+            "type": "mark creation",
+            "time": "2022-10-12T16:15:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Finance / Account Department"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": []
+        }
+    ]
+}

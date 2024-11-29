@@ -1,0 +1,116 @@
+{
+    "objectTypes": [
+        {
+            "name": "receipt",
+            "attributes": [
+                {
+                    "name": "Warehouse Department",
+                    "type": "string"
+                },
+                {
+                    "name": "Warehouse Department",
+                    "type": "string"
+                },
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "purchase group",
+            "attributes": [
+                {
+                    "name": "part of purchase group",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create Report goods receipt",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Goods Receipt:540",
+            "type": "receipt",
+            "attributes": [
+                {
+                    "name": "Warehouse Department",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase order:457",
+            "type": "purchase group",
+            "attributes": [
+                {
+                    "name": "part of purchase group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:540",
+            "type": "receipt",
+            "attributes": [
+                {
+                    "name": "Warehouse Department",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Warehouse Department"
+                },
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase order:457",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 254,
+            "type": "create Report goods receipt",
+            "time": "2023-01-28T06:22:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase order:457",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:540",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "Goods Receipt:540",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

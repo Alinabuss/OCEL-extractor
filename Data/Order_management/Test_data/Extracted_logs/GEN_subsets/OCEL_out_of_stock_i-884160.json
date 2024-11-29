@@ -1,0 +1,125 @@
+{
+    "objectTypes": [
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                },
+                {
+                    "name": "product_name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "record_out_of_stock",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "employee_name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "i-884160",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-10-16T09:56:53Z",
+                    "value": "141.61"
+                },
+                {
+                    "name": "product_name",
+                    "time": "2023-10-16T09:56:53Z",
+                    "value": "Kindle Paperwhite"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Kindle Paperwhite",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "Kindle Paperwhite",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-10-16T09:56:53Z",
+                    "value": "129.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Benedikt Knopp",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "time": "2023-10-16T09:56:53Z",
+                    "value": "warehousing"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "record_out_of_stock",
+            "time": "2023-10-16T09:56:53Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-10-16T09:56:53Z"
+                },
+                {
+                    "name": "employee_name",
+                    "value": "Benedikt Knopp"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-884160",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "Benedikt Knopp",
+                    "qualifier": "performed_by"
+                }
+            ]
+        }
+    ]
+}

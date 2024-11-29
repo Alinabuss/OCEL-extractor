@@ -1,0 +1,180 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "material",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "net_price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchasing_group",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create_purchase_requisition",
+            "attributes": [
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "create_request_for_quotation",
+            "attributes": [
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_requisition:245:pr_trigger_245",
+            "type": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2022-11-29T13:47:00Z",
+                    "value": "purchase_requisition:245:pr_trigger_245"
+                },
+                {
+                    "name": "status",
+                    "time": "2022-11-29T13:47:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "material:595",
+            "type": "material",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2022-11-29T13:47:00Z",
+                    "value": "material:595"
+                },
+                {
+                    "name": "net_price",
+                    "time": "2022-11-29T13:47:00Z",
+                    "value": "250.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "quotation:244",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2022-11-29T18:31:00Z",
+                    "value": "quotation:244"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "001",
+            "type": "purchasing_group",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2022-11-29T13:47:00Z",
+                    "value": "001"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create_purchase_requisition",
+            "time": "2022-11-29T13:47:00Z",
+            "attributes": [
+                {
+                    "name": "department",
+                    "value": "Manufacturing Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:245:pr_trigger_245",
+                    "qualifier": "created"
+                },
+                {
+                    "objectId": "material:595",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "001",
+                    "qualifier": "part_of"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "create_request_for_quotation",
+            "time": "2022-11-29T18:31:00Z",
+            "attributes": [
+                {
+                    "name": "department",
+                    "value": "Procurement Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:245:pr_trigger_245",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "quotation:244",
+                    "qualifier": "involves"
+                },
+                {
+                    "objectId": "001",
+                    "qualifier": "part_of"
+                }
+            ]
+        }
+    ]
+}

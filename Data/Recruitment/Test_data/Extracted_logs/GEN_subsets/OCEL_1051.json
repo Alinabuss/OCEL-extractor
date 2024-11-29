@@ -1,0 +1,161 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "vacancy_id",
+                    "type": "string"
+                },
+                {
+                    "name": "position",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "InvitationSent",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "invited_by",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Applicant[Vanessa Davis]",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-06-20T09:35:33Z",
+                    "value": "Vanessa Davis"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Recruiter[Ed Meister]",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-06-20T09:35:33Z",
+                    "value": "Ed Meister"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Recruiter[Dionne Meister]",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-06-20T09:35:33Z",
+                    "value": "Dionne Meister"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Vacancy[550001]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "vacancy_id",
+                    "time": "2019-06-20T09:35:33Z",
+                    "value": "550001"
+                },
+                {
+                    "name": "position",
+                    "time": "2019-06-20T09:35:33Z",
+                    "value": "Manager"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770098]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "time": "2019-06-20T09:35:33Z",
+                    "value": "770098"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "InvitationSent",
+            "time": "2019-06-20T09:35:33Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2019-06-20T09:35:33Z"
+                },
+                {
+                    "name": "invited_by",
+                    "value": "Ed Meister"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Applicant[Vanessa Davis]",
+                    "qualifier": "invited"
+                },
+                {
+                    "objectId": "Vacancy[550001]",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "Application[770098]",
+                    "qualifier": "associated_with"
+                },
+                {
+                    "objectId": "Recruiter[Dionne Meister]",
+                    "qualifier": "acknowledged"
+                }
+            ]
+        }
+    ]
+}

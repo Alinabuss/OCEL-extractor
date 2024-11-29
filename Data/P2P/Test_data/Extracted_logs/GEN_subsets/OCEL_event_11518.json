@@ -1,0 +1,92 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "type": "float"
+                },
+                {
+                    "name": "lifecycle_status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "invoice_receipt_completed",
+            "attributes": [
+                {
+                    "name": "completed_by",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "743",
+            "type": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "time": "",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "750",
+            "type": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "time": "",
+                    "value": "31500.0"
+                },
+                {
+                    "name": "lifecycle_status",
+                    "time": "",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "743",
+                    "qualifier": "associated_with"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "invoice_receipt_completed",
+            "time": "2023-04-19T04:39:00Z",
+            "attributes": [
+                {
+                    "name": "completed_by",
+                    "value": "finance/account department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "750",
+                    "qualifier": "completed"
+                }
+            ]
+        }
+    ]
+}

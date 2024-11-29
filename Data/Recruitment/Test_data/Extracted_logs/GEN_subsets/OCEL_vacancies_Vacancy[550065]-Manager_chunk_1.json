@@ -1,0 +1,158 @@
+{
+    "objectTypes": [
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "position",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "applicant_name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Open Vacancy",
+            "attributes": [
+                {
+                    "name": "vacancy_id",
+                    "type": "string"
+                },
+                {
+                    "name": "position",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Submit Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "type": "string"
+                },
+                {
+                    "name": "applicant_name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Vacancy[550065]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "position",
+                    "time": "2019-07-03T13:37:59Z",
+                    "value": "Manager"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770400]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "applicant_name",
+                    "time": "2019-07-04T10:27:18Z",
+                    "value": "Toon Smith"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550065]",
+                    "qualifier": "applies_for"
+                }
+            ]
+        },
+        {
+            "id": "Application[770403]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "applicant_name",
+                    "time": "2019-07-04T13:46:31Z",
+                    "value": "Toon Lopez"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550065]",
+                    "qualifier": "applies_for"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Open Vacancy",
+            "time": "2019-07-03T13:37:59Z",
+            "attributes": [
+                {
+                    "name": "vacancy_id",
+                    "value": "Vacancy[550065]"
+                },
+                {
+                    "name": "position",
+                    "value": "Manager"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": 2,
+            "type": "Submit Application",
+            "time": "2019-07-04T10:27:18Z",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "value": "Application[770400]"
+                },
+                {
+                    "name": "applicant_name",
+                    "value": "Toon Smith"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770400]",
+                    "qualifier": "submitted"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Submit Application",
+            "time": "2019-07-04T13:46:31Z",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "value": "Application[770403]"
+                },
+                {
+                    "name": "applicant_name",
+                    "value": "Toon Lopez"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770403]",
+                    "qualifier": "submitted"
+                }
+            ]
+        }
+    ]
+}

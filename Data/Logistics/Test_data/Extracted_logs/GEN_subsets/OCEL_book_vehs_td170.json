@@ -1,0 +1,117 @@
+{
+    "objectTypes": [
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Booking",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Departure Scheduled",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh41",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-09-29T06:11:47Z",
+                    "value": "vh41"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td170",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-09-29T06:11:47Z",
+                    "value": "td170"
+                },
+                {
+                    "name": "Amount",
+                    "time": "2023-09-29T06:11:47Z",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Booking",
+            "time": "2023-09-29T06:11:47Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2023-09-29T06:11:47Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh41",
+                    "qualifier": "booked_for"
+                },
+                {
+                    "objectId": "td170",
+                    "qualifier": "related_document"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Departure Scheduled",
+            "time": "2023-10-17T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2023-10-17T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh41",
+                    "qualifier": "scheduled_departure"
+                }
+            ]
+        }
+    ]
+}

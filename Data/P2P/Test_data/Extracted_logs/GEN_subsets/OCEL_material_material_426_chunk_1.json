@@ -1,0 +1,152 @@
+{
+    "objectTypes": [
+        {
+            "name": "Material",
+            "attributes": [
+                {
+                    "name": "Material ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Net Price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Purchase Requisition",
+            "attributes": [
+                {
+                    "name": "Requisition ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Lifecycle Status",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Purchase Requisition Initiated",
+            "attributes": [
+                {
+                    "name": "Requisition ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Material ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Purchase Requisition Approved",
+            "attributes": [
+                {
+                    "name": "Requisition ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Lifecycle Status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "material:426",
+            "type": "Material",
+            "attributes": [
+                {
+                    "name": "Material ID",
+                    "time": "2022-09-05T08:53:00Z",
+                    "value": "material:426"
+                },
+                {
+                    "name": "Net Price",
+                    "time": "2022-09-05T08:53:00Z",
+                    "value": "1400.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_requisition:177:pr_trigger_177",
+            "type": "Purchase Requisition",
+            "attributes": [
+                {
+                    "name": "Requisition ID",
+                    "time": "2022-09-05T08:53:00Z",
+                    "value": "purchase_requisition:177:pr_trigger_177"
+                },
+                {
+                    "name": "Lifecycle Status",
+                    "time": "2022-09-08T11:21:00Z",
+                    "value": "Complete"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "2022-09-08T11:21:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "material:426",
+                    "qualifier": "associated_with"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Purchase Requisition Initiated",
+            "time": "2022-09-05T08:53:00Z",
+            "attributes": [
+                {
+                    "name": "Requisition ID",
+                    "value": "purchase_requisition:177:pr_trigger_177"
+                },
+                {
+                    "name": "Material ID",
+                    "value": "material:426"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:177:pr_trigger_177",
+                    "qualifier": "initiates"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Purchase Requisition Approved",
+            "time": "2022-09-08T11:21:00Z",
+            "attributes": [
+                {
+                    "name": "Requisition ID",
+                    "value": "purchase_requisition:177:pr_trigger_177"
+                },
+                {
+                    "name": "Lifecycle Status",
+                    "value": "Complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:177:pr_trigger_177",
+                    "qualifier": "approves"
+                }
+            ]
+        }
+    ]
+}

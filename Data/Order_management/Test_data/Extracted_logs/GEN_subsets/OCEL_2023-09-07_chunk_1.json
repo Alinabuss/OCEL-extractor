@@ -1,0 +1,208 @@
+{
+    "objectTypes": [
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "associatedProduct",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Pick Item",
+            "attributes": [
+                {
+                    "name": "employeeName",
+                    "type": "string"
+                },
+                {
+                    "name": "itemId",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Leah Tacke",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "value": "Leah Tacke genannt Unterberg"
+                },
+                {
+                    "name": "role",
+                    "value": "Warehousing"
+                }
+            ]
+        },
+        {
+            "id": "Detlef Wetzeler",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "value": "Detlef Wetzeler"
+                },
+                {
+                    "name": "role",
+                    "value": "Warehousing"
+                }
+            ]
+        },
+        {
+            "id": "i-883285",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "id",
+                    "value": "i-883285"
+                },
+                {
+                    "name": "associatedProduct",
+                    "value": "iPhone X"
+                },
+                {
+                    "name": "price",
+                    "value": 756.32
+                }
+            ]
+        },
+        {
+            "id": "iPhone X",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "id",
+                    "value": "iPhone X"
+                },
+                {
+                    "name": "price",
+                    "value": 699.0
+                }
+            ]
+        },
+        {
+            "id": "i-883308",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "id",
+                    "value": "i-883308"
+                },
+                {
+                    "name": "associatedProduct",
+                    "value": "MacBook Pro"
+                },
+                {
+                    "name": "price",
+                    "value": 2705.0
+                }
+            ]
+        },
+        {
+            "id": "MacBook Pro",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "id",
+                    "value": "MacBook Pro"
+                },
+                {
+                    "name": "price",
+                    "value": 2500.0
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Pick Item",
+            "time": "2023-09-07T08:03:19Z",
+            "attributes": [
+                {
+                    "name": "employeeName",
+                    "value": "Leah Tacke"
+                },
+                {
+                    "name": "itemId",
+                    "value": "i-883285"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Leah Tacke",
+                    "qualifier": "performed"
+                },
+                {
+                    "objectId": "i-883285",
+                    "qualifier": "picked"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Pick Item",
+            "time": "2023-09-07T12:44:14Z",
+            "attributes": [
+                {
+                    "name": "employeeName",
+                    "value": "Detlef Wetzeler"
+                },
+                {
+                    "name": "itemId",
+                    "value": "i-883308"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Detlef Wetzeler",
+                    "qualifier": "performed"
+                },
+                {
+                    "objectId": "i-883308",
+                    "qualifier": "picked"
+                }
+            ]
+        }
+    ]
+}

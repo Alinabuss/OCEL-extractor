@@ -1,0 +1,125 @@
+{
+    "objectTypes": [
+        {
+            "name": "Order",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                },
+                {
+                    "name": "category",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Payment",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "type": "float"
+                },
+                {
+                    "name": "product",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o-990936",
+            "type": "Order",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "",
+                    "value": "2385.4"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-883736",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "",
+                    "value": "2380.4"
+                },
+                {
+                    "name": "category",
+                    "time": "",
+                    "value": "MacBook Air"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o-990936",
+                    "qualifier": "includes"
+                }
+            ]
+        },
+        {
+            "id": "MacBook Air",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "",
+                    "value": "2200.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Payment",
+            "time": "2023-11-08T13:41:08Z",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "value": "2385.4"
+                },
+                {
+                    "name": "product",
+                    "value": "MacBook Air"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o-990936",
+                    "qualifier": "related to"
+                },
+                {
+                    "objectId": "i-883736",
+                    "qualifier": "involves"
+                }
+            ]
+        }
+    ]
+}

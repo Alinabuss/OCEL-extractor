@@ -1,0 +1,239 @@
+{
+    "objectTypes": [
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Number of Containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Document Booked",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "Scheduled Departure",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td408",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-04-01T06:14:16Z",
+                    "value": "td408"
+                },
+                {
+                    "name": "Number of Containers",
+                    "time": "2024-04-01T06:14:16Z",
+                    "value": 4.0
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh94",
+                    "qualifier": "reserved"
+                }
+            ]
+        },
+        {
+            "id": "vh94",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-04-01T06:14:16Z",
+                    "value": "vh94"
+                },
+                {
+                    "name": "Type",
+                    "time": "2024-04-01T06:14:16Z",
+                    "value": "scheduled"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td408",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": "td409",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-04-01T11:58:00Z",
+                    "value": "td409"
+                },
+                {
+                    "name": "Number of Containers",
+                    "time": "2024-04-01T11:58:00Z",
+                    "value": 4.0
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh90",
+                    "qualifier": "reserved"
+                }
+            ]
+        },
+        {
+            "id": "vh90",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-04-01T11:58:00Z",
+                    "value": "vh90"
+                },
+                {
+                    "name": "Type",
+                    "time": "2024-04-01T11:58:00Z",
+                    "value": "regular"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td409",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": "td410",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-04-01T12:58:06Z",
+                    "value": "td410"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh92",
+                    "qualifier": "reserved"
+                }
+            ]
+        },
+        {
+            "id": "vh92",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-04-01T12:58:06Z",
+                    "value": "vh92"
+                },
+                {
+                    "name": "Type",
+                    "time": "2024-04-01T12:58:06Z",
+                    "value": "officially booked"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td410",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Document Booked",
+            "time": "2024-04-01T06:14:16Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2024-04-01T06:14:16Z"
+                },
+                {
+                    "name": "Scheduled Departure",
+                    "value": "2024-04-19T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td408",
+                    "qualifier": "involved"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Document Booked",
+            "time": "2024-04-01T11:58:00Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2024-04-01T11:58:00Z"
+                },
+                {
+                    "name": "Scheduled Departure",
+                    "value": "2024-04-05T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td409",
+                    "qualifier": "involved"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Document Booked",
+            "time": "2024-04-01T12:58:06Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2024-04-01T12:58:06Z"
+                },
+                {
+                    "name": "Scheduled Departure",
+                    "value": "2024-04-12T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td410",
+                    "qualifier": "involved"
+                }
+            ]
+        }
+    ]
+}

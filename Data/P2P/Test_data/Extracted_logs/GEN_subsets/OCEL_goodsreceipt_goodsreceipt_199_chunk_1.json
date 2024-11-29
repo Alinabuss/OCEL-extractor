@@ -1,0 +1,92 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "integer"
+                },
+                {
+                    "name": "purchasing group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "creation",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:199",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "status",
+                    "time": "2022-07-24T13:14:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:177",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:177",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2022-07-24T13:14:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "purchasing group",
+                    "time": "2022-07-24T13:14:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "creation",
+            "time": "2022-07-24T13:14:00Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:199",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

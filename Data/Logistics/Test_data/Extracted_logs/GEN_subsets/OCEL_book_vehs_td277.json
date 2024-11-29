@@ -1,0 +1,113 @@
+{
+    "objectTypes": [
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Number of Containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Departure Date",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Vehicle Booking",
+            "attributes": [
+                {
+                    "name": "Booking Time",
+                    "type": "string"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td277",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "",
+                    "value": "td277"
+                },
+                {
+                    "name": "Number of Containers",
+                    "time": "",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh64",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "",
+                    "value": "vh64"
+                },
+                {
+                    "name": "Departure Date",
+                    "time": "",
+                    "value": "2024-01-05T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td277",
+                    "qualifier": "associated with"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Vehicle Booking",
+            "time": "2023-12-20T15:28:28Z",
+            "attributes": [
+                {
+                    "name": "Booking Time",
+                    "value": "2023-12-20T15:28:28Z"
+                },
+                {
+                    "name": "Status",
+                    "value": "Booked"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh64",
+                    "qualifier": "booked for"
+                },
+                {
+                    "objectId": "td277",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ]
+}

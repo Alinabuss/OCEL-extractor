@@ -1,0 +1,122 @@
+{
+    "objectTypes": [
+        {
+            "name": "Order",
+            "attributes": [
+                {
+                    "name": "total_price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Customer",
+            "attributes": []
+        },
+        {
+            "name": "SalesPerson",
+            "attributes": [
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "OrderConfirmed",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o-990101",
+            "type": "Order",
+            "attributes": [
+                {
+                    "name": "total_price",
+                    "time": "2023-05-08T10:24:31Z",
+                    "value": "84.99"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-880429",
+                    "qualifier": "includes"
+                },
+                {
+                    "objectId": "Balkan Minerals d.o.o.",
+                    "qualifier": "customer"
+                },
+                {
+                    "objectId": "Christine von Dobbert",
+                    "qualifier": "sales_person"
+                }
+            ]
+        },
+        {
+            "id": "i-880429",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-05-08T10:24:31Z",
+                    "value": "79.99"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Balkan Minerals d.o.o.",
+            "type": "Customer",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Christine von Dobbert",
+            "type": "SalesPerson",
+            "attributes": [
+                {
+                    "name": "department",
+                    "time": "2023-05-08T10:24:31Z",
+                    "value": "Sales"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "OrderConfirmed",
+            "time": "2023-05-08T10:24:31Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2023-05-08T10:24:31Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o-990101",
+                    "qualifier": "order"
+                }
+            ]
+        }
+    ]
+}

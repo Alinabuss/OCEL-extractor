@@ -1,0 +1,152 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "movement type",
+            "attributes": [
+                {
+                    "name": "label",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "goods receipt created",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "timestamp"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt completed",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "timestamp"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:97",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-05-30T20:55:00Z",
+                    "value": "goods receipt:97"
+                },
+                {
+                    "name": "status",
+                    "time": "2022-05-30T20:55:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:83",
+                    "qualifier": "associated with"
+                },
+                {
+                    "objectId": "movement_type:101",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:83",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-05-30T20:55:00Z",
+                    "value": "purchase_order:83"
+                },
+                {
+                    "name": "purchasing group",
+                    "time": "2022-05-30T20:55:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "movement_type:101",
+            "type": "movement type",
+            "attributes": [
+                {
+                    "name": "label",
+                    "time": "2022-05-30T20:55:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "goods receipt created",
+            "time": "2022-05-30T20:55:00Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2022-05-30T20:55:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:97",
+                    "qualifier": "result of"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "goods receipt completed",
+            "time": "2022-05-30T20:55:00Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2022-05-30T20:55:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:97",
+                    "qualifier": "result of"
+                }
+            ]
+        }
+    ]
+}

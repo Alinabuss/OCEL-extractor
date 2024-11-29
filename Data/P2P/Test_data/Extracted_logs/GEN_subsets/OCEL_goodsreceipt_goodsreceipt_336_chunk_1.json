@@ -1,0 +1,147 @@
+{
+    "objectTypes": [
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Movement Type",
+                    "type": "integer"
+                },
+                {
+                    "name": "Lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Resource",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Create Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "type": "integer"
+                },
+                {
+                    "name": "Lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:336",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-09-19T23:05:00Z",
+                    "value": "goods receipt:336"
+                },
+                {
+                    "name": "Movement Type",
+                    "time": "2022-09-19T23:05:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "Lifecycle",
+                    "time": "2022-09-19T23:05:00Z",
+                    "value": "Complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase order:285",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "purchase order:285",
+            "type": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-09-19T23:05:00Z",
+                    "value": "purchase order:285"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "2022-09-19T23:05:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Warehouse Department",
+            "type": "Resource",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "time": "2022-09-19T23:05:00Z",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Create Goods Receipt",
+            "time": "2022-09-19T23:05:00Z",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "value": "101"
+                },
+                {
+                    "name": "Lifecycle",
+                    "value": "Complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:336",
+                    "qualifier": "created"
+                },
+                {
+                    "objectId": "purchase order:285",
+                    "qualifier": "related to"
+                },
+                {
+                    "objectId": "Warehouse Department",
+                    "qualifier": "involved"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,240 @@
+{
+    "objectTypes": [
+        {
+            "name": "Player",
+            "attributes": [
+                {
+                    "name": "PlayerID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Session",
+            "attributes": [
+                {
+                    "name": "SessionID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Archery Range",
+            "attributes": [
+                {
+                    "name": "RangeID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Match",
+            "attributes": [
+                {
+                    "name": "MatchID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Set Gather Point",
+            "attributes": [
+                {
+                    "name": "gather_point",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Initiate Session",
+            "attributes": []
+        },
+        {
+            "name": "Issue Command",
+            "attributes": []
+        },
+        {
+            "name": "Complete Queue",
+            "attributes": []
+        },
+        {
+            "name": "Start Queue",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "Player[P1472826]",
+            "type": "Player",
+            "attributes": [
+                {
+                    "name": "PlayerID",
+                    "time": "2023-04-17T00:51:34Z",
+                    "value": "P1472826"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Session[S227028371_1472826]",
+            "type": "Session",
+            "attributes": [
+                {
+                    "name": "SessionID",
+                    "time": "2023-04-17T00:51:34Z",
+                    "value": "S227028371_1472826"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Archery_Range_M227028371_1",
+            "type": "Archery Range",
+            "attributes": [
+                {
+                    "name": "RangeID",
+                    "time": "2023-04-17T00:51:34Z",
+                    "value": "Archery_Range_M227028371_1"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Archery_Range_M227028371_2",
+            "type": "Archery Range",
+            "attributes": [
+                {
+                    "name": "RangeID",
+                    "time": "2023-04-17T00:51:34Z",
+                    "value": "Archery_Range_M227028371_2"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Match[M227028371]",
+            "type": "Match",
+            "attributes": [
+                {
+                    "name": "MatchID",
+                    "time": "2023-04-17T00:51:34Z",
+                    "value": "M227028371"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Set Gather Point",
+            "time": "2023-04-17T00:51:34Z",
+            "attributes": [
+                {
+                    "name": "gather_point",
+                    "value": "none"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Session[S227028371_1472826]",
+                    "qualifier": "session"
+                },
+                {
+                    "objectId": "Player[P1472826]",
+                    "qualifier": "issued_by"
+                },
+                {
+                    "objectId": "Match[M227028371]",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Initiate Session",
+            "time": "2023-04-17T00:51:35Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Session[S227028371_1472826]",
+                    "qualifier": "session"
+                },
+                {
+                    "objectId": "Archery_Range_M227028371_2",
+                    "qualifier": "at_range"
+                },
+                {
+                    "objectId": "Match[M227028371]",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Issue Command",
+            "time": "2023-04-17T00:51:35Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Session[S227028371_1472826]",
+                    "qualifier": "session"
+                },
+                {
+                    "objectId": "Archery_Range_M227028371_1",
+                    "qualifier": "at_range"
+                },
+                {
+                    "objectId": "Player[P1472826]",
+                    "qualifier": "issued_by"
+                },
+                {
+                    "objectId": "Match[M227028371]",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Complete Queue",
+            "time": "2023-04-17T00:51:42Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Session[S227028371_1472826]",
+                    "qualifier": "session"
+                },
+                {
+                    "objectId": "Archery_Range_M227028371_2",
+                    "qualifier": "at_range"
+                },
+                {
+                    "objectId": "Match[M227028371]",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "Start Queue",
+            "time": "2023-04-17T00:51:42Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Session[S227028371_1472826]",
+                    "qualifier": "session"
+                },
+                {
+                    "objectId": "Archery_Range_M227028371_2",
+                    "qualifier": "at_range"
+                },
+                {
+                    "objectId": "Match[M227028371]",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

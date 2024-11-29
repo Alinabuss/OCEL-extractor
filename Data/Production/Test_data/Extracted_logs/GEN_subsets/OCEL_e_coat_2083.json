@@ -1,0 +1,148 @@
+{
+    "objectTypes": [
+        {
+            "name": "formed_part",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "machine",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "location",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "workstation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "coating_process",
+            "attributes": [
+                {
+                    "name": "duration_seconds",
+                    "type": "integer"
+                },
+                {
+                    "name": "CO2_emission_kg",
+                    "type": "float"
+                },
+                {
+                    "name": "coating_material_used_kg",
+                    "type": "float"
+                },
+                {
+                    "name": "coating_material_waste_kg",
+                    "type": "float"
+                },
+                {
+                    "name": "electricity_used_kWh",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o_formedpart_2083",
+            "type": "formed_part",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-04-04T09:55:35Z",
+                    "value": "o_formedpart_2083"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_machine_coater03",
+            "type": "machine",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-04-04T09:55:35Z",
+                    "value": "o_machine_coater03"
+                },
+                {
+                    "name": "location",
+                    "time": "2023-04-04T09:55:35Z",
+                    "value": "o_workstation_1"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_workstation_1",
+            "type": "workstation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-04-04T09:55:35Z",
+                    "value": "o_workstation_1"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "coating_process",
+            "time": "2023-04-04T09:55:35Z",
+            "attributes": [
+                {
+                    "name": "duration_seconds",
+                    "value": 300
+                },
+                {
+                    "name": "CO2_emission_kg",
+                    "value": 0.1751156951
+                },
+                {
+                    "name": "coating_material_used_kg",
+                    "value": 0.0004
+                },
+                {
+                    "name": "coating_material_waste_kg",
+                    "value": 0.0001
+                },
+                {
+                    "name": "electricity_used_kWh",
+                    "value": 0.25
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_formedpart_2083",
+                    "qualifier": "performed_on"
+                },
+                {
+                    "objectId": "o_machine_coater03",
+                    "qualifier": "conducted_with"
+                },
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "located_at"
+                }
+            ]
+        }
+    ]
+}

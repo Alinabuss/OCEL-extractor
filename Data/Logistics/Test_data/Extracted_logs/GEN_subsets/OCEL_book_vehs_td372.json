@@ -1,0 +1,102 @@
+{
+    "objectTypes": [
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "vehicle",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "departure",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td372",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "time": "2024-03-01T13:18:10Z",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh86",
+                    "qualifier": "booked_for"
+                }
+            ]
+        },
+        {
+            "id": "vh86",
+            "type": "vehicle",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2024-03-01T13:18:10Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2024-03-01T13:18:10Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td372",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "vh86",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "departure",
+            "time": "2024-03-22T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2024-03-22T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh86",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

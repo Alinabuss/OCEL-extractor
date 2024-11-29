@@ -1,0 +1,183 @@
+{
+    "objectTypes": [
+        {
+            "name": "customer",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "product_id",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "order_placed",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "item_picked",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Golden Fleece Textiles S.A.R.L.",
+            "type": "customer",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2024-02-12T12:17:08Z",
+                    "value": "Golden Fleece Textiles S.A.R.L."
+                }
+            ]
+        },
+        {
+            "id": "i-886795",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "2024-02-12T12:17:08Z",
+                    "value": "i-886795"
+                },
+                {
+                    "name": "price",
+                    "time": "2024-02-12T12:17:08Z",
+                    "value": 529.2
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "iPad mini",
+                    "qualifier": "part_of"
+                }
+            ]
+        },
+        {
+            "id": "iPad mini",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "product_id",
+                    "time": "2024-02-12T12:17:08Z",
+                    "value": "iPad mini"
+                },
+                {
+                    "name": "price",
+                    "time": "2024-02-12T12:17:08Z",
+                    "value": 449.0
+                }
+            ]
+        },
+        {
+            "id": "Marco Pegoraro",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2024-02-13T07:58:47Z",
+                    "value": "Marco Pegoraro"
+                },
+                {
+                    "name": "department",
+                    "time": "2024-02-13T07:58:47Z",
+                    "value": "warehousing"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "order_placed",
+            "time": "2024-02-12T12:17:08Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2024-02-12T12:17:08Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Golden Fleece Textiles S.A.R.L.",
+                    "qualifier": "placed_order"
+                },
+                {
+                    "objectId": "i-886795",
+                    "qualifier": "included_item"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "item_picked",
+            "time": "2024-02-13T07:58:47Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2024-02-13T07:58:47Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-886795",
+                    "qualifier": "picked_item"
+                },
+                {
+                    "objectId": "Marco Pegoraro",
+                    "qualifier": "performed_by"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,135 @@
+{
+    "objectTypes": [
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "itemId",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "productName",
+                    "type": "string"
+                },
+                {
+                    "name": "productPrice",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "ItemPicked",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Benedikt Knopp",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2024-02-09T08:40:19Z",
+                    "value": "Benedikt Knopp"
+                },
+                {
+                    "name": "department",
+                    "time": "2024-02-09T08:40:19Z",
+                    "value": "warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-886735",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "itemId",
+                    "time": "2024-02-09T08:40:19Z",
+                    "value": "i-886735"
+                },
+                {
+                    "name": "price",
+                    "time": "2024-02-09T08:40:19Z",
+                    "value": 47.13
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Fire Stick",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "Fire Stick",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "productName",
+                    "time": "2024-02-09T08:40:19Z",
+                    "value": "Fire Stick"
+                },
+                {
+                    "name": "productPrice",
+                    "time": "2024-02-09T08:40:19Z",
+                    "value": 39.99
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "ItemPicked",
+            "time": "2024-02-09T08:40:19Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2024-02-09T08:40:19Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Benedikt Knopp",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "i-886735",
+                    "qualifier": "item_picked"
+                }
+            ]
+        }
+    ]
+}

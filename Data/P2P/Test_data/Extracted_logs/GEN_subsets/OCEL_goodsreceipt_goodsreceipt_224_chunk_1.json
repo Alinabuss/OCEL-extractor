@@ -1,0 +1,109 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "goods_receipt_id",
+                    "type": "string"
+                },
+                {
+                    "name": "movement_type",
+                    "type": "integer"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "invoice_receipt_id",
+                    "type": "string"
+                },
+                {
+                    "name": "credit_amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "two_way_match",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "224",
+            "type": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "goods_receipt_id",
+                    "time": "2022-07-28T07:10:00Z",
+                    "value": "224"
+                },
+                {
+                    "name": "movement_type",
+                    "time": "2022-07-28T07:10:00Z",
+                    "value": 101
+                },
+                {
+                    "name": "status",
+                    "time": "2022-07-28T07:10:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "219",
+            "type": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "invoice_receipt_id",
+                    "time": "2022-07-28T07:10:00Z",
+                    "value": "219"
+                },
+                {
+                    "name": "credit_amount",
+                    "time": "2022-07-28T07:10:00Z",
+                    "value": 9800.0
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "two_way_match",
+            "time": "2022-07-28T07:10:00Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2022-07-28T07:10:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "224",
+                    "qualifier": "matched_with"
+                },
+                {
+                    "objectId": "219",
+                    "qualifier": "matched_with"
+                }
+            ]
+        }
+    ]
+}

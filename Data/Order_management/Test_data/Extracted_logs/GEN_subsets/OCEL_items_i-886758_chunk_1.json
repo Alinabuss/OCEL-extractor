@@ -1,0 +1,143 @@
+{
+    "objectTypes": [
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                },
+                {
+                    "name": "value",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "product_name",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "item_picked",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "employee_name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Detlef Wetzeler",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2024-02-09T09:33:58Z",
+                    "value": "Detlef Wetzeler"
+                },
+                {
+                    "name": "department",
+                    "time": "2024-02-09T09:33:58Z",
+                    "value": "warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-886758",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "2024-02-09T09:33:58Z",
+                    "value": "i-886758"
+                },
+                {
+                    "name": "value",
+                    "time": "2024-02-09T09:33:58Z",
+                    "value": 176.76
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Echo Plus",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "Echo Plus",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "product_name",
+                    "time": "2024-02-09T09:33:58Z",
+                    "value": "Echo Plus"
+                },
+                {
+                    "name": "price",
+                    "time": "2024-02-09T09:33:58Z",
+                    "value": 149.99
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "item_picked",
+            "time": "2024-02-09T09:33:58Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2024-02-09T09:33:58Z"
+                },
+                {
+                    "name": "employee_name",
+                    "value": "Detlef Wetzeler"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-886758",
+                    "qualifier": "picked_item"
+                },
+                {
+                    "objectId": "Detlef Wetzeler",
+                    "qualifier": "performed_by"
+                }
+            ]
+        }
+    ]
+}

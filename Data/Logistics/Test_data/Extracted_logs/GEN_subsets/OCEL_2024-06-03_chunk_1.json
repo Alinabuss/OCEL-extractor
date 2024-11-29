@@ -1,0 +1,164 @@
+{
+    "objectTypes": [
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "scheduledDeparture",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "amountOfContainers",
+                    "type": "float"
+                },
+                {
+                    "name": "category",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Booking",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh113",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-06-03T09:37:18Z",
+                    "value": "vh113"
+                },
+                {
+                    "name": "scheduledDeparture",
+                    "time": "2024-06-25T11:00:00Z",
+                    "value": "2024-06-25T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td494",
+            "type": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-06-03T09:37:18Z",
+                    "value": "td494"
+                },
+                {
+                    "name": "amountOfContainers",
+                    "time": "2024-06-03T09:37:18Z",
+                    "value": "3.0"
+                },
+                {
+                    "name": "category",
+                    "time": "2024-06-03T09:37:18Z",
+                    "value": "regular"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh109",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-06-03T15:51:38Z",
+                    "value": "vh109"
+                },
+                {
+                    "name": "scheduledDeparture",
+                    "time": "2024-06-11T11:00:00Z",
+                    "value": "2024-06-11T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td495",
+            "type": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-06-03T15:51:38Z",
+                    "value": "td495"
+                },
+                {
+                    "name": "amountOfContainers",
+                    "time": "2024-06-03T15:51:38Z",
+                    "value": "4.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Booking",
+            "time": "2024-06-03T09:37:18Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2024-06-03T09:37:18Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh113",
+                    "qualifier": "bookedFor"
+                },
+                {
+                    "objectId": "td494",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Booking",
+            "time": "2024-06-03T15:51:38Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2024-06-03T15:51:38Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh109",
+                    "qualifier": "bookedFor"
+                },
+                {
+                    "objectId": "td495",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,92 @@
+{
+    "objectTypes": [
+        {
+            "name": "Order",
+            "attributes": [
+                {
+                    "name": "total_price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "product_name",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Payment",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o-990214",
+            "type": "Order",
+            "attributes": [
+                {
+                    "name": "total_price",
+                    "time": "2023-05-30T10:30:21Z",
+                    "value": "2205.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-880878",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "product_name",
+                    "time": "2023-05-30T10:30:21Z",
+                    "value": "MacBook Air"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-05-30T10:30:21Z",
+                    "value": "2200.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o-990214",
+                    "qualifier": "comprises"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Payment",
+            "time": "2023-05-30T10:30:21Z",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "value": "2205.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o-990214",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,117 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "type": "string"
+                },
+                {
+                    "name": "position",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "vacancy_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Submit Application",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Sue Lopez",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-06-21T09:52:35Z",
+                    "value": "Sue Lopez"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770290]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "time": "2019-06-21T09:52:35Z",
+                    "value": "770290"
+                },
+                {
+                    "name": "position",
+                    "time": "2019-06-21T09:52:35Z",
+                    "value": "Programmer"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550030]",
+                    "qualifier": "applied_to"
+                }
+            ]
+        },
+        {
+            "id": "Vacancy[550030]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "vacancy_id",
+                    "time": "2019-06-21T09:52:35Z",
+                    "value": "550030"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Submit Application",
+            "time": "2019-06-21T09:52:35Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2019-06-21T09:52:35Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770290]",
+                    "qualifier": "submitted"
+                },
+                {
+                    "objectId": "Sue Lopez",
+                    "qualifier": "submitted_by"
+                }
+            ]
+        }
+    ]
+}

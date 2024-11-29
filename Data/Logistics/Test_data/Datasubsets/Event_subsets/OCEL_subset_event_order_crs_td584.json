@@ -1,0 +1,105 @@
+{
+  "objectTypes": [
+    {
+      "name": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "type": "float"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Order Empty Containers",
+      "attributes": []
+    }
+  ],
+  "objects": [
+    {
+      "id": "td584",
+      "type": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 4.0
+        }
+      ]
+    },
+    {
+      "id": "cr1990",
+      "type": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "empty"
+        }
+      ]
+    },
+    {
+      "id": "cr1992",
+      "type": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "empty"
+        }
+      ]
+    },
+    {
+      "id": "cr1993",
+      "type": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "empty"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "td584",
+          "qualifier": "CR for TD"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "order_crs_td584",
+      "type": "Order Empty Containers",
+      "time": "2024-08-15T13:34:32Z",
+      "relationships": [
+        {
+          "objectId": "td584",
+          "qualifier": "ordered for TD"
+        },
+        {
+          "objectId": "cr1990",
+          "qualifier": "CRs ordered"
+        },
+        {
+          "objectId": "cr1993",
+          "qualifier": "CRs ordered"
+        },
+        {
+          "objectId": "cr1992",
+          "qualifier": "CRs ordered"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+    "objectTypes": [
+        {
+            "name": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "lifecycle status",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Quotation",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Creation",
+            "attributes": [
+                {
+                    "name": "activity",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Purchase Order[170]",
+            "type": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "lifecycle status",
+                    "time": "2022-07-12T07:40:00Z",
+                    "value": "complete"
+                },
+                {
+                    "name": "purchasing group",
+                    "time": "2022-07-12T07:40:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Quotation[103]",
+                    "qualifier": "linked to"
+                }
+            ]
+        },
+        {
+            "id": "Quotation[103]",
+            "type": "Quotation",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "time": "2022-07-12T07:40:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Creation",
+            "time": "2022-07-12T07:40:00Z",
+            "attributes": [
+                {
+                    "name": "activity",
+                    "value": "Creation"
+                },
+                {
+                    "name": "department",
+                    "value": "Procurement Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Purchase Order[170]",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

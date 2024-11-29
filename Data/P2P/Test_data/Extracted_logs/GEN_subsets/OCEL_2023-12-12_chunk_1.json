@@ -1,0 +1,323 @@
+{
+    "objectTypes": [
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Quotation",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Create Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "invoice_id",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle_status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Create Goods Receipt",
+            "attributes": [
+                {
+                    "name": "receipt_id",
+                    "type": "string"
+                },
+                {
+                    "name": "associated_purchase_order",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Approve Purchase Order",
+            "attributes": [
+                {
+                    "name": "purchase_order_id",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle_status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Complete Two-Way Match",
+            "attributes": [
+                {
+                    "name": "invoice_id",
+                    "type": "string"
+                },
+                {
+                    "name": "goods_receipt_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:1246",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2023-12-12T02:57:00Z",
+                    "value": "0.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:1245",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2023-12-12T02:57:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:1255",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2023-12-12T04:31:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1043",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:1043",
+            "type": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "time": "2023-12-12T04:31:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:1058",
+            "type": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "time": "2023-12-12T05:11:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:611",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": "quotation:611",
+            "type": "Quotation",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "time": "2023-12-12T05:11:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:1249",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2023-12-12T11:05:00Z",
+                    "value": "71750.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:1251",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2023-12-12T11:05:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:1251",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2023-12-12T13:08:00Z",
+                    "value": "85500.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1233",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:1233",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2023-12-12T13:08:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Create Invoice Receipt",
+            "time": "2023-12-12T02:57:00Z",
+            "attributes": [
+                {
+                    "name": "invoice_id",
+                    "value": "invoice receipt:1246"
+                },
+                {
+                    "name": "lifecycle_status",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1245",
+                    "qualifier": "linked to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Create Goods Receipt",
+            "time": "2023-12-12T04:31:00Z",
+            "attributes": [
+                {
+                    "name": "receipt_id",
+                    "value": "goods receipt:1255"
+                },
+                {
+                    "name": "associated_purchase_order",
+                    "value": "purchase_order:1043"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": 3,
+            "type": "Approve Purchase Order",
+            "time": "2023-12-12T05:11:00Z",
+            "attributes": [
+                {
+                    "name": "purchase_order_id",
+                    "value": "purchase_order:1058"
+                },
+                {
+                    "name": "lifecycle_status",
+                    "value": "complete"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": 4,
+            "type": "Complete Two-Way Match",
+            "time": "2023-12-12T11:05:00Z",
+            "attributes": [
+                {
+                    "name": "invoice_id",
+                    "value": "invoice receipt:1249"
+                },
+                {
+                    "name": "goods_receipt_id",
+                    "value": "goods receipt:1251"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": 5,
+            "type": "Create Invoice Receipt",
+            "time": "2023-12-12T13:08:00Z",
+            "attributes": [
+                {
+                    "name": "invoice_id",
+                    "value": "invoice receipt:1251"
+                },
+                {
+                    "name": "lifecycle_status",
+                    "value": "created"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1233",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ]
+}

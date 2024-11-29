@@ -1,0 +1,88 @@
+{
+    "objectTypes": [
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "amount_of_containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "vehicle",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "vehicle_booking",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "vehicle_departure",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "td164",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "amount_of_containers",
+                    "time": "2023-09-26T09:45:13Z",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh43",
+                    "qualifier": "associated_vehicle"
+                }
+            ]
+        },
+        {
+            "id": "vh43",
+            "type": "vehicle",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "vehicle_booking",
+            "time": "2023-09-26T09:45:13Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "successfully booked"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td164",
+                    "qualifier": "booking_for"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "vehicle_departure",
+            "time": "2023-10-24T11:00:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "vh43",
+                    "qualifier": "scheduled_vehicle"
+                }
+            ]
+        }
+    ]
+}

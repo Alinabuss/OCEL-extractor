@@ -1,0 +1,108 @@
+{
+    "objectTypes": [
+        {
+            "name": "player",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "match",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "session",
+            "attributes": [
+                {
+                    "name": "session_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "gather_food",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "P1472826",
+            "type": "player",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "time": "",
+                    "value": "P1472826"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "M227028371",
+            "type": "match",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "time": "",
+                    "value": "M227028371"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "S227028371_1472826",
+            "type": "session",
+            "attributes": [
+                {
+                    "name": "session_id",
+                    "time": "",
+                    "value": "S227028371_1472826"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "M227028371",
+                    "qualifier": "is_part_of"
+                },
+                {
+                    "objectId": "P1472826",
+                    "qualifier": "is_played_by"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "gather_food",
+            "time": "2023-04-17T00:40:30Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-04-17T00:40:30Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "S227028371_1472826",
+                    "qualifier": "occurs_in"
+                }
+            ]
+        }
+    ]
+}

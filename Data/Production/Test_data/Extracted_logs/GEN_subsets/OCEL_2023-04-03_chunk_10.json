@@ -1,0 +1,314 @@
+{
+    "objectTypes": [
+        {
+            "name": "Steel Sheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Formed Part",
+            "attributes": []
+        },
+        {
+            "name": "Male Part",
+            "attributes": []
+        },
+        {
+            "name": "Coating Material",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Waste Material",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Forming Process",
+            "attributes": [
+                {
+                    "name": "CO2 Emission",
+                    "type": "float"
+                },
+                {
+                    "name": "Energy Consumption",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Cutting Process",
+            "attributes": [
+                {
+                    "name": "CO2 Emission",
+                    "type": "float"
+                },
+                {
+                    "name": "Energy Consumption",
+                    "type": "float"
+                },
+                {
+                    "name": "Compressed Air Volume",
+                    "type": "float"
+                },
+                {
+                    "name": "Nitrogen Volume",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Coating Process",
+            "attributes": [
+                {
+                    "name": "CO2 Emission",
+                    "type": "float"
+                },
+                {
+                    "name": "Energy Consumption",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "steel_sheet_0",
+            "type": "Steel Sheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-03T10:43:40Z",
+                    "value": "0.02115"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "formed_part_1",
+            "type": "Formed Part",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "steel_sheet_1",
+            "type": "Steel Sheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-03T10:44:27Z",
+                    "value": "0.021"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "male_part_563",
+            "type": "Male Part",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "formed_part_1",
+                    "qualifier": "sourced from"
+                }
+            ]
+        },
+        {
+            "id": "coated_part_841",
+            "type": "Coating Material",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-03T10:51:28Z",
+                    "value": "0.0004"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "waste_material_841",
+            "type": "Waste Material",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-03T10:51:28Z",
+                    "value": "0.0001"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "coated_part_853",
+            "type": "Coating Material",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-03T10:54:00Z",
+                    "value": "0.0004"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "waste_material_853",
+            "type": "Waste Material",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-03T10:54:00Z",
+                    "value": "0.0001"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Forming Process",
+            "time": "2023-04-03T10:43:40Z",
+            "attributes": [
+                {
+                    "name": "CO2 Emission",
+                    "value": "0.0028500228"
+                },
+                {
+                    "name": "Energy Consumption",
+                    "value": "0.0041667"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "steel_sheet_0",
+                    "qualifier": "input"
+                },
+                {
+                    "objectId": "formed_part_1",
+                    "qualifier": "output"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Forming Process",
+            "time": "2023-04-03T10:44:27Z",
+            "attributes": [
+                {
+                    "name": "CO2 Emission",
+                    "value": "0.0028500228"
+                },
+                {
+                    "name": "Energy Consumption",
+                    "value": "0.0041667"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "steel_sheet_1",
+                    "qualifier": "input"
+                },
+                {
+                    "objectId": "formed_part_1",
+                    "qualifier": "output"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Cutting Process",
+            "time": "2023-04-03T10:49:55Z",
+            "attributes": [
+                {
+                    "name": "CO2 Emission",
+                    "value": "0.0686"
+                },
+                {
+                    "name": "Energy Consumption",
+                    "value": "0.0153"
+                },
+                {
+                    "name": "Compressed Air Volume",
+                    "value": "0.064"
+                },
+                {
+                    "name": "Nitrogen Volume",
+                    "value": "0.061"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "male_part_563",
+                    "qualifier": "output"
+                },
+                {
+                    "objectId": "formed_part_1",
+                    "qualifier": "input"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Coating Process",
+            "time": "2023-04-03T10:51:28Z",
+            "attributes": [
+                {
+                    "name": "CO2 Emission",
+                    "value": "0.1751156951"
+                },
+                {
+                    "name": "Energy Consumption",
+                    "value": "0.25"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "coated_part_841",
+                    "qualifier": "input"
+                },
+                {
+                    "objectId": "formed_part_1",
+                    "qualifier": "output"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "Coating Process",
+            "time": "2023-04-03T10:54:00Z",
+            "attributes": [
+                {
+                    "name": "CO2 Emission",
+                    "value": "0.1751156951"
+                },
+                {
+                    "name": "Energy Consumption",
+                    "value": "0.25"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "coated_part_853",
+                    "qualifier": "input"
+                },
+                {
+                    "objectId": "formed_part_1",
+                    "qualifier": "output"
+                }
+            ]
+        }
+    ]
+}

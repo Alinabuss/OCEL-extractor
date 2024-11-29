@@ -1,0 +1,211 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipts",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "float"
+                },
+                {
+                    "name": "Procurement Department",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase group",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "movement type",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "finalize creation of an invoice receipt",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "create purchase order",
+            "attributes": []
+        },
+        {
+            "name": "create",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt[1206",
+            "type": "movement type",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "4,050.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:1202",
+            "type": "invoice receipts",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "72,400.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt goods receipt:1206",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:1023",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation quotation:591",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:1214",
+            "type": "Object_type_not_identified",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1023",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "goods receipt goods receipt:1206",
+            "type": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "quotation quotation:591",
+            "type": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "Procurement Department",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Procurement Department"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt[1192",
+            "type": "Object_type_not_identified",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 951,
+            "type": "finalize creation of an invoice receipt",
+            "time": "2023-11-28T09:30:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Department Finance / Account"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt goods receipt:1206",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "invoice receipt:1202",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 952,
+            "type": "create purchase order",
+            "time": "2023-11-28T12:09:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation quotation:591",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:1023",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 953,
+            "type": "create",
+            "time": "2023-11-28T05:16:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "goods receipt[1192",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "invoice receipt[1206",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:1214",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

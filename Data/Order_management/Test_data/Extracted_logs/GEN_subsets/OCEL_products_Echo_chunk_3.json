@@ -1,0 +1,143 @@
+{
+    "objectTypes": [
+        {
+            "name": "Warehouse Employee",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Role",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "Item ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "Product Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Pick Item",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "Employee Name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Leah Tacke genannt Unterberg",
+            "type": "Warehouse Employee",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2024-03-14T13:06:14Z",
+                    "value": "Leah Tacke genannt Unterberg"
+                },
+                {
+                    "name": "Role",
+                    "time": "2024-03-14T13:06:14Z",
+                    "value": "Warehouse Employee"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-887361",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "Item ID",
+                    "time": "2024-03-14T13:06:14Z",
+                    "value": "i-887361"
+                },
+                {
+                    "name": "Price",
+                    "time": "2024-03-14T13:06:14Z",
+                    "value": "117.85"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Echo",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "Echo",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "Product Name",
+                    "time": "2024-03-14T13:06:14Z",
+                    "value": "Echo"
+                },
+                {
+                    "name": "Price",
+                    "time": "2024-03-14T13:06:14Z",
+                    "value": "99.99"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Pick Item",
+            "time": "2024-03-14T13:06:14Z",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "value": "2024-03-14T13:06:14Z"
+                },
+                {
+                    "name": "Employee Name",
+                    "value": "Leah Tacke genannt Unterberg"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-887361",
+                    "qualifier": "picked"
+                },
+                {
+                    "objectId": "Leah Tacke genannt Unterberg",
+                    "qualifier": "performed_by"
+                }
+            ]
+        }
+    ]
+}

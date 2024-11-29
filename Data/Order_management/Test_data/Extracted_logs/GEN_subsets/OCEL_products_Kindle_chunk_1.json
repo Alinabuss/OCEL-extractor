@@ -1,0 +1,329 @@
+{
+    "objectTypes": [
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Reorder",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Package Sent",
+            "attributes": [
+                {
+                    "name": "items",
+                    "type": "list"
+                }
+            ]
+        },
+        {
+            "name": "Item Picked",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "i-881212",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-06-14T10:00:06Z",
+                    "value": "84.56"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-884173",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-10-19T12:44:13Z",
+                    "value": "98.78"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-884005",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-10-19T12:44:13Z",
+                    "value": "98.78"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-885525",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-12-15T16:45:21Z",
+                    "value": "89.91"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-885595",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-12-18T12:02:53Z",
+                    "value": "89.91"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-885901",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2024-01-01T14:16:31Z",
+                    "value": "89.91"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Kindle",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-06-14T10:00:06Z",
+                    "value": "79.99"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Echo",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-10-19T12:44:13Z",
+                    "value": "99.99"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Echo Studio",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-10-19T12:44:13Z",
+                    "value": "199.99"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Detlef Wetzeler",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "time": "2023-06-14T10:00:06Z",
+                    "value": "warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Mahsa Bafrani",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "time": "2023-12-15T16:45:21Z",
+                    "value": "warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Benedikt Knopp",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "time": "2023-12-18T12:02:53Z",
+                    "value": "warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Marco Pegoraro",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "time": "2024-01-01T14:16:31Z",
+                    "value": "warehousing"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Reorder",
+            "time": "2023-06-14T10:00:06Z",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "value": "i-881212"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Detlef Wetzeler",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "Kindle",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Package Sent",
+            "time": "2023-10-19T12:44:13Z",
+            "attributes": [
+                {
+                    "name": "items",
+                    "value": "i-884173, i-884005"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Kindle",
+                    "qualifier": "included_product"
+                },
+                {
+                    "objectId": "Echo",
+                    "qualifier": "included_product"
+                },
+                {
+                    "objectId": "Echo Studio",
+                    "qualifier": "included_product"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Item Picked",
+            "time": "2023-12-15T16:45:21Z",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "value": "i-885525"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Mahsa Bafrani",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "Kindle",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Item Picked",
+            "time": "2023-12-18T12:02:53Z",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "value": "i-885595"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Benedikt Knopp",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "Kindle",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "Reorder",
+            "time": "2024-01-01T14:16:31Z",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "value": "i-885901"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Marco Pegoraro",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "Kindle",
+                    "qualifier": "associated_with"
+                }
+            ]
+        }
+    ]
+}

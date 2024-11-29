@@ -1,0 +1,126 @@
+{
+    "objectTypes": [
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "vehicleID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "documentID",
+                    "type": "string"
+                },
+                {
+                    "name": "container_count",
+                    "type": "number"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "string"
+                },
+                {
+                    "name": "event_type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "departure",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh9",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "vehicleID",
+                    "time": "2023-06-08T13:38:04Z",
+                    "value": "vh9"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td22",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "documentID",
+                    "time": "2023-06-08T13:38:04Z",
+                    "value": "td22"
+                },
+                {
+                    "name": "container_count",
+                    "time": "2023-06-08T13:38:04Z",
+                    "value": 4.0
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh9",
+                    "qualifier": "assigned_vehicle"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2023-06-08T13:38:04Z",
+            "attributes": [
+                {
+                    "name": "event_type",
+                    "value": "booking"
+                },
+                {
+                    "name": "time",
+                    "value": "2023-06-08T13:38:04Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td22",
+                    "qualifier": "related_document"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "departure",
+            "time": "2023-06-27T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2023-06-27T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh9",
+                    "qualifier": "scheduled_departure"
+                }
+            ]
+        }
+    ]
+}

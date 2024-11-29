@@ -1,0 +1,117 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "request_for_quotation",
+            "attributes": [
+                {
+                    "name": "completion_time",
+                    "type": "dateTime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create_request_for_quotation",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "dateTime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_requisition:83:pr_trigger_83",
+            "type": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2022-06-18T21:46:00Z",
+                    "value": "purchase_requisition:83:pr_trigger_83"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2022-06-18T21:46:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "quotation:79",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2022-06-18T21:46:00Z",
+                    "value": "quotation:79"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "request_for_quotation",
+            "type": "request_for_quotation",
+            "attributes": [
+                {
+                    "name": "completion_time",
+                    "time": "2022-06-18T21:46:00Z",
+                    "value": "2022-06-18T21:46:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:83:pr_trigger_83",
+                    "qualifier": "linked_to"
+                },
+                {
+                    "objectId": "quotation:79",
+                    "qualifier": "associated_with"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create_request_for_quotation",
+            "time": "2022-06-18T21:46:00Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2022-06-18T21:46:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "request_for_quotation",
+                    "qualifier": "creates"
+                }
+            ]
+        }
+    ]
+}

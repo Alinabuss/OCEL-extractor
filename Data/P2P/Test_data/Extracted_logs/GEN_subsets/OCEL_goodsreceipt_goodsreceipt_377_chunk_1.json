@@ -1,0 +1,108 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "matching_process",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "two_way_match",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "377",
+            "type": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "time": "2022-09-22T13:59:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "372",
+            "type": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "time": "2022-09-22T13:59:00Z",
+                    "value": "19600.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "matching_process_1",
+            "type": "matching_process",
+            "attributes": [
+                {
+                    "name": "status",
+                    "time": "2022-09-22T13:59:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "377",
+                    "qualifier": "involves"
+                },
+                {
+                    "objectId": "372",
+                    "qualifier": "linked_with"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "two_way_match",
+            "time": "2022-09-22T13:59:00Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2022-09-22T13:59:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "matching_process_1",
+                    "qualifier": "generated"
+                }
+            ]
+        }
+    ]
+}

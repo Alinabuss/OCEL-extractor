@@ -1,0 +1,179 @@
+{
+    "objectTypes": [
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Containers",
+                    "type": "float"
+                },
+                {
+                    "name": "Departure Date",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Scheduled Departure",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Booking",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td63",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-07-12T12:56:45Z",
+                    "value": "td63"
+                },
+                {
+                    "name": "Containers",
+                    "time": "2023-07-12T12:56:45Z",
+                    "value": "3.0"
+                },
+                {
+                    "name": "Departure Date",
+                    "time": "2023-07-12T12:56:45Z",
+                    "value": "2023-08-08T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh21",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-07-12T12:56:45Z",
+                    "value": "vh21"
+                },
+                {
+                    "name": "Scheduled Departure",
+                    "time": "2023-07-12T12:56:45Z",
+                    "value": "2023-08-08T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td63",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": "td64",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-07-12T14:28:28Z",
+                    "value": "td64"
+                },
+                {
+                    "name": "Containers",
+                    "time": "2023-07-12T14:28:28Z",
+                    "value": "1.0"
+                },
+                {
+                    "name": "Departure Date",
+                    "time": "2023-07-12T14:28:28Z",
+                    "value": "2023-07-14T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh14",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-07-12T14:28:28Z",
+                    "value": "vh14"
+                },
+                {
+                    "name": "Scheduled Departure",
+                    "time": "2023-07-12T14:28:28Z",
+                    "value": "2023-07-14T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td64",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Booking",
+            "time": "2023-07-12T12:56:45Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2023-07-12T12:56:45Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td63",
+                    "qualifier": "booked"
+                },
+                {
+                    "objectId": "vh21",
+                    "qualifier": "booked"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Booking",
+            "time": "2023-07-12T14:28:28Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2023-07-12T14:28:28Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td64",
+                    "qualifier": "booked"
+                },
+                {
+                    "objectId": "vh14",
+                    "qualifier": "booked"
+                }
+            ]
+        }
+    ]
+}

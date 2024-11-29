@@ -1,0 +1,103 @@
+{
+    "objectTypes": [
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "departure_date",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "number_of_containers",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "vehicle_ID",
+                    "type": "string"
+                },
+                {
+                    "name": "transport_document_ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh24",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "departure_date",
+                    "time": "2023-08-18T11:00:00Z",
+                    "value": "2023-08-18T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td101",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "number_of_containers",
+                    "time": "",
+                    "value": "4.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh24",
+                    "qualifier": "associated_with"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2023-08-14T07:33:25Z",
+            "attributes": [
+                {
+                    "name": "vehicle_ID",
+                    "value": "vh24"
+                },
+                {
+                    "name": "transport_document_ID",
+                    "value": "td101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh24",
+                    "qualifier": "booked_for"
+                },
+                {
+                    "objectId": "td101",
+                    "qualifier": "booked_for"
+                }
+            ]
+        }
+    ]
+}

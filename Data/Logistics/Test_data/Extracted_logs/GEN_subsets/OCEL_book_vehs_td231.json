@@ -1,0 +1,107 @@
+{
+    "objectTypes": [
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Container Count",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Booking",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Scheduling",
+            "attributes": [
+                {
+                    "name": "Departure Time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh52",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-11-14T15:12:18Z",
+                    "value": "vh52"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td231",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-11-14T15:12:18Z",
+                    "value": "td231"
+                },
+                {
+                    "name": "Container Count",
+                    "time": "2023-11-14T15:12:18Z",
+                    "value": "3.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Booking",
+            "time": "2023-11-14T15:12:18Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "vh52",
+                    "qualifier": "booked for"
+                },
+                {
+                    "objectId": "td231",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Scheduling",
+            "time": "2023-11-24T11:00:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "vh52",
+                    "qualifier": "scheduled for"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,187 @@
+{
+    "objectTypes": [
+        {
+            "name": "customer",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "sales_person",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "order",
+            "attributes": [
+                {
+                    "name": "date",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "order_confirmed",
+            "attributes": [
+                {
+                    "name": "sales_person",
+                    "type": "string"
+                },
+                {
+                    "name": "customer",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Eastern Oak Insurance Zrt",
+            "type": "customer",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2024-02-05T11:32:27Z",
+                    "value": "Eastern Oak Insurance Zrt"
+                }
+            ]
+        },
+        {
+            "id": "iPhone X",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2024-02-05T11:32:27Z",
+                    "value": "iPhone X"
+                },
+                {
+                    "name": "price",
+                    "time": "2024-02-05T11:32:27Z",
+                    "value": "699.0"
+                }
+            ]
+        },
+        {
+            "id": "iPad Air",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2024-02-05T11:32:27Z",
+                    "value": "iPad Air"
+                },
+                {
+                    "name": "price",
+                    "time": "2024-02-05T11:32:27Z",
+                    "value": "476.0"
+                }
+            ]
+        },
+        {
+            "id": "Echo Studio",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2024-02-05T11:32:27Z",
+                    "value": "Echo Studio"
+                },
+                {
+                    "name": "price",
+                    "time": "2024-02-05T11:32:27Z",
+                    "value": "199.99"
+                }
+            ]
+        },
+        {
+            "id": "Mara Nitschke",
+            "type": "sales_person",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2024-02-05T11:32:27Z",
+                    "value": "Mara Nitschke"
+                }
+            ]
+        },
+        {
+            "id": "order_1",
+            "type": "order",
+            "attributes": [
+                {
+                    "name": "date",
+                    "time": "2024-02-05T11:32:27Z",
+                    "value": "2024-02-05T11:32:27Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Eastern Oak Insurance Zrt",
+                    "qualifier": "customer"
+                },
+                {
+                    "objectId": "Mara Nitschke",
+                    "qualifier": "sales_person"
+                },
+                {
+                    "objectId": "iPhone X",
+                    "qualifier": "includes_product"
+                },
+                {
+                    "objectId": "iPad Air",
+                    "qualifier": "includes_product"
+                },
+                {
+                    "objectId": "Echo Studio",
+                    "qualifier": "includes_product"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "order_confirmed",
+            "time": "2024-02-05T11:32:27Z",
+            "attributes": [
+                {
+                    "name": "sales_person",
+                    "value": "Mara Nitschke"
+                },
+                {
+                    "name": "customer",
+                    "value": "Eastern Oak Insurance Zrt"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "order_1",
+                    "qualifier": "order"
+                }
+            ]
+        }
+    ]
+}

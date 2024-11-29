@@ -1,0 +1,152 @@
+{
+    "objectTypes": [
+        {
+            "name": "Customer",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Order",
+            "attributes": [
+                {
+                    "name": "total_price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Order Confirmation",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Baltic Wave Energies Ltd.",
+            "type": "Customer",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-05-08T13:20:17Z",
+                    "value": "Baltic Wave Energies Ltd."
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Order[o-990103]",
+            "type": "Order",
+            "attributes": [
+                {
+                    "name": "total_price",
+                    "time": "2023-05-08T13:20:17Z",
+                    "value": "3797.98"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Baltic Wave Energies Ltd.",
+                    "qualifier": "confirmed_by"
+                }
+            ]
+        },
+        {
+            "id": "Item[i-880438]",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-05-08T13:20:17Z",
+                    "value": "2200.00"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Order[o-990103]",
+                    "qualifier": "included_in"
+                }
+            ]
+        },
+        {
+            "id": "iPad",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-05-08T13:20:17Z",
+                    "value": "495.00"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Order[o-990103]",
+                    "qualifier": "part_of"
+                }
+            ]
+        },
+        {
+            "id": "Fire Stick",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-05-08T13:20:17Z",
+                    "value": "39.99"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Order[o-990103]",
+                    "qualifier": "part_of"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Order Confirmation",
+            "time": "2023-05-08T13:20:17Z",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "value": "Order[o-990103]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Order[o-990103]",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

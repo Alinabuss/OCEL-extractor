@@ -1,0 +1,360 @@
+{
+    "objectTypes": [
+        {
+            "name": "Part",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Type",
+                    "type": "string"
+                },
+                {
+                    "name": "Mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Machine",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Cutting",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2e Emission",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Coating",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2e Emission",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Machining",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2e Emission",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "malepart_5374",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "time": "",
+                    "value": "Male Part"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "formedpart_5374",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "time": "",
+                    "value": "Formed Part"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_formedpart_5694",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "time": "",
+                    "value": "Formed Part"
+                },
+                {
+                    "name": "Mass",
+                    "time": "",
+                    "value": "unspecified"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_steelsheet_5707",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "Mass",
+                    "time": "",
+                    "value": "0.02134"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_femalepart_5373",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "time": "",
+                    "value": "Female Part"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "formedpart_5707",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "time": "",
+                    "value": "Formed Part"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_machine_coater03",
+            "type": "Machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "o_machine_former02",
+            "type": "Machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "o_machine_cutter01",
+            "type": "Machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "cutter01",
+            "type": "Machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "o_workstation_1",
+            "type": "Workstation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "o_workstation_2",
+            "type": "Workstation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Workstation[1]",
+            "type": "Workstation",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Cutting",
+            "time": "2023-04-06T12:27:37Z",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "value": "9.98"
+                },
+                {
+                    "name": "CO2e Emission",
+                    "value": "0.06999"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "cutter01",
+                    "qualifier": "Machine Used"
+                },
+                {
+                    "objectId": "o_workstation_2",
+                    "qualifier": "Workstation Used"
+                },
+                {
+                    "objectId": "malepart_5374",
+                    "qualifier": "Produced"
+                },
+                {
+                    "objectId": "formedpart_5374",
+                    "qualifier": "Sourced From"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Coating",
+            "time": "2023-04-06T12:30:33Z",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "value": "300"
+                },
+                {
+                    "name": "CO2e Emission",
+                    "value": "0.1751156951"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_machine_coater03",
+                    "qualifier": "Machine Used"
+                },
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "Workstation Used"
+                },
+                {
+                    "objectId": "o_formedpart_5694",
+                    "qualifier": "Coated"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Machining",
+            "time": "2023-04-06T12:33:33Z",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "value": "5.0"
+                },
+                {
+                    "name": "CO2e Emission",
+                    "value": "0.0028500228"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_machine_former02",
+                    "qualifier": "Machine Used"
+                },
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "Workstation Used"
+                },
+                {
+                    "objectId": "o_steelsheet_5707",
+                    "qualifier": "Sourced From"
+                },
+                {
+                    "objectId": "o_formedpart_5707",
+                    "qualifier": "Produced"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Cutting",
+            "time": "2023-04-06T12:38:40Z",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "value": "12.56"
+                },
+                {
+                    "name": "CO2e Emission",
+                    "value": "0.08451"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_machine_cutter01",
+                    "qualifier": "Machine Used"
+                },
+                {
+                    "objectId": "o_workstation_2",
+                    "qualifier": "Workstation Used"
+                },
+                {
+                    "objectId": "o_femalepart_5373",
+                    "qualifier": "Produced"
+                },
+                {
+                    "objectId": "o_formedpart_5373",
+                    "qualifier": "Sourced From"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "Machining",
+            "time": "2023-04-06T12:42:48Z",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "value": "5.0"
+                },
+                {
+                    "name": "CO2e Emission",
+                    "value": "0.0028500228"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Machine[former02]",
+                    "qualifier": "Machine Used"
+                },
+                {
+                    "objectId": "Workstation[1]",
+                    "qualifier": "Workstation Used"
+                },
+                {
+                    "objectId": "formedpart_5747",
+                    "qualifier": "Produced"
+                }
+            ]
+        }
+    ]
+}

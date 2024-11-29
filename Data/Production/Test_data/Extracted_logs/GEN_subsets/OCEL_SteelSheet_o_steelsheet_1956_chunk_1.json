@@ -1,0 +1,157 @@
+{
+    "objectTypes": [
+        {
+            "name": "Workstation",
+            "attributes": [
+                {
+                    "name": "identifier",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Machine",
+            "attributes": [
+                {
+                    "name": "identifier",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "SteelCoil",
+            "attributes": [
+                {
+                    "name": "identifier",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Splitting Process",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2_generated",
+                    "type": "float"
+                },
+                {
+                    "name": "energy_consumption",
+                    "type": "float"
+                },
+                {
+                    "name": "steel_waste_produced",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Workstation[1]",
+            "type": "Workstation",
+            "attributes": [
+                {
+                    "name": "identifier",
+                    "time": "2023-04-04T09:06:56Z",
+                    "value": "Workstation[1]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Machine[splitter01]",
+            "type": "Machine",
+            "attributes": [
+                {
+                    "name": "identifier",
+                    "time": "2023-04-04T09:06:56Z",
+                    "value": "Machine[splitter01]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "SteelSheet[1956]",
+            "type": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-04T09:06:56Z",
+                    "value": "0.02119"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelCoil[3]",
+                    "qualifier": "created_from"
+                }
+            ]
+        },
+        {
+            "id": "SteelCoil[3]",
+            "type": "SteelCoil",
+            "attributes": [
+                {
+                    "name": "identifier",
+                    "time": "2023-04-04T09:06:56Z",
+                    "value": "SteelCoil[3]"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Splitting Process",
+            "time": "2023-04-04T09:06:56Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "14.3"
+                },
+                {
+                    "name": "CO2_generated",
+                    "value": "0.0149485962"
+                },
+                {
+                    "name": "energy_consumption",
+                    "value": "0.0218416"
+                },
+                {
+                    "name": "steel_waste_produced",
+                    "value": "0.00042"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelSheet[1956]",
+                    "qualifier": "produced"
+                },
+                {
+                    "objectId": "Workstation[1]",
+                    "qualifier": "executed_by"
+                },
+                {
+                    "objectId": "Machine[splitter01]",
+                    "qualifier": "executed_on"
+                }
+            ]
+        }
+    ]
+}

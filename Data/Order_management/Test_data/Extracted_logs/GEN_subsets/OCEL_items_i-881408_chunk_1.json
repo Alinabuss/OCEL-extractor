@@ -1,0 +1,126 @@
+{
+    "objectTypes": [
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                },
+                {
+                    "name": "retail_price",
+                    "type": "float"
+                },
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "role",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Reorder",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "item_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "i-881408",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-06-27T09:42:54Z",
+                    "value": "42.27"
+                },
+                {
+                    "name": "retail_price",
+                    "time": "2023-06-27T09:42:54Z",
+                    "value": "39.99"
+                },
+                {
+                    "name": "name",
+                    "time": "2023-06-27T09:42:54Z",
+                    "value": "Fire Stick"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Benedikt_Knopp",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-06-27T09:42:54Z",
+                    "value": "Benedikt Knopp"
+                },
+                {
+                    "name": "role",
+                    "time": "2023-06-27T09:42:54Z",
+                    "value": "Warehouse Employee"
+                },
+                {
+                    "name": "department",
+                    "time": "2023-06-27T09:42:54Z",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Reorder",
+            "time": "2023-06-27T09:42:54Z",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "value": "i-881408"
+                },
+                {
+                    "name": "timestamp",
+                    "value": "2023-06-27T09:42:54Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-881408",
+                    "qualifier": "reordered_item"
+                },
+                {
+                    "objectId": "Benedikt_Knopp",
+                    "qualifier": "reordered_by"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,195 @@
+{
+    "objectTypes": [
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                },
+                {
+                    "name": "item_name",
+                    "type": "string"
+                },
+                {
+                    "name": "item_price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "product_price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "employee_name",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "pick_item",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "i-885037",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "",
+                    "value": "i-885037"
+                },
+                {
+                    "name": "item_name",
+                    "time": "",
+                    "value": "Fire Stick"
+                },
+                {
+                    "name": "item_price",
+                    "time": "",
+                    "value": 43.9
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "product_1",
+                    "qualifier": "associated_product"
+                }
+            ]
+        },
+        {
+            "id": "product_1",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "product_price",
+                    "time": "",
+                    "value": 39.99
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-885029",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "",
+                    "value": "i-885029"
+                },
+                {
+                    "name": "item_name",
+                    "time": "",
+                    "value": "iPad mini"
+                },
+                {
+                    "name": "item_price",
+                    "time": "",
+                    "value": 492.87
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "product_2",
+                    "qualifier": "associated_product"
+                }
+            ]
+        },
+        {
+            "id": "product_2",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "product_price",
+                    "time": "",
+                    "value": 449.0
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "detlef_wetzeler",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "employee_name",
+                    "time": "",
+                    "value": "Detlef Wetzeler"
+                },
+                {
+                    "name": "department",
+                    "time": "",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "pick_item",
+            "time": "2023-11-24T10:11:31Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-11-24T10:11:31Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "detlef_wetzeler",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "i-885037",
+                    "qualifier": "picked_item"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "pick_item",
+            "time": "2023-11-24T16:02:35Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-11-24T16:02:35Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "detlef_wetzeler",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "i-885029",
+                    "qualifier": "picked_item"
+                }
+            ]
+        }
+    ]
+}

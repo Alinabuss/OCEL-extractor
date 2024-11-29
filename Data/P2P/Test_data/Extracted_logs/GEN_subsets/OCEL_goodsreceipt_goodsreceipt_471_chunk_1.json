@@ -1,0 +1,83 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "decimal"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "invoice receipt creation",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:471",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2022-11-22T00:20:00Z",
+                    "value": "189750.00"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:471",
+                    "qualifier": "linked to"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:471",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2022-11-22T00:20:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "invoice receipt creation",
+            "time": "2022-11-22T00:20:00Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2022-11-22T00:20:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:471",
+                    "qualifier": "creates"
+                }
+            ]
+        }
+    ]
+}

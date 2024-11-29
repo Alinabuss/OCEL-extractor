@@ -1,0 +1,148 @@
+{
+    "objectTypes": [
+        {
+            "name": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Machine",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "location",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Workstation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "HeatingProcess",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "integer"
+                },
+                {
+                    "name": "CO2Emission",
+                    "type": "float"
+                },
+                {
+                    "name": "energyConsumed",
+                    "type": "float"
+                },
+                {
+                    "name": "gasInput",
+                    "type": "float"
+                },
+                {
+                    "name": "burnEmission",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "SteelSheet[2611]",
+            "type": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-04-04T11:43:23Z",
+                    "value": "SteelSheet[2611]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Machine[oven01]",
+            "type": "Machine",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-04-04T11:43:23Z",
+                    "value": "oven01"
+                },
+                {
+                    "name": "location",
+                    "time": "2023-04-04T11:43:23Z",
+                    "value": "Workstation[1]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Workstation[1]",
+            "type": "Workstation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-04-04T11:43:23Z",
+                    "value": "1"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "HeatingProcess",
+            "time": "2023-04-04T11:43:23Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "900"
+                },
+                {
+                    "name": "CO2Emission",
+                    "value": "0.0138"
+                },
+                {
+                    "name": "energyConsumed",
+                    "value": "0.02"
+                },
+                {
+                    "name": "gasInput",
+                    "value": "0.49392"
+                },
+                {
+                    "name": "burnEmission",
+                    "value": "0.49392"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelSheet[2611]",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "Machine[oven01]",
+                    "qualifier": "carriedOutBy"
+                },
+                {
+                    "objectId": "Workstation[1]",
+                    "qualifier": "locatedAt"
+                }
+            ]
+        }
+    ]
+}

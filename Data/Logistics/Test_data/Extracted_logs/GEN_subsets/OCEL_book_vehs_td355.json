@@ -1,0 +1,185 @@
+{
+    "objectTypes": [
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "priority",
+                    "type": "string"
+                },
+                {
+                    "name": "scheduledDeparture",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "transportDocument",
+            "attributes": [
+                {
+                    "name": "containers",
+                    "type": "integer"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "assignment",
+            "attributes": [
+                {
+                    "name": "priority",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "departureScheduling",
+            "attributes": [
+                {
+                    "name": "plannedDeparture",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh77",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "priority",
+                    "time": "2024-02-16T07:11:55Z",
+                    "value": "high"
+                },
+                {
+                    "name": "scheduledDeparture",
+                    "time": "2024-02-20T11:00:00Z",
+                    "value": "2024-02-20T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh80",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "priority",
+                    "time": "2024-02-16T07:11:55Z",
+                    "value": "normal"
+                },
+                {
+                    "name": "scheduledDeparture",
+                    "time": "2024-03-01T11:00:00Z",
+                    "value": "2024-03-01T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td355",
+            "type": "transportDocument",
+            "attributes": [
+                {
+                    "name": "containers",
+                    "time": "2024-02-16T07:11:55Z",
+                    "value": 4
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2024-02-16T07:11:55Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2024-02-16T07:11:55Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td355",
+                    "qualifier": "relatedTo"
+                },
+                {
+                    "objectId": "vh77",
+                    "qualifier": "bookedVehicle"
+                },
+                {
+                    "objectId": "vh80",
+                    "qualifier": "bookedVehicle"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "assignment",
+            "time": "2024-02-16T07:11:55Z",
+            "attributes": [
+                {
+                    "name": "priority",
+                    "value": "high"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh77",
+                    "qualifier": "assignedTo"
+                },
+                {
+                    "objectId": "td355",
+                    "qualifier": "assignedDocument"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "departureScheduling",
+            "time": "2024-02-20T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "plannedDeparture",
+                    "value": "2024-02-20T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh77",
+                    "qualifier": "scheduledFor"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "departureScheduling",
+            "time": "2024-03-01T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "plannedDeparture",
+                    "value": "2024-03-01T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh80",
+                    "qualifier": "scheduledFor"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,136 @@
+{
+    "objectTypes": [
+        {
+            "name": "Workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Machine",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "FormedPart",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Coating",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "type": "float"
+                },
+                {
+                    "name": "CarbonDioxideEquivalentOutput",
+                    "type": "float"
+                },
+                {
+                    "name": "CoatingMaterialUsed",
+                    "type": "float"
+                },
+                {
+                    "name": "CoatingMaterialWaste",
+                    "type": "float"
+                },
+                {
+                    "name": "ElectricEnergyConsumed",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o_workstation_1",
+            "type": "Workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-04T10:38:29Z",
+                    "value": "o_workstation_1"
+                }
+            ]
+        },
+        {
+            "id": "o_machine_coater03",
+            "type": "Machine",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-04T10:38:29Z",
+                    "value": "o_machine_coater03"
+                }
+            ]
+        },
+        {
+            "id": "o_formedpart_2267",
+            "type": "FormedPart",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-04T10:38:29Z",
+                    "value": "o_formedpart_2267"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Coating",
+            "time": "2023-04-04T10:38:29Z",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "value": 300.0
+                },
+                {
+                    "name": "CarbonDioxideEquivalentOutput",
+                    "value": 0.1751156951
+                },
+                {
+                    "name": "CoatingMaterialUsed",
+                    "value": 0.0004
+                },
+                {
+                    "name": "CoatingMaterialWaste",
+                    "value": 0.0001
+                },
+                {
+                    "name": "ElectricEnergyConsumed",
+                    "value": 0.25
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_formedpart_2267",
+                    "qualifier": "coated"
+                },
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "usedAt"
+                },
+                {
+                    "objectId": "o_machine_coater03",
+                    "qualifier": "usedIn"
+                }
+            ]
+        }
+    ]
+}

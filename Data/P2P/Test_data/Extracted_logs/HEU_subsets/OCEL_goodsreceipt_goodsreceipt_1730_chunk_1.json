@@ -1,0 +1,221 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods",
+            "attributes": [
+                {
+                    "name": "goods",
+                    "type": "string"
+                },
+                {
+                    "name": "Goods Receipt Report",
+                    "type": "string"
+                },
+                {
+                    "name": "amount",
+                    "type": "string"
+                },
+                {
+                    "name": "Type Movement",
+                    "type": "string"
+                },
+                {
+                    "name": "July",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "type": "string"
+                },
+                {
+                    "name": "Type Movement",
+                    "type": "string"
+                },
+                {
+                    "name": "July",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "finalize creation receipt:1730",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "mark",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "receipt:1730 Movement Type",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "Goods Receipt:1730",
+            "type": "goods",
+            "attributes": [
+                {
+                    "name": "goods",
+                    "time": "2024-07-16T19:56:00Z",
+                    "value": "goods receipt:1730"
+                },
+                {
+                    "name": "Goods Receipt Report",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "# Report"
+                },
+                {
+                    "name": "amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "35,100.00"
+                },
+                {
+                    "name": "Type Movement",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Movement Type : 101"
+                },
+                {
+                    "name": "July",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "July"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1419",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:1419",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "group 003"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:1732",
+            "type": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "35,100.00"
+                },
+                {
+                    "name": "Type Movement",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Movement Type : 101"
+                },
+                {
+                    "name": "July",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "July"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 640,
+            "type": "receipt:1730 Movement Type",
+            "time": "2024-07-16T19:56:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Goods Receipt:1730",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 641,
+            "type": "mark",
+            "time": "2024-07-16T19:56:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Goods Receipt:1730",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "invoice receipt:1732",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 642,
+            "type": "finalize creation receipt:1730",
+            "time": "2024-07-18T05:51:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1419",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 643,
+            "type": "finalize creation receipt:1730",
+            "time": "2024-07-16T05:51:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1419",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,91 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "purchasing_group_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "purchasing_group_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "type": "string"
+                },
+                {
+                    "name": "completed",
+                    "type": "boolean"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:573",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "purchasing_group_id",
+                    "time": "2023-03-09T23:59:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:339",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "quotation:339",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "purchasing_group_id",
+                    "time": "2023-03-09T23:59:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create",
+            "time": "2023-03-09T23:59:00Z",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "value": "purchase_order:573"
+                },
+                {
+                    "name": "completed",
+                    "value": "true"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:573",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,151 @@
+{
+    "objectTypes": [
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "retail_price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "PickItem",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "item_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Marco Pegoraro",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "role",
+                    "time": "2023-07-21T00:00:00Z",
+                    "value": "Warehousing"
+                }
+            ]
+        },
+        {
+            "id": "i-882173",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-07-21T00:00:00Z",
+                    "value": "105.7"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Echo",
+                    "qualifier": "is_associated_with"
+                }
+            ]
+        },
+        {
+            "id": "Echo",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "retail_price",
+                    "time": "2023-07-21T00:00:00Z",
+                    "value": "99.99"
+                }
+            ]
+        },
+        {
+            "id": "i-882225",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-07-21T00:00:00Z",
+                    "value": "2642.75"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "MacBook Pro",
+                    "qualifier": "is_associated_with"
+                }
+            ]
+        },
+        {
+            "id": "MacBook Pro",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "retail_price",
+                    "time": "2023-07-21T00:00:00Z",
+                    "value": "2500.0"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "PickItem",
+            "time": "2023-07-21T10:31:26Z",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "value": "i-882173"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Marco Pegoraro",
+                    "qualifier": "performed_by"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "PickItem",
+            "time": "2023-07-21T15:01:48Z",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "value": "i-882225"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Marco Pegoraro",
+                    "qualifier": "performed_by"
+                }
+            ]
+        }
+    ]
+}

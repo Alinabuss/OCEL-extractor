@@ -1,0 +1,142 @@
+{
+    "objectTypes": [
+        {
+            "name": "InvoiceReceipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "CreditAmount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "GoodsReceipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "MovementType",
+                    "type": "int"
+                }
+            ]
+        },
+        {
+            "name": "Department",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "InvoiceReceiptCreated",
+            "attributes": [
+                {
+                    "name": "CreditAmount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "GoodsReceiptCompleted",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "197",
+            "type": "InvoiceReceipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-07-22T19:05:00Z",
+                    "value": "197"
+                },
+                {
+                    "name": "CreditAmount",
+                    "time": "2022-07-22T19:05:00Z",
+                    "value": "16150.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "195",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": "195",
+            "type": "GoodsReceipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-07-22T19:05:00Z",
+                    "value": "195"
+                },
+                {
+                    "name": "MovementType",
+                    "time": "2022-07-22T19:05:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "finance_and_account_department",
+            "type": "Department",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2022-07-22T19:05:00Z",
+                    "value": "finance and account"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "InvoiceReceiptCreated",
+            "time": "2022-07-22T19:05:00Z",
+            "attributes": [
+                {
+                    "name": "CreditAmount",
+                    "value": "16150.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "197",
+                    "qualifier": "created"
+                },
+                {
+                    "objectId": "finance_and_account_department",
+                    "qualifier": "by"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "GoodsReceiptCompleted",
+            "time": "2022-07-22T19:05:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "195",
+                    "qualifier": "completed"
+                }
+            ]
+        }
+    ]
+}

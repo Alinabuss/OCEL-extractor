@@ -1,0 +1,144 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "movement type",
+                    "type": "string"
+                },
+                {
+                    "name": "purchase order ID",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing group",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle status",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "goods receipt created",
+            "attributes": [
+                {
+                    "name": "event timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "transaction facilitated by",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1414",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-02-18T03:56:00Z",
+                    "value": "goods receipt:1414"
+                },
+                {
+                    "name": "movement type",
+                    "time": "2024-02-18T03:56:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "purchase order ID",
+                    "time": "2024-02-18T03:56:00Z",
+                    "value": "purchase_order:1168"
+                },
+                {
+                    "name": "purchasing group",
+                    "time": "2024-02-18T03:56:00Z",
+                    "value": "002"
+                },
+                {
+                    "name": "lifecycle status",
+                    "time": "2024-02-18T03:56:00Z",
+                    "value": "complete"
+                },
+                {
+                    "name": "department",
+                    "time": "2024-02-18T03:56:00Z",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:1168",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-02-18T03:56:00Z",
+                    "value": "purchase_order:1168"
+                },
+                {
+                    "name": "purchasing group",
+                    "time": "2024-02-18T03:56:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "goods receipt created",
+            "time": "2024-02-18T03:56:00Z",
+            "attributes": [
+                {
+                    "name": "event timestamp",
+                    "value": "2024-02-18T03:56:00Z"
+                },
+                {
+                    "name": "transaction facilitated by",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1414",
+                    "qualifier": "created"
+                },
+                {
+                    "objectId": "purchase_order:1168",
+                    "qualifier": "linked to"
+                }
+            ]
+        }
+    ]
+}

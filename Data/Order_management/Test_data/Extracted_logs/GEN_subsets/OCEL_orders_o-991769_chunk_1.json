@@ -1,0 +1,109 @@
+{
+    "objectTypes": [
+        {
+            "name": "order",
+            "attributes": [
+                {
+                    "name": "total_price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "retail_price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "payment_reminder_issued",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o-991769",
+            "type": "order",
+            "attributes": [
+                {
+                    "name": "total_price",
+                    "time": "2024-03-05T10:06:51Z",
+                    "value": "99.28"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-886838",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2024-03-05T10:06:51Z",
+                    "value": "94.28"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o-991769",
+                    "qualifier": "includes"
+                }
+            ]
+        },
+        {
+            "id": "Kindle",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "retail_price",
+                    "time": "2024-03-05T10:06:51Z",
+                    "value": "79.99"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-886838",
+                    "qualifier": "connected_to"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "payment_reminder_issued",
+            "time": "2024-03-05T10:06:51Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2024-03-05T10:06:51Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o-991769",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

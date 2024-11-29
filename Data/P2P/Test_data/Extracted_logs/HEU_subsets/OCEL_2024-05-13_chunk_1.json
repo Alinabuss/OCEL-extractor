@@ -1,0 +1,177 @@
+{
+    "objectTypes": [
+        {
+            "name": "material",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase order",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "procurement",
+            "attributes": [
+                {
+                    "name": "purchasing",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create goods receipt",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "approve procurement requisition",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1592",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1314",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "material:1942",
+            "type": "material",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "1100.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:1314",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase order",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "group 005"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:781 : pr_trigger_781",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_requisition:781 : pr_trigger_781",
+            "type": "procurement",
+            "attributes": [
+                {
+                    "name": "purchasing",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "group \" 004"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "material:1942",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1145,
+            "type": "create goods receipt",
+            "time": "2024-05-13T19:53:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1314",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:1592",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1146,
+            "type": "approve procurement requisition",
+            "time": "2024-05-13T23:57:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "manager requisition"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "assign"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "material:1942",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_requisition:781 : pr_trigger_781",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

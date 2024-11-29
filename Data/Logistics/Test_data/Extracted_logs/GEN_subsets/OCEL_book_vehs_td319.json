@@ -1,0 +1,100 @@
+{
+    "objectTypes": [
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "container_count",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "scheduled_departure_date",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td319",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2024-01-19T14:58:54Z",
+                    "value": "td319"
+                },
+                {
+                    "name": "container_count",
+                    "time": "2024-01-19T14:58:54Z",
+                    "value": "1.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh75",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2024-01-19T14:58:54Z",
+                    "value": "vh75"
+                },
+                {
+                    "name": "scheduled_departure_date",
+                    "time": "2024-02-13T11:00:00Z",
+                    "value": "2024-02-13T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2024-01-19T14:58:54Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2024-01-19T14:58:54Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td319",
+                    "qualifier": "booked_for"
+                },
+                {
+                    "objectId": "vh75",
+                    "qualifier": "booked_vehicle"
+                }
+            ]
+        }
+    ]
+}

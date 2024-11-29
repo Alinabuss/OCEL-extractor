@@ -1,0 +1,149 @@
+{
+    "objectTypes": [
+        {
+            "name": "workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "steel_sheet",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "weight",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "steel_coil",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "SplitSteelSheet",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2_emissions",
+                    "type": "float"
+                },
+                {
+                    "name": "electricity_consumed",
+                    "type": "float"
+                },
+                {
+                    "name": "waste_output",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Workstation[1]",
+            "type": "workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-06T10:55:28Z",
+                    "value": "Workstation[1]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "SteelSheet[5368]",
+            "type": "steel_sheet",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-06T10:55:28Z",
+                    "value": "SteelSheet[5368]"
+                },
+                {
+                    "name": "weight",
+                    "time": "2023-04-06T10:55:28Z",
+                    "value": "0.02111"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "SteelCoil[1]",
+            "type": "steel_coil",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-06T10:55:28Z",
+                    "value": "SteelCoil[1]"
+                },
+                {
+                    "name": "mass",
+                    "time": "2023-04-06T10:55:28Z",
+                    "value": "31.91076"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "SplitSteelSheet",
+            "time": "2023-04-06T10:55:28Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "14.43"
+                },
+                {
+                    "name": "CO2_emissions",
+                    "value": "0.0151"
+                },
+                {
+                    "name": "electricity_consumed",
+                    "value": "0.022"
+                },
+                {
+                    "name": "waste_output",
+                    "value": "0.00042"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Workstation[1]",
+                    "qualifier": "executed"
+                },
+                {
+                    "objectId": "SteelSheet[5368]",
+                    "qualifier": "produced"
+                },
+                {
+                    "objectId": "SteelCoil[1]",
+                    "qualifier": "derived_from"
+                }
+            ]
+        }
+    ]
+}

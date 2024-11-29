@@ -1,0 +1,180 @@
+{
+    "objectTypes": [
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Number of Containers",
+                    "type": "number"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Departure Time",
+                    "type": "string"
+                },
+                {
+                    "name": "Priority",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Transport Document Created",
+            "attributes": [
+                {
+                    "name": "Created Time",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle Booked",
+            "attributes": [
+                {
+                    "name": "Booking Time",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td296",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-01-03T13:53:20Z",
+                    "value": "td296"
+                },
+                {
+                    "name": "Number of Containers",
+                    "time": "2024-01-03T13:53:20Z",
+                    "value": "3.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh64",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-01-03T13:53:20Z",
+                    "value": "vh64"
+                },
+                {
+                    "name": "Departure Time",
+                    "time": "2024-01-05T11:00:00Z",
+                    "value": "2024-01-05T11:00:00Z"
+                },
+                {
+                    "name": "Priority",
+                    "time": "2024-01-03T13:53:20Z",
+                    "value": "High"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td296",
+                    "qualifier": "Booked for"
+                }
+            ]
+        },
+        {
+            "id": "vh69",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-01-03T13:53:20Z",
+                    "value": "vh69"
+                },
+                {
+                    "name": "Departure Time",
+                    "time": "2024-01-23T11:00:00Z",
+                    "value": "2024-01-23T11:00:00Z"
+                },
+                {
+                    "name": "Priority",
+                    "time": "2024-01-03T13:53:20Z",
+                    "value": "Normal"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td296",
+                    "qualifier": "Booked for"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Transport Document Created",
+            "time": "2024-01-03T13:53:20Z",
+            "attributes": [
+                {
+                    "name": "Created Time",
+                    "value": "2024-01-03T13:53:20Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td296",
+                    "qualifier": "Originating Document"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Vehicle Booked",
+            "time": "2024-01-03T13:53:20Z",
+            "attributes": [
+                {
+                    "name": "Booking Time",
+                    "value": "2024-01-03T13:53:20Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh64",
+                    "qualifier": "Associated Vehicle"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Vehicle Booked",
+            "time": "2024-01-03T13:53:20Z",
+            "attributes": [
+                {
+                    "name": "Booking Time",
+                    "value": "2024-01-03T13:53:20Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh69",
+                    "qualifier": "Associated Vehicle"
+                }
+            ]
+        }
+    ]
+}

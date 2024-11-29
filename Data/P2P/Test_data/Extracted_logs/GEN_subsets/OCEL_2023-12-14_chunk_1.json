@@ -1,0 +1,240 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "movement type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Finance/Account Department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "two-way match",
+            "attributes": [
+                {
+                    "name": "goods receipt ID",
+                    "type": "string"
+                },
+                {
+                    "name": "invoice receipt ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "create invoice receipt",
+            "attributes": [
+                {
+                    "name": "invoice receipt ID",
+                    "type": "string"
+                },
+                {
+                    "name": "total amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1256",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-12-14T08:10:00Z",
+                    "value": "1256"
+                },
+                {
+                    "name": "movement type",
+                    "time": "2023-12-14T08:10:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:1254",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-12-14T17:28:00Z",
+                    "value": "1254"
+                },
+                {
+                    "name": "movement type",
+                    "time": "2023-12-14T17:28:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:1262",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-12-14T23:34:00Z",
+                    "value": "1262"
+                },
+                {
+                    "name": "movement type",
+                    "time": "2023-12-14T23:34:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:1259",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-12-14T08:10:00Z",
+                    "value": "1259"
+                },
+                {
+                    "name": "credit amount",
+                    "time": "2023-12-14T08:10:00Z",
+                    "value": "93150.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:1255",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-12-14T17:28:00Z",
+                    "value": "1255"
+                },
+                {
+                    "name": "credit amount",
+                    "time": "2023-12-14T17:28:00Z",
+                    "value": "40300.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:1261",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-12-14T23:34:00Z",
+                    "value": "1261"
+                },
+                {
+                    "name": "credit amount",
+                    "time": "2023-12-14T23:34:00Z",
+                    "value": "68250.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "two-way match",
+            "time": "2023-12-14T08:10:00Z",
+            "attributes": [
+                {
+                    "name": "goods receipt ID",
+                    "value": "1256"
+                },
+                {
+                    "name": "invoice receipt ID",
+                    "value": "1259"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1256",
+                    "qualifier": "matched with"
+                },
+                {
+                    "objectId": "invoice receipt:1259",
+                    "qualifier": "matched with"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "create invoice receipt",
+            "time": "2023-12-14T17:28:00Z",
+            "attributes": [
+                {
+                    "name": "invoice receipt ID",
+                    "value": "1255"
+                },
+                {
+                    "name": "total amount",
+                    "value": "40300.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1254",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "create invoice receipt",
+            "time": "2023-12-14T23:34:00Z",
+            "attributes": [
+                {
+                    "name": "invoice receipt ID",
+                    "value": "1261"
+                },
+                {
+                    "name": "total amount",
+                    "value": "68250.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1262",
+                    "qualifier": "linked to"
+                }
+            ]
+        }
+    ]
+}

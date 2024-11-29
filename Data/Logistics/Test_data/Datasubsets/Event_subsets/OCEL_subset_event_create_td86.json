@@ -1,0 +1,75 @@
+{
+  "objectTypes": [
+    {
+      "name": "Customer Order",
+      "attributes": [
+        {
+          "name": "Amount of Goods",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "type": "float"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Create Transport Document",
+      "attributes": []
+    }
+  ],
+  "objects": [
+    {
+      "id": "co93",
+      "type": "Customer Order",
+      "attributes": [
+        {
+          "name": "Amount of Goods",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 800.0
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "td86",
+          "qualifier": "TD for CO"
+        }
+      ]
+    },
+    {
+      "id": "td86",
+      "type": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 3.0
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "create_td86",
+      "type": "Create Transport Document",
+      "time": "2023-08-01T11:07:20Z",
+      "relationships": [
+        {
+          "objectId": "td86",
+          "qualifier": "created TD"
+        },
+        {
+          "objectId": "co93",
+          "qualifier": "TD created for CO"
+        }
+      ]
+    }
+  ]
+}

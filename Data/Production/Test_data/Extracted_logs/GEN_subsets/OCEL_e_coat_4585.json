@@ -1,0 +1,148 @@
+{
+    "objectTypes": [
+        {
+            "name": "formed_part",
+            "attributes": [
+                {
+                    "name": "part_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "workstation",
+            "attributes": [
+                {
+                    "name": "workstation_id",
+                    "type": "string"
+                },
+                {
+                    "name": "energy_consumption",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "machine",
+            "attributes": [
+                {
+                    "name": "machine_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "coating_operation",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "integer"
+                },
+                {
+                    "name": "carbon_footprint",
+                    "type": "float"
+                },
+                {
+                    "name": "electricity_consumed",
+                    "type": "float"
+                },
+                {
+                    "name": "coating_material_used",
+                    "type": "float"
+                },
+                {
+                    "name": "waste_generated",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o_formedpart_4585",
+            "type": "formed_part",
+            "attributes": [
+                {
+                    "name": "part_id",
+                    "time": "2023-04-06T08:12:40Z",
+                    "value": "o_formedpart_4585"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_workstation_1",
+            "type": "workstation",
+            "attributes": [
+                {
+                    "name": "workstation_id",
+                    "time": "2023-04-06T08:12:40Z",
+                    "value": "o_workstation_1"
+                },
+                {
+                    "name": "energy_consumption",
+                    "time": "2023-04-06T08:12:40Z",
+                    "value": 0
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_machine_coater03",
+            "type": "machine",
+            "attributes": [
+                {
+                    "name": "machine_id",
+                    "time": "2023-04-06T08:12:40Z",
+                    "value": "o_machine_coater03"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "coating_operation",
+            "time": "2023-04-06T08:12:40Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": 300
+                },
+                {
+                    "name": "carbon_footprint",
+                    "value": 0.1751156951
+                },
+                {
+                    "name": "electricity_consumed",
+                    "value": 0.25
+                },
+                {
+                    "name": "coating_material_used",
+                    "value": 0.0004
+                },
+                {
+                    "name": "waste_generated",
+                    "value": 0.0001
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_formedpart_4585",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "performed_at"
+                },
+                {
+                    "objectId": "o_machine_coater03",
+                    "qualifier": "used"
+                }
+            ]
+        }
+    ]
+}

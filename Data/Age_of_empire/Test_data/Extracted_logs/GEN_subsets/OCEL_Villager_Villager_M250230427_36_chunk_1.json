@@ -1,0 +1,221 @@
+{
+    "objectTypes": [
+        {
+            "name": "player",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "house",
+            "attributes": [
+                {
+                    "name": "house_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "villager",
+            "attributes": [
+                {
+                    "name": "villager_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "town_center",
+            "attributes": [
+                {
+                    "name": "town_center_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "match",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "session",
+            "attributes": [
+                {
+                    "name": "session_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "house_construction",
+            "attributes": [
+                {
+                    "name": "construction_time",
+                    "type": "timestamp"
+                }
+            ]
+        },
+        {
+            "name": "villager_interaction",
+            "attributes": [
+                {
+                    "name": "interaction_time",
+                    "type": "timestamp"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "P2199669",
+            "type": "player",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "time": "2023-07-31T00:29:02Z",
+                    "value": "P2199669"
+                }
+            ]
+        },
+        {
+            "id": "House_M250230427_16",
+            "type": "house",
+            "attributes": [
+                {
+                    "name": "house_id",
+                    "time": "2023-07-31T00:29:02Z",
+                    "value": "House_M250230427_16"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Villager_M250230427_26",
+            "type": "villager",
+            "attributes": [
+                {
+                    "name": "villager_id",
+                    "time": "2023-07-31T00:29:02Z",
+                    "value": "Villager_M250230427_26"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Villager_M250230427_36",
+            "type": "villager",
+            "attributes": [
+                {
+                    "name": "villager_id",
+                    "time": "2023-07-31T00:29:02Z",
+                    "value": "Villager_M250230427_36"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Villager_M250230427_26",
+                    "qualifier": "connection"
+                }
+            ]
+        },
+        {
+            "id": "Town_Center_M250230427_2",
+            "type": "town_center",
+            "attributes": [
+                {
+                    "name": "town_center_id",
+                    "time": "2023-07-31T00:29:05Z",
+                    "value": "Town_Center_M250427_2"
+                }
+            ]
+        },
+        {
+            "id": "M250230427",
+            "type": "match",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "time": "2023-07-31T00:29:02Z",
+                    "value": "M250230427"
+                }
+            ]
+        },
+        {
+            "id": "S250230427_688587",
+            "type": "session",
+            "attributes": [
+                {
+                    "name": "session_id",
+                    "time": "2023-07-31T00:29:05Z",
+                    "value": "S250230427_688587"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "house_construction",
+            "time": "2023-07-31T00:29:02Z",
+            "attributes": [
+                {
+                    "name": "construction_time",
+                    "value": "2023-07-31T00:29:02Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "House_M250230427_16",
+                    "qualifier": "constructed"
+                },
+                {
+                    "objectId": "P2199669",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "in_match"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "villager_interaction",
+            "time": "2023-07-31T00:29:05Z",
+            "attributes": [
+                {
+                    "name": "interaction_time",
+                    "value": "2023-07-31T00:29:05Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Villager_M250230427_36",
+                    "qualifier": "interacted_with"
+                },
+                {
+                    "objectId": "Town_Center_M250230427_2",
+                    "qualifier": "command_sent_from"
+                },
+                {
+                    "objectId": "S250230427_688587",
+                    "qualifier": "part_of"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "in_match"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,151 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "movement type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "goods receipt recorded",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "two-way match performed",
+            "attributes": [
+                {
+                    "name": "process status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:161",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-07-04T07:10:00Z",
+                    "value": "goods receipt:161"
+                },
+                {
+                    "name": "movement type",
+                    "time": "2022-07-04T07:10:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:157",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-07-04T07:10:00Z",
+                    "value": "invoice receipt:157"
+                },
+                {
+                    "name": "credit amount",
+                    "time": "2022-07-04T07:10:00Z",
+                    "value": "164700.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Finance/Account Department",
+            "type": "department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2022-07-04T07:10:00Z",
+                    "value": "Finance/Account Department"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "goods receipt recorded",
+            "time": "2022-07-04T07:10:00Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2022-07-04T07:10:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:161",
+                    "qualifier": "recorded"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "two-way match performed",
+            "time": "2022-07-04T07:10:00Z",
+            "attributes": [
+                {
+                    "name": "process status",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:157",
+                    "qualifier": "related to"
+                },
+                {
+                    "objectId": "goods receipt:161",
+                    "qualifier": "matched with"
+                },
+                {
+                    "objectId": "Finance/Account Department",
+                    "qualifier": "resource involved"
+                }
+            ]
+        }
+    ]
+}

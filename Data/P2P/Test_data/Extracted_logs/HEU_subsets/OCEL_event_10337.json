@@ -1,0 +1,85 @@
+{
+    "objectTypes": [
+        {
+            "name": "creation",
+            "attributes": []
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "goods receipt type",
+                    "type": "float"
+                },
+                {
+                    "name": "order group for purchase",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "creation of a goods receipt",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:689",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "goods receipt type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "order group for purchase",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:571",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:571",
+            "type": "creation",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1608,
+            "type": "creation of a goods receipt",
+            "time": "2023-03-14T10:03:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:689",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:571",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

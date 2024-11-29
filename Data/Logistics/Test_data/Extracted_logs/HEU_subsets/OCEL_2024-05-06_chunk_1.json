@@ -1,0 +1,190 @@
+{
+    "objectTypes": [
+        {
+            "name": "departure",
+            "attributes": []
+        },
+        {
+            "name": "transport document",
+            "attributes": [
+                {
+                    "name": "containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "vehicles",
+            "attributes": []
+        },
+        {
+            "name": "containers",
+            "attributes": [
+                {
+                    "name": "containers",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "book vehicles for this transport document",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "plan departure",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "schedule",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "two vehicles : VH100",
+            "type": "vehicles",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "vehicle VH100",
+            "type": "containers",
+            "attributes": [
+                {
+                    "name": "containers",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "3.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vehicle VH105",
+            "type": "departure",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "TD457",
+            "type": "transport document",
+            "attributes": [
+                {
+                    "name": "containers",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "3.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "two vehicles : VH100",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1380,
+            "type": "schedule",
+            "time": "2024-05-10T11:00:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "vehicle VH100",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "vehicle VH105",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1381,
+            "type": "book vehicles for this transport document",
+            "time": "2024-05-10T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "schedule"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vehicle VH100",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "vehicle VH105",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1382,
+            "type": "plan departure",
+            "time": "2024-05-28T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "schedule"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vehicle VH105",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1383,
+            "type": "book vehicles for this transport document",
+            "time": "2024-05-28T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "schedule"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vehicle VH100",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "vehicle VH105",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1384,
+            "type": "schedule",
+            "time": "2024-05-28T11:00:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "vehicle VH100",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "vehicle VH105",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

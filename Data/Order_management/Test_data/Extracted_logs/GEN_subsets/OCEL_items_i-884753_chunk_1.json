@@ -1,0 +1,124 @@
+{
+    "objectTypes": [
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "product_id",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "reorder",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Detlef Wetzeler",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "role",
+                    "time": "2023-11-20T08:49:24Z",
+                    "value": "Warehousing"
+                }
+            ]
+        },
+        {
+            "id": "i-884753",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "2023-11-20T08:49:24Z",
+                    "value": "i-884753"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-11-20T08:49:24Z",
+                    "value": 98.78
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Echo Show 5",
+                    "qualifier": "connected_to"
+                }
+            ]
+        },
+        {
+            "id": "Echo Show 5",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "product_id",
+                    "time": "2023-11-20T08:49:24Z",
+                    "value": "Echo Show 5"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-11-20T08:49:24Z",
+                    "value": 89.99
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "reorder",
+            "time": "2023-11-20T08:49:24Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-11-20T08:49:24Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Detlef Wetzeler",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "i-884753",
+                    "qualifier": "reordered_item"
+                }
+            ]
+        }
+    ]
+}

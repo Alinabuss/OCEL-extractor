@@ -1,0 +1,135 @@
+{
+    "objectTypes": [
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "product_name",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "item_picked",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Benedikt Knopp",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-11-30T07:51:17Z",
+                    "value": "Benedikt Knopp"
+                },
+                {
+                    "name": "role",
+                    "time": "2023-11-30T07:51:17Z",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-884829",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "2023-11-30T07:51:17Z",
+                    "value": "i-884829"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-11-30T07:51:17Z",
+                    "value": 767.29
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "iPhone X",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": "iPhone X",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "product_name",
+                    "time": "2023-11-30T07:51:17Z",
+                    "value": "iPhone X"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-11-30T07:51:17Z",
+                    "value": 699.0
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "item_picked",
+            "time": "2023-11-30T07:51:17Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-11-30T07:51:17Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Benedikt Knopp",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "i-884829",
+                    "qualifier": "picked_item"
+                }
+            ]
+        }
+    ]
+}

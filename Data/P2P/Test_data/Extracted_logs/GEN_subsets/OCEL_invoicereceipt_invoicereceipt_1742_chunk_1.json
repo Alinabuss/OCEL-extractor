@@ -1,0 +1,100 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credited amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "department",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "match completed",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "facilitated by",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:1742",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credited amount",
+                    "time": "2024-07-22T07:10:00Z",
+                    "value": "21600.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:1751",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2024-07-22T07:10:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Finance/Account Department",
+            "type": "department",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "match completed",
+            "time": "2024-07-22T07:10:00Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2024-07-22T07:10:00Z"
+                },
+                {
+                    "name": "facilitated by",
+                    "value": "Finance/Account Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1742",
+                    "qualifier": "matched with"
+                },
+                {
+                    "objectId": "goods receipt:1751",
+                    "qualifier": "matched with"
+                }
+            ]
+        }
+    ]
+}

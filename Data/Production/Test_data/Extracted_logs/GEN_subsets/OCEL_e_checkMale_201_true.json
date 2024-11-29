@@ -1,0 +1,135 @@
+{
+    "objectTypes": [
+        {
+            "name": "Worker",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Part",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Workstation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Inspection",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "string"
+                },
+                {
+                    "name": "CO2_emission",
+                    "type": "float"
+                },
+                {
+                    "name": "compressed_air_used",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Worker[1]",
+            "type": "Worker",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-04-03T09:00:02Z",
+                    "value": "Worker[1]"
+                }
+            ]
+        },
+        {
+            "id": "MalePart[201]",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-04-03T09:00:02Z",
+                    "value": "MalePart[201]"
+                },
+                {
+                    "name": "type",
+                    "time": "2023-04-03T09:00:02Z",
+                    "value": "Male"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Workstation[2]",
+                    "qualifier": "located_at"
+                }
+            ]
+        },
+        {
+            "id": "Workstation[2]",
+            "type": "Workstation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-04-03T09:00:02Z",
+                    "value": "Workstation[2]"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Inspection",
+            "time": "2023-04-03T09:00:02Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "undisclosed"
+                },
+                {
+                    "name": "CO2_emission",
+                    "value": "0.0003249"
+                },
+                {
+                    "name": "compressed_air_used",
+                    "value": "0.005"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Worker[1]",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "MalePart[201]",
+                    "qualifier": "inspected"
+                },
+                {
+                    "objectId": "Workstation[2]",
+                    "qualifier": "at"
+                }
+            ]
+        }
+    ]
+}

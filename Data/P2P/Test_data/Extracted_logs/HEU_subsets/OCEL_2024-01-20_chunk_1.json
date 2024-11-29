@@ -1,0 +1,139 @@
+{
+    "objectTypes": [
+        {
+            "name": "related quotation",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "type movement",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase order",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create goods receipt with a movement type",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "approve purchase order",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1352",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "type movement",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1121",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "quotation:652",
+            "type": "related quotation",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:1121",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase order",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:1128",
+            "type": "purchase order",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation:652",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 749,
+            "type": "approve purchase order",
+            "time": "2024-01-20T15:48:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation:652",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:1128",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 750,
+            "type": "create goods receipt with a movement type",
+            "time": "2024-01-20T19:18:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1121",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:1352",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,125 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods",
+            "attributes": [
+                {
+                    "name": "type movement",
+                    "type": "float"
+                },
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "record series",
+            "attributes": [
+                {
+                    "name": "receipt invoice",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "create goods receipt",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1456",
+            "type": "goods",
+            "attributes": [
+                {
+                    "name": "type movement",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "credit amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "56550.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1198",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:1198",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "group 002"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1501,
+            "type": "create goods receipt",
+            "time": "2024-03-04T12:20:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Warehouse Department"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1198",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:1456",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1502,
+            "type": "record series",
+            "time": "2024-03-04T09:39:00Z",
+            "attributes": [
+                {
+                    "name": "receipt invoice",
+                    "value": "invoice receipt:1442"
+                }
+            ],
+            "relationships": []
+        }
+    ]
+}

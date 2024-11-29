@@ -1,0 +1,112 @@
+{
+    "objectTypes": [
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "type": "int"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Invoice Creation",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:1650",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "time": "2024-06-10T13:41:00Z",
+                    "value": "5400.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1645",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:1645",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "time": "2024-06-10T13:41:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:1647",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "time": "2024-06-10T14:12:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Invoice Creation",
+            "time": "2024-06-10T13:41:00Z",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "value": "5400.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1650",
+                    "qualifier": "involved in"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Invoice Creation",
+            "time": "2024-06-10T14:12:00Z",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "value": "5400.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1650",
+                    "qualifier": "involved in"
+                }
+            ]
+        }
+    ]
+}

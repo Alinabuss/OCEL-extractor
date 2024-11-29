@@ -1,0 +1,81 @@
+{
+    "objectTypes": [
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "type": "String"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "String"
+                }
+            ]
+        },
+        {
+            "name": "Purchase Order",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Goods Receipt Created",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "type": "String"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:291",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "time": "2022-08-27T05:45:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "2022-08-27T05:45:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:245",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:245",
+            "type": "Purchase Order",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Goods Receipt Created",
+            "time": "2022-08-27T05:45:00Z",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:291",
+                    "qualifier": "creates"
+                }
+            ]
+        }
+    ]
+}

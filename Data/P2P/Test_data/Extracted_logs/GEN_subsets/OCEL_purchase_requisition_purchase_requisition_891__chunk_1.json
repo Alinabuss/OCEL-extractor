@@ -1,0 +1,113 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchasing_group",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "request_for_quotation_created",
+            "attributes": [
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_requisition:891:pr_trigger_891",
+            "type": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2024-09-10T09:42:00Z",
+                    "value": "891"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:892",
+                    "qualifier": "corresponds_with"
+                },
+                {
+                    "objectId": "002",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": "quotation:892",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2024-09-10T09:42:00Z",
+                    "value": "892"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "002",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "002",
+            "type": "purchasing_group",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2024-09-10T09:42:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "request_for_quotation_created",
+            "time": "2024-09-10T09:42:00Z",
+            "attributes": [
+                {
+                    "name": "department",
+                    "value": "Procurement Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:891:pr_trigger_891",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

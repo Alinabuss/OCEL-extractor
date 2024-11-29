@@ -1,0 +1,414 @@
+{
+    "objectTypes": [
+        {
+            "name": "Workstation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Machine",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Steel Sheet",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Steel Coil",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Heating",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                },
+                {
+                    "name": "duration",
+                    "type": "int"
+                },
+                {
+                    "name": "CO2 Emission",
+                    "type": "float"
+                },
+                {
+                    "name": "Electric Energy Consumption",
+                    "type": "float"
+                },
+                {
+                    "name": "Gas Input",
+                    "type": "float"
+                },
+                {
+                    "name": "Burn Emission",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Creation",
+            "attributes": [
+                {
+                    "name": "created_mass",
+                    "type": "float"
+                },
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2 Emission",
+                    "type": "float"
+                },
+                {
+                    "name": "Electricity Consumption",
+                    "type": "float"
+                },
+                {
+                    "name": "Steel Waste Produced",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o_workstation_1",
+            "type": "Workstation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "o_machine_oven01",
+            "type": "Machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "o_steelsheet_4508",
+            "type": "Steel Sheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-06T07:47:43Z",
+                    "value": "0.02113"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_steelsheet_4519",
+            "type": "Steel Sheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-06T07:48:54Z",
+                    "value": "0.02106"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "SteelSheet[4626",
+            "type": "Steel Sheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-06T07:59:48Z",
+                    "value": "0.02105"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelCoil[1]",
+                    "qualifier": "Processed Steel Coil"
+                }
+            ]
+        },
+        {
+            "id": "o_steelsheet_4636",
+            "type": "Steel Sheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-06T08:02:52Z",
+                    "value": "0.02114"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_steelsheet_4690",
+            "type": "Steel Sheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-06T08:15:41Z",
+                    "value": "0.02121"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "SteelCoil[1]",
+            "type": "Steel Coil",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-06",
+                    "value": "31.91076"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Heating",
+            "time": "2023-04-06T07:47:43Z",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "value": "0.02113"
+                },
+                {
+                    "name": "duration",
+                    "value": "900"
+                },
+                {
+                    "name": "CO2 Emission",
+                    "value": "0.0138019093344"
+                },
+                {
+                    "name": "Electric Energy Consumption",
+                    "value": "0.02"
+                },
+                {
+                    "name": "Gas Input",
+                    "value": "0.49392"
+                },
+                {
+                    "name": "Burn Emission",
+                    "value": "0.49392"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "performed at"
+                },
+                {
+                    "objectId": "o_machine_oven01",
+                    "qualifier": "used"
+                },
+                {
+                    "objectId": "o_steelsheet_4508",
+                    "qualifier": "processed"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Heating",
+            "time": "2023-04-06T07:48:54Z",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "value": "0.02106"
+                },
+                {
+                    "name": "duration",
+                    "value": "900"
+                },
+                {
+                    "name": "CO2 Emission",
+                    "value": "0.0138019093344"
+                },
+                {
+                    "name": "Electric Energy Consumption",
+                    "value": "0.02"
+                },
+                {
+                    "name": "Gas Input",
+                    "value": "0.49392"
+                },
+                {
+                    "name": "Burn Emission",
+                    "value": "0.49392"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "performed at"
+                },
+                {
+                    "objectId": "o_machine_oven01",
+                    "qualifier": "used"
+                },
+                {
+                    "objectId": "o_steelsheet_4519",
+                    "qualifier": "processed"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Creation",
+            "time": "2023-04-06T07:59:48Z",
+            "attributes": [
+                {
+                    "name": "created_mass",
+                    "value": "0.02105"
+                },
+                {
+                    "name": "duration",
+                    "value": "6.666"
+                },
+                {
+                    "name": "CO2 Emission",
+                    "value": "0.006975"
+                },
+                {
+                    "name": "Electricity Consumption",
+                    "value": "0.0101843"
+                },
+                {
+                    "name": "Steel Waste Produced",
+                    "value": "0.00042"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "performed at"
+                },
+                {
+                    "objectId": "SteelCoil[1]",
+                    "qualifier": "processed"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Heating",
+            "time": "2023-04-06T08:02:52Z",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "value": "0.02114"
+                },
+                {
+                    "name": "duration",
+                    "value": "900"
+                },
+                {
+                    "name": "CO2 Emission",
+                    "value": "0.0138019093344"
+                },
+                {
+                    "name": "Electric Energy Consumption",
+                    "value": "0.02"
+                },
+                {
+                    "name": "Gas Input",
+                    "value": "0.49392"
+                },
+                {
+                    "name": "Burn Emission",
+                    "value": "0.49392"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "performed at"
+                },
+                {
+                    "objectId": "o_machine_oven01",
+                    "qualifier": "used"
+                },
+                {
+                    "objectId": "o_steelsheet_4636",
+                    "qualifier": "processed"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "Heating",
+            "time": "2023-04-06T08:15:41Z",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "value": "0.02121"
+                },
+                {
+                    "name": "duration",
+                    "value": "900"
+                },
+                {
+                    "name": "CO2 Emission",
+                    "value": "0.0138019093344"
+                },
+                {
+                    "name": "Electric Energy Consumption",
+                    "value": "0.02"
+                },
+                {
+                    "name": "Gas Input",
+                    "value": "0.49392"
+                },
+                {
+                    "name": "Burn Emission",
+                    "value": "0.49392"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "performed at"
+                },
+                {
+                    "objectId": "o_machine_oven01",
+                    "qualifier": "used"
+                },
+                {
+                    "objectId": "o_steelsheet_4690",
+                    "qualifier": "processed"
+                }
+            ]
+        }
+    ]
+}

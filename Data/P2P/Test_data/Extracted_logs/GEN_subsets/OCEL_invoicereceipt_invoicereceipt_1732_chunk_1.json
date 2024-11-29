@@ -1,0 +1,125 @@
+{
+    "objectTypes": [
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "int"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Invoice Receipt Creation",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Two-Way Match Completion",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:1732",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2024-07-16T19:56:00Z",
+                    "value": "35100.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1730",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:1730",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2024-07-16T19:56:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:1731",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2024-07-17T07:10:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Invoice Receipt Creation",
+            "time": "2024-07-16T19:56:00Z",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "value": "35100.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1732",
+                    "qualifier": "created"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Two-Way Match Completion",
+            "time": "2024-07-17T07:10:00Z",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "value": "35100.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1732",
+                    "qualifier": "subject to match"
+                },
+                {
+                    "objectId": "goods receipt:1731",
+                    "qualifier": "involved in match"
+                }
+            ]
+        }
+    ]
+}

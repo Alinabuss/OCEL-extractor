@@ -1,0 +1,147 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create_purchase_order",
+            "attributes": [
+                {
+                    "name": "purchase_order_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "complete_goods_receipt",
+            "attributes": [
+                {
+                    "name": "goods_receipt_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:927",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "Purchasing Group",
+                    "time": "2023-10-03T06:37:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:540",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": "quotation:540",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "Purchasing Group",
+                    "time": "2023-10-03T06:37:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods_receipt:1111",
+            "type": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2023-10-03T20:47:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:921",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:921",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "Purchasing Group",
+                    "time": "2023-10-03T20:47:00Z",
+                    "value": "001"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create_purchase_order",
+            "time": "2023-10-03T06:37:00Z",
+            "attributes": [
+                {
+                    "name": "purchase_order_id",
+                    "value": "purchase_order:927"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:927",
+                    "qualifier": "is_created_for"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "complete_goods_receipt",
+            "time": "2023-10-03T20:47:00Z",
+            "attributes": [
+                {
+                    "name": "goods_receipt_id",
+                    "value": "goods_receipt:1111"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods_receipt:1111",
+                    "qualifier": "is_completed_for"
+                }
+            ]
+        }
+    ]
+}

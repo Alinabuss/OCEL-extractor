@@ -1,0 +1,133 @@
+{
+    "objectTypes": [
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "product_id",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                },
+                {
+                    "name": "standard_price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "reorder_item",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Christopher Schwanen",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-12-05T15:09:32Z",
+                    "value": "Christopher Schwanen"
+                },
+                {
+                    "name": "role",
+                    "time": "2023-12-05T15:09:32Z",
+                    "value": "Warehousing"
+                }
+            ]
+        },
+        {
+            "id": "i-885318",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "2023-12-05T15:09:32Z",
+                    "value": "i-885318"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "product iPhone 8",
+                    "qualifier": "corresponds_to"
+                }
+            ]
+        },
+        {
+            "id": "product iPhone 8",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "product_id",
+                    "time": "2023-12-05T15:09:32Z",
+                    "value": "iPhone 8"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-12-05T15:09:32Z",
+                    "value": 594.6
+                },
+                {
+                    "name": "standard_price",
+                    "time": "2023-12-05T15:09:32Z",
+                    "value": 529.0
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "reorder_item",
+            "time": "2023-12-05T15:09:32Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-12-05T15:09:32Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Christopher Schwanen",
+                    "qualifier": "initiated_by"
+                },
+                {
+                    "objectId": "i-885318",
+                    "qualifier": "affects"
+                }
+            ]
+        }
+    ]
+}

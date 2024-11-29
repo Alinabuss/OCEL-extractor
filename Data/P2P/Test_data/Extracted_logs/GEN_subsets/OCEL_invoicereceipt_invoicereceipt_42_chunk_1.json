@@ -1,0 +1,118 @@
+{
+    "objectTypes": [
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "type": "float"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Create Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "invoice_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Record Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Invoice Receipt: 42",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "time": "2022-05-09T23:01:00Z",
+                    "value": "8400.0"
+                },
+                {
+                    "name": "status",
+                    "time": "2022-05-09T23:01:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Goods Receipt",
+                    "qualifier": "corresponds_to"
+                }
+            ]
+        },
+        {
+            "id": "Goods Receipt",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "time": "2022-05-09T23:01:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Create Invoice Receipt",
+            "time": "2022-05-09T23:01:00Z",
+            "attributes": [
+                {
+                    "name": "invoice_id",
+                    "value": "Invoice Receipt: 42"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Invoice Receipt: 42",
+                    "qualifier": "created"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Record Goods Receipt",
+            "time": "2022-05-09T23:01:00Z",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Goods Receipt",
+                    "qualifier": "recorded"
+                }
+            ]
+        }
+    ]
+}

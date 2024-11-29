@@ -1,0 +1,215 @@
+{
+    "objectTypes": [
+        {
+            "name": "steel sheet",
+            "attributes": [
+                {
+                    "name": "creation of steel sheet",
+                    "type": "string"
+                },
+                {
+                    "name": "workstation",
+                    "type": "string"
+                },
+                {
+                    "name": "creation of steel sheet",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "emission",
+            "attributes": [
+                {
+                    "name": "emission of kg",
+                    "type": "float"
+                },
+                {
+                    "name": "emission of kg",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "workstation",
+                    "type": "string"
+                },
+                {
+                    "name": "workstation",
+                    "type": "string"
+                },
+                {
+                    "name": "power of kWh",
+                    "type": "float"
+                },
+                {
+                    "name": "amount of steel",
+                    "type": "string"
+                },
+                {
+                    "name": "mass of kg",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "splitting operation",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "report",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "steel sheet o_steelsheet_1348",
+            "type": "steel sheet",
+            "attributes": [
+                {
+                    "name": "creation of steel sheet",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "steel sheet"
+                },
+                {
+                    "name": "workstation",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "workstation 1"
+                },
+                {
+                    "name": "creation of steel sheet",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "0.02121 kg"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CO2",
+            "type": "emission",
+            "attributes": [
+                {
+                    "name": "emission of kg",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "0.01446"
+                },
+                {
+                    "name": "emission of kg",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "13.83"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": ": o_steelsheet_1348",
+            "type": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "workstation",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "workstation 1"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "splitter01",
+            "type": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "workstation",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "workstation 1"
+                },
+                {
+                    "name": "power of kWh",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "0.02112"
+                },
+                {
+                    "name": "amount of steel",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "waste ( 0.00042"
+                },
+                {
+                    "name": "mass of kg",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "31.91076"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1882,
+            "type": "report",
+            "time": "2023-04-03T12:34:19Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": ": o_steelsheet_1348",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1883,
+            "type": "splitting operation",
+            "time": "2023-04-03T12:34:19Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "machine"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "CO2",
+                    "qualifier": null
+                },
+                {
+                    "objectId": ": o_steelsheet_1348",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "steel sheet o_steelsheet_1348",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "splitter01",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

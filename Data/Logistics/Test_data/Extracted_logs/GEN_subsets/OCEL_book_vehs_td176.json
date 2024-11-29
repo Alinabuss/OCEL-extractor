@@ -1,0 +1,112 @@
+{
+    "objectTypes": [
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Scheduled Departure Date",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Amount of Containers",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Booking",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "Vehicle ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Transport Document ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh40",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-10-03T15:42:09Z",
+                    "value": "vh40"
+                },
+                {
+                    "name": "Scheduled Departure Date",
+                    "time": "2023-10-13T11:00:00Z",
+                    "value": "2023-10-13T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td176",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-10-03T15:42:09Z",
+                    "value": "td176"
+                },
+                {
+                    "name": "Amount of Containers",
+                    "time": "2023-10-03T15:42:09Z",
+                    "value": 5.0
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Booking",
+            "time": "2023-10-03T15:42:09Z",
+            "attributes": [
+                {
+                    "name": "Vehicle ID",
+                    "value": "vh40"
+                },
+                {
+                    "name": "Transport Document ID",
+                    "value": "td176"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh40",
+                    "qualifier": "booked for"
+                },
+                {
+                    "objectId": "td176",
+                    "qualifier": "associated with"
+                }
+            ]
+        }
+    ]
+}

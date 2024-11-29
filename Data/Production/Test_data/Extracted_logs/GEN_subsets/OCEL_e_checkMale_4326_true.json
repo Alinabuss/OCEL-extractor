@@ -1,0 +1,115 @@
+{
+    "objectTypes": [
+        {
+            "name": "worker",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "part",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "workstation",
+            "attributes": [
+                {
+                    "name": "label",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "check",
+            "attributes": [
+                {
+                    "name": "carbon_dioxide_emission",
+                    "type": "float"
+                },
+                {
+                    "name": "compressed_air_usage",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o_worker_1",
+            "type": "worker",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-04-05T14:49:19Z",
+                    "value": "o_worker_1"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_malepart_4326",
+            "type": "part",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-04-05T14:49:19Z",
+                    "value": "o_malepart_4326"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_workstation_2",
+            "type": "workstation",
+            "attributes": [
+                {
+                    "name": "label",
+                    "time": "2023-04-05T14:49:19Z",
+                    "value": "o_workstation_2"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "check",
+            "time": "2023-04-05T14:49:19Z",
+            "attributes": [
+                {
+                    "name": "carbon_dioxide_emission",
+                    "value": "0.00188442"
+                },
+                {
+                    "name": "compressed_air_usage",
+                    "value": "0.029"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_worker_1",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "o_malepart_4326",
+                    "qualifier": "checked_part"
+                },
+                {
+                    "objectId": "o_workstation_2",
+                    "qualifier": "conducted_at"
+                }
+            ]
+        }
+    ]
+}

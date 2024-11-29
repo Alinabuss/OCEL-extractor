@@ -1,0 +1,83 @@
+{
+    "objectTypes": [
+        {
+            "name": "PurchaseOrder",
+            "attributes": [
+                {
+                    "name": "PurchasingGroup",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Quotation",
+            "attributes": [
+                {
+                    "name": "PurchasingGroup",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Approval",
+            "attributes": [
+                {
+                    "name": "Lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:317",
+            "type": "PurchaseOrder",
+            "attributes": [
+                {
+                    "name": "PurchasingGroup",
+                    "time": "2022-09-15T11:18:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:165",
+                    "qualifier": "associatedWith"
+                }
+            ]
+        },
+        {
+            "id": "quotation:165",
+            "type": "Quotation",
+            "attributes": [
+                {
+                    "name": "PurchasingGroup",
+                    "time": "2022-09-15T11:18:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Approval",
+            "time": "2022-09-15T11:18:00Z",
+            "attributes": [
+                {
+                    "name": "Lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:317",
+                    "qualifier": "approved"
+                }
+            ]
+        }
+    ]
+}

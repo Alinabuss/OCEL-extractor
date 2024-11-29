@@ -1,0 +1,310 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "position",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Interview",
+            "attributes": [
+                {
+                    "name": "manager",
+                    "type": "string"
+                },
+                {
+                    "name": "outcome",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Reference Check",
+            "attributes": [
+                {
+                    "name": "involvedRecruiters",
+                    "type": "array"
+                }
+            ]
+        },
+        {
+            "name": "Rejection",
+            "attributes": [
+                {
+                    "name": "reason",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Ray Taylor",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-03T15:40:47Z",
+                    "value": "Ray Taylor"
+                }
+            ]
+        },
+        {
+            "id": "Sonia Smith",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-04T06:42:59Z",
+                    "value": "Sonia Smith"
+                }
+            ]
+        },
+        {
+            "id": "Application[770047]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2019-07-03T15:40:47Z",
+                    "value": "770047"
+                },
+                {
+                    "name": "position",
+                    "time": "2019-07-03T15:40:47Z",
+                    "value": "Consultant"
+                }
+            ]
+        },
+        {
+            "id": "Application[770124]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2019-07-04T06:42:59Z",
+                    "value": "770124"
+                }
+            ]
+        },
+        {
+            "id": "Application[770129]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2019-07-03T16:24:14Z",
+                    "value": "770129"
+                }
+            ]
+        },
+        {
+            "id": "Application[770150]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2019-07-04T10:00:08Z",
+                    "value": "770150"
+                }
+            ]
+        },
+        {
+            "id": "Jana Keane",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-03T15:40:47Z",
+                    "value": "Jana Keane"
+                }
+            ]
+        },
+        {
+            "id": "Bastian Nominacher",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-03T15:40:47Z",
+                    "value": "Bastian Nominacher"
+                }
+            ]
+        },
+        {
+            "id": "Simon Meister",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-03T16:24:14Z",
+                    "value": "Simon Meister"
+                }
+            ]
+        },
+        {
+            "id": "Simon Kershaw",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-04T10:00:08Z",
+                    "value": "Simon Kershaw"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Interview",
+            "time": "2019-07-03T15:40:47Z",
+            "attributes": [
+                {
+                    "name": "manager",
+                    "value": "Bastian Nominacher"
+                },
+                {
+                    "name": "outcome",
+                    "value": "conducted"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Ray Taylor",
+                    "qualifier": "applicant"
+                },
+                {
+                    "objectId": "Application[770047]",
+                    "qualifier": "relatedTo"
+                },
+                {
+                    "objectId": "Jana Keane",
+                    "qualifier": "recruiter"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Reference Check",
+            "time": "2019-07-03T16:24:14Z",
+            "attributes": [
+                {
+                    "name": "involvedRecruiters",
+                    "value": [
+                        "Jana Keane",
+                        "Simon Meister"
+                    ]
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770129]",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Rejection",
+            "time": "2019-07-04T06:42:59Z",
+            "attributes": [
+                {
+                    "name": "reason",
+                    "value": "sent"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Sonia Smith",
+                    "qualifier": "applicant"
+                },
+                {
+                    "objectId": "Application[770124]",
+                    "qualifier": "relatedTo"
+                },
+                {
+                    "objectId": "Jana Keane",
+                    "qualifier": "recruiter"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Reference Check",
+            "time": "2019-07-04T10:00:08Z",
+            "attributes": [
+                {
+                    "name": "involvedRecruiters",
+                    "value": [
+                        "Jana Keane",
+                        "Simon Kershaw"
+                    ]
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770150]",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "Rejection",
+            "time": "2019-07-04T14:25:13Z",
+            "attributes": [
+                {
+                    "name": "reason",
+                    "value": "sent"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Ray Taylor",
+                    "qualifier": "applicant"
+                },
+                {
+                    "objectId": "Application[770047]",
+                    "qualifier": "relatedTo"
+                },
+                {
+                    "objectId": "Jana Keane",
+                    "qualifier": "recruiter"
+                }
+            ]
+        }
+    ]
+}

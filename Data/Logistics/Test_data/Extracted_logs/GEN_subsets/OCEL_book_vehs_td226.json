@@ -1,0 +1,112 @@
+{
+    "objectTypes": [
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "containers",
+                    "type": "number"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "vehicle_ID",
+                    "type": "string"
+                },
+                {
+                    "name": "document_ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh56",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-12-08T11:00:00Z",
+                    "value": "vh56"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td226",
+                    "qualifier": "regular_vehicle"
+                }
+            ]
+        },
+        {
+            "id": "td226",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-11-13T10:40:22Z",
+                    "value": "td226"
+                },
+                {
+                    "name": "containers",
+                    "time": "2023-11-13T10:40:22Z",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2023-11-13T10:40:22Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-11-13T10:40:22Z"
+                },
+                {
+                    "name": "vehicle_ID",
+                    "value": "vh56"
+                },
+                {
+                    "name": "document_ID",
+                    "value": "td226"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh56",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "td226",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

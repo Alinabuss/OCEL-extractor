@@ -1,0 +1,112 @@
+{
+    "objectTypes": [
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "item_pick",
+            "attributes": [
+                {
+                    "name": "employee_name",
+                    "type": "string"
+                },
+                {
+                    "name": "product_name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Echo Show 5",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-05-08T15:29:15Z",
+                    "value": "89.99"
+                }
+            ]
+        },
+        {
+            "id": "i-880425",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-05-08T15:29:15Z",
+                    "value": "89.99"
+                }
+            ]
+        },
+        {
+            "id": "Christopher Schwanen",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "role",
+                    "time": "2023-05-08T15:29:15Z",
+                    "value": "warehousing"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "item_pick",
+            "time": "2023-05-08T15:29:15Z",
+            "attributes": [
+                {
+                    "name": "employee_name",
+                    "value": "Christopher Schwanen"
+                },
+                {
+                    "name": "product_name",
+                    "value": "Echo Show 5"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-880425",
+                    "qualifier": "picked_item"
+                },
+                {
+                    "objectId": "Echo Show 5",
+                    "qualifier": "associated_product"
+                },
+                {
+                    "objectId": "Christopher Schwanen",
+                    "qualifier": "employee_involved"
+                }
+            ]
+        }
+    ]
+}

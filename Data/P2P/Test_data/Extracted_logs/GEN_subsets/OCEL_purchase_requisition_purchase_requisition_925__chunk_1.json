@@ -1,0 +1,101 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "department",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "material",
+            "attributes": [
+                {
+                    "name": "net_price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create_requisition",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_requisition:925:pr_trigger_925",
+            "type": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "department",
+                    "time": "2024-09-30T07:07:00Z",
+                    "value": "Manufacturing Department"
+                },
+                {
+                    "name": "status",
+                    "time": "2024-09-30T07:07:00Z",
+                    "value": "complete"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2024-09-30T07:07:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "material:2291",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "material:2291",
+            "type": "material",
+            "attributes": [
+                {
+                    "name": "net_price",
+                    "time": "2024-09-30T07:07:00Z",
+                    "value": "1050.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create_requisition",
+            "time": "2024-09-30T07:07:00Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:925:pr_trigger_925",
+                    "qualifier": "involved"
+                }
+            ]
+        }
+    ]
+}

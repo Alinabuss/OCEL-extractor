@@ -1,0 +1,105 @@
+{
+  "objectTypes": [
+    {
+      "name": "items",
+      "attributes": [
+        {
+          "name": "price",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "orders",
+      "attributes": [
+        {
+          "name": "price",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "products",
+      "attributes": [
+        {
+          "name": "price",
+          "type": "float"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "pay order",
+      "attributes": []
+    }
+  ],
+  "objects": [
+    {
+      "id": "o-990324",
+      "type": "orders",
+      "attributes": [
+        {
+          "name": "price",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 47.27
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "i-881304",
+          "qualifier": "comprises"
+        }
+      ]
+    },
+    {
+      "id": "i-881304",
+      "type": "items",
+      "attributes": [
+        {
+          "name": "price",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 42.27
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Fire Stick",
+          "qualifier": "is a"
+        }
+      ]
+    },
+    {
+      "id": "Fire Stick",
+      "type": "products",
+      "attributes": [
+        {
+          "name": "price",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 39.99
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "pay_o-990324",
+      "type": "pay order",
+      "time": "2023-06-16T14:44:25Z",
+      "relationships": [
+        {
+          "objectId": "i-881304",
+          "qualifier": "item"
+        },
+        {
+          "objectId": "o-990324",
+          "qualifier": "order"
+        },
+        {
+          "objectId": "Fire Stick",
+          "qualifier": "product"
+        }
+      ]
+    }
+  ]
+}

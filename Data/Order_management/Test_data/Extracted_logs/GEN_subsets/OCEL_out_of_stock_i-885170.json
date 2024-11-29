@@ -1,0 +1,133 @@
+{
+    "objectTypes": [
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "product_name",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Report Out of Stock",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Nina Graves",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-11-28T13:35:36Z",
+                    "value": "Nina Graves"
+                },
+                {
+                    "name": "department",
+                    "time": "2023-11-28T13:35:36Z",
+                    "value": "Warehousing"
+                }
+            ]
+        },
+        {
+            "id": "i-885170",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "2023-11-28T13:35:36Z",
+                    "value": "i-885170"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-11-28T13:35:36Z",
+                    "value": "109.76"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Echo",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": "Echo",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "product_name",
+                    "time": "2023-11-28T13:35:36Z",
+                    "value": "Echo"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-11-28T13:35:36Z",
+                    "value": "99.99"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Report Out of Stock",
+            "time": "2023-11-28T13:35:36Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-11-28T13:35:36Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Nina Graves",
+                    "qualifier": "reported_by"
+                },
+                {
+                    "objectId": "i-885170",
+                    "qualifier": "item_reported"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,242 @@
+{
+    "objectTypes": [
+        {
+            "name": "player",
+            "attributes": [
+                {
+                    "name": "playerID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "match",
+            "attributes": [
+                {
+                    "name": "matchID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "session",
+            "attributes": [
+                {
+                    "name": "sessionID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "farm",
+            "attributes": [
+                {
+                    "name": "farmID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "villager",
+            "attributes": [
+                {
+                    "name": "villagerID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "match_started",
+            "attributes": [
+                {
+                    "name": "matchID",
+                    "type": "string"
+                },
+                {
+                    "name": "time",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "farm_construction_initiated",
+            "attributes": [
+                {
+                    "name": "farmID",
+                    "type": "string"
+                },
+                {
+                    "name": "time",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "farm_construction_completed",
+            "attributes": [
+                {
+                    "name": "farmID",
+                    "type": "string"
+                },
+                {
+                    "name": "time",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "P2199669",
+            "type": "player",
+            "attributes": [
+                {
+                    "name": "playerID",
+                    "time": "2023-07-31T00:29:18Z",
+                    "value": "P2199669"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "M250230427",
+            "type": "match",
+            "attributes": [
+                {
+                    "name": "matchID",
+                    "time": "2023-07-31T00:29:18Z",
+                    "value": "M250230427"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "S250230427_2199669",
+            "type": "session",
+            "attributes": [
+                {
+                    "name": "sessionID",
+                    "time": "2023-07-31T00:29:18Z",
+                    "value": "S250230427_2199669"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Farm_M250230427_17",
+            "type": "farm",
+            "attributes": [
+                {
+                    "name": "farmID",
+                    "time": "2023-07-31T00:29:18Z",
+                    "value": "Farm_M250230427_17"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Villager_M250230427_46",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "Villager_M250230427_46",
+            "type": "villager",
+            "attributes": [
+                {
+                    "name": "villagerID",
+                    "time": "2023-07-31T00:29:18Z",
+                    "value": "Villager_M250230427_46"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "match_started",
+            "time": "2023-07-31T00:29:18Z",
+            "attributes": [
+                {
+                    "name": "matchID",
+                    "value": "M250230427"
+                },
+                {
+                    "name": "time",
+                    "value": "2023-07-31T00:29:18Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "part_of"
+                },
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "part_of"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "farm_construction_initiated",
+            "time": "2023-07-31T00:29:18Z",
+            "attributes": [
+                {
+                    "name": "farmID",
+                    "value": "Farm_M250230427_17"
+                },
+                {
+                    "name": "time",
+                    "value": "2023-07-31T00:29:18Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "P2199669",
+                    "qualifier": "initiated_by"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "part_of"
+                },
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "part_of"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "farm_construction_completed",
+            "time": "2023-07-31T00:29:33Z",
+            "attributes": [
+                {
+                    "name": "farmID",
+                    "value": "Farm_M250230427_17"
+                },
+                {
+                    "name": "time",
+                    "value": "2023-07-31T00:29:33Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Villager_M250230427_46",
+                    "qualifier": "completed_by"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "part_of"
+                },
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "part_of"
+                }
+            ]
+        }
+    ]
+}

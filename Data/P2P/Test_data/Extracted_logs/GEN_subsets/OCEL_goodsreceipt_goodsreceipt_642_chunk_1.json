@@ -1,0 +1,110 @@
+{
+    "objectTypes": [
+        {
+            "name": "InvoiceReceipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "CreditAmount",
+                    "type": "float"
+                },
+                {
+                    "name": "LifecycleStatus",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "GoodsReceipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "MovementType",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "FinalizeInvoiceReceipt",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt[639]",
+            "type": "InvoiceReceipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-03-03T22:28:00Z",
+                    "value": "invoice receipt[639]"
+                },
+                {
+                    "name": "CreditAmount",
+                    "time": "2023-03-03T22:28:00Z",
+                    "value": "23700.00"
+                },
+                {
+                    "name": "LifecycleStatus",
+                    "time": "2023-03-03T22:28:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt[642]",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt[642]",
+            "type": "GoodsReceipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-03-03T22:28:00Z",
+                    "value": "goods receipt[642]"
+                },
+                {
+                    "name": "MovementType",
+                    "time": "2023-03-03T22:28:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "FinalizeInvoiceReceipt",
+            "time": "2023-03-03T22:28:00Z",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "value": "2023-03-03T22:28:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt[639]",
+                    "qualifier": "finalized"
+                }
+            ]
+        }
+    ]
+}

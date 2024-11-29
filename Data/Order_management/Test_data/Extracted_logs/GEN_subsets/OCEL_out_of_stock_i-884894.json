@@ -1,0 +1,104 @@
+{
+    "objectTypes": [
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "decimal"
+                }
+            ]
+        },
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "ReportOutOfStock",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "reportedPrice",
+                    "type": "decimal"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Kindle Paperwhite",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "value": "Kindle Paperwhite"
+                },
+                {
+                    "name": "price",
+                    "value": "129.00"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Leah Tacke",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "value": "Leah Tacke"
+                },
+                {
+                    "name": "role",
+                    "value": "warehousing"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "ReportOutOfStock",
+            "time": "2023-11-16T15:36:11Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-11-16T15:36:11Z"
+                },
+                {
+                    "name": "reportedPrice",
+                    "value": "141.61"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Kindle Paperwhite",
+                    "qualifier": "reported product"
+                },
+                {
+                    "objectId": "Leah Tacke",
+                    "qualifier": "reporter"
+                }
+            ]
+        }
+    ]
+}

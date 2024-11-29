@@ -1,0 +1,115 @@
+{
+    "objectTypes": [
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "December",
+                    "type": "string"
+                },
+                {
+                    "name": "order",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "December",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "report",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Quotation:260",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "December",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "December"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "quotation:260",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "order",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Purchasing Group 004"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:437",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "December",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "December"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:260",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 667,
+            "type": "report",
+            "time": "2022-12-23T15:32:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Procurement Department"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:260",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "Quotation:260",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:437",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

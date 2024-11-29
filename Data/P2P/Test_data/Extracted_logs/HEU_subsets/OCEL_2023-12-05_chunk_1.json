@@ -1,0 +1,152 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "way match two",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "way match two",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase group",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "conduct two - way match",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "approve purchase order",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:1220",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "way match two",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:1222",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "way match two",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:1044",
+            "type": "purchase order",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation:605",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "quotation:605",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1308,
+            "type": "conduct two - way match",
+            "time": "2023-12-05T08:36:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Account Department"
+                },
+                {
+                    "name": "resource",
+                    "value": "type movement"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1220",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:1222",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1309,
+            "type": "approve purchase order",
+            "time": "2023-12-05T20:55:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "quotation"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1044",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "quotation:605",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

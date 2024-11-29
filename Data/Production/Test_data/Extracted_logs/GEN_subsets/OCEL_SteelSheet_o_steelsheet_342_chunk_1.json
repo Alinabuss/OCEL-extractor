@@ -1,0 +1,109 @@
+{
+    "objectTypes": [
+        {
+            "name": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Workstation",
+            "attributes": []
+        },
+        {
+            "name": "Machine",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "HeatingOperation",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "integer"
+                },
+                {
+                    "name": "CO2_emissions",
+                    "type": "float"
+                },
+                {
+                    "name": "energy_input_electricity",
+                    "type": "float"
+                },
+                {
+                    "name": "energy_input_gas",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "SteelSheet[342]",
+            "type": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-03T08:36:25Z",
+                    "value": "0.02152"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Workstation[1]",
+            "type": "Workstation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Oven[1]",
+            "type": "Machine",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "HeatingOperation",
+            "time": "2023-04-03T08:36:25Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "900"
+                },
+                {
+                    "name": "CO2_emissions",
+                    "value": "0.0138019093344"
+                },
+                {
+                    "name": "energy_input_electricity",
+                    "value": "0.02"
+                },
+                {
+                    "name": "energy_input_gas",
+                    "value": "0.49392"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelSheet[342]",
+                    "qualifier": "affected"
+                },
+                {
+                    "objectId": "Workstation[1]",
+                    "qualifier": "conducted_at"
+                },
+                {
+                    "objectId": "Oven[1]",
+                    "qualifier": "using"
+                }
+            ]
+        }
+    ]
+}

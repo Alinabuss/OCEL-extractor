@@ -1,0 +1,100 @@
+{
+    "objectTypes": [
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Goods Receipt Created",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "type": "string"
+                },
+                {
+                    "name": "Completed By",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Goods Receipt[269]",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-08-17T04:43:00Z",
+                    "value": "269"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Purchase Order[220]",
+                    "qualifier": "linked to"
+                }
+            ]
+        },
+        {
+            "id": "Purchase Order[220]",
+            "type": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-08-17T04:43:00Z",
+                    "value": "220"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "2022-08-17T04:43:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Goods Receipt Created",
+            "time": "2022-08-17T04:43:00Z",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "value": "101"
+                },
+                {
+                    "name": "Completed By",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Goods Receipt[269]",
+                    "qualifier": "creates"
+                }
+            ]
+        }
+    ]
+}

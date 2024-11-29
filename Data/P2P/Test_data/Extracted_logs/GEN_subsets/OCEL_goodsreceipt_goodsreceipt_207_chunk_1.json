@@ -1,0 +1,82 @@
+{
+    "objectTypes": [
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "int"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Create Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "invoice ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt[207]",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2022-07-26T03:28:00Z",
+                    "value": "185600.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt[207]",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt[207]",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2022-07-26T03:28:00Z",
+                    "value": "101"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Create Invoice Receipt",
+            "time": "2022-07-26T03:28:00Z",
+            "attributes": [
+                {
+                    "name": "invoice ID",
+                    "value": "invoice receipt[207]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt[207]",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

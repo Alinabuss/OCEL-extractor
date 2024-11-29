@@ -1,0 +1,121 @@
+{
+    "objectTypes": [
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "departure_time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "TD274",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-12-20T09:50:03Z",
+                    "value": "TD274"
+                },
+                {
+                    "name": "amount",
+                    "time": "2023-12-20T09:50:03Z",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "VH60",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-12-20T09:50:03Z",
+                    "value": "VH60"
+                },
+                {
+                    "name": "departure_time",
+                    "time": "2023-12-22T11:00:00Z",
+                    "value": "2023-12-22T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "VH61",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-12-20T09:50:03Z",
+                    "value": "VH61"
+                },
+                {
+                    "name": "departure_time",
+                    "time": "2023-12-26T11:00:00Z",
+                    "value": "2023-12-26T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2023-12-20T09:50:03Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-12-20T09:50:03Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "TD274",
+                    "qualifier": "associated_with"
+                },
+                {
+                    "objectId": "VH60",
+                    "qualifier": "booked"
+                },
+                {
+                    "objectId": "VH61",
+                    "qualifier": "booked"
+                }
+            ]
+        }
+    ]
+}

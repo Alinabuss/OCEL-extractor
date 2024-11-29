@@ -1,0 +1,164 @@
+{
+    "objectTypes": [
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "type": "string"
+                },
+                {
+                    "name": "scheduled_departure",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "type": "string"
+                },
+                {
+                    "name": "containers",
+                    "type": "integer"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "vehicle_booking",
+            "attributes": [
+                {
+                    "name": "booking_time",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "document_association",
+            "attributes": [
+                {
+                    "name": "association_time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh126",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "time": "2024-07-25T06:22:33Z",
+                    "value": "vh126"
+                },
+                {
+                    "name": "scheduled_departure",
+                    "time": "2024-07-25T06:22:33Z",
+                    "value": "2024-08-09T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td562",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "time": "2024-07-25T06:22:33Z",
+                    "value": "td562"
+                },
+                {
+                    "name": "containers",
+                    "time": "2024-07-25T06:22:33Z",
+                    "value": 2
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "VH125",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "time": "2024-07-25T14:02:05Z",
+                    "value": "VH125"
+                },
+                {
+                    "name": "scheduled_departure",
+                    "time": "2024-07-25T14:02:05Z",
+                    "value": "2024-08-06T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "TD563",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "time": "2024-07-25T14:02:05Z",
+                    "value": "TD563"
+                },
+                {
+                    "name": "containers",
+                    "time": "2024-07-25T14:02:05Z",
+                    "value": 2
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "vehicle_booking",
+            "time": "2024-07-25T06:22:33Z",
+            "attributes": [
+                {
+                    "name": "booking_time",
+                    "value": "2024-07-25T06:22:33Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td562",
+                    "qualifier": "associated_with"
+                },
+                {
+                    "objectId": "vh126",
+                    "qualifier": "booked"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "document_association",
+            "time": "2024-07-25T14:02:05Z",
+            "attributes": [
+                {
+                    "name": "association_time",
+                    "value": "2024-07-25T14:02:05Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "TD563",
+                    "qualifier": "associated_with"
+                },
+                {
+                    "objectId": "VH125",
+                    "qualifier": "designated_for"
+                }
+            ]
+        }
+    ]
+}

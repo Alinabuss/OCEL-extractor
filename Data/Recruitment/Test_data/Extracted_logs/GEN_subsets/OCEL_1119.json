@@ -1,0 +1,117 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "vacancy_id",
+                    "type": "string"
+                },
+                {
+                    "name": "job_title",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Application Submitted",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "timestamp"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Lisa Park",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-06-20T20:32:16Z",
+                    "value": "Lisa Park"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770286]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "time": "2019-06-20T20:32:16Z",
+                    "value": "Application[770286]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lisa Park",
+                    "qualifier": "submitted by"
+                }
+            ]
+        },
+        {
+            "id": "Vacancy[550034]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "vacancy_id",
+                    "time": "2019-06-20T20:32:16Z",
+                    "value": "Vacancy[550034]"
+                },
+                {
+                    "name": "job_title",
+                    "time": "2019-06-20T20:32:16Z",
+                    "value": "Programmer"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Application Submitted",
+            "time": "2019-06-20T20:32:16Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2019-06-20T20:32:16Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770286]",
+                    "qualifier": "submitted application"
+                },
+                {
+                    "objectId": "Vacancy[550034]",
+                    "qualifier": "for vacancy"
+                }
+            ]
+        }
+    ]
+}

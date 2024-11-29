@@ -1,0 +1,106 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "lifecycle_status",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": []
+        },
+        {
+            "name": "purchasing_group",
+            "attributes": [
+                {
+                    "name": "identifier",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "purchase_order_created",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:348",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "lifecycle_status",
+                    "time": "2022-10-03T09:18:00Z",
+                    "value": "complete"
+                },
+                {
+                    "name": "department",
+                    "time": "2022-10-03T09:18:00Z",
+                    "value": "Procurement Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:205",
+                    "qualifier": "linked_to"
+                },
+                {
+                    "objectId": "005",
+                    "qualifier": "part_of"
+                }
+            ]
+        },
+        {
+            "id": "quotation:205",
+            "type": "quotation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "005",
+            "type": "purchasing_group",
+            "attributes": [
+                {
+                    "name": "identifier",
+                    "time": "2022-10-03T09:18:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "purchase_order_created",
+            "time": "2022-10-03T09:18:00Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2022-10-03T09:18:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:348",
+                    "qualifier": "affects"
+                }
+            ]
+        }
+    ]
+}

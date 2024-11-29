@@ -1,0 +1,113 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "perform two-way match",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:454",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2022-11-04T03:58:00Z",
+                    "value": "43400.00"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:455",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:455",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2022-11-04T03:58:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create invoice receipt",
+            "time": "2022-11-04T03:58:00Z",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "value": "43400.00"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:454",
+                    "qualifier": "created"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "perform two-way match",
+            "time": "2022-11-04T08:10:00Z",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "value": "43400.00"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:454",
+                    "qualifier": "matched"
+                },
+                {
+                    "objectId": "goods receipt:455",
+                    "qualifier": "involved in"
+                }
+            ]
+        }
+    ]
+}

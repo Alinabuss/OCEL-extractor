@@ -1,0 +1,107 @@
+{
+    "objectTypes": [
+        {
+            "name": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "type",
+                    "type": "string"
+                },
+                {
+                    "name": "departure_time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "DocumentCreated",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "VehiclesBooked",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "td253",
+            "type": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "time": "2023-12-04T07:07:02Z",
+                    "value": "3.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh59",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "type",
+                    "time": "2023-12-04T07:07:02Z",
+                    "value": "regular"
+                },
+                {
+                    "name": "departure_time",
+                    "time": "2023-12-19T11:00:00Z",
+                    "value": "2023-12-19T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "DocumentCreated",
+            "time": "2023-12-04T07:07:02Z",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "value": "3.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td253",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "VehiclesBooked",
+            "time": "2023-12-04T07:07:02Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "td253",
+                    "qualifier": "associated_with"
+                },
+                {
+                    "objectId": "vh59",
+                    "qualifier": "booked_for"
+                }
+            ]
+        }
+    ]
+}

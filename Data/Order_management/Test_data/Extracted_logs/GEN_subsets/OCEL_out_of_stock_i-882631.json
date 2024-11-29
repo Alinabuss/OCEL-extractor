@@ -1,0 +1,152 @@
+{
+    "objectTypes": [
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "report_out_of_stock",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "message",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "i-882631",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-08-15T14:00:48Z",
+                    "value": "i-882631"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-08-15T14:00:48Z",
+                    "value": "756.32"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "iPhone X",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "iPhone X",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-08-15T14:00:48Z",
+                    "value": "iPhone X"
+                },
+                {
+                    "name": "name",
+                    "time": "2023-08-15T14:00:48Z",
+                    "value": "iPhone X"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-08-15T14:00:48Z",
+                    "value": "699.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Marco Pegoraro",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-08-15T14:00:48Z",
+                    "value": "Marco Pegoraro"
+                },
+                {
+                    "name": "department",
+                    "time": "2023-08-15T14:00:48Z",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "report_out_of_stock",
+            "time": "2023-08-15T14:00:48Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-08-15T14:00:48Z"
+                },
+                {
+                    "name": "message",
+                    "value": "Marco Pegoraro reported that item i-882631 went out of stock."
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-882631",
+                    "qualifier": "reporting_item"
+                },
+                {
+                    "objectId": "Marco Pegoraro",
+                    "qualifier": "reported_by"
+                }
+            ]
+        }
+    ]
+}

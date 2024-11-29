@@ -1,0 +1,204 @@
+{
+    "objectTypes": [
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Position",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Manager",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Interview",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "Outcome",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Rejection",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "Reason",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Application[770051]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-05T07:09:24Z",
+                    "value": "770051"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Applicant[Toon Wang]",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-05T07:09:24Z",
+                    "value": "Toon Wang"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Recruiter[Dionne Kershaw]",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-05T07:09:24Z",
+                    "value": "Dionne Kershaw"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Vacancy[550001]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-05T07:09:24Z",
+                    "value": "550001"
+                },
+                {
+                    "name": "Position",
+                    "time": "2019-07-05T07:09:24Z",
+                    "value": "Manager"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Manager[Vaishnavi Sashikanth]",
+            "type": "Manager",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-05T07:09:24Z",
+                    "value": "Vaishnavi Sashikanth"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Interview",
+            "time": "2019-07-05T07:09:24Z",
+            "attributes": [
+                {
+                    "name": "Outcome",
+                    "value": "Interview conducted"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770051]",
+                    "qualifier": "subject"
+                },
+                {
+                    "objectId": "Applicant[Toon Wang]",
+                    "qualifier": "submitted by"
+                },
+                {
+                    "objectId": "Recruiter[Dionne Kershaw]",
+                    "qualifier": "conducted by"
+                },
+                {
+                    "objectId": "Vacancy[550001]",
+                    "qualifier": "associated with"
+                },
+                {
+                    "objectId": "Manager[Vaishnavi Sashikanth]",
+                    "qualifier": "overseen by"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Rejection",
+            "time": "2019-07-05T07:15:39Z",
+            "attributes": [
+                {
+                    "name": "Reason",
+                    "value": "Application rejected"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770051]",
+                    "qualifier": "subject"
+                },
+                {
+                    "objectId": "Recruiter[Dionne Kershaw]",
+                    "qualifier": "communicated by"
+                }
+            ]
+        }
+    ]
+}

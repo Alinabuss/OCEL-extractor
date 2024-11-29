@@ -1,0 +1,126 @@
+{
+    "objectTypes": [
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Credit Amount",
+                    "type": "decimal"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Movement Type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Department",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Finalize Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "type": "timestamp"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt[628]",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-02-28T20:09:00Z",
+                    "value": "invoice receipt[628]"
+                },
+                {
+                    "name": "Credit Amount",
+                    "time": "2023-02-28T20:09:00Z",
+                    "value": "154000.00"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt[626]",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt[626]",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-02-28T20:09:00Z",
+                    "value": "goods receipt[626]"
+                },
+                {
+                    "name": "Movement Type",
+                    "time": "2023-02-28T20:09:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Finance/Account Department",
+            "type": "Department",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2023-02-28T20:09:00Z",
+                    "value": "Finance/Account Department"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Finalize Invoice Receipt",
+            "time": "2023-02-28T20:09:00Z",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "value": "2023-02-28T20:09:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt[628]",
+                    "qualifier": "finalized"
+                },
+                {
+                    "objectId": "Finance/Account Department",
+                    "qualifier": "performed by"
+                }
+            ]
+        }
+    ]
+}

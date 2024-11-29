@@ -1,0 +1,100 @@
+{
+    "objectTypes": [
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "December",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "group purchasing",
+            "attributes": [
+                {
+                    "name": "group part of purchase",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create request for quotation",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "quotation:254",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "December",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "December"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "requisition purchase_requisition:257 : pr_trigger_257",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "requisition purchase_requisition:257 : pr_trigger_257",
+            "type": "group purchasing",
+            "attributes": [
+                {
+                    "name": "group part of purchase",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "001"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:254",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1614,
+            "type": "create request for quotation",
+            "time": "2022-12-14T15:32:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Procurement Department"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "requisition purchase_requisition:257 : pr_trigger_257",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "quotation:254",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,139 @@
+{
+    "objectTypes": [
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "departure_time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "transport_event",
+            "attributes": [
+                {
+                    "name": "event_type",
+                    "type": "string"
+                },
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td51",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "containers",
+                    "time": "2023-07-03T09:10:40Z",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td52",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "containers",
+                    "time": "2023-07-03T09:52:56Z",
+                    "value": "3.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh12",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "departure_time",
+                    "time": "2023-07-07T11:00:00Z",
+                    "value": "2023-07-07T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh15",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "departure_time",
+                    "time": "2023-07-18T11:00:00Z",
+                    "value": "2023-07-18T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "transport_event",
+            "time": "2023-07-03T09:10:40Z",
+            "attributes": [
+                {
+                    "name": "event_type",
+                    "value": "document_pairing"
+                },
+                {
+                    "name": "timestamp",
+                    "value": "2023-07-03T09:10:40Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td51",
+                    "qualifier": "paired_with"
+                },
+                {
+                    "objectId": "vh12",
+                    "qualifier": "paired_with"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "transport_event",
+            "time": "2023-07-03T09:52:56Z",
+            "attributes": [
+                {
+                    "name": "event_type",
+                    "value": "vehicle_booking"
+                },
+                {
+                    "name": "timestamp",
+                    "value": "2023-07-03T09:52:56Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td52",
+                    "qualifier": "booked_with"
+                },
+                {
+                    "objectId": "vh15",
+                    "qualifier": "booked_with"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,101 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "movement_type",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "goods receipt completion",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1203",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-11-21T21:09:00Z",
+                    "value": "1203"
+                },
+                {
+                    "name": "movement_type",
+                    "time": "2023-11-21T21:09:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1003",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:1003",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-11-21T21:09:00Z",
+                    "value": "1003"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2023-11-21T21:09:00Z",
+                    "value": "001"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "goods receipt completion",
+            "time": "2023-11-21T21:09:00Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-11-21T21:09:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1203",
+                    "qualifier": "completed"
+                }
+            ]
+        }
+    ]
+}

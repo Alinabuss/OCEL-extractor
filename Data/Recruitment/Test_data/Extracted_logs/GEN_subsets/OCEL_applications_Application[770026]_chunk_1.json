@@ -1,0 +1,269 @@
+{
+    "objectTypes": [
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Manager",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Consultation",
+            "attributes": [
+                {
+                    "name": "recruiter",
+                    "type": "string"
+                },
+                {
+                    "name": "manager",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Invitation",
+            "attributes": [
+                {
+                    "name": "recruiters",
+                    "type": "list"
+                },
+                {
+                    "name": "applicant",
+                    "type": "string"
+                },
+                {
+                    "name": "position",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Interview",
+            "attributes": [
+                {
+                    "name": "interviewer",
+                    "type": "string"
+                },
+                {
+                    "name": "applicant",
+                    "type": "string"
+                },
+                {
+                    "name": "vacancy",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Application[770026]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2019-06-30T06:51:10Z",
+                    "value": "770026"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Vacancy[550018]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2019-07-03T15:03:42Z",
+                    "value": "550018"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Applicant[Andre_Johnson]",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-04T09:08:35Z",
+                    "value": "Andre Johnson"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Recruiter[Ed_Keane]",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-06-30T06:51:10Z",
+                    "value": "Ed Keane"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Recruiter[Jana_Meister]",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-03T15:03:42Z",
+                    "value": "Jana Meister"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Recruiter[Simon_Hense]",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-03T15:03:42Z",
+                    "value": "Simon Hense"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Manager[Ariel_Bardin]",
+            "type": "Manager",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-06-30T06:51:10Z",
+                    "value": "Ariel Bardin"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Consultation",
+            "time": "2019-06-30T06:51:10Z",
+            "attributes": [
+                {
+                    "name": "recruiter",
+                    "value": "Ed Keane"
+                },
+                {
+                    "name": "manager",
+                    "value": "Ariel Bardin"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770026]",
+                    "qualifier": "related"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Invitation",
+            "time": "2019-07-03T15:03:42Z",
+            "attributes": [
+                {
+                    "name": "recruiters",
+                    "value": "[Jana Meister, Simon Hense]"
+                },
+                {
+                    "name": "applicant",
+                    "value": "Andre Johnson"
+                },
+                {
+                    "name": "position",
+                    "value": "Programmer"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770026]",
+                    "qualifier": "related"
+                },
+                {
+                    "objectId": "Vacancy[550018]",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Interview",
+            "time": "2019-07-04T09:08:35Z",
+            "attributes": [
+                {
+                    "name": "interviewer",
+                    "value": "Ed Keane"
+                },
+                {
+                    "name": "applicant",
+                    "value": "Andre Johnson"
+                },
+                {
+                    "name": "vacancy",
+                    "value": "Programmer"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770026]",
+                    "qualifier": "related"
+                },
+                {
+                    "objectId": "Vacancy[550018]",
+                    "qualifier": "associated_with"
+                },
+                {
+                    "objectId": "Manager[Ariel_Bardin]",
+                    "qualifier": "oversight"
+                }
+            ]
+        }
+    ]
+}

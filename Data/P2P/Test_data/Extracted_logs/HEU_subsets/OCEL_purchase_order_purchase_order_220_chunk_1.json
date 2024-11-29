@@ -1,0 +1,174 @@
+{
+    "objectTypes": [
+        {
+            "name": "creation",
+            "attributes": []
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "purchase group",
+                    "type": "float"
+                },
+                {
+                    "name": "movement type",
+                    "type": "float"
+                },
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Report",
+            "attributes": []
+        },
+        {
+            "name": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "finalize creation of a goods receipt",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "create goods receipt",
+            "attributes": []
+        },
+        {
+            "name": "follow",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "Purchase Order:220",
+            "type": "Report",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "order purchase_order:220",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "order purchase_order:220",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "purchase group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "002"
+                },
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase order purchase_order:220",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "goods_receipt:267",
+            "type": "creation",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "purchase order purchase_order:220",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase order purchase_order:220",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods_receipt:269",
+            "type": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1338,
+            "type": "finalize creation of a goods receipt",
+            "time": "2022-08-16T08:12:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Department Warehouse"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase order purchase_order:220",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods_receipt:267",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1339,
+            "type": "create goods receipt",
+            "time": "2022-08-17T04:43:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "goods_receipt:269",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1340,
+            "type": "follow",
+            "time": "2022-08-17T04:43:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "goods_receipt:269",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,202 @@
+{
+    "objectTypes": [
+        {
+            "name": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Association",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Booking",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "departure",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td74",
+            "type": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-07-20T07:49:23Z",
+                    "value": "td74"
+                },
+                {
+                    "name": "containers",
+                    "time": "2023-07-20T07:49:23Z",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh21",
+                    "qualifier": "associatedWith"
+                }
+            ]
+        },
+        {
+            "id": "td76",
+            "type": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-07-20T13:38:00Z",
+                    "value": "td76"
+                },
+                {
+                    "name": "containers",
+                    "time": "2023-07-20T13:38:00Z",
+                    "value": "4.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh22",
+                    "qualifier": "associatedWith"
+                }
+            ]
+        },
+        {
+            "id": "td75",
+            "type": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-07-20T13:38:00Z",
+                    "value": "td75"
+                },
+                {
+                    "name": "containers",
+                    "time": "2023-07-20T13:38:00Z",
+                    "value": "3.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh21",
+                    "qualifier": "associatedWith"
+                }
+            ]
+        },
+        {
+            "id": "vh21",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-07-20T07:49:23Z",
+                    "value": "vh21"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh22",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-07-20T13:38:00Z",
+                    "value": "vh22"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Association",
+            "time": "2023-07-20T07:49:23Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "td74",
+                    "qualifier": "isAssociatedWith"
+                },
+                {
+                    "objectId": "vh21",
+                    "qualifier": "isAssociatedWith"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Booking",
+            "time": "2023-07-20T13:38:00Z",
+            "attributes": [
+                {
+                    "name": "departure",
+                    "value": "2023-08-11T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td76",
+                    "qualifier": "isBookedFor"
+                },
+                {
+                    "objectId": "vh22",
+                    "qualifier": "isBookedFor"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Booking",
+            "time": "2023-07-20T13:38:00Z",
+            "attributes": [
+                {
+                    "name": "departure",
+                    "value": "2023-08-08T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td75",
+                    "qualifier": "isBookedFor"
+                },
+                {
+                    "objectId": "vh21",
+                    "qualifier": "isBookedFor"
+                }
+            ]
+        }
+    ]
+}

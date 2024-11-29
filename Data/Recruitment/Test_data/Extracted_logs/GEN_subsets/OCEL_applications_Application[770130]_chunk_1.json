@@ -1,0 +1,210 @@
+{
+    "objectTypes": [
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Position",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Manager",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Position",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Interview Conducted",
+            "attributes": [
+                {
+                    "name": "Interviewer",
+                    "type": "string"
+                },
+                {
+                    "name": "Applicant",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application Rejection",
+            "attributes": [
+                {
+                    "name": "Recruiter",
+                    "type": "string"
+                },
+                {
+                    "name": "Applicant",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Application[770130]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-02T14:07:30Z",
+                    "value": "770130"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Vacancy[550009]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-02T14:07:30Z",
+                    "value": "550009"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Johan Schmidt",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-02T14:07:30Z",
+                    "value": "Johan Schmidt"
+                },
+                {
+                    "name": "Position",
+                    "time": "2019-07-02T14:07:30Z",
+                    "value": "Programmer"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770130]",
+                    "qualifier": "applied"
+                }
+            ]
+        },
+        {
+            "id": "Martin Klenk",
+            "type": "Manager",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-02T14:07:30Z",
+                    "value": "Martin Klenk"
+                },
+                {
+                    "name": "Position",
+                    "time": "2019-07-02T14:07:30Z",
+                    "value": "Manager"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Ed Keane",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-02T14:07:30Z",
+                    "value": "Ed Keane"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Interview Conducted",
+            "time": "2019-07-02T14:07:30Z",
+            "attributes": [
+                {
+                    "name": "Interviewer",
+                    "value": "Martin Klenk"
+                },
+                {
+                    "name": "Applicant",
+                    "value": "Johan Schmidt"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770130]",
+                    "qualifier": "related to"
+                },
+                {
+                    "objectId": "Vacancy[550009]",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Application Rejection",
+            "time": "2019-07-04T10:56:20Z",
+            "attributes": [
+                {
+                    "name": "Recruiter",
+                    "value": "Ed Keane"
+                },
+                {
+                    "name": "Applicant",
+                    "value": "Johan Schmidt"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770130]",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ]
+}

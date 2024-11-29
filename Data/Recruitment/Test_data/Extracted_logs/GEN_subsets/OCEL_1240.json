@@ -1,0 +1,108 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Rejection Sent",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "message",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Sonia Wagner",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-06-24T06:35:53Z",
+                    "value": "Sonia Wagner"
+                }
+            ]
+        },
+        {
+            "id": "Application[770063]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "time": "2019-06-24T06:35:53Z",
+                    "value": "770063"
+                }
+            ]
+        },
+        {
+            "id": "Dionne Meister",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-06-24T06:35:53Z",
+                    "value": "Dionne Meister"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Rejection Sent",
+            "time": "2019-06-24T06:35:53Z",
+            "attributes": [
+                {
+                    "name": "message",
+                    "value": "Rejection sent to Sonia Wagner regarding application ID Application[770063]."
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Sonia Wagner",
+                    "qualifier": "applicant"
+                },
+                {
+                    "objectId": "Application[770063]",
+                    "qualifier": "related_application"
+                },
+                {
+                    "objectId": "Dionne Meister",
+                    "qualifier": "recruiter"
+                }
+            ]
+        }
+    ]
+}

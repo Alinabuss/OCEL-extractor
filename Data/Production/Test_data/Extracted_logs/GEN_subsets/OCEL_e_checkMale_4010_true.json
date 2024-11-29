@@ -1,0 +1,128 @@
+{
+    "objectTypes": [
+        {
+            "name": "Worker",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Part",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Inspection",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "CO2Equivalent",
+                    "type": "float"
+                },
+                {
+                    "name": "CompressedAirUsage",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Worker[1]",
+            "type": "Worker",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "value": "Worker[1]",
+                    "time": ""
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "MalePart[4010]",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "value": "MalePart[4010]",
+                    "time": ""
+                },
+                {
+                    "name": "Type",
+                    "value": "Male",
+                    "time": ""
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Workstation[2]",
+            "type": "Workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "value": "Workstation[2]",
+                    "time": ""
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Inspection",
+            "time": "2023-04-05T14:51:13Z",
+            "attributes": [
+                {
+                    "name": "CO2Equivalent",
+                    "value": "0.0006498"
+                },
+                {
+                    "name": "CompressedAirUsage",
+                    "value": "0.01"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Worker[1]",
+                    "qualifier": "performed"
+                },
+                {
+                    "objectId": "MalePart[4010]",
+                    "qualifier": "inspected"
+                },
+                {
+                    "objectId": "Workstation[2]",
+                    "qualifier": "occurred_at"
+                }
+            ]
+        }
+    ]
+}

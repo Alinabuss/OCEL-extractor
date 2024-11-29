@@ -1,0 +1,170 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": []
+        },
+        {
+            "name": "quotation",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "create purchase order",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:1118",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2023-10-09T10:40:00Z",
+                    "value": "65100.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1116",
+                    "qualifier": "linked to"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:1116",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2023-10-09T10:40:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order[934]",
+            "type": "purchase order",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation[546]",
+                    "qualifier": "linked to"
+                }
+            ]
+        },
+        {
+            "id": "quotation[546]",
+            "type": "quotation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:1116",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2023-10-09T20:31:00Z",
+                    "value": "121000.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1112",
+                    "qualifier": "linked to"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:1112",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2023-10-09T20:31:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create invoice receipt",
+            "time": "2023-10-09T10:40:00Z",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "value": "65100.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1118",
+                    "qualifier": "created"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "create purchase order",
+            "time": "2023-10-09T18:00:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "purchase_order[934]",
+                    "qualifier": "created"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "create invoice receipt",
+            "time": "2023-10-09T20:31:00Z",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "value": "121000.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1116",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

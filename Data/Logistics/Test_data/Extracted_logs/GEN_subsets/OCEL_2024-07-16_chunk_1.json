@@ -1,0 +1,161 @@
+{
+    "objectTypes": [
+        {
+            "name": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "documentID",
+                    "type": "string"
+                },
+                {
+                    "name": "priority",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "vehicleID",
+                    "type": "string"
+                },
+                {
+                    "name": "departureDate",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Container",
+            "attributes": [
+                {
+                    "name": "containerID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "VehicleBooked",
+            "attributes": [
+                {
+                    "name": "vehicleID",
+                    "type": "string"
+                },
+                {
+                    "name": "bookingTime",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td550",
+            "type": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "documentID",
+                    "time": "",
+                    "value": "td550"
+                },
+                {
+                    "name": "priority",
+                    "time": "",
+                    "value": "high-priority"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh120",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "vehicleID",
+                    "time": "",
+                    "value": "vh120"
+                },
+                {
+                    "name": "departureDate",
+                    "time": "",
+                    "value": "2024-07-19T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td550",
+                    "qualifier": "associatedWith"
+                }
+            ]
+        },
+        {
+            "id": "vh124",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "vehicleID",
+                    "time": "",
+                    "value": "vh124"
+                },
+                {
+                    "name": "departureDate",
+                    "time": "",
+                    "value": "2024-08-02T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td550",
+                    "qualifier": "associatedWith"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "VehicleBooked",
+            "time": "2024-07-16T15:45:01Z",
+            "attributes": [
+                {
+                    "name": "vehicleID",
+                    "value": "vh120"
+                },
+                {
+                    "name": "bookingTime",
+                    "value": "2024-07-16T15:45:01Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh120",
+                    "qualifier": "bookedFor"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "VehicleBooked",
+            "time": "2024-07-16T15:45:01Z",
+            "attributes": [
+                {
+                    "name": "vehicleID",
+                    "value": "vh124"
+                },
+                {
+                    "name": "bookingTime",
+                    "value": "2024-07-16T15:45:01Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh124",
+                    "qualifier": "bookedFor"
+                }
+            ]
+        }
+    ]
+}

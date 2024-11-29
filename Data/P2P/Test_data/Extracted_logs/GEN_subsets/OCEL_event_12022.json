@@ -1,0 +1,82 @@
+{
+    "objectTypes": [
+        {
+            "name": "InvoiceReceipt",
+            "attributes": [
+                {
+                    "name": "creditAmount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "GoodsReceipt",
+            "attributes": [
+                {
+                    "name": "movementType",
+                    "type": "int"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "CreateInvoiceReceipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt[778]",
+            "type": "InvoiceReceipt",
+            "attributes": [
+                {
+                    "name": "creditAmount",
+                    "time": "2023-05-11T22:16:00Z",
+                    "value": "95000.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt[784]",
+                    "qualifier": "associatedWith"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt[784]",
+            "type": "GoodsReceipt",
+            "attributes": [
+                {
+                    "name": "movementType",
+                    "time": "2023-05-11T22:16:00Z",
+                    "value": "101"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "CreateInvoiceReceipt",
+            "time": "2023-05-11T22:16:00Z",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "value": "invoice receipt[778]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt[778]",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,132 @@
+{
+    "objectTypes": [
+        {
+            "name": "worker",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "part",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "workstation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "check",
+            "attributes": [
+                {
+                    "name": "CO2_emissions",
+                    "type": "float"
+                },
+                {
+                    "name": "compressed_air_volume",
+                    "type": "float"
+                },
+                {
+                    "name": "duration",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o_worker_1",
+            "type": "worker",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-04-04T15:44:02Z",
+                    "value": "o_worker_1"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_malepart_2604",
+            "type": "part",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-04-04T15:44:02Z",
+                    "value": "o_malepart_2604"
+                },
+                {
+                    "name": "type",
+                    "time": "2023-04-04T15:44:02Z",
+                    "value": "male"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_workstation_2",
+            "type": "workstation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-04-04T15:44:02Z",
+                    "value": "o_workstation_2"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "check",
+            "time": "2023-04-04T15:44:02Z",
+            "attributes": [
+                {
+                    "name": "CO2_emissions",
+                    "value": "0.00149454"
+                },
+                {
+                    "name": "compressed_air_volume",
+                    "value": "0.023"
+                },
+                {
+                    "name": "duration",
+                    "value": "not specified"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_worker_1",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "o_malepart_2604",
+                    "qualifier": "checked_part"
+                },
+                {
+                    "objectId": "o_workstation_2",
+                    "qualifier": "conducted_at"
+                }
+            ]
+        }
+    ]
+}

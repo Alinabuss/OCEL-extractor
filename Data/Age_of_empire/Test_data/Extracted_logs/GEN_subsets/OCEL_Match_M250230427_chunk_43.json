@@ -1,0 +1,230 @@
+{
+    "objectTypes": [
+        {
+            "name": "match",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "session",
+            "attributes": [
+                {
+                    "name": "session_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "lumber camp",
+            "attributes": [
+                {
+                    "name": "camp_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "villager",
+            "attributes": [
+                {
+                    "name": "villager_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "house",
+            "attributes": [
+                {
+                    "name": "house_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "player",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "research_completed",
+            "attributes": [
+                {
+                    "name": "item",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "construction_completed",
+            "attributes": [
+                {
+                    "name": "building",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "wood_gathered",
+            "attributes": [
+                {
+                    "name": "quantity",
+                    "type": "integer"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "M250230427",
+            "type": "match",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "S250230427_2199669",
+            "type": "session",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "participated_in"
+                }
+            ]
+        },
+        {
+            "id": "Lumber_Camp_M250230427_1",
+            "type": "lumber camp",
+            "attributes": [
+                {
+                    "name": "camp_id",
+                    "time": "2023-07-31T00:23:54Z",
+                    "value": "Lumber_Camp_M250230427_1"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Villager_M250230427_21",
+            "type": "villager",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "House_M250230427_13",
+            "type": "house",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Player[P2199669]",
+            "type": "player",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "research_completed",
+            "time": "2023-07-31T00:23:54Z",
+            "attributes": [
+                {
+                    "name": "item",
+                    "value": "DoubleBit Axe"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lumber_Camp_M250230427_1",
+                    "qualifier": "conducted_at"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "construction_completed",
+            "time": "2023-07-31T00:24:13Z",
+            "attributes": [
+                {
+                    "name": "building",
+                    "value": "House_M250230427_13"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Villager_M250230427_21",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "S250230427_688587",
+                    "qualifier": "during_session"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "part_of"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "wood_gathered",
+            "time": "2023-07-31T00:24:28Z",
+            "attributes": [
+                {
+                    "name": "quantity",
+                    "value": 1
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Player[P2199669]",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "during_session"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "part_of"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "wood_gathered",
+            "time": "2023-07-31T00:24:29Z",
+            "attributes": [
+                {
+                    "name": "quantity",
+                    "value": 1
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Player[P2199669]",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "during_session"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "part_of"
+                }
+            ]
+        }
+    ]
+}

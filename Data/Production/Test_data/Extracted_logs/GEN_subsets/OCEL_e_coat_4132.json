@@ -1,0 +1,149 @@
+{
+    "objectTypes": [
+        {
+            "name": "formedpart",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "workstation",
+            "attributes": [
+                {
+                    "name": "label",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "machine",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "coating_operation",
+            "attributes": [
+                {
+                    "name": "duration_seconds",
+                    "type": "int"
+                },
+                {
+                    "name": "CO2e_emissions_kg",
+                    "type": "float"
+                },
+                {
+                    "name": "energy_consumption_kWh",
+                    "type": "float"
+                },
+                {
+                    "name": "coating_material_kg",
+                    "type": "float"
+                },
+                {
+                    "name": "waste_coating_material_kg",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o_formedpart_4132",
+            "type": "formedpart",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-05T12:10:20Z",
+                    "value": "undefined"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_workstation_1",
+            "type": "workstation",
+            "attributes": [
+                {
+                    "name": "label",
+                    "time": "2023-04-05T12:10:20Z",
+                    "value": "o_workstation_1"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_machine_coater03",
+                    "qualifier": "utilized_by"
+                }
+            ]
+        },
+        {
+            "id": "o_machine_coater03",
+            "type": "machine",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-04-05T12:10:20Z",
+                    "value": "o_machine_coater03"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "located_at"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "coating_operation",
+            "time": "2023-04-05T12:10:20Z",
+            "attributes": [
+                {
+                    "name": "duration_seconds",
+                    "value": "300"
+                },
+                {
+                    "name": "CO2e_emissions_kg",
+                    "value": "0.1751156951"
+                },
+                {
+                    "name": "energy_consumption_kWh",
+                    "value": "0.25"
+                },
+                {
+                    "name": "coating_material_kg",
+                    "value": "0.0004"
+                },
+                {
+                    "name": "waste_coating_material_kg",
+                    "value": "0.0001"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_formedpart_4132",
+                    "qualifier": "processed_on"
+                },
+                {
+                    "objectId": "o_machine_coater03",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "performed_at"
+                }
+            ]
+        }
+    ]
+}

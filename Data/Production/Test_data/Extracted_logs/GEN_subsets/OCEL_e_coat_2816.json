@@ -1,0 +1,131 @@
+{
+    "objectTypes": [
+        {
+            "name": "formedpart",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "machine",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "location",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "coating_process",
+            "attributes": [
+                {
+                    "name": "duration_seconds",
+                    "type": "integer"
+                },
+                {
+                    "name": "CO2_emitted_kg",
+                    "type": "float"
+                },
+                {
+                    "name": "electricity_consumed_kWh",
+                    "type": "float"
+                },
+                {
+                    "name": "coating_material_used_kg",
+                    "type": "float"
+                },
+                {
+                    "name": "coating_waste_generated_kg",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o_formedpart_2816",
+            "type": "formedpart",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "o_machine_coater03",
+            "type": "machine",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2023-04-04T12:49:24Z",
+                    "value": "workstation o_workstation_1"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_workstation_1",
+            "type": "workstation",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "coating_process",
+            "time": "2023-04-04T12:49:24Z",
+            "attributes": [
+                {
+                    "name": "duration_seconds",
+                    "value": 300
+                },
+                {
+                    "name": "CO2_emitted_kg",
+                    "value": 0.1751156951
+                },
+                {
+                    "name": "electricity_consumed_kWh",
+                    "value": 0.25
+                },
+                {
+                    "name": "coating_material_used_kg",
+                    "value": 0.0004
+                },
+                {
+                    "name": "coating_waste_generated_kg",
+                    "value": 0.0001
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_formedpart_2816",
+                    "qualifier": "processed"
+                },
+                {
+                    "objectId": "o_machine_coater03",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "located_at"
+                }
+            ]
+        }
+    ]
+}

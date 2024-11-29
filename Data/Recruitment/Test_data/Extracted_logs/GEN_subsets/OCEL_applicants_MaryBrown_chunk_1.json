@@ -1,0 +1,152 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Application Submitted",
+            "attributes": [
+                {
+                    "name": "applicationId",
+                    "type": "string"
+                },
+                {
+                    "name": "vacancyId",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Rejection Notice Sent",
+            "attributes": [
+                {
+                    "name": "applicationId",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Mary Brown",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-01T12:11:22Z",
+                    "value": "Mary Brown"
+                }
+            ]
+        },
+        {
+            "id": "Application[770368]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2019-07-01T12:11:22Z",
+                    "value": "Application[770368]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Vacancy[550047]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2019-07-01T12:11:22Z",
+                    "value": "Vacancy[550047]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Ed Meister",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-05T07:14:05Z",
+                    "value": "Ed Meister"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Application Submitted",
+            "time": "2019-07-01T12:11:22Z",
+            "attributes": [
+                {
+                    "name": "applicationId",
+                    "value": "Application[770368]"
+                },
+                {
+                    "name": "vacancyId",
+                    "value": "Vacancy[550047]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Mary Brown",
+                    "qualifier": "submitted"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Rejection Notice Sent",
+            "time": "2019-07-05T07:14:05Z",
+            "attributes": [
+                {
+                    "name": "applicationId",
+                    "value": "Application[770368]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Ed Meister",
+                    "qualifier": "sent"
+                }
+            ]
+        }
+    ]
+}

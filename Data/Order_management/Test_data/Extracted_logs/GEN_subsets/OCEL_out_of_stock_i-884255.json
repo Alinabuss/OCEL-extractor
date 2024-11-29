@@ -1,0 +1,133 @@
+{
+    "objectTypes": [
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "product_id",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "employee_name",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "ReportOutOfStock",
+            "attributes": [
+                {
+                    "name": "reporter",
+                    "type": "string"
+                },
+                {
+                    "name": "timestamp",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "iPhone 11",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "product_id",
+                    "value": "iPhone 11"
+                },
+                {
+                    "name": "price",
+                    "value": "799.00"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-884255",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "value": "i-884255"
+                },
+                {
+                    "name": "price",
+                    "value": "877.06"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "iPhone 11",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "Christopher Schwanen",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "employee_name",
+                    "value": "Christopher Schwanen"
+                },
+                {
+                    "name": "department",
+                    "value": "warehousing"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "ReportOutOfStock",
+            "time": "2023-10-19T09:41:44Z",
+            "attributes": [
+                {
+                    "name": "reporter",
+                    "value": "Christopher Schwanen"
+                },
+                {
+                    "name": "timestamp",
+                    "value": "2023-10-19T09:41:44Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-884255",
+                    "qualifier": "reported_item"
+                }
+            ]
+        }
+    ]
+}

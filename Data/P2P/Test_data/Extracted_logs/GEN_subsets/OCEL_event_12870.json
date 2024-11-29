@@ -1,0 +1,118 @@
+{
+    "objectTypes": [
+        {
+            "name": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Approval",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "type": "string"
+                },
+                {
+                    "name": "Approver",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:707",
+            "type": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "",
+                    "value": "purchase_order:707"
+                },
+                {
+                    "name": "Status",
+                    "time": "",
+                    "value": "Complete"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "",
+                    "value": "001"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:414",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "quotation:414",
+            "type": "Quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "",
+                    "value": "quotation:414"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "",
+                    "value": "001"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Approval",
+            "time": "2023-06-06T17:17:00Z",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "value": "2023-06-06T17:17:00Z"
+                },
+                {
+                    "name": "Approver",
+                    "value": "Procurement Order Manager"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:707",
+                    "qualifier": "approved"
+                }
+            ]
+        }
+    ]
+}

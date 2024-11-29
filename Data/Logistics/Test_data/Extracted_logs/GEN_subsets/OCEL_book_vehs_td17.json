@@ -1,0 +1,117 @@
+{
+    "objectTypes": [
+        {
+            "name": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "type",
+                    "type": "string"
+                },
+                {
+                    "name": "scheduledDeparture",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Booking",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "DepartureScheduled",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td17",
+            "type": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "time": "2023-06-23T11:00:00Z",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh8",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "type",
+                    "time": "2023-06-23T11:00:00Z",
+                    "value": "regular"
+                },
+                {
+                    "name": "scheduledDeparture",
+                    "time": "2023-06-23T11:00:00Z",
+                    "value": "2023-06-23T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Booking",
+            "time": "2023-06-06T07:24:15Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-06-06T07:24:15Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td17",
+                    "qualifier": "associated with"
+                },
+                {
+                    "objectId": "vh8",
+                    "qualifier": "booked for"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "DepartureScheduled",
+            "time": "2023-06-23T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-06-23T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh8",
+                    "qualifier": "scheduled for departure"
+                }
+            ]
+        }
+    ]
+}

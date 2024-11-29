@@ -1,0 +1,149 @@
+{
+    "objectTypes": [
+        {
+            "name": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "day",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchasing",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "complete two - way match",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "create goods receipt",
+            "attributes": []
+        },
+        {
+            "name": "create invoice receipt",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1541",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "27250.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1260",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:1260",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchasing",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "group \" 001"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:1539",
+            "type": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "day",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1541",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1272,
+            "type": "create goods receipt",
+            "time": "2024-04-22T03:12:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1260",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:1541",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1273,
+            "type": "create invoice receipt",
+            "time": "2024-04-22T08:35:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1539",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1274,
+            "type": "complete two - way match",
+            "time": "2024-04-22T08:45:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1541",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "invoice receipt:1539",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

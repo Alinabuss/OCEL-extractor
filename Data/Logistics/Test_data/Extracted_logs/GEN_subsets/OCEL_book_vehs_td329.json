@@ -1,0 +1,99 @@
+{
+    "objectTypes": [
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "type": "string"
+                },
+                {
+                    "name": "amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "booking_time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "departure_time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh78",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "time": "2024-01-29T15:56:00Z",
+                    "value": "vh78"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td329",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "time": "2024-01-29T15:56:00Z",
+                    "value": "td329"
+                },
+                {
+                    "name": "amount",
+                    "time": "2024-01-29T15:56:00Z",
+                    "value": "1.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2024-01-29T15:56:00Z",
+            "attributes": [
+                {
+                    "name": "booking_time",
+                    "value": "2024-01-29T15:56:00Z"
+                },
+                {
+                    "name": "departure_time",
+                    "value": "2024-02-23T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh78",
+                    "qualifier": "booked_for"
+                },
+                {
+                    "objectId": "td329",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

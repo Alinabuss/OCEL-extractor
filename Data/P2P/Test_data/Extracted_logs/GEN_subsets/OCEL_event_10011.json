@@ -1,0 +1,109 @@
+{
+    "objectTypes": [
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Credit Amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Movement Type",
+                    "type": "integer"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Invoice Receipt Created",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "Lifecycle Status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:640",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-03-07T12:29:00Z",
+                    "value": "invoice receipt:640"
+                },
+                {
+                    "name": "Credit Amount",
+                    "time": "2023-03-07T12:29:00Z",
+                    "value": "79600.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:639",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:639",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-03-07T12:29:00Z",
+                    "value": "goods receipt:639"
+                },
+                {
+                    "name": "Movement Type",
+                    "time": "2023-03-07T12:29:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Invoice Receipt Created",
+            "time": "2023-03-07T12:29:00Z",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "value": "2023-03-07T12:29:00Z"
+                },
+                {
+                    "name": "Lifecycle Status",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:640",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

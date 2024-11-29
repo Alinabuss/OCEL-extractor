@@ -1,0 +1,270 @@
+{
+    "objectTypes": [
+        {
+            "name": "Villager",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Player",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Town Center",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Session",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Match",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Command Queue",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "string"
+                },
+                {
+                    "name": "action",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Start Queue",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "string"
+                },
+                {
+                    "name": "action",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Complete Queue",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "string"
+                },
+                {
+                    "name": "action",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Villager_M250230427_173",
+            "type": "Villager",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-07-31T00:28:27Z",
+                    "value": "Villager_M250230427_173"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Town_Center_M250230427_3",
+                    "qualifier": "located at"
+                },
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "part of session"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "part of match"
+                }
+            ]
+        },
+        {
+            "id": "Player[P2199669]",
+            "type": "Player",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-07-31T00:28:27Z",
+                    "value": "Player[P2199669]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "part of session"
+                }
+            ]
+        },
+        {
+            "id": "Town_Center_M250230427_3",
+            "type": "Town Center",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-07-31T00:28:27Z",
+                    "value": "Town_Center_M250230427_3"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "part of session"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "part of match"
+                }
+            ]
+        },
+        {
+            "id": "S250230427_2199669",
+            "type": "Session",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-07-31T00:28:27Z",
+                    "value": "S250230427_2199669"
+                }
+            ]
+        },
+        {
+            "id": "M250230427",
+            "type": "Match",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-07-31T00:28:27Z",
+                    "value": "M250230427"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Command Queue",
+            "time": "2023-07-31T00:28:27Z",
+            "attributes": [
+                {
+                    "name": "action",
+                    "value": "Queue initiated"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Villager_M250230427_173",
+                    "qualifier": "related to"
+                },
+                {
+                    "objectId": "Player[P2199669]",
+                    "qualifier": "issued command"
+                },
+                {
+                    "objectId": "Town_Center_M250230427_3",
+                    "qualifier": "at"
+                },
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "within"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "under"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Start Queue",
+            "time": "2023-07-31T00:28:50Z",
+            "attributes": [
+                {
+                    "name": "action",
+                    "value": "Queue started"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Villager_M250230427_173",
+                    "qualifier": "related to"
+                },
+                {
+                    "objectId": "Town_Center_M250230427_3",
+                    "qualifier": "at"
+                },
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "within"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "under"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Complete Queue",
+            "time": "2023-07-31T00:29:15Z",
+            "attributes": [
+                {
+                    "name": "action",
+                    "value": "Queue completed"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Villager_M250230427_173",
+                    "qualifier": "related to"
+                },
+                {
+                    "objectId": "Town_Center_M250230427_3",
+                    "qualifier": "at"
+                },
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "within"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "under"
+                }
+            ]
+        }
+    ]
+}

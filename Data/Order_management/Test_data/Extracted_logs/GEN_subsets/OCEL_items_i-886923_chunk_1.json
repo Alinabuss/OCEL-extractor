@@ -1,0 +1,126 @@
+{
+    "objectTypes": [
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "pick_item",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Christopher Schwanen",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2024-02-22T11:41:50Z",
+                    "value": "Christopher Schwanen"
+                },
+                {
+                    "name": "role",
+                    "time": "2024-02-22T11:41:50Z",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "iPhone 8",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2024-02-22T11:41:50Z",
+                    "value": "iPhone 8"
+                },
+                {
+                    "name": "price",
+                    "time": "2024-02-22T11:41:50Z",
+                    "value": "529.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-886923",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2024-02-22T11:41:50Z",
+                    "value": "623.48"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "iPhone 8",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "pick_item",
+            "time": "2024-02-22T11:41:50Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2024-02-22T11:41:50Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Christopher Schwanen",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "i-886923",
+                    "qualifier": "picked_item"
+                }
+            ]
+        }
+    ]
+}

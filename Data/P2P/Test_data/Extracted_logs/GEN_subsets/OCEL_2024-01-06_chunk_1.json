@@ -1,0 +1,185 @@
+{
+    "objectTypes": [
+        {
+            "name": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Movement Type",
+                    "type": "int"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Purchase Order Approved",
+            "attributes": [
+                {
+                    "name": "Approval Completed By",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt Created",
+            "attributes": [
+                {
+                    "name": "Handled By",
+                    "type": "string"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:1114",
+            "type": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-01-06T05:35:00Z",
+                    "value": "purchase_order:1114"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "2024-01-06T05:35:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "quotation:642",
+            "type": "Quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-01-06T05:35:00Z",
+                    "value": "quotation:642"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "2024-01-06T05:35:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:1102",
+            "type": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-01-06T18:57:00Z",
+                    "value": "purchase_order:1102"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "2024-01-06T18:57:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods_receipt:1327",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-01-06T18:57:00Z",
+                    "value": "goods_receipt:1327"
+                },
+                {
+                    "name": "Movement Type",
+                    "time": "2024-01-06T18:57:00Z",
+                    "value": 101
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Purchase Order Approved",
+            "time": "2024-01-06T05:35:00Z",
+            "attributes": [
+                {
+                    "name": "Approval Completed By",
+                    "value": "Procurement Order Manager"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1114",
+                    "qualifier": "approved"
+                },
+                {
+                    "objectId": "quotation:642",
+                    "qualifier": "included"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Goods Receipt Created",
+            "time": "2024-01-06T18:57:00Z",
+            "attributes": [
+                {
+                    "name": "Handled By",
+                    "value": "Warehouse Department"
+                },
+                {
+                    "name": "Status",
+                    "value": "Complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods_receipt:1327",
+                    "qualifier": "created"
+                },
+                {
+                    "objectId": "purchase_order:1102",
+                    "qualifier": "associated with"
+                }
+            ]
+        }
+    ]
+}

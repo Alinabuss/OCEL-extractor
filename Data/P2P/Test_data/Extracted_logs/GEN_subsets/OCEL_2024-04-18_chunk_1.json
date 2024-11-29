@@ -1,0 +1,164 @@
+{
+    "objectTypes": [
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "lifecycle status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Quotation",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Complete Two-Way Match",
+            "attributes": []
+        },
+        {
+            "name": "Create Purchase Order",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:1526",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2024-04-18T07:10:00Z",
+                    "value": "104350.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:1517",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2024-04-18T07:10:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:1526",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2024-04-18T09:37:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:1531",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2024-04-18T09:37:00Z",
+                    "value": "73500.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:1265",
+            "type": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "lifecycle status",
+                    "time": "2024-04-18T20:29:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:743",
+                    "qualifier": "linked to"
+                }
+            ]
+        },
+        {
+            "id": "quotation:743",
+            "type": "Quotation",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Complete Two-Way Match",
+            "time": "2024-04-18T07:10:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1526",
+                    "qualifier": "involved in"
+                },
+                {
+                    "objectId": "goods receipt:1517",
+                    "qualifier": "involved in"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Complete Two-Way Match",
+            "time": "2024-04-18T09:37:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1526",
+                    "qualifier": "involved in"
+                },
+                {
+                    "objectId": "invoice receipt:1531",
+                    "qualifier": "involved in"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Create Purchase Order",
+            "time": "2024-04-18T20:29:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1265",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

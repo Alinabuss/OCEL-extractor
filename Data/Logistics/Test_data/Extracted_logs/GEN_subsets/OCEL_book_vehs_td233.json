@@ -1,0 +1,100 @@
+{
+    "objectTypes": [
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "type",
+                    "type": "string"
+                },
+                {
+                    "name": "total_containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "departure_time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "vehicle_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh54",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "type",
+                    "time": "2023-11-16T08:44:34Z",
+                    "value": "regular"
+                },
+                {
+                    "name": "total_containers",
+                    "time": "2023-11-16T08:44:34Z",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td233",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": "td233",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "departure_time",
+                    "time": "2023-12-01T11:00:00Z",
+                    "value": "2023-12-01T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2023-11-16T08:44:34Z",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "value": "vh54"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td233",
+                    "qualifier": "recorded_under"
+                }
+            ]
+        }
+    ]
+}

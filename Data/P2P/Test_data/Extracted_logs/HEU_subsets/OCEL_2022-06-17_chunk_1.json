@@ -1,0 +1,127 @@
+{
+    "objectTypes": [
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "quotation",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "order",
+            "attributes": []
+        },
+        {
+            "name": "purchase requisition",
+            "attributes": [
+                {
+                    "name": "purchasing group part",
+                    "type": "float"
+                },
+                {
+                    "name": "price material",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "delegate purchase requisition approval",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "create purchase order after the completion",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "quotation:78",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "quotation",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:89 : pr_trigger_89",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_requisition:89 : pr_trigger_89",
+            "type": "purchase requisition",
+            "attributes": [
+                {
+                    "name": "purchasing group part",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "001"
+                },
+                {
+                    "name": "price material",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "150.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:126",
+            "type": "order",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation:78",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 94,
+            "type": "create purchase order after the completion",
+            "time": "2022-06-17T09:42:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation:78",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:126",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 95,
+            "type": "delegate purchase requisition approval",
+            "time": "2022-06-17T12:44:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:89 : pr_trigger_89",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

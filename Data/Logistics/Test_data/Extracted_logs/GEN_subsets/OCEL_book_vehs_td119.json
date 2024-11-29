@@ -1,0 +1,108 @@
+{
+    "objectTypes": [
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "scheduled_departure",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Booking",
+            "attributes": [
+                {
+                    "name": "priority",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Transport Document[td119]",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "containers",
+                    "time": "2023-08-28T11:37:22Z",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Vehicle[vh28]",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "scheduled_departure",
+                    "time": "2023-09-01T11:00:00Z",
+                    "value": "2023-09-01T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Transport Document[td119]",
+                    "qualifier": "linked"
+                }
+            ]
+        },
+        {
+            "id": "Vehicle[vh33]",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "scheduled_departure",
+                    "time": "2023-09-19T11:00:00Z",
+                    "value": "2023-09-19T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Transport Document[td119]",
+                    "qualifier": "linked"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Booking",
+            "time": "2023-08-28T11:37:22Z",
+            "attributes": [
+                {
+                    "name": "priority",
+                    "value": "high"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Transport Document[td119]",
+                    "qualifier": "involves"
+                },
+                {
+                    "objectId": "Vehicle[vh28]",
+                    "qualifier": "involves"
+                },
+                {
+                    "objectId": "Vehicle[vh33]",
+                    "qualifier": "involves"
+                }
+            ]
+        }
+    ]
+}

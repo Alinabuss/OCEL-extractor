@@ -1,0 +1,117 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "request_for_quotation_created",
+            "attributes": [
+                {
+                    "name": "requisition_id",
+                    "type": "string"
+                },
+                {
+                    "name": "quotation_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_requisition:319:pr_trigger_319",
+            "type": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-03-05T01:15:00Z",
+                    "value": "purchase_requisition:319:pr_trigger_319"
+                },
+                {
+                    "name": "status",
+                    "time": "2023-03-05T01:15:00Z",
+                    "value": "complete"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2023-03-05T01:15:00Z",
+                    "value": "Purchasing Group 001"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "quotation:316",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-03-05T01:15:00Z",
+                    "value": "quotation:316"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2023-03-05T01:15:00Z",
+                    "value": "Purchasing Group 001"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "request_for_quotation_created",
+            "time": "2023-03-05T01:15:00Z",
+            "attributes": [
+                {
+                    "name": "requisition_id",
+                    "value": "purchase_requisition:319:pr_trigger_319"
+                },
+                {
+                    "name": "quotation_id",
+                    "value": "quotation:316"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:319:pr_trigger_319",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "quotation:316",
+                    "qualifier": "linked_to"
+                }
+            ]
+        }
+    ]
+}

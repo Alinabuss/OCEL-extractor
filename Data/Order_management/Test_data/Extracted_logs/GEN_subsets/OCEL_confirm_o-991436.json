@@ -1,0 +1,171 @@
+{
+    "objectTypes": [
+        {
+            "name": "customer",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "order",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "totalPrice",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "orderConfirmed",
+            "attributes": [
+                {
+                    "name": "confirmationTime",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Riviera Robotics SAS",
+            "type": "customer",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-12-20T09:01:07Z",
+                    "value": "Riviera Robotics SAS"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o-991436",
+            "type": "order",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "",
+                    "value": "o-991436"
+                },
+                {
+                    "name": "totalPrice",
+                    "time": "",
+                    "value": "2582.31"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Riviera Robotics SAS",
+                    "qualifier": "confirmedBy"
+                }
+            ]
+        },
+        {
+            "id": "iPad mini",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "",
+                    "value": "iPad mini"
+                },
+                {
+                    "name": "price",
+                    "time": "",
+                    "value": "449.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o-991436",
+                    "qualifier": "partOf"
+                }
+            ]
+        },
+        {
+            "id": "iPad Air",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "",
+                    "value": "iPad Air"
+                },
+                {
+                    "name": "price",
+                    "time": "",
+                    "value": "476.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o-991436",
+                    "qualifier": "partOf"
+                }
+            ]
+        },
+        {
+            "id": "Fire Stick",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "",
+                    "value": "Fire Stick"
+                },
+                {
+                    "name": "price",
+                    "time": "",
+                    "value": "39.99"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o-991436",
+                    "qualifier": "partOf"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "orderConfirmed",
+            "time": "2023-12-20T09:01:07Z",
+            "attributes": [
+                {
+                    "name": "confirmationTime",
+                    "value": "2023-12-20T09:01:07Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o-991436",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        }
+    ]
+}

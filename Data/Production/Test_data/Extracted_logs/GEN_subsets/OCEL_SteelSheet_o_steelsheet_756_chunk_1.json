@@ -1,0 +1,134 @@
+{
+    "objectTypes": [
+        {
+            "name": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "weight",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "SteelCoil",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Machine",
+            "attributes": []
+        },
+        {
+            "name": "Workstation",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Split",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "energy_consumed",
+                    "type": "float"
+                },
+                {
+                    "name": "waste_generated",
+                    "type": "float"
+                },
+                {
+                    "name": "co2_emissions",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o_steelsheet_756",
+            "type": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "weight",
+                    "time": "2023-04-03T10:13:36Z",
+                    "value": "0.021"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "SteelCoil[4]",
+            "type": "SteelCoil",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-03T10:13:36Z",
+                    "value": "31.91"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Machine[splitter01]",
+            "type": "Machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Workstation[1]",
+            "type": "Workstation",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": "SplitSteelSheet",
+            "type": "Split",
+            "time": "2023-04-03T10:13:36Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "13.91"
+                },
+                {
+                    "name": "energy_consumed",
+                    "value": "0.021"
+                },
+                {
+                    "name": "waste_generated",
+                    "value": "0.00042"
+                },
+                {
+                    "name": "co2_emissions",
+                    "value": "0.0145"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_steelsheet_756",
+                    "qualifier": "produced"
+                },
+                {
+                    "objectId": "SteelCoil[4]",
+                    "qualifier": "used_from"
+                },
+                {
+                    "objectId": "Machine[splitter01]",
+                    "qualifier": "used_in"
+                },
+                {
+                    "objectId": "Workstation[1]",
+                    "qualifier": "performed_at"
+                }
+            ]
+        }
+    ]
+}

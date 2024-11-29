@@ -1,0 +1,179 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "Application ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "Vacancy ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Position",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Interview",
+            "attributes": [
+                {
+                    "name": "Conducted By",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Rejection",
+            "attributes": []
+        },
+        {
+            "name": "Application Submission",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "Sue Wang",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-02T12:36:31Z",
+                    "value": "Sue Wang"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770182]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "Application ID",
+                    "time": "2019-07-02T12:36:31Z",
+                    "value": "770182"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550009]",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": "Vacancy[550009]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "Vacancy ID",
+                    "time": "2019-07-02T12:36:31Z",
+                    "value": "550009"
+                },
+                {
+                    "name": "Position",
+                    "time": "2019-07-02T12:36:31Z",
+                    "value": "Programmer"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770409]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "Application ID",
+                    "time": "2019-07-05T04:41:43Z",
+                    "value": "770409"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550031]",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": "Vacancy[550031]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "Vacancy ID",
+                    "time": "2019-07-05T04:41:43Z",
+                    "value": "550031"
+                },
+                {
+                    "name": "Position",
+                    "time": "2019-07-05T04:41:43Z",
+                    "value": "Programmer"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Interview",
+            "time": "2019-07-02T12:36:31Z",
+            "attributes": [
+                {
+                    "name": "Conducted By",
+                    "value": "Martin Klenk, Jana Meister"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770182]",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Rejection",
+            "time": "2019-07-04T07:33:38Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Application[770182]",
+                    "qualifier": "concerns"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Application Submission",
+            "time": "2019-07-05T04:41:43Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Application[770409]",
+                    "qualifier": "submitted by"
+                }
+            ]
+        }
+    ]
+}

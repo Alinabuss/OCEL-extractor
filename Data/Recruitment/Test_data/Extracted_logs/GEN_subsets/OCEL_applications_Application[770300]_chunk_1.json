@@ -1,0 +1,199 @@
+{
+    "objectTypes": [
+        {
+            "name": "application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "recruiter",
+            "attributes": [
+                {
+                    "name": "recruiter_name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "applicant",
+            "attributes": [
+                {
+                    "name": "applicant_name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "assignment",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "screening",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "rejection",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Application[770300]",
+            "type": "application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "time": "2019-07-01T12:30:45Z",
+                    "value": "770300"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Simon Hense",
+            "type": "recruiter",
+            "attributes": [
+                {
+                    "name": "recruiter_name",
+                    "time": "2019-07-01T12:30:45Z",
+                    "value": "Simon Hense"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Jana Keane",
+            "type": "recruiter",
+            "attributes": [
+                {
+                    "name": "recruiter_name",
+                    "time": "2019-07-01T12:30:45Z",
+                    "value": "Jana Keane"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Ed Keane",
+            "type": "recruiter",
+            "attributes": [
+                {
+                    "name": "recruiter_name",
+                    "time": "2019-07-01T12:30:45Z",
+                    "value": "Ed Keane"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Detlef Schmidt",
+            "type": "applicant",
+            "attributes": [
+                {
+                    "name": "applicant_name",
+                    "time": "2019-07-03T07:27:13Z",
+                    "value": "Detlef Schmidt"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "assignment",
+            "time": "2019-07-01T12:30:45Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2019-07-01T12:30:45Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770300]",
+                    "qualifier": "assigned_to"
+                },
+                {
+                    "objectId": "Simon Hense",
+                    "qualifier": "recruiter"
+                },
+                {
+                    "objectId": "Jana Keane",
+                    "qualifier": "recruiter"
+                },
+                {
+                    "objectId": "Ed Keane",
+                    "qualifier": "recruiter"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "screening",
+            "time": "2019-07-02T15:56:14Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2019-07-02T15:56:14Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770300]",
+                    "qualifier": "screened_by"
+                },
+                {
+                    "objectId": "Simon Hense",
+                    "qualifier": "recruiter"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "rejection",
+            "time": "2019-07-03T07:27:13Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2019-07-03T07:27:13Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770300]",
+                    "qualifier": "rejection_for"
+                },
+                {
+                    "objectId": "Detlef Schmidt",
+                    "qualifier": "applicant"
+                },
+                {
+                    "objectId": "Simon Hense",
+                    "qualifier": "recruiter"
+                }
+            ]
+        }
+    ]
+}

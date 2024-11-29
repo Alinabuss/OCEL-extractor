@@ -1,0 +1,90 @@
+{
+    "objectTypes": [
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Departure Date",
+                    "type": "dateTime"
+                }
+            ]
+        },
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Amount of Containers",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Booking",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "dateTime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh42",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "Departure Date",
+                    "time": "2023-10-20T11:00:00Z",
+                    "value": ""
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td172",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "Amount of Containers",
+                    "time": "",
+                    "value": "4.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Booking",
+            "time": "2023-10-02T12:04:27Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2023-10-02T12:04:27Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh42",
+                    "qualifier": "made for"
+                },
+                {
+                    "objectId": "td172",
+                    "qualifier": "associated with"
+                }
+            ]
+        }
+    ]
+}

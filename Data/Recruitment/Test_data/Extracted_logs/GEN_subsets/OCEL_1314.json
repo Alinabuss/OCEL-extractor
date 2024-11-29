@@ -1,0 +1,99 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Application ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Rejection Sent",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Ray Smith",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-06-24T15:48:41Z",
+                    "value": "Ray Smith"
+                },
+                {
+                    "name": "Application ID",
+                    "time": "2019-06-24T15:48:41Z",
+                    "value": "Application[770183]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Dionne Geisler",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-06-24T15:48:41Z",
+                    "value": "Dionne Geisler"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Rejection Sent",
+            "time": "2019-06-24T15:48:41Z",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "value": "2019-06-24T15:48:41Z"
+                },
+                {
+                    "name": "Status",
+                    "value": "Rejected"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Ray Smith",
+                    "qualifier": "Target Applicant"
+                },
+                {
+                    "objectId": "Dionne Geisler",
+                    "qualifier": "Sender"
+                }
+            ]
+        }
+    ]
+}

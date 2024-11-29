@@ -1,0 +1,135 @@
+{
+    "objectTypes": [
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "product_name",
+                    "type": "string"
+                },
+                {
+                    "name": "product_price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "pick_item",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Nina Graves",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-12-25T08:51:21Z",
+                    "value": "Nina Graves"
+                },
+                {
+                    "name": "department",
+                    "time": "2023-12-25T08:51:21Z",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-885682",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "2023-12-25T08:51:21Z",
+                    "value": "i-885682"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-12-25T08:51:21Z",
+                    "value": 224.79
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Echo Studio",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "Echo Studio",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "product_name",
+                    "time": "2023-12-25T08:51:21Z",
+                    "value": "Echo Studio"
+                },
+                {
+                    "name": "product_price",
+                    "time": "2023-12-25T08:51:21Z",
+                    "value": 199.99
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "pick_item",
+            "time": "2023-12-25T08:51:21Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-12-25T08:51:21Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Nina Graves",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "i-885682",
+                    "qualifier": "picked"
+                }
+            ]
+        }
+    ]
+}

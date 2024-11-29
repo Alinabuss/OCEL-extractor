@@ -1,0 +1,119 @@
+{
+    "objectTypes": [
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Scheduled Departure Date",
+                    "type": "datetime"
+                },
+                {
+                    "name": "Booking Status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Vehicle Booking",
+            "attributes": [
+                {
+                    "name": "Booking Time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td361",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "",
+                    "value": "td361"
+                },
+                {
+                    "name": "Containers",
+                    "time": "",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh80",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "vh80",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "",
+                    "value": "vh80"
+                },
+                {
+                    "name": "Scheduled Departure Date",
+                    "time": "2024-03-01T11:00:00Z",
+                    "value": "2024-03-01T11:00:00Z"
+                },
+                {
+                    "name": "Booking Status",
+                    "time": "",
+                    "value": "Booked"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td361",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Vehicle Booking",
+            "time": "2024-02-21T12:43:39Z",
+            "attributes": [
+                {
+                    "name": "Booking Time",
+                    "value": "2024-02-21T12:43:39Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh80",
+                    "qualifier": "booked for"
+                },
+                {
+                    "objectId": "td361",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ]
+}

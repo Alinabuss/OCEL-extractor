@@ -1,0 +1,117 @@
+{
+    "objectTypes": [
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "quotation_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "purchase_requisition_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchasing_group",
+            "attributes": [
+                {
+                    "name": "group_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "request_for_quotation_created",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "quotation:330",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "quotation_id",
+                    "time": "2023-03-08T07:16:00Z",
+                    "value": "330"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "002",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "purchase_requisition:328:pr_trigger_328",
+            "type": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "purchase_requisition_id",
+                    "time": "2023-03-08T07:16:00Z",
+                    "value": "328:pr_trigger_328"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "002",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "002",
+            "type": "purchasing_group",
+            "attributes": [
+                {
+                    "name": "group_id",
+                    "time": "2023-03-08T07:16:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "request_for_quotation_created",
+            "time": "2023-03-08T07:16:00Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-03-08T07:16:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:330",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "purchase_requisition:328:pr_trigger_328",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "002",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

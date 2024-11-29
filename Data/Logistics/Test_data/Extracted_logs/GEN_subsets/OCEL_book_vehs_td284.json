@@ -1,0 +1,117 @@
+{
+    "objectTypes": [
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "amount_containers",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "departure_scheduling",
+            "attributes": [
+                {
+                    "name": "scheduled_departure",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh64",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-12-25T08:51:42Z",
+                    "value": "vh64"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td284",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-12-25T08:51:42Z",
+                    "value": "td284"
+                },
+                {
+                    "name": "amount_containers",
+                    "time": "2023-12-25T08:51:42Z",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2023-12-25T08:51:42Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-12-25T08:51:42Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh64",
+                    "qualifier": "booked"
+                },
+                {
+                    "objectId": "td284",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "departure_scheduling",
+            "time": "2024-01-05T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "scheduled_departure",
+                    "value": "2024-01-05T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh64",
+                    "qualifier": "scheduled_departure"
+                }
+            ]
+        }
+    ]
+}

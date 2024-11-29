@@ -1,0 +1,113 @@
+{
+    "objectTypes": [
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "type": "decimal"
+                }
+            ]
+        },
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "priority",
+                    "type": "string"
+                },
+                {
+                    "name": "scheduled_departure",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "booking_time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td131",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "time": "2023-09-01T15:57:28Z",
+                    "value": "3.0"
+                }
+            ]
+        },
+        {
+            "id": "vh29",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "priority",
+                    "time": "2023-09-01T15:57:28Z",
+                    "value": "high-priority"
+                },
+                {
+                    "name": "scheduled_departure",
+                    "time": "2023-09-05T11:00:00Z",
+                    "value": "2023-09-05T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td131",
+                    "qualifier": "booked_for"
+                }
+            ]
+        },
+        {
+            "id": "vh34",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "priority",
+                    "time": "2023-09-01T15:57:28Z",
+                    "value": "normal"
+                },
+                {
+                    "name": "scheduled_departure",
+                    "time": "2023-09-22T11:00:00Z",
+                    "value": "2023-09-22T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td131",
+                    "qualifier": "booked_for"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2023-09-01T15:57:28Z",
+            "attributes": [
+                {
+                    "name": "booking_time",
+                    "value": "2023-09-01T15:57:28Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td131",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

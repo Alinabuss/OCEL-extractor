@@ -1,0 +1,108 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "purchase_order_id",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "quotation_id",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "approval",
+            "attributes": [
+                {
+                    "name": "approver",
+                    "type": "string"
+                },
+                {
+                    "name": "approval_time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:242",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "purchase_order_id",
+                    "time": "2022-08-19T06:35:00Z",
+                    "value": "purchase_order:242"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2022-08-19T06:35:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "quotation:141",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "quotation_id",
+                    "time": "2022-08-19T06:35:00Z",
+                    "value": "quotation:141"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2022-08-19T06:35:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "approval",
+            "time": "2022-08-19T06:35:00Z",
+            "attributes": [
+                {
+                    "name": "approver",
+                    "value": "Procurement Order Manager"
+                },
+                {
+                    "name": "approval_time",
+                    "value": "2022-08-19T06:35:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:242",
+                    "qualifier": "approved"
+                },
+                {
+                    "objectId": "quotation:141",
+                    "qualifier": "related_quotation"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,106 @@
+{
+    "objectTypes": [
+        {
+            "name": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "containers",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "departureDate",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Booking",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td291",
+            "type": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-01-02T13:29:35Z",
+                    "value": "td291"
+                },
+                {
+                    "name": "containers",
+                    "time": "2024-01-02T13:29:35Z",
+                    "value": 4
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh66",
+                    "qualifier": "associatedWith"
+                }
+            ]
+        },
+        {
+            "id": "vh66",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-01-02T13:29:35Z",
+                    "value": "vh66"
+                },
+                {
+                    "name": "departureDate",
+                    "time": "2024-01-12T11:00:00Z",
+                    "value": "2024-01-12T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td291",
+                    "qualifier": "bookedFor"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Booking",
+            "time": "2024-01-02T13:29:35Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2024-01-02T13:29:35Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td291",
+                    "qualifier": "involves"
+                }
+            ]
+        }
+    ]
+}

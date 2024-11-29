@@ -1,0 +1,90 @@
+{
+    "objectTypes": [
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Invoice Receipt Created",
+            "attributes": [
+                {
+                    "name": "Created By",
+                    "type": "string"
+                },
+                {
+                    "name": "Timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt[84]",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "time": "2022-05-30T09:17:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt[87]",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "time": "2022-05-30T09:17:00Z",
+                    "value": "22750.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Invoice Receipt Created",
+            "time": "2022-05-30T09:17:00Z",
+            "attributes": [
+                {
+                    "name": "Created By",
+                    "value": "Finance/Account Department"
+                },
+                {
+                    "name": "Timestamp",
+                    "value": "2022-05-30T09:17:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt[84]",
+                    "qualifier": "related to"
+                },
+                {
+                    "objectId": "invoice receipt[87]",
+                    "qualifier": "produced from"
+                }
+            ]
+        }
+    ]
+}

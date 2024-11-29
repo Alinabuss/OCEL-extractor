@@ -1,0 +1,255 @@
+{
+    "objectTypes": [
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "Item ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Classification",
+                    "type": "string"
+                },
+                {
+                    "name": "Price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Order",
+            "attributes": [
+                {
+                    "name": "Order ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Total Price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "Product ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Reorder",
+            "attributes": [
+                {
+                    "name": "Employee Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Employee Department",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Payment Reminder",
+            "attributes": [
+                {
+                    "name": "Order ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Total Price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "i-882905",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "Item ID",
+                    "time": "2023-08-25T14:54:27Z",
+                    "value": "i-882905"
+                },
+                {
+                    "name": "Classification",
+                    "time": "2023-08-25T14:54:27Z",
+                    "value": "iPad"
+                },
+                {
+                    "name": "Price",
+                    "time": "2023-08-25T14:54:27Z",
+                    "value": 535.59
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-882905",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": "o-990720",
+            "type": "Order",
+            "attributes": [
+                {
+                    "name": "Order ID",
+                    "time": "2023-09-10T09:07:45Z",
+                    "value": "o-990720"
+                },
+                {
+                    "name": "Total Price",
+                    "time": "2023-09-10T09:07:45Z",
+                    "value": 756.98
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-882906",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "Item ID",
+                    "time": "2023-09-10T09:07:45Z",
+                    "value": "i-882906"
+                },
+                {
+                    "name": "Classification",
+                    "time": "2023-09-10T09:07:45Z",
+                    "value": "Echo Studio"
+                },
+                {
+                    "name": "Price",
+                    "time": "2023-09-10T09:07:45Z",
+                    "value": 216.39
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-882905",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "Product ID",
+                    "time": "2023-08-25T14:54:27Z",
+                    "value": "i-882905"
+                },
+                {
+                    "name": "Price",
+                    "time": "2023-08-25T14:54:27Z",
+                    "value": 495.0
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-882906",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "Product ID",
+                    "time": "2023-09-10T09:07:45Z",
+                    "value": "i-882906"
+                },
+                {
+                    "name": "Price",
+                    "time": "2023-09-10T09:07:45Z",
+                    "value": 199.99
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Detlef Wetzeler",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2023-08-25T14:54:27Z",
+                    "value": "Detlef Wetzeler"
+                },
+                {
+                    "name": "Department",
+                    "time": "2023-08-25T14:54:27Z",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Reorder",
+            "time": "2023-08-25T14:54:27Z",
+            "attributes": [
+                {
+                    "name": "Employee Name",
+                    "value": "Detlef Wetzeler"
+                },
+                {
+                    "name": "Employee Department",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-882905",
+                    "qualifier": "object reordered"
+                },
+                {
+                    "objectId": "Detlef Wetzeler",
+                    "qualifier": "performed by"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Payment Reminder",
+            "time": "2023-09-10T09:07:45Z",
+            "attributes": [
+                {
+                    "name": "Order ID",
+                    "value": "o-990720"
+                },
+                {
+                    "name": "Total Price",
+                    "value": 756.98
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o-990720",
+                    "qualifier": "for order"
+                }
+            ]
+        }
+    ]
+}

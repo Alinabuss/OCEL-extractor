@@ -1,0 +1,188 @@
+{
+    "objectTypes": [
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Position",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Submit Application",
+            "attributes": [
+                {
+                    "name": "Applicant",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Assign Recruiter",
+            "attributes": [
+                {
+                    "name": "Recruiters",
+                    "type": "list"
+                }
+            ]
+        },
+        {
+            "name": "Assign Vacancy",
+            "attributes": [
+                {
+                    "name": "Position",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Application[770359]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-06-29T08:20:40Z",
+                    "value": "Application[770359]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Vacancy[550026]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-04T12:43:17Z",
+                    "value": "Vacancy[550026]"
+                },
+                {
+                    "name": "Position",
+                    "time": "2019-07-04T12:43:17Z",
+                    "value": "Programmer"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Recruiter[Ed Keane]",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-03T13:36:58Z",
+                    "value": "Ed Keane"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Recruiter[Jana Hense]",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-03T13:36:58Z",
+                    "value": "Jana Hense"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Recruiter[Jana Kershaw]",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-03T13:36:58Z",
+                    "value": "Jana Kershaw"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Submit Application",
+            "time": "2019-06-29T08:20:40Z",
+            "attributes": [
+                {
+                    "name": "Applicant",
+                    "value": "Mary Park"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770359]",
+                    "qualifier": "submitted"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Assign Recruiter",
+            "time": "2019-07-03T13:36:58Z",
+            "attributes": [
+                {
+                    "name": "Recruiters",
+                    "value": "Ed Keane, Jana Hense, Jana Kershaw"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770359]",
+                    "qualifier": "assigned"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Assign Vacancy",
+            "time": "2019-07-04T12:43:17Z",
+            "attributes": [
+                {
+                    "name": "Position",
+                    "value": "Programmer"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550026]",
+                    "qualifier": "assigned"
+                },
+                {
+                    "objectId": "Application[770359]",
+                    "qualifier": "associated"
+                }
+            ]
+        }
+    ]
+}

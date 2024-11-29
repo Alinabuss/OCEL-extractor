@@ -1,0 +1,126 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "type": "float"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "processed_by",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "record_goods_receipt",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "create_invoice_receipt",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "657",
+            "type": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "time": "",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "668",
+            "type": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "time": "",
+                    "value": "65300.0"
+                },
+                {
+                    "name": "status",
+                    "time": "",
+                    "value": "complete"
+                },
+                {
+                    "name": "processed_by",
+                    "time": "",
+                    "value": "Finance/Account Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "657",
+                    "qualifier": "linked_to"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "record_goods_receipt",
+            "time": "",
+            "attributes": [
+                {
+                    "name": "id",
+                    "value": "657"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": 2,
+            "type": "create_invoice_receipt",
+            "time": "2023-03-13T18:18:00Z",
+            "attributes": [
+                {
+                    "name": "id",
+                    "value": "668"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "657",
+                    "qualifier": "linked_to"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,100 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "movement_type",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "goods_receipt_created",
+            "attributes": [
+                {
+                    "name": "completion_status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1006",
+            "type": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-08-26T08:15:00Z",
+                    "value": "goods receipt:1006"
+                },
+                {
+                    "name": "movement_type",
+                    "time": "2023-08-26T08:15:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:831",
+                    "qualifier": "corresponds_to"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:831",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-08-26T08:15:00Z",
+                    "value": "purchase_order:831"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2023-08-26T08:15:00Z",
+                    "value": "003"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "goods_receipt_created",
+            "time": "2023-08-26T08:15:00Z",
+            "attributes": [
+                {
+                    "name": "completion_status",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1006",
+                    "qualifier": "refers_to"
+                }
+            ]
+        }
+    ]
+}

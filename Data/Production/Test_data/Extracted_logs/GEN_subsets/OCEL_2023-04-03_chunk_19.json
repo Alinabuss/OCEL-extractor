@@ -1,0 +1,418 @@
+{
+    "objectTypes": [
+        {
+            "name": "Machine",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Part",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "CuttingOperation",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "type": "float"
+                },
+                {
+                    "name": "EnergyConsumption_kWh",
+                    "type": "float"
+                },
+                {
+                    "name": "CompressedAir_m3",
+                    "type": "float"
+                },
+                {
+                    "name": "NitrogenGas_m3",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2Emissions_kg",
+                    "type": "float"
+                },
+                {
+                    "name": "SteelWaste_kg",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "cutter01",
+            "type": "Machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "cutting_machine_01",
+            "type": "Machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "o_machine_cutter01",
+            "type": "Machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Workstation[2]",
+            "type": "Workstation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "o_workstation_2",
+            "type": "Workstation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "MalePart[1075]",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "value": "Male"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "FormedPart[1075]",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "value": "Formed"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "FormedPart[1247]",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "value": "Formed"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "FemalePart[1247]",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "value": "Female"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "MalePart[1218]",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "value": "Male"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_femalepart_1274",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "value": "Female"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_formedpart_1274",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "value": "Formed"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "CuttingOperation",
+            "time": "2023-04-03T13:52:24Z",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "value": 10.11
+                },
+                {
+                    "name": "EnergyConsumption_kWh",
+                    "value": 0.0154487
+                },
+                {
+                    "name": "CompressedAir_m3",
+                    "value": 0.037
+                },
+                {
+                    "name": "NitrogenGas_m3",
+                    "value": 0.062
+                },
+                {
+                    "name": "CO2Emissions_kg",
+                    "value": 0.0579
+                },
+                {
+                    "name": "SteelWaste_kg",
+                    "value": 0
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "MalePart[1075]",
+                    "qualifier": "produced"
+                },
+                {
+                    "objectId": "FormedPart[1075]",
+                    "qualifier": "input"
+                },
+                {
+                    "objectId": "cutter01",
+                    "qualifier": "used"
+                },
+                {
+                    "objectId": "Workstation[2]",
+                    "qualifier": "performed_at"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "CuttingOperation",
+            "time": "2023-04-03T13:53:42Z",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "value": 12.42
+                },
+                {
+                    "name": "EnergyConsumption_kWh",
+                    "value": 0.01898
+                },
+                {
+                    "name": "CompressedAir_m3",
+                    "value": 0.075
+                },
+                {
+                    "name": "NitrogenGas_m3",
+                    "value": 0.076
+                },
+                {
+                    "name": "CO2Emissions_kg",
+                    "value": 0
+                },
+                {
+                    "name": "SteelWaste_kg",
+                    "value": 0.00254
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "FemalePart[1247]",
+                    "qualifier": "produced"
+                },
+                {
+                    "objectId": "FormedPart[1247]",
+                    "qualifier": "input"
+                },
+                {
+                    "objectId": "cutter01",
+                    "qualifier": "used"
+                },
+                {
+                    "objectId": "Workstation[2]",
+                    "qualifier": "performed_at"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "CuttingOperation",
+            "time": "2023-04-03T14:23:34Z",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "value": 9.92
+                },
+                {
+                    "name": "EnergyConsumption_kWh",
+                    "value": 0.0152
+                },
+                {
+                    "name": "CompressedAir_m3",
+                    "value": 0.059
+                },
+                {
+                    "name": "NitrogenGas_m3",
+                    "value": 0.061
+                },
+                {
+                    "name": "CO2Emissions_kg",
+                    "value": 0.0666
+                },
+                {
+                    "name": "SteelWaste_kg",
+                    "value": 0
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "MalePart[<unspecified>]",
+                    "qualifier": "produced"
+                },
+                {
+                    "objectId": "cutter01",
+                    "qualifier": "used"
+                },
+                {
+                    "objectId": "Workstation[2]",
+                    "qualifier": "performed_at"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "CuttingOperation",
+            "time": "2023-04-03T14:34:03Z",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "value": 9.95
+                },
+                {
+                    "name": "EnergyConsumption_kWh",
+                    "value": 0.0152
+                },
+                {
+                    "name": "CompressedAir_m3",
+                    "value": 0.068
+                },
+                {
+                    "name": "NitrogenGas_m3",
+                    "value": 0.061
+                },
+                {
+                    "name": "CO2Emissions_kg",
+                    "value": 0.073
+                },
+                {
+                    "name": "SteelWaste_kg",
+                    "value": 0
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "MalePart[1218]",
+                    "qualifier": "produced"
+                },
+                {
+                    "objectId": "FormedPart[1218]",
+                    "qualifier": "input"
+                },
+                {
+                    "objectId": "cutting_machine_01",
+                    "qualifier": "used"
+                },
+                {
+                    "objectId": "Workstation[2]",
+                    "qualifier": "performed_at"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "CuttingOperation",
+            "time": "2023-04-03T14:35:20Z",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "value": 12.42
+                },
+                {
+                    "name": "EnergyConsumption_kWh",
+                    "value": 0.0189784
+                },
+                {
+                    "name": "CompressedAir_m3",
+                    "value": 0.065
+                },
+                {
+                    "name": "NitrogenGas_m3",
+                    "value": 0.076
+                },
+                {
+                    "name": "CO2Emissions_kg",
+                    "value": 0.0823
+                },
+                {
+                    "name": "SteelWaste_kg",
+                    "value": 0.00253
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_formedpart_1274",
+                    "qualifier": "produced"
+                },
+                {
+                    "objectId": "o_femalepart_1274",
+                    "qualifier": "input"
+                },
+                {
+                    "objectId": "o_machine_cutter01",
+                    "qualifier": "used"
+                },
+                {
+                    "objectId": "o_workstation_2",
+                    "qualifier": "performed_at"
+                }
+            ]
+        }
+    ]
+}

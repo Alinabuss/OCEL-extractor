@@ -1,0 +1,123 @@
+{
+    "objectTypes": [
+        {
+            "name": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "BookingCompleted",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "DepartureScheduled",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td341",
+            "type": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-02-07T12:50:28Z",
+                    "value": "td341"
+                },
+                {
+                    "name": "Containers",
+                    "time": "2024-02-07T12:50:28Z",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh76",
+                    "qualifier": "AssociatedVehicle"
+                }
+            ]
+        },
+        {
+            "id": "vh76",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-02-07T12:50:28Z",
+                    "value": "vh76"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td341",
+                    "qualifier": "LinkedToTransportDocument"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "BookingCompleted",
+            "time": "2024-02-07T12:50:28Z",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "value": "2024-02-07T12:50:28Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td341",
+                    "qualifier": "BookingForTransportDocument"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "DepartureScheduled",
+            "time": "2024-02-16T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "value": "2024-02-16T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td341",
+                    "qualifier": "DepartureForTransportDocument"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,124 @@
+{
+    "objectTypes": [
+        {
+            "name": "Worker",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Part",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Quality Check",
+            "attributes": [
+                {
+                    "name": "Emission",
+                    "type": "float"
+                },
+                {
+                    "name": "Compressed Air Usage",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Worker[1]",
+            "type": "Worker",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-05T15:35:50Z",
+                    "value": "Worker[1]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "MalePart[3925]",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-05T15:35:50Z",
+                    "value": "MalePart[3925]"
+                },
+                {
+                    "name": "Type",
+                    "time": "2023-04-05T15:35:50Z",
+                    "value": "male"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Workstation[2]",
+            "type": "Workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-05T15:35:50Z",
+                    "value": "Workstation[2]"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Quality Check",
+            "time": "2023-04-05T15:35:50Z",
+            "attributes": [
+                {
+                    "name": "Emission",
+                    "value": "0.00201438"
+                },
+                {
+                    "name": "Compressed Air Usage",
+                    "value": "0.031"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Worker[1]",
+                    "qualifier": "performed"
+                },
+                {
+                    "objectId": "MalePart[3925]",
+                    "qualifier": "inspected"
+                },
+                {
+                    "objectId": "Workstation[2]",
+                    "qualifier": "location"
+                }
+            ]
+        }
+    ]
+}

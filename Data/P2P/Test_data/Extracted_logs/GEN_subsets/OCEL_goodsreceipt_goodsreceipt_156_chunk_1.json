@@ -1,0 +1,113 @@
+{
+    "objectTypes": [
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "type": "int"
+                }
+            ]
+        },
+        {
+            "name": "Department",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Invoice Receipt Created",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Invoice Receipt Processed",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:165",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "time": "2022-07-04T15:24:00Z",
+                    "value": "173200.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:156",
+                    "qualifier": "related to"
+                },
+                {
+                    "objectId": "Finance/Account Department",
+                    "qualifier": "processed by"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:156",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "time": "",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Finance/Account Department",
+            "type": "Department",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Invoice Receipt Created",
+            "time": "2022-07-04T15:24:00Z",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "value": "invoice receipt:165"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:165",
+                    "qualifier": "created"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Invoice Receipt Processed",
+            "time": "2022-07-04T15:24:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:165",
+                    "qualifier": "processed"
+                }
+            ]
+        }
+    ]
+}

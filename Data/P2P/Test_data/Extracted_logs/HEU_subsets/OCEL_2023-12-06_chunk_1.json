@@ -1,0 +1,212 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "float"
+                },
+                {
+                    "name": "movement type",
+                    "type": "float"
+                },
+                {
+                    "name": "amount",
+                    "type": "string"
+                },
+                {
+                    "name": "movement type",
+                    "type": "float"
+                },
+                {
+                    "name": "amount",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "approve purchase order",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "process goods receipt",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1223",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:1231",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "26,600.00"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:1228",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "176,250.00"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1231",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:1033",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation quotation:596",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "invoice receipt:1226",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "26,600.00"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "quotation quotation:596",
+            "type": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 9,
+            "type": "approve purchase order",
+            "time": "2023-12-06T07:06:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "group"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation quotation:596",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:1033",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 10,
+            "type": "process goods receipt",
+            "time": "2023-12-06T08:10:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1228",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:1231",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "invoice receipt:1226",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:1223",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

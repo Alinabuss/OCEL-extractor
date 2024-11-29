@@ -1,0 +1,104 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "invoice receipt",
+            "attributes": []
+        },
+        {
+            "name": "process",
+            "attributes": [
+                {
+                    "name": "department",
+                    "type": "string"
+                },
+                {
+                    "name": "credit amount",
+                    "type": "number"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "match completed",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1690",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2024-06-26T15:02:00Z",
+                    "value": "101"
+                }
+            ]
+        },
+        {
+            "id": "invoice receipt:1695",
+            "type": "invoice receipt",
+            "attributes": []
+        },
+        {
+            "id": "process:1",
+            "type": "process",
+            "attributes": [
+                {
+                    "name": "department",
+                    "time": "2024-06-26T15:02:00Z",
+                    "value": "Finance/Account Department"
+                },
+                {
+                    "name": "credit amount",
+                    "time": "2024-06-26T15:02:00Z",
+                    "value": "119200.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1690",
+                    "qualifier": "linked to"
+                },
+                {
+                    "objectId": "invoice receipt:1695",
+                    "qualifier": "linked to"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "match completed",
+            "time": "2024-06-26T15:02:00Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2024-06-26T15:02:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "process:1",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ]
+}

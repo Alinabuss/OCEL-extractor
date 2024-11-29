@@ -1,0 +1,149 @@
+{
+    "objectTypes": [
+        {
+            "name": "match",
+            "attributes": [
+                {
+                    "name": "matchID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "session",
+            "attributes": [
+                {
+                    "name": "sessionID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "player",
+            "attributes": [
+                {
+                    "name": "playerID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "stone wall",
+            "attributes": [
+                {
+                    "name": "creationStatus",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "match initiation",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "eventDescription",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "M250230427",
+            "type": "match",
+            "attributes": [
+                {
+                    "name": "matchID",
+                    "time": "2023-07-31T00:10:50Z",
+                    "value": "M250230427"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "S250230427_2199669",
+            "type": "session",
+            "attributes": [
+                {
+                    "name": "sessionID",
+                    "time": "2023-07-31T00:10:50Z",
+                    "value": "S250230427_2199669"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "P2199669",
+            "type": "player",
+            "attributes": [
+                {
+                    "name": "playerID",
+                    "time": "2023-07-31T00:10:50Z",
+                    "value": "P2199669"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "initial_stone_wall",
+            "type": "stone wall",
+            "attributes": [
+                {
+                    "name": "creationStatus",
+                    "time": "2023-07-31T00:10:50Z",
+                    "value": "created"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "associatedWith"
+                },
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "associatedWith"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "match initiation",
+            "time": "2023-07-31T00:10:50Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2023-07-31T00:10:50Z"
+                },
+                {
+                    "name": "eventDescription",
+                    "value": "Player P2199669 participated in match M250230427 and created the initial stone wall."
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "P2199669",
+                    "qualifier": "performedBy"
+                },
+                {
+                    "objectId": "initial_stone_wall",
+                    "qualifier": "resultedIn"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "relatedTo"
+                },
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "partOf"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,106 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "ApplicationSubmitted",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Applicant[Dave Taylor]",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-03T10:32:28Z",
+                    "value": "Dave Taylor"
+                }
+            ]
+        },
+        {
+            "id": "Application[770389]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2019-07-03T10:32:28Z",
+                    "value": "770389"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Applicant[Dave Taylor]",
+                    "qualifier": "submittedBy"
+                }
+            ]
+        },
+        {
+            "id": "Vacancy[550049]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2019-07-03T10:32:28Z",
+                    "value": "550049"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "ApplicationSubmitted",
+            "time": "2019-07-03T10:32:28Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2019-07-03T10:32:28Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770389]",
+                    "qualifier": "relatedTo"
+                },
+                {
+                    "objectId": "Vacancy[550049]",
+                    "qualifier": "forVacancy"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,134 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit receipt with amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "payment",
+            "attributes": []
+        },
+        {
+            "name": "purchase orders",
+            "attributes": [
+                {
+                    "name": "purchase group part",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "execute payment",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "payment:24",
+            "type": "payment",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:34",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "invoice receipt:49",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit receipt with amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "38000.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:34",
+            "type": "purchase orders",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:35",
+            "type": "purchase orders",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:36",
+            "type": "purchase orders",
+            "attributes": [
+                {
+                    "name": "purchase group part",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:49",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1129,
+            "type": "execute payment",
+            "time": "2022-05-15T08:37:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Finance / Account Department"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:34",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:35",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:36",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "invoice receipt:49",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "payment:24",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

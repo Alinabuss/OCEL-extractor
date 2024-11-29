@@ -1,0 +1,139 @@
+{
+    "objectTypes": [
+        {
+            "name": "quotation",
+            "attributes": []
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase order",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "purchase requisition",
+            "attributes": [
+                {
+                    "name": "group",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create goods receipt",
+            "attributes": [
+                {
+                    "name": "goods receipt",
+                    "type": "string"
+                },
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "create request for quotation",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Quotation[758",
+            "type": "quotation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Purchase Requisition[754",
+            "type": "purchase requisition",
+            "attributes": [
+                {
+                    "name": "group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:1264",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase order",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Quotation[758",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1635,
+            "type": "create goods receipt",
+            "time": "2024-04-25T09:41:00Z",
+            "attributes": [
+                {
+                    "name": "goods receipt",
+                    "value": "goods receipt:1548"
+                },
+                {
+                    "name": "movement type",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1264",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1636,
+            "type": "create request for quotation",
+            "time": "2024-04-25T19:48:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Procurement Department"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Quotation[758",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "Purchase Requisition[754",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

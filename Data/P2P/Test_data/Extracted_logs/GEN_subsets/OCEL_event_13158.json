@@ -1,0 +1,106 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": []
+        },
+        {
+            "name": "purchasing_group",
+            "attributes": [
+                {
+                    "name": "label",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "purchase_order_created",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:719",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "status",
+                    "time": "2023-06-15T19:44:00Z",
+                    "value": "complete"
+                },
+                {
+                    "name": "department",
+                    "time": "2023-06-15T19:44:00Z",
+                    "value": "procurement"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:416",
+                    "qualifier": "linked_to"
+                },
+                {
+                    "objectId": "002",
+                    "qualifier": "assigned_to"
+                }
+            ]
+        },
+        {
+            "id": "quotation:416",
+            "type": "quotation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "002",
+            "type": "purchasing_group",
+            "attributes": [
+                {
+                    "name": "label",
+                    "time": "2023-06-15T19:44:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "purchase_order_created",
+            "time": "2023-06-15T19:44:00Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:719",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

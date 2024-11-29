@@ -1,0 +1,139 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "ApplicationID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Application Rejection",
+            "attributes": [
+                {
+                    "name": "Reason",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application Submission",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "Detlef Neumann",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-03T07:04:08Z",
+                    "value": "Detlef Neumann"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770262]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "ApplicationID",
+                    "time": "2019-07-03T07:04:08Z",
+                    "value": "Application[770262]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770396]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "ApplicationID",
+                    "time": "2019-07-03T21:17:50Z",
+                    "value": "Application[770396]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Ed Keane",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-03T07:04:08Z",
+                    "value": "Ed Keane"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Application Rejection",
+            "time": "2019-07-03T07:04:08Z",
+            "attributes": [
+                {
+                    "name": "Reason",
+                    "value": "Rejection"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770262]",
+                    "qualifier": "related to"
+                },
+                {
+                    "objectId": "Detlef Neumann",
+                    "qualifier": "informed"
+                },
+                {
+                    "objectId": "Ed Keane",
+                    "qualifier": "initiator"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Application Submission",
+            "time": "2019-07-03T21:17:50Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Application[770396]",
+                    "qualifier": "submitted"
+                },
+                {
+                    "objectId": "Detlef Neumann",
+                    "qualifier": "applicant"
+                }
+            ]
+        }
+    ]
+}

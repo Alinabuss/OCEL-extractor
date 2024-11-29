@@ -1,0 +1,160 @@
+{
+    "objectTypes": [
+        {
+            "name": "customer",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "order",
+            "attributes": [
+                {
+                    "name": "total_items",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "order_placed",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "timestamp"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Balkan Minerals d.o.o.",
+            "type": "customer",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2024-02-02T22:43:14Z",
+                    "value": "Balkan Minerals d.o.o."
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "order_1",
+            "type": "order",
+            "attributes": [
+                {
+                    "name": "total_items",
+                    "time": "2024-02-02T22:43:14Z",
+                    "value": "5"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Balkan Minerals d.o.o.",
+                    "qualifier": "placed_by"
+                }
+            ]
+        },
+        {
+            "id": "i-886639",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2024-02-02T22:43:14Z",
+                    "value": "941.7"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "order_1",
+                    "qualifier": "included_in"
+                }
+            ]
+        },
+        {
+            "id": "i-886640",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2024-02-02T22:43:14Z",
+                    "value": "623.48"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "order_1",
+                    "qualifier": "included_in"
+                }
+            ]
+        },
+        {
+            "id": "i-886641",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2024-02-02T22:43:14Z",
+                    "value": "1354.22"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "order_1",
+                    "qualifier": "included_in"
+                }
+            ]
+        },
+        {
+            "id": "i-886642",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2024-02-02T22:43:14Z",
+                    "value": "106.06"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "order_1",
+                    "qualifier": "included_in"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "order_placed",
+            "time": "2024-02-02T22:43:14Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2024-02-02T22:43:14Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "order_1",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

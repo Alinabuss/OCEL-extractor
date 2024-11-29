@@ -1,0 +1,83 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "int"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "finalized invoice receipt",
+            "attributes": [
+                {
+                    "name": "invoice ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:644",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2023-03-09T22:29:00Z",
+                    "value": "123750.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:652",
+                    "qualifier": "connected to"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:652",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2023-03-09T22:29:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "finalized invoice receipt",
+            "time": "2023-03-09T22:29:00Z",
+            "attributes": [
+                {
+                    "name": "invoice ID",
+                    "value": "invoice receipt:644"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:644",
+                    "qualifier": "relates to"
+                }
+            ]
+        }
+    ]
+}

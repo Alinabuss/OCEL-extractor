@@ -1,0 +1,219 @@
+{
+    "objectTypes": [
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "type": "string"
+                },
+                {
+                    "name": "containers",
+                    "type": "float"
+                },
+                {
+                    "name": "departure_time",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Booking",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "type": "string"
+                },
+                {
+                    "name": "document_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Transport Document Created",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh101",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "time": "2024-04-29T08:13:50Z",
+                    "value": "vh101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td446",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "time": "2024-04-29T08:13:50Z",
+                    "value": "td446"
+                },
+                {
+                    "name": "containers",
+                    "time": "2024-04-29T08:13:50Z",
+                    "value": "2.0"
+                },
+                {
+                    "name": "departure_time",
+                    "time": "2024-04-29T08:13:50Z",
+                    "value": "2024-05-14T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td447",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "time": "2024-04-29T12:39:53Z",
+                    "value": "td447"
+                },
+                {
+                    "name": "containers",
+                    "time": "2024-04-29T12:39:53Z",
+                    "value": "4.0"
+                },
+                {
+                    "name": "departure_time",
+                    "time": "2024-04-29T12:39:53Z",
+                    "value": "2024-05-14T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh98",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "time": "2024-04-29T15:10:55Z",
+                    "value": "vh98"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td448",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "time": "2024-04-29T15:10:55Z",
+                    "value": "td448"
+                },
+                {
+                    "name": "containers",
+                    "time": "2024-04-29T15:10:55Z",
+                    "value": "2.0"
+                },
+                {
+                    "name": "departure_time",
+                    "time": "2024-04-29T15:10:55Z",
+                    "value": "2024-05-03T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Booking",
+            "time": "2024-04-29T08:13:50Z",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "value": "vh101"
+                },
+                {
+                    "name": "document_id",
+                    "value": "td446"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh101",
+                    "qualifier": "booked_for"
+                },
+                {
+                    "objectId": "td446",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Booking",
+            "time": "2024-04-29T12:39:53Z",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "value": "vh101"
+                },
+                {
+                    "name": "document_id",
+                    "value": "td447"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh101",
+                    "qualifier": "booked_for"
+                },
+                {
+                    "objectId": "td447",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Transport Document Created",
+            "time": "2024-04-29T15:10:55Z",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "value": "td448"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh98",
+                    "qualifier": "booked_for"
+                },
+                {
+                    "objectId": "td448",
+                    "qualifier": "linked_to"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,116 @@
+{
+    "objectTypes": [
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Resource",
+            "attributes": [
+                {
+                    "name": "Department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Create Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "Credit Amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:735",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "time": "2023-04-14T01:13:00Z",
+                    "value": "3750.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:730",
+                    "qualifier": "linked to"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:730",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "time": "2023-04-14T01:13:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "resource:finance_account_department",
+            "type": "Resource",
+            "attributes": [
+                {
+                    "name": "Department",
+                    "time": "2023-04-14T01:13:00Z",
+                    "value": "Finance/Account Department"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Create Invoice Receipt",
+            "time": "2023-04-14T01:13:00Z",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "value": "2023-04-14T01:13:00Z"
+                },
+                {
+                    "name": "Credit Amount",
+                    "value": "3750.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:735",
+                    "qualifier": "created"
+                },
+                {
+                    "objectId": "resource:finance_account_department",
+                    "qualifier": "by"
+                }
+            ]
+        }
+    ]
+}

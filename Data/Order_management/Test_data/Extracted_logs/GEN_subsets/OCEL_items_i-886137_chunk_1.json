@@ -1,0 +1,154 @@
+{
+    "objectTypes": [
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "productID",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "itemID",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Department",
+            "attributes": [
+                {
+                    "name": "departmentName",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "employeeName",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Reorder",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "quantity",
+                    "type": "int"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "iPad",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "productID",
+                    "time": "2024-01-11T14:22:36Z",
+                    "value": "iPad"
+                },
+                {
+                    "name": "price",
+                    "time": "2024-01-11T14:22:36Z",
+                    "value": 495.0
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-886137",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "itemID",
+                    "time": "2024-01-11T14:22:36Z",
+                    "value": "i-886137"
+                },
+                {
+                    "name": "price",
+                    "time": "2024-01-11T14:22:36Z",
+                    "value": 556.38
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "warehousing",
+            "type": "Department",
+            "attributes": [
+                {
+                    "name": "departmentName",
+                    "time": "2024-01-11T14:22:36Z",
+                    "value": "warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Marco Pegoraro",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "employeeName",
+                    "time": "2024-01-11T14:22:36Z",
+                    "value": "Marco Pegoraro"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Reorder",
+            "time": "2024-01-11T14:22:36Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2024-01-11T14:22:36Z"
+                },
+                {
+                    "name": "quantity",
+                    "value": "1"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-886137",
+                    "qualifier": "reordered"
+                },
+                {
+                    "objectId": "Marco Pegoraro",
+                    "qualifier": "initiatedBy"
+                },
+                {
+                    "objectId": "warehousing",
+                    "qualifier": "fromDepartment"
+                }
+            ]
+        }
+    ]
+}

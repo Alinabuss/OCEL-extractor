@@ -1,0 +1,105 @@
+{
+  "objectTypes": [
+    {
+      "name": "items",
+      "attributes": [
+        {
+          "name": "price",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "orders",
+      "attributes": [
+        {
+          "name": "price",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "products",
+      "attributes": [
+        {
+          "name": "price",
+          "type": "float"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "pay order",
+      "attributes": []
+    }
+  ],
+  "objects": [
+    {
+      "id": "o-991550",
+      "type": "orders",
+      "attributes": [
+        {
+          "name": "price",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 117.39
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "i-886112",
+          "qualifier": "comprises"
+        }
+      ]
+    },
+    {
+      "id": "i-886112",
+      "type": "items",
+      "attributes": [
+        {
+          "name": "price",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 112.39
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Echo",
+          "qualifier": "is a"
+        }
+      ]
+    },
+    {
+      "id": "Echo",
+      "type": "products",
+      "attributes": [
+        {
+          "name": "price",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 99.99
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "pay_o-991550",
+      "type": "pay order",
+      "time": "2024-02-22T17:12:20Z",
+      "relationships": [
+        {
+          "objectId": "o-991550",
+          "qualifier": "order"
+        },
+        {
+          "objectId": "i-886112",
+          "qualifier": "item"
+        },
+        {
+          "objectId": "Echo",
+          "qualifier": "product"
+        }
+      ]
+    }
+  ]
+}

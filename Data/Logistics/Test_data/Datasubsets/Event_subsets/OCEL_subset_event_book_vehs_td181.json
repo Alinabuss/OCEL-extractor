@@ -1,0 +1,75 @@
+{
+  "objectTypes": [
+    {
+      "name": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "Vehicle",
+      "attributes": [
+        {
+          "name": "Departure Date",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Book Vehicles",
+      "attributes": []
+    }
+  ],
+  "objects": [
+    {
+      "id": "td181",
+      "type": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 1.0
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "vh44",
+          "qualifier": "Regular VH for TD"
+        }
+      ]
+    },
+    {
+      "id": "vh44",
+      "type": "Vehicle",
+      "attributes": [
+        {
+          "name": "Departure Date",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "2023-10-27 11:00:00"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "book_vehs_td181",
+      "type": "Book Vehicles",
+      "time": "2023-10-10T07:53:47Z",
+      "relationships": [
+        {
+          "objectId": "td181",
+          "qualifier": "VHs booked for TD"
+        },
+        {
+          "objectId": "vh44",
+          "qualifier": "booked VHs"
+        }
+      ]
+    }
+  ]
+}

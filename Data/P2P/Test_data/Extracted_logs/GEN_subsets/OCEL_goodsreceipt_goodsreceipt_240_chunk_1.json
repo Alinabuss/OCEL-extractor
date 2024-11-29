@@ -1,0 +1,90 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create_goods_receipt",
+            "attributes": [
+                {
+                    "name": "receipt_id",
+                    "type": "string"
+                },
+                {
+                    "name": "associated_purchase_order",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods_receipt 240",
+            "type": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "time": "2022-08-03T17:36:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order 173",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order 173",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "purchasing_group",
+                    "time": "2022-08-03T17:36:00Z",
+                    "value": "001"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create_goods_receipt",
+            "time": "2022-08-03T17:36:00Z",
+            "attributes": [
+                {
+                    "name": "receipt_id",
+                    "value": "goods receipt 240"
+                },
+                {
+                    "name": "associated_purchase_order",
+                    "value": "purchase order 173"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods_receipt 240",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

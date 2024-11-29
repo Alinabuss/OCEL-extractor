@@ -1,0 +1,125 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "type": "string"
+                },
+                {
+                    "name": "vacancy_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "vacancy_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Submit Application",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Dave Taylor",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-03T10:32:28Z",
+                    "value": "Dave Taylor"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770389]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "time": "2019-07-03T10:32:28Z",
+                    "value": "770389"
+                },
+                {
+                    "name": "vacancy_id",
+                    "time": "2019-07-03T10:32:28Z",
+                    "value": "550049"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550049]",
+                    "qualifier": "applied_for"
+                }
+            ]
+        },
+        {
+            "id": "Vacancy[550049]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "vacancy_id",
+                    "time": "2019-07-03T10:32:28Z",
+                    "value": "550049"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Submit Application",
+            "time": "2019-07-03T10:32:28Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "submitted"
+                },
+                {
+                    "name": "time",
+                    "value": "2019-07-03T10:32:28Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770389]",
+                    "qualifier": "submitted"
+                },
+                {
+                    "objectId": "Dave Taylor",
+                    "qualifier": "submitted_by"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,120 @@
+{
+    "objectTypes": [
+        {
+            "name": "Part",
+            "attributes": [
+                {
+                    "name": "gender",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Worker",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Workstation",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Check",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "string"
+                },
+                {
+                    "name": "CO2_emission",
+                    "type": "float"
+                },
+                {
+                    "name": "compressed_air_utilization",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "FemalePart[3747]",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "gender",
+                    "time": "2023-04-05T13:26:36Z",
+                    "value": "female"
+                }
+            ]
+        },
+        {
+            "id": "Worker[1]",
+            "type": "Worker",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-04-05T13:26:36Z",
+                    "value": "1"
+                }
+            ]
+        },
+        {
+            "id": "Workstation[2]",
+            "type": "Workstation",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2023-04-05T13:26:36Z",
+                    "value": "unknown"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Check",
+            "time": "2023-04-05T13:26:36Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "unknown"
+                },
+                {
+                    "name": "CO2_emission",
+                    "value": "0.00071478"
+                },
+                {
+                    "name": "compressed_air_utilization",
+                    "value": "0.011"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "FemalePart[3747]",
+                    "qualifier": "performed_check_on"
+                },
+                {
+                    "objectId": "Worker[1]",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "Workstation[2]",
+                    "qualifier": "took_place_at"
+                }
+            ]
+        }
+    ]
+}

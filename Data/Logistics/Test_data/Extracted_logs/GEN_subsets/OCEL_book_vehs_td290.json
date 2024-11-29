@@ -1,0 +1,108 @@
+{
+    "objectTypes": [
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "identifier",
+                    "type": "string"
+                },
+                {
+                    "name": "allocation",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "identifier",
+                    "type": "string"
+                },
+                {
+                    "name": "scheduled_departure",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "vehicle_booked",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "document_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td290",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "identifier",
+                    "time": "2024-01-01T07:45:04Z",
+                    "value": "td290"
+                },
+                {
+                    "name": "allocation",
+                    "time": "2024-01-01T07:45:04Z",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh70",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "identifier",
+                    "time": "2024-01-01T00:00:00Z",
+                    "value": "vh70"
+                },
+                {
+                    "name": "scheduled_departure",
+                    "time": "2024-01-01T00:00:00Z",
+                    "value": "2024-01-26T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "vehicle_booked",
+            "time": "2024-01-01T07:45:04Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2024-01-01T07:45:04Z"
+                },
+                {
+                    "name": "document_id",
+                    "value": "td290"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td290",
+                    "qualifier": "refers_to"
+                },
+                {
+                    "objectId": "vh70",
+                    "qualifier": "associated_with"
+                }
+            ]
+        }
+    ]
+}

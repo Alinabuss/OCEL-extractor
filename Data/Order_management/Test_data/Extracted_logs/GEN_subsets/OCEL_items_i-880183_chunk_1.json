@@ -1,0 +1,116 @@
+{
+    "objectTypes": [
+        {
+            "name": "Order",
+            "attributes": [
+                {
+                    "name": "customer",
+                    "type": "string"
+                },
+                {
+                    "name": "total_price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "OrderPlaced",
+            "attributes": [
+                {
+                    "name": "customer",
+                    "type": "string"
+                },
+                {
+                    "name": "total_price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "i-880183",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "value": "79.99",
+                    "time": "2023-04-21T07:57:57Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-880184",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "value": "699.0",
+                    "time": "2023-04-21T07:57:57Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "order_1",
+            "type": "Order",
+            "attributes": [
+                {
+                    "name": "customer",
+                    "value": "Nordica Systems GmbH",
+                    "time": "2023-04-21T07:57:57Z"
+                },
+                {
+                    "name": "total_price",
+                    "value": "1474.99",
+                    "time": "2023-04-21T07:57:57Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-880183",
+                    "qualifier": "includes"
+                },
+                {
+                    "objectId": "i-880184",
+                    "qualifier": "includes"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "OrderPlaced",
+            "time": "2023-04-21T07:57:57Z",
+            "attributes": [
+                {
+                    "name": "customer",
+                    "value": "Nordica Systems GmbH"
+                },
+                {
+                    "name": "total_price",
+                    "value": "1474.99"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "order_1",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

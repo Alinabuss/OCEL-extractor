@@ -1,0 +1,109 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "material",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "net_price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "approved",
+            "attributes": [
+                {
+                    "name": "requisition_ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_requisition:327:pr_trigger_327",
+            "type": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-03-01T21:32:00Z",
+                    "value": "purchase_requisition:327:pr_trigger_327"
+                },
+                {
+                    "name": "purchasing_group",
+                    "time": "2023-03-01T21:32:00Z",
+                    "value": "002"
+                },
+                {
+                    "name": "status",
+                    "time": "2023-03-01T21:32:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "material:810",
+            "type": "material",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-03-01T21:32:00Z",
+                    "value": "material:810"
+                },
+                {
+                    "name": "net_price",
+                    "time": "2023-03-01T21:32:00Z",
+                    "value": 450.0
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "approved",
+            "time": "2023-03-01T21:32:00Z",
+            "attributes": [
+                {
+                    "name": "requisition_ID",
+                    "value": "purchase_requisition:327:pr_trigger_327"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:327:pr_trigger_327",
+                    "qualifier": "linked_to"
+                },
+                {
+                    "objectId": "material:810",
+                    "qualifier": "linked_to"
+                }
+            ]
+        }
+    ]
+}

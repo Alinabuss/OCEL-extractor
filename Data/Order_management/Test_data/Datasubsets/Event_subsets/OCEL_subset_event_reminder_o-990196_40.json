@@ -1,0 +1,105 @@
+{
+  "objectTypes": [
+    {
+      "name": "items",
+      "attributes": [
+        {
+          "name": "price",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "orders",
+      "attributes": [
+        {
+          "name": "price",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "products",
+      "attributes": [
+        {
+          "name": "price",
+          "type": "float"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "payment reminder",
+      "attributes": []
+    }
+  ],
+  "objects": [
+    {
+      "id": "o-990196",
+      "type": "orders",
+      "attributes": [
+        {
+          "name": "price",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 2205.0
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "i-880811",
+          "qualifier": "comprises"
+        }
+      ]
+    },
+    {
+      "id": "i-880811",
+      "type": "items",
+      "attributes": [
+        {
+          "name": "price",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 2200.0
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "MacBook Air",
+          "qualifier": "is a"
+        }
+      ]
+    },
+    {
+      "id": "MacBook Air",
+      "type": "products",
+      "attributes": [
+        {
+          "name": "price",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 2200.0
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "reminder_o-990196_40",
+      "type": "payment reminder",
+      "time": "2023-06-13T10:44:27Z",
+      "relationships": [
+        {
+          "objectId": "o-990196",
+          "qualifier": "order"
+        },
+        {
+          "objectId": "i-880811",
+          "qualifier": "item"
+        },
+        {
+          "objectId": "MacBook Air",
+          "qualifier": "product"
+        }
+      ]
+    }
+  ]
+}

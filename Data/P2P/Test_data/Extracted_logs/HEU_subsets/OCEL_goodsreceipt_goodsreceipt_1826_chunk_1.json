@@ -1,0 +1,107 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods receipt",
+            "attributes": []
+        },
+        {
+            "name": "receipt invoice",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "perform way match",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "specify credit amount",
+            "attributes": []
+        },
+        {
+            "name": "match against the invoice receipt",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1826",
+            "type": "goods receipt",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:1824",
+            "type": "receipt invoice",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1376,
+            "type": "specify credit amount",
+            "time": "2024-09-04T10:16:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1824",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1377,
+            "type": "match against the invoice receipt",
+            "time": "2024-09-04T10:16:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1824",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1378,
+            "type": "perform way match",
+            "time": "2024-09-04T12:08:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Finance / Account Department"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1826",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

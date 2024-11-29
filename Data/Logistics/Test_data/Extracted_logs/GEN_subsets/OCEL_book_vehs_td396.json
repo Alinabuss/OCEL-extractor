@@ -1,0 +1,90 @@
+{
+    "objectTypes": [
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "ScheduledDeparture",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "ContainerCount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "VehicleBooked",
+            "attributes": [
+                {
+                    "name": "BookingTime",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh91",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ScheduledDeparture",
+                    "time": "2024-04-09T11:00:00Z",
+                    "value": "2024-04-09T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td396",
+            "type": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ContainerCount",
+                    "time": "2024-03-20T12:38:06Z",
+                    "value": "3.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "VehicleBooked",
+            "time": "2024-03-20T12:38:06Z",
+            "attributes": [
+                {
+                    "name": "BookingTime",
+                    "value": "2024-03-20T12:38:06Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh91",
+                    "qualifier": "booked"
+                },
+                {
+                    "objectId": "td396",
+                    "qualifier": "associatedWith"
+                }
+            ]
+        }
+    ]
+}

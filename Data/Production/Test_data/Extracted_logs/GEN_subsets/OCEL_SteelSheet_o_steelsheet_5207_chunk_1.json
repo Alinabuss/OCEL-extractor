@@ -1,0 +1,140 @@
+{
+    "objectTypes": [
+        {
+            "name": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Weight",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Machine",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Heating",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "type": "int"
+                },
+                {
+                    "name": "CO2Emitted",
+                    "type": "float"
+                },
+                {
+                    "name": "ElectricityUsed",
+                    "type": "float"
+                },
+                {
+                    "name": "GasUsed",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o_steelsheet_5207",
+            "type": "SteelSheet",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-06T10:18:16Z",
+                    "value": "o_steelsheet_5207"
+                },
+                {
+                    "name": "Weight",
+                    "time": "2023-04-06T10:18:16Z",
+                    "value": "0.02107"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_machine_oven01",
+            "type": "Machine",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-06T10:18:16Z",
+                    "value": "o_machine_oven01"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_workstation_1",
+            "type": "Workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-06T10:18:16Z",
+                    "value": "o_workstation_1"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Heating",
+            "time": "2023-04-06T10:18:16Z",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "value": "900"
+                },
+                {
+                    "name": "CO2Emitted",
+                    "value": "0.0138019093344"
+                },
+                {
+                    "name": "ElectricityUsed",
+                    "value": "0.02"
+                },
+                {
+                    "name": "GasUsed",
+                    "value": "0.49392"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_steelsheet_5207",
+                    "qualifier": "is-heated-by"
+                },
+                {
+                    "objectId": "o_machine_oven01",
+                    "qualifier": "uses"
+                },
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "located-at"
+                }
+            ]
+        }
+    ]
+}

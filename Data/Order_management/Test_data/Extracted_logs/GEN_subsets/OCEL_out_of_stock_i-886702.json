@@ -1,0 +1,112 @@
+{
+    "objectTypes": [
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Incident",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Report Out of Stock",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "product_name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Echo Dot",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2024-02-06T17:05:10Z",
+                    "value": "29.99"
+                }
+            ]
+        },
+        {
+            "id": "i-886702",
+            "type": "Incident",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "2024-02-06T17:05:10Z",
+                    "value": "i-886702"
+                }
+            ]
+        },
+        {
+            "id": "Mahsa Bafrani",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "time": "2024-02-06T17:05:10Z",
+                    "value": "Warehousing"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Report Out of Stock",
+            "time": "2024-02-06T17:05:10Z",
+            "attributes": [
+                {
+                    "name": "product_name",
+                    "value": "Echo Dot"
+                },
+                {
+                    "name": "timestamp",
+                    "value": "2024-02-06T17:05:10Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-886702",
+                    "qualifier": "reported"
+                },
+                {
+                    "objectId": "Echo Dot",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "Mahsa Bafrani",
+                    "qualifier": "reported_by"
+                }
+            ]
+        }
+    ]
+}

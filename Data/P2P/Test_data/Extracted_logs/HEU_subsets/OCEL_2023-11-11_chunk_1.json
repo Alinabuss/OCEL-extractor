@@ -1,0 +1,95 @@
+{
+    "objectTypes": [
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "group purchase",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase requisition",
+            "attributes": [
+                {
+                    "name": "group purchase",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "request for quotation",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "quotation:572",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "group purchase",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "purchasing group 004"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_requisition:568 : pr_trigger_568",
+            "type": "purchase requisition",
+            "attributes": [
+                {
+                    "name": "group purchase",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "purchasing group 004"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:572",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 262,
+            "type": "request for quotation",
+            "time": "2023-11-11T03:54:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Procurement Department"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:568 : pr_trigger_568",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "quotation:572",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

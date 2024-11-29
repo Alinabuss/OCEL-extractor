@@ -1,0 +1,85 @@
+{
+    "objectTypes": [
+        {
+            "name": "approval",
+            "attributes": []
+        },
+        {
+            "name": "EKGRP EBAN",
+            "attributes": [
+                {
+                    "name": "part of Purchasing Group",
+                    "type": "string"
+                },
+                {
+                    "name": "purchase order",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "approval of the purchase order",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "quotation:141",
+            "type": "EKGRP EBAN",
+            "attributes": [
+                {
+                    "name": "part of Purchasing Group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Purchasing Group ( EBAN"
+                },
+                {
+                    "name": "purchase order",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:242",
+            "type": "approval",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation:141",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 975,
+            "type": "approval of the purchase order",
+            "time": "2022-08-19T06:35:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:141",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:242",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

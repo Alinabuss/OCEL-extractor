@@ -1,0 +1,100 @@
+{
+    "objectTypes": [
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "amount_of_containers",
+                    "type": "float"
+                },
+                {
+                    "name": "scheduled_departure",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh125",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-07-09T13:04:35Z",
+                    "value": "vh125"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td539",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-07-09T13:04:35Z",
+                    "value": "td539"
+                },
+                {
+                    "name": "amount_of_containers",
+                    "time": "2024-07-09T13:04:35Z",
+                    "value": "2.0"
+                },
+                {
+                    "name": "scheduled_departure",
+                    "time": "2024-07-09T13:04:35Z",
+                    "value": "2024-08-06T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2024-07-09T13:04:35Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2024-07-09T13:04:35Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh125",
+                    "qualifier": "booked_for"
+                },
+                {
+                    "objectId": "td539",
+                    "qualifier": "associated_with"
+                }
+            ]
+        }
+    ]
+}

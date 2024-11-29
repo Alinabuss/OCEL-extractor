@@ -1,0 +1,102 @@
+{
+    "objectTypes": [
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "ReportOutOfStock",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "string"
+                },
+                {
+                    "name": "relatedItem",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Kindle",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-07-27T08:19:24Z",
+                    "value": "79.99"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-882320",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-07-27T08:19:24Z",
+                    "value": "84.56"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Mahsa Bafrani",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "time": "2023-07-27T08:19:24Z",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "ReportOutOfStock",
+            "time": "2023-07-27T08:19:24Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-07-27T08:19:24Z"
+                },
+                {
+                    "name": "relatedItem",
+                    "value": "Kindle"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Mahsa Bafrani",
+                    "qualifier": "reportedBy"
+                },
+                {
+                    "objectId": "Kindle",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        }
+    ]
+}

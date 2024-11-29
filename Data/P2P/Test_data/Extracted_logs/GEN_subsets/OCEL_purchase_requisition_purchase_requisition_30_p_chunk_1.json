@@ -1,0 +1,104 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create_request_for_quotation",
+            "attributes": [
+                {
+                    "name": "requisition_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "complete_request",
+            "attributes": [
+                {
+                    "name": "quotation_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_requisition:30:pr_trigger_30",
+            "type": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "purchasing_group",
+                    "time": "2022-05-06T11:39:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "quotation:25",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "purchasing_group",
+                    "time": "",
+                    "value": "005"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create_request_for_quotation",
+            "time": "2022-05-06T11:39:00Z",
+            "attributes": [
+                {
+                    "name": "requisition_id",
+                    "value": "purchase_requisition:30:pr_trigger_30"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:30:pr_trigger_30",
+                    "qualifier": "utilized"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "complete_request",
+            "time": "2022-05-06T11:39:00Z",
+            "attributes": [
+                {
+                    "name": "quotation_id",
+                    "value": "quotation:25"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:25",
+                    "qualifier": "included_in"
+                }
+            ]
+        }
+    ]
+}

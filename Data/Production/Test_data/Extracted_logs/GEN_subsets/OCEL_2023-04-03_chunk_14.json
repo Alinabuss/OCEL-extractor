@@ -1,0 +1,363 @@
+{
+    "objectTypes": [
+        {
+            "name": "Workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Machine",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Part",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Emissions",
+            "attributes": [
+                {
+                    "name": "CO2",
+                    "type": "float"
+                },
+                {
+                    "name": "Nitrogen",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Cutting",
+            "attributes": [
+                {
+                    "name": "ElectricityConsumed",
+                    "type": "float"
+                },
+                {
+                    "name": "CompressedAirUsed",
+                    "type": "float"
+                },
+                {
+                    "name": "NitrogenUsed",
+                    "type": "float"
+                },
+                {
+                    "name": "SteelWasteProduced",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Forming",
+            "attributes": [
+                {
+                    "name": "ElectricityConsumed",
+                    "type": "float"
+                },
+                {
+                    "name": "SteelSheetMass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Heating",
+            "attributes": [
+                {
+                    "name": "ElectricityConsumed",
+                    "type": "float"
+                },
+                {
+                    "name": "GasUsed",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Workstation[1]",
+            "type": "Workstation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Workstation[2]",
+            "type": "Workstation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Machine[cutting01]",
+            "type": "Machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Machine[former02]",
+            "type": "Machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Machine[o_machine_oven01]",
+            "type": "Machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Machine[1]",
+            "type": "Machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Machine[oven01]",
+            "type": "Machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "MalePart[611]",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "value": "N/A"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "SteelSheet[1091]",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "value": "0.02113"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "SteelSheet[o_steelsheet_1161]",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "value": "0.02109"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "FemalePart[628]",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "value": "N/A"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "SteelSheet[1168]",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "value": "0.02124"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Cutting",
+            "time": "2023-04-03T11:46:11Z",
+            "attributes": [
+                {
+                    "name": "ElectricityConsumed",
+                    "value": "0.0152648"
+                },
+                {
+                    "name": "CompressedAirUsed",
+                    "value": "0.052"
+                },
+                {
+                    "name": "NitrogenUsed",
+                    "value": "0.061"
+                },
+                {
+                    "name": "SteelWasteProduced",
+                    "value": "0.00252"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Workstation[2]",
+                    "qualifier": "occurred_at"
+                },
+                {
+                    "objectId": "Machine[cutting01]",
+                    "qualifier": "performed_with"
+                },
+                {
+                    "objectId": "MalePart[611]",
+                    "qualifier": "produced"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Forming",
+            "time": "2023-04-03T11:50:49Z",
+            "attributes": [
+                {
+                    "name": "ElectricityConsumed",
+                    "value": "0.0041667"
+                },
+                {
+                    "name": "SteelSheetMass",
+                    "value": "0.02113"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Workstation[1]",
+                    "qualifier": "occurred_at"
+                },
+                {
+                    "objectId": "Machine[former02]",
+                    "qualifier": "performed_with"
+                },
+                {
+                    "objectId": "SteelSheet[1091]",
+                    "qualifier": "used"
+                },
+                {
+                    "objectId": "SteelSheet[1091]",
+                    "qualifier": "produced"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Heating",
+            "time": "2023-04-03T11:50:52Z",
+            "attributes": [
+                {
+                    "name": "ElectricityConsumed",
+                    "value": "0.02"
+                },
+                {
+                    "name": "GasUsed",
+                    "value": "0.49392"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Workstation[o_workstation_1]",
+                    "qualifier": "occurred_at"
+                },
+                {
+                    "objectId": "Machine[o_machine_oven01]",
+                    "qualifier": "performed_with"
+                },
+                {
+                    "objectId": "SteelSheet[o_steelsheet_1161]",
+                    "qualifier": "used"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Cutting",
+            "time": "2023-04-03T11:51:14Z",
+            "attributes": [
+                {
+                    "name": "ElectricityConsumed",
+                    "value": "0.0191"
+                },
+                {
+                    "name": "CompressedAirUsed",
+                    "value": "0.077"
+                },
+                {
+                    "name": "NitrogenUsed",
+                    "value": "0.076"
+                },
+                {
+                    "name": "SteelWasteProduced",
+                    "value": "0.00252"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Workstation[2]",
+                    "qualifier": "occurred_at"
+                },
+                {
+                    "objectId": "Machine[1]",
+                    "qualifier": "performed_with"
+                },
+                {
+                    "objectId": "FemalePart[628]",
+                    "qualifier": "produced"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "Heating",
+            "time": "2023-04-03T11:52:25Z",
+            "attributes": [
+                {
+                    "name": "ElectricityConsumed",
+                    "value": "0.02"
+                },
+                {
+                    "name": "GasUsed",
+                    "value": "0.49392"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Workstation[1]",
+                    "qualifier": "occurred_at"
+                },
+                {
+                    "objectId": "Machine[oven01]",
+                    "qualifier": "performed_with"
+                },
+                {
+                    "objectId": "SteelSheet[1168]",
+                    "qualifier": "used"
+                }
+            ]
+        }
+    ]
+}

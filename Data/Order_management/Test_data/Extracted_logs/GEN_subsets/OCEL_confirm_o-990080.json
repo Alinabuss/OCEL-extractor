@@ -1,0 +1,139 @@
+{
+    "objectTypes": [
+        {
+            "name": "customer",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "order",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "total_price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "order_confirmation",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Mediterranea Luxury Cruises S.p.A.",
+            "type": "customer",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-05-04T07:21:14Z",
+                    "value": "Mediterranea Luxury Cruises S.p.A."
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o-990080",
+            "type": "order",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-05-04T07:21:14Z",
+                    "value": "o-990080"
+                },
+                {
+                    "name": "total_price",
+                    "time": "2023-05-04T07:21:14Z",
+                    "value": 384.96
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Mediterranea Luxury Cruises S.p.A.",
+                    "qualifier": "confirmed_by"
+                }
+            ]
+        },
+        {
+            "id": "Fire Stick",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-05-04T07:21:14Z",
+                    "value": "Fire Stick"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-05-04T07:21:14Z",
+                    "value": 39.99
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-880337",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-05-04T07:21:14Z",
+                    "value": "i-880337"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-05-04T07:21:14Z",
+                    "value": 149.99
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "order_confirmation",
+            "time": "2023-05-04T07:21:14Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-05-04T07:21:14Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o-990080",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

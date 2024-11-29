@@ -1,0 +1,82 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "category",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "category",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "approval",
+            "attributes": [
+                {
+                    "name": "approver",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:1245",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "category",
+                    "time": "2024-04-04T08:37:00Z",
+                    "value": "Purchasing Group 002"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:718",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": "quotation:718",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "category",
+                    "time": "2024-04-04T08:37:00Z",
+                    "value": "Purchasing Group 002"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "approval",
+            "time": "2024-04-04T08:37:00Z",
+            "attributes": [
+                {
+                    "name": "approver",
+                    "value": "Procurement Order Manager"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1245",
+                    "qualifier": "approves"
+                }
+            ]
+        }
+    ]
+}

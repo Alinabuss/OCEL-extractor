@@ -1,0 +1,162 @@
+{
+    "objectTypes": [
+        {
+            "name": "steel_coil",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "steel_sheet",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "machine",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "splitting_operation",
+            "attributes": [
+                {
+                    "name": "duration_seconds",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2_emissions_kg",
+                    "type": "float"
+                },
+                {
+                    "name": "electricity_consumed_kWh",
+                    "type": "float"
+                },
+                {
+                    "name": "steel_waste_weight_kg",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "SteelCoil[4]",
+            "type": "steel_coil",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-03T12:45:29Z",
+                    "value": "SteelCoil[4]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "SteelSheet[1395]",
+            "type": "steel_sheet",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-03T12:45:29Z",
+                    "value": "SteelSheet[1395]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelCoil[4]",
+                    "qualifier": "derived_from"
+                }
+            ]
+        },
+        {
+            "id": "Workstation[1]",
+            "type": "workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-03T12:45:29Z",
+                    "value": "Workstation[1]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Machine[1]",
+            "type": "machine",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-03T12:45:29Z",
+                    "value": "Machine[1]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Workstation[1]",
+                    "qualifier": "located_at"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "splitting_operation",
+            "time": "2023-04-03T12:45:29Z",
+            "attributes": [
+                {
+                    "name": "duration_seconds",
+                    "value": 14.48
+                },
+                {
+                    "name": "CO2_emissions_kg",
+                    "value": 0.0151
+                },
+                {
+                    "name": "electricity_consumed_kWh",
+                    "value": 0.0221
+                },
+                {
+                    "name": "steel_waste_weight_kg",
+                    "value": 0.00042
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelSheet[1395]",
+                    "qualifier": "resulted_in"
+                },
+                {
+                    "objectId": "Workstation[1]",
+                    "qualifier": "performed_at"
+                },
+                {
+                    "objectId": "Machine[1]",
+                    "qualifier": "performed_by"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,143 @@
+{
+    "objectTypes": [
+        {
+            "name": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Create Goods Receipt",
+            "attributes": [
+                {
+                    "name": "creation time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "responsible resource",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:431",
+            "type": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "time": "2022-12-20T03:57:00Z",
+                    "value": "001"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods_receipt:505",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2022-12-20T03:57:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "lifecycle status",
+                    "time": "2022-12-20T03:57:00Z",
+                    "value": "N/A"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:431",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "goods_receipt:503",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2022-12-22T06:05:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "lifecycle status",
+                    "time": "2022-12-22T06:05:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:431",
+                    "qualifier": "associated with"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Create Goods Receipt",
+            "time": "2022-12-20T03:57:00Z",
+            "attributes": [
+                {
+                    "name": "creation time",
+                    "value": "2022-12-20T03:57:00Z"
+                },
+                {
+                    "name": "responsible resource",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods_receipt:505",
+                    "qualifier": "creates"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Create Goods Receipt",
+            "time": "2022-12-22T06:05:00Z",
+            "attributes": [
+                {
+                    "name": "creation time",
+                    "value": "2022-12-22T06:05:00Z"
+                },
+                {
+                    "name": "responsible resource",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods_receipt:503",
+                    "qualifier": "creates"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,118 @@
+{
+    "objectTypes": [
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Vehicles Booked",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle Departure Scheduled",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td199",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-10-20T15:50:41Z",
+                    "value": "td199"
+                },
+                {
+                    "name": "Containers",
+                    "time": "2023-10-20T15:50:41Z",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh44",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "vh44",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-10-20T15:50:41Z",
+                    "value": "vh44"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Vehicles Booked",
+            "time": "2023-10-20T15:50:41Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2023-10-20T15:50:41Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td199",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Vehicle Departure Scheduled",
+            "time": "2023-10-27T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2023-10-27T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh44",
+                    "qualifier": "scheduled for"
+                }
+            ]
+        }
+    ]
+}

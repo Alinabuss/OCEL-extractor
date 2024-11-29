@@ -1,0 +1,226 @@
+{
+    "objectTypes": [
+        {
+            "name": "player",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "session",
+            "attributes": [
+                {
+                    "name": "session_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "match",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "gathering_point",
+            "attributes": [
+                {
+                    "name": "point_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "participation",
+            "attributes": [
+                {
+                    "name": "time_stamp",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "gathering_activity",
+            "attributes": [
+                {
+                    "name": "time_stamp",
+                    "type": "string"
+                },
+                {
+                    "name": "activity_type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "P2199669",
+            "type": "player",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "time": "2023-07-31T00:00:00Z",
+                    "value": "P2199669"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "participated_in"
+                }
+            ]
+        },
+        {
+            "id": "S250230427_2199669",
+            "type": "session",
+            "attributes": [
+                {
+                    "name": "session_id",
+                    "time": "2023-07-31T00:00:00Z",
+                    "value": "S250230427_2199669"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "linked_to"
+                },
+                {
+                    "objectId": "P2199669",
+                    "qualifier": "includes"
+                }
+            ]
+        },
+        {
+            "id": "M250230427",
+            "type": "match",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "time": "2023-07-31T00:00:00Z",
+                    "value": "M250230427"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Town_Center_M250230427_1",
+            "type": "gathering_point",
+            "attributes": [
+                {
+                    "name": "point_id",
+                    "time": "2023-07-31T00:00:00Z",
+                    "value": "Town_Center_M250230427_1"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "participation",
+            "time": "2023-07-31T00:17:00Z",
+            "attributes": [
+                {
+                    "name": "time_stamp",
+                    "value": "2023-07-31T00:17:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "P2199669",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "occurs_in"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "gathering_activity",
+            "time": "2023-07-31T00:17:10Z",
+            "attributes": [
+                {
+                    "name": "time_stamp",
+                    "value": "2023-07-31T00:17:10Z"
+                },
+                {
+                    "name": "activity_type",
+                    "value": "gathering_point_set_to_none"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Town_Center_M250230427_1",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "occurs_in"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "gathering_activity",
+            "time": "2023-07-31T00:17:18Z",
+            "attributes": [
+                {
+                    "name": "time_stamp",
+                    "value": "2023-07-31T00:17:18Z"
+                },
+                {
+                    "name": "activity_type",
+                    "value": "food_gathering"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "P2199669",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "occurs_in"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "gathering_activity",
+            "time": "2023-07-31T00:17:33Z",
+            "attributes": [
+                {
+                    "name": "time_stamp",
+                    "value": "2023-07-31T00:17:33Z"
+                },
+                {
+                    "name": "activity_type",
+                    "value": "food_collected"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "P2199669",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "S250230427_2199669",
+                    "qualifier": "occurs_in"
+                }
+            ]
+        }
+    ]
+}

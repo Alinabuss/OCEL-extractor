@@ -1,0 +1,112 @@
+{
+    "objectTypes": [
+        {
+            "name": "application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "applicant",
+            "attributes": [
+                {
+                    "name": "applicant_name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "recruiter",
+            "attributes": [
+                {
+                    "name": "recruiter_name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "rejection_sent",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "message",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Application[770258]",
+            "type": "application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "time": "2019-07-04T07:28:20Z",
+                    "value": "770258"
+                }
+            ]
+        },
+        {
+            "id": "Mary Smith",
+            "type": "applicant",
+            "attributes": [
+                {
+                    "name": "applicant_name",
+                    "time": "2019-07-04T07:28:20Z",
+                    "value": "Mary Smith"
+                }
+            ]
+        },
+        {
+            "id": "Jana Kershaw",
+            "type": "recruiter",
+            "attributes": [
+                {
+                    "name": "recruiter_name",
+                    "time": "2019-07-04T07:28:20Z",
+                    "value": "Jana Kershaw"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "rejection_sent",
+            "time": "2019-07-04T07:28:20Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2019-07-04T07:28:20Z"
+                },
+                {
+                    "name": "message",
+                    "value": "Rejection sent to Mary Smith."
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Mary Smith",
+                    "qualifier": "recipient"
+                },
+                {
+                    "objectId": "Jana Kershaw",
+                    "qualifier": "sender"
+                },
+                {
+                    "objectId": "Application[770258]",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

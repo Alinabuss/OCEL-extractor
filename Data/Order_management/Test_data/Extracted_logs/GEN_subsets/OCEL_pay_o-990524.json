@@ -1,0 +1,109 @@
+{
+    "objectTypes": [
+        {
+            "name": "Order",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Payment",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o-990524",
+            "type": "Order",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-08-18T10:35:58Z",
+                    "value": "1219.61"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-882143",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "",
+                    "value": "1214.61"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o-990524",
+                    "qualifier": "comprises"
+                }
+            ]
+        },
+        {
+            "id": "iPhone 11 Pro",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "",
+                    "value": "1149.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-882143",
+                    "qualifier": "associated with"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Payment",
+            "time": "2023-08-18T10:35:58Z",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "value": "1219.61"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o-990524",
+                    "qualifier": "paid for"
+                }
+            ]
+        }
+    ]
+}

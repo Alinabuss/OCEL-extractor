@@ -1,0 +1,86 @@
+{
+    "objectTypes": [
+        {
+            "name": "receipt goods",
+            "attributes": [
+                {
+                    "name": "corresponds to order with part",
+                    "type": "string"
+                },
+                {
+                    "name": "goods receipt type",
+                    "type": "float"
+                },
+                {
+                    "name": "Warehouse Department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create goods receipt",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1006",
+            "type": "receipt goods",
+            "attributes": [
+                {
+                    "name": "Warehouse Department",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:831",
+            "type": "receipt goods",
+            "attributes": [
+                {
+                    "name": "corresponds to order with part",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "purchasing group 003"
+                },
+                {
+                    "name": "goods receipt type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1481,
+            "type": "create goods receipt",
+            "time": "2023-08-26T08:15:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:831",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:1006",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

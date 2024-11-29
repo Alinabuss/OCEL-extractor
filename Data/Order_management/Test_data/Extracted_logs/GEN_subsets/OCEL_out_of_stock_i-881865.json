@@ -1,0 +1,86 @@
+{
+    "objectTypes": [
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Out of Stock Report",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "product_name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Fire Stick 4K",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-07-11T13:57:03Z",
+                    "value": "89.99"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Item associated with Fire Stick 4K",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-07-11T13:57:03Z",
+                    "value": "95.13"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Out of Stock Report",
+            "time": "2023-07-11T13:57:03Z",
+            "attributes": [
+                {
+                    "name": "product_name",
+                    "value": "Fire Stick 4K"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Fire Stick 4K",
+                    "qualifier": "reported_product"
+                },
+                {
+                    "objectId": "Item associated with Fire Stick 4K",
+                    "qualifier": "associated_item"
+                }
+            ]
+        }
+    ]
+}

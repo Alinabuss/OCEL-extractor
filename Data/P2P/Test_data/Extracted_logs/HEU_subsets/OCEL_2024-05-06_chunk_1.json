@@ -1,0 +1,297 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit receipt with amount",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase order",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "goods receipt",
+                    "type": "string"
+                },
+                {
+                    "name": "associated movement type",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "purchase order",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "requisition",
+            "attributes": []
+        },
+        {
+            "name": "price",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                },
+                {
+                    "name": "purchase order",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create purchase order",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "initiate",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "complete two - way match",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "create goods receipt",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1567",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "goods receipt",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "goods receipt:1568"
+                },
+                {
+                    "name": "associated movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "order purchase_order:1288",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "invoice receipt:1563",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit receipt with amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "79,200.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "order purchase_order:1288",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase order",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "001"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1563",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:1311",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "material:1929",
+            "type": "price",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "650.0"
+                },
+                {
+                    "name": "purchase order",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:1311",
+            "type": "purchase order",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation quotation:765",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_requisition:775 : pr_trigger_775",
+            "type": "requisition",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "material:1929",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "quotation quotation:765",
+            "type": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "purchase order",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1201,
+            "type": "create goods receipt",
+            "time": "2024-05-06T00:28:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "order purchase_order:1288",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:1567",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1202,
+            "type": "complete two - way match",
+            "time": "2024-05-06T10:04:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1563",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1203,
+            "type": "create purchase order",
+            "time": "2024-05-06T12:02:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Procurement Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation quotation:765",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:1311",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1204,
+            "type": "initiate",
+            "time": "2024-05-06T17:11:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Manufacturing Department"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "material:1929",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_requisition:775 : pr_trigger_775",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

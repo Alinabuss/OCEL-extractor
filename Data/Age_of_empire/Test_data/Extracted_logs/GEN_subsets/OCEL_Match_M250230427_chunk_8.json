@@ -1,0 +1,244 @@
+{
+    "objectTypes": [
+        {
+            "name": "Player",
+            "attributes": [
+                {
+                    "name": "playerID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Match",
+            "attributes": [
+                {
+                    "name": "matchID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Session",
+            "attributes": [
+                {
+                    "name": "sessionID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Villager",
+            "attributes": [
+                {
+                    "name": "villagerID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Town Center",
+            "attributes": [
+                {
+                    "name": "townCenterID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Action",
+            "attributes": [
+                {
+                    "name": "actionType",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Queue",
+            "attributes": [
+                {
+                    "name": "queueType",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Player[P2199669]",
+            "type": "Player",
+            "attributes": [
+                {
+                    "name": "playerID",
+                    "time": "2023-07-31T00:10:50Z",
+                    "value": "P2199669"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Session[S250230427_2199669]",
+                    "qualifier": "participates_in"
+                }
+            ]
+        },
+        {
+            "id": "Player[P688587]",
+            "type": "Player",
+            "attributes": [
+                {
+                    "name": "playerID",
+                    "time": "2023-07-31T00:10:50Z",
+                    "value": "P688587"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Session[S250230427_688587]",
+                    "qualifier": "participates_in"
+                }
+            ]
+        },
+        {
+            "id": "Match[M250230427]",
+            "type": "Match",
+            "attributes": [
+                {
+                    "name": "matchID",
+                    "time": "2023-07-31T00:10:50Z",
+                    "value": "M250230427"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Session[S250230427_2199669]",
+            "type": "Session",
+            "attributes": [
+                {
+                    "name": "sessionID",
+                    "time": "2023-07-31T00:10:50Z",
+                    "value": "S250230427_2199669"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Match[M250230427]",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": "Session[S250230427_688587]",
+            "type": "Session",
+            "attributes": [
+                {
+                    "name": "sessionID",
+                    "time": "2023-07-31T00:10:50Z",
+                    "value": "S250230427_688587"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Match[M250230427]",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": "Villager[Villager_M250230427_1]",
+            "type": "Villager",
+            "attributes": [
+                {
+                    "name": "villagerID",
+                    "time": "2023-07-31T00:10:50Z",
+                    "value": "Villager_M250230427_1"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Town_Center[Town_Center_M250230427_2]",
+            "type": "Town Center",
+            "attributes": [
+                {
+                    "name": "townCenterID",
+                    "time": "2023-07-31T00:10:50Z",
+                    "value": "Town_Center_M250230427_2"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Action",
+            "time": "2023-07-31T00:10:50Z",
+            "attributes": [
+                {
+                    "name": "actionType",
+                    "value": "create_stone_wall"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Player[P2199669]",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "Match[M250230427]",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Action",
+            "time": "2023-07-31T00:10:50Z",
+            "attributes": [
+                {
+                    "name": "actionType",
+                    "value": "create_stone_wall"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Player[P688587]",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "Match[M250230427]",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Queue",
+            "time": "2023-07-31T00:10:50Z",
+            "attributes": [
+                {
+                    "name": "queueType",
+                    "value": "initiate"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Villager[Villager_M250230427_1]",
+                    "qualifier": "initiated_by"
+                },
+                {
+                    "objectId": "Town_Center[Town_Center_M250230427_2]",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "Session[S250230427_688587]",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,146 @@
+{
+    "objectTypes": [
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "group part of purchasing",
+                    "type": "float"
+                },
+                {
+                    "name": "purchase requisition",
+                    "type": "float"
+                },
+                {
+                    "name": "Group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase requisition",
+            "attributes": [
+                {
+                    "name": "purchase requisition",
+                    "type": "float"
+                },
+                {
+                    "name": "Group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "request",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "request for quotation",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "create request for quotation",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "quotation:651",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "group part of purchasing",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "001"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "quotation[657",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "purchase requisition",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "003"
+                },
+                {
+                    "name": "Group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Purchasing Group"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_requisition:651 : pr_trigger_651",
+            "type": "request",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "purchase_requisition[pr_trigger_655",
+            "type": "purchase requisition",
+            "attributes": [
+                {
+                    "name": "purchase requisition",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "003"
+                },
+                {
+                    "name": "Group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Purchasing Group"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 924,
+            "type": "request for quotation",
+            "time": "2024-01-19T00:11:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:651",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_requisition:651 : pr_trigger_651",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 925,
+            "type": "create request for quotation",
+            "time": "2024-01-19T19:40:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition[pr_trigger_655",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "quotation[657",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

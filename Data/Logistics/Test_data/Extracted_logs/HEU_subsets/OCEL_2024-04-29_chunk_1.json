@@ -1,0 +1,181 @@
+{
+    "objectTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "document",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "transport document",
+            "attributes": []
+        },
+        {
+            "name": "vehicles",
+            "attributes": [
+                {
+                    "name": "amount of containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "vehicle",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "make booking for the vehicle",
+            "attributes": []
+        },
+        {
+            "name": "set departure for this transport document",
+            "attributes": []
+        },
+        {
+            "name": "create transport document",
+            "attributes": []
+        },
+        {
+            "name": "set scheduled departure",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "vehicle vh98",
+            "type": "vehicle",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "transport document td446",
+            "type": "transport document",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "transport document td447",
+            "type": "transport document",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "vehicle vh98",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "transport document td448",
+            "type": "transport document",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "td448",
+            "type": "booking",
+            "attributes": [
+                {
+                    "name": "document",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "two"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh101",
+            "type": "vehicle",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "transport document td446",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "td447",
+            "type": "vehicles",
+            "attributes": [
+                {
+                    "name": "amount of containers",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "4.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh101",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 60,
+            "type": "make booking for the vehicle",
+            "time": "2024-04-29T08:13:50Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "td447",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "vh101",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "transport document td446",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 61,
+            "type": "set departure for this transport document",
+            "time": "2024-05-14T11:00:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "transport document td447",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 62,
+            "type": "create transport document",
+            "time": "2024-05-14T15:10:55Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "transport document td448",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "td448",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 63,
+            "type": "set scheduled departure",
+            "time": "2024-05-03T11:00:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "vehicle vh98",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

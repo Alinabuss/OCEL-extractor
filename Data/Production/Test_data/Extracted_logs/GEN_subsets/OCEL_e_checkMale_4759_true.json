@@ -1,0 +1,141 @@
+{
+    "objectTypes": [
+        {
+            "name": "Worker",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Part",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Power Source",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Check",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "type": "string"
+                },
+                {
+                    "name": "CO2 Equivalent",
+                    "type": "float"
+                },
+                {
+                    "name": "Compressed Air Volume",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Worker[1]",
+            "type": "Worker",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-06T10:30:39Z",
+                    "value": "Worker[1]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "MalePart[4759]",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-06T10:30:39Z",
+                    "value": "MalePart[4759]"
+                },
+                {
+                    "name": "Type",
+                    "time": "2023-04-06T10:30:39Z",
+                    "value": "Male"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Workstation[2]",
+            "type": "Workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-06T10:30:39Z",
+                    "value": "Workstation[2]"
+                },
+                {
+                    "name": "Power Source",
+                    "time": "2023-04-06T10:30:39Z",
+                    "value": "Grid"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Check",
+            "time": "2023-04-06T10:30:39Z",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "value": "Unspecified"
+                },
+                {
+                    "name": "CO2 Equivalent",
+                    "value": "0.00058482"
+                },
+                {
+                    "name": "Compressed Air Volume",
+                    "value": "0.009"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Worker[1]",
+                    "qualifier": "performed"
+                },
+                {
+                    "objectId": "MalePart[4759]",
+                    "qualifier": "checked"
+                },
+                {
+                    "objectId": "Workstation[2]",
+                    "qualifier": "conducted_at"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,135 @@
+{
+    "objectTypes": [
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "product_label",
+                    "type": "string"
+                },
+                {
+                    "name": "product_price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "employee_name",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "report_out_of_stock",
+            "attributes": [
+                {
+                    "name": "report_time",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "i-880516",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "",
+                    "value": "i-880516"
+                },
+                {
+                    "name": "price",
+                    "time": "",
+                    "value": "2500.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "MacBook Pro",
+                    "qualifier": "is_product_of"
+                }
+            ]
+        },
+        {
+            "id": "MacBook Pro",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "product_label",
+                    "time": "",
+                    "value": "MacBook Pro"
+                },
+                {
+                    "name": "product_price",
+                    "time": "",
+                    "value": "2500.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Nina Graves",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "employee_name",
+                    "time": "",
+                    "value": "Nina Graves"
+                },
+                {
+                    "name": "department",
+                    "time": "",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "report_out_of_stock",
+            "time": "2023-05-16T18:09:28Z",
+            "attributes": [
+                {
+                    "name": "report_time",
+                    "value": "2023-05-16T18:09:28Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-880516",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "Nina Graves",
+                    "qualifier": "reported_by"
+                }
+            ]
+        }
+    ]
+}

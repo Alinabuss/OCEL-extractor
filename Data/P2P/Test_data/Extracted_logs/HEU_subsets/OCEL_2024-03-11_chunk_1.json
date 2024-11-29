@@ -1,0 +1,128 @@
+{
+    "objectTypes": [
+        {
+            "name": "approval",
+            "attributes": []
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "request for requisition with purchase group",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "approval of a purchase order",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "request for quotation",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "quotation:712",
+            "type": "quotation",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:710 : pr_trigger_710",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "quotation:711",
+            "type": "quotation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "purchase_requisition:710 : pr_trigger_710",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "request for requisition with purchase group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:711",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:1223",
+            "type": "approval",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation:712",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1013,
+            "type": "approval of a purchase order",
+            "time": "2024-03-11T17:28:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:712",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:1223",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1014,
+            "type": "request for quotation",
+            "time": "2024-03-11T18:16:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:711",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_requisition:710 : pr_trigger_710",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

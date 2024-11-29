@@ -1,0 +1,166 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "vacancy_id",
+                    "type": "string"
+                },
+                {
+                    "name": "position",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Invitation",
+            "attributes": [
+                {
+                    "name": "date",
+                    "type": "datetime"
+                },
+                {
+                    "name": "recruiters",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Interview",
+            "attributes": [
+                {
+                    "name": "date",
+                    "type": "datetime"
+                },
+                {
+                    "name": "interviewers",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Sue Weber",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-02T08:41:47Z",
+                    "value": "Sue Weber"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Vacancy[550016]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "vacancy_id",
+                    "time": "2019-07-02T08:41:47Z",
+                    "value": "550016"
+                },
+                {
+                    "name": "position",
+                    "time": "2019-07-02T08:41:47Z",
+                    "value": "Manager"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770094]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "time": "2019-07-02T08:41:47Z",
+                    "value": "770094"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Invitation",
+            "time": "2019-07-02T08:41:47Z",
+            "attributes": [
+                {
+                    "name": "date",
+                    "value": "2019-07-02T08:41:47Z"
+                },
+                {
+                    "name": "recruiters",
+                    "value": "Simon Geisler, Ed Keane"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Sue Weber",
+                    "qualifier": "Applicant"
+                },
+                {
+                    "objectId": "Vacancy[550016]",
+                    "qualifier": "linked to vacancy"
+                },
+                {
+                    "objectId": "Application[770094]",
+                    "qualifier": "linked to application"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Interview",
+            "time": "2019-07-03T18:18:33Z",
+            "attributes": [
+                {
+                    "name": "date",
+                    "value": "2019-07-03T18:18:33Z"
+                },
+                {
+                    "name": "interviewers",
+                    "value": "Alexander Rinke, Dionne Hense"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Sue Weber",
+                    "qualifier": "Applicant"
+                },
+                {
+                    "objectId": "Vacancy[550016]",
+                    "qualifier": "associated with vacancy"
+                },
+                {
+                    "objectId": "Application[770094]",
+                    "qualifier": "linked to application"
+                }
+            ]
+        }
+    ]
+}

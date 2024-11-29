@@ -1,0 +1,166 @@
+{
+    "objectTypes": [
+        {
+            "name": "application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "vacancy",
+            "attributes": [
+                {
+                    "name": "vacancy_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "person",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "application_submitted",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "application_rejected",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Application[770146]",
+            "type": "application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "time": "2019-07-01T14:57:18Z",
+                    "value": "770146"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770383]",
+            "type": "application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "time": "2019-07-02T17:24:18Z",
+                    "value": "770383"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550022]",
+                    "qualifier": "for_vacancy"
+                }
+            ]
+        },
+        {
+            "id": "Vacancy[550022]",
+            "type": "vacancy",
+            "attributes": [
+                {
+                    "name": "vacancy_id",
+                    "time": "",
+                    "value": "550022"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Chun Davis",
+            "type": "person",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "",
+                    "value": "Chun Davis"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Ed Meister",
+            "type": "person",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "",
+                    "value": "Ed Meister"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "application_rejected",
+            "time": "2019-07-01T14:57:18Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2019-07-01T14:57:18Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770146]",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "Ed Meister",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "Chun Davis",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "application_submitted",
+            "time": "2019-07-02T17:24:18Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2019-07-02T17:24:18Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770383]",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "Chun Davis",
+                    "qualifier": "performed_by"
+                }
+            ]
+        }
+    ]
+}

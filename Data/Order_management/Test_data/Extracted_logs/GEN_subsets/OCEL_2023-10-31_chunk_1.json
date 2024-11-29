@@ -1,0 +1,151 @@
+{
+    "objectTypes": [
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                },
+                {
+                    "name": "product_name",
+                    "type": "string"
+                },
+                {
+                    "name": "item_price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "product_id",
+                    "type": "string"
+                },
+                {
+                    "name": "product_price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Item Picked",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "price_difference",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Mahsa Bafrani",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-10-31T10:24:33Z",
+                    "value": "Mahsa Bafrani"
+                },
+                {
+                    "name": "role",
+                    "time": "2023-10-31T10:24:33Z",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-884383",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "2023-10-31T10:24:33Z",
+                    "value": "i-884383"
+                },
+                {
+                    "name": "product_name",
+                    "time": "2023-10-31T10:24:33Z",
+                    "value": "Echo Plus"
+                },
+                {
+                    "name": "item_price",
+                    "time": "2023-10-31T10:24:33Z",
+                    "value": 164.63
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Echo Plus",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "product_id",
+                    "time": "2023-10-31T10:24:33Z",
+                    "value": "Echo Plus"
+                },
+                {
+                    "name": "product_price",
+                    "time": "2023-10-31T10:24:33Z",
+                    "value": 149.99
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Item Picked",
+            "time": "2023-10-31T10:24:33Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-10-31T10:24:33Z"
+                },
+                {
+                    "name": "price_difference",
+                    "value": 14.64
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Mahsa Bafrani",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "i-884383",
+                    "qualifier": "picked_item"
+                },
+                {
+                    "objectId": "Echo Plus",
+                    "qualifier": "corresponds_to_product"
+                }
+            ]
+        }
+    ]
+}

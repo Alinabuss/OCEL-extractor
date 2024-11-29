@@ -1,0 +1,137 @@
+{
+    "objectTypes": [
+        {
+            "name": "worker",
+            "attributes": [
+                {
+                    "name": "worker_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "part",
+            "attributes": [
+                {
+                    "name": "part_id",
+                    "type": "string"
+                },
+                {
+                    "name": "gender",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "workstation",
+            "attributes": [
+                {
+                    "name": "workstation_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "check_performed",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "duration",
+                    "type": "string"
+                },
+                {
+                    "name": "co2_emission",
+                    "type": "float"
+                },
+                {
+                    "name": "compressed_air_consumption",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Worker[1]",
+            "type": "worker",
+            "attributes": [
+                {
+                    "name": "worker_id",
+                    "time": "2023-04-03T10:36:41Z",
+                    "value": "Worker[1]"
+                }
+            ]
+        },
+        {
+            "id": "MalePart[453]",
+            "type": "part",
+            "attributes": [
+                {
+                    "name": "part_id",
+                    "time": "2023-04-03T10:36:41Z",
+                    "value": "MalePart[453]"
+                },
+                {
+                    "name": "gender",
+                    "time": "2023-04-03T10:36:41Z",
+                    "value": "male"
+                }
+            ]
+        },
+        {
+            "id": "Workstation[2]",
+            "type": "workstation",
+            "attributes": [
+                {
+                    "name": "workstation_id",
+                    "time": "2023-04-03T10:36:41Z",
+                    "value": "Workstation[2]"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "check_performed",
+            "time": "2023-04-03T10:36:41Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-04-03T10:36:41Z"
+                },
+                {
+                    "name": "duration",
+                    "value": "unspecified"
+                },
+                {
+                    "name": "co2_emission",
+                    "value": 0.0012996
+                },
+                {
+                    "name": "compressed_air_consumption",
+                    "value": 0.02
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Worker[1]",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "MalePart[453]",
+                    "qualifier": "part_checked"
+                },
+                {
+                    "objectId": "Workstation[2]",
+                    "qualifier": "at_workstation"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,126 @@
+{
+    "objectTypes": [
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "productID",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "itemID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "PickItem",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Marco Pegoraro",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-05-22T07:41:18Z",
+                    "value": "Marco Pegoraro"
+                },
+                {
+                    "name": "role",
+                    "time": "2023-05-22T07:41:18Z",
+                    "value": "warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "iPad",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "productID",
+                    "time": "2023-05-22T07:41:18Z",
+                    "value": "iPad"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-05-22T07:41:18Z",
+                    "value": "495.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-880705",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "itemID",
+                    "time": "2023-05-22T07:41:18Z",
+                    "value": "i-880705"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "iPad",
+                    "qualifier": "associatedWith"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "PickItem",
+            "time": "2023-05-22T07:41:18Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-05-22T07:41:18Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Marco Pegoraro",
+                    "qualifier": "performedBy"
+                },
+                {
+                    "objectId": "i-880705",
+                    "qualifier": "picked"
+                }
+            ]
+        }
+    ]
+}

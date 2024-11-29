@@ -1,0 +1,158 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "pr_trigger",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "quotation_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchasing_group",
+            "attributes": [
+                {
+                    "name": "group_code",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create_request_for_quotation",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "associated_quotation",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "approve_purchase_order",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "approved_by",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_requisition:288:pr_trigger_288",
+            "type": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "pr_trigger",
+                    "time": "2023-01-29T03:04:00Z",
+                    "value": "288"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "quotation:286",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "quotation_id",
+                    "time": "2023-01-29T03:04:00Z",
+                    "value": "286"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:488",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "status",
+                    "time": "2023-02-09T21:01:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "002",
+            "type": "purchasing_group",
+            "attributes": [
+                {
+                    "name": "group_code",
+                    "time": "",
+                    "value": "002"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create_request_for_quotation",
+            "time": "2023-01-29T03:04:00Z",
+            "attributes": [
+                {
+                    "name": "associated_quotation",
+                    "value": "quotation:286"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:288:pr_trigger_288",
+                    "qualifier": "created"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "approve_purchase_order",
+            "time": "2023-02-09T21:01:00Z",
+            "attributes": [
+                {
+                    "name": "approved_by",
+                    "value": "Procurement Order Manager"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:488",
+                    "qualifier": "approved"
+                },
+                {
+                    "objectId": "quotation:286",
+                    "qualifier": "referenced_in_approval"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,170 @@
+{
+    "objectTypes": [
+        {
+            "name": "Object_type_not_identified",
+            "attributes": []
+        },
+        {
+            "name": "steel coil",
+            "attributes": [
+                {
+                    "name": "sheet",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "machine",
+            "attributes": []
+        },
+        {
+            "name": "steel sheet",
+            "attributes": []
+        },
+        {
+            "name": "emissions",
+            "attributes": [
+                {
+                    "name": "emissions",
+                    "type": "string"
+                },
+                {
+                    "name": "steel waste kg",
+                    "type": "float"
+                },
+                {
+                    "name": "operation",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "report",
+            "attributes": []
+        },
+        {
+            "name": "generate",
+            "attributes": []
+        },
+        {
+            "name": "produce kg of steel waste",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "SteelCoil[1",
+            "type": "steel coil",
+            "attributes": [
+                {
+                    "name": "sheet",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "0.02121"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CO2",
+            "type": "emissions",
+            "attributes": [
+                {
+                    "name": "emissions",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "0.014403927 kg"
+                },
+                {
+                    "name": "steel waste kg",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "0.00042"
+                },
+                {
+                    "name": "operation",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "0.0210453"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Splitter01",
+            "type": "machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Workstation[1",
+            "type": "machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "SteelSheet[4732",
+            "type": "steel sheet",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "SteelCoil[1",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "o_steelsheet_4732",
+            "type": "Object_type_not_identified",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 2674,
+            "type": "report",
+            "time": "2023-04-06T08:24:43Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "SteelSheet[4732",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "o_steelsheet_4732",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "Splitter01",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "Workstation[1",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "SteelCoil[1",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 2675,
+            "type": "generate",
+            "time": "2023-04-06T00:00:13Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "CO2",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 2676,
+            "type": "produce kg of steel waste",
+            "time": "2023-04-06T00:00:13Z",
+            "attributes": [],
+            "relationships": []
+        }
+    ]
+}

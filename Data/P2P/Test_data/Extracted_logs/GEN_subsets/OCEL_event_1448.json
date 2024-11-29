@@ -1,0 +1,83 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "lifecycle_status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "material",
+            "attributes": [
+                {
+                    "name": "net_price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create",
+            "attributes": [
+                {
+                    "name": "created_by",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_requisition:65:pr_trigger_65",
+            "type": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "lifecycle_status",
+                    "time": "2022-05-26T07:16:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "material:152",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "material:152",
+            "type": "material",
+            "attributes": [
+                {
+                    "name": "net_price",
+                    "time": "2022-05-26T07:16:00Z",
+                    "value": "1350.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create",
+            "time": "2022-05-26T07:16:00Z",
+            "attributes": [
+                {
+                    "name": "created_by",
+                    "value": "Manufacturing Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:65:pr_trigger_65",
+                    "qualifier": "refers_to"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,134 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase requisition",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchasing group",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "request for quotation created",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "milestone reached",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_requisition:310:pr_trigger_310",
+            "type": "purchase requisition",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-02-17T14:22:00Z",
+                    "value": "purchase_requisition:310:pr_trigger_310"
+                },
+                {
+                    "name": "status",
+                    "time": "2023-02-17T14:22:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "003",
+                    "qualifier": "managed by"
+                }
+            ]
+        },
+        {
+            "id": "quotation:308",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-02-17T14:22:00Z",
+                    "value": "quotation:308"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "003",
+                    "qualifier": "linked to"
+                }
+            ]
+        },
+        {
+            "id": "003",
+            "type": "purchasing group",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-02-17T14:22:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "request for quotation created",
+            "time": "2023-02-17T14:22:00Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-02-17T14:22:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:310:pr_trigger_310",
+                    "qualifier": "generated"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "milestone reached",
+            "time": "2023-02-17T14:22:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:310:pr_trigger_310",
+                    "qualifier": "milestone for"
+                }
+            ]
+        }
+    ]
+}

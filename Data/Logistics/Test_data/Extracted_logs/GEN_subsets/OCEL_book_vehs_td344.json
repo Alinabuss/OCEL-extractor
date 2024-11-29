@@ -1,0 +1,106 @@
+{
+    "objectTypes": [
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "departure_date",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "containers",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "vehicle_ID",
+                    "type": "string"
+                },
+                {
+                    "name": "document_ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh78",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-02-08T15:04:53Z",
+                    "value": "vh78"
+                },
+                {
+                    "name": "departure_date",
+                    "time": "2024-02-08T15:04:53Z",
+                    "value": "2024-02-23T11:00:00Z"
+                }
+            ]
+        },
+        {
+            "id": "td344",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-02-08T15:04:53Z",
+                    "value": "td344"
+                },
+                {
+                    "name": "containers",
+                    "time": "2024-02-08T15:04:53Z",
+                    "value": "2.0"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2024-02-08T15:04:53Z",
+            "attributes": [
+                {
+                    "name": "vehicle_ID",
+                    "value": "vh78"
+                },
+                {
+                    "name": "document_ID",
+                    "value": "td344"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh78",
+                    "qualifier": "booked"
+                },
+                {
+                    "objectId": "td344",
+                    "qualifier": "associated_with"
+                }
+            ]
+        }
+    ]
+}

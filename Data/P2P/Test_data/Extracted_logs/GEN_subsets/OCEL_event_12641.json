@@ -1,0 +1,82 @@
+{
+    "objectTypes": [
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Invoice Receipt Creation",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:831",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2023-05-30T08:56:00Z",
+                    "value": "55650.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:804",
+                    "qualifier": "linked to"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:804",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2023-05-30T08:56:00Z",
+                    "value": "101"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Invoice Receipt Creation",
+            "time": "2023-05-30T08:56:00Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-05-30T08:56:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:831",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

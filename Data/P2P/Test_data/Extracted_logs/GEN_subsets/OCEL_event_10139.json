@@ -1,0 +1,101 @@
+{
+    "objectTypes": [
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Movement Type",
+                    "type": "integer"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Invoice Creation",
+            "attributes": [
+                {
+                    "name": "Status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:651",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-03-10T01:47:00Z",
+                    "value": "invoice receipt:651"
+                },
+                {
+                    "name": "Amount",
+                    "time": "2023-03-10T01:47:00Z",
+                    "value": "65700.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:645",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:645",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-03-10T01:47:00Z",
+                    "value": "goods receipt:645"
+                },
+                {
+                    "name": "Movement Type",
+                    "time": "2023-03-10T01:47:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Invoice Creation",
+            "time": "2023-03-10T01:47:00Z",
+            "attributes": [
+                {
+                    "name": "Status",
+                    "value": "Completed"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:651",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

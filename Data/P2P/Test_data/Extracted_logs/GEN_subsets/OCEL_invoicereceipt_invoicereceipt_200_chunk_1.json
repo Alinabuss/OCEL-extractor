@@ -1,0 +1,86 @@
+{
+    "objectTypes": [
+        {
+            "name": "InvoiceReceipt",
+            "attributes": [
+                {
+                    "name": "creditAmount",
+                    "type": "float"
+                },
+                {
+                    "name": "movementType",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "GoodsReceipt",
+            "attributes": [
+                {
+                    "name": "movementType",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Completion",
+            "attributes": [
+                {
+                    "name": "invoiceID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:200",
+            "type": "InvoiceReceipt",
+            "attributes": [
+                {
+                    "name": "creditAmount",
+                    "time": "2022-07-22T12:17:00Z",
+                    "value": "5850.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:203",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:203",
+            "type": "GoodsReceipt",
+            "attributes": [
+                {
+                    "name": "movementType",
+                    "time": "2022-07-22T12:17:00Z",
+                    "value": "101"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Completion",
+            "time": "2022-07-22T12:17:00Z",
+            "attributes": [
+                {
+                    "name": "invoiceID",
+                    "value": "invoice receipt:200"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:200",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        }
+    ]
+}

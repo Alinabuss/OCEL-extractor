@@ -1,0 +1,125 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Position",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Application Submitted",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "type": "string"
+                },
+                {
+                    "name": "Position",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Lisa Taylor",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-06-24T23:49:28Z",
+                    "value": "Lisa Taylor"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Vacancy[550028]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "",
+                    "value": "550028"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770314]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "",
+                    "value": "770314"
+                },
+                {
+                    "name": "Position",
+                    "time": "",
+                    "value": "Manager"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550028]",
+                    "qualifier": "associated with"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Application Submitted",
+            "time": "2019-06-24T23:49:28Z",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "value": "2019-06-24T23:49:28Z"
+                },
+                {
+                    "name": "Position",
+                    "value": "Manager"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770314]",
+                    "qualifier": "submitted"
+                },
+                {
+                    "objectId": "Lisa Taylor",
+                    "qualifier": "submitted by"
+                }
+            ]
+        }
+    ]
+}

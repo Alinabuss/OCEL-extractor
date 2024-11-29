@@ -1,0 +1,108 @@
+{
+    "objectTypes": [
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "ReportOutOfStock",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "item_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Christopher Schwanen",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-11-22T10:31:41Z",
+                    "value": "Christopher Schwanen"
+                },
+                {
+                    "name": "department",
+                    "time": "2023-11-22T10:31:41Z",
+                    "value": "warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-885004",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "2023-11-22T10:31:41Z",
+                    "value": "i-885004"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-11-22T10:31:41Z",
+                    "value": 98.78
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "ReportOutOfStock",
+            "time": "2023-11-22T10:31:41Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-11-22T10:31:41Z"
+                },
+                {
+                    "name": "item_id",
+                    "value": "i-885004"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Christopher Schwanen",
+                    "qualifier": "reported_by"
+                },
+                {
+                    "objectId": "i-885004",
+                    "qualifier": "item"
+                }
+            ]
+        }
+    ]
+}

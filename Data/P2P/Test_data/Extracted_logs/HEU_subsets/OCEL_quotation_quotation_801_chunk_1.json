@@ -1,0 +1,143 @@
+{
+    "objectTypes": [
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "purchasing approval",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchasing approval",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create purchase order",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "approval for the purchase order",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "report",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "Quotation:801",
+            "type": "quotation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "quotation:801",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "purchasing approval",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "group \" 004"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:1383",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchasing approval",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "group \" 004"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:801",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1550,
+            "type": "report",
+            "time": "2024-06-10T17:13:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Quotation:801",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1551,
+            "type": "create purchase order",
+            "time": "2024-06-10T17:13:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Department Procurement"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Quotation:801",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:1383",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "quotation:801",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1552,
+            "type": "approval for the purchase order",
+            "time": "2024-06-11T08:27:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1383",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "quotation:801",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

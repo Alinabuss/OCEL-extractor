@@ -1,0 +1,234 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Manager",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Job Offer",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Title",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Job Offer Made",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "timestamp"
+                }
+            ]
+        },
+        {
+            "name": "Job Offer Declined",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "timestamp"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Detlef Wagner",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-02T09:32:46Z",
+                    "value": "Detlef Wagner"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Simon Geisler",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-02T09:32:46Z",
+                    "value": "Simon Geisler"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Miguel Milano",
+            "type": "Manager",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-02T09:32:46Z",
+                    "value": "Miguel Milano"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Offer[[990006]]",
+            "type": "Job Offer",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-02T09:32:46Z",
+                    "value": "990006"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Vacancy[550011]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-02T09:32:46Z",
+                    "value": "550011"
+                },
+                {
+                    "name": "Title",
+                    "time": "2019-07-02T09:32:46Z",
+                    "value": "Programmer"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770166]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-02T09:32:46Z",
+                    "value": "770166"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Vacancy[550003]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-03T09:14:37Z",
+                    "value": "550003"
+                },
+                {
+                    "name": "Title",
+                    "time": "2019-07-03T09:14:37Z",
+                    "value": "Programmer"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Job Offer Made",
+            "time": "2019-07-02T09:32:46Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2019-07-02T09:32:46Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Offer[[990006]]",
+                    "qualifier": "related to"
+                },
+                {
+                    "objectId": "Detlef Wagner",
+                    "qualifier": "offered to"
+                },
+                {
+                    "objectId": "Simon Geisler",
+                    "qualifier": "made by"
+                },
+                {
+                    "objectId": "Miguel Milano",
+                    "qualifier": "involved in"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Job Offer Declined",
+            "time": "2019-07-03T09:14:37Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2019-07-03T09:14:37Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770166]",
+                    "qualifier": "related to"
+                },
+                {
+                    "objectId": "Offer[[990006]]",
+                    "qualifier": "for"
+                },
+                {
+                    "objectId": "Detlef Wagner",
+                    "qualifier": "declined by"
+                }
+            ]
+        }
+    ]
+}

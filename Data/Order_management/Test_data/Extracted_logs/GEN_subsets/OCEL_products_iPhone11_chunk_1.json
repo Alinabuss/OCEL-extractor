@@ -1,0 +1,295 @@
+{
+    "objectTypes": [
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "standard_price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "reorder",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "iPhone 11",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "standard_price",
+                    "time": "2023-05-17T14:01:25Z",
+                    "value": "799.0"
+                }
+            ]
+        },
+        {
+            "id": "i-880533",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-05-17T14:01:25Z",
+                    "value": "799.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "iPhone 11",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": "i-881902",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-07-14T07:11:24Z",
+                    "value": "844.62"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "iPhone 11",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": "i-882088",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-07-20T13:38:38Z",
+                    "value": "844.62"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "iPhone 11",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": "i-882507",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-08-09T07:23:29Z",
+                    "value": "864.52"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "iPhone 11",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": "i-884255",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-10-25T11:39:58Z",
+                    "value": "877.06"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "iPhone 11",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": "Benedikt Knopp",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "time": "2023-05-17T14:01:25Z",
+                    "value": "Warehousing"
+                }
+            ]
+        },
+        {
+            "id": "Marco Pegoraro",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "time": "2023-07-14T07:11:24Z",
+                    "value": "Warehousing"
+                }
+            ]
+        },
+        {
+            "id": "Detlef Wetzeler",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "time": "2023-08-09T07:23:29Z",
+                    "value": "Warehousing"
+                }
+            ]
+        },
+        {
+            "id": "Mahsa Bafrani",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "time": "2023-10-25T11:39:58Z",
+                    "value": "Warehousing"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "reorder",
+            "time": "2023-05-17T14:01:25Z",
+            "attributes": [
+                {
+                    "name": "price",
+                    "value": "799.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Benedikt Knopp",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "i-880533",
+                    "qualifier": "related_item"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "reorder",
+            "time": "2023-07-14T07:11:24Z",
+            "attributes": [
+                {
+                    "name": "price",
+                    "value": "844.62"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Marco Pegoraro",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "i-881902",
+                    "qualifier": "related_item"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "reorder",
+            "time": "2023-07-20T13:38:38Z",
+            "attributes": [
+                {
+                    "name": "price",
+                    "value": "844.62"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Marco Pegoraro",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "i-882088",
+                    "qualifier": "related_item"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "reorder",
+            "time": "2023-08-09T07:23:29Z",
+            "attributes": [
+                {
+                    "name": "price",
+                    "value": "799.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Detlef Wetzeler",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "i-882507",
+                    "qualifier": "related_item"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "reorder",
+            "time": "2023-10-25T11:39:58Z",
+            "attributes": [
+                {
+                    "name": "price",
+                    "value": "877.06"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Mahsa Bafrani",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "i-884255",
+                    "qualifier": "related_item"
+                }
+            ]
+        }
+    ]
+}

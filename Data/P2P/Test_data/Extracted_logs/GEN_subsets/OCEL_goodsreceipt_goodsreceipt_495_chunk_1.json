@@ -1,0 +1,83 @@
+{
+    "objectTypes": [
+        {
+            "name": "InvoiceReceipt",
+            "attributes": [
+                {
+                    "name": "creditAmount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "GoodsReceipt",
+            "attributes": [
+                {
+                    "name": "movementType",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "CreateInvoiceReceipt",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt[494]",
+            "type": "InvoiceReceipt",
+            "attributes": [
+                {
+                    "name": "creditAmount",
+                    "time": "2022-12-13T03:37:00Z",
+                    "value": "18900.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt[495]",
+                    "qualifier": "associatedWith"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt[495]",
+            "type": "GoodsReceipt",
+            "attributes": [
+                {
+                    "name": "movementType",
+                    "time": "2022-12-13T03:37:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "CreateInvoiceReceipt",
+            "time": "2022-12-13T03:37:00Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "success"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt[494]",
+                    "qualifier": "refersTo"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,142 @@
+{
+    "objectTypes": [
+        {
+            "name": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "purchase group part",
+                    "type": "float"
+                },
+                {
+                    "name": "movement type",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase group part",
+                    "type": "float"
+                },
+                {
+                    "name": "Procurement Department",
+                    "type": "string"
+                },
+                {
+                    "name": "Warehouse Department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create Combined Report purchase order",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "create goods receipt with a movement type",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:1594",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase group part",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "003"
+                },
+                {
+                    "name": "Procurement Department",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Procurement Department"
+                },
+                {
+                    "name": "Warehouse Department",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:926",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "quotation:926",
+            "type": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "purchase group part",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:1934",
+            "type": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1594",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 84,
+            "type": "create Combined Report purchase order",
+            "time": "2024-10-16T08:37:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:926",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:1594",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 85,
+            "type": "create goods receipt with a movement type",
+            "time": "2024-10-20T16:05:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1934",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

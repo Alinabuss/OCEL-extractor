@@ -1,0 +1,150 @@
+{
+    "objectTypes": [
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "order",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "order_confirmed",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "i-880324",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-05-03T08:46:28Z",
+                    "value": "449.0"
+                }
+            ]
+        },
+        {
+            "id": "i-880325",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-05-03T08:46:28Z",
+                    "value": "79.99"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Kindle",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "i-880323",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-05-03T08:46:28Z",
+                    "value": "129.99"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Echo Show 8",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "Kindle",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-05-03T08:46:28Z",
+                    "value": "79.99"
+                }
+            ]
+        },
+        {
+            "id": "Echo Show 8",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-05-03T08:46:28Z",
+                    "value": "129.99"
+                }
+            ]
+        },
+        {
+            "id": "order1",
+            "type": "order",
+            "attributes": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "order_confirmed",
+            "time": "2023-05-03T08:46:28Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-05-03T08:46:28Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "order1",
+                    "qualifier": "involves"
+                },
+                {
+                    "objectId": "i-880324",
+                    "qualifier": "includes"
+                },
+                {
+                    "objectId": "i-880325",
+                    "qualifier": "includes"
+                },
+                {
+                    "objectId": "i-880323",
+                    "qualifier": "includes"
+                },
+                {
+                    "objectId": "Kindle",
+                    "qualifier": "includes_product"
+                },
+                {
+                    "objectId": "Echo Show 8",
+                    "qualifier": "includes_product"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,340 @@
+{
+    "objectTypes": [
+        {
+            "name": "Workstation",
+            "attributes": [
+                {
+                    "name": "machine",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Steel Sheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Heating Process",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "int"
+                },
+                {
+                    "name": "CO2 Emissions",
+                    "type": "float"
+                },
+                {
+                    "name": "electricity Consumption",
+                    "type": "float"
+                },
+                {
+                    "name": "gas Input",
+                    "type": "float"
+                },
+                {
+                    "name": "emissions from Burn",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Splitting Process",
+            "attributes": [
+                {
+                    "name": "output Weight",
+                    "type": "float"
+                },
+                {
+                    "name": "CO2 Emissions",
+                    "type": "float"
+                },
+                {
+                    "name": "electricity Consumption",
+                    "type": "float"
+                },
+                {
+                    "name": "steel Waste Sent for Recycling",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Heat Treatment",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "int"
+                },
+                {
+                    "name": "CO2 Emissions",
+                    "type": "float"
+                },
+                {
+                    "name": "electricity Consumption",
+                    "type": "float"
+                },
+                {
+                    "name": "gas Input",
+                    "type": "float"
+                },
+                {
+                    "name": "emissions from Burn",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o_workstation_1",
+            "type": "Workstation",
+            "attributes": [
+                {
+                    "name": "machine",
+                    "time": "2023-04-06T00:00:00Z",
+                    "value": "Machine[oven01]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "SteelSheet[5548]",
+            "type": "Steel Sheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-06T11:39:16Z",
+                    "value": "0.02131"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "SteelSheet[5599]",
+            "type": "Steel Sheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-06T11:51:21Z",
+                    "value": "0.02104"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "steelsheet_5623",
+            "type": "Steel Sheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-06T11:57:07Z",
+                    "value": "0.02105"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_steelsheet_5570",
+            "type": "Steel Sheet",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-06T11:44:27Z",
+                    "value": "0.02107"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Heating Process",
+            "time": "2023-04-06T11:39:16Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "900"
+                },
+                {
+                    "name": "CO2 Emissions",
+                    "value": "0.0138019093344"
+                },
+                {
+                    "name": "electricity Consumption",
+                    "value": "0.02"
+                },
+                {
+                    "name": "gas Input",
+                    "value": "0.49392"
+                },
+                {
+                    "name": "emissions from Burn",
+                    "value": "0.49392"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelSheet[5548]",
+                    "qualifier": "processed"
+                },
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "conducted at"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Splitting Process",
+            "time": "2023-04-06T11:40:57Z",
+            "attributes": [
+                {
+                    "name": "output Weight",
+                    "value": "0.02108"
+                },
+                {
+                    "name": "CO2 Emissions",
+                    "value": "0.014626911"
+                },
+                {
+                    "name": "electricity Consumption",
+                    "value": "0.0213713"
+                },
+                {
+                    "name": "steel Waste Sent for Recycling",
+                    "value": "0.00042"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelSheet[5548]",
+                    "qualifier": "processed"
+                },
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "conducted at"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Heating Process",
+            "time": "2023-04-06T11:44:27Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "900"
+                },
+                {
+                    "name": "CO2 Emissions",
+                    "value": "0.0138019093344"
+                },
+                {
+                    "name": "electricity Consumption",
+                    "value": "0.02"
+                },
+                {
+                    "name": "gas Input",
+                    "value": "0.49392"
+                },
+                {
+                    "name": "emissions from Burn",
+                    "value": "0.49392"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_steelsheet_5570",
+                    "qualifier": "processed"
+                },
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "conducted at"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Heat Treatment",
+            "time": "2023-04-06T11:51:21Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "900"
+                },
+                {
+                    "name": "CO2 Emissions",
+                    "value": "0.0138019093344"
+                },
+                {
+                    "name": "electricity Consumption",
+                    "value": "0.02"
+                },
+                {
+                    "name": "gas Input",
+                    "value": "0.49392"
+                },
+                {
+                    "name": "emissions from Burn",
+                    "value": "0.49392"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelSheet[5599]",
+                    "qualifier": "processed"
+                },
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "conducted at"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "Heating Process",
+            "time": "2023-04-06T11:57:07Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "900"
+                },
+                {
+                    "name": "CO2 Emissions",
+                    "value": "0.0138019093344"
+                },
+                {
+                    "name": "electricity Consumption",
+                    "value": "0.02"
+                },
+                {
+                    "name": "gas Input",
+                    "value": "0.49392"
+                },
+                {
+                    "name": "emissions from Burn",
+                    "value": "0.49392"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "steelsheet_5623",
+                    "qualifier": "processed"
+                },
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "conducted at"
+                }
+            ]
+        }
+    ]
+}

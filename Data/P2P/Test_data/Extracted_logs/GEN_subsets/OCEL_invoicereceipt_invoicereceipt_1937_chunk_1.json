@@ -1,0 +1,83 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create_invoice_receipt",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:1937",
+            "type": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "time": "2024-10-22T00:39:00Z",
+                    "value": "154500.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1936",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:1936",
+            "type": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "time": "2024-10-22T00:39:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create_invoice_receipt",
+            "time": "2024-10-22T00:39:00Z",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "value": "154500.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1937",
+                    "qualifier": "creates"
+                }
+            ]
+        }
+    ]
+}

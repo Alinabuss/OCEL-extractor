@@ -1,0 +1,82 @@
+{
+    "objectTypes": [
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "scheduled_departure_date",
+                    "type": "date"
+                }
+            ]
+        },
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "total_containers",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "event_time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh48",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "scheduled_departure_date",
+                    "time": "2023-11-10T11:00:00Z",
+                    "value": "2023-11-10T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td202",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "total_containers",
+                    "time": "2023-10-25T05:39:38Z",
+                    "value": "4.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2023-10-25T05:39:38Z",
+            "attributes": [
+                {
+                    "name": "event_time",
+                    "value": "2023-10-25T05:39:38Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh48",
+                    "qualifier": "booked_for"
+                },
+                {
+                    "objectId": "td202",
+                    "qualifier": "associated_with"
+                }
+            ]
+        }
+    ]
+}

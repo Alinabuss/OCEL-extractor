@@ -1,0 +1,129 @@
+{
+    "objectTypes": [
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "pick_item",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Leah Tacke genannt Unterberg",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "value": "Leah Tacke genannt Unterberg"
+                },
+                {
+                    "name": "department",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-886112",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "id",
+                    "value": "i-886112"
+                },
+                {
+                    "name": "price",
+                    "value": "112.39"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Echo",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": "Echo",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "value": "Echo"
+                },
+                {
+                    "name": "price",
+                    "value": "99.99"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "pick_item",
+            "time": "2024-01-09T15:24:47Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2024-01-09T15:24:47Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Leah Tacke genannt Unterberg",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "i-886112",
+                    "qualifier": "picked"
+                }
+            ]
+        }
+    ]
+}

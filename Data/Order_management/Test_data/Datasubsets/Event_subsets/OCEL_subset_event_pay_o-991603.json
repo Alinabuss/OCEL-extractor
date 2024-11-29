@@ -1,0 +1,105 @@
+{
+  "objectTypes": [
+    {
+      "name": "items",
+      "attributes": [
+        {
+          "name": "price",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "orders",
+      "attributes": [
+        {
+          "name": "price",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "products",
+      "attributes": [
+        {
+          "name": "price",
+          "type": "float"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "pay order",
+      "attributes": []
+    }
+  ],
+  "objects": [
+    {
+      "id": "o-991603",
+      "type": "orders",
+      "attributes": [
+        {
+          "name": "price",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 94.91
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "i-886286",
+          "qualifier": "comprises"
+        }
+      ]
+    },
+    {
+      "id": "i-886286",
+      "type": "items",
+      "attributes": [
+        {
+          "name": "price",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 89.91
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Kindle",
+          "qualifier": "is a"
+        }
+      ]
+    },
+    {
+      "id": "Kindle",
+      "type": "products",
+      "attributes": [
+        {
+          "name": "price",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 79.99
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "pay_o-991603",
+      "type": "pay order",
+      "time": "2024-01-30T10:08:51Z",
+      "relationships": [
+        {
+          "objectId": "Kindle",
+          "qualifier": "product"
+        },
+        {
+          "objectId": "o-991603",
+          "qualifier": "order"
+        },
+        {
+          "objectId": "i-886286",
+          "qualifier": "item"
+        }
+      ]
+    }
+  ]
+}

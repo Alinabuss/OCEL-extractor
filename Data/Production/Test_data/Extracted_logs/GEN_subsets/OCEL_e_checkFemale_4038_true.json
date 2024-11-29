@@ -1,0 +1,141 @@
+{
+    "objectTypes": [
+        {
+            "name": "Worker",
+            "attributes": [
+                {
+                    "name": "worker_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "FemalePart",
+            "attributes": [
+                {
+                    "name": "part_id",
+                    "type": "string"
+                },
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Workstation",
+            "attributes": [
+                {
+                    "name": "workstation_id",
+                    "type": "string"
+                },
+                {
+                    "name": "electric_consumption",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Check",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "string"
+                },
+                {
+                    "name": "co2_emission",
+                    "type": "float"
+                },
+                {
+                    "name": "air_utilization",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Worker[1]",
+            "type": "Worker",
+            "attributes": [
+                {
+                    "name": "worker_id",
+                    "time": "2023-04-05T15:22:24Z",
+                    "value": "Worker[1]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "FemalePart[4038]",
+            "type": "FemalePart",
+            "attributes": [
+                {
+                    "name": "part_id",
+                    "time": "2023-04-05T15:22:24Z",
+                    "value": "FemalePart[4038]"
+                },
+                {
+                    "name": "mass",
+                    "time": "2023-04-05T15:22:24Z",
+                    "value": "unspecified"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Workstation[2]",
+            "type": "Workstation",
+            "attributes": [
+                {
+                    "name": "workstation_id",
+                    "time": "2023-04-05T15:22:24Z",
+                    "value": "Workstation[2]"
+                },
+                {
+                    "name": "electric_consumption",
+                    "time": "2023-04-05T15:22:24Z",
+                    "value": "related to own ID"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Check",
+            "time": "2023-04-05T15:22:24Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "unspecified"
+                },
+                {
+                    "name": "co2_emission",
+                    "value": 0.00201438
+                },
+                {
+                    "name": "air_utilization",
+                    "value": 0.031
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Worker[1]",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "FemalePart[4038]",
+                    "qualifier": "checked"
+                },
+                {
+                    "objectId": "Workstation[2]",
+                    "qualifier": "located_at"
+                }
+            ]
+        }
+    ]
+}

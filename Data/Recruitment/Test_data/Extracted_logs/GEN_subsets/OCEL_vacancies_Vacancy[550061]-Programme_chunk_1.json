@@ -1,0 +1,108 @@
+{
+    "objectTypes": [
+        {
+            "name": "vacancy",
+            "attributes": [
+                {
+                    "name": "position",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "manager",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "open_vacancy",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "timestamp"
+                },
+                {
+                    "name": "vacancy_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Vacancy[550061]",
+            "type": "vacancy",
+            "attributes": [
+                {
+                    "name": "position",
+                    "time": "2019-07-01T12:37:23Z",
+                    "value": "Programmer"
+                },
+                {
+                    "name": "status",
+                    "time": "2019-07-01T12:37:23Z",
+                    "value": "opened"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Martin Klenk",
+            "type": "manager",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-01T12:37:23Z",
+                    "value": "Martin Klenk"
+                },
+                {
+                    "name": "role",
+                    "time": "2019-07-01T12:37:23Z",
+                    "value": "manager"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "open_vacancy",
+            "time": "2019-07-01T12:37:23Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2019-07-01T12:37:23Z"
+                },
+                {
+                    "name": "vacancy_id",
+                    "value": "Vacancy[550061]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550061]",
+                    "qualifier": "is_opened_by"
+                },
+                {
+                    "objectId": "Martin Klenk",
+                    "qualifier": "opened_by"
+                }
+            ]
+        }
+    ]
+}

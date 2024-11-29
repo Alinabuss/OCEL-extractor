@@ -1,0 +1,156 @@
+{
+    "objectTypes": [
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "scheduled_departure",
+                    "type": "datetime"
+                },
+                {
+                    "name": "priority",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "document_created",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "vehicles_booked",
+            "attributes": []
+        },
+        {
+            "name": "vehicle_priority_set",
+            "attributes": [
+                {
+                    "name": "priority",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td249",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "time": "2023-11-28T14:59:33Z",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh54",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "scheduled_departure",
+                    "time": "2023-12-01T11:00:00Z",
+                    "value": ""
+                },
+                {
+                    "name": "priority",
+                    "time": "2023-11-28T14:59:33Z",
+                    "value": "high"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td249",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": "vh56",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "scheduled_departure",
+                    "time": "2023-12-08T11:00:00Z",
+                    "value": ""
+                },
+                {
+                    "name": "priority",
+                    "time": "2023-11-28T14:59:33Z",
+                    "value": "normal"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td249",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "document_created",
+            "time": "2023-11-28T14:59:33Z",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "value": "5.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td249",
+                    "qualifier": "created"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "vehicles_booked",
+            "time": "2023-11-28T14:59:33Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "td249",
+                    "qualifier": "booked"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "vehicle_priority_set",
+            "time": "2023-11-28T14:59:33Z",
+            "attributes": [
+                {
+                    "name": "priority",
+                    "value": "high"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh54",
+                    "qualifier": "set_priority_for"
+                }
+            ]
+        }
+    ]
+}

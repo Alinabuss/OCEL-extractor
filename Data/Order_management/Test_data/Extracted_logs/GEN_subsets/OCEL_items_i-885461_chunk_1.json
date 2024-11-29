@@ -1,0 +1,135 @@
+{
+    "objectTypes": [
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "identifier",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "item_picked",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Nina Graves",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-12-12T07:38:28Z",
+                    "value": "Nina Graves"
+                },
+                {
+                    "name": "role",
+                    "time": "2023-12-12T07:38:28Z",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-885461",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "identifier",
+                    "time": "2023-12-12T07:38:28Z",
+                    "value": "i-885461"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-12-12T07:38:28Z",
+                    "value": 785.67
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "iPhone X",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "iPhone X",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-12-12T07:38:28Z",
+                    "value": "iPhone X"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-12-12T07:38:28Z",
+                    "value": 699.0
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "item_picked",
+            "time": "2023-12-12T07:38:28Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-12-12T07:38:28Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Nina Graves",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "i-885461",
+                    "qualifier": "picked_item"
+                }
+            ]
+        }
+    ]
+}

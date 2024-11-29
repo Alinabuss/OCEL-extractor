@@ -1,0 +1,325 @@
+{
+    "objectTypes": [
+        {
+            "name": "player",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "session",
+            "attributes": [
+                {
+                    "name": "session_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "match",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "town_center",
+            "attributes": [
+                {
+                    "name": "town_center_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "mill",
+            "attributes": [
+                {
+                    "name": "mill_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "villager",
+            "attributes": [
+                {
+                    "name": "villager_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "set_gather_point",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "gather_point_type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "construct_mill",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "construction_type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "gather_food",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "quantity",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "queue_villager",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "P688587",
+            "type": "player",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "value": "P688587"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "S250230427",
+            "type": "session",
+            "attributes": [
+                {
+                    "name": "session_id",
+                    "value": "S250230427"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "M250230427",
+            "type": "match",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "value": "M250230427"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Town_Center_M250230427_2",
+            "type": "town_center",
+            "attributes": [
+                {
+                    "name": "town_center_id",
+                    "value": "Town_Center_M250230427_2"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Mill_M250230427_2",
+            "type": "mill",
+            "attributes": [
+                {
+                    "name": "mill_id",
+                    "value": "Mill_M250230427_2"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Villager_M250230427_9",
+            "type": "villager",
+            "attributes": [
+                {
+                    "name": "villager_id",
+                    "value": "Villager_M250230427_9"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Villager_M250230427_14",
+            "type": "villager",
+            "attributes": [
+                {
+                    "name": "villager_id",
+                    "value": "Villager_M250230427_14"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "set_gather_point",
+            "time": "2023-07-31T00:15:41Z",
+            "attributes": [
+                {
+                    "name": "gather_point_type",
+                    "value": "wood"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Town_Center_M250230427_2",
+                    "qualifier": "sets"
+                },
+                {
+                    "objectId": "P688587",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "S250230427",
+                    "qualifier": "in_session"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "in_match"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "construct_mill",
+            "time": "2023-07-31T00:15:53Z",
+            "attributes": [
+                {
+                    "name": "construction_type",
+                    "value": "mill"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Mill_M250230427_2",
+                    "qualifier": "constructed"
+                },
+                {
+                    "objectId": "Villager_M250230427_9",
+                    "qualifier": "assisted_by"
+                },
+                {
+                    "objectId": "P688587",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "S250230427",
+                    "qualifier": "in_session"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "in_match"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "gather_food",
+            "time": "2023-07-31T00:15:59Z",
+            "attributes": [
+                {
+                    "name": "quantity",
+                    "value": 1
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "P688587",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "S250230427",
+                    "qualifier": "in_session"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "in_match"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "gather_food",
+            "time": "2023-07-31T00:16:22Z",
+            "attributes": [
+                {
+                    "name": "quantity",
+                    "value": 1
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "P688587",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "S250230427",
+                    "qualifier": "in_session"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "in_match"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "queue_villager",
+            "time": "2023-07-31T00:16:15Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Villager_M250230427_14",
+                    "qualifier": "queued"
+                },
+                {
+                    "objectId": "S250230427",
+                    "qualifier": "in_session"
+                },
+                {
+                    "objectId": "Town_Center_M250230427_2",
+                    "qualifier": "associated_with"
+                },
+                {
+                    "objectId": "M250230427",
+                    "qualifier": "in_match"
+                }
+            ]
+        }
+    ]
+}

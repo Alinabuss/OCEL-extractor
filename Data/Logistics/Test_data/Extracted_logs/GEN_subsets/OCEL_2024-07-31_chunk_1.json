@@ -1,0 +1,87 @@
+{
+    "objectTypes": [
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "category",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "total_containers",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "vehicle_booked",
+            "attributes": [
+                {
+                    "name": "scheduled_departure",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh129",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "category",
+                    "time": "2024-07-31T12:45:08Z",
+                    "value": "regular"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td568",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "total_containers",
+                    "time": "2024-07-31T12:45:08Z",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh129",
+                    "qualifier": "linked_to_vehicle"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "vehicle_booked",
+            "time": "2024-07-31T12:45:08Z",
+            "attributes": [
+                {
+                    "name": "scheduled_departure",
+                    "value": "2024-08-20T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh129",
+                    "qualifier": "booked_vehicle"
+                },
+                {
+                    "objectId": "td568",
+                    "qualifier": "relates_to_transport_document"
+                }
+            ]
+        }
+    ]
+}

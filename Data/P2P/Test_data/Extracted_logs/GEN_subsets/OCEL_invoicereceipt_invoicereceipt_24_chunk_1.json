@@ -1,0 +1,91 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "movement type",
+                    "type": "integer"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "two-way match completion",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:24",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-05-03T08:08:00Z",
+                    "value": "invoice receipt:24"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:22",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-05-03T08:08:00Z",
+                    "value": "goods receipt:22"
+                },
+                {
+                    "name": "movement type",
+                    "time": "2022-05-03T08:08:00Z",
+                    "value": 101
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "two-way match completion",
+            "time": "2022-05-03T08:08:00Z",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "value": 6500.0
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:24",
+                    "qualifier": "completed for"
+                },
+                {
+                    "objectId": "goods receipt:22",
+                    "qualifier": "involved in"
+                }
+            ]
+        }
+    ]
+}

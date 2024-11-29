@@ -1,0 +1,151 @@
+{
+    "objectTypes": [
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "number"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "category",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "number"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "pick_item",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "string"
+                },
+                {
+                    "name": "employee_name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Benedikt Knopp",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-05-22T11:36:54Z",
+                    "value": "Benedikt Knopp"
+                },
+                {
+                    "name": "department",
+                    "time": "2023-05-22T11:36:54Z",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-880740",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "2023-05-22T11:36:54Z",
+                    "value": "i-880740"
+                },
+                {
+                    "name": "type",
+                    "time": "2023-05-22T11:36:54Z",
+                    "value": "iPad"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-05-22T11:36:54Z",
+                    "value": 495.0
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "product-iPad",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "category",
+                    "time": "2023-05-22T11:36:54Z",
+                    "value": "products"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-05-22T11:36:54Z",
+                    "value": 495.0
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "pick_item",
+            "time": "2023-05-22T11:36:54Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-05-22T11:36:54Z"
+                },
+                {
+                    "name": "employee_name",
+                    "value": "Benedikt Knopp"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Benedikt Knopp",
+                    "qualifier": "performed"
+                },
+                {
+                    "objectId": "i-880740",
+                    "qualifier": "picked"
+                },
+                {
+                    "objectId": "product-iPad",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

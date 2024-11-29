@@ -1,0 +1,314 @@
+{
+    "objectTypes": [
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Reorder",
+            "attributes": [
+                {
+                    "name": "itemId",
+                    "type": "string"
+                },
+                {
+                    "name": "relatedProduct",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Pick",
+            "attributes": [
+                {
+                    "name": "itemId",
+                    "type": "string"
+                },
+                {
+                    "name": "relatedProduct",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Benedikt Knopp",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "department",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Fire Stick 4K",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "value": 89.99
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-886748",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "value": 106.06
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Fire Stick 4K",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": "iPhone 11 Pro",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "value": 1149.0
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-886932",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "value": 1354.22
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "iPhone 11 Pro",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": "iPad Air",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "value": 476.0
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-886826",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "value": 561.01
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "iPad Air",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": "iPhone 11",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "value": 799.0
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-886884",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "value": 941.7
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "iPhone 11",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": "iPhone X",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "value": 699.0
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-886973",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "value": 823.84
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "iPhone X",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Reorder",
+            "time": "2024-02-14T15:45:12Z",
+            "attributes": [
+                {
+                    "name": "itemId",
+                    "value": "i-886748"
+                },
+                {
+                    "name": "relatedProduct",
+                    "value": "Fire Stick 4K"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Benedikt Knopp",
+                    "qualifier": "performedBy"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Reorder",
+            "time": "2024-02-19T16:47:22Z",
+            "attributes": [
+                {
+                    "name": "itemId",
+                    "value": "i-886932"
+                },
+                {
+                    "name": "relatedProduct",
+                    "value": "iPhone 11 Pro"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Benedikt Knopp",
+                    "qualifier": "performedBy"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Pick",
+            "time": "2024-02-20T16:52:17Z",
+            "attributes": [
+                {
+                    "name": "itemId",
+                    "value": "i-886826"
+                },
+                {
+                    "name": "relatedProduct",
+                    "value": "iPad Air"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Benedikt Knopp",
+                    "qualifier": "performedBy"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Pick",
+            "time": "2024-02-21T08:21:55Z",
+            "attributes": [
+                {
+                    "name": "itemId",
+                    "value": "i-886884"
+                },
+                {
+                    "name": "relatedProduct",
+                    "value": "iPhone 11"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Benedikt Knopp",
+                    "qualifier": "performedBy"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "Pick",
+            "time": "2024-02-22T09:41:05Z",
+            "attributes": [
+                {
+                    "name": "itemId",
+                    "value": "i-886973"
+                },
+                {
+                    "name": "relatedProduct",
+                    "value": "iPhone X"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Benedikt Knopp",
+                    "qualifier": "performedBy"
+                }
+            ]
+        }
+    ]
+}

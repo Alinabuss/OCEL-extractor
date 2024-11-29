@@ -1,0 +1,172 @@
+{
+    "objectTypes": [
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Container",
+            "attributes": [
+                {
+                    "name": "container_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Booking",
+            "attributes": [
+                {
+                    "name": "booking_time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "departure_time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Vehicle[vh10]",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "time": "2023-06-07T16:17:29Z",
+                    "value": "vh10"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Transport Document[td20]",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "time": "2023-06-07T16:17:29Z",
+                    "value": "td20"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vehicle[vh10]",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": "Container[1]",
+            "type": "Container",
+            "attributes": [
+                {
+                    "name": "container_id",
+                    "time": "2023-06-07T16:17:29Z",
+                    "value": "1"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Transport Document[td20]",
+                    "qualifier": "part_of"
+                }
+            ]
+        },
+        {
+            "id": "Container[2]",
+            "type": "Container",
+            "attributes": [
+                {
+                    "name": "container_id",
+                    "time": "2023-06-07T16:17:29Z",
+                    "value": "2"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Transport Document[td20]",
+                    "qualifier": "part_of"
+                }
+            ]
+        },
+        {
+            "id": "Container[3]",
+            "type": "Container",
+            "attributes": [
+                {
+                    "name": "container_id",
+                    "time": "2023-06-07T16:17:29Z",
+                    "value": "3"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Transport Document[td20]",
+                    "qualifier": "part_of"
+                }
+            ]
+        },
+        {
+            "id": "Container[4]",
+            "type": "Container",
+            "attributes": [
+                {
+                    "name": "container_id",
+                    "time": "2023-06-07T16:17:29Z",
+                    "value": "4"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Transport Document[td20]",
+                    "qualifier": "part_of"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Booking",
+            "time": "2023-06-07T16:17:29Z",
+            "attributes": [
+                {
+                    "name": "booking_time",
+                    "value": "2023-06-07T16:17:29Z"
+                },
+                {
+                    "name": "departure_time",
+                    "value": "2023-06-30T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vehicle[vh10]",
+                    "qualifier": "involved_in"
+                },
+                {
+                    "objectId": "Transport Document[td20]",
+                    "qualifier": "involved_in"
+                }
+            ]
+        }
+    ]
+}

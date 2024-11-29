@@ -1,0 +1,104 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                },
+                {
+                    "name": "lifecycle stage",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "association",
+            "attributes": [
+                {
+                    "name": "source",
+                    "type": "string"
+                },
+                {
+                    "name": "target",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt[1909]",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2024-10-04T00:16:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt[1901]",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2024-10-04T00:16:00Z",
+                    "value": "15000.0"
+                },
+                {
+                    "name": "lifecycle stage",
+                    "time": "2024-10-04T00:16:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt[1909]",
+                    "qualifier": "associated with"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "association",
+            "time": "2024-10-04T00:16:00Z",
+            "attributes": [
+                {
+                    "name": "source",
+                    "value": "goods receipt[1909]"
+                },
+                {
+                    "name": "target",
+                    "value": "invoice receipt[1901]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt[1909]",
+                    "qualifier": "associated with"
+                },
+                {
+                    "objectId": "invoice receipt[1901]",
+                    "qualifier": "associated with"
+                }
+            ]
+        }
+    ]
+}

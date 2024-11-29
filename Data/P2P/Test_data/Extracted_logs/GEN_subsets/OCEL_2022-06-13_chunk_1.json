@@ -1,0 +1,83 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "completion",
+            "attributes": [
+                {
+                    "name": "receipt_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods_receipt:129",
+            "type": "goods_receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "time": "2022-06-13T14:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:115",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:115",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "Purchasing Group",
+                    "time": "2022-06-13T14:00:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "completion",
+            "time": "2022-06-13T14:00:00Z",
+            "attributes": [
+                {
+                    "name": "receipt_id",
+                    "value": "goods_receipt:129"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods_receipt:129",
+                    "qualifier": "involved"
+                }
+            ]
+        }
+    ]
+}

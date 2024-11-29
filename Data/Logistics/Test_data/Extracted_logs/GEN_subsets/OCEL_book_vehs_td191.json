@@ -1,0 +1,94 @@
+{
+    "objectTypes": [
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "scheduled_departure_date",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "relationship_type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh48",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "scheduled_departure_date",
+                    "time": "2023-11-10T11:00:00Z",
+                    "value": "2023-11-10T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td191",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "amount",
+                    "time": "2023-10-17T07:35:05Z",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2023-10-17T07:35:05Z",
+            "attributes": [
+                {
+                    "name": "relationship_type",
+                    "value": "regular vehicle"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh48",
+                    "qualifier": "booked_for"
+                },
+                {
+                    "objectId": "td191",
+                    "qualifier": "associated_with"
+                }
+            ]
+        }
+    ]
+}

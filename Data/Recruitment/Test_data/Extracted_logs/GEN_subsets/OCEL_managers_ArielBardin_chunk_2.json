@@ -1,0 +1,215 @@
+{
+    "objectTypes": [
+        {
+            "name": "application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "vacancy",
+            "attributes": [
+                {
+                    "name": "label",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "manager",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "consultation",
+            "attributes": [
+                {
+                    "name": "recruiter",
+                    "type": "string"
+                },
+                {
+                    "name": "manager",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "interview",
+            "attributes": [
+                {
+                    "name": "applicant",
+                    "type": "string"
+                },
+                {
+                    "name": "recruiter",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Application[770333]",
+            "type": "application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-03T13:37:33Z",
+                    "value": "770333"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770026]",
+            "type": "application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-04T09:08:35Z",
+                    "value": "770026"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Vacancy[550018]",
+            "type": "vacancy",
+            "attributes": [
+                {
+                    "name": "label",
+                    "time": "2019-07-04T09:08:35Z",
+                    "value": "Programmer"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Dionne Keane",
+            "type": "recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-03T13:37:33Z",
+                    "value": "Dionne Keane"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Ed Keane",
+            "type": "recruiter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-04T09:08:35Z",
+                    "value": "Ed Keane"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Ariel Bardin",
+            "type": "manager",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-03T13:37:33Z",
+                    "value": "Ariel Bardin"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Andre Johnson",
+            "type": "applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-07-04T09:08:35Z",
+                    "value": "Andre Johnson"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "consultation",
+            "time": "2019-07-03T13:37:33Z",
+            "attributes": [
+                {
+                    "name": "recruiter",
+                    "value": "Dionne Keane"
+                },
+                {
+                    "name": "manager",
+                    "value": "Ariel Bardin"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770333]",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "interview",
+            "time": "2019-07-04T09:08:35Z",
+            "attributes": [
+                {
+                    "name": "applicant",
+                    "value": "Andre Johnson"
+                },
+                {
+                    "name": "recruiter",
+                    "value": "Ed Keane"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770026]",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "Vacancy[550018]",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "Ariel Bardin",
+                    "qualifier": "overseen_by"
+                }
+            ]
+        }
+    ]
+}

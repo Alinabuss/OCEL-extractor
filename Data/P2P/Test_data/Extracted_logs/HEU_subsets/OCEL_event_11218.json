@@ -1,0 +1,84 @@
+{
+    "objectTypes": [
+        {
+            "name": "quotation",
+            "attributes": []
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "quotation",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create purchase order",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "quotation:364",
+            "type": "quotation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:623",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "quotation",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "purchasing group 005"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:364",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 645,
+            "type": "create purchase order",
+            "time": "2023-04-10T12:17:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Procurement Department"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:364",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:623",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

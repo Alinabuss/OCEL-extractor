@@ -1,0 +1,101 @@
+{
+    "objectTypes": [
+        {
+            "name": "Worker",
+            "attributes": []
+        },
+        {
+            "name": "Part",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Workstation",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Check",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "type": "string"
+                },
+                {
+                    "name": "CO2 Emissions",
+                    "type": "float"
+                },
+                {
+                    "name": "Compressed Air Consumption",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Worker",
+            "type": "Worker",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "FemalePart[1890]",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "time": "2023-04-04T11:22:23Z",
+                    "value": "Female"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Workstation[2]",
+            "type": "Workstation",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Check",
+            "time": "2023-04-04T11:22:23Z",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "value": "Unspecified"
+                },
+                {
+                    "name": "CO2 Emissions",
+                    "value": "0.00110466"
+                },
+                {
+                    "name": "Compressed Air Consumption",
+                    "value": "0.017"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "FemalePart[1890]",
+                    "qualifier": "checked"
+                },
+                {
+                    "objectId": "Workstation[2]",
+                    "qualifier": "took place at"
+                },
+                {
+                    "objectId": "Worker",
+                    "qualifier": "performed by"
+                }
+            ]
+        }
+    ]
+}

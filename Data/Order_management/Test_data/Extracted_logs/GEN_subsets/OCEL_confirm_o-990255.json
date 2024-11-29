@@ -1,0 +1,169 @@
+{
+    "objectTypes": [
+        {
+            "name": "Customer",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Order",
+            "attributes": [
+                {
+                    "name": "total_price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Order Confirmation",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Mediterranea Luxury Cruises S.p.A.",
+            "type": "Customer",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-06-01T19:51:53Z",
+                    "value": "Mediterranea Luxury Cruises S.p.A."
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Order_1",
+            "type": "Order",
+            "attributes": [
+                {
+                    "name": "total_price",
+                    "time": "2023-06-01T19:51:53Z",
+                    "value": "3923.99"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Mediterranea Luxury Cruises S.p.A.",
+                    "qualifier": "confirmed by"
+                }
+            ]
+        },
+        {
+            "id": "i-881056",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-06-01T19:51:53Z",
+                    "value": "129.99"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Order_1",
+                    "qualifier": "included in"
+                }
+            ]
+        },
+        {
+            "id": "i-881058",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-06-01T19:51:53Z",
+                    "value": "699.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Order_1",
+                    "qualifier": "included in"
+                }
+            ]
+        },
+        {
+            "id": "iPad",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-06-01T19:51:53Z",
+                    "value": "495.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Order_1",
+                    "qualifier": "included in"
+                }
+            ]
+        },
+        {
+            "id": "i-881059",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2023-06-01T19:51:53Z",
+                    "value": "2500.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Order_1",
+                    "qualifier": "included in"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Order Confirmation",
+            "time": "2023-06-01T19:51:53Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-06-01T19:51:53Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Order_1",
+                    "qualifier": "confirmed order"
+                }
+            ]
+        }
+    ]
+}

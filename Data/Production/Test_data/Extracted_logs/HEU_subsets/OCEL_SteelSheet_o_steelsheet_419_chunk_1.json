@@ -1,0 +1,126 @@
+{
+    "objectTypes": [
+        {
+            "name": "workstation",
+            "attributes": [
+                {
+                    "name": "electricity kWh",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "steel sheet",
+            "attributes": []
+        },
+        {
+            "name": "burn emissions",
+            "attributes": [
+                {
+                    "name": "equivalents emissions",
+                    "type": "string"
+                },
+                {
+                    "name": "Wh of burn emissions",
+                    "type": "string"
+                },
+                {
+                    "name": "electricity kWh",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "conduct report heating for the steel sheet",
+            "attributes": []
+        },
+        {
+            "name": "occur at workstation",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "CO2",
+            "type": "burn emissions",
+            "attributes": [
+                {
+                    "name": "equivalents emissions",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "0.0138019093344 kg"
+                },
+                {
+                    "name": "Wh of burn emissions",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Wh"
+                },
+                {
+                    "name": "electricity kWh",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "0.49392"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_machine_oven01",
+            "type": "workstation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "o_workstation_1",
+            "type": "workstation",
+            "attributes": [
+                {
+                    "name": "electricity kWh",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "0.02"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_steelsheet_419",
+            "type": "steel sheet",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 259,
+            "type": "conduct report heating for the steel sheet",
+            "time": "2023-04-03T08:54:37Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "o_steelsheet_419",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 260,
+            "type": "occur at workstation",
+            "time": "2023-04-03T08:39:37Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "CO2",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "o_machine_oven01",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,143 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchasing_group",
+            "attributes": [
+                {
+                    "name": "label",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create",
+            "attributes": [
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "complete",
+            "attributes": [
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_order:1442",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-07-14T09:53:00Z",
+                    "value": "purchase_order:1442"
+                },
+                {
+                    "name": "status",
+                    "time": "2024-07-14T09:53:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:833",
+                    "qualifier": "associated_with"
+                },
+                {
+                    "objectId": "purchasing_group:002",
+                    "qualifier": "linked_to"
+                }
+            ]
+        },
+        {
+            "id": "quotation:833",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "",
+                    "value": "quotation:833"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchasing_group:002",
+            "type": "purchasing_group",
+            "attributes": [
+                {
+                    "name": "label",
+                    "time": "",
+                    "value": "002"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create",
+            "time": "2024-07-14T09:53:00Z",
+            "attributes": [
+                {
+                    "name": "type",
+                    "value": "purchase_order"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1442",
+                    "qualifier": "target"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "complete",
+            "time": "2024-07-14T09:53:00Z",
+            "attributes": [
+                {
+                    "name": "type",
+                    "value": "purchase_order"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:1442",
+                    "qualifier": "target"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,214 @@
+{
+    "objectTypes": [
+        {
+            "name": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "containerCount",
+                    "type": "float"
+                },
+                {
+                    "name": "scheduledDeparture",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "vehicleType",
+                    "type": "string"
+                },
+                {
+                    "name": "scheduledDeparture",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "VehicleBooking",
+            "attributes": [
+                {
+                    "name": "bookingTime",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td42",
+            "type": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "containerCount",
+                    "time": "2023-06-27T07:56:20Z",
+                    "value": "3.0"
+                },
+                {
+                    "name": "scheduledDeparture",
+                    "time": "2023-06-27T07:56:20Z",
+                    "value": "2023-07-07T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td43",
+            "type": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "containerCount",
+                    "time": "2023-06-27T13:28:12Z",
+                    "value": "2.0"
+                },
+                {
+                    "name": "scheduledDeparture",
+                    "time": "2023-06-27T13:28:12Z",
+                    "value": "2023-07-04T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td44",
+            "type": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "containerCount",
+                    "time": "2023-06-27T15:55:05Z",
+                    "value": "5.0"
+                },
+                {
+                    "name": "scheduledDeparture",
+                    "time": "2023-06-27T15:55:05Z",
+                    "value": null
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh12",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "vehicleType",
+                    "time": "2023-06-27T07:56:20Z",
+                    "value": "regular"
+                },
+                {
+                    "name": "scheduledDeparture",
+                    "time": "2023-06-27T07:56:20Z",
+                    "value": "2023-07-07T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh11",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "vehicleType",
+                    "time": "2023-06-27T13:28:12Z",
+                    "value": "regular"
+                },
+                {
+                    "name": "scheduledDeparture",
+                    "time": "2023-06-27T13:28:12Z",
+                    "value": "2023-07-04T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh10",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "vehicleType",
+                    "time": "2023-06-27T15:55:05Z",
+                    "value": "high-priority"
+                },
+                {
+                    "name": "scheduledDeparture",
+                    "time": "2023-06-27T15:55:05Z",
+                    "value": "2023-06-30T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "VehicleBooking",
+            "time": "2023-06-27T07:56:20Z",
+            "attributes": [
+                {
+                    "name": "bookingTime",
+                    "value": "2023-06-27T07:56:20Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td42",
+                    "qualifier": "associatedWith"
+                },
+                {
+                    "objectId": "vh12",
+                    "qualifier": "involves"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "VehicleBooking",
+            "time": "2023-06-27T13:28:12Z",
+            "attributes": [
+                {
+                    "name": "bookingTime",
+                    "value": "2023-06-27T13:28:12Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td43",
+                    "qualifier": "associatedWith"
+                },
+                {
+                    "objectId": "vh11",
+                    "qualifier": "involves"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "VehicleBooking",
+            "time": "2023-06-27T15:55:05Z",
+            "attributes": [
+                {
+                    "name": "bookingTime",
+                    "value": "2023-06-27T15:55:05Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td44",
+                    "qualifier": "associatedWith"
+                },
+                {
+                    "objectId": "vh10",
+                    "qualifier": "involves"
+                },
+                {
+                    "objectId": "vh11",
+                    "qualifier": "involves"
+                }
+            ]
+        }
+    ]
+}

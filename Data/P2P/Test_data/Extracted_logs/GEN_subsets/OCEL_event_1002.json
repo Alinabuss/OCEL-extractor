@@ -1,0 +1,149 @@
+{
+    "objectTypes": [
+        {
+            "name": "payment",
+            "attributes": [
+                {
+                    "name": "payment_method",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase_order",
+            "attributes": [
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "payment_executed",
+            "attributes": [
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "payment:24",
+            "type": "payment",
+            "attributes": [
+                {
+                    "name": "payment_method",
+                    "time": "2022-05-15T08:37:00Z",
+                    "value": "C: Bank Collection"
+                },
+                {
+                    "name": "status",
+                    "time": "2022-05-15T08:37:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice_receipt:49",
+                    "qualifier": "linked_to"
+                },
+                {
+                    "objectId": "purchase_order:34",
+                    "qualifier": "associated_with"
+                },
+                {
+                    "objectId": "purchase_order:35",
+                    "qualifier": "associated_with"
+                },
+                {
+                    "objectId": "purchase_order:36",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:34",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "purchasing_group",
+                    "time": "2022-05-15T08:37:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:35",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "purchasing_group",
+                    "time": "2022-05-15T08:37:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:36",
+            "type": "purchase_order",
+            "attributes": [
+                {
+                    "name": "purchasing_group",
+                    "time": "2022-05-15T08:37:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice_receipt:49",
+            "type": "invoice_receipt",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "time": "2022-05-15T08:37:00Z",
+                    "value": "38000.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "payment_executed",
+            "time": "2022-05-15T08:37:00Z",
+            "attributes": [
+                {
+                    "name": "department",
+                    "value": "Finance/Account Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "payment:24",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

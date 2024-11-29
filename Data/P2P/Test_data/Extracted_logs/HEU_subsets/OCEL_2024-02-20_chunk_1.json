@@ -1,0 +1,172 @@
+{
+    "objectTypes": [
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "receipt",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "associated invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create invoice receipt for the goods receipt",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "receive approval",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "quotation:687",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:1181",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:687",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "invoice receipt:1417",
+            "type": "associated invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "12,600.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:1417",
+            "type": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "receipt",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1417",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 258,
+            "type": "receive approval",
+            "time": "2024-02-20T18:20:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:687",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:1181",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 259,
+            "type": "create invoice receipt for the goods receipt",
+            "time": "2024-02-20T23:47:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "type movement"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1417",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:1417",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

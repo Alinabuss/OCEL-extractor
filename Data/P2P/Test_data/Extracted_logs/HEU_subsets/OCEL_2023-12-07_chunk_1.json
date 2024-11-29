@@ -1,0 +1,170 @@
+{
+    "objectTypes": [
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "group quotation with purchasing",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "invoice receipt creation",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type part",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "approve purchase order",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "create invoice receipt",
+            "attributes": []
+        },
+        {
+            "name": "approve purchase order",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1241",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type part",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "quotation:590",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "status",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "purchasing group 004"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "quotation:600",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "group quotation with purchasing",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "purchasing group 002"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:1229",
+            "type": "invoice receipt creation",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "72,800.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:1034",
+            "type": "purchase order",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation:600",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1221,
+            "type": "create invoice receipt",
+            "time": "2023-12-07T12:41:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1241",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "invoice receipt:1229",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1222,
+            "type": "approve purchase order",
+            "time": "2023-12-07T17:08:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation:590",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1223,
+            "type": "approve purchase order",
+            "time": "2023-12-07T20:19:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:600",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:1034",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

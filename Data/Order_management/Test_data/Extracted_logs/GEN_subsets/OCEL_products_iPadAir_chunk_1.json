@@ -1,0 +1,350 @@
+{
+    "objectTypes": [
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Company",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Customer Order",
+            "attributes": [
+                {
+                    "name": "Order ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Total Price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Internal Reorder",
+            "attributes": [
+                {
+                    "name": "Reorder ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Item Price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "i-880446",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "value": "i-880446"
+                },
+                {
+                    "name": "Price",
+                    "value": 29.99
+                }
+            ]
+        },
+        {
+            "id": "i-880448",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "value": "i-880448"
+                },
+                {
+                    "name": "Price",
+                    "value": 79.99
+                }
+            ]
+        },
+        {
+            "id": "i-880666",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "value": "i-880666"
+                },
+                {
+                    "name": "Price",
+                    "value": 476.0
+                }
+            ]
+        },
+        {
+            "id": "i-882103",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "value": "i-882103"
+                },
+                {
+                    "name": "Price",
+                    "value": 503.18
+                }
+            ]
+        },
+        {
+            "id": "i-882859",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "value": "i-882859"
+                },
+                {
+                    "name": "Price",
+                    "value": 515.03
+                }
+            ]
+        },
+        {
+            "id": "i-883222",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "value": "i-883222"
+                },
+                {
+                    "name": "Price",
+                    "value": 572.38
+                }
+            ]
+        },
+        {
+            "id": "Celtica Green Farms Oy",
+            "type": "Company",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "value": "Celtica Green Farms Oy"
+                }
+            ]
+        },
+        {
+            "id": "SwissPeak Timepieces AG",
+            "type": "Company",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "value": "SwissPeak Timepieces AG"
+                }
+            ]
+        },
+        {
+            "id": "Mahsa Bafrani",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "value": "Mahsa Bafrani"
+                },
+                {
+                    "name": "Department",
+                    "value": "Warehousing"
+                }
+            ]
+        },
+        {
+            "id": "Marco Pegoraro",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "value": "Marco Pegoraro"
+                },
+                {
+                    "name": "Department",
+                    "value": "Warehousing"
+                }
+            ]
+        },
+        {
+            "id": "Detlef Wetzeler",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "value": "Detlef Wetzeler"
+                },
+                {
+                    "name": "Department",
+                    "value": "Warehousing"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Customer Order",
+            "time": "2023-05-08T12:58:38Z",
+            "attributes": [
+                {
+                    "name": "Order ID",
+                    "value": "Celtica Order"
+                },
+                {
+                    "name": "Total Price",
+                    "value": 476.0
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Celtica Green Farms Oy",
+                    "qualifier": "placed"
+                },
+                {
+                    "objectId": "i-880446",
+                    "qualifier": "included"
+                },
+                {
+                    "objectId": "i-880448",
+                    "qualifier": "included"
+                },
+                {
+                    "objectId": "i-883222",
+                    "qualifier": "order"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Internal Reorder",
+            "time": "2023-05-18T09:20:01Z",
+            "attributes": [
+                {
+                    "name": "Reorder ID",
+                    "value": "Mahsa Reorder"
+                },
+                {
+                    "name": "Item Price",
+                    "value": 476.0
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Mahsa Bafrani",
+                    "qualifier": "reordered"
+                },
+                {
+                    "objectId": "i-880666",
+                    "qualifier": "reordered"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Internal Reorder",
+            "time": "2023-07-21T08:05:53Z",
+            "attributes": [
+                {
+                    "name": "Reorder ID",
+                    "value": "Marco Reorder"
+                },
+                {
+                    "name": "Item Price",
+                    "value": 476.0
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Marco Pegoraro",
+                    "qualifier": "reordered"
+                },
+                {
+                    "objectId": "i-882103",
+                    "qualifier": "reordered"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Internal Reorder",
+            "time": "2023-08-23T15:40:24Z",
+            "attributes": [
+                {
+                    "name": "Reorder ID",
+                    "value": "Detlef Reorder"
+                },
+                {
+                    "name": "Item Price",
+                    "value": 476.0
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Detlef Wetzeler",
+                    "qualifier": "reordered"
+                },
+                {
+                    "objectId": "i-882859",
+                    "qualifier": "reordered"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "Customer Order",
+            "time": "2023-09-03T19:26:57Z",
+            "attributes": [
+                {
+                    "name": "Order ID",
+                    "value": "SwissPeak Order"
+                },
+                {
+                    "name": "Total Price",
+                    "value": 572.38
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SwissPeak Timepieces AG",
+                    "qualifier": "placed"
+                },
+                {
+                    "objectId": "i-883222",
+                    "qualifier": "order"
+                }
+            ]
+        }
+    ]
+}

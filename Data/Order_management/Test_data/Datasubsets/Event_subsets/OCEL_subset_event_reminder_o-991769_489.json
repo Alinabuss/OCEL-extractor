@@ -1,0 +1,105 @@
+{
+  "objectTypes": [
+    {
+      "name": "items",
+      "attributes": [
+        {
+          "name": "price",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "orders",
+      "attributes": [
+        {
+          "name": "price",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "products",
+      "attributes": [
+        {
+          "name": "price",
+          "type": "float"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "payment reminder",
+      "attributes": []
+    }
+  ],
+  "objects": [
+    {
+      "id": "o-991769",
+      "type": "orders",
+      "attributes": [
+        {
+          "name": "price",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 99.28
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "i-886838",
+          "qualifier": "comprises"
+        }
+      ]
+    },
+    {
+      "id": "i-886838",
+      "type": "items",
+      "attributes": [
+        {
+          "name": "price",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 94.28
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "Kindle",
+          "qualifier": "is a"
+        }
+      ]
+    },
+    {
+      "id": "Kindle",
+      "type": "products",
+      "attributes": [
+        {
+          "name": "price",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 79.99
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "reminder_o-991769_489",
+      "type": "payment reminder",
+      "time": "2024-03-05T10:06:51Z",
+      "relationships": [
+        {
+          "objectId": "i-886838",
+          "qualifier": "item"
+        },
+        {
+          "objectId": "Kindle",
+          "qualifier": "product"
+        },
+        {
+          "objectId": "o-991769",
+          "qualifier": "order"
+        }
+      ]
+    }
+  ]
+}

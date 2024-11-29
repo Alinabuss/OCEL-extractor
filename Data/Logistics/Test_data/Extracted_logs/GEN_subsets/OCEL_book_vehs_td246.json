@@ -1,0 +1,147 @@
+{
+    "objectTypes": [
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Containers",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Designation",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Booking",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Departure",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td246",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-11-28T10:09:51Z",
+                    "value": "td246"
+                },
+                {
+                    "name": "Containers",
+                    "time": "2023-11-28T10:09:51Z",
+                    "value": "3.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh57",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "vh57",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-11-28T10:09:51Z",
+                    "value": "vh57"
+                },
+                {
+                    "name": "Designation",
+                    "time": "2023-11-28T10:09:51Z",
+                    "value": "Regular Vehicle"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Booking",
+            "time": "2023-11-28T10:09:51Z",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "value": "2023-11-28T10:09:51Z"
+                },
+                {
+                    "name": "Status",
+                    "value": "Booked"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td246",
+                    "qualifier": "booking_for"
+                },
+                {
+                    "objectId": "vh57",
+                    "qualifier": "booked"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Departure",
+            "time": "2023-12-12T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "value": "2023-12-12T11:00:00Z"
+                },
+                {
+                    "name": "Status",
+                    "value": "Scheduled"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh57",
+                    "qualifier": "departure_schedule_for"
+                }
+            ]
+        }
+    ]
+}

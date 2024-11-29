@@ -1,0 +1,138 @@
+{
+    "objectTypes": [
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": []
+        },
+        {
+            "name": "warehouse department",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create goods receipt",
+            "attributes": [
+                {
+                    "name": "goods receipt ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:538",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2023-01-10T16:40:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "purchasing group",
+                    "time": "2023-01-10T16:40:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:450",
+                    "qualifier": "related to"
+                },
+                {
+                    "objectId": "warehouse department",
+                    "qualifier": "created by"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:537",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2023-01-13T02:46:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "purchasing group",
+                    "time": "2023-01-13T02:46:00Z",
+                    "value": "004"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:450",
+                    "qualifier": "related to"
+                },
+                {
+                    "objectId": "warehouse department",
+                    "qualifier": "created by"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:450",
+            "type": "purchase order",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "warehouse department",
+            "type": "warehouse department",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create goods receipt",
+            "time": "2023-01-10T16:40:00Z",
+            "attributes": [
+                {
+                    "name": "goods receipt ID",
+                    "value": "goods receipt:538"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:538",
+                    "qualifier": "created"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "create goods receipt",
+            "time": "2023-01-13T02:46:00Z",
+            "attributes": [
+                {
+                    "name": "goods receipt ID",
+                    "value": "goods receipt:537"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:537",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

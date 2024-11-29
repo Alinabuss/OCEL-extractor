@@ -1,0 +1,90 @@
+{
+  "objectTypes": [
+    {
+      "name": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "Vehicle",
+      "attributes": [
+        {
+          "name": "Departure Date",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Book Vehicles",
+      "attributes": []
+    }
+  ],
+  "objects": [
+    {
+      "id": "td50",
+      "type": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 3.0
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "vh11",
+          "qualifier": "High-Prio VH for TD"
+        }
+      ]
+    },
+    {
+      "id": "vh11",
+      "type": "Vehicle",
+      "attributes": [
+        {
+          "name": "Departure Date",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "2023-07-04 11:00:00"
+        }
+      ]
+    },
+    {
+      "id": "vh15",
+      "type": "Vehicle",
+      "attributes": [
+        {
+          "name": "Departure Date",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "2023-07-18 11:00:00"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "book_vehs_td50",
+      "type": "Book Vehicles",
+      "time": "2023-06-30T07:43:02Z",
+      "relationships": [
+        {
+          "objectId": "vh11",
+          "qualifier": "booked VHs"
+        },
+        {
+          "objectId": "td50",
+          "qualifier": "VHs booked for TD"
+        },
+        {
+          "objectId": "vh15",
+          "qualifier": "booked VHs"
+        }
+      ]
+    }
+  ]
+}

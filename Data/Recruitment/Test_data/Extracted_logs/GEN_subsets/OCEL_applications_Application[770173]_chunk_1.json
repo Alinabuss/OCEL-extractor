@@ -1,0 +1,252 @@
+{
+    "objectTypes": [
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "title",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Offer",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Consultation",
+            "attributes": [
+                {
+                    "name": "recruiter",
+                    "type": "string"
+                },
+                {
+                    "name": "manager",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Invitation",
+            "attributes": [
+                {
+                    "name": "recruiters",
+                    "type": "array"
+                },
+                {
+                    "name": "applicant",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Interview",
+            "attributes": [
+                {
+                    "name": "recruiter",
+                    "type": "string"
+                },
+                {
+                    "name": "applicant",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Job Offer",
+            "attributes": [
+                {
+                    "name": "recruiter",
+                    "type": "string"
+                },
+                {
+                    "name": "applicant",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Application[770173]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "id",
+                    "value": "770173",
+                    "time": "2019-06-29T03:32:51Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Vacancy[550016]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "id",
+                    "value": "550016",
+                    "time": "2019-07-01T12:37:58Z"
+                },
+                {
+                    "name": "title",
+                    "value": "Manager",
+                    "time": "2019-07-01T12:37:58Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Applicant[Detlef Davis]",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "value": "Detlef Davis"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Offer[990010]",
+            "type": "Offer",
+            "attributes": [
+                {
+                    "name": "id",
+                    "value": "990010"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Consultation",
+            "time": "2019-06-29T03:32:51Z",
+            "attributes": [
+                {
+                    "name": "recruiter",
+                    "value": "Dionne Kershaw"
+                },
+                {
+                    "name": "manager",
+                    "value": "Alexander Rinke"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770173]",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Invitation",
+            "time": "2019-07-01T12:37:58Z",
+            "attributes": [
+                {
+                    "name": "recruiters",
+                    "value": [
+                        "Ed Meister",
+                        "Simon Geisler"
+                    ]
+                },
+                {
+                    "name": "applicant",
+                    "value": "Detlef Davis"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770173]",
+                    "qualifier": "related to"
+                },
+                {
+                    "objectId": "Vacancy[550016]",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Interview",
+            "time": "2019-07-03T09:53:00Z",
+            "attributes": [
+                {
+                    "name": "recruiter",
+                    "value": "Dionne Kershaw"
+                },
+                {
+                    "name": "applicant",
+                    "value": "Detlef Davis"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770173]",
+                    "qualifier": "documented with"
+                },
+                {
+                    "objectId": "Vacancy[550016]",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Job Offer",
+            "time": "2019-07-04T13:36:49Z",
+            "attributes": [
+                {
+                    "name": "recruiter",
+                    "value": "Dionne Kershaw"
+                },
+                {
+                    "name": "applicant",
+                    "value": "Detlef Davis"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770173]",
+                    "qualifier": "linked to"
+                },
+                {
+                    "objectId": "Offer[990010]",
+                    "qualifier": "directed towards"
+                }
+            ]
+        }
+    ]
+}

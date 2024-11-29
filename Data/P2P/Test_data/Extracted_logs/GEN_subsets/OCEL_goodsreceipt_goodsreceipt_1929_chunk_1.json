@@ -1,0 +1,102 @@
+{
+    "objectTypes": [
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Match",
+            "attributes": [
+                {
+                    "name": "Lifecycle Status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Two-Way Match Conducted",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1929",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "time": "2024-10-09T07:10:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:1924",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "Credit Amount",
+                    "time": "2024-10-09T07:10:00Z",
+                    "value": "118900.00"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "match:1",
+            "type": "Match",
+            "attributes": [
+                {
+                    "name": "Lifecycle Status",
+                    "time": "2024-10-09T07:10:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Two-Way Match Conducted",
+            "time": "2024-10-09T07:10:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1929",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "invoice receipt:1924",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "match:1",
+                    "qualifier": "result"
+                }
+            ]
+        }
+    ]
+}

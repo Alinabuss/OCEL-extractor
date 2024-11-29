@@ -1,0 +1,100 @@
+{
+    "objectTypes": [
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Scheduled Departure Date",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Containers",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Booking",
+            "attributes": [
+                {
+                    "name": "Booking Time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh6",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-06-01T05:50:49Z",
+                    "value": "vh6"
+                },
+                {
+                    "name": "Scheduled Departure Date",
+                    "time": "2023-06-01T05:50:49Z",
+                    "value": "2023-06-16T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td11",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-06-01T05:50:49Z",
+                    "value": "td11"
+                },
+                {
+                    "name": "Containers",
+                    "time": "2023-06-01T05:50:49Z",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Booking",
+            "time": "2023-06-01T05:50:49Z",
+            "attributes": [
+                {
+                    "name": "Booking Time",
+                    "value": "2023-06-01T05:50:49Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh6",
+                    "qualifier": "booked for"
+                },
+                {
+                    "objectId": "td11",
+                    "qualifier": "associated with"
+                }
+            ]
+        }
+    ]
+}

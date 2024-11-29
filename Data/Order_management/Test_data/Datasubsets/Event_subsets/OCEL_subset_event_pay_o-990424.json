@@ -1,0 +1,105 @@
+{
+  "objectTypes": [
+    {
+      "name": "items",
+      "attributes": [
+        {
+          "name": "price",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "orders",
+      "attributes": [
+        {
+          "name": "price",
+          "type": "float"
+        }
+      ]
+    },
+    {
+      "name": "products",
+      "attributes": [
+        {
+          "name": "price",
+          "type": "float"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "pay order",
+      "attributes": []
+    }
+  ],
+  "objects": [
+    {
+      "id": "o-990424",
+      "type": "orders",
+      "attributes": [
+        {
+          "name": "price",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 528.26
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "i-881734",
+          "qualifier": "comprises"
+        }
+      ]
+    },
+    {
+      "id": "i-881734",
+      "type": "items",
+      "attributes": [
+        {
+          "name": "price",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 523.26
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "iPad",
+          "qualifier": "is a"
+        }
+      ]
+    },
+    {
+      "id": "iPad",
+      "type": "products",
+      "attributes": [
+        {
+          "name": "price",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 495.0
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "pay_o-990424",
+      "type": "pay order",
+      "time": "2023-07-26T12:22:06Z",
+      "relationships": [
+        {
+          "objectId": "o-990424",
+          "qualifier": "order"
+        },
+        {
+          "objectId": "i-881734",
+          "qualifier": "item"
+        },
+        {
+          "objectId": "iPad",
+          "qualifier": "product"
+        }
+      ]
+    }
+  ]
+}

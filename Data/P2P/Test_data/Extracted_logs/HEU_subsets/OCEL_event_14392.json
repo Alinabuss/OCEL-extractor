@@ -1,0 +1,103 @@
+{
+    "objectTypes": [
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "quotation with",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase requisition",
+            "attributes": [
+                {
+                    "name": "quotation with",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "creation of a request",
+            "attributes": [
+                {
+                    "name": "quotation",
+                    "type": "string"
+                },
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "quotation:464",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "quotation with",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Purchasing Group 001"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_requisition:463 : pr_trigger_463",
+            "type": "purchase requisition",
+            "attributes": [
+                {
+                    "name": "quotation with",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "Purchasing Group 001"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:464",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 293,
+            "type": "creation of a request",
+            "time": "2023-07-29T13:23:00Z",
+            "attributes": [
+                {
+                    "name": "quotation",
+                    "value": "July"
+                },
+                {
+                    "name": "resource",
+                    "value": "Procurement Department"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:463 : pr_trigger_463",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "quotation:464",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

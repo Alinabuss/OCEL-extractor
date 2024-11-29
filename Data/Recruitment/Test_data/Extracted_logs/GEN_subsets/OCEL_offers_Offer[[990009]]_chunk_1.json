@@ -1,0 +1,134 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Job Offer",
+            "attributes": [
+                {
+                    "name": "offer_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "title",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Job Offer Made",
+            "attributes": [
+                {
+                    "name": "recruiter",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Stephan Taylor",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "",
+                    "value": "Stephan Taylor"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Offer[[990009]]",
+            "type": "Job Offer",
+            "attributes": [
+                {
+                    "name": "offer_id",
+                    "time": "",
+                    "value": "Offer[[990009]]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550019]",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "Stephan Taylor",
+                    "qualifier": "directed_to"
+                }
+            ]
+        },
+        {
+            "id": "Vacancy[550019]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "title",
+                    "time": "",
+                    "value": "Manager"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770001]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "application_id",
+                    "time": "",
+                    "value": "Application[770001]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Stephan Taylor",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Job Offer Made",
+            "time": "2019-07-04T07:00:28Z",
+            "attributes": [
+                {
+                    "name": "recruiter",
+                    "value": "Dionne Keane"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Offer[[990009]]",
+                    "qualifier": "associated_with"
+                }
+            ]
+        }
+    ]
+}

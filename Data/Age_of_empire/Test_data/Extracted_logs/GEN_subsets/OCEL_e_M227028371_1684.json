@@ -1,0 +1,109 @@
+{
+    "objectTypes": [
+        {
+            "name": "match",
+            "attributes": [
+                {
+                    "name": "matchId",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "session",
+            "attributes": [
+                {
+                    "name": "sessionId",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "archery_range",
+            "attributes": [
+                {
+                    "name": "rangeId",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "queue_start",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "timestamp"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "M227028371",
+            "type": "match",
+            "attributes": [
+                {
+                    "name": "matchId",
+                    "time": "2023-04-17T01:05:34Z",
+                    "value": "M227028371"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "S227028371_1472826",
+            "type": "session",
+            "attributes": [
+                {
+                    "name": "sessionId",
+                    "time": "2023-04-17T01:05:34Z",
+                    "value": "S227028371_1472826"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "M227028371",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "archery_range_1",
+            "type": "archery_range",
+            "attributes": [
+                {
+                    "name": "rangeId",
+                    "time": "2023-04-17T01:05:34Z",
+                    "value": "archery_range_1"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "M227028371",
+                    "qualifier": "linked_to"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "queue_start",
+            "time": "2023-04-17T01:05:34Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-04-17T01:05:34Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "S227028371_1472826",
+                    "qualifier": "started_in"
+                }
+            ]
+        }
+    ]
+}

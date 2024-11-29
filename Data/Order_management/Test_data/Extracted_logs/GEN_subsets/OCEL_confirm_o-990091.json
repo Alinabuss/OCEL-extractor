@@ -1,0 +1,169 @@
+{
+    "objectTypes": [
+        {
+            "name": "customer",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "sales_representative",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "order",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "type": "string"
+                },
+                {
+                    "name": "total_price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                },
+                {
+                    "name": "product_name",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "order_confirmed",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "dateTime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Eastern Oak Insurance Zrt",
+            "type": "customer",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-05-05T08:06:50Z",
+                    "value": "Eastern Oak Insurance Zrt"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Mara Nitschke",
+            "type": "sales_representative",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-05-05T08:06:50Z",
+                    "value": "Mara Nitschke"
+                },
+                {
+                    "name": "role",
+                    "time": "2023-05-05T08:06:50Z",
+                    "value": "Sales"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Order[990091]",
+            "type": "order",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "time": "2023-05-05T08:06:50Z",
+                    "value": "Order[990091]"
+                },
+                {
+                    "name": "total_price",
+                    "time": "2023-05-05T08:06:50Z",
+                    "value": 1612.97
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Eastern Oak Insurance Zrt",
+                    "qualifier": "customer"
+                },
+                {
+                    "objectId": "Mara Nitschke",
+                    "qualifier": "handled_by"
+                },
+                {
+                    "objectId": "Item[880391]",
+                    "qualifier": "contains"
+                }
+            ]
+        },
+        {
+            "id": "Item[880391]",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "2023-05-05T08:06:50Z",
+                    "value": "Item[880391]"
+                },
+                {
+                    "name": "product_name",
+                    "time": "2023-05-05T08:06:50Z",
+                    "value": "iPhone 11 Pro"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-05-05T08:06:50Z",
+                    "value": 1149.0
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "order_confirmed",
+            "time": "2023-05-05T08:06:50Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-05-05T08:06:50Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Order[990091]",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

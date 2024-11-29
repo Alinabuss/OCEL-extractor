@@ -1,0 +1,172 @@
+{
+    "objectTypes": [
+        {
+            "name": "Customer",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Order",
+            "attributes": [
+                {
+                    "name": "date",
+                    "type": "datetime"
+                },
+                {
+                    "name": "total_value",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Order Confirmed",
+            "attributes": [
+                {
+                    "name": "sales_person",
+                    "type": "string"
+                },
+                {
+                    "name": "customer_name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Celtica Green Farms Oy",
+            "type": "Customer",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "",
+                    "value": "Celtica Green Farms Oy"
+                }
+            ]
+        },
+        {
+            "id": "iPad Air",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "",
+                    "value": "iPad Air"
+                },
+                {
+                    "name": "price",
+                    "time": "",
+                    "value": "476.0"
+                }
+            ]
+        },
+        {
+            "id": "Echo Studio",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "",
+                    "value": "Echo Studio"
+                },
+                {
+                    "name": "price",
+                    "time": "",
+                    "value": "199.99"
+                }
+            ]
+        },
+        {
+            "id": "i-880446",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "",
+                    "value": "Unknown Product"
+                },
+                {
+                    "name": "price",
+                    "time": "",
+                    "value": "29.99"
+                }
+            ]
+        },
+        {
+            "id": "Order_1",
+            "type": "Order",
+            "attributes": [
+                {
+                    "name": "date",
+                    "time": "",
+                    "value": "2023-05-09T13:30:39Z"
+                },
+                {
+                    "name": "total_value",
+                    "time": "",
+                    "value": "705.98"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Celtica Green Farms Oy",
+                    "qualifier": "customer"
+                },
+                {
+                    "objectId": "iPad Air",
+                    "qualifier": "includes"
+                },
+                {
+                    "objectId": "Echo Studio",
+                    "qualifier": "includes"
+                },
+                {
+                    "objectId": "i-880446",
+                    "qualifier": "includes"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Order Confirmed",
+            "time": "2023-05-09T13:30:39Z",
+            "attributes": [
+                {
+                    "name": "sales_person",
+                    "value": "Istvan Koren"
+                },
+                {
+                    "name": "customer_name",
+                    "value": "Celtica Green Farms Oy"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Order_1",
+                    "qualifier": "order"
+                }
+            ]
+        }
+    ]
+}

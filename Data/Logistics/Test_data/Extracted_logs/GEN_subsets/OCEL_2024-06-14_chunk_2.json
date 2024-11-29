@@ -1,0 +1,130 @@
+{
+    "objectTypes": [
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "priority",
+                    "type": "string"
+                },
+                {
+                    "name": "scheduledDeparture",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "containers",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Booking Initiated",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh111",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-06-14T17:16:13Z",
+                    "value": "vh111"
+                },
+                {
+                    "name": "priority",
+                    "time": "2024-06-14T17:16:13Z",
+                    "value": "high"
+                },
+                {
+                    "name": "scheduledDeparture",
+                    "time": "2024-06-14T17:16:13Z",
+                    "value": "2024-06-18T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh114",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-06-14T17:16:13Z",
+                    "value": "vh114"
+                },
+                {
+                    "name": "priority",
+                    "time": "2024-06-14T17:16:13Z",
+                    "value": "normal"
+                },
+                {
+                    "name": "scheduledDeparture",
+                    "time": "2024-06-14T17:16:13Z",
+                    "value": "2024-06-28T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td514",
+            "type": "Transport Document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-06-14T17:16:13Z",
+                    "value": "td514"
+                },
+                {
+                    "name": "containers",
+                    "time": "2024-06-14T17:16:13Z",
+                    "value": 4.0
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Booking Initiated",
+            "time": "2024-06-14T17:16:13Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "vh111",
+                    "qualifier": "booked"
+                },
+                {
+                    "objectId": "vh114",
+                    "qualifier": "booked"
+                },
+                {
+                    "objectId": "td514",
+                    "qualifier": "for"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,150 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "integer"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create invoice receipt",
+            "attributes": [
+                {
+                    "name": "invoice ID",
+                    "type": "string"
+                },
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "confirm invoice receipt",
+            "attributes": [
+                {
+                    "name": "invoice ID",
+                    "type": "string"
+                },
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:245",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2022-08-08T12:57:00Z",
+                    "value": "91200.00"
+                },
+                {
+                    "name": "status",
+                    "time": "2022-08-08T12:57:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:245",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:245",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2022-08-08T12:57:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:247",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2022-08-08T13:54:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create invoice receipt",
+            "time": "2022-08-08T12:57:00Z",
+            "attributes": [
+                {
+                    "name": "invoice ID",
+                    "value": "invoice receipt:245"
+                },
+                {
+                    "name": "credit amount",
+                    "value": "91200.00"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:245",
+                    "qualifier": "created"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "confirm invoice receipt",
+            "time": "2022-08-08T13:54:00Z",
+            "attributes": [
+                {
+                    "name": "invoice ID",
+                    "value": "invoice receipt:245"
+                },
+                {
+                    "name": "credit amount",
+                    "value": "91200.00"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:245",
+                    "qualifier": "confirmed"
+                },
+                {
+                    "objectId": "goods receipt:247",
+                    "qualifier": "associated with"
+                }
+            ]
+        }
+    ]
+}

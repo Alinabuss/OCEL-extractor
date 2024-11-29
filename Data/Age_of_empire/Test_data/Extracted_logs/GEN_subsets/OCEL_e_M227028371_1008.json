@@ -1,0 +1,200 @@
+{
+    "objectTypes": [
+        {
+            "name": "player",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "match",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "session",
+            "attributes": [
+                {
+                    "name": "session_label",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "archery_range",
+            "attributes": [
+                {
+                    "name": "range_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "participation",
+            "attributes": [
+                {
+                    "name": "event_type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "set_gather_point",
+            "attributes": [
+                {
+                    "name": "event_type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "interaction",
+            "attributes": [
+                {
+                    "name": "event_type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "P1472826",
+            "type": "player",
+            "attributes": [
+                {
+                    "name": "player_id",
+                    "time": "2023-04-17T00:56:12Z",
+                    "value": "P1472826"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "M227028371",
+            "type": "match",
+            "attributes": [
+                {
+                    "name": "match_id",
+                    "time": "2023-04-17T00:56:12Z",
+                    "value": "M227028371"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "S227028371_1472826",
+            "type": "session",
+            "attributes": [
+                {
+                    "name": "session_label",
+                    "time": "2023-04-17T00:56:12Z",
+                    "value": "S227028371_1472826"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Archery_Range_M227028371_1",
+            "type": "archery_range",
+            "attributes": [
+                {
+                    "name": "range_id",
+                    "time": "2023-04-17T00:56:12Z",
+                    "value": "Archery_Range_M227028371_1"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Archery_Range_M227028371_2",
+            "type": "archery_range",
+            "attributes": [
+                {
+                    "name": "range_id",
+                    "time": "2023-04-17T00:56:12Z",
+                    "value": "Archery_Range_M227028371_2"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "participation",
+            "time": "2023-04-17T00:56:12Z",
+            "attributes": [
+                {
+                    "name": "event_type",
+                    "value": "match_participation"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "M227028371",
+                    "qualifier": "is_part_of"
+                },
+                {
+                    "objectId": "P1472826",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "S227028371_1472826",
+                    "qualifier": "in_session"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "set_gather_point",
+            "time": "2023-04-17T00:56:12Z",
+            "attributes": [
+                {
+                    "name": "event_type",
+                    "value": "set_gather_point"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Archery_Range_M227028371_1",
+                    "qualifier": "target_range"
+                },
+                {
+                    "objectId": "P1472826",
+                    "qualifier": "performed_by"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "interaction",
+            "time": "2023-04-17T00:56:12Z",
+            "attributes": [
+                {
+                    "name": "event_type",
+                    "value": "range_interaction"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Archery_Range_M227028371_2",
+                    "qualifier": "target_range"
+                },
+                {
+                    "objectId": "P1472826",
+                    "qualifier": "performed_by"
+                }
+            ]
+        }
+    ]
+}

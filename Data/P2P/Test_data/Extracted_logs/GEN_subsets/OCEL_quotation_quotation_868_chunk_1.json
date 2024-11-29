@@ -1,0 +1,113 @@
+{
+    "objectTypes": [
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "purchasing_group",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create_request_for_quotation",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "timestamp"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "quotation[868]",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "",
+                    "value": "quotation[868]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition[871]",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "purchase_requisition[871]",
+            "type": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "",
+                    "value": "purchase_requisition[871]"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "005",
+                    "qualifier": "belongs_to"
+                }
+            ]
+        },
+        {
+            "id": "005",
+            "type": "purchasing_group",
+            "attributes": [
+                {
+                    "name": "id",
+                    "time": "",
+                    "value": "005"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "create_request_for_quotation",
+            "time": "2024-08-18T10:45:00Z",
+            "attributes": [
+                {
+                    "name": "department",
+                    "value": "procurement"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation[868]",
+                    "qualifier": "refers_to"
+                }
+            ]
+        }
+    ]
+}

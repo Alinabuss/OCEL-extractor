@@ -1,0 +1,154 @@
+{
+    "objectTypes": [
+        {
+            "name": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "receipt goods",
+            "attributes": [
+                {
+                    "name": "type for receipt",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "goods receipt for the goods receipt",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "create purchase order",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1136",
+            "type": "receipt goods",
+            "attributes": [
+                {
+                    "name": "type for receipt",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:940",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:952",
+            "type": "purchase order",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation:554",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:940",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "quotation:554",
+            "type": "Object_type_not_identified",
+            "attributes": [
+                {
+                    "name": "purchasing group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "001"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1136",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 613,
+            "type": "create purchase order",
+            "time": "2023-10-19T12:05:00Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:554",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:952",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 614,
+            "type": "goods receipt for the goods receipt",
+            "time": "2023-10-19T19:45:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Department Warehouse"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:940",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:1136",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

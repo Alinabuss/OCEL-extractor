@@ -1,0 +1,112 @@
+{
+    "objectTypes": [
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movementType",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "creditAmount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Department",
+            "attributes": [
+                {
+                    "name": "departmentName",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Completion of Two-Way Match",
+            "attributes": [
+                {
+                    "name": "goodsReceiptId",
+                    "type": "string"
+                },
+                {
+                    "name": "invoiceReceiptId",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "873",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "movementType",
+                    "time": "2023-06-26T07:10:00Z",
+                    "value": "101"
+                }
+            ]
+        },
+        {
+            "id": "871",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "creditAmount",
+                    "time": "2023-06-26T07:10:00Z",
+                    "value": "11450.0"
+                }
+            ]
+        },
+        {
+            "id": "Finance/Account Department",
+            "type": "Department",
+            "attributes": [
+                {
+                    "name": "departmentName",
+                    "time": "2023-06-26T07:10:00Z",
+                    "value": "Finance/Account Department"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Completion of Two-Way Match",
+            "time": "2023-06-26T07:10:00Z",
+            "attributes": [
+                {
+                    "name": "goodsReceiptId",
+                    "value": "873"
+                },
+                {
+                    "name": "invoiceReceiptId",
+                    "value": "871"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "873",
+                    "qualifier": "involves"
+                },
+                {
+                    "objectId": "871",
+                    "qualifier": "involves"
+                },
+                {
+                    "objectId": "Finance/Account Department",
+                    "qualifier": "performed by"
+                }
+            ]
+        }
+    ]
+}

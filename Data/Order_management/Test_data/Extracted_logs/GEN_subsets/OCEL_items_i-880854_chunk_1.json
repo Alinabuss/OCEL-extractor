@@ -1,0 +1,143 @@
+{
+    "objectTypes": [
+        {
+            "name": "customer",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "order",
+            "attributes": [
+                {
+                    "name": "date",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "order_placed",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Vesta Fashion House GmbH",
+            "type": "customer",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-05-24T15:02:40Z",
+                    "value": "Vesta Fashion House GmbH"
+                }
+            ]
+        },
+        {
+            "id": "i-880854",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-05-24T15:02:40Z",
+                    "value": "iPhone 11 Pro"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-05-24T15:02:40Z",
+                    "value": 1149.0
+                }
+            ]
+        },
+        {
+            "id": "fire-stick-4k",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-05-24T15:02:40Z",
+                    "value": "Fire Stick 4K"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-05-24T15:02:40Z",
+                    "value": 89.99
+                }
+            ]
+        },
+        {
+            "id": "echo-show-5",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-05-24T15:02:40Z",
+                    "value": "Echo Show 5"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-05-24T15:02:40Z",
+                    "value": 89.99
+                }
+            ]
+        },
+        {
+            "id": "order-1",
+            "type": "order",
+            "attributes": [
+                {
+                    "name": "date",
+                    "time": "2023-05-24T15:02:40Z",
+                    "value": "2023-05-24"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vesta Fashion House GmbH",
+                    "qualifier": "placed_by"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "order_placed",
+            "time": "2023-05-24T15:02:40Z",
+            "attributes": [
+                {
+                    "name": "order_id",
+                    "value": "order-1"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "order-1",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

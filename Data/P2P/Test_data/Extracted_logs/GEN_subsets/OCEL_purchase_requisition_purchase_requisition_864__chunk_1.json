@@ -1,0 +1,83 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "material",
+            "attributes": [
+                {
+                    "name": "net_price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "delegate_approval",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_requisition:864:pr_trigger_864",
+            "type": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "purchasing_group",
+                    "time": "2024-08-12T09:02:00Z",
+                    "value": "001"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "material:2150",
+                    "qualifier": "assigned_resource"
+                }
+            ]
+        },
+        {
+            "id": "material:2150",
+            "type": "material",
+            "attributes": [
+                {
+                    "name": "net_price",
+                    "time": "2024-08-12T09:02:00Z",
+                    "value": "250.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "delegate_approval",
+            "time": "2024-08-12T09:02:00Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2024-08-12T09:02:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:864:pr_trigger_864",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,145 @@
+{
+    "objectTypes": [
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "package",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "delivery",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Kindle",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "",
+                    "value": "79.99"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "iPad",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "",
+                    "value": "495.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Echo Studio",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "",
+                    "value": "199.99"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-887505",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "",
+                    "value": "152.04"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-887532",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "",
+                    "value": "47.13"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "package_1",
+            "type": "package",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Kindle",
+                    "qualifier": "contains"
+                },
+                {
+                    "objectId": "iPad",
+                    "qualifier": "contains"
+                },
+                {
+                    "objectId": "Echo Studio",
+                    "qualifier": "contains"
+                },
+                {
+                    "objectId": "i-887505",
+                    "qualifier": "part_of"
+                },
+                {
+                    "objectId": "i-887532",
+                    "qualifier": "part_of"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "delivery",
+            "time": "2024-03-20T13:01:09Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2024-03-20T13:01:09Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "package_1",
+                    "qualifier": "delivered"
+                }
+            ]
+        }
+    ]
+}

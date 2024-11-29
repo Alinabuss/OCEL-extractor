@@ -1,0 +1,120 @@
+{
+  "objectTypes": [
+    {
+      "name": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "type": "float"
+        }
+      ]
+    }
+  ],
+  "eventTypes": [
+    {
+      "name": "Depart",
+      "attributes": []
+    }
+  ],
+  "objects": [
+    {
+      "id": "td1",
+      "type": "Transport Document",
+      "attributes": [
+        {
+          "name": "Amount of Containers",
+          "time": "1970-01-01T00:00:00Z",
+          "value": 5.0
+        }
+      ]
+    },
+    {
+      "id": "cr5",
+      "type": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "empty"
+        }
+      ],
+      "relationships": [
+        {
+          "objectId": "td1",
+          "qualifier": "CR for TD"
+        }
+      ]
+    },
+    {
+      "id": "cr21",
+      "type": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "empty"
+        }
+      ]
+    },
+    {
+      "id": "cr23",
+      "type": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "empty"
+        }
+      ]
+    },
+    {
+      "id": "cr22",
+      "type": "Container",
+      "attributes": [
+        {
+          "name": "Status",
+          "time": "1970-01-01T00:00:00Z",
+          "value": "empty"
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "depart_vh4",
+      "type": "Depart",
+      "time": "2023-06-09T09:00:00Z",
+      "relationships": [
+        {
+          "objectId": "cr21",
+          "qualifier": "CR departed"
+        },
+        {
+          "objectId": "cr22",
+          "qualifier": "CR departed"
+        },
+        {
+          "objectId": "cr23",
+          "qualifier": "CR departed"
+        },
+        {
+          "objectId": "td1",
+          "qualifier": "TD with CR departure"
+        },
+        {
+          "objectId": "cr5",
+          "qualifier": "CR departed"
+        }
+      ]
+    }
+  ]
+}

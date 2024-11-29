@@ -1,0 +1,115 @@
+{
+    "objectTypes": [
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Booking",
+            "attributes": [
+                {
+                    "name": "BookingTime",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Departure",
+            "attributes": [
+                {
+                    "name": "DepartureTime",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh84",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-03-05T06:15:08Z",
+                    "value": "vh84"
+                }
+            ]
+        },
+        {
+            "id": "td375",
+            "type": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-03-05T06:15:08Z",
+                    "value": "td375"
+                },
+                {
+                    "name": "Amount",
+                    "time": "2024-03-05T06:15:08Z",
+                    "value": "3.0"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Booking",
+            "time": "2024-03-05T06:15:08Z",
+            "attributes": [
+                {
+                    "name": "BookingTime",
+                    "value": "2024-03-05T06:15:08Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh84",
+                    "qualifier": "booked"
+                },
+                {
+                    "objectId": "td375",
+                    "qualifier": "associatedWith"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Departure",
+            "time": "2024-03-15T11:00:00Z",
+            "attributes": [
+                {
+                    "name": "DepartureTime",
+                    "value": "2024-03-15T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh84",
+                    "qualifier": "scheduledFor"
+                }
+            ]
+        }
+    ]
+}

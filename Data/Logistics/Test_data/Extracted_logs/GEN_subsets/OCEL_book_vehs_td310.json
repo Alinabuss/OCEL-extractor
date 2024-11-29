@@ -1,0 +1,164 @@
+{
+    "objectTypes": [
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "priority",
+                    "type": "string"
+                },
+                {
+                    "name": "departure_date",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "type": "string"
+                },
+                {
+                    "name": "vehicle_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "td310",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-01-15T09:43:46Z",
+                    "value": "td310"
+                },
+                {
+                    "name": "amount",
+                    "time": "2024-01-15T09:43:46Z",
+                    "value": "3.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh68",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-01-15T09:43:46Z",
+                    "value": "vh68"
+                },
+                {
+                    "name": "priority",
+                    "time": "2024-01-15T09:43:46Z",
+                    "value": "high"
+                },
+                {
+                    "name": "departure_date",
+                    "time": "2024-01-15T09:43:46Z",
+                    "value": "2024-01-19T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "vh69",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2024-01-15T09:43:46Z",
+                    "value": "vh69"
+                },
+                {
+                    "name": "priority",
+                    "time": "2024-01-15T09:43:46Z",
+                    "value": "normal"
+                },
+                {
+                    "name": "departure_date",
+                    "time": "2024-01-15T09:43:46Z",
+                    "value": "2024-01-23T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2024-01-15T09:43:46Z",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "value": "td310"
+                },
+                {
+                    "name": "vehicle_id",
+                    "value": "vh68"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td310",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "vh68",
+                    "qualifier": "involves"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "booking",
+            "time": "2024-01-15T09:43:46Z",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "value": "td310"
+                },
+                {
+                    "name": "vehicle_id",
+                    "value": "vh69"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "td310",
+                    "qualifier": "related_to"
+                },
+                {
+                    "objectId": "vh69",
+                    "qualifier": "involves"
+                }
+            ]
+        }
+    ]
+}

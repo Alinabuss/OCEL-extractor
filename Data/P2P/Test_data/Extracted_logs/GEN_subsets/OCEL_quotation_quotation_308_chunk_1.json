@@ -1,0 +1,71 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "request_for_quotation_created",
+            "attributes": [
+                {
+                    "name": "quotation_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_requisition:310:pr_trigger_310",
+            "type": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "purchasing_group",
+                    "time": "2023-02-17T14:22:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "quotation:308",
+            "type": "quotation",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "request_for_quotation_created",
+            "time": "2023-02-17T14:22:00Z",
+            "attributes": [
+                {
+                    "name": "quotation_id",
+                    "value": "quotation:308"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:310:pr_trigger_310",
+                    "qualifier": "associated_with"
+                },
+                {
+                    "objectId": "quotation:308",
+                    "qualifier": "completes_lifecycle_of"
+                }
+            ]
+        }
+    ]
+}

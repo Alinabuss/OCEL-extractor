@@ -1,0 +1,135 @@
+{
+    "objectTypes": [
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "reorder",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "iPhone 8",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "",
+                    "value": "iPhone 8"
+                },
+                {
+                    "name": "price",
+                    "time": "",
+                    "value": "529.00"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-883652",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "",
+                    "value": "i-883652"
+                },
+                {
+                    "name": "price",
+                    "time": "",
+                    "value": "572.38"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "iPhone 8",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "Marco Pegoraro",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "",
+                    "value": "Marco Pegoraro"
+                },
+                {
+                    "name": "department",
+                    "time": "",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "reorder",
+            "time": "2023-09-21T16:00:36Z",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "value": "i-883652"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Marco Pegoraro",
+                    "qualifier": "executed_by"
+                },
+                {
+                    "objectId": "i-883652",
+                    "qualifier": "involved_item"
+                }
+            ]
+        }
+    ]
+}

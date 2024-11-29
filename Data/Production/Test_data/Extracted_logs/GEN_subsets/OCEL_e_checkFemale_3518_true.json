@@ -1,0 +1,124 @@
+{
+    "objectTypes": [
+        {
+            "name": "Worker",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Workstation",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Part",
+            "attributes": [
+                {
+                    "name": "type",
+                    "type": "string"
+                },
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Inspection",
+            "attributes": [
+                {
+                    "name": "emission_CO2_eq",
+                    "type": "float"
+                },
+                {
+                    "name": "compressed_air_usage",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Worker[1]",
+            "type": "Worker",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-04-05T14:02:58Z",
+                    "value": "XY"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Workstation[2]",
+            "type": "Workstation",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-04-05T14:02:58Z",
+                    "value": "Workstation[2]"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "FemalePart[3518]",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "type",
+                    "time": "2023-04-05T14:02:58Z",
+                    "value": "Female"
+                },
+                {
+                    "name": "mass",
+                    "time": "2023-04-05T14:02:58Z",
+                    "value": "unspecified"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Inspection",
+            "time": "2023-04-05T14:02:58Z",
+            "attributes": [
+                {
+                    "name": "emission_CO2_eq",
+                    "value": "0.00246924"
+                },
+                {
+                    "name": "compressed_air_usage",
+                    "value": "0.038"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Worker[1]",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "Workstation[2]",
+                    "qualifier": "conducted_at"
+                },
+                {
+                    "objectId": "FemalePart[3518]",
+                    "qualifier": "inspected"
+                }
+            ]
+        }
+    ]
+}

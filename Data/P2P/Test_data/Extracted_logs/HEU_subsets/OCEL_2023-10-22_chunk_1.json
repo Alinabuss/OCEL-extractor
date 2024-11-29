@@ -1,0 +1,191 @@
+{
+    "objectTypes": [
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "quotation with purchase group",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type creation of receipt",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase group",
+                    "type": "float"
+                },
+                {
+                    "name": "order",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "manage creation of a goods receipt",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "create purchase order",
+            "attributes": []
+        },
+        {
+            "name": "finalize approval for the purchase order",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "quotation[557",
+            "type": "quotation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "quotation:550",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "quotation with purchase group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "goods receipt:1138",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type creation of receipt",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:939",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_order[955",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "purchase group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation[557",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:939",
+            "type": "purchase order",
+            "attributes": [
+                {
+                    "name": "order",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:942",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:942",
+            "type": "purchase order",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation:550",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1251,
+            "type": "create purchase order",
+            "time": "2023-10-22T00:27:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation[557",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order[955",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1252,
+            "type": "manage creation of a goods receipt",
+            "time": "2023-10-22T07:20:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:939",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:1138",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 1253,
+            "type": "finalize approval for the purchase order",
+            "time": "2023-10-22T10:52:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation:550",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:942",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

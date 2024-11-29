@@ -1,0 +1,176 @@
+{
+    "objectTypes": [
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Employee",
+            "attributes": [
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Pick",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "i-883613",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "value": "iPad mini"
+                },
+                {
+                    "name": "price",
+                    "value": "449.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-884182",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "name",
+                    "value": "iPad Air"
+                },
+                {
+                    "name": "price",
+                    "value": "476.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Detlef Wetzeler",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "role",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Leah Tacke genannt Unterberg",
+            "type": "Employee",
+            "attributes": [
+                {
+                    "name": "role",
+                    "value": "Warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "item-i-883613",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "value": "485.82"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-883613",
+                    "qualifier": "is product"
+                }
+            ]
+        },
+        {
+            "id": "item-i-884182",
+            "type": "Item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "value": "522.5"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-884182",
+                    "qualifier": "is product"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Pick",
+            "time": "2023-10-20T07:48:40Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-10-20T07:48:40Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Detlef Wetzeler",
+                    "qualifier": "performed by"
+                },
+                {
+                    "objectId": "item-i-883613",
+                    "qualifier": "involved item"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Pick",
+            "time": "2023-10-20T11:09:49Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2023-10-20T11:09:49Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Leah Tacke genannt Unterberg",
+                    "qualifier": "performed by"
+                },
+                {
+                    "objectId": "item-i-884182",
+                    "qualifier": "involved item"
+                }
+            ]
+        }
+    ]
+}

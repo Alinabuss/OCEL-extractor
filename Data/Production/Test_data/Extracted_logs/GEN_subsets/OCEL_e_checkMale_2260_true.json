@@ -1,0 +1,130 @@
+{
+    "objectTypes": [
+        {
+            "name": "Worker",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Part",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Quality Check",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "type": "string"
+                },
+                {
+                    "name": "Emissions",
+                    "type": "string"
+                },
+                {
+                    "name": "Compressed Air Used",
+                    "type": "boolean"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Worker[1]",
+            "type": "Worker",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-04T13:49:06Z",
+                    "value": "Worker[1]"
+                }
+            ]
+        },
+        {
+            "id": "MalePart[2260]",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-04T13:49:06Z",
+                    "value": "MalePart[2260]"
+                },
+                {
+                    "name": "Type",
+                    "time": "2023-04-04T13:49:06Z",
+                    "value": "Male"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Workstation[2]",
+            "type": "Workstation",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-04-04T13:49:06Z",
+                    "value": "Workstation[2]"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Quality Check",
+            "time": "2023-04-04T13:49:06Z",
+            "attributes": [
+                {
+                    "name": "Duration",
+                    "value": "unspecified"
+                },
+                {
+                    "name": "Emissions",
+                    "value": "none"
+                },
+                {
+                    "name": "Compressed Air Used",
+                    "value": false
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Worker[1]",
+                    "qualifier": "performed"
+                },
+                {
+                    "objectId": "MalePart[2260]",
+                    "qualifier": "checked"
+                },
+                {
+                    "objectId": "Workstation[2]",
+                    "qualifier": "performed_at"
+                }
+            ]
+        }
+    ]
+}

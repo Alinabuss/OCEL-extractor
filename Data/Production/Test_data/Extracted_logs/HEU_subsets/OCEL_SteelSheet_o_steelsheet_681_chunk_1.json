@@ -1,0 +1,148 @@
+{
+    "objectTypes": [
+        {
+            "name": "machine",
+            "attributes": [
+                {
+                    "name": "machine",
+                    "type": "string"
+                },
+                {
+                    "name": "splitting",
+                    "type": "float"
+                },
+                {
+                    "name": "mass",
+                    "type": "float"
+                },
+                {
+                    "name": "steel sheet",
+                    "type": "float"
+                },
+                {
+                    "name": "steel sheet",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "emission",
+            "attributes": [
+                {
+                    "name": "emission of kg",
+                    "type": "float"
+                },
+                {
+                    "name": "operation",
+                    "type": "float"
+                },
+                {
+                    "name": "waste steel",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "operation",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "result in the emission",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "splitter01",
+            "type": "machine",
+            "attributes": [
+                {
+                    "name": "machine",
+                    "time": "2023-04-03T09:55:48Z",
+                    "value": "workstation 1"
+                },
+                {
+                    "name": "splitting",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "4"
+                },
+                {
+                    "name": "mass",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "31.91076"
+                },
+                {
+                    "name": "steel sheet",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "681"
+                },
+                {
+                    "name": "steel sheet",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "0.02125"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CO2",
+            "type": "emission",
+            "attributes": [
+                {
+                    "name": "emission of kg",
+                    "time": "2023-04-03T00:00:13Z",
+                    "value": "0.014629305"
+                },
+                {
+                    "name": "operation",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "0.0213748"
+                },
+                {
+                    "name": "waste steel",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "0.00042 kg"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 2577,
+            "type": "operation",
+            "time": "2023-04-03T09:55:48Z",
+            "attributes": [
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "splitter01",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 2578,
+            "type": "result in the emission",
+            "time": "2023-04-03T00:00:13Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "CO2",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,77 @@
+{
+    "objectTypes": [
+        {
+            "name": "Receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "type": "string"
+                },
+                {
+                    "name": "credit_amount",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Two-Way Match",
+            "attributes": [
+                {
+                    "name": "result",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "1449",
+            "type": "Receipt",
+            "attributes": [
+                {
+                    "name": "movement_type",
+                    "time": "2024-03-07T08:10:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "1444",
+            "type": "Receipt",
+            "attributes": [
+                {
+                    "name": "credit_amount",
+                    "time": "2024-03-07T08:10:00Z",
+                    "value": "9750.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Two-Way Match",
+            "time": "2024-03-07T08:10:00Z",
+            "attributes": [
+                {
+                    "name": "result",
+                    "value": "successful"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "1449",
+                    "qualifier": "matched_with"
+                },
+                {
+                    "objectId": "1444",
+                    "qualifier": "matched_with"
+                }
+            ]
+        }
+    ]
+}

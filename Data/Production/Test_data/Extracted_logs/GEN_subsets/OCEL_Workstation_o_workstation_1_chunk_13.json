@@ -1,0 +1,395 @@
+{
+    "objectTypes": [
+        {
+            "name": "Steel Coil",
+            "attributes": [
+                {
+                    "name": "Mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Steel Sheet",
+            "attributes": [
+                {
+                    "name": "Mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Machine",
+            "attributes": []
+        },
+        {
+            "name": "Workstation",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Splitting of Steel Sheet",
+            "attributes": [
+                {
+                    "name": "Processing Duration",
+                    "type": "float"
+                },
+                {
+                    "name": "Emissions",
+                    "type": "float"
+                },
+                {
+                    "name": "Electricity Consumption",
+                    "type": "float"
+                },
+                {
+                    "name": "Waste Produced for Recycling",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Heating of Steel Sheet",
+            "attributes": [
+                {
+                    "name": "Processing Duration",
+                    "type": "float"
+                },
+                {
+                    "name": "Emissions",
+                    "type": "float"
+                },
+                {
+                    "name": "Electricity Consumption",
+                    "type": "float"
+                },
+                {
+                    "name": "Gas Input",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Splitting of Steel Coil",
+            "attributes": [
+                {
+                    "name": "Processing Duration",
+                    "type": "float"
+                },
+                {
+                    "name": "Emissions",
+                    "type": "float"
+                },
+                {
+                    "name": "Electricity Consumption",
+                    "type": "float"
+                },
+                {
+                    "name": "Waste Produced for Recycling",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "o_steelcoil_4",
+            "type": "Steel Coil",
+            "attributes": [
+                {
+                    "name": "Mass",
+                    "time": "2023-04-03T00:00:00Z",
+                    "value": "31.91076"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_steelsheet_989",
+            "type": "Steel Sheet",
+            "attributes": [
+                {
+                    "name": "Mass",
+                    "time": "2023-04-03T11:08:54Z",
+                    "value": "0.02119"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_steelcoil_4",
+                    "qualifier": "resulting from"
+                }
+            ]
+        },
+        {
+            "id": "SteelSheet[990]",
+            "type": "Steel Sheet",
+            "attributes": [
+                {
+                    "name": "Mass",
+                    "time": "2023-04-03T11:10:06Z",
+                    "value": "0.02131"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "SteelSheet[1018]",
+            "type": "Steel Sheet",
+            "attributes": [
+                {
+                    "name": "Mass",
+                    "time": "2023-04-03T11:15:47Z",
+                    "value": "0.0212"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "SteelCoil[4]",
+                    "qualifier": "resulting from"
+                }
+            ]
+        },
+        {
+            "id": "o_steelsheet_1049",
+            "type": "Steel Sheet",
+            "attributes": [
+                {
+                    "name": "Mass",
+                    "time": "2023-04-03T11:23:13Z",
+                    "value": "0.02128"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_steelcoil_4",
+                    "qualifier": "resulting from"
+                }
+            ]
+        },
+        {
+            "id": "1096",
+            "type": "Steel Sheet",
+            "attributes": [
+                {
+                    "name": "Mass",
+                    "time": "2023-04-03T11:34:20Z",
+                    "value": "unknown"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "o_machine_splitter01",
+            "type": "Machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Machine[oven01]",
+            "type": "Machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "splitter01",
+            "type": "Machine",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "o_workstation_1",
+            "type": "Workstation",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Splitting of Steel Sheet",
+            "time": "2023-04-03T11:08:54Z",
+            "attributes": [
+                {
+                    "name": "Processing Duration",
+                    "value": "14.24"
+                },
+                {
+                    "name": "Emissions",
+                    "value": "0.0148857366"
+                },
+                {
+                    "name": "Electricity Consumption",
+                    "value": "0.0217497"
+                },
+                {
+                    "name": "Waste Produced for Recycling",
+                    "value": "0.00042"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "o_machine_splitter01",
+                    "qualifier": "performed by"
+                },
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "at"
+                },
+                {
+                    "objectId": "o_steelsheet_989",
+                    "qualifier": "produced"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Heating of Steel Sheet",
+            "time": "2023-04-03T11:10:06Z",
+            "attributes": [
+                {
+                    "name": "Processing Duration",
+                    "value": "900"
+                },
+                {
+                    "name": "Emissions",
+                    "value": "0.0138019093344"
+                },
+                {
+                    "name": "Electricity Consumption",
+                    "value": "0.02"
+                },
+                {
+                    "name": "Gas Input",
+                    "value": "0.49392"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Machine[oven01]",
+                    "qualifier": "performed by"
+                },
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "at"
+                },
+                {
+                    "objectId": "SteelSheet[990]",
+                    "qualifier": "processed"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Splitting of Steel Sheet",
+            "time": "2023-04-03T11:15:47Z",
+            "attributes": [
+                {
+                    "name": "Processing Duration",
+                    "value": "14.74"
+                },
+                {
+                    "name": "Emissions",
+                    "value": "0.01541"
+                },
+                {
+                    "name": "Electricity Consumption",
+                    "value": "0.02252"
+                },
+                {
+                    "name": "Waste Produced for Recycling",
+                    "value": "0.00042"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "splitter01",
+                    "qualifier": "performed by"
+                },
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "at"
+                },
+                {
+                    "objectId": "SteelSheet[1018]",
+                    "qualifier": "produced"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Splitting of Steel Coil",
+            "time": "2023-04-03T11:23:13Z",
+            "attributes": [
+                {
+                    "name": "Processing Duration",
+                    "value": "14.48"
+                },
+                {
+                    "name": "Emissions",
+                    "value": "0.01514"
+                },
+                {
+                    "name": "Electricity Consumption",
+                    "value": "0.02212"
+                },
+                {
+                    "name": "Waste Produced for Recycling",
+                    "value": "0.00042"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "splitter01",
+                    "qualifier": "performed by"
+                },
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "at"
+                },
+                {
+                    "objectId": "o_steelsheet_1049",
+                    "qualifier": "produced"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "Splitting of Steel Sheet",
+            "time": "2023-04-03T11:34:20Z",
+            "attributes": [
+                {
+                    "name": "Processing Duration",
+                    "value": "14.4903408104"
+                },
+                {
+                    "name": "Emissions",
+                    "value": "0.0151513338"
+                },
+                {
+                    "name": "Electricity Consumption",
+                    "value": "0.022138"
+                },
+                {
+                    "name": "Waste Produced for Recycling",
+                    "value": "0.00042"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "splitter01",
+                    "qualifier": "performed by"
+                },
+                {
+                    "objectId": "o_workstation_1",
+                    "qualifier": "at"
+                },
+                {
+                    "objectId": "1096",
+                    "qualifier": "produced"
+                }
+            ]
+        }
+    ]
+}

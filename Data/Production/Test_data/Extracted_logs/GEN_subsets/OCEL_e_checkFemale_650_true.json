@@ -1,0 +1,123 @@
+{
+    "objectTypes": [
+        {
+            "name": "Part",
+            "attributes": [
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Worker",
+            "attributes": [
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Workstation",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Quality Check",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "string"
+                },
+                {
+                    "name": "CO2_emission",
+                    "type": "float"
+                },
+                {
+                    "name": "compressed_air_consumption",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "FemalePart[650]",
+            "type": "Part",
+            "attributes": [
+                {
+                    "name": "type",
+                    "time": "2023-04-03T14:24:48Z",
+                    "value": "Female"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Worker[1]",
+            "type": "Worker",
+            "attributes": [
+                {
+                    "name": "role",
+                    "time": "2023-04-03T14:24:48Z",
+                    "value": "Quality Checker"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Workstation[2]",
+            "type": "Workstation",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2023-04-03T14:24:48Z",
+                    "value": "Station 2"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Quality Check",
+            "time": "2023-04-03T14:24:48Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "unspecified"
+                },
+                {
+                    "name": "CO2_emission",
+                    "value": 0.00116964
+                },
+                {
+                    "name": "compressed_air_consumption",
+                    "value": 0.018
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "FemalePart[650]",
+                    "qualifier": "checked"
+                },
+                {
+                    "objectId": "Worker[1]",
+                    "qualifier": "performed"
+                },
+                {
+                    "objectId": "Workstation[2]",
+                    "qualifier": "used"
+                }
+            ]
+        }
+    ]
+}

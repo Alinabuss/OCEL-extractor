@@ -1,0 +1,154 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase order",
+            "attributes": []
+        },
+        {
+            "name": "purchase requisition",
+            "attributes": [
+                {
+                    "name": "group purchasing",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "receipt",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": []
+        },
+        {
+            "name": "receipt",
+            "attributes": [
+                {
+                    "name": "credit amount match",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create 002",
+            "attributes": []
+        },
+        {
+            "name": "involve goods receipt",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1180",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "receipt",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:979",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:1177",
+            "type": "goods receipt",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "invoice receipt:1180",
+            "type": "receipt",
+            "attributes": [
+                {
+                    "name": "credit amount match",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "33,000.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "quotation:581",
+            "type": "quotation",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:979",
+            "type": "purchase order",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:579 : pr_trigger_579",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase_requisition:579 : pr_trigger_579",
+            "type": "purchase requisition",
+            "attributes": [
+                {
+                    "name": "group purchasing",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:581",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 103,
+            "type": "create 002",
+            "time": "2023-11-17T07:48:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "quotation:581",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_requisition:579 : pr_trigger_579",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": 104,
+            "type": "involve goods receipt",
+            "time": "2023-11-17T08:32:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1177",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "invoice receipt:1180",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

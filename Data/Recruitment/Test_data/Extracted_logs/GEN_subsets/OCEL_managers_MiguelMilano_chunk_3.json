@@ -1,0 +1,217 @@
+{
+    "objectTypes": [
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Position",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Manager",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Open Vacancy",
+            "attributes": [
+                {
+                    "name": "Vacancy ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Position",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Conduct Interview",
+            "attributes": [
+                {
+                    "name": "Application ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Interviewed Position",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Vacancy[550066]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-04T07:23:51Z",
+                    "value": "Vacancy[550066]"
+                },
+                {
+                    "name": "Position",
+                    "time": "2019-07-04T07:23:51Z",
+                    "value": "Consultant"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Vacancy[550011]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-04T07:26:25Z",
+                    "value": "Vacancy[550011]"
+                },
+                {
+                    "name": "Position",
+                    "time": "2019-07-04T07:26:25Z",
+                    "value": "Programmer"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Applicant[Dave Lopez]",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-04T07:26:25Z",
+                    "value": "Dave Lopez"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Recruiter[Ed Meister]",
+            "type": "Recruiter",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-04T07:26:25Z",
+                    "value": "Ed Meister"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Manager[Miguel Milano]",
+            "type": "Manager",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2019-07-04T07:23:51Z",
+                    "value": "Miguel Milano"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Application[770033]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2019-07-04T07:26:25Z",
+                    "value": "Application[770033]"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Open Vacancy",
+            "time": "2019-07-04T07:23:51Z",
+            "attributes": [
+                {
+                    "name": "Vacancy ID",
+                    "value": "Vacancy[550066]"
+                },
+                {
+                    "name": "Position",
+                    "value": "Consultant"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Manager[Miguel Milano]",
+                    "qualifier": "opened by"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Conduct Interview",
+            "time": "2019-07-04T07:26:25Z",
+            "attributes": [
+                {
+                    "name": "Application ID",
+                    "value": "Application[770033]"
+                },
+                {
+                    "name": "Interviewed Position",
+                    "value": "Programmer"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Applicant[Dave Lopez]",
+                    "qualifier": "interviewed"
+                },
+                {
+                    "objectId": "Recruiter[Ed Meister]",
+                    "qualifier": "conducted by"
+                },
+                {
+                    "objectId": "Manager[Miguel Milano]",
+                    "qualifier": "present"
+                }
+            ]
+        }
+    ]
+}

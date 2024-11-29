@@ -1,0 +1,119 @@
+{
+    "objectTypes": [
+        {
+            "name": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Vacancy",
+            "attributes": [
+                {
+                    "name": "vacancyId",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Application",
+            "attributes": [
+                {
+                    "name": "applicationId",
+                    "type": "string"
+                },
+                {
+                    "name": "position",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Submit Application",
+            "attributes": [
+                {
+                    "name": "applicationId",
+                    "type": "string"
+                },
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Sue Brown",
+            "type": "Applicant",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2019-06-21T14:10:59Z",
+                    "value": "Sue Brown"
+                }
+            ]
+        },
+        {
+            "id": "Vacancy[550010]",
+            "type": "Vacancy",
+            "attributes": [
+                {
+                    "name": "vacancyId",
+                    "time": "2019-06-21T14:10:59Z",
+                    "value": "550010"
+                }
+            ]
+        },
+        {
+            "id": "Application[770293]",
+            "type": "Application",
+            "attributes": [
+                {
+                    "name": "applicationId",
+                    "time": "2019-06-21T14:10:59Z",
+                    "value": "770293"
+                },
+                {
+                    "name": "position",
+                    "time": "2019-06-21T14:10:59Z",
+                    "value": "Programmer"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Vacancy[550010]",
+                    "qualifier": "associated with"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Submit Application",
+            "time": "2019-06-21T14:10:59Z",
+            "attributes": [
+                {
+                    "name": "applicationId",
+                    "value": "Application[770293]"
+                },
+                {
+                    "name": "time",
+                    "value": "2019-06-21T14:10:59Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Application[770293]",
+                    "qualifier": "for"
+                }
+            ]
+        }
+    ]
+}

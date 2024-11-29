@@ -1,0 +1,109 @@
+{
+    "objectTypes": [
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Movement Type",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Goods Receipt Created",
+            "attributes": [
+                {
+                    "name": "Status",
+                    "type": "string"
+                },
+                {
+                    "name": "Department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:450",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-10-28T16:25:00Z",
+                    "value": "goods receipt:450"
+                },
+                {
+                    "name": "Movement Type",
+                    "time": "2022-10-28T16:25:00Z",
+                    "value": 101
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:381",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:381",
+            "type": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-10-28T16:25:00Z",
+                    "value": "purchase_order:381"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "2022-10-28T16:25:00Z",
+                    "value": "002"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Goods Receipt Created",
+            "time": "2022-10-28T16:25:00Z",
+            "attributes": [
+                {
+                    "name": "Status",
+                    "value": "Complete"
+                },
+                {
+                    "name": "Department",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:450",
+                    "qualifier": "involved_with"
+                }
+            ]
+        }
+    ]
+}

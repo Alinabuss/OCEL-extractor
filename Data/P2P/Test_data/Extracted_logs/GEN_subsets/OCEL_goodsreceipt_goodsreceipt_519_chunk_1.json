@@ -1,0 +1,106 @@
+{
+    "objectTypes": [
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Department",
+            "attributes": [
+                {
+                    "name": "Resource",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Goods Receipt Created",
+            "attributes": [
+                {
+                    "name": "Lifecycle Status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:519",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "Movement Type",
+                    "time": "2023-01-02T18:31:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_order:438",
+                    "qualifier": "associated with"
+                },
+                {
+                    "objectId": "Department:Warehouse",
+                    "qualifier": "involved in"
+                }
+            ]
+        },
+        {
+            "id": "purchase_order:438",
+            "type": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "Purchasing Group",
+                    "time": "2023-01-02T18:31:00Z",
+                    "value": "003"
+                }
+            ]
+        },
+        {
+            "id": "Department:Warehouse",
+            "type": "Department",
+            "attributes": [
+                {
+                    "name": "Resource",
+                    "time": "2023-01-02T18:31:00Z",
+                    "value": "Warehouse Department"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Goods Receipt Created",
+            "time": "2023-01-02T18:31:00Z",
+            "attributes": [
+                {
+                    "name": "Lifecycle Status",
+                    "value": "Complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:519",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ]
+}

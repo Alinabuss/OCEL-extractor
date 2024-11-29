@@ -1,0 +1,135 @@
+{
+    "objectTypes": [
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "product_name",
+                    "type": "string"
+                },
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "pick_item",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "time"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Christopher Schwanen",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2023-05-22T13:42:54Z",
+                    "value": "Christopher Schwanen"
+                },
+                {
+                    "name": "department",
+                    "time": "2023-05-22T13:42:54Z",
+                    "value": "warehousing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-880256",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "item_id",
+                    "time": "2023-05-22T13:42:54Z",
+                    "value": "i-880256"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-05-22T13:42:54Z",
+                    "value": "199.99"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Echo Studio",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "Echo Studio",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "product_name",
+                    "time": "2023-05-22T13:42:54Z",
+                    "value": "Echo Studio"
+                },
+                {
+                    "name": "price",
+                    "time": "2023-05-22T13:42:54Z",
+                    "value": "199.99"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "pick_item",
+            "time": "2023-05-22T13:42:54Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2023-05-22T13:42:54Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Christopher Schwanen",
+                    "qualifier": "performed_by"
+                },
+                {
+                    "objectId": "i-880256",
+                    "qualifier": "picked"
+                }
+            ]
+        }
+    ]
+}

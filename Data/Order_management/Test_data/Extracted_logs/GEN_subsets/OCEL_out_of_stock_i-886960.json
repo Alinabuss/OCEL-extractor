@@ -1,0 +1,97 @@
+{
+    "objectTypes": [
+        {
+            "name": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Employee",
+            "attributes": []
+        },
+        {
+            "name": "Warehouse",
+            "attributes": []
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "StockUpdate",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "MacBook Pro",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2024-02-20T15:10:45Z",
+                    "value": "2500.0"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "i-886960",
+            "type": "Product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2024-02-20T15:10:45Z",
+                    "value": "2946.5"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Nina Graves",
+            "type": "Employee",
+            "attributes": [],
+            "relationships": []
+        },
+        {
+            "id": "Warehousing",
+            "type": "Warehouse",
+            "attributes": [],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "StockUpdate",
+            "time": "2024-02-20T15:10:45Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "out of stock"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Nina Graves",
+                    "qualifier": "performed by"
+                },
+                {
+                    "objectId": "MacBook Pro",
+                    "qualifier": "involves"
+                },
+                {
+                    "objectId": "Warehousing",
+                    "qualifier": "in warehouse"
+                }
+            ]
+        }
+    ]
+}

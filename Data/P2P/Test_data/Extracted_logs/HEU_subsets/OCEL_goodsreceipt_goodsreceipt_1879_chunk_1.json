@@ -1,0 +1,95 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchasing group",
+            "attributes": [
+                {
+                    "name": "part of purchasing group",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "goods receipt type",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create goods receipt",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods receipt:1879",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "goods receipt type",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase order purchase_order:1543",
+                    "qualifier": null
+                }
+            ]
+        },
+        {
+            "id": "purchase order purchase_order:1543",
+            "type": "purchasing group",
+            "attributes": [
+                {
+                    "name": "part of purchasing group",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "003"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 853,
+            "type": "create goods receipt",
+            "time": "2024-09-23T20:39:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Warehouse Department"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase order purchase_order:1543",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "goods receipt:1879",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

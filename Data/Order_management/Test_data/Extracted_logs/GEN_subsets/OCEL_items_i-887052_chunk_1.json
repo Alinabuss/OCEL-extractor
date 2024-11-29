@@ -1,0 +1,130 @@
+{
+    "objectTypes": [
+        {
+            "name": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "product",
+            "attributes": [
+                {
+                    "name": "label",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "pick_item",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "employee_name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "i-887052",
+            "type": "item",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2024-02-26T16:22:23Z",
+                    "value": "94.28"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "product_kindle",
+                    "qualifier": "associated_with"
+                }
+            ]
+        },
+        {
+            "id": "product_kindle",
+            "type": "product",
+            "attributes": [
+                {
+                    "name": "price",
+                    "time": "2024-02-26T16:22:23Z",
+                    "value": "79.99"
+                },
+                {
+                    "name": "label",
+                    "time": "2024-02-26T16:22:23Z",
+                    "value": "Kindle"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "employee_marco",
+            "type": "employee",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2024-02-26T16:22:23Z",
+                    "value": "Marco Pegoraro"
+                },
+                {
+                    "name": "department",
+                    "time": "2024-02-26T16:22:23Z",
+                    "value": "warehousing"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "pick_item",
+            "time": "2024-02-26T16:22:23Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2024-02-26T16:22:23Z"
+                },
+                {
+                    "name": "employee_name",
+                    "value": "Marco Pegoraro"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "i-887052",
+                    "qualifier": "picked"
+                },
+                {
+                    "objectId": "employee_marco",
+                    "qualifier": "performed_by"
+                }
+            ]
+        }
+    ]
+}

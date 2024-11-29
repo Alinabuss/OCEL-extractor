@@ -1,0 +1,96 @@
+{
+    "objectTypes": [
+        {
+            "name": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "quotation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "type": "string"
+                },
+                {
+                    "name": "purchasing_group",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "link_quotation",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "purchase_requisition:335:pr_trigger_335",
+            "type": "purchase_requisition",
+            "attributes": [
+                {
+                    "name": "id",
+                    "value": "purchase_requisition:335:pr_trigger_335"
+                },
+                {
+                    "name": "purchasing_group",
+                    "value": "005"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "quotation:333",
+            "type": "quotation",
+            "attributes": [
+                {
+                    "name": "id",
+                    "value": "quotation:333"
+                },
+                {
+                    "name": "purchasing_group",
+                    "value": "005"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "link_quotation",
+            "time": "2023-03-01T17:42:00Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "purchase_requisition:335:pr_trigger_335",
+                    "qualifier": "linked_to"
+                },
+                {
+                    "objectId": "quotation:333",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

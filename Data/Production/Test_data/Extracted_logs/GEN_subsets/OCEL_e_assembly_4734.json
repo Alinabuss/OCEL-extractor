@@ -1,0 +1,148 @@
+{
+    "objectTypes": [
+        {
+            "name": "part",
+            "attributes": [
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "hinge",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "workstation",
+            "attributes": [
+                {
+                    "name": "identifier",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "assembly",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "emissions",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "female_part",
+            "type": "part",
+            "attributes": [
+                {
+                    "name": "type",
+                    "time": "2023-04-06T10:34:38Z",
+                    "value": "female"
+                }
+            ]
+        },
+        {
+            "id": "male_part",
+            "type": "part",
+            "attributes": [
+                {
+                    "name": "type",
+                    "time": "2023-04-06T10:34:38Z",
+                    "value": "male"
+                }
+            ]
+        },
+        {
+            "id": "steel_pin",
+            "type": "part",
+            "attributes": [
+                {
+                    "name": "type",
+                    "time": "2023-04-06T10:34:38Z",
+                    "value": "steel"
+                }
+            ]
+        },
+        {
+            "id": "hinge_output",
+            "type": "hinge",
+            "attributes": [
+                {
+                    "name": "mass",
+                    "time": "2023-04-06T10:34:38Z",
+                    "value": "0.18576"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "workstation_1",
+                    "qualifier": "assembled_at"
+                }
+            ]
+        },
+        {
+            "id": "workstation_1",
+            "type": "workstation",
+            "attributes": [
+                {
+                    "name": "identifier",
+                    "time": "2023-04-06T10:34:38Z",
+                    "value": "workstation_1"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "assembly",
+            "time": "2023-04-06T10:34:38Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": "5.0"
+                },
+                {
+                    "name": "emissions",
+                    "value": "unspecified"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "hinge_output",
+                    "qualifier": "produced"
+                },
+                {
+                    "objectId": "female_part",
+                    "qualifier": "input"
+                },
+                {
+                    "objectId": "male_part",
+                    "qualifier": "input"
+                },
+                {
+                    "objectId": "steel_pin",
+                    "qualifier": "input"
+                },
+                {
+                    "objectId": "workstation_1",
+                    "qualifier": "performed_at"
+                }
+            ]
+        }
+    ]
+}

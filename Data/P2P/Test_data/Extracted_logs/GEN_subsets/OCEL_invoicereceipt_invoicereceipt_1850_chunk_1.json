@@ -1,0 +1,100 @@
+{
+    "objectTypes": [
+        {
+            "name": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                },
+                {
+                    "name": "lifecycle status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "type": "int"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "finalize invoice",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "type": "float"
+                },
+                {
+                    "name": "invoice receipt ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt:1850",
+            "type": "invoice receipt",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "time": "2024-09-13T19:39:00Z",
+                    "value": "25800.0"
+                },
+                {
+                    "name": "lifecycle status",
+                    "time": "2024-09-13T19:39:00Z",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt:1847",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt:1847",
+            "type": "goods receipt",
+            "attributes": [
+                {
+                    "name": "movement type",
+                    "time": "2024-09-13T19:39:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "finalize invoice",
+            "time": "2024-09-13T19:39:00Z",
+            "attributes": [
+                {
+                    "name": "credit amount",
+                    "value": "25800.0"
+                },
+                {
+                    "name": "invoice receipt ID",
+                    "value": "invoice receipt:1850"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt:1850",
+                    "qualifier": "finalized"
+                }
+            ]
+        }
+    ]
+}

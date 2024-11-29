@@ -1,0 +1,99 @@
+{
+    "objectTypes": [
+        {
+            "name": "vehicle",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "transport_document",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "type": "string"
+                },
+                {
+                    "name": "amount_of_containers",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "booking",
+            "attributes": [
+                {
+                    "name": "booking_time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "departure_time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "vh48",
+            "type": "vehicle",
+            "attributes": [
+                {
+                    "name": "vehicle_id",
+                    "time": "2023-10-23T16:04:39Z",
+                    "value": "vh48"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "td201",
+            "type": "transport_document",
+            "attributes": [
+                {
+                    "name": "document_id",
+                    "time": "2023-10-23T16:04:39Z",
+                    "value": "td201"
+                },
+                {
+                    "name": "amount_of_containers",
+                    "time": "2023-10-23T16:04:39Z",
+                    "value": "2.0"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "booking",
+            "time": "2023-10-23T16:04:39Z",
+            "attributes": [
+                {
+                    "name": "booking_time",
+                    "value": "2023-10-23T16:04:39Z"
+                },
+                {
+                    "name": "departure_time",
+                    "value": "2023-11-10T11:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "vh48",
+                    "qualifier": "booked_for"
+                },
+                {
+                    "objectId": "td201",
+                    "qualifier": "relates_to"
+                }
+            ]
+        }
+    ]
+}

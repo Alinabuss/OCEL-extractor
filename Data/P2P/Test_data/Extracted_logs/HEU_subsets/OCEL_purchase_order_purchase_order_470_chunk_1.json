@@ -1,0 +1,95 @@
+{
+    "objectTypes": [
+        {
+            "name": "order purchase",
+            "attributes": [
+                {
+                    "name": "January",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "group purchasing",
+            "attributes": [
+                {
+                    "name": "group purchasing",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "create purchase order",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "type": "string"
+                },
+                {
+                    "name": "lifecycle",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "quotation:276",
+            "type": "group purchasing",
+            "attributes": [
+                {
+                    "name": "group purchasing",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "001"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:470",
+            "type": "order purchase",
+            "attributes": [
+                {
+                    "name": "January",
+                    "time": "1970-01-01T00:00:00Z",
+                    "value": "January"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:276",
+                    "qualifier": null
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 260,
+            "type": "create purchase order",
+            "time": "2023-01-13T11:01:00Z",
+            "attributes": [
+                {
+                    "name": "resource",
+                    "value": "Procurement Department"
+                },
+                {
+                    "name": "lifecycle",
+                    "value": "complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "quotation:276",
+                    "qualifier": null
+                },
+                {
+                    "objectId": "purchase_order:470",
+                    "qualifier": null
+                }
+            ]
+        }
+    ]
+}

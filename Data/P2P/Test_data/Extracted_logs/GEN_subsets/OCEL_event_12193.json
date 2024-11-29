@@ -1,0 +1,105 @@
+{
+    "objectTypes": [
+        {
+            "name": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Credit Amount",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Movement Type",
+                    "type": "integer"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Invoice Receipt Created",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "Department",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "invoice receipt[794]",
+            "type": "Invoice Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-05-19T08:42:00Z",
+                    "value": "invoice receipt[794]"
+                },
+                {
+                    "name": "Credit Amount",
+                    "time": "2023-05-19T08:42:00Z",
+                    "value": "100800.0"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods receipt[798]",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": "goods receipt[798]",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-05-19T08:42:00Z",
+                    "value": "goods receipt[798]"
+                },
+                {
+                    "name": "Movement Type",
+                    "time": "2023-05-19T08:42:00Z",
+                    "value": "101"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Invoice Receipt Created",
+            "time": "2023-05-19T08:42:00Z",
+            "attributes": [
+                {
+                    "name": "Department",
+                    "value": "Finance/Account"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "invoice receipt[794]",
+                    "qualifier": "created"
+                }
+            ]
+        }
+    ]
+}

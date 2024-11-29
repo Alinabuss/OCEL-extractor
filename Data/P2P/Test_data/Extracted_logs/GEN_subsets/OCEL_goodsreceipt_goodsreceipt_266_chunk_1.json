@@ -1,0 +1,162 @@
+{
+    "objectTypes": [
+        {
+            "name": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Movement Type",
+                    "type": "string"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Department",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Goods Receipt Created",
+            "attributes": [
+                {
+                    "name": "Completion Status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "goods_receipt:266",
+            "type": "Goods Receipt",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-08-16T13:03:00Z",
+                    "value": "goods_receipt:266"
+                },
+                {
+                    "name": "Movement Type",
+                    "time": "2022-08-16T13:03:00Z",
+                    "value": "101"
+                },
+                {
+                    "name": "Purchasing Group",
+                    "time": "2022-08-16T13:03:00Z",
+                    "value": "005"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:225",
+            "type": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-08-16T13:03:00Z",
+                    "value": "purchase_order:225"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "purchase_order:224",
+            "type": "Purchase Order",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2022-08-17T15:58:00Z",
+                    "value": "purchase_order:224"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Warehouse Department",
+            "type": "Department",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2022-08-16T13:03:00Z",
+                    "value": "Warehouse Department"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Goods Receipt Created",
+            "time": "2022-08-16T13:03:00Z",
+            "attributes": [
+                {
+                    "name": "Completion Status",
+                    "value": "Complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods_receipt:266",
+                    "qualifier": "is created from"
+                },
+                {
+                    "objectId": "purchase_order:225",
+                    "qualifier": "is associated with"
+                },
+                {
+                    "objectId": "Warehouse Department",
+                    "qualifier": "is completed by"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Goods Receipt Created",
+            "time": "2022-08-17T15:58:00Z",
+            "attributes": [
+                {
+                    "name": "Completion Status",
+                    "value": "Complete"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "goods_receipt:266",
+                    "qualifier": "is created from"
+                },
+                {
+                    "objectId": "purchase_order:224",
+                    "qualifier": "is associated with"
+                },
+                {
+                    "objectId": "Warehouse Department",
+                    "qualifier": "is completed by"
+                }
+            ]
+        }
+    ]
+}

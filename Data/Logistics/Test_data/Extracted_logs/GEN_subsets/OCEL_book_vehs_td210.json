@@ -1,0 +1,108 @@
+{
+    "objectTypes": [
+        {
+            "name": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "ContainerCount",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "type": "string"
+                },
+                {
+                    "name": "DepartureDate",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Booking",
+            "attributes": [
+                {
+                    "name": "TransportDocumentID",
+                    "type": "string"
+                },
+                {
+                    "name": "VehicleID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "TD210",
+            "type": "TransportDocument",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-10-27T16:50:58Z",
+                    "value": "TD210"
+                },
+                {
+                    "name": "ContainerCount",
+                    "time": "2023-10-27T16:50:58Z",
+                    "value": "4"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "VH47",
+            "type": "Vehicle",
+            "attributes": [
+                {
+                    "name": "ID",
+                    "time": "2023-10-27T16:50:58Z",
+                    "value": "VH47"
+                },
+                {
+                    "name": "DepartureDate",
+                    "time": "2023-11-07T11:00:00Z",
+                    "value": "2023-11-07T11:00:00Z"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Booking",
+            "time": "2023-10-27T16:50:58Z",
+            "attributes": [
+                {
+                    "name": "TransportDocumentID",
+                    "value": "TD210"
+                },
+                {
+                    "name": "VehicleID",
+                    "value": "VH47"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "TD210",
+                    "qualifier": "involves"
+                },
+                {
+                    "objectId": "VH47",
+                    "qualifier": "involves"
+                }
+            ]
+        }
+    ]
+}
