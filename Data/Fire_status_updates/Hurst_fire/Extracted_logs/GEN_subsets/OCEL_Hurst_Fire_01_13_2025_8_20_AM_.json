@@ -1,0 +1,148 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "incidentDate",
+                    "type": "date"
+                }
+            ]
+        },
+        {
+            "name": "Fire Department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "jurisdiction",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Containment Efforts Initiated",
+            "attributes": [
+                {
+                    "name": "focus",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Public Safety Advice Issued",
+            "attributes": [
+                {
+                    "name": "advice",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hurst Fire",
+            "type": "Fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-13T08:20:00Z",
+                    "value": "Hurst"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-13T08:20:00Z",
+                    "value": "active"
+                },
+                {
+                    "name": "incidentDate",
+                    "time": "2025-01-13T08:20:00Z",
+                    "value": "2025-01-13"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Los Angeles County Fire Department",
+            "type": "Fire Department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-13T08:20:00Z",
+                    "value": "Los Angeles County Fire Department"
+                },
+                {
+                    "name": "jurisdiction",
+                    "time": "2025-01-13T08:20:00Z",
+                    "value": "Los Angeles County"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Los Angeles City Fire Department",
+            "type": "Fire Department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-13T08:20:00Z",
+                    "value": "Los Angeles City Fire Department"
+                },
+                {
+                    "name": "jurisdiction",
+                    "time": "2025-01-13T08:20:00Z",
+                    "value": "Los Angeles City"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Containment Efforts Initiated",
+            "time": "2025-01-13T08:20:00Z",
+            "attributes": [
+                {
+                    "name": "focus",
+                    "value": "building and improving containment lines"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "object affected"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Public Safety Advice Issued",
+            "time": "2025-01-13T08:20:00Z",
+            "attributes": [
+                {
+                    "name": "advice",
+                    "value": "Residents advised to use extreme caution upon returning home"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "object affected"
+                }
+            ]
+        }
+    ]
+}

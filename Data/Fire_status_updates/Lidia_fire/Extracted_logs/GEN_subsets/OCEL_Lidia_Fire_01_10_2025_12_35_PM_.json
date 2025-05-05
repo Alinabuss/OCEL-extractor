@@ -1,0 +1,149 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Fire Department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Fire Reported",
+            "attributes": [
+                {
+                    "name": "report_time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "command_established",
+                    "type": "boolean"
+                }
+            ]
+        },
+        {
+            "name": "Fire Progress Update",
+            "attributes": [
+                {
+                    "name": "update_time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "progress",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Lidia Fire",
+            "type": "Fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-08T13:08:00Z",
+                    "value": "Soledad Canyon Road, Acton, California"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-08T13:08:00Z",
+                    "value": "Reported"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Angeles National Forest",
+            "type": "Fire Department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-08T13:08:00Z",
+                    "value": "Angeles National Forest"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Los Angeles County Fire Department",
+            "type": "Fire Department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-08T13:08:00Z",
+                    "value": "Los Angeles County Fire Department"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Fire Reported",
+            "time": "2025-01-08T13:08:00Z",
+            "attributes": [
+                {
+                    "name": "report_time",
+                    "value": "2025-01-08T13:08:00Z"
+                },
+                {
+                    "name": "command_established",
+                    "value": "true"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lidia Fire",
+                    "qualifier": "fire"
+                },
+                {
+                    "objectId": "Angeles National Forest",
+                    "qualifier": "command"
+                },
+                {
+                    "objectId": "Los Angeles County Fire Department",
+                    "qualifier": "command"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Fire Progress Update",
+            "time": "2025-01-10T12:35:00Z",
+            "attributes": [
+                {
+                    "name": "update_time",
+                    "value": "2025-01-10T12:35:00Z"
+                },
+                {
+                    "name": "progress",
+                    "value": "Significant progress made by firefighters"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lidia Fire",
+                    "qualifier": "fire"
+                }
+            ]
+        }
+    ]
+}

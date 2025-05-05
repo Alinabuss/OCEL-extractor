@@ -1,0 +1,258 @@
+{
+    "objectTypes": [
+        {
+            "name": "fireIncident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "evacuationStatus",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "firefighterCrew",
+            "attributes": [
+                {
+                    "name": "crewID",
+                    "type": "string"
+                },
+                {
+                    "name": "controlLinesEstablished",
+                    "type": "boolean"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "containFire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "time",
+                    "type": "string"
+                },
+                {
+                    "name": "controlLines",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "manageFlareUps",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "string"
+                },
+                {
+                    "name": "flareUpStatus",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "updateEvacuationOrders",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "string"
+                },
+                {
+                    "name": "evacuationStatus",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "issueWaterCaution",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "string"
+                },
+                {
+                    "name": "advisory",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "issueRedFlagWarning",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "string"
+                },
+                {
+                    "name": "expiryTime",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "HurstFire",
+            "type": "fireIncident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-10T12:25:00Z",
+                    "value": "north of the I-210 Foothill Freeway"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-10T12:25:00Z",
+                    "value": "contained"
+                },
+                {
+                    "name": "evacuationStatus",
+                    "time": "2025-01-10T12:25:00Z",
+                    "value": "warnings lifted"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "FireCrew1",
+            "type": "firefighterCrew",
+            "attributes": [
+                {
+                    "name": "crewID",
+                    "time": "2025-01-10T12:25:00Z",
+                    "value": "1"
+                },
+                {
+                    "name": "controlLinesEstablished",
+                    "time": "2025-01-10T12:25:00Z",
+                    "value": "true"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HurstFire",
+                    "qualifier": "managing"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "containFire",
+            "time": "2025-01-10T12:25:00Z",
+            "attributes": [
+                {
+                    "name": "location",
+                    "value": "north of the I-210 Foothill Freeway"
+                },
+                {
+                    "name": "controlLines",
+                    "value": "established to Santa Clara Divide Road"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HurstFire",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "manageFlareUps",
+            "time": "2025-01-10T12:25:00Z",
+            "attributes": [
+                {
+                    "name": "flareUpStatus",
+                    "value": "managed within the fire's perimeter"
+                },
+                {
+                    "name": "time",
+                    "value": "2025-01-10T12:25:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HurstFire",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "updateEvacuationOrders",
+            "time": "2025-01-09T15:00:00Z",
+            "attributes": [
+                {
+                    "name": "evacuationStatus",
+                    "value": "downgraded to warnings and lifted"
+                },
+                {
+                    "name": "time",
+                    "value": "2025-01-09T15:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HurstFire",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "issueWaterCaution",
+            "time": "2025-01-10T12:25:00Z",
+            "attributes": [
+                {
+                    "name": "advisory",
+                    "value": "do NOT drink the water until advised"
+                },
+                {
+                    "name": "time",
+                    "value": "2025-01-10T12:25:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HurstFire",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "issueRedFlagWarning",
+            "time": "2025-01-10T12:25:00Z",
+            "attributes": [
+                {
+                    "name": "expiryTime",
+                    "value": "2025-01-12T18:00:00Z"
+                },
+                {
+                    "name": "time",
+                    "value": "2025-01-10T12:25:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HurstFire",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,188 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Date",
+                    "type": "date"
+                },
+                {
+                    "name": "Time",
+                    "type": "time"
+                }
+            ]
+        },
+        {
+            "name": "Community",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Fire Crew",
+            "attributes": [
+                {
+                    "name": "Crew Name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Fire Spreading",
+            "attributes": [
+                {
+                    "name": "Fire Behavior",
+                    "type": "string"
+                },
+                {
+                    "name": "Conditions",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Containment Effort",
+            "attributes": [
+                {
+                    "name": "Effort Type",
+                    "type": "string"
+                },
+                {
+                    "name": "Infrastructure Protection",
+                    "type": "boolean"
+                }
+            ]
+        },
+        {
+            "name": "Community Alert",
+            "attributes": [
+                {
+                    "name": "Alert Type",
+                    "type": "string"
+                },
+                {
+                    "name": "Authority Directive",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hurst Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Date",
+                    "time": "2025-01-08",
+                    "value": "2025-01-08"
+                },
+                {
+                    "name": "Time",
+                    "time": "2025-01-08T02:20:00Z",
+                    "value": "02:20 AM"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Local Community",
+            "type": "Community",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "",
+                    "value": "Local Community"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Fire Crew Team A",
+            "type": "Fire Crew",
+            "attributes": [
+                {
+                    "name": "Crew Name",
+                    "time": "",
+                    "value": "Fire Crew Team A"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Fire Spreading",
+            "time": "2025-01-08T02:20:00Z",
+            "attributes": [
+                {
+                    "name": "Fire Behavior",
+                    "value": "Aggressive due to dry fuels and strong winds"
+                },
+                {
+                    "name": "Conditions",
+                    "value": "High winds and low humidity"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Containment Effort",
+            "time": "2025-01-08T02:20:00Z",
+            "attributes": [
+                {
+                    "name": "Effort Type",
+                    "value": "Fire containment"
+                },
+                {
+                    "name": "Infrastructure Protection",
+                    "value": "true"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Fire Crew Team A",
+                    "qualifier": "performed by"
+                },
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Community Alert",
+            "time": "2025-01-08T02:20:00Z",
+            "attributes": [
+                {
+                    "name": "Alert Type",
+                    "value": "Vigilance urged"
+                },
+                {
+                    "name": "Authority Directive",
+                    "value": "Follow local authorities' directives"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Local Community",
+                    "qualifier": "alerting"
+                }
+            ]
+        }
+    ]
+}

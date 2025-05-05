@@ -1,0 +1,95 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "threat",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Infrastructure",
+            "attributes": [
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Fire Response",
+            "attributes": [
+                {
+                    "name": "responseType",
+                    "type": "string"
+                },
+                {
+                    "name": "timeReported",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Border_2_Fire",
+            "type": "Fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-23T20:13:00Z",
+                    "value": "Otay Mountain Truck Trail within the Otay Mountain Wilderness"
+                },
+                {
+                    "name": "threat",
+                    "time": "2025-01-23T20:13:00Z",
+                    "value": "critical communication infrastructure"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Otay_Mountain_Repeater_Site",
+            "type": "Infrastructure",
+            "attributes": [
+                {
+                    "name": "type",
+                    "time": "2025-01-23T20:13:00Z",
+                    "value": "communication infrastructure"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Fire Response",
+            "time": "2025-01-23T20:13:00Z",
+            "attributes": [
+                {
+                    "name": "responseType",
+                    "value": "firefighters on scene"
+                },
+                {
+                    "name": "timeReported",
+                    "value": "2025-01-23T20:13:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Border_2_Fire",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,173 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "type": "string"
+                },
+                {
+                    "name": "Date",
+                    "type": "date"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Community",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Vigilance Level",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Fire Spreading",
+            "attributes": [
+                {
+                    "name": "Wind Conditions",
+                    "type": "string"
+                },
+                {
+                    "name": "Humidity Level",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Containment Efforts",
+            "attributes": [
+                {
+                    "name": "Fire Crew Action",
+                    "type": "string"
+                },
+                {
+                    "name": "Infrastructure Protection",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Resident Advisory",
+            "attributes": [
+                {
+                    "name": "Directive",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hurst Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "time": "2025-01-08T11:06:00Z",
+                    "value": "Hurst"
+                },
+                {
+                    "name": "Date",
+                    "time": "2025-01-08T11:06:00Z",
+                    "value": "2025-01-08"
+                },
+                {
+                    "name": "Status",
+                    "time": "2025-01-08T11:06:00Z",
+                    "value": "Spreading rapidly"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Nearby Communities",
+            "type": "Community",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2025-01-08T11:06:00Z",
+                    "value": "Various"
+                },
+                {
+                    "name": "Vigilance Level",
+                    "time": "2025-01-08T11:06:00Z",
+                    "value": "High"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Fire Spreading",
+            "time": "2025-01-08T11:06:00Z",
+            "attributes": [
+                {
+                    "name": "Wind Conditions",
+                    "value": "High winds"
+                },
+                {
+                    "name": "Humidity Level",
+                    "value": "Low"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Containment Efforts",
+            "time": "2025-01-08T11:06:00Z",
+            "attributes": [
+                {
+                    "name": "Fire Crew Action",
+                    "value": "Working tirelessly"
+                },
+                {
+                    "name": "Infrastructure Protection",
+                    "value": "Protecting critical infrastructure"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Resident Advisory",
+            "time": "2025-01-08T11:06:00Z",
+            "attributes": [
+                {
+                    "name": "Directive",
+                    "value": "Remain vigilant"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Nearby Communities",
+                    "qualifier": "affects"
+                }
+            ]
+        }
+    ]
+}

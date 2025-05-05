@@ -1,0 +1,107 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Date",
+                    "type": "date"
+                }
+            ]
+        },
+        {
+            "name": "Evacuation Zone",
+            "attributes": [
+                {
+                    "name": "Zone ID",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Evacuation Order Issued",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "date"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Lilac Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2025-01-21T01:23:00Z",
+                    "value": "Lilac Fire"
+                },
+                {
+                    "name": "Date",
+                    "time": "2025-01-21T01:23:00Z",
+                    "value": "2025-01-21"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "SDC-0288",
+            "type": "Evacuation Zone",
+            "attributes": [
+                {
+                    "name": "Zone ID",
+                    "time": "2025-01-21T01:23:00Z",
+                    "value": "SDC-0288"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "SDC-0289",
+            "type": "Evacuation Zone",
+            "attributes": [
+                {
+                    "name": "Zone ID",
+                    "time": "2025-01-21T01:23:00Z",
+                    "value": "SDC-0289"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Evacuation Order Issued",
+            "time": "2025-01-21T01:23:00Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2025-01-21T01:23:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lilac Fire",
+                    "qualifier": "related to"
+                },
+                {
+                    "objectId": "SDC-0288",
+                    "qualifier": "affects"
+                },
+                {
+                    "objectId": "SDC-0289",
+                    "qualifier": "affects"
+                }
+            ]
+        }
+    ]
+}

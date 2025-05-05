@@ -1,0 +1,121 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Containment Line Improvement",
+            "attributes": [
+                {
+                    "name": "focus",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Public Safety Advisory",
+            "attributes": [
+                {
+                    "name": "advice",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Unified Command Activation",
+            "attributes": [
+                {
+                    "name": "involvedAgencies",
+                    "type": "array"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hurst Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-15T18:30:00Z",
+                    "value": "Angeles National Forest"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-15T18:30:00Z",
+                    "value": "ongoing"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Containment Line Improvement",
+            "time": "2025-01-15T18:30:00Z",
+            "attributes": [
+                {
+                    "name": "focus",
+                    "value": "public safety and structure protection"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Public Safety Advisory",
+            "time": "2025-01-15T18:30:00Z",
+            "attributes": [
+                {
+                    "name": "advice",
+                    "value": "Residents returning home are advised to use extreme caution"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Unified Command Activation",
+            "time": "2025-01-15T18:30:00Z",
+            "attributes": [
+                {
+                    "name": "involvedAgencies",
+                    "value": [
+                        "Los Angeles County Fire Department",
+                        "Los Angeles City Fire Department"
+                    ]
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ]
+}

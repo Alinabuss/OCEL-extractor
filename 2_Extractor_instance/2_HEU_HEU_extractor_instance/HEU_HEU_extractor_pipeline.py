@@ -3,7 +3,7 @@ from Collector_subcomponent.Collector_instance import OCEL_heuristic_collector_c
 from Refiner_subcomponent.Refiner_instance import OCEL_heuristic_refiner_component
 
 # Specify folder-path to dataset
-dataset_folder = "Data/Age_of_empire/Test_data/"
+dataset_folder = "Data/Age_of_empire/Lilac_fire/"
 
 # Definition of OCEL_event_level_extractor pipeline
 def OCEL_HEU_HEU_extractor(dataset_folder, level):

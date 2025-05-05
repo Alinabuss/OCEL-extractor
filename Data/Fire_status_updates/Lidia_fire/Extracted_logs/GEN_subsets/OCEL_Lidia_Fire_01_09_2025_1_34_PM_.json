@@ -1,0 +1,153 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "size_acres",
+                    "type": "number"
+                },
+                {
+                    "name": "containment_percentage",
+                    "type": "number"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Fire Reported",
+            "attributes": [
+                {
+                    "name": "time_reported",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Unified Command Established",
+            "attributes": [
+                {
+                    "name": "command_entities",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Fire Size Updated",
+            "attributes": [
+                {
+                    "name": "area_spanned",
+                    "type": "number"
+                }
+            ]
+        },
+        {
+            "name": "Containment Status Updated",
+            "attributes": [
+                {
+                    "name": "containment_level",
+                    "type": "number"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Lidia Fire",
+            "type": "Fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-08T13:08:00Z",
+                    "value": "Soledad Canyon Road, Acton, California"
+                },
+                {
+                    "name": "size_acres",
+                    "time": "2025-01-08T13:08:00Z",
+                    "value": "348"
+                },
+                {
+                    "name": "containment_percentage",
+                    "time": "2025-01-08T13:08:00Z",
+                    "value": "60"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Fire Reported",
+            "time": "2025-01-08T13:08:00Z",
+            "attributes": [
+                {
+                    "name": "time_reported",
+                    "value": "2025-01-08T13:08:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lidia Fire",
+                    "qualifier": "reported"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Unified Command Established",
+            "time": "2025-01-08T13:08:00Z",
+            "attributes": [
+                {
+                    "name": "command_entities",
+                    "value": "Angeles National Forest, Los Angeles County Fire Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lidia Fire",
+                    "qualifier": "command_established"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Fire Size Updated",
+            "time": "2025-01-08T13:08:00Z",
+            "attributes": [
+                {
+                    "name": "area_spanned",
+                    "value": "348"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lidia Fire",
+                    "qualifier": "size_updated"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Containment Status Updated",
+            "time": "2025-01-08T13:08:00Z",
+            "attributes": [
+                {
+                    "name": "containment_level",
+                    "value": "60"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lidia Fire",
+                    "qualifier": "containment_updated"
+                }
+            ]
+        }
+    ]
+}

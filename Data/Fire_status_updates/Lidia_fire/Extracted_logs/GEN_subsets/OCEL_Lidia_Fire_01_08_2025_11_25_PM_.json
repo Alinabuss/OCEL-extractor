@@ -1,0 +1,147 @@
+{
+    "objectTypes": [
+        {
+            "name": "fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "startedAt",
+                    "type": "datetime"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "firefighter_resource",
+            "attributes": [
+                {
+                    "name": "resource_type",
+                    "type": "string"
+                },
+                {
+                    "name": "assigned_at",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "fire_progress_stopped",
+            "attributes": [
+                {
+                    "name": "fire_status",
+                    "type": "string"
+                },
+                {
+                    "name": "additional_containment_effort",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "firefighter_resource_assigned",
+            "attributes": [
+                {
+                    "name": "resource_type",
+                    "type": "string"
+                },
+                {
+                    "name": "assigned_time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Lidia_Fire",
+            "type": "fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-08T23:25:00Z",
+                    "value": "unknown"
+                },
+                {
+                    "name": "startedAt",
+                    "time": "2025-01-08T23:25:00Z",
+                    "value": "unknown"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-08T23:25:00Z",
+                    "value": "forward progress has been stopped"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CAL_FIRE_air_resources",
+            "type": "firefighter_resource",
+            "attributes": [
+                {
+                    "name": "resource_type",
+                    "time": "2025-01-08T23:25:00Z",
+                    "value": "air resources"
+                },
+                {
+                    "name": "assigned_at",
+                    "time": "2025-01-08T23:25:00Z",
+                    "value": "assigned to Lidia Fire"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "fire_progress_stopped",
+            "time": "2025-01-08T23:25:00Z",
+            "attributes": [
+                {
+                    "name": "fire_status",
+                    "value": "forward progress has been stopped"
+                },
+                {
+                    "name": "additional_containment_effort",
+                    "value": "gaining additional containment"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lidia_Fire",
+                    "qualifier": "affects"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "firefighter_resource_assigned",
+            "time": "2025-01-08T23:25:00Z",
+            "attributes": [
+                {
+                    "name": "resource_type",
+                    "value": "air resources"
+                },
+                {
+                    "name": "assigned_time",
+                    "value": "assigned to Lidia Fire"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "CAL_FIRE_air_resources",
+                    "qualifier": "assigned_to"
+                }
+            ]
+        }
+    ]
+}

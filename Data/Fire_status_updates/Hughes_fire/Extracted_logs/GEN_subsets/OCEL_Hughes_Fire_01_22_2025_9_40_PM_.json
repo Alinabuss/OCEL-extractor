@@ -1,0 +1,206 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "type": "String"
+                },
+                {
+                    "name": "Status",
+                    "type": "String"
+                }
+            ]
+        },
+        {
+            "name": "Fire Department",
+            "attributes": [
+                {
+                    "name": "Agency Name",
+                    "type": "String"
+                },
+                {
+                    "name": "Type",
+                    "type": "String"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Fire Response Initiated",
+            "attributes": [
+                {
+                    "name": "Response Time",
+                    "type": "String"
+                },
+                {
+                    "name": "Fire Incident ID",
+                    "type": "String"
+                }
+            ]
+        },
+        {
+            "name": "Unified Command Established",
+            "attributes": [
+                {
+                    "name": "Command ID",
+                    "type": "String"
+                },
+                {
+                    "name": "Fire Incident ID",
+                    "type": "String"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hughes Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "time": "2025-01-22T21:40:00Z",
+                    "value": "Lake Hughes Rd North of Castaic Reservoir Rd, Castaic"
+                },
+                {
+                    "name": "Status",
+                    "time": "2025-01-22T21:40:00Z",
+                    "value": "Active"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Angeles National Forest",
+            "type": "Fire Department",
+            "attributes": [
+                {
+                    "name": "Agency Name",
+                    "time": "2025-01-22T21:40:00Z",
+                    "value": "Angeles National Forest"
+                },
+                {
+                    "name": "Type",
+                    "time": "2025-01-22T21:40:00Z",
+                    "value": "Federal"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CAL FIRE",
+            "type": "Fire Department",
+            "attributes": [
+                {
+                    "name": "Agency Name",
+                    "time": "2025-01-22T21:40:00Z",
+                    "value": "California Department of Forestry and Fire Protection"
+                },
+                {
+                    "name": "Type",
+                    "time": "2025-01-22T21:40:00Z",
+                    "value": "State"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Los Angeles County Fire Department",
+            "type": "Fire Department",
+            "attributes": [
+                {
+                    "name": "Agency Name",
+                    "time": "2025-01-22T21:40:00Z",
+                    "value": "Los Angeles County Fire Department"
+                },
+                {
+                    "name": "Type",
+                    "time": "2025-01-22T21:40:00Z",
+                    "value": "Local"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "LA County Sheriff",
+            "type": "Fire Department",
+            "attributes": [
+                {
+                    "name": "Agency Name",
+                    "time": "2025-01-22T21:40:00Z",
+                    "value": "Los Angeles County Sheriff's Department"
+                },
+                {
+                    "name": "Type",
+                    "time": "2025-01-22T21:40:00Z",
+                    "value": "Local"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "California Highway Patrol",
+            "type": "Fire Department",
+            "attributes": [
+                {
+                    "name": "Agency Name",
+                    "time": "2025-01-22T21:40:00Z",
+                    "value": "California Highway Patrol"
+                },
+                {
+                    "name": "Type",
+                    "time": "2025-01-22T21:40:00Z",
+                    "value": "State"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Fire Response Initiated",
+            "time": "2025-01-22T21:40:00Z",
+            "attributes": [
+                {
+                    "name": "Response Time",
+                    "value": "2025-01-22T21:40:00Z"
+                },
+                {
+                    "name": "Fire Incident ID",
+                    "value": "Hughes Fire"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Unified Command Established",
+            "time": "2025-01-22T21:40:00Z",
+            "attributes": [
+                {
+                    "name": "Command ID",
+                    "value": "Unified Command"
+                },
+                {
+                    "name": "Fire Incident ID",
+                    "value": "Hughes Fire"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

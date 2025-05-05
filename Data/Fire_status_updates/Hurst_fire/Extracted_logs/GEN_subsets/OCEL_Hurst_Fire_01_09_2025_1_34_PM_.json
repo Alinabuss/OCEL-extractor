@@ -1,0 +1,246 @@
+{
+    "objectTypes": [
+        {
+            "name": "FireIncident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "controlLines",
+                    "type": "string"
+                },
+                {
+                    "name": "redFlagWarning",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "FirefightingTeam",
+            "attributes": [
+                {
+                    "name": "department",
+                    "type": "string"
+                },
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "ContainFire",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "flareUpsManaged",
+                    "type": "boolean"
+                }
+            ]
+        },
+        {
+            "name": "ReinforceControlLines",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "dozerLinesUsed",
+                    "type": "boolean"
+                }
+            ]
+        },
+        {
+            "name": "IssueRedFlagWarning",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "expiryTime",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "HurstFire",
+            "type": "FireIncident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-09T13:34:00Z",
+                    "value": "north of the I-210 Foothill Freeway"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-09T13:34:00Z",
+                    "value": "contained"
+                },
+                {
+                    "name": "controlLines",
+                    "time": "2025-01-09T13:34:00Z",
+                    "value": "extending to Santa Clara Divide Road"
+                },
+                {
+                    "name": "redFlagWarning",
+                    "time": "2025-01-09T13:34:00Z",
+                    "value": "in effect until 6:00 PM on Thursday"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "LAFD",
+            "type": "FirefightingTeam",
+            "attributes": [
+                {
+                    "name": "department",
+                    "time": "2025-01-09T13:34:00Z",
+                    "value": "Los Angeles Fire Department"
+                },
+                {
+                    "name": "role",
+                    "time": "2025-01-09T13:34:00Z",
+                    "value": "lead"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "ANGF",
+            "type": "FirefightingTeam",
+            "attributes": [
+                {
+                    "name": "department",
+                    "time": "2025-01-09T13:34:00Z",
+                    "value": "Angeles National Forest"
+                },
+                {
+                    "name": "role",
+                    "time": "2025-01-09T13:34:00Z",
+                    "value": "support"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "LACFD",
+            "type": "FirefightingTeam",
+            "attributes": [
+                {
+                    "name": "department",
+                    "time": "2025-01-09T13:34:00Z",
+                    "value": "Los Angeles County Fire Department"
+                },
+                {
+                    "name": "role",
+                    "time": "2025-01-09T13:34:00Z",
+                    "value": "support"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "LACS",
+            "type": "FirefightingTeam",
+            "attributes": [
+                {
+                    "name": "department",
+                    "time": "2025-01-09T13:34:00Z",
+                    "value": "Los Angeles County Sheriff"
+                },
+                {
+                    "name": "role",
+                    "time": "2025-01-09T13:34:00Z",
+                    "value": "support"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CALFIRE",
+            "type": "FirefightingTeam",
+            "attributes": [
+                {
+                    "name": "department",
+                    "time": "2025-01-09T13:34:00Z",
+                    "value": "CAL FIRE"
+                },
+                {
+                    "name": "role",
+                    "time": "2025-01-09T13:34:00Z",
+                    "value": "support"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "ContainFire",
+            "time": "2025-01-09T13:34:00Z",
+            "attributes": [
+                {
+                    "name": "flareUpsManaged",
+                    "value": "true"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HurstFire",
+                    "qualifier": "incident"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "ReinforceControlLines",
+            "time": "2025-01-09T01:00:00Z",
+            "attributes": [
+                {
+                    "name": "dozerLinesUsed",
+                    "value": "true"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HurstFire",
+                    "qualifier": "incident"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "IssueRedFlagWarning",
+            "time": "2025-01-09T13:34:00Z",
+            "attributes": [
+                {
+                    "name": "expiryTime",
+                    "value": "2025-01-09T18:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HurstFire",
+                    "qualifier": "incident"
+                }
+            ]
+        }
+    ]
+}

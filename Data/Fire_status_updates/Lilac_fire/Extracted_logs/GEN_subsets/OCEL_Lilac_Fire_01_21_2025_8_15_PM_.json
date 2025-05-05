@@ -1,0 +1,108 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Fire Containment Efforts",
+            "attributes": [
+                {
+                    "name": "action",
+                    "type": "string"
+                },
+                {
+                    "name": "description",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Fire Extinguishment",
+            "attributes": [
+                {
+                    "name": "action",
+                    "type": "string"
+                },
+                {
+                    "name": "description",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Lilac Fire",
+            "type": "Fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-21T20:15:00Z",
+                    "value": "near Old Highway 395 and Lilac Road"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-21T20:15:00Z",
+                    "value": "forward rate of spread stopped"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Fire Containment Efforts",
+            "time": "2025-01-21T20:15:00Z",
+            "attributes": [
+                {
+                    "name": "action",
+                    "value": "build containment lines"
+                },
+                {
+                    "name": "description",
+                    "value": "Fire crew will continue to build containment lines."
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lilac Fire",
+                    "qualifier": "affects"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Fire Extinguishment",
+            "time": "2025-01-21T20:15:00Z",
+            "attributes": [
+                {
+                    "name": "action",
+                    "value": "extinguish hotspots"
+                },
+                {
+                    "name": "description",
+                    "value": "Fire crew will continue to extinguish hotspots within the fire's perimeter."
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lilac Fire",
+                    "qualifier": "affects"
+                }
+            ]
+        }
+    ]
+}

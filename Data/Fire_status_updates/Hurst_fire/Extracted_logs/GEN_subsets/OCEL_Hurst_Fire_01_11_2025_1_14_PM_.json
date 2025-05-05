@@ -1,0 +1,100 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "type": "string"
+                },
+                {
+                    "name": "Incident Date",
+                    "type": "date"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Containment Efforts Ongoing",
+            "attributes": [
+                {
+                    "name": "Focus Area",
+                    "type": "string"
+                },
+                {
+                    "name": "Command Structure",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Resident Advisory Issued",
+            "attributes": [
+                {
+                    "name": "Advisory Type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hurst Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "time": "2025-01-11T13:14:00Z",
+                    "value": "Angeles National Forest"
+                },
+                {
+                    "name": "Incident Date",
+                    "time": "2025-01-11T13:14:00Z",
+                    "value": "2025-01-11"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Containment Efforts Ongoing",
+            "time": "2025-01-11T13:14:00Z",
+            "attributes": [
+                {
+                    "name": "Focus Area",
+                    "value": "Building and improving containment lines"
+                },
+                {
+                    "name": "Command Structure",
+                    "value": "Unified command with Los Angeles County Fire Department and Los Angeles City Fire Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Resident Advisory Issued",
+            "time": "2025-01-11T13:14:00Z",
+            "attributes": [
+                {
+                    "name": "Advisory Type",
+                    "value": "Use extreme caution"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,185 @@
+{
+    "objectTypes": [
+        {
+            "name": "fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "areaAffected",
+                    "type": "number"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Initial Attack",
+            "attributes": [
+                {
+                    "name": "date",
+                    "type": "string"
+                },
+                {
+                    "name": "time",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Fire Control Operations",
+            "attributes": [
+                {
+                    "name": "method",
+                    "type": "string"
+                },
+                {
+                    "name": "region",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Spot Fire Response",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "areaAffected",
+                    "type": "number"
+                }
+            ]
+        },
+        {
+            "name": "Continued Firefighting Operations",
+            "attributes": [
+                {
+                    "name": "activity",
+                    "type": "string"
+                },
+                {
+                    "name": "location",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hughes Fire",
+            "type": "fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-23T20:17:00Z",
+                    "value": "Castaic, Santa Clarita"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-23T20:17:00Z",
+                    "value": "Active"
+                },
+                {
+                    "name": "areaAffected",
+                    "time": "2025-01-23T20:17:00Z",
+                    "value": 100
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Initial Attack",
+            "time": "2025-01-22T20:17:00Z",
+            "attributes": [
+                {
+                    "name": "date",
+                    "value": "2025-01-22"
+                },
+                {
+                    "name": "time",
+                    "value": "20:17"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "affected"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Fire Control Operations",
+            "time": "2025-01-23T20:17:00Z",
+            "attributes": [
+                {
+                    "name": "method",
+                    "value": "direct and indirect containment techniques"
+                },
+                {
+                    "name": "region",
+                    "value": "various"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "impacted"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Spot Fire Response",
+            "time": "2025-01-23T20:17:00Z",
+            "attributes": [
+                {
+                    "name": "location",
+                    "value": "west flank"
+                },
+                {
+                    "name": "areaAffected",
+                    "value": 100
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "affects"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Continued Firefighting Operations",
+            "time": "2025-01-23T20:17:00Z",
+            "attributes": [
+                {
+                    "name": "activity",
+                    "value": "improving fireline, performing tactical patrols, mopping up hot spots"
+                },
+                {
+                    "name": "location",
+                    "value": "Castaic, Santa Clarita"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "ongoing"
+                }
+            ]
+        }
+    ]
+}

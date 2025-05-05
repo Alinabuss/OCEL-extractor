@@ -1,0 +1,83 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "type": "string"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                },
+                {
+                    "name": "Containment",
+                    "type": "boolean"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Fire Containment Update",
+            "attributes": [
+                {
+                    "name": "Forward Rate of Spread Stopped",
+                    "type": "boolean"
+                },
+                {
+                    "name": "Hotspot Extinguishment",
+                    "type": "boolean"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Lilac Fire",
+            "type": "Fire",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "time": "2025-01-21T17:35:00Z",
+                    "value": "Near Old Highway 395 and Lilac Road"
+                },
+                {
+                    "name": "Status",
+                    "time": "2025-01-21T17:35:00Z",
+                    "value": "Active"
+                },
+                {
+                    "name": "Containment",
+                    "time": "2025-01-21T17:35:00Z",
+                    "value": "False"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Fire Containment Update",
+            "time": "2025-01-21T17:35:00Z",
+            "attributes": [
+                {
+                    "name": "Forward Rate of Spread Stopped",
+                    "value": "True"
+                },
+                {
+                    "name": "Hotspot Extinguishment",
+                    "value": "In Progress"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lilac Fire",
+                    "qualifier": "affects"
+                }
+            ]
+        }
+    ]
+}

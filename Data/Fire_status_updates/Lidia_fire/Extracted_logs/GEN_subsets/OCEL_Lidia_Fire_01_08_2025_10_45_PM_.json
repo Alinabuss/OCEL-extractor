@@ -1,0 +1,140 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire",
+            "attributes": [
+                {
+                    "name": "Status",
+                    "type": "string"
+                },
+                {
+                    "name": "Containment Level",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Resource",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "type": "string"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Containment Status Update",
+            "attributes": [
+                {
+                    "name": "Status",
+                    "type": "string"
+                },
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Resource Assignment",
+            "attributes": [
+                {
+                    "name": "Resource Type",
+                    "type": "string"
+                },
+                {
+                    "name": "Assigned Time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Lidia Fire",
+            "type": "Fire",
+            "attributes": [
+                {
+                    "name": "Status",
+                    "time": "2025-01-08T22:45:00Z",
+                    "value": "Forward progress has been stopped"
+                },
+                {
+                    "name": "Containment Level",
+                    "time": "2025-01-08T22:45:00Z",
+                    "value": "Additional containment in progress"
+                }
+            ]
+        },
+        {
+            "id": "CAL FIRE Air Resources",
+            "type": "Resource",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "time": "2025-01-08T22:45:00Z",
+                    "value": "Air resources"
+                },
+                {
+                    "name": "Status",
+                    "time": "2025-01-08T22:45:00Z",
+                    "value": "Assigned"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Containment Status Update",
+            "time": "2025-01-08T22:45:00Z",
+            "attributes": [
+                {
+                    "name": "Status",
+                    "value": "Forward progress has been stopped"
+                },
+                {
+                    "name": "Time",
+                    "value": "2025-01-08T22:45:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lidia Fire",
+                    "qualifier": "affected"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Resource Assignment",
+            "time": "2025-01-08T22:45:00Z",
+            "attributes": [
+                {
+                    "name": "Resource Type",
+                    "value": "Air resources"
+                },
+                {
+                    "name": "Assigned Time",
+                    "value": "2025-01-08T22:45:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "CAL FIRE Air Resources",
+                    "qualifier": "assigned to"
+                },
+                {
+                    "objectId": "Lidia Fire",
+                    "qualifier": "affected"
+                }
+            ]
+        }
+    ]
+}

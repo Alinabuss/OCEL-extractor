@@ -1,0 +1,143 @@
+{
+    "objectTypes": [
+        {
+            "name": "FireIncident",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "type": "string"
+                },
+                {
+                    "name": "Size",
+                    "type": "float"
+                },
+                {
+                    "name": "ContainmentPercentage",
+                    "type": "integer"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "FireReported",
+            "attributes": [
+                {
+                    "name": "ReportTime",
+                    "type": "datetime"
+                },
+                {
+                    "name": "Cause",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "UnifiedCommandEstablished",
+            "attributes": [
+                {
+                    "name": "Agency1",
+                    "type": "string"
+                },
+                {
+                    "name": "Agency2",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "ContainmentUpdate",
+            "attributes": [
+                {
+                    "name": "ContainmentPercentage",
+                    "type": "integer"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "LidiaFire",
+            "type": "FireIncident",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "time": "2025-01-08T13:08:00Z",
+                    "value": "Soledad Canyon Road, Acton, California"
+                },
+                {
+                    "name": "Size",
+                    "time": "2025-01-08T13:08:00Z",
+                    "value": 348.0
+                },
+                {
+                    "name": "ContainmentPercentage",
+                    "time": "2025-01-08T13:08:00Z",
+                    "value": 60
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "FireReported",
+            "time": "2025-01-08T13:08:00Z",
+            "attributes": [
+                {
+                    "name": "ReportTime",
+                    "value": "2025-01-08T13:08:00Z"
+                },
+                {
+                    "name": "Cause",
+                    "value": "Unknown"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "LidiaFire",
+                    "qualifier": "isReportedBy"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "UnifiedCommandEstablished",
+            "time": "2025-01-08T13:08:00Z",
+            "attributes": [
+                {
+                    "name": "Agency1",
+                    "value": "Angeles National Forest"
+                },
+                {
+                    "name": "Agency2",
+                    "value": "Los Angeles County Fire Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "LidiaFire",
+                    "qualifier": "isUnifiedCommandFor"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "ContainmentUpdate",
+            "time": "2025-01-08T13:08:00Z",
+            "attributes": [
+                {
+                    "name": "ContainmentPercentage",
+                    "value": 60
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "LidiaFire",
+                    "qualifier": "isUpdatedFor"
+                }
+            ]
+        }
+    ]
+}

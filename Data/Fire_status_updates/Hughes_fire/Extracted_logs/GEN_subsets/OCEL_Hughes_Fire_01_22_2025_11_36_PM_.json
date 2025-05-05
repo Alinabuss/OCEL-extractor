@@ -1,0 +1,304 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "type": "string"
+                },
+                {
+                    "name": "Incident Type",
+                    "type": "string"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Responder",
+            "attributes": [
+                {
+                    "name": "Organization",
+                    "type": "string"
+                },
+                {
+                    "name": "Type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Fire Response Initiated",
+            "attributes": [
+                {
+                    "name": "Incident ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Responder Organization",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Unified Command Established",
+            "attributes": [
+                {
+                    "name": "Incident ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Command Authorities",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hughes Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "time": "2025-01-22T23:36:00Z",
+                    "value": "Lake Hughes Rd North of Castaic Reservoir Rd, Castaic"
+                },
+                {
+                    "name": "Incident Type",
+                    "time": "2025-01-22T23:36:00Z",
+                    "value": "Brush Fire"
+                },
+                {
+                    "name": "Status",
+                    "time": "2025-01-22T23:36:00Z",
+                    "value": "Ongoing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Angeles National Forest",
+            "type": "Responder",
+            "attributes": [
+                {
+                    "name": "Organization",
+                    "time": "2025-01-22T23:36:00Z",
+                    "value": "Angeles National Forest"
+                },
+                {
+                    "name": "Type",
+                    "time": "2025-01-22T23:36:00Z",
+                    "value": "Fire Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "responding to"
+                }
+            ]
+        },
+        {
+            "id": "CAL FIRE",
+            "type": "Responder",
+            "attributes": [
+                {
+                    "name": "Organization",
+                    "time": "2025-01-22T23:36:00Z",
+                    "value": "CAL FIRE"
+                },
+                {
+                    "name": "Type",
+                    "time": "2025-01-22T23:36:00Z",
+                    "value": "Fire Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "responding to"
+                }
+            ]
+        },
+        {
+            "id": "Los Angeles County Fire Department",
+            "type": "Responder",
+            "attributes": [
+                {
+                    "name": "Organization",
+                    "time": "2025-01-22T23:36:00Z",
+                    "value": "Los Angeles County Fire Department"
+                },
+                {
+                    "name": "Type",
+                    "time": "2025-01-22T23:36:00Z",
+                    "value": "Fire Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "responding to"
+                }
+            ]
+        },
+        {
+            "id": "U.S. Forest Service",
+            "type": "Responder",
+            "attributes": [
+                {
+                    "name": "Organization",
+                    "time": "2025-01-22T23:36:00Z",
+                    "value": "U.S. Forest Service"
+                },
+                {
+                    "name": "Type",
+                    "time": "2025-01-22T23:36:00Z",
+                    "value": "Federal Agency"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "in command of"
+                }
+            ]
+        },
+        {
+            "id": "LA County Sheriff",
+            "type": "Responder",
+            "attributes": [
+                {
+                    "name": "Organization",
+                    "time": "2025-01-22T23:36:00Z",
+                    "value": "LA County Sheriff"
+                },
+                {
+                    "name": "Type",
+                    "time": "2025-01-22T23:36:00Z",
+                    "value": "Law Enforcement"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "assisting in"
+                }
+            ]
+        },
+        {
+            "id": "California Highway Patrol",
+            "type": "Responder",
+            "attributes": [
+                {
+                    "name": "Organization",
+                    "time": "2025-01-22T23:36:00Z",
+                    "value": "California Highway Patrol"
+                },
+                {
+                    "name": "Type",
+                    "time": "2025-01-22T23:36:00Z",
+                    "value": "Law Enforcement"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "assisting in"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Fire Response Initiated",
+            "time": "2025-01-22T23:36:00Z",
+            "attributes": [
+                {
+                    "name": "Incident ID",
+                    "value": "Hughes Fire"
+                },
+                {
+                    "name": "Responder Organization",
+                    "value": "Angeles National Forest"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "responded to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Fire Response Initiated",
+            "time": "2025-01-22T23:36:00Z",
+            "attributes": [
+                {
+                    "name": "Incident ID",
+                    "value": "Hughes Fire"
+                },
+                {
+                    "name": "Responder Organization",
+                    "value": "CAL FIRE"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "responded to"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Fire Response Initiated",
+            "time": "2025-01-22T23:36:00Z",
+            "attributes": [
+                {
+                    "name": "Incident ID",
+                    "value": "Hughes Fire"
+                },
+                {
+                    "name": "Responder Organization",
+                    "value": "Los Angeles County Fire Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "responded to"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Unified Command Established",
+            "time": "2025-01-22T23:36:00Z",
+            "attributes": [
+                {
+                    "name": "Incident ID",
+                    "value": "Hughes Fire"
+                },
+                {
+                    "name": "Command Authorities",
+                    "value": "U.S. Forest Service, Los Angeles County Fire Department, CAL FIRE"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "commanded by"
+                }
+            ]
+        }
+    ]
+}

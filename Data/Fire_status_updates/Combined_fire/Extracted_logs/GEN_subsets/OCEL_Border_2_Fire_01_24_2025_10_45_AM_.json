@@ -1,0 +1,206 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "location",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "FireCrew",
+            "attributes": [
+                {
+                    "name": "type",
+                    "type": "string"
+                },
+                {
+                    "name": "resource",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Extreme Fire Behavior Observed",
+            "attributes": [
+                {
+                    "name": "behavior_type",
+                    "type": "string"
+                },
+                {
+                    "name": "time",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Evacuation Orders Issued",
+            "attributes": [
+                {
+                    "name": "direction",
+                    "type": "string"
+                },
+                {
+                    "name": "area",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Aerial Support Deployed",
+            "attributes": [
+                {
+                    "name": "aircraft_type",
+                    "type": "string"
+                },
+                {
+                    "name": "time",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Resource Augmentation Ordered",
+            "attributes": [
+                {
+                    "name": "resource_type",
+                    "type": "string"
+                },
+                {
+                    "name": "time",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Border 2 Fire",
+            "type": "Fire",
+            "attributes": [
+                {
+                    "name": "status",
+                    "time": "2025-01-24T10:45:00Z",
+                    "value": "active"
+                },
+                {
+                    "name": "location",
+                    "time": "2025-01-24T10:45:00Z",
+                    "value": "Otay Mountain Wilderness"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CAL FIRE Fire-Hawk Helicopters",
+            "type": "FireCrew",
+            "attributes": [
+                {
+                    "name": "type",
+                    "time": "2025-01-24T10:45:00Z",
+                    "value": "aerial support"
+                },
+                {
+                    "name": "resource",
+                    "time": "2025-01-24T10:45:00Z",
+                    "value": "helicopters"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Extreme Fire Behavior Observed",
+            "time": "2025-01-24T00:00:00Z",
+            "attributes": [
+                {
+                    "name": "behavior_type",
+                    "value": "long range spotting"
+                },
+                {
+                    "name": "time",
+                    "value": "2025-01-24T00:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Border 2 Fire",
+                    "qualifier": "affects"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Evacuation Orders Issued",
+            "time": "2025-01-24T10:45:00Z",
+            "attributes": [
+                {
+                    "name": "direction",
+                    "value": "North and West"
+                },
+                {
+                    "name": "area",
+                    "value": "Otay Lakes Road"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Border 2 Fire",
+                    "qualifier": "affects"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Aerial Support Deployed",
+            "time": "2025-01-24T06:00:00Z",
+            "attributes": [
+                {
+                    "name": "aircraft_type",
+                    "value": "Fire-Hawk helicopters"
+                },
+                {
+                    "name": "time",
+                    "value": "2025-01-24T06:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "CAL FIRE Fire-Hawk Helicopters",
+                    "qualifier": "deployed"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Resource Augmentation Ordered",
+            "time": "2025-01-24T10:45:00Z",
+            "attributes": [
+                {
+                    "name": "resource_type",
+                    "value": "substantial resources"
+                },
+                {
+                    "name": "time",
+                    "value": "2025-01-24T10:45:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Border 2 Fire",
+                    "qualifier": "affects"
+                }
+            ]
+        }
+    ]
+}

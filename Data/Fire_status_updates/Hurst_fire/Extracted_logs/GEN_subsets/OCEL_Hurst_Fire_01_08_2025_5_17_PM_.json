@@ -1,0 +1,169 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "threatLevel",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Community",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "riskLevel",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "FireSpread",
+            "attributes": [
+                {
+                    "name": "windSpeed",
+                    "type": "string"
+                },
+                {
+                    "name": "humidity",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "FireContainmentEfforts",
+            "attributes": [
+                {
+                    "name": "crewCount",
+                    "type": "integer"
+                },
+                {
+                    "name": "equipmentUsed",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "ResidentAlert",
+            "attributes": [
+                {
+                    "name": "directiveIssued",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hurst Fire",
+            "type": "Fire",
+            "attributes": [
+                {
+                    "name": "status",
+                    "time": "2025-01-08T17:17:00Z",
+                    "value": "spreading rapidly"
+                },
+                {
+                    "name": "threatLevel",
+                    "time": "2025-01-08T17:17:00Z",
+                    "value": "high"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Nearby Communities",
+            "type": "Community",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-08T17:17:00Z",
+                    "value": "Los Angeles"
+                },
+                {
+                    "name": "riskLevel",
+                    "time": "2025-01-08T17:17:00Z",
+                    "value": "high"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "threatens"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "FireSpread",
+            "time": "2025-01-08T17:17:00Z",
+            "attributes": [
+                {
+                    "name": "windSpeed",
+                    "value": "high"
+                },
+                {
+                    "name": "humidity",
+                    "value": "low"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "FireContainmentEfforts",
+            "time": "2025-01-08T17:17:00Z",
+            "attributes": [
+                {
+                    "name": "crewCount",
+                    "value": "multiple"
+                },
+                {
+                    "name": "equipmentUsed",
+                    "value": "fire trucks, hoses"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "attempting containment of"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "ResidentAlert",
+            "time": "2025-01-08T17:17:00Z",
+            "attributes": [
+                {
+                    "name": "directiveIssued",
+                    "value": "remain vigilant"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Nearby Communities",
+                    "qualifier": "alerts"
+                }
+            ]
+        }
+    ]
+}

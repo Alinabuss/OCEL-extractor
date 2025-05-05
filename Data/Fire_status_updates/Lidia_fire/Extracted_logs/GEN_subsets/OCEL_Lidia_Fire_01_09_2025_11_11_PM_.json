@@ -1,0 +1,117 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "type": "string"
+                },
+                {
+                    "name": "Size (acres)",
+                    "type": "integer"
+                },
+                {
+                    "name": "Containment",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Fire Reported",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "Unified Command Established",
+                    "type": "boolean"
+                }
+            ]
+        },
+        {
+            "name": "Fire Progress Update",
+            "attributes": [
+                {
+                    "name": "Containment Rate",
+                    "type": "float"
+                },
+                {
+                    "name": "Size (acres)",
+                    "type": "integer"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Lidia Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "time": "2025-01-08T13:08:00Z",
+                    "value": "Soledad Canyon Road, Acton, California"
+                },
+                {
+                    "name": "Size (acres)",
+                    "time": "2025-01-08T13:08:00Z",
+                    "value": 348
+                },
+                {
+                    "name": "Containment",
+                    "time": "2025-01-08T13:08:00Z",
+                    "value": 0.6
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Fire Reported",
+            "time": "2025-01-08T13:08:00Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2025-01-08T13:08:00Z"
+                },
+                {
+                    "name": "Unified Command Established",
+                    "value": "true"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lidia Fire",
+                    "qualifier": "reported"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Fire Progress Update",
+            "time": "2025-01-09T23:11:00Z",
+            "attributes": [
+                {
+                    "name": "Containment Rate",
+                    "value": 0.6
+                },
+                {
+                    "name": "Size (acres)",
+                    "value": 348
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lidia Fire",
+                    "qualifier": "updated"
+                }
+            ]
+        }
+    ]
+}

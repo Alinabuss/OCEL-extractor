@@ -1,0 +1,190 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Incident Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Date",
+                    "type": "string"
+                },
+                {
+                    "name": "Time",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Agency",
+            "attributes": [
+                {
+                    "name": "Agency Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Agency Type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Containment Efforts",
+            "attributes": [
+                {
+                    "name": "Focus",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Safety Advisory",
+            "attributes": [
+                {
+                    "name": "Advice",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hurst Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Incident Name",
+                    "time": "2025-01-11T06:24:00Z",
+                    "value": "Hurst Fire"
+                },
+                {
+                    "name": "Date",
+                    "time": "2025-01-11T06:24:00Z",
+                    "value": "2025-01-11"
+                },
+                {
+                    "name": "Time",
+                    "time": "2025-01-11T06:24:00Z",
+                    "value": "06:24 AM"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Los Angeles County Fire Department",
+            "type": "Agency",
+            "attributes": [
+                {
+                    "name": "Agency Name",
+                    "time": "2025-01-11T06:24:00Z",
+                    "value": "Los Angeles County Fire Department"
+                },
+                {
+                    "name": "Agency Type",
+                    "time": "2025-01-11T06:24:00Z",
+                    "value": "Fire Department"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Los Angeles City Fire Department",
+            "type": "Agency",
+            "attributes": [
+                {
+                    "name": "Agency Name",
+                    "time": "2025-01-11T06:24:00Z",
+                    "value": "Los Angeles City Fire Department"
+                },
+                {
+                    "name": "Agency Type",
+                    "time": "2025-01-11T06:24:00Z",
+                    "value": "Fire Department"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Angeles National Forest",
+            "type": "Agency",
+            "attributes": [
+                {
+                    "name": "Agency Name",
+                    "time": "2025-01-11T06:24:00Z",
+                    "value": "Angeles National Forest"
+                },
+                {
+                    "name": "Agency Type",
+                    "time": "2025-01-11T06:24:00Z",
+                    "value": "Forest Service"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Containment Efforts",
+            "time": "2025-01-11T06:24:00Z",
+            "attributes": [
+                {
+                    "name": "Focus",
+                    "value": "Building and improving containment lines"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Safety Advisory",
+            "time": "2025-01-11T06:24:00Z",
+            "attributes": [
+                {
+                    "name": "Advice",
+                    "value": "Residents returning home are advised to use extreme caution"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Unified Command Establishment",
+            "time": "2025-01-11T06:24:00Z",
+            "attributes": [
+                {
+                    "name": "Involved Agencies",
+                    "value": "Angeles National Forest, Los Angeles County Fire Department, and Los Angeles City Fire Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Los Angeles County Fire Department",
+                    "qualifier": "involved in"
+                },
+                {
+                    "objectId": "Los Angeles City Fire Department",
+                    "qualifier": "involved in"
+                },
+                {
+                    "objectId": "Angeles National Forest",
+                    "qualifier": "involved in"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,233 @@
+{
+    "objectTypes": [
+        {
+            "name": "FireIncident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "evacuationStatus",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "FirefighterCrew",
+            "attributes": [
+                {
+                    "name": "crewName",
+                    "type": "string"
+                },
+                {
+                    "name": "numberOfFirefighters",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "Resident",
+            "attributes": [
+                {
+                    "name": "returnHomeStatus",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "ContainFire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "ManageFlareUps",
+            "attributes": [
+                {
+                    "name": "numberOfFlareUps",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "DowngradeEvacuationOrder",
+            "attributes": [
+                {
+                    "name": "newStatus",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "LiftEvacuationOrder",
+            "attributes": []
+        },
+        {
+            "name": "AdviseResidents",
+            "attributes": [
+                {
+                    "name": "advice",
+                    "type": "string"
+                },
+                {
+                    "name": "responsibleDepartment",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "HurstFire2025",
+            "type": "FireIncident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-09T19:08:00Z",
+                    "value": "North of I-210 Foothill Freeway"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-09T19:08:00Z",
+                    "value": "Contained"
+                },
+                {
+                    "name": "evacuationStatus",
+                    "time": "2025-01-09T15:00:00Z",
+                    "value": "Warnings and Orders Lifted"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "FirefightingCrewA",
+            "type": "FirefighterCrew",
+            "attributes": [
+                {
+                    "name": "crewName",
+                    "time": "2025-01-09T19:08:00Z",
+                    "value": "Crew Alpha"
+                },
+                {
+                    "name": "numberOfFirefighters",
+                    "time": "2025-01-09T19:08:00Z",
+                    "value": "20"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HurstFire2025",
+                    "qualifier": "managing"
+                }
+            ]
+        },
+        {
+            "id": "ResidentsReturning",
+            "type": "Resident",
+            "attributes": [
+                {
+                    "name": "returnHomeStatus",
+                    "time": "2025-01-09T19:08:00Z",
+                    "value": "Advised to observe extreme caution"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "ContainFire",
+            "time": "2025-01-09T19:08:00Z",
+            "attributes": [
+                {
+                    "name": "location",
+                    "value": "North of I-210 Foothill Freeway"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HurstFire2025",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "ManageFlareUps",
+            "time": "2025-01-09T19:08:00Z",
+            "attributes": [
+                {
+                    "name": "numberOfFlareUps",
+                    "value": "several"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HurstFire2025",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "DowngradeEvacuationOrder",
+            "time": "2025-01-09T15:00:00Z",
+            "attributes": [
+                {
+                    "name": "newStatus",
+                    "value": "Warnings issued"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HurstFire2025",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "LiftEvacuationOrder",
+            "time": "2025-01-09T15:00:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "HurstFire2025",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "AdviseResidents",
+            "time": "2025-01-09T19:08:00Z",
+            "attributes": [
+                {
+                    "name": "advice",
+                    "value": "Do NOT drink the water"
+                },
+                {
+                    "name": "responsibleDepartment",
+                    "value": "Los Angeles Department of Water and Power"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "ResidentsReturning",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,247 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "containment percentage",
+                    "type": "integer"
+                },
+                {
+                    "name": "evacuation status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Firefighter",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "location",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Weather Event",
+            "attributes": [
+                {
+                    "name": "rain possibility",
+                    "type": "string"
+                },
+                {
+                    "name": "flood watch",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Control Line Fortification",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Hot Spot Extinguishing",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Mop-Up Activity",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Road Repair",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Firehose Backhaul",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Storm Coordination",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Demobilization of Resources",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "HughesFire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "containment percentage",
+                    "time": "2025-01-26T09:11:00Z",
+                    "value": "92"
+                },
+                {
+                    "name": "evacuation status",
+                    "time": "2025-01-26T09:11:00Z",
+                    "value": "Lifted"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "FireCrew",
+            "type": "Firefighter",
+            "attributes": [
+                {
+                    "name": "status",
+                    "time": "2025-01-26T09:11:00Z",
+                    "value": "Available for future incidents"
+                },
+                {
+                    "name": "location",
+                    "time": "2025-01-26T09:11:00Z",
+                    "value": "Nearby communities"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "WeatherForecast",
+            "type": "Weather Event",
+            "attributes": [
+                {
+                    "name": "rain possibility",
+                    "time": "2025-01-26T09:11:00Z",
+                    "value": "Rain and thunderstorms"
+                },
+                {
+                    "name": "flood watch",
+                    "time": "2025-01-26T09:11:00Z",
+                    "value": "In effect from 4 p.m. today to 4 p.m. tomorrow"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Control Line Fortification",
+            "time": "2025-01-25T09:11:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "HughesFire",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Hot Spot Extinguishing",
+            "time": "2025-01-25T09:11:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "HughesFire",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Mop-Up Activity",
+            "time": "2025-01-25T09:11:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "HughesFire",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Road Repair",
+            "time": "2025-01-25T09:11:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "HughesFire",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "Firehose Backhaul",
+            "time": "2025-01-25T09:11:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "HughesFire",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "type": "Storm Coordination",
+            "time": "2025-01-26T09:11:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "WeatherForecast",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 7,
+            "type": "Demobilization of Resources",
+            "time": "2025-01-26T09:11:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "FireCrew",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ]
+}

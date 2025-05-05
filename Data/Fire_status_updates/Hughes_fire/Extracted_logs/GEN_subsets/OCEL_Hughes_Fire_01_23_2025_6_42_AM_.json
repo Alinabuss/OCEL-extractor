@@ -1,0 +1,194 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "type": "string"
+                },
+                {
+                    "name": "Incident Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Date",
+                    "type": "date"
+                },
+                {
+                    "name": "Time",
+                    "type": "time"
+                }
+            ]
+        },
+        {
+            "name": "Firefighting Agency",
+            "attributes": [
+                {
+                    "name": "Agency Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Firefighter Response",
+            "attributes": [
+                {
+                    "name": "Agency",
+                    "type": "string"
+                },
+                {
+                    "name": "Action",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hughes Fire",
+            "type": "Fire",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "time": "2025-01-23T06:42:00Z",
+                    "value": "Lake Hughes Rd North of Castaic Reservoir Rd, Castaic"
+                },
+                {
+                    "name": "Incident Name",
+                    "time": "2025-01-23T06:42:00Z",
+                    "value": "Hughes Fire"
+                },
+                {
+                    "name": "Date",
+                    "time": "2025-01-23T06:42:00Z",
+                    "value": "2025-01-23"
+                },
+                {
+                    "name": "Time",
+                    "time": "2025-01-23T06:42:00Z",
+                    "value": "06:42:00"
+                }
+            ]
+        },
+        {
+            "id": "Angeles National Forest",
+            "type": "Firefighting Agency",
+            "attributes": [
+                {
+                    "name": "Agency Name",
+                    "time": "2025-01-23T06:42:00Z",
+                    "value": "Angeles National Forest"
+                },
+                {
+                    "name": "Type",
+                    "time": "2025-01-23T06:42:00Z",
+                    "value": "Federal"
+                }
+            ]
+        },
+        {
+            "id": "CAL FIRE",
+            "type": "Firefighting Agency",
+            "attributes": [
+                {
+                    "name": "Agency Name",
+                    "time": "2025-01-23T06:42:00Z",
+                    "value": "CAL FIRE"
+                },
+                {
+                    "name": "Type",
+                    "time": "2025-01-23T06:42:00Z",
+                    "value": "State"
+                }
+            ]
+        },
+        {
+            "id": "Los Angeles County Fire Department",
+            "type": "Firefighting Agency",
+            "attributes": [
+                {
+                    "name": "Agency Name",
+                    "time": "2025-01-23T06:42:00Z",
+                    "value": "Los Angeles County Fire Department"
+                },
+                {
+                    "name": "Type",
+                    "time": "2025-01-23T06:42:00Z",
+                    "value": "Local"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Firefighter Response",
+            "time": "2025-01-23T06:42:00Z",
+            "attributes": [
+                {
+                    "name": "Agency",
+                    "value": "Angeles National Forest"
+                },
+                {
+                    "name": "Action",
+                    "value": "Responded to the fire"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "affected"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Firefighter Response",
+            "time": "2025-01-23T06:42:00Z",
+            "attributes": [
+                {
+                    "name": "Agency",
+                    "value": "CAL FIRE"
+                },
+                {
+                    "name": "Action",
+                    "value": "Responded to the fire"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "affected"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Firefighter Response",
+            "time": "2025-01-23T06:42:00Z",
+            "attributes": [
+                {
+                    "name": "Agency",
+                    "value": "Los Angeles County Fire Department"
+                },
+                {
+                    "name": "Action",
+                    "value": "Responded to the fire"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "affected"
+                }
+            ]
+        }
+    ]
+}

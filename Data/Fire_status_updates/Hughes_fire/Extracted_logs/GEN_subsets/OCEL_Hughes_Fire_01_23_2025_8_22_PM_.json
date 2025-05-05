@@ -1,0 +1,234 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "date",
+                    "type": "date"
+                }
+            ]
+        },
+        {
+            "name": "Community",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "threatened",
+                    "type": "boolean"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Initial Attack",
+            "attributes": [
+                {
+                    "name": "date",
+                    "type": "date"
+                },
+                {
+                    "name": "result",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Control Operations",
+            "attributes": [
+                {
+                    "name": "technique",
+                    "type": "string"
+                },
+                {
+                    "name": "region",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Spot Fire Response",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "affected_acres",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "Continued Firefighting Efforts",
+            "attributes": [
+                {
+                    "name": "activity",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hughes Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "status",
+                    "time": "2025-01-23T20:22:00Z",
+                    "value": "active"
+                },
+                {
+                    "name": "location",
+                    "time": "2025-01-23T20:22:00Z",
+                    "value": "near Castaic, Santa Clarita"
+                },
+                {
+                    "name": "date",
+                    "time": "2025-01-23T20:22:00Z",
+                    "value": "2025-01-23"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Castaic Community",
+            "type": "Community",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-23T20:22:00Z",
+                    "value": "Castaic"
+                },
+                {
+                    "name": "threatened",
+                    "time": "2025-01-23T20:22:00Z",
+                    "value": true
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "threatened_by"
+                }
+            ]
+        },
+        {
+            "id": "Santa Clarita Community",
+            "type": "Community",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-23T20:22:00Z",
+                    "value": "Santa Clarita"
+                },
+                {
+                    "name": "threatened",
+                    "time": "2025-01-23T20:22:00Z",
+                    "value": true
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "threatened_by"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Initial Attack",
+            "time": "2025-01-22T00:00:00Z",
+            "attributes": [
+                {
+                    "name": "date",
+                    "value": "2025-01-22"
+                },
+                {
+                    "name": "result",
+                    "value": "successful"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Control Operations",
+            "time": "2025-01-23T00:00:00Z",
+            "attributes": [
+                {
+                    "name": "technique",
+                    "value": "direct and indirect containment"
+                },
+                {
+                    "name": "region",
+                    "value": "various"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Spot Fire Response",
+            "time": "2025-01-23T20:22:00Z",
+            "attributes": [
+                {
+                    "name": "location",
+                    "value": "west flank"
+                },
+                {
+                    "name": "affected_acres",
+                    "value": 100
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Continued Firefighting Efforts",
+            "time": "2025-01-23T20:22:00Z",
+            "attributes": [
+                {
+                    "name": "activity",
+                    "value": "improving fireline, performing tactical patrols, mopping up hot spots"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

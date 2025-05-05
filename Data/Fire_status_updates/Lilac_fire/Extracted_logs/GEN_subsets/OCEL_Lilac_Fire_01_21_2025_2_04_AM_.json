@@ -1,0 +1,83 @@
+{
+    "objectTypes": [
+        {
+            "name": "FireIncident",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "type": "string"
+                },
+                {
+                    "name": "ThreatLevel",
+                    "type": "string"
+                },
+                {
+                    "name": "RateOfSpread",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "FireReported",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "type": "datetime"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "LilacFire",
+            "type": "FireIncident",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "time": "2025-01-21T02:04:00Z",
+                    "value": "Old Highway 395 and Lilac road"
+                },
+                {
+                    "name": "ThreatLevel",
+                    "time": "2025-01-21T02:04:00Z",
+                    "value": "Structures threatened"
+                },
+                {
+                    "name": "RateOfSpread",
+                    "time": "2025-01-21T02:04:00Z",
+                    "value": "Moderate"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "FireReported",
+            "time": "2025-01-21T02:04:00Z",
+            "attributes": [
+                {
+                    "name": "Timestamp",
+                    "value": "2025-01-21T02:04:00Z"
+                },
+                {
+                    "name": "Status",
+                    "value": "Growing with moderate rate of spread"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "LilacFire",
+                    "qualifier": "is reported as"
+                }
+            ]
+        }
+    ]
+}

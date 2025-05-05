@@ -1,0 +1,118 @@
+{
+    "objectTypes": [
+        {
+            "name": "FireIncident",
+            "attributes": [
+                {
+                    "name": "dateReported",
+                    "type": "datetime"
+                },
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "acresAffected",
+                    "type": "number"
+                },
+                {
+                    "name": "containmentPercentage",
+                    "type": "number"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "FireReported",
+            "attributes": [
+                {
+                    "name": "reportTime",
+                    "type": "datetime"
+                },
+                {
+                    "name": "commandEstablished",
+                    "type": "boolean"
+                }
+            ]
+        },
+        {
+            "name": "FireContainmentUpdate",
+            "attributes": [
+                {
+                    "name": "newContainmentPercentage",
+                    "type": "number"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Lidia Fire",
+            "type": "FireIncident",
+            "attributes": [
+                {
+                    "name": "dateReported",
+                    "time": "2025-01-08T13:08:00Z",
+                    "value": "2025-01-08T13:08:00Z"
+                },
+                {
+                    "name": "location",
+                    "time": "2025-01-08T13:08:00Z",
+                    "value": "Soledad Canyon Road, Acton, California"
+                },
+                {
+                    "name": "acresAffected",
+                    "time": "2025-01-08T13:08:00Z",
+                    "value": "348"
+                },
+                {
+                    "name": "containmentPercentage",
+                    "time": "2025-01-08T13:08:00Z",
+                    "value": "60"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "FireReported",
+            "time": "2025-01-08T13:08:00Z",
+            "attributes": [
+                {
+                    "name": "reportTime",
+                    "value": "2025-01-08T13:08:00Z"
+                },
+                {
+                    "name": "commandEstablished",
+                    "value": "true"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lidia Fire",
+                    "qualifier": "reportedOn"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "FireContainmentUpdate",
+            "time": "2025-01-08T13:08:00Z",
+            "attributes": [
+                {
+                    "name": "newContainmentPercentage",
+                    "value": "60"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lidia Fire",
+                    "qualifier": "containmentUpdate"
+                }
+            ]
+        }
+    ]
+}

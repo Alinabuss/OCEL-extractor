@@ -1,0 +1,241 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Community",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "threatened",
+                    "type": "boolean"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Initial Attack",
+            "attributes": [
+                {
+                    "name": "date",
+                    "type": "string"
+                },
+                {
+                    "name": "time",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Air and Ground Operations",
+            "attributes": [
+                {
+                    "name": "date",
+                    "type": "string"
+                },
+                {
+                    "name": "time",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Spot Fire Response",
+            "attributes": [
+                {
+                    "name": "date",
+                    "type": "string"
+                },
+                {
+                    "name": "time",
+                    "type": "string"
+                },
+                {
+                    "name": "affected_area",
+                    "type": "number"
+                }
+            ]
+        },
+        {
+            "name": "Continued Firefighting",
+            "attributes": [
+                {
+                    "name": "date",
+                    "type": "string"
+                },
+                {
+                    "name": "time",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hughes Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-24T08:55:00Z",
+                    "value": "Castaic, Santa Clarita"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-24T08:55:00Z",
+                    "value": "active"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Castaic",
+            "type": "Community",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-24T08:55:00Z",
+                    "value": "Castaic"
+                },
+                {
+                    "name": "threatened",
+                    "time": "2025-01-24T08:55:00Z",
+                    "value": true
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "threatened by"
+                }
+            ]
+        },
+        {
+            "id": "Santa Clarita",
+            "type": "Community",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-24T08:55:00Z",
+                    "value": "Santa Clarita"
+                },
+                {
+                    "name": "threatened",
+                    "time": "2025-01-24T08:55:00Z",
+                    "value": true
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "threatened by"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Initial Attack",
+            "time": "2025-01-23T00:00:00Z",
+            "attributes": [
+                {
+                    "name": "date",
+                    "value": "2025-01-23"
+                },
+                {
+                    "name": "time",
+                    "value": "initial"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "affects"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Air and Ground Operations",
+            "time": "2025-01-23T00:00:00Z",
+            "attributes": [
+                {
+                    "name": "date",
+                    "value": "2025-01-23"
+                },
+                {
+                    "name": "time",
+                    "value": "ongoing"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "affects"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Spot Fire Response",
+            "time": "2025-01-23T00:00:00Z",
+            "attributes": [
+                {
+                    "name": "date",
+                    "value": "2025-01-23"
+                },
+                {
+                    "name": "time",
+                    "value": "prompt"
+                },
+                {
+                    "name": "affected_area",
+                    "value": 100
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "affects"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Continued Firefighting",
+            "time": "2025-01-24T00:00:00Z",
+            "attributes": [
+                {
+                    "name": "date",
+                    "value": "2025-01-24"
+                },
+                {
+                    "name": "time",
+                    "value": "overnight"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "affects"
+                }
+            ]
+        }
+    ]
+}

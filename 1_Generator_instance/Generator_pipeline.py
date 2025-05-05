@@ -11,7 +11,7 @@ from config import OPENAI_KEY, AZURE_KEY, AZURE_ENDPOINT
 from Modularized_functions.Grouped_report_creator_with_openai import grouped_report_creator_with_openai
 
 # Specify folder-path to dataset
-dataset_folder = "Data/Recruitment/Test_data/"
+dataset_folder = "Data/Recruitment/Lilac_fire/"
 
 # Specify openai-api_key and openai-model OR azure-api_key, azure_endpoint, and azure_model
 api_key = OPENAI_KEY

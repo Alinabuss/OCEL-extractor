@@ -1,0 +1,189 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "type": "string"
+                },
+                {
+                    "name": "Severity",
+                    "type": "string"
+                },
+                {
+                    "name": "Date",
+                    "type": "date"
+                }
+            ]
+        },
+        {
+            "name": "Community",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "name": "SafetyLevel",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Fire Spread",
+            "attributes": [
+                {
+                    "name": "Wind Speed",
+                    "type": "string"
+                },
+                {
+                    "name": "Humidity",
+                    "type": "string"
+                },
+                {
+                    "name": "Dry Fuels",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Containment Effort",
+            "attributes": [
+                {
+                    "name": "EffortLevel",
+                    "type": "string"
+                },
+                {
+                    "name": "InfrastructureProtection",
+                    "type": "boolean"
+                }
+            ]
+        },
+        {
+            "name": "Evacuation Advisory",
+            "attributes": [
+                {
+                    "name": "Authority",
+                    "type": "string"
+                },
+                {
+                    "name": "Directive",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hurst Fire",
+            "type": "Fire",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "time": "2025-01-08T13:20:00Z",
+                    "value": "Hurst"
+                },
+                {
+                    "name": "Severity",
+                    "time": "2025-01-08T13:20:00Z",
+                    "value": "High"
+                },
+                {
+                    "name": "Date",
+                    "time": "2025-01-08T13:20:00Z",
+                    "value": "2025-01-08"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Nearby Community",
+            "type": "Community",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2025-01-08T13:20:00Z",
+                    "value": "Nearby Communities"
+                },
+                {
+                    "name": "SafetyLevel",
+                    "time": "2025-01-08T13:20:00Z",
+                    "value": "At Risk"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Fire Spread",
+            "time": "2025-01-08T13:20:00Z",
+            "attributes": [
+                {
+                    "name": "Wind Speed",
+                    "value": "High"
+                },
+                {
+                    "name": "Humidity",
+                    "value": "Low"
+                },
+                {
+                    "name": "Dry Fuels",
+                    "value": "Present"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "affects"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Containment Effort",
+            "time": "2025-01-08T13:20:00Z",
+            "attributes": [
+                {
+                    "name": "EffortLevel",
+                    "value": "Tireless"
+                },
+                {
+                    "name": "InfrastructureProtection",
+                    "value": "true"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "pertains to"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Evacuation Advisory",
+            "time": "2025-01-08T13:20:00Z",
+            "attributes": [
+                {
+                    "name": "Authority",
+                    "value": "Local Authorities"
+                },
+                {
+                    "name": "Directive",
+                    "value": "Remain Vigilant"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Nearby Community",
+                    "qualifier": "advises"
+                }
+            ]
+        }
+    ]
+}

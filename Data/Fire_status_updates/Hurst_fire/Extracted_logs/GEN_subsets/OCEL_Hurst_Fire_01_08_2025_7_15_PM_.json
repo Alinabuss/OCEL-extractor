@@ -1,0 +1,179 @@
+{
+    "objectTypes": [
+        {
+            "name": "FireIncident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "dateReported",
+                    "type": "date"
+                }
+            ]
+        },
+        {
+            "name": "FireCrew",
+            "attributes": [
+                {
+                    "name": "department",
+                    "type": "string"
+                },
+                {
+                    "name": "unitSize",
+                    "type": "number"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "FireSpread",
+            "attributes": [
+                {
+                    "name": "severity",
+                    "type": "string"
+                },
+                {
+                    "name": "conditions",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "ContainmentEffort",
+            "attributes": [
+                {
+                    "name": "effectiveness",
+                    "type": "string"
+                },
+                {
+                    "name": "challenges",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "SafetyDirectiveIssued",
+            "attributes": [
+                {
+                    "name": "audience",
+                    "type": "string"
+                },
+                {
+                    "name": "message",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "HurstFire",
+            "type": "FireIncident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-08T19:15:00Z",
+                    "value": "Hurst"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-08T19:15:00Z",
+                    "value": "Spreading rapidly"
+                },
+                {
+                    "name": "dateReported",
+                    "time": "2025-01-08T19:15:00Z",
+                    "value": "2025-01-08"
+                }
+            ]
+        },
+        {
+            "id": "LAFD",
+            "type": "FireCrew",
+            "attributes": [
+                {
+                    "name": "department",
+                    "time": "2025-01-08T19:15:00Z",
+                    "value": "Los Angeles City Fire Department"
+                },
+                {
+                    "name": "unitSize",
+                    "time": "2025-01-08T19:15:00Z",
+                    "value": 100
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "FireSpread",
+            "time": "2025-01-08T19:15:00Z",
+            "attributes": [
+                {
+                    "name": "severity",
+                    "value": "high"
+                },
+                {
+                    "name": "conditions",
+                    "value": "strong winds, dry fuels, low humidity"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HurstFire",
+                    "qualifier": "affects"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "ContainmentEffort",
+            "time": "2025-01-08T19:15:00Z",
+            "attributes": [
+                {
+                    "name": "effectiveness",
+                    "value": "challenging"
+                },
+                {
+                    "name": "challenges",
+                    "value": "aggressive fire behavior"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "LAFD",
+                    "qualifier": "conducts"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "SafetyDirectiveIssued",
+            "time": "2025-01-08T19:15:00Z",
+            "attributes": [
+                {
+                    "name": "audience",
+                    "value": "residents"
+                },
+                {
+                    "name": "message",
+                    "value": "remain vigilant and follow directives"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HurstFire",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        }
+    ]
+}

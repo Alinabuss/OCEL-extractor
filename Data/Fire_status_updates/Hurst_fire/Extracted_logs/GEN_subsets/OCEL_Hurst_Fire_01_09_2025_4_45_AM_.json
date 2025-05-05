@@ -1,0 +1,215 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "type": "string"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                },
+                {
+                    "name": "Containment Time",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Firefighter Crew",
+            "attributes": [
+                {
+                    "name": "Agency",
+                    "type": "string"
+                },
+                {
+                    "name": "Role",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Contain Fire",
+            "attributes": [
+                {
+                    "name": "Control Lines Established",
+                    "type": "boolean"
+                },
+                {
+                    "name": "Flare-ups Managed",
+                    "type": "boolean"
+                }
+            ]
+        },
+        {
+            "name": "Reinforce Control Lines",
+            "attributes": [
+                {
+                    "name": "Method",
+                    "type": "string"
+                },
+                {
+                    "name": "Focus Time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hurst Fire",
+            "type": "Fire",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "time": "2025-01-09T04:45:00Z",
+                    "value": "North of the I-210 Foothill Freeway"
+                },
+                {
+                    "name": "Status",
+                    "time": "2025-01-09T04:45:00Z",
+                    "value": "Contained"
+                },
+                {
+                    "name": "Containment Time",
+                    "time": "2025-01-09T04:45:00Z",
+                    "value": "2025-01-09T04:45:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Los Angeles Fire Department",
+            "type": "Firefighter Crew",
+            "attributes": [
+                {
+                    "name": "Agency",
+                    "time": "2025-01-09T04:45:00Z",
+                    "value": "Los Angeles Fire Department"
+                },
+                {
+                    "name": "Role",
+                    "time": "2025-01-09T04:45:00Z",
+                    "value": "Unified Command"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Angeles National Forest",
+            "type": "Firefighter Crew",
+            "attributes": [
+                {
+                    "name": "Agency",
+                    "time": "2025-01-09T04:45:00Z",
+                    "value": "Angeles National Forest"
+                },
+                {
+                    "name": "Role",
+                    "time": "2025-01-09T04:45:00Z",
+                    "value": "Unified Command"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Los Angeles County Fire Department",
+            "type": "Firefighter Crew",
+            "attributes": [
+                {
+                    "name": "Agency",
+                    "time": "2025-01-09T04:45:00Z",
+                    "value": "Los Angeles County Fire Department"
+                },
+                {
+                    "name": "Role",
+                    "time": "2025-01-09T04:45:00Z",
+                    "value": "Unified Command"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Los Angeles County Sheriff",
+            "type": "Firefighter Crew",
+            "attributes": [
+                {
+                    "name": "Agency",
+                    "time": "2025-01-09T04:45:00Z",
+                    "value": "Los Angeles County Sheriff"
+                },
+                {
+                    "name": "Role",
+                    "time": "2025-01-09T04:45:00Z",
+                    "value": "Unified Command"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CAL FIRE",
+            "type": "Firefighter Crew",
+            "attributes": [
+                {
+                    "name": "Agency",
+                    "time": "2025-01-09T04:45:00Z",
+                    "value": "CAL FIRE"
+                },
+                {
+                    "name": "Role",
+                    "time": "2025-01-09T04:45:00Z",
+                    "value": "Unified Command"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Contain Fire",
+            "time": "2025-01-09T04:45:00Z",
+            "attributes": [
+                {
+                    "name": "Control Lines Established",
+                    "value": "true"
+                },
+                {
+                    "name": "Flare-ups Managed",
+                    "value": "true"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "Affects"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Reinforce Control Lines",
+            "time": "2025-01-09T04:45:00Z",
+            "attributes": [
+                {
+                    "name": "Method",
+                    "value": "Strategically using dozer lines"
+                },
+                {
+                    "name": "Focus Time",
+                    "value": "2025-01-09T04:45:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "Affects"
+                }
+            ]
+        }
+    ]
+}

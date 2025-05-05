@@ -1,0 +1,172 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "size_acres",
+                    "type": "number"
+                },
+                {
+                    "name": "containment_percentage",
+                    "type": "number"
+                }
+            ]
+        },
+        {
+            "name": "Department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Fire Reported",
+            "attributes": [
+                {
+                    "name": "time_reported",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Unified Command Established",
+            "attributes": [
+                {
+                    "name": "time_established",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Fire Containment Update",
+            "attributes": [
+                {
+                    "name": "time_updated",
+                    "type": "datetime"
+                },
+                {
+                    "name": "progress_description",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Lidia Fire",
+            "type": "Fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-08T13:08:00Z",
+                    "value": "Soledad Canyon Road, Acton, California"
+                },
+                {
+                    "name": "size_acres",
+                    "time": "2025-01-08T13:08:00Z",
+                    "value": 348
+                },
+                {
+                    "name": "containment_percentage",
+                    "time": "2025-01-08T13:08:00Z",
+                    "value": 60
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Angeles National Forest",
+            "type": "Department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-08T13:08:00Z",
+                    "value": "Angeles National Forest"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Los Angeles County Fire Department",
+            "type": "Department",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-08T13:08:00Z",
+                    "value": "Los Angeles County Fire Department"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Fire Reported",
+            "time": "2025-01-08T13:08:00Z",
+            "attributes": [
+                {
+                    "name": "time_reported",
+                    "value": "2025-01-08T13:08:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lidia Fire",
+                    "qualifier": "reported"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Unified Command Established",
+            "time": "2025-01-08T13:08:00Z",
+            "attributes": [
+                {
+                    "name": "time_established",
+                    "value": "2025-01-08T13:08:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Angeles National Forest",
+                    "qualifier": "command"
+                },
+                {
+                    "objectId": "Los Angeles County Fire Department",
+                    "qualifier": "command"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Fire Containment Update",
+            "time": "2025-01-09T16:38:00Z",
+            "attributes": [
+                {
+                    "name": "time_updated",
+                    "value": "2025-01-09T16:38:00Z"
+                },
+                {
+                    "name": "progress_description",
+                    "value": "Firefighters making significant progress."
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lidia Fire",
+                    "qualifier": "updated"
+                }
+            ]
+        }
+    ]
+}

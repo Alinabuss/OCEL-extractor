@@ -1,0 +1,83 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "type": "string"
+                },
+                {
+                    "name": "Type",
+                    "type": "string"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "FireReported",
+            "attributes": [
+                {
+                    "name": "ReportedTime",
+                    "type": "datetime"
+                },
+                {
+                    "name": "SpreadRate",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "HughesFire",
+            "type": "Fire",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "time": "2025-01-22T12:35:00Z",
+                    "value": "Castaic Lake"
+                },
+                {
+                    "name": "Type",
+                    "time": "2025-01-22T12:35:00Z",
+                    "value": "Vegetation Fire"
+                },
+                {
+                    "name": "Status",
+                    "time": "2025-01-22T12:35:00Z",
+                    "value": "Rapid Spread"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "FireReported",
+            "time": "2025-01-22T12:35:00Z",
+            "attributes": [
+                {
+                    "name": "ReportedTime",
+                    "value": "2025-01-22T12:35:00Z"
+                },
+                {
+                    "name": "SpreadRate",
+                    "value": "Rapid Rate of Spread and Spotting"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HughesFire",
+                    "qualifier": "isReportedFor"
+                }
+            ]
+        }
+    ]
+}

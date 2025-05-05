@@ -14,7 +14,7 @@ def create_train_test_split(dataset_folder, n_train):
     # Create folder structure
     training_dataset_folder = os.path.join(dataset_folder, "Training_data/")
     validation_dataset_folder = os.path.join(dataset_folder, "Validation_data/")
-    test_dataset_folder = os.path.join(dataset_folder, "Test_data/")
+    test_dataset_folder = os.path.join(dataset_folder, "Lilac_fire/")
     os.makedirs(training_dataset_folder, exist_ok=True)
     os.makedirs(validation_dataset_folder, exist_ok=True)
     os.makedirs(test_dataset_folder, exist_ok=True)
@@ -46,7 +46,7 @@ def create_train_test_split(dataset_folder, n_train):
     # Save train and test event logs in OCEL2.0 format
     pm4py.write_ocel2_json(training_ocel, os.path.join(training_dataset_folder, "Training_data.json"))
     pm4py.write_ocel2_json(validation_ocel, os.path.join(validation_dataset_folder, "Validation_data.json"))
-    pm4py.write_ocel2_json(test_ocel, os.path.join(test_dataset_folder, "Test_data.json"))
+    pm4py.write_ocel2_json(test_ocel, os.path.join(test_dataset_folder, "Lilac_fire.json"))
 
     print("Train-Validation-Test-split created.")
 

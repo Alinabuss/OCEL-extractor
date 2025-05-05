@@ -1,0 +1,243 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "fireStatus",
+                    "type": "string"
+                },
+                {
+                    "name": "evacuationStatus",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Firefighter Crew",
+            "attributes": [
+                {
+                    "name": "crewSize",
+                    "type": "integer"
+                },
+                {
+                    "name": "responsibility",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Containment of Fire",
+            "attributes": [
+                {
+                    "name": "controlLinesEstablished",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Flare-up Management",
+            "attributes": [
+                {
+                    "name": "flareUpsManaged",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "Evacuation Order Downgrade",
+            "attributes": [
+                {
+                    "name": "fromEvacuationOrder",
+                    "type": "string"
+                },
+                {
+                    "name": "toEvacuationWarning",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Evacuation Order Lifted",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Safety Advisory Issued",
+            "attributes": [
+                {
+                    "name": "advice",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Red Flag Warning Issued",
+            "attributes": [
+                {
+                    "name": "expirationTime",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "HurstFire2025",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-10T12:14:00Z",
+                    "value": "North of I-210 Foothill Freeway"
+                },
+                {
+                    "name": "fireStatus",
+                    "time": "2025-01-10T12:14:00Z",
+                    "value": "Contained"
+                },
+                {
+                    "name": "evacuationStatus",
+                    "time": "2025-01-10T12:14:00Z",
+                    "value": "Warnings issued"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "FirefighterCrew1",
+            "type": "Firefighter Crew",
+            "attributes": [
+                {
+                    "name": "crewSize",
+                    "time": "2025-01-10T12:14:00Z",
+                    "value": "Unknown"
+                },
+                {
+                    "name": "responsibility",
+                    "time": "2025-01-10T12:14:00Z",
+                    "value": "Managing flare-ups"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Containment of Fire",
+            "time": "2025-01-10T12:14:00Z",
+            "attributes": [
+                {
+                    "name": "controlLinesEstablished",
+                    "value": "To Santa Clara Divide Road"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HurstFire2025",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Flare-up Management",
+            "time": "2025-01-10T12:14:00Z",
+            "attributes": [
+                {
+                    "name": "flareUpsManaged",
+                    "value": "Several"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "FirefighterCrew1",
+                    "qualifier": "performedBy"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Evacuation Order Downgrade",
+            "time": "2025-01-09T15:00:00Z",
+            "attributes": [
+                {
+                    "name": "fromEvacuationOrder",
+                    "value": "Evacuation Orders"
+                },
+                {
+                    "name": "toEvacuationWarning",
+                    "value": "Warnings"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HurstFire2025",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Evacuation Order Lifted",
+            "time": "2025-01-09T15:00:00Z",
+            "attributes": [
+                {
+                    "name": "status",
+                    "value": "Lifted"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HurstFire2025",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "Safety Advisory Issued",
+            "time": "2025-01-10T12:14:00Z",
+            "attributes": [
+                {
+                    "name": "advice",
+                    "value": "Do NOT drink the water"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HurstFire2025",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "type": "Red Flag Warning Issued",
+            "time": "2025-01-10T12:14:00Z",
+            "attributes": [
+                {
+                    "name": "expirationTime",
+                    "value": "2025-01-11T18:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HurstFire2025",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        }
+    ]
+}

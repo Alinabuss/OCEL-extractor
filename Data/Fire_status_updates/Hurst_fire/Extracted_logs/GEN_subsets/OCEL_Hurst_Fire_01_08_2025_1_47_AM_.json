@@ -1,0 +1,190 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "type": "string"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Fire Crew",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "type": "string"
+                },
+                {
+                    "name": "Duty",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Community",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Fire Spreading",
+            "attributes": [
+                {
+                    "name": "Severity",
+                    "type": "string"
+                },
+                {
+                    "name": "Weather Conditions",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Containment Efforts",
+            "attributes": [
+                {
+                    "name": "Status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Warning Issued",
+            "attributes": [
+                {
+                    "name": "Message",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hurst Fire",
+            "type": "Fire",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "time": "2025-01-08T01:47:00Z",
+                    "value": "Hurst"
+                },
+                {
+                    "name": "Status",
+                    "time": "2025-01-08T01:47:00Z",
+                    "value": "Spreading"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Local Authorities",
+            "type": "Fire Crew",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "time": "2025-01-08T01:47:00Z",
+                    "value": "Firefighters"
+                },
+                {
+                    "name": "Duty",
+                    "time": "2025-01-08T01:47:00Z",
+                    "value": "Containment"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Nearby Communities",
+            "type": "Community",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2025-01-08T01:47:00Z",
+                    "value": "Various"
+                },
+                {
+                    "name": "Status",
+                    "time": "2025-01-08T01:47:00Z",
+                    "value": "Vigilant"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Fire Spreading",
+            "time": "2025-01-08T01:47:00Z",
+            "attributes": [
+                {
+                    "name": "Severity",
+                    "value": "High"
+                },
+                {
+                    "name": "Weather Conditions",
+                    "value": "High winds, low humidity"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "affects"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Containment Efforts",
+            "time": "2025-01-08T01:47:00Z",
+            "attributes": [
+                {
+                    "name": "Status",
+                    "value": "Ongoing"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Local Authorities",
+                    "qualifier": "involved in"
+                },
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Warning Issued",
+            "time": "2025-01-08T01:47:00Z",
+            "attributes": [
+                {
+                    "name": "Message",
+                    "value": "Residents urged to remain vigilant"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Nearby Communities",
+                    "qualifier": "warned"
+                }
+            ]
+        }
+    ]
+}

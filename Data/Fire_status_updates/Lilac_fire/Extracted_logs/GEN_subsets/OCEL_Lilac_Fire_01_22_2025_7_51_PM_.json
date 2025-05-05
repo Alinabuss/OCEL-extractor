@@ -1,0 +1,118 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "containment_percentage",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "Repopulation",
+            "attributes": [
+                {
+                    "name": "completion_time",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Fire Containment Status Update",
+            "attributes": [
+                {
+                    "name": "rate_of_spread",
+                    "type": "string"
+                },
+                {
+                    "name": "containment_percentage",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "Repopulation Completion",
+            "attributes": [
+                {
+                    "name": "completion_time",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Lilac Fire",
+            "type": "Fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-22T19:51:00Z",
+                    "value": "Old Highway 395 and Lilac Road"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-22T19:51:00Z",
+                    "value": "100% contained"
+                },
+                {
+                    "name": "containment_percentage",
+                    "time": "2025-01-22T19:51:00Z",
+                    "value": 100
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Fire Containment Status Update",
+            "time": "2025-01-22T19:51:00Z",
+            "attributes": [
+                {
+                    "name": "rate_of_spread",
+                    "value": "stopped"
+                },
+                {
+                    "name": "containment_percentage",
+                    "value": "100"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lilac Fire",
+                    "qualifier": "status_update"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Repopulation Completion",
+            "time": "2025-01-21T20:00:00Z",
+            "attributes": [
+                {
+                    "name": "completion_time",
+                    "value": "2025-01-21T20:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lilac Fire",
+                    "qualifier": "repopulation"
+                }
+            ]
+        }
+    ]
+}

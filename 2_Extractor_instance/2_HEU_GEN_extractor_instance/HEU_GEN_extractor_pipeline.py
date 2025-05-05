@@ -10,7 +10,7 @@ from Collector_subcomponent.Collector_instance import OCEL_heuristic_collector_c
 from Refiner_subcomponent.Refiner_instance import OCEL_generative_refiner_component
 
 # Specify folder-path to dataset
-dataset_folder = "Data/Age_of_empire/Test_data/"
+dataset_folder = "Data/Age_of_empire/Lilac_fire/"
 
 
 # Specify openai-api_key and openai-model OR azure-api_key, azure_endpoint, and azure_model

@@ -1,0 +1,184 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire",
+            "attributes": [
+                {
+                    "name": "fireStatus",
+                    "type": "string"
+                },
+                {
+                    "name": "location",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Department",
+            "attributes": [
+                {
+                    "name": "departmentName",
+                    "type": "string"
+                },
+                {
+                    "name": "departmentType",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Containment Efforts",
+            "attributes": [
+                {
+                    "name": "effortType",
+                    "type": "string"
+                },
+                {
+                    "name": "focus",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Safety Advisory",
+            "attributes": [
+                {
+                    "name": "cautionLevel",
+                    "type": "string"
+                },
+                {
+                    "name": "waterStatus",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hurst Fire",
+            "type": "Fire",
+            "attributes": [
+                {
+                    "name": "fireStatus",
+                    "time": "2025-01-10T19:02:00Z",
+                    "value": "active"
+                },
+                {
+                    "name": "location",
+                    "time": "2025-01-10T19:02:00Z",
+                    "value": "Angeles National Forest"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Los Angeles Department of Water and Power",
+            "type": "Department",
+            "attributes": [
+                {
+                    "name": "departmentName",
+                    "time": "2025-01-10T19:02:00Z",
+                    "value": "Los Angeles Department of Water and Power"
+                },
+                {
+                    "name": "departmentType",
+                    "time": "2025-01-10T19:02:00Z",
+                    "value": "Utility"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Los Angeles County Fire Department",
+            "type": "Department",
+            "attributes": [
+                {
+                    "name": "departmentName",
+                    "time": "2025-01-10T19:02:00Z",
+                    "value": "Los Angeles County Fire Department"
+                },
+                {
+                    "name": "departmentType",
+                    "time": "2025-01-10T19:02:00Z",
+                    "value": "Fire"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Los Angeles Fire Department",
+            "type": "Department",
+            "attributes": [
+                {
+                    "name": "departmentName",
+                    "time": "2025-01-10T19:02:00Z",
+                    "value": "Los Angeles Fire Department"
+                },
+                {
+                    "name": "departmentType",
+                    "time": "2025-01-10T19:02:00Z",
+                    "value": "Fire"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Containment Efforts",
+            "time": "2025-01-10T19:02:00Z",
+            "attributes": [
+                {
+                    "name": "effortType",
+                    "value": "securing containment lines"
+                },
+                {
+                    "name": "focus",
+                    "value": "public safety and structure protection"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "affects"
+                },
+                {
+                    "objectId": "Los Angeles County Fire Department",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "Los Angeles Fire Department",
+                    "qualifier": "involved"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Safety Advisory",
+            "time": "2025-01-10T19:02:00Z",
+            "attributes": [
+                {
+                    "name": "cautionLevel",
+                    "value": "extreme"
+                },
+                {
+                    "name": "waterStatus",
+                    "value": "do not drink"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "affects"
+                },
+                {
+                    "objectId": "Los Angeles Department of Water and Power",
+                    "qualifier": "advising"
+                }
+            ]
+        }
+    ]
+}

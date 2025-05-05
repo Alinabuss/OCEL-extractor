@@ -9,6 +9,7 @@ def OCEL_collector_using_LLM(report_folder, filename,  saving_folder, level, cli
         text = file.read()
 
     extraction_request = """You will now receive a texutal description. Please extract event logs in the OCEL2.0 format from this textual description and return ONLY the log in OCEL2.0-json-format.
+                       Be precise in the event names about what happened and don't give them only general names such as 'Update'. 
                        An example of an log in OCEL2.0 json format is provided in your knowledge base."""
 
     # Append the date and chunk descriptions to the summary_request string
@@ -37,8 +38,9 @@ def OCEL_collector_using_LLM(report_folder, filename,  saving_folder, level, cli
         if messages[0].content and len(messages[0].content) > 0:
             if hasattr(messages[0].content[0], 'text'):
                 message_content = messages[0].content[0].text.value
+                cleaned_content = re.sub(r"^```json|```$", "", message_content.strip())
 
-                ocel_log = json.loads(message_content)
+                ocel_log = json.loads(cleaned_content)
 
                 # Construct output filename based on the event_id
                 if level == 'event':

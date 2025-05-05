@@ -1,0 +1,260 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Aircraft",
+            "attributes": [
+                {
+                    "name": "type",
+                    "type": "string"
+                },
+                {
+                    "name": "operation_hours",
+                    "type": "float"
+                },
+                {
+                    "name": "water_dropped",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Firefighter",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "unit",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Air Attack",
+            "attributes": [
+                {
+                    "name": "maffs_flew",
+                    "type": "integer"
+                },
+                {
+                    "name": "water_dropped",
+                    "type": "float"
+                },
+                {
+                    "name": "retardant_dropped",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Control Line Reinforcement",
+            "attributes": [
+                {
+                    "name": "community",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Fire Behavior Update",
+            "attributes": [
+                {
+                    "name": "expected_behavior",
+                    "type": "string"
+                },
+                {
+                    "name": "warnings",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hughes Fire",
+            "type": "Fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-23T09:48:00Z",
+                    "value": "Castaic"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-23T09:48:00Z",
+                    "value": "active"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "MAFFS",
+            "type": "Aircraft",
+            "attributes": [
+                {
+                    "name": "type",
+                    "time": "2025-01-23T09:48:00Z",
+                    "value": "Modular Airborne Firefighting Systems"
+                },
+                {
+                    "name": "operation_hours",
+                    "time": "2025-01-23T09:48:00Z",
+                    "value": "11.1"
+                },
+                {
+                    "name": "retardant_dropped",
+                    "time": "2025-01-23T09:48:00Z",
+                    "value": "30678"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CAL_FIRE_HAWK_1",
+            "type": "Aircraft",
+            "attributes": [
+                {
+                    "name": "type",
+                    "time": "2025-01-23T09:48:00Z",
+                    "value": "CAL FIRE HAWK"
+                },
+                {
+                    "name": "operation_hours",
+                    "time": "2025-01-23T09:48:00Z",
+                    "value": "5.1"
+                },
+                {
+                    "name": "water_dropped",
+                    "time": "2025-01-23T09:48:00Z",
+                    "value": "80000"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CAL_FIRE_HAWK_2",
+            "type": "Aircraft",
+            "attributes": [
+                {
+                    "name": "type",
+                    "time": "2025-01-23T09:48:00Z",
+                    "value": "CAL FIRE HAWK"
+                },
+                {
+                    "name": "operation_hours",
+                    "time": "2025-01-23T09:48:00Z",
+                    "value": "4.4"
+                },
+                {
+                    "name": "water_dropped",
+                    "time": "2025-01-23T09:48:00Z",
+                    "value": "80000"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CAL_FIRE_HAWK_3",
+            "type": "Aircraft",
+            "attributes": [
+                {
+                    "name": "type",
+                    "time": "2025-01-23T09:48:00Z",
+                    "value": "CAL FIRE HAWK"
+                },
+                {
+                    "name": "operation_hours",
+                    "time": "2025-01-23T09:48:00Z",
+                    "value": "5"
+                },
+                {
+                    "name": "water_dropped",
+                    "time": "2025-01-23T09:48:00Z",
+                    "value": "33000"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Air Attack",
+            "time": "2025-01-23T09:48:00Z",
+            "attributes": [
+                {
+                    "name": "maffs_flew",
+                    "value": "8"
+                },
+                {
+                    "name": "retardant_dropped",
+                    "value": "30678"
+                },
+                {
+                    "name": "water_dropped",
+                    "value": "80000"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "MAFFS",
+                    "qualifier": "performed"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Control Line Reinforcement",
+            "time": "2025-01-23T09:48:00Z",
+            "attributes": [
+                {
+                    "name": "community",
+                    "value": "Castaic"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "involved"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Fire Behavior Update",
+            "time": "2025-01-23T09:48:00Z",
+            "attributes": [
+                {
+                    "name": "expected_behavior",
+                    "value": "extreme fire behavior"
+                },
+                {
+                    "name": "warnings",
+                    "value": "red flag warning until 10:00 AM, high wind warning until 6:00 PM"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "related"
+                }
+            ]
+        }
+    ]
+}

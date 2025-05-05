@@ -1,0 +1,156 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Fire Crew",
+            "attributes": [
+                {
+                    "name": "department",
+                    "type": "string"
+                },
+                {
+                    "name": "role",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Fire Spread",
+            "attributes": [
+                {
+                    "name": "fireBehavior",
+                    "type": "string"
+                },
+                {
+                    "name": "urgentAdvisory",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Containment Effort",
+            "attributes": [
+                {
+                    "name": "effortDescription",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Public Advisory",
+            "attributes": [
+                {
+                    "name": "advisoryMessage",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hurst Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-08T17:15:00Z",
+                    "value": "Hurst"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-08T17:15:00Z",
+                    "value": "Spreading Rapidly"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Los Angeles City Fire Department",
+            "type": "Fire Crew",
+            "attributes": [
+                {
+                    "name": "department",
+                    "time": "2025-01-08T17:15:00Z",
+                    "value": "Los Angeles City Fire Department"
+                },
+                {
+                    "name": "role",
+                    "time": "2025-01-08T17:15:00Z",
+                    "value": "Firefighting"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Fire Spread",
+            "time": "2025-01-08T17:15:00Z",
+            "attributes": [
+                {
+                    "name": "fireBehavior",
+                    "value": "Aggressive due to high winds and dry fuels"
+                },
+                {
+                    "name": "urgentAdvisory",
+                    "value": "Residents urged to remain vigilant"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "affects"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Containment Effort",
+            "time": "2025-01-08T17:15:00Z",
+            "attributes": [
+                {
+                    "name": "effortDescription",
+                    "value": "Fire crews working tirelessly to contain the fire"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Los Angeles City Fire Department",
+                    "qualifier": "performing"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Public Advisory",
+            "time": "2025-01-08T17:15:00Z",
+            "attributes": [
+                {
+                    "name": "advisoryMessage",
+                    "value": "Follow directives from local authorities"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ]
+}

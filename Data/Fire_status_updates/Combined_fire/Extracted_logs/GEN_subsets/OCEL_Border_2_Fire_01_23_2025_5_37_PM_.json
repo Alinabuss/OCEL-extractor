@@ -1,0 +1,138 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Infrastructure",
+            "attributes": [
+                {
+                    "name": "type",
+                    "type": "string"
+                },
+                {
+                    "name": "location",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Firefighter Response",
+            "attributes": [
+                {
+                    "name": "action",
+                    "type": "string"
+                },
+                {
+                    "name": "time",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Threat Assessment",
+            "attributes": [
+                {
+                    "name": "threat_level",
+                    "type": "string"
+                },
+                {
+                    "name": "time",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Border 2 Fire",
+            "type": "Fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-23T17:37:00Z",
+                    "value": "Otay Mountain Truck Trail"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-23T17:37:00Z",
+                    "value": "vegetation fire"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Otay Mountain Repeater Site",
+            "type": "Infrastructure",
+            "attributes": [
+                {
+                    "name": "type",
+                    "time": "2025-01-23T17:37:00Z",
+                    "value": "communication"
+                },
+                {
+                    "name": "location",
+                    "time": "2025-01-23T17:37:00Z",
+                    "value": "Otay Mountain"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Firefighter Response",
+            "time": "2025-01-23T17:37:00Z",
+            "attributes": [
+                {
+                    "name": "action",
+                    "value": "Firefighters arrived on scene"
+                },
+                {
+                    "name": "time",
+                    "value": "2025-01-23T17:37:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Border 2 Fire",
+                    "qualifier": "affects"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Threat Assessment",
+            "time": "2025-01-23T17:37:00Z",
+            "attributes": [
+                {
+                    "name": "threat_level",
+                    "value": "critical infrastructure threatened"
+                },
+                {
+                    "name": "time",
+                    "value": "2025-01-23T17:37:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Otay Mountain Repeater Site",
+                    "qualifier": "threatened by"
+                }
+            ]
+        }
+    ]
+}

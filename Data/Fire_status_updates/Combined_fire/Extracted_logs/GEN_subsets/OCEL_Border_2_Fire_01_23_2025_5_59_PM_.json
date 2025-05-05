@@ -1,0 +1,152 @@
+{
+    "objectTypes": [
+        {
+            "name": "fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "threat",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "firefighter",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "infrastructure",
+            "attributes": [
+                {
+                    "name": "type",
+                    "type": "string"
+                },
+                {
+                    "name": "location",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "fire reported",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "firefighter on scene",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "infrastructure threatened",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Border_2_Fire",
+            "type": "fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-23T17:59:00Z",
+                    "value": "Otay Mountain Truck Trail"
+                },
+                {
+                    "name": "threat",
+                    "time": "2025-01-23T17:59:00Z",
+                    "value": "critical communication infrastructure"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Otay_Mountain_Repeater_Site",
+            "type": "infrastructure",
+            "attributes": [
+                {
+                    "name": "type",
+                    "time": "2025-01-23T17:59:00Z",
+                    "value": "communication"
+                },
+                {
+                    "name": "location",
+                    "time": "2025-01-23T17:59:00Z",
+                    "value": "Otay Mountain"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "fire reported",
+            "time": "2025-01-23T17:59:00Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2025-01-23T17:59:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Border_2_Fire",
+                    "qualifier": "reported"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "firefighter on scene",
+            "time": "2025-01-23T17:59:00Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2025-01-23T17:59:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": 3,
+            "type": "infrastructure threatened",
+            "time": "2025-01-23T17:59:00Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2025-01-23T17:59:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Otay_Mountain_Repeater_Site",
+                    "qualifier": "threatened by"
+                }
+            ]
+        }
+    ]
+}

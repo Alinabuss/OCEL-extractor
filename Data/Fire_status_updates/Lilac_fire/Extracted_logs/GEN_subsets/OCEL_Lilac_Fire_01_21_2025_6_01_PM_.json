@@ -1,0 +1,127 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "type": "string"
+                },
+                {
+                    "name": "Date",
+                    "type": "string"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Containment Line Built",
+            "attributes": [
+                {
+                    "name": "Date",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Hotspot Extinguished",
+            "attributes": [
+                {
+                    "name": "Date",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Fire Spread Stopped",
+            "attributes": [
+                {
+                    "name": "Date",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Lilac Fire",
+            "type": "Fire",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "time": "2025-01-21T18:01:00Z",
+                    "value": "Old Highway 395 and Lilac Road"
+                },
+                {
+                    "name": "Date",
+                    "time": "2025-01-21T18:01:00Z",
+                    "value": "2025-01-21"
+                },
+                {
+                    "name": "Status",
+                    "time": "2025-01-21T18:01:00Z",
+                    "value": "Containment lines being built and hotspots being extinguished"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Fire Spread Stopped",
+            "time": "2025-01-21T18:01:00Z",
+            "attributes": [
+                {
+                    "name": "Date",
+                    "value": "2025-01-21"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lilac Fire",
+                    "qualifier": "affects"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Containment Line Built",
+            "time": "2025-01-21T18:01:00Z",
+            "attributes": [
+                {
+                    "name": "Date",
+                    "value": "2025-01-21"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lilac Fire",
+                    "qualifier": "affects"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Hotspot Extinguished",
+            "time": "2025-01-21T18:01:00Z",
+            "attributes": [
+                {
+                    "name": "Date",
+                    "value": "2025-01-21"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lilac Fire",
+                    "qualifier": "affects"
+                }
+            ]
+        }
+    ]
+}

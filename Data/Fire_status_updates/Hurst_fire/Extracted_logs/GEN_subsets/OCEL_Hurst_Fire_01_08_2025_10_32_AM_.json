@@ -1,0 +1,177 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "threatLevel",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "FireCrew",
+            "attributes": [
+                {
+                    "name": "effort",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Community",
+            "attributes": [
+                {
+                    "name": "alertLevel",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "FireSpreading",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "windCondition",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "ContainmentEffort",
+            "attributes": [
+                {
+                    "name": "actionTaken",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "CommunityAlert",
+            "attributes": [
+                {
+                    "name": "directive",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "HurstFire",
+            "type": "Fire",
+            "attributes": [
+                {
+                    "name": "status",
+                    "time": "2025-01-08T10:32:00Z",
+                    "value": "spreading rapidly"
+                },
+                {
+                    "name": "threatLevel",
+                    "time": "2025-01-08T10:32:00Z",
+                    "value": "high"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "FireCrews",
+            "type": "FireCrew",
+            "attributes": [
+                {
+                    "name": "effort",
+                    "time": "2025-01-08T10:32:00Z",
+                    "value": "working tirelessly to contain fire"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HurstFire",
+                    "qualifier": "responding to"
+                }
+            ]
+        },
+        {
+            "id": "NearbyCommunities",
+            "type": "Community",
+            "attributes": [
+                {
+                    "name": "alertLevel",
+                    "time": "2025-01-08T10:32:00Z",
+                    "value": "high"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "FireSpreading",
+            "time": "2025-01-08T10:32:00Z",
+            "attributes": [
+                {
+                    "name": "location",
+                    "value": "Hurst"
+                },
+                {
+                    "name": "windCondition",
+                    "value": "high winds"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HurstFire",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "ContainmentEffort",
+            "time": "2025-01-08T10:32:00Z",
+            "attributes": [
+                {
+                    "name": "actionTaken",
+                    "value": "contain fire and protect infrastructure"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "FireCrews",
+                    "qualifier": "conducting"
+                },
+                {
+                    "objectId": "HurstFire",
+                    "qualifier": "affecting"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "CommunityAlert",
+            "time": "2025-01-08T10:32:00Z",
+            "attributes": [
+                {
+                    "name": "directive",
+                    "value": "remain vigilant and follow directives from local authorities"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "NearbyCommunities",
+                    "qualifier": "alerted to"
+                }
+            ]
+        }
+    ]
+}

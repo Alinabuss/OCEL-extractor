@@ -1,0 +1,265 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Evacuation Order",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "time",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Firefighter Crew",
+            "attributes": [
+                {
+                    "name": "crew_id",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Fire Containment",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "time",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Flare-up Management",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "time",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Evacuation Order Updated",
+            "attributes": [
+                {
+                    "name": "new_status",
+                    "type": "string"
+                },
+                {
+                    "name": "time",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Caution Advisory Issued",
+            "attributes": [
+                {
+                    "name": "advice",
+                    "type": "string"
+                },
+                {
+                    "name": "time",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Red Flag Warning Issued",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "string"
+                },
+                {
+                    "name": "expiry_time",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hurst Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-09T15:56:00Z",
+                    "value": "North of the I-210 Foothill Freeway"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-09T15:56:00Z",
+                    "value": "Contained"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Los Angeles Department of Water and Power",
+            "type": "Evacuation Order",
+            "attributes": [
+                {
+                    "name": "status",
+                    "time": "2025-01-09T15:00:00Z",
+                    "value": "Warnings lifted"
+                },
+                {
+                    "name": "time",
+                    "time": "2025-01-09T15:00:00Z",
+                    "value": "2025-01-09T15:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Firefighter Crew 1",
+            "type": "Firefighter Crew",
+            "attributes": [
+                {
+                    "name": "crew_id",
+                    "time": "2025-01-09T15:56:00Z",
+                    "value": "Crew 1"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-09T15:56:00Z",
+                    "value": "Active"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Fire Containment",
+            "time": "2025-01-09T15:56:00Z",
+            "attributes": [
+                {
+                    "name": "location",
+                    "value": "North of the I-210 Foothill Freeway"
+                },
+                {
+                    "name": "time",
+                    "value": "2025-01-09T15:56:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "affected"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Flare-up Management",
+            "time": "2025-01-09T15:56:00Z",
+            "attributes": [
+                {
+                    "name": "location",
+                    "value": "Within fire's perimeter"
+                },
+                {
+                    "name": "time",
+                    "value": "2025-01-09T15:56:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "affected"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Evacuation Order Updated",
+            "time": "2025-01-09T15:00:00Z",
+            "attributes": [
+                {
+                    "name": "new_status",
+                    "value": "Warnings downgraded"
+                },
+                {
+                    "name": "time",
+                    "value": "2025-01-09T15:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Los Angeles Department of Water and Power",
+                    "qualifier": "updated"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Caution Advisory Issued",
+            "time": "2025-01-09T15:56:00Z",
+            "attributes": [
+                {
+                    "name": "advice",
+                    "value": "Do not drink the water"
+                },
+                {
+                    "name": "time",
+                    "value": "2025-01-09T15:56:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "advisory"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "Red Flag Warning Issued",
+            "time": "2025-01-09T15:56:00Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2025-01-09T15:56:00Z"
+                },
+                {
+                    "name": "expiry_time",
+                    "value": "2025-01-09T18:00:00Z"
+                }
+            ],
+            "relationships": []
+        }
+    ]
+}

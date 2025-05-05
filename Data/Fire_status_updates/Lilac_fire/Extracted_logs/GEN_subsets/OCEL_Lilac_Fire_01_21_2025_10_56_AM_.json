@@ -1,0 +1,74 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "type": "string"
+                },
+                {
+                    "name": "Containment Percentage",
+                    "type": "number"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Fire Containment Update",
+            "attributes": [
+                {
+                    "name": "Forward Rate of Spread Stopped",
+                    "type": "boolean"
+                },
+                {
+                    "name": "Hotspot Extinguishment",
+                    "type": "boolean"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Lilac Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "time": "2025-01-21T10:56:00Z",
+                    "value": "near Old Highway 395 and Lilac Road"
+                },
+                {
+                    "name": "Containment Percentage",
+                    "time": "2025-01-21T10:56:00Z",
+                    "value": 30
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Fire Containment Update",
+            "time": "2025-01-21T10:56:00Z",
+            "attributes": [
+                {
+                    "name": "Forward Rate of Spread Stopped",
+                    "value": "true"
+                },
+                {
+                    "name": "Hotspot Extinguishment",
+                    "value": "true"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lilac Fire",
+                    "qualifier": "is associated with"
+                }
+            ]
+        }
+    ]
+}

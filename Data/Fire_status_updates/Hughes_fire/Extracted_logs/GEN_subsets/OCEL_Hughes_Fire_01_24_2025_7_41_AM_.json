@@ -1,0 +1,233 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Status",
+                    "type": "string"
+                },
+                {
+                    "name": "Location",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Community",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Protection Status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Initial Attack",
+            "attributes": [
+                {
+                    "name": "Date",
+                    "type": "date"
+                },
+                {
+                    "name": "Method",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Containment Operations",
+            "attributes": [
+                {
+                    "name": "Date",
+                    "type": "date"
+                },
+                {
+                    "name": "Technique",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Response to Spot Fire",
+            "attributes": [
+                {
+                    "name": "Date",
+                    "type": "date"
+                },
+                {
+                    "name": "Affected Area (acres)",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "Overnight Patrol",
+            "attributes": [
+                {
+                    "name": "Date",
+                    "type": "date"
+                },
+                {
+                    "name": "Activity",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hughes_Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Status",
+                    "time": "2025-01-24T07:41:00Z",
+                    "value": "Highly Controlled"
+                },
+                {
+                    "name": "Location",
+                    "time": "2025-01-24T07:41:00Z",
+                    "value": "Castaic, Santa Clarita"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Castaic",
+            "type": "Community",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2025-01-24T07:41:00Z",
+                    "value": "Castaic"
+                },
+                {
+                    "name": "Protection Status",
+                    "time": "2025-01-24T07:41:00Z",
+                    "value": "Under Protection"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes_Fire",
+                    "qualifier": "Located Near"
+                }
+            ]
+        },
+        {
+            "id": "Santa_Clarita",
+            "type": "Community",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2025-01-24T07:41:00Z",
+                    "value": "Santa Clarita"
+                },
+                {
+                    "name": "Protection Status",
+                    "time": "2025-01-24T07:41:00Z",
+                    "value": "Under Protection"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes_Fire",
+                    "qualifier": "Located Near"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Initial Attack",
+            "time": "2025-01-23T00:00:00Z",
+            "attributes": [
+                {
+                    "name": "Date",
+                    "value": "2025-01-23"
+                },
+                {
+                    "name": "Method",
+                    "value": "Direct and Indirect Containment Techniques"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes_Fire",
+                    "qualifier": "Related To"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Containment Operations",
+            "time": "2025-01-23T00:00:00Z",
+            "attributes": [
+                {
+                    "name": "Date",
+                    "value": "2025-01-23"
+                },
+                {
+                    "name": "Technique",
+                    "value": "Direct and Indirect Containment"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes_Fire",
+                    "qualifier": "Related To"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Response to Spot Fire",
+            "time": "2025-01-23T00:00:00Z",
+            "attributes": [
+                {
+                    "name": "Date",
+                    "value": "2025-01-23"
+                },
+                {
+                    "name": "Affected Area (acres)",
+                    "value": 100
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes_Fire",
+                    "qualifier": "Related To"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Overnight Patrol",
+            "time": "2025-01-23T00:00:00Z",
+            "attributes": [
+                {
+                    "name": "Date",
+                    "value": "2025-01-23"
+                },
+                {
+                    "name": "Activity",
+                    "value": "Improving fire line, performing tactical patrols, mopping up hot spots"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes_Fire",
+                    "qualifier": "Related To"
+                }
+            ]
+        }
+    ]
+}

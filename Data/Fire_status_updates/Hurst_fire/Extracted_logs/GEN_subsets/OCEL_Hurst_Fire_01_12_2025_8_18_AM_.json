@@ -1,0 +1,157 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "date",
+                    "type": "date"
+                },
+                {
+                    "name": "time",
+                    "type": "time"
+                }
+            ]
+        },
+        {
+            "name": "Agency",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "jurisdiction",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Containment Efforts Ongoing",
+            "attributes": [
+                {
+                    "name": "focus",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Public Safety Advisory",
+            "attributes": [
+                {
+                    "name": "advice",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hurst Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-12T08:18:00Z",
+                    "value": "Angeles National Forest"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-12T08:18:00Z",
+                    "value": "Ongoing"
+                },
+                {
+                    "name": "date",
+                    "time": "2025-01-12T08:18:00Z",
+                    "value": "2025-01-12"
+                },
+                {
+                    "name": "time",
+                    "time": "2025-01-12T08:18:00Z",
+                    "value": "08:18 AM"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Los Angeles County Fire Department",
+            "type": "Agency",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-12T08:18:00Z",
+                    "value": "Los Angeles County Fire Department"
+                },
+                {
+                    "name": "jurisdiction",
+                    "time": "2025-01-12T08:18:00Z",
+                    "value": "County"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Los Angeles City Fire Department",
+            "type": "Agency",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-12T08:18:00Z",
+                    "value": "Los Angeles City Fire Department"
+                },
+                {
+                    "name": "jurisdiction",
+                    "time": "2025-01-12T08:18:00Z",
+                    "value": "City"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Containment Efforts Ongoing",
+            "time": "2025-01-12T08:18:00Z",
+            "attributes": [
+                {
+                    "name": "focus",
+                    "value": "building and improving containment lines"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Public Safety Advisory",
+            "time": "2025-01-12T08:18:00Z",
+            "attributes": [
+                {
+                    "name": "advice",
+                    "value": "Residents returning home are advised to use extreme caution"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ]
+}

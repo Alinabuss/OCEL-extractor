@@ -1,0 +1,83 @@
+{
+    "objectTypes": [
+        {
+            "name": "FireIncident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "reportTime",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "FireReported",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "spreadRate",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "HughesFire",
+            "type": "FireIncident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-22T11:43:00Z",
+                    "value": "Castaic Lake"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-22T11:43:00Z",
+                    "value": "rapid rate of spread and spotting"
+                },
+                {
+                    "name": "reportTime",
+                    "time": "2025-01-22T11:43:00Z",
+                    "value": "2025-01-22T11:43:00Z"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "FireReported",
+            "time": "2025-01-22T11:43:00Z",
+            "attributes": [
+                {
+                    "name": "location",
+                    "value": "Castaic Lake"
+                },
+                {
+                    "name": "spreadRate",
+                    "value": "rapid"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HughesFire",
+                    "qualifier": "reportedIn"
+                }
+            ]
+        }
+    ]
+}

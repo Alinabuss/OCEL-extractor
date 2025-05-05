@@ -1,0 +1,173 @@
+{
+    "objectTypes": [
+        {
+            "name": "fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "dateReported",
+                    "type": "datetime"
+                },
+                {
+                    "name": "fireSeverity",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "community",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "populationDensity",
+                    "type": "integer"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "fire_spread",
+            "attributes": [
+                {
+                    "name": "windSpeed",
+                    "type": "integer"
+                },
+                {
+                    "name": "humidity",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "fire_containment_efforts",
+            "attributes": [
+                {
+                    "name": "crewCount",
+                    "type": "integer"
+                },
+                {
+                    "name": "infrastructureThreatened",
+                    "type": "boolean"
+                }
+            ]
+        },
+        {
+            "name": "resident_alert",
+            "attributes": [
+                {
+                    "name": "alertMessage",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hurst Fire",
+            "type": "fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-08T01:49:00Z",
+                    "value": "Hurst"
+                },
+                {
+                    "name": "dateReported",
+                    "time": "2025-01-08T01:49:00Z",
+                    "value": "2025-01-08T01:49:00Z"
+                },
+                {
+                    "name": "fireSeverity",
+                    "time": "2025-01-08T01:49:00Z",
+                    "value": "high"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Nearby Community",
+            "type": "community",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-08T01:49:00Z",
+                    "value": "Nearby Community"
+                },
+                {
+                    "name": "populationDensity",
+                    "time": "2025-01-08T01:49:00Z",
+                    "value": 5000
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "fire_spread",
+            "time": "2025-01-08T01:49:00Z",
+            "attributes": [
+                {
+                    "name": "windSpeed",
+                    "value": 30
+                },
+                {
+                    "name": "humidity",
+                    "value": 10
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "is causing"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "fire_containment_efforts",
+            "time": "2025-01-08T01:49:00Z",
+            "attributes": [
+                {
+                    "name": "crewCount",
+                    "value": 100
+                },
+                {
+                    "name": "infrastructureThreatened",
+                    "value": true
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "is being contained"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "resident_alert",
+            "time": "2025-01-08T01:49:00Z",
+            "attributes": [
+                {
+                    "name": "alertMessage",
+                    "value": "Residents are urged to remain vigilant."
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Nearby Community",
+                    "qualifier": "is alerted"
+                }
+            ]
+        }
+    ]
+}

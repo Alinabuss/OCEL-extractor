@@ -1,0 +1,192 @@
+{
+    "objectTypes": [
+        {
+            "name": "fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "firefighter",
+            "attributes": [
+                {
+                    "name": "crew_id",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "fire_containment",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "control_lines",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "flare_up_management",
+            "attributes": [
+                {
+                    "name": "managed_flare_ups",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "evacuation_order_update",
+            "attributes": [
+                {
+                    "name": "order_status",
+                    "type": "string"
+                },
+                {
+                    "name": "time_updated",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "water_advisory",
+            "attributes": [
+                {
+                    "name": "warning_message",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "red_flag_warning",
+            "attributes": [
+                {
+                    "name": "end_time",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "HurstFire",
+            "type": "fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-09T20:19:00Z",
+                    "value": "north of the I-210 Foothill Freeway"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-09T20:19:00Z",
+                    "value": "successfully contained"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "FirefighterCrew",
+            "type": "firefighter",
+            "attributes": [
+                {
+                    "name": "crew_id",
+                    "time": "2025-01-09T20:19:00Z",
+                    "value": "Crew A"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "fire_containment",
+            "time": "2025-01-09T20:19:00Z",
+            "attributes": [
+                {
+                    "name": "location",
+                    "value": "north of the I-210 Foothill Freeway"
+                },
+                {
+                    "name": "control_lines",
+                    "value": "Santa Clara Divide Road"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HurstFire",
+                    "qualifier": "contained"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "flare_up_management",
+            "time": "2025-01-09T20:19:00Z",
+            "attributes": [
+                {
+                    "name": "managed_flare_ups",
+                    "value": "several"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "FirefighterCrew",
+                    "qualifier": "managed"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "evacuation_order_update",
+            "time": "2025-01-09T15:00:00Z",
+            "attributes": [
+                {
+                    "name": "order_status",
+                    "value": "downgraded to warnings and lifted"
+                },
+                {
+                    "name": "time_updated",
+                    "value": "2025-01-09T15:00:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": 4,
+            "type": "water_advisory",
+            "time": "2025-01-09T20:19:00Z",
+            "attributes": [
+                {
+                    "name": "warning_message",
+                    "value": "Residents advised to NOT drink the water until further notice"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": 5,
+            "type": "red_flag_warning",
+            "time": "2025-01-09T20:19:00Z",
+            "attributes": [
+                {
+                    "name": "end_time",
+                    "value": "2025-01-11T18:00:00Z"
+                }
+            ],
+            "relationships": []
+        }
+    ]
+}

@@ -1,0 +1,266 @@
+{
+    "objectTypes": [
+        {
+            "name": "Firefighter",
+            "attributes": [
+                {
+                    "name": "role",
+                    "type": "string"
+                },
+                {
+                    "name": "location",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Aircraft",
+            "attributes": [
+                {
+                    "name": "type",
+                    "type": "string"
+                },
+                {
+                    "name": "capacity",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Fire",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Community",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "protectionLevel",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Aggressive Firefighting",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "type": "float"
+                },
+                {
+                    "name": "gallonsDropped",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Establish Control Lines",
+            "attributes": [
+                {
+                    "name": "flank",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Stage Fire Engines",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Firefighter",
+            "type": "Firefighter",
+            "attributes": [
+                {
+                    "name": "role",
+                    "time": "2025-01-23T08:45:00Z",
+                    "value": "Firefighter"
+                },
+                {
+                    "name": "location",
+                    "time": "2025-01-23T08:45:00Z",
+                    "value": "Hughes Fire"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "MAFFS",
+            "type": "Aircraft",
+            "attributes": [
+                {
+                    "name": "type",
+                    "time": "2025-01-23T08:45:00Z",
+                    "value": "Modular Airborne Firefighting Systems"
+                },
+                {
+                    "name": "capacity",
+                    "time": "2025-01-23T08:45:00Z",
+                    "value": 30678
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CAL FIRE HAWK",
+            "type": "Aircraft",
+            "attributes": [
+                {
+                    "name": "type",
+                    "time": "2025-01-23T08:45:00Z",
+                    "value": "CAL FIRE HAWK"
+                },
+                {
+                    "name": "capacity",
+                    "time": "2025-01-23T08:45:00Z",
+                    "value": 80000
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Hughes Fire",
+            "type": "Fire",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-23T08:45:00Z",
+                    "value": "Hughes Fire"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-23T08:45:00Z",
+                    "value": "Active"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Castaic",
+            "type": "Community",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-23T08:45:00Z",
+                    "value": "Castaic"
+                },
+                {
+                    "name": "protectionLevel",
+                    "time": "2025-01-23T08:45:00Z",
+                    "value": "High"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Aggressive Firefighting",
+            "time": "2025-01-23T08:45:00Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": 11.1
+                },
+                {
+                    "name": "gallonsDropped",
+                    "value": 30678
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "MAFFS",
+                    "qualifier": "utilized"
+                },
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "targeted"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Aggressive Firefighting",
+            "time": "2025-01-23T08:45:00Z",
+            "attributes": [
+                {
+                    "name": "duration",
+                    "value": 5.1
+                },
+                {
+                    "name": "gallonsDropped",
+                    "value": 80000
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "CAL FIRE HAWK",
+                    "qualifier": "utilized"
+                },
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "targeted"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Establish Control Lines",
+            "time": "2025-01-23T08:45:00Z",
+            "attributes": [
+                {
+                    "name": "flank",
+                    "value": "All Flanks"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "affected"
+                },
+                {
+                    "objectId": "Firefighter",
+                    "qualifier": "involved"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Stage Fire Engines",
+            "time": "2025-01-23T08:45:00Z",
+            "attributes": [
+                {
+                    "name": "location",
+                    "value": "Castaic"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Castaic",
+                    "qualifier": "community"
+                }
+            ]
+        }
+    ]
+}

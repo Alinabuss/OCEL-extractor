@@ -1,0 +1,275 @@
+{
+    "objectTypes": [
+        {
+            "name": "FireIncident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "commandAgency",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "RespondingAgency",
+            "attributes": [
+                {
+                    "name": "agencyName",
+                    "type": "string"
+                },
+                {
+                    "name": "agencyType",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "FireIncidentStarted",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "timestamp"
+                },
+                {
+                    "name": "incidentDetails",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "AgenciesResponding",
+            "attributes": [
+                {
+                    "name": "respondingAgency",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "HughesFire",
+            "type": "FireIncident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-22T15:05:00Z",
+                    "value": "off Lake Hughes Rd North of Castaic Reservoir Rd, Castaic"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-22T15:05:00Z",
+                    "value": "ongoing"
+                },
+                {
+                    "name": "commandAgency",
+                    "time": "2025-01-22T15:05:00Z",
+                    "value": "U.S. Forest Service and Los Angeles County Fire Department"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "AngelesNationalForest",
+            "type": "RespondingAgency",
+            "attributes": [
+                {
+                    "name": "agencyName",
+                    "time": "2025-01-22T15:05:00Z",
+                    "value": "Angeles National Forest"
+                },
+                {
+                    "name": "agencyType",
+                    "time": "2025-01-22T15:05:00Z",
+                    "value": "Federal"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CALFIRE",
+            "type": "RespondingAgency",
+            "attributes": [
+                {
+                    "name": "agencyName",
+                    "time": "2025-01-22T15:05:00Z",
+                    "value": "CAL FIRE"
+                },
+                {
+                    "name": "agencyType",
+                    "time": "2025-01-22T15:05:00Z",
+                    "value": "State"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "LosAngelesCountyFireDepartment",
+            "type": "RespondingAgency",
+            "attributes": [
+                {
+                    "name": "agencyName",
+                    "time": "2025-01-22T15:05:00Z",
+                    "value": "Los Angeles County Fire Department"
+                },
+                {
+                    "name": "agencyType",
+                    "time": "2025-01-22T15:05:00Z",
+                    "value": "Local"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "LACountySheriff",
+            "type": "RespondingAgency",
+            "attributes": [
+                {
+                    "name": "agencyName",
+                    "time": "2025-01-22T15:05:00Z",
+                    "value": "LA County Sheriff"
+                },
+                {
+                    "name": "agencyType",
+                    "time": "2025-01-22T15:05:00Z",
+                    "value": "Local"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CaliforniaHighwayPatrol",
+            "type": "RespondingAgency",
+            "attributes": [
+                {
+                    "name": "agencyName",
+                    "time": "2025-01-22T15:05:00Z",
+                    "value": "California Highway Patrol"
+                },
+                {
+                    "name": "agencyType",
+                    "time": "2025-01-22T15:05:00Z",
+                    "value": "State"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "FireIncidentStarted",
+            "time": "2025-01-22T15:05:00Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2025-01-22T15:05:00Z"
+                },
+                {
+                    "name": "incidentDetails",
+                    "value": "Hughes Fire started, located off Lake Hughes Rd North of Castaic Reservoir Rd"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HughesFire",
+                    "qualifier": "incident"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "AgenciesResponding",
+            "time": "2025-01-22T15:05:00Z",
+            "attributes": [
+                {
+                    "name": "respondingAgency",
+                    "value": "Angeles National Forest"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HughesFire",
+                    "qualifier": "incident"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "AgenciesResponding",
+            "time": "2025-01-22T15:05:00Z",
+            "attributes": [
+                {
+                    "name": "respondingAgency",
+                    "value": "CAL FIRE"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HughesFire",
+                    "qualifier": "incident"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "AgenciesResponding",
+            "time": "2025-01-22T15:05:00Z",
+            "attributes": [
+                {
+                    "name": "respondingAgency",
+                    "value": "Los Angeles County Fire Department"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HughesFire",
+                    "qualifier": "incident"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "AgenciesResponding",
+            "time": "2025-01-22T15:05:00Z",
+            "attributes": [
+                {
+                    "name": "respondingAgency",
+                    "value": "LA County Sheriff"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HughesFire",
+                    "qualifier": "incident"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "type": "AgenciesResponding",
+            "time": "2025-01-22T15:05:00Z",
+            "attributes": [
+                {
+                    "name": "respondingAgency",
+                    "value": "California Highway Patrol"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HughesFire",
+                    "qualifier": "incident"
+                }
+            ]
+        }
+    ]
+}

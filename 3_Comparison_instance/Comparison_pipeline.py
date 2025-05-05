@@ -4,7 +4,7 @@ from Modularized_functions.Quality_measure_calculator import quality_measure_cal
 from Modularized_functions.Results_concatenator import results_concatenator
 from Modularized_functions.Similarity_measure_calculator import similarity_measure_calculator
 
-dataset_folder = "Data/Age_of_empire/Test_data/"
+dataset_folder = "Data/Age_of_empire/Lilac_fire/"
 nltk.download('wordnet')
 
 def  OCEL_comparison(dataset_folder):

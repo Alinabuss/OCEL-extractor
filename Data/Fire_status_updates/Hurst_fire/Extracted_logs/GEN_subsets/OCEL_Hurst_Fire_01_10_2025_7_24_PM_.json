@@ -1,0 +1,194 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "dateReported",
+                    "type": "date"
+                }
+            ]
+        },
+        {
+            "name": "Emergency Agency",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Containment Efforts Ongoing",
+            "attributes": [
+                {
+                    "name": "focusArea",
+                    "type": "string"
+                },
+                {
+                    "name": "safetyRecommendations",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Water Safety Advisory Issued",
+            "attributes": [
+                {
+                    "name": "advisoryDetails",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hurst Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-10T19:24:00Z",
+                    "value": "Hurst"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-10T19:24:00Z",
+                    "value": "Ongoing"
+                },
+                {
+                    "name": "dateReported",
+                    "time": "2025-01-10T19:24:00Z",
+                    "value": "2025-01-10"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Los Angeles Department of Water and Power",
+            "type": "Emergency Agency",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-10T19:24:00Z",
+                    "value": "Los Angeles Department of Water and Power"
+                },
+                {
+                    "name": "type",
+                    "time": "2025-01-10T19:24:00Z",
+                    "value": "Water Utility"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Angeles National Forest",
+            "type": "Emergency Agency",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-10T19:24:00Z",
+                    "value": "Angeles National Forest"
+                },
+                {
+                    "name": "type",
+                    "time": "2025-01-10T19:24:00Z",
+                    "value": "Fire Management"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Los Angeles County Fire Department",
+            "type": "Emergency Agency",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-10T19:24:00Z",
+                    "value": "Los Angeles County Fire Department"
+                },
+                {
+                    "name": "type",
+                    "time": "2025-01-10T19:24:00Z",
+                    "value": "Fire Response"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Los Angeles Fire Department",
+            "type": "Emergency Agency",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-10T19:24:00Z",
+                    "value": "Los Angeles Fire Department"
+                },
+                {
+                    "name": "type",
+                    "time": "2025-01-10T19:24:00Z",
+                    "value": "Fire Response"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Containment Efforts Ongoing",
+            "time": "2025-01-10T19:24:00Z",
+            "attributes": [
+                {
+                    "name": "focusArea",
+                    "value": "building and improving containment lines"
+                },
+                {
+                    "name": "safetyRecommendations",
+                    "value": "observe extreme caution and do NOT drink the water"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Water Safety Advisory Issued",
+            "time": "2025-01-10T19:24:00Z",
+            "attributes": [
+                {
+                    "name": "advisoryDetails",
+                    "value": "do NOT drink the water until further advised"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Los Angeles Department of Water and Power",
+                    "qualifier": "issued by"
+                },
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ]
+}

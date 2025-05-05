@@ -1,0 +1,201 @@
+{
+    "objectTypes": [
+        {
+            "name": "FireIncident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "date",
+                    "type": "date"
+                },
+                {
+                    "name": "time",
+                    "type": "time"
+                }
+            ]
+        },
+        {
+            "name": "Agency",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "FireResponded",
+            "attributes": [
+                {
+                    "name": "responseTime",
+                    "type": "dateTime"
+                },
+                {
+                    "name": "fireType",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "HughesFire",
+            "type": "FireIncident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-22T15:56:00Z",
+                    "value": "off Lake Hughes Rd North of Castaic Reservoir Rd, Castaic"
+                },
+                {
+                    "name": "date",
+                    "time": "2025-01-22T00:00:00Z",
+                    "value": "2025-01-22"
+                },
+                {
+                    "name": "time",
+                    "time": "2025-01-22T15:56:00Z",
+                    "value": "15:56"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "AngelesNationalForest",
+            "type": "Agency",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-22T15:56:00Z",
+                    "value": "Angeles National Forest"
+                },
+                {
+                    "name": "type",
+                    "time": "2025-01-22T15:56:00Z",
+                    "value": "Federal"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CALFIRE",
+            "type": "Agency",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-22T15:56:00Z",
+                    "value": "CAL FIRE"
+                },
+                {
+                    "name": "type",
+                    "time": "2025-01-22T15:56:00Z",
+                    "value": "State"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "LACountyFireDepartment",
+            "type": "Agency",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-22T15:56:00Z",
+                    "value": "Los Angeles County Fire Department"
+                },
+                {
+                    "name": "type",
+                    "time": "2025-01-22T15:56:00Z",
+                    "value": "Local"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "LACountySheriff",
+            "type": "Agency",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-22T15:56:00Z",
+                    "value": "LA County Sheriff"
+                },
+                {
+                    "name": "type",
+                    "time": "2025-01-22T15:56:00Z",
+                    "value": "Local"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CaliforniaHighwayPatrol",
+            "type": "Agency",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-22T15:56:00Z",
+                    "value": "California Highway Patrol"
+                },
+                {
+                    "name": "type",
+                    "time": "2025-01-22T15:56:00Z",
+                    "value": "State"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "FireResponded",
+            "time": "2025-01-22T15:56:00Z",
+            "attributes": [
+                {
+                    "name": "responseTime",
+                    "value": "2025-01-22T15:56:00Z"
+                },
+                {
+                    "name": "fireType",
+                    "value": "Brush Fire"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HughesFire",
+                    "qualifier": "affected"
+                },
+                {
+                    "objectId": "AngelesNationalForest",
+                    "qualifier": "responded"
+                },
+                {
+                    "objectId": "CALFIRE",
+                    "qualifier": "responded"
+                },
+                {
+                    "objectId": "LACountyFireDepartment",
+                    "qualifier": "responded"
+                },
+                {
+                    "objectId": "LACountySheriff",
+                    "qualifier": "assisted"
+                },
+                {
+                    "objectId": "CaliforniaHighwayPatrol",
+                    "qualifier": "assisted"
+                }
+            ]
+        }
+    ]
+}

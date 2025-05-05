@@ -10,7 +10,7 @@ from Refiner_subcomponent.Refiner_instance import OCEL_generative_refiner_compon
 import time
 
 # Specify folder-path to dataset
-dataset_folder = "Data/Age_of_empire/Test_data/"
+dataset_folder = "Data/Age_of_empire/Lilac_fire/"
 
 
 

@@ -1,0 +1,160 @@
+{
+    "objectTypes": [
+        {
+            "name": "fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "fire_name",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "firefighter",
+            "attributes": [
+                {
+                    "name": "agency",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "fire_response",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "action",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hughes Fire",
+            "type": "fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "value": "off Lake Hughes Rd North of Castaic Reservoir Rd, Castaic"
+                },
+                {
+                    "name": "fire_name",
+                    "value": "Hughes Fire"
+                },
+                {
+                    "name": "status",
+                    "value": "in unified command"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Angeles National Forest",
+            "type": "firefighter",
+            "attributes": [
+                {
+                    "name": "agency",
+                    "value": "Angeles National Forest"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CAL FIRE",
+            "type": "firefighter",
+            "attributes": [
+                {
+                    "name": "agency",
+                    "value": "CAL FIRE"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Los Angeles County Fire Department",
+            "type": "firefighter",
+            "attributes": [
+                {
+                    "name": "agency",
+                    "value": "Los Angeles County Fire Department"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "LA County Sheriff",
+            "type": "firefighter",
+            "attributes": [
+                {
+                    "name": "agency",
+                    "value": "LA County Sheriff"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "California Highway Patrol",
+            "type": "firefighter",
+            "attributes": [
+                {
+                    "name": "agency",
+                    "value": "California Highway Patrol"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "fire_response",
+            "time": "2025-01-22T17:14:00Z",
+            "attributes": [
+                {
+                    "name": "action",
+                    "value": "responding to brush fire"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "affects"
+                },
+                {
+                    "objectId": "Angeles National Forest",
+                    "qualifier": "responds"
+                },
+                {
+                    "objectId": "CAL FIRE",
+                    "qualifier": "responds"
+                },
+                {
+                    "objectId": "Los Angeles County Fire Department",
+                    "qualifier": "responds"
+                },
+                {
+                    "objectId": "LA County Sheriff",
+                    "qualifier": "assists"
+                },
+                {
+                    "objectId": "California Highway Patrol",
+                    "qualifier": "assists"
+                }
+            ]
+        }
+    ]
+}

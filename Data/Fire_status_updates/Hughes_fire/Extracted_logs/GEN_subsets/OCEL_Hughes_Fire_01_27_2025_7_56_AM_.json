@@ -1,0 +1,189 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "containment",
+                    "type": "float"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "date",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Weather Impact",
+            "attributes": [
+                {
+                    "name": "condition",
+                    "type": "string"
+                },
+                {
+                    "name": "timestamp",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Mop-up Activity",
+            "attributes": [
+                {
+                    "name": "task",
+                    "type": "string"
+                },
+                {
+                    "name": "timestamp",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Demobilization",
+            "attributes": [
+                {
+                    "name": "action",
+                    "type": "string"
+                },
+                {
+                    "name": "timestamp",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Public Advisory",
+            "attributes": [
+                {
+                    "name": "advisory",
+                    "type": "string"
+                },
+                {
+                    "name": "timestamp",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hughes Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-27T07:56:00Z",
+                    "value": "Hughes Fire"
+                },
+                {
+                    "name": "containment",
+                    "time": "2025-01-27T07:56:00Z",
+                    "value": 95.0
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-27T07:56:00Z",
+                    "value": "Ongoing"
+                },
+                {
+                    "name": "date",
+                    "time": "2025-01-27T07:56:00Z",
+                    "value": "2025-01-27"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Weather Impact",
+            "time": "2025-01-27T07:56:00Z",
+            "attributes": [
+                {
+                    "name": "condition",
+                    "value": "Rain throughout the day"
+                },
+                {
+                    "name": "timestamp",
+                    "value": "2025-01-27T07:56:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "affects"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Mop-up Activity",
+            "time": "2025-01-27T07:56:00Z",
+            "attributes": [
+                {
+                    "name": "task",
+                    "value": "Mop-up activities, clearing roads, creating water bars, and backhauling equipment"
+                },
+                {
+                    "name": "timestamp",
+                    "value": "2025-01-27T07:56:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Demobilization",
+            "time": "2025-01-27T07:56:00Z",
+            "attributes": [
+                {
+                    "name": "action",
+                    "value": "Resources continued to demobilize"
+                },
+                {
+                    "name": "timestamp",
+                    "value": "2025-01-27T07:56:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "associated with"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Public Advisory",
+            "time": "2025-01-27T07:56:00Z",
+            "attributes": [
+                {
+                    "name": "advisory",
+                    "value": "Flood watch in effect until 4 p.m."
+                },
+                {
+                    "name": "timestamp",
+                    "value": "2025-01-27T07:56:00Z"
+                }
+            ],
+            "relationships": []
+        }
+    ]
+}

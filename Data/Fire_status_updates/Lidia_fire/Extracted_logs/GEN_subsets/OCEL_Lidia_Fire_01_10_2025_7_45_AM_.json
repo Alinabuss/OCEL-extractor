@@ -1,0 +1,109 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "type": "string"
+                },
+                {
+                    "name": "Size (acres)",
+                    "type": "integer"
+                },
+                {
+                    "name": "Containment Percentage",
+                    "type": "integer"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Fire Reported",
+            "attributes": [
+                {
+                    "name": "Report Time",
+                    "type": "timestamp"
+                }
+            ]
+        },
+        {
+            "name": "Fire Containment Update",
+            "attributes": [
+                {
+                    "name": "Containment Percentage",
+                    "type": "integer"
+                },
+                {
+                    "name": "Progress Details",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Lidia Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "time": "2025-01-08T13:08:00Z",
+                    "value": "Soledad Canyon Road, Acton, California"
+                },
+                {
+                    "name": "Size (acres)",
+                    "time": "2025-01-08T13:08:00Z",
+                    "value": "348"
+                },
+                {
+                    "name": "Containment Percentage",
+                    "time": "2025-01-08T13:08:00Z",
+                    "value": "60"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Fire Reported",
+            "time": "2025-01-08T13:08:00Z",
+            "attributes": [
+                {
+                    "name": "Report Time",
+                    "value": "2025-01-08T13:08:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lidia Fire",
+                    "qualifier": "reported"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Fire Containment Update",
+            "time": "2025-01-10T07:45:00Z",
+            "attributes": [
+                {
+                    "name": "Containment Percentage",
+                    "value": "60"
+                },
+                {
+                    "name": "Progress Details",
+                    "value": "Firefighters making significant progress."
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lidia Fire",
+                    "qualifier": "updated"
+                }
+            ]
+        }
+    ]
+}

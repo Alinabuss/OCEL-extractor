@@ -1,0 +1,157 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Firefighting Unit",
+            "attributes": [
+                {
+                    "name": "unit type",
+                    "type": "string"
+                },
+                {
+                    "name": "jurisdiction",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Containment Line Improvement",
+            "attributes": [
+                {
+                    "name": "focus area",
+                    "type": "string"
+                },
+                {
+                    "name": "safety consideration",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Public Safety Advisory",
+            "attributes": [
+                {
+                    "name": "advised action",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hurst Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-11T12:58:00Z",
+                    "value": "Angeles National Forest"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-11T12:58:00Z",
+                    "value": "Ongoing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Los Angeles County Fire Department",
+            "type": "Firefighting Unit",
+            "attributes": [
+                {
+                    "name": "unit type",
+                    "time": "2025-01-11T12:58:00Z",
+                    "value": "Fire Department"
+                },
+                {
+                    "name": "jurisdiction",
+                    "time": "2025-01-11T12:58:00Z",
+                    "value": "Los Angeles County"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "in command"
+                }
+            ]
+        },
+        {
+            "id": "Los Angeles City Fire Department",
+            "type": "Firefighting Unit",
+            "attributes": [
+                {
+                    "name": "unit type",
+                    "time": "2025-01-11T12:58:00Z",
+                    "value": "Fire Department"
+                },
+                {
+                    "name": "jurisdiction",
+                    "time": "2025-01-11T12:58:00Z",
+                    "value": "Los Angeles City"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "in command"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Containment Line Improvement",
+            "time": "2025-01-11T12:58:00Z",
+            "attributes": [
+                {
+                    "name": "focus area",
+                    "value": "building and public safety"
+                },
+                {
+                    "name": "safety consideration",
+                    "value": "structure protection"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Public Safety Advisory",
+            "time": "2025-01-11T12:58:00Z",
+            "attributes": [
+                {
+                    "name": "advised action",
+                    "value": "use extreme caution"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ]
+}

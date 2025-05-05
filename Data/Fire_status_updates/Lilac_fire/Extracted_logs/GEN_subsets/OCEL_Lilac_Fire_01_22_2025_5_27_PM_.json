@@ -1,0 +1,109 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "type": "string"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                },
+                {
+                    "name": "ContainmentCompletionTime",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "FireContained",
+            "attributes": [
+                {
+                    "name": "ContainmentLineBuild",
+                    "type": "boolean"
+                },
+                {
+                    "name": "HotspotExtinguishment",
+                    "type": "boolean"
+                }
+            ]
+        },
+        {
+            "name": "RepopulationCompleted",
+            "attributes": [
+                {
+                    "name": "RepopulationTime",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "LilacFire",
+            "type": "Fire",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "time": "2025-01-22T17:27:00Z",
+                    "value": "Near Old Highway 395 and Lilac Road"
+                },
+                {
+                    "name": "Status",
+                    "time": "2025-01-22T17:27:00Z",
+                    "value": "Forward rate of spread stopped"
+                },
+                {
+                    "name": "ContainmentCompletionTime",
+                    "time": "2025-01-21T20:00:00Z",
+                    "value": "2025-01-21 8:00 PM"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "FireContained",
+            "time": "2025-01-22T17:27:00Z",
+            "attributes": [
+                {
+                    "name": "ContainmentLineBuild",
+                    "value": "true"
+                },
+                {
+                    "name": "HotspotExtinguishment",
+                    "value": "true"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "LilacFire",
+                    "qualifier": "is affected by"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "RepopulationCompleted",
+            "time": "2025-01-21T20:00:00Z",
+            "attributes": [
+                {
+                    "name": "RepopulationTime",
+                    "value": "2025-01-21 8:00 PM"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "LilacFire",
+                    "qualifier": "relates to"
+                }
+            ]
+        }
+    ]
+}

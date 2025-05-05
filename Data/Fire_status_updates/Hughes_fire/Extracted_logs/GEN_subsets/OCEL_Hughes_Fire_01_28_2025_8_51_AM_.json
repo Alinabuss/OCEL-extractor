@@ -1,0 +1,100 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Last Update Issued",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Call Information Provided",
+            "attributes": [
+                {
+                    "name": "phone_number",
+                    "type": "string"
+                },
+                {
+                    "name": "availability",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hughes Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-28T08:51:00Z",
+                    "value": "Angeles National Forest"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-28T08:51:00Z",
+                    "value": "Last incident update issued"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Last Update Issued",
+            "time": "2025-01-28T08:51:00Z",
+            "attributes": [
+                {
+                    "name": "timestamp",
+                    "value": "2025-01-28T08:51:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Call Information Provided",
+            "time": "2025-01-28T08:51:00Z",
+            "attributes": [
+                {
+                    "name": "phone_number",
+                    "value": "(626) 574-1613"
+                },
+                {
+                    "name": "availability",
+                    "value": "M-F 8:00 a.m. \u2013 4:30 p.m."
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ]
+}

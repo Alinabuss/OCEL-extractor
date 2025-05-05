@@ -1,0 +1,201 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "type": "string"
+                },
+                {
+                    "name": "Start Time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "Unified Command",
+                    "type": "list"
+                }
+            ]
+        },
+        {
+            "name": "Firefighting Organization",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "type": "string"
+                },
+                {
+                    "name": "Name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Fire Response Initiated",
+            "attributes": [
+                {
+                    "name": "Fire Incident",
+                    "type": "string"
+                },
+                {
+                    "name": "Response Time",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hughes Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "time": "2025-01-22T14:17:00Z",
+                    "value": "Lake Hughes Rd North of Castaic Reservoir Rd, Castaic"
+                },
+                {
+                    "name": "Start Time",
+                    "time": "2025-01-22T14:17:00Z",
+                    "value": "2025-01-22T14:17:00Z"
+                },
+                {
+                    "name": "Unified Command",
+                    "time": "2025-01-22T14:17:00Z",
+                    "value": "U.S. Forest Service, Los Angeles County Fire Department, LA County Sheriff, California Highway Patrol"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Angeles National Forest",
+            "type": "Firefighting Organization",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "time": "2025-01-22T14:17:00Z",
+                    "value": "Federal"
+                },
+                {
+                    "name": "Name",
+                    "time": "2025-01-22T14:17:00Z",
+                    "value": "Angeles National Forest"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CAL FIRE",
+            "type": "Firefighting Organization",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "time": "2025-01-22T14:17:00Z",
+                    "value": "State"
+                },
+                {
+                    "name": "Name",
+                    "time": "2025-01-22T14:17:00Z",
+                    "value": "CAL FIRE"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Los Angeles County Fire Department",
+            "type": "Firefighting Organization",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "time": "2025-01-22T14:17:00Z",
+                    "value": "Local"
+                },
+                {
+                    "name": "Name",
+                    "time": "2025-01-22T14:17:00Z",
+                    "value": "Los Angeles County Fire Department"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "LA County Sheriff",
+            "type": "Firefighting Organization",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "time": "2025-01-22T14:17:00Z",
+                    "value": "Local"
+                },
+                {
+                    "name": "Name",
+                    "time": "2025-01-22T14:17:00Z",
+                    "value": "LA County Sheriff"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "California Highway Patrol",
+            "type": "Firefighting Organization",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "time": "2025-01-22T14:17:00Z",
+                    "value": "State"
+                },
+                {
+                    "name": "Name",
+                    "time": "2025-01-22T14:17:00Z",
+                    "value": "California Highway Patrol, Southern Division"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Fire Response Initiated",
+            "time": "2025-01-22T14:17:00Z",
+            "attributes": [
+                {
+                    "name": "Fire Incident",
+                    "value": "Hughes Fire"
+                },
+                {
+                    "name": "Response Time",
+                    "value": "2025-01-22T14:17:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "involved"
+                },
+                {
+                    "objectId": "Angeles National Forest",
+                    "qualifier": "responded"
+                },
+                {
+                    "objectId": "CAL FIRE",
+                    "qualifier": "responded"
+                },
+                {
+                    "objectId": "Los Angeles County Fire Department",
+                    "qualifier": "responded"
+                },
+                {
+                    "objectId": "LA County Sheriff",
+                    "qualifier": "responded"
+                },
+                {
+                    "objectId": "California Highway Patrol",
+                    "qualifier": "responded"
+                }
+            ]
+        }
+    ]
+}

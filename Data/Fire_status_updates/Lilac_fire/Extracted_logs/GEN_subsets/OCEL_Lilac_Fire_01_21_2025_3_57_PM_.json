@@ -1,0 +1,74 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "containment_percentage",
+                    "type": "float"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Fire Containment Update",
+            "attributes": [
+                {
+                    "name": "containment_status",
+                    "type": "string"
+                },
+                {
+                    "name": "next_steps",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Lilac Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-21T15:57:00Z",
+                    "value": "Near Old Highway 395 and Lilac Road"
+                },
+                {
+                    "name": "containment_percentage",
+                    "time": "2025-01-21T15:57:00Z",
+                    "value": "35"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Fire Containment Update",
+            "time": "2025-01-21T15:57:00Z",
+            "attributes": [
+                {
+                    "name": "containment_status",
+                    "value": "35% contained"
+                },
+                {
+                    "name": "next_steps",
+                    "value": "Continue to build containment lines and extinguish hotspots within the fire's perimeter."
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lilac Fire",
+                    "qualifier": "is about"
+                }
+            ]
+        }
+    ]
+}

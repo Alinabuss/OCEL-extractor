@@ -1,0 +1,331 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Aircraft",
+            "attributes": [
+                {
+                    "name": "type",
+                    "type": "string"
+                },
+                {
+                    "name": "capacity",
+                    "type": "number"
+                }
+            ]
+        },
+        {
+            "name": "Firefighter Crew",
+            "attributes": [
+                {
+                    "name": "assigned_area",
+                    "type": "string"
+                },
+                {
+                    "name": "shift_time",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Firefighting Operation",
+            "attributes": [
+                {
+                    "name": "method",
+                    "type": "string"
+                },
+                {
+                    "name": "duration_hours",
+                    "type": "number"
+                },
+                {
+                    "name": "water_retardant_used_gallons",
+                    "type": "number"
+                }
+            ]
+        },
+        {
+            "name": "Control Line Reinforcement",
+            "attributes": [
+                {
+                    "name": "area",
+                    "type": "string"
+                },
+                {
+                    "name": "time",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Weather Warning Issued",
+            "attributes": [
+                {
+                    "name": "warning_type",
+                    "type": "string"
+                },
+                {
+                    "name": "expiration_time",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "HughesFire",
+            "type": "Fire",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-23T14:27:00Z",
+                    "value": "Hughes Fire"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-23T14:27:00Z",
+                    "value": "active"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "MAFFS",
+            "type": "Aircraft",
+            "attributes": [
+                {
+                    "name": "type",
+                    "time": "2025-01-23T14:27:00Z",
+                    "value": "Modular Airborne Firefighting Systems"
+                },
+                {
+                    "name": "capacity",
+                    "time": "2025-01-23T14:27:00Z",
+                    "value": 30678
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CAL_HAWK_1",
+            "type": "Aircraft",
+            "attributes": [
+                {
+                    "name": "type",
+                    "time": "2025-01-23T14:27:00Z",
+                    "value": "CAL FIRE HAWK"
+                },
+                {
+                    "name": "capacity",
+                    "time": "2025-01-23T14:27:00Z",
+                    "value": 80000
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CAL_HAWK_2",
+            "type": "Aircraft",
+            "attributes": [
+                {
+                    "name": "type",
+                    "time": "2025-01-23T14:27:00Z",
+                    "value": "CAL FIRE HAWK"
+                },
+                {
+                    "name": "capacity",
+                    "time": "2025-01-23T14:27:00Z",
+                    "value": 33000
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CastaicCommunity",
+            "type": "Firefighter Crew",
+            "attributes": [
+                {
+                    "name": "assigned_area",
+                    "time": "2025-01-23T14:27:00Z",
+                    "value": "Castaic"
+                },
+                {
+                    "name": "shift_time",
+                    "time": "2025-01-23T14:27:00Z",
+                    "value": "24 hours"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Firefighting Operation",
+            "time": "2025-01-23T14:27:00Z",
+            "attributes": [
+                {
+                    "name": "method",
+                    "value": "air and ground attack"
+                },
+                {
+                    "name": "duration_hours",
+                    "value": 11.1
+                },
+                {
+                    "name": "water_retardant_used_gallons",
+                    "value": 30678
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HughesFire",
+                    "qualifier": "fighting"
+                },
+                {
+                    "objectId": "MAFFS",
+                    "qualifier": "used"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Firefighting Operation",
+            "time": "2025-01-23T14:27:00Z",
+            "attributes": [
+                {
+                    "name": "method",
+                    "value": "water delivery"
+                },
+                {
+                    "name": "duration_hours",
+                    "value": 5.1
+                },
+                {
+                    "name": "water_retardant_used_gallons",
+                    "value": 80000
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HughesFire",
+                    "qualifier": "fighting"
+                },
+                {
+                    "objectId": "CAL_HAWK_1",
+                    "qualifier": "used"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Firefighting Operation",
+            "time": "2025-01-23T14:27:00Z",
+            "attributes": [
+                {
+                    "name": "method",
+                    "value": "water delivery"
+                },
+                {
+                    "name": "duration_hours",
+                    "value": 5.0
+                },
+                {
+                    "name": "water_retardant_used_gallons",
+                    "value": 33000
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HughesFire",
+                    "qualifier": "fighting"
+                },
+                {
+                    "objectId": "CAL_HAWK_2",
+                    "qualifier": "used"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Control Line Reinforcement",
+            "time": "2025-01-23T14:27:00Z",
+            "attributes": [
+                {
+                    "name": "area",
+                    "value": "Charlie Canyon drainage"
+                },
+                {
+                    "name": "time",
+                    "value": "ongoing"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HughesFire",
+                    "qualifier": "reinforced"
+                },
+                {
+                    "objectId": "CastaicCommunity",
+                    "qualifier": "involved"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "Weather Warning Issued",
+            "time": "2025-01-23T14:27:00Z",
+            "attributes": [
+                {
+                    "name": "warning_type",
+                    "value": "Red flag warning"
+                },
+                {
+                    "name": "expiration_time",
+                    "value": "2025-01-23T10:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HughesFire",
+                    "qualifier": "affected"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "type": "Weather Warning Issued",
+            "time": "2025-01-23T14:27:00Z",
+            "attributes": [
+                {
+                    "name": "warning_type",
+                    "value": "High wind warning"
+                },
+                {
+                    "name": "expiration_time",
+                    "value": "2025-01-23T18:00:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HughesFire",
+                    "qualifier": "affected"
+                }
+            ]
+        }
+    ]
+}

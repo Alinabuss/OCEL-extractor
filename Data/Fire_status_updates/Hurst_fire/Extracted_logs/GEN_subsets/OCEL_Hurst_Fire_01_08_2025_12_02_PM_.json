@@ -1,0 +1,155 @@
+{
+    "objectTypes": [
+        {
+            "name": "FireIncident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Community",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "FireSpreading",
+            "attributes": [
+                {
+                    "name": "conditions",
+                    "type": "string"
+                },
+                {
+                    "name": "threatLevel",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "ContainmentEfforts",
+            "attributes": [
+                {
+                    "name": "actionTaken",
+                    "type": "string"
+                },
+                {
+                    "name": "resourceUsage",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "ResidentAdvisory",
+            "attributes": [
+                {
+                    "name": "directive",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "HurstFire",
+            "type": "FireIncident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-08T12:02:00Z",
+                    "value": "Hurst"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-08T12:02:00Z",
+                    "value": "spreading rapidly"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "NearbyCommunities",
+            "type": "Community",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-08T12:02:00Z",
+                    "value": "adjacent communities"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "FireSpreading",
+            "time": "2025-01-08T12:02:00Z",
+            "attributes": [
+                {
+                    "name": "conditions",
+                    "value": "dry fuels, strong winds, low humidity"
+                },
+                {
+                    "name": "threatLevel",
+                    "value": "high"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HurstFire",
+                    "qualifier": "involves"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "ContainmentEfforts",
+            "time": "2025-01-08T12:02:00Z",
+            "attributes": [
+                {
+                    "name": "actionTaken",
+                    "value": "fire crews working tirelessly"
+                },
+                {
+                    "name": "resourceUsage",
+                    "value": "critical infrastructure protection"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HurstFire",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "ResidentAdvisory",
+            "time": "2025-01-08T12:02:00Z",
+            "attributes": [
+                {
+                    "name": "directive",
+                    "value": "remain vigilant and follow directives from local authorities"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "NearbyCommunities",
+                    "qualifier": "affects"
+                }
+            ]
+        }
+    ]
+}

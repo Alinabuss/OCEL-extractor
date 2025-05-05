@@ -1,0 +1,108 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "start_date",
+                    "type": "datetime"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Fire Reported",
+            "attributes": [
+                {
+                    "name": "report_time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "command_established",
+                    "type": "boolean"
+                }
+            ]
+        },
+        {
+            "name": "Progress Update",
+            "attributes": [
+                {
+                    "name": "update_time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "progress_description",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Lidia Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-10T08:10:00Z",
+                    "value": "Soledad Canyon Road, Acton, California"
+                },
+                {
+                    "name": "start_date",
+                    "time": "2025-01-08T13:08:00Z",
+                    "value": "2025-01-08T13:08:00Z"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Fire Reported",
+            "time": "2025-01-08T13:08:00Z",
+            "attributes": [
+                {
+                    "name": "report_time",
+                    "value": "2025-01-08T13:08:00Z"
+                },
+                {
+                    "name": "command_established",
+                    "value": "true"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lidia Fire",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Progress Update",
+            "time": "2025-01-10T08:10:00Z",
+            "attributes": [
+                {
+                    "name": "update_time",
+                    "value": "2025-01-10T08:10:00Z"
+                },
+                {
+                    "name": "progress_description",
+                    "value": "Firefighters making significant progress"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lidia Fire",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

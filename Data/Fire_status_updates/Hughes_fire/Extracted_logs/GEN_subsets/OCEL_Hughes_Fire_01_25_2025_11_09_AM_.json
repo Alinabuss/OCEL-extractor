@@ -1,0 +1,238 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                },
+                {
+                    "name": "Containment Percentage",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "Agency",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Containment Improvement",
+            "attributes": [
+                {
+                    "name": "New Containment Percentage",
+                    "type": "integer"
+                }
+            ]
+        },
+        {
+            "name": "Evacuation Orders Lifted",
+            "attributes": [
+                {
+                    "name": "Date",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Evacuation Center Closed",
+            "attributes": [
+                {
+                    "name": "Closure Reason",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Resources Released",
+            "attributes": [
+                {
+                    "name": "Resource Type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Weather Update",
+            "attributes": [
+                {
+                    "name": "Expected Conditions",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hughes Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2025-01-25T11:09:00Z",
+                    "value": "Hughes Fire"
+                },
+                {
+                    "name": "Status",
+                    "time": "2025-01-25T11:09:00Z",
+                    "value": "Ongoing"
+                },
+                {
+                    "name": "Containment Percentage",
+                    "time": "2025-01-25T11:09:00Z",
+                    "value": 87
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Los Angeles County Sheriff\u2019s Department",
+            "type": "Agency",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2025-01-25T11:09:00Z",
+                    "value": "Los Angeles County Sheriff\u2019s Department"
+                },
+                {
+                    "name": "Type",
+                    "time": "2025-01-25T11:09:00Z",
+                    "value": "Law Enforcement"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Red Cross",
+            "type": "Agency",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2025-01-25T11:09:00Z",
+                    "value": "Red Cross"
+                },
+                {
+                    "name": "Type",
+                    "time": "2025-01-25T11:09:00Z",
+                    "value": "Emergency Services"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Department of Public Works",
+            "type": "Agency",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2025-01-25T11:09:00Z",
+                    "value": "Los Angeles County Department of Public Works"
+                },
+                {
+                    "name": "Type",
+                    "time": "2025-01-25T11:09:00Z",
+                    "value": "Public Works"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Containment Improvement",
+            "time": "2025-01-25T11:09:00Z",
+            "attributes": [
+                {
+                    "name": "New Containment Percentage",
+                    "value": "87"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "relates_to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Evacuation Orders Lifted",
+            "time": "2025-01-25T11:09:00Z",
+            "attributes": [
+                {
+                    "name": "Date",
+                    "value": "2025-01-25"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Los Angeles County Sheriff\u2019s Department",
+                    "qualifier": "exited_command"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Evacuation Center Closed",
+            "time": "2025-01-25T11:09:00Z",
+            "attributes": [
+                {
+                    "name": "Closure Reason",
+                    "value": "Rapid rate of containment and repopulation"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Red Cross",
+                    "qualifier": "closed"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Resources Released",
+            "time": "2025-01-25T11:09:00Z",
+            "attributes": [
+                {
+                    "name": "Resource Type",
+                    "value": "Firefighters and resources"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "Weather Update",
+            "time": "2025-01-25T11:09:00Z",
+            "attributes": [
+                {
+                    "name": "Expected Conditions",
+                    "value": "Cooler temperatures and higher humidity with potential for rain"
+                }
+            ],
+            "relationships": []
+        }
+    ]
+}

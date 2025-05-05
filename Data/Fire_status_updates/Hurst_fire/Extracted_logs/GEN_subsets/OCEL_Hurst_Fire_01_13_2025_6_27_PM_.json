@@ -1,0 +1,125 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Firefighting Agency",
+            "attributes": [
+                {
+                    "name": "agency_name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Containment Efforts",
+            "attributes": [
+                {
+                    "name": "focus",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Safety Advisory",
+            "attributes": [
+                {
+                    "name": "advice",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hurst Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-13T18:27:00Z",
+                    "value": "Angeles National Forest"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-13T18:27:00Z",
+                    "value": "Ongoing"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Los Angeles County Fire Department",
+            "type": "Firefighting Agency",
+            "attributes": [
+                {
+                    "name": "agency_name",
+                    "time": "2025-01-13T18:27:00Z",
+                    "value": "Los Angeles County Fire Department"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Los Angeles City Fire Department",
+            "type": "Firefighting Agency",
+            "attributes": [
+                {
+                    "name": "agency_name",
+                    "time": "2025-01-13T18:27:00Z",
+                    "value": "Los Angeles City Fire Department"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Containment Efforts",
+            "time": "2025-01-13T18:27:00Z",
+            "attributes": [
+                {
+                    "name": "focus",
+                    "value": "Building and improving containment lines"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "related_to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Safety Advisory",
+            "time": "2025-01-13T18:27:00Z",
+            "attributes": [
+                {
+                    "name": "advice",
+                    "value": "Residents advised to use extreme caution"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "related_to"
+                }
+            ]
+        }
+    ]
+}

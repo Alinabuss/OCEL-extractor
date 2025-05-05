@@ -1,4 +1,32 @@
 from collections import defaultdict, Counter
+from datetime import datetime
+
+def remove_dummy_events(log):
+
+    correct_events = []
+    for event in log['events']:
+        if event['type'] != 'dummy_activity':
+            correct_events.append(event)
+
+    log['events'] = correct_events
+
+    return log
+
+def remove_events_without_timestamp(log):
+
+    correct_events = []
+
+    for event in log['events']:
+        try:
+            # Try to parse the timestamp and check if it's in the correct format
+            datetime.strptime(event['time'], '%Y-%m-%dT%H:%M:%SZ')
+            correct_events.append(event)
+        except (ValueError, KeyError):
+            # If parsing fails or 'time' is not present, skip the event
+            continue
+
+    log['events'] = correct_events
+    return log
 
 def remove_non_found_object_instances_from_relations(log):
     # Iterate over each event in the log
@@ -183,6 +211,8 @@ def merge_events_at_same_timestamp(log):
 
 def event_refiner(log):
 
+    log = remove_dummy_events(log)
+    log = remove_events_without_timestamp(log)
     log = remove_non_found_object_instances_from_relations(log)
     log = remove_events_without_relationships(log)
     log = remove_event_without_timestamp(log)

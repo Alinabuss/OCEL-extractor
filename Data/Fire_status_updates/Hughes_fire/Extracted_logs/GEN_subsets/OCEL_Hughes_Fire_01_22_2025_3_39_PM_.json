@@ -1,0 +1,180 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "type": "string"
+                },
+                {
+                    "name": "Fire Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Start Time",
+                    "type": "datetime"
+                }
+            ]
+        },
+        {
+            "name": "Firefighting Organization",
+            "attributes": [
+                {
+                    "name": "Organization Name",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Fire Response Launch",
+            "attributes": [
+                {
+                    "name": "Response Type",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Unified Command Establishment",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hughes Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "time": "2025-01-22T15:39:00Z",
+                    "value": "Lake Hughes Rd North of Castaic Reservoir Rd, Castaic"
+                },
+                {
+                    "name": "Fire Name",
+                    "time": "2025-01-22T15:39:00Z",
+                    "value": "Hughes Fire"
+                },
+                {
+                    "name": "Start Time",
+                    "time": "2025-01-22T15:39:00Z",
+                    "value": "2025-01-22T15:39:00Z"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Angeles National Forest",
+            "type": "Firefighting Organization",
+            "attributes": [
+                {
+                    "name": "Organization Name",
+                    "time": "",
+                    "value": "Angeles National Forest"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CAL FIRE",
+            "type": "Firefighting Organization",
+            "attributes": [
+                {
+                    "name": "Organization Name",
+                    "time": "",
+                    "value": "CAL FIRE"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "U.S. Forest Service",
+            "type": "Firefighting Organization",
+            "attributes": [
+                {
+                    "name": "Organization Name",
+                    "time": "",
+                    "value": "U.S. Forest Service"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Los Angeles County Fire Department",
+            "type": "Firefighting Organization",
+            "attributes": [
+                {
+                    "name": "Organization Name",
+                    "time": "",
+                    "value": "Los Angeles County Fire Department"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "LA County Sheriff",
+            "type": "Firefighting Organization",
+            "attributes": [
+                {
+                    "name": "Organization Name",
+                    "time": "",
+                    "value": "LA County Sheriff"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "California Highway Patrol",
+            "type": "Firefighting Organization",
+            "attributes": [
+                {
+                    "name": "Organization Name",
+                    "time": "",
+                    "value": "California Highway Patrol"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Fire Response Launch",
+            "time": "2025-01-22T15:39:00Z",
+            "attributes": [
+                {
+                    "name": "Response Type",
+                    "value": "Firefighting agencies responding to the Hughes Fire"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "relates to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Unified Command Establishment",
+            "time": "2025-01-22T15:39:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "relates to"
+                },
+                {
+                    "objectId": "U.S. Forest Service",
+                    "qualifier": "in command with"
+                },
+                {
+                    "objectId": "Los Angeles County Fire Department",
+                    "qualifier": "in command with"
+                }
+            ]
+        }
+    ]
+}

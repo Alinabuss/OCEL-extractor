@@ -1,0 +1,303 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "type": "string"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Aircraft",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "type": "string"
+                },
+                {
+                    "name": "Operation Time",
+                    "type": "number"
+                },
+                {
+                    "name": "Water Dropped (gallons)",
+                    "type": "number"
+                }
+            ]
+        },
+        {
+            "name": "Firefighter",
+            "attributes": [
+                {
+                    "name": "Crew Type",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Firefighting Aircraft Launched",
+            "attributes": [
+                {
+                    "name": "Aircraft Type",
+                    "type": "string"
+                },
+                {
+                    "name": "Gallons Delivered",
+                    "type": "number"
+                },
+                {
+                    "name": "Operation Duration (hours)",
+                    "type": "number"
+                }
+            ]
+        },
+        {
+            "name": "Control Line Established",
+            "attributes": []
+        },
+        {
+            "name": "Control Line Reinforced",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hughes Fire",
+            "type": "Fire",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "time": "2025-01-23T18:29:00Z",
+                    "value": "Hughes Fire Area"
+                },
+                {
+                    "name": "Status",
+                    "time": "2025-01-23T18:29:00Z",
+                    "value": "Under Control"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "MAFFS",
+            "type": "Aircraft",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "time": "2025-01-23T18:29:00Z",
+                    "value": "Modular Airborne Firefighting Systems"
+                },
+                {
+                    "name": "Operation Time",
+                    "time": "2025-01-23T18:29:00Z",
+                    "value": 11.1
+                },
+                {
+                    "name": "Water Dropped (gallons)",
+                    "time": "2025-01-23T18:29:00Z",
+                    "value": 30678
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CAL_FIRE_HAWK_1",
+            "type": "Aircraft",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "time": "2025-01-23T18:29:00Z",
+                    "value": "CAL FIRE HAWK"
+                },
+                {
+                    "name": "Operation Time",
+                    "time": "2025-01-23T18:29:00Z",
+                    "value": 5.1
+                },
+                {
+                    "name": "Water Dropped (gallons)",
+                    "time": "2025-01-23T18:29:00Z",
+                    "value": 80000
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CAL_FIRE_HAWK_2",
+            "type": "Aircraft",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "time": "2025-01-23T18:29:00Z",
+                    "value": "CAL FIRE HAWK"
+                },
+                {
+                    "name": "Operation Time",
+                    "time": "2025-01-23T18:29:00Z",
+                    "value": 4.4
+                },
+                {
+                    "name": "Water Dropped (gallons)",
+                    "time": "2025-01-23T18:29:00Z",
+                    "value": 80000
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CAL_FIRE_HAWK_3",
+            "type": "Aircraft",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "time": "2025-01-23T18:29:00Z",
+                    "value": "CAL FIRE HAWK"
+                },
+                {
+                    "name": "Operation Time",
+                    "time": "2025-01-23T18:29:00Z",
+                    "value": 5
+                },
+                {
+                    "name": "Water Dropped (gallons)",
+                    "time": "2025-01-23T18:29:00Z",
+                    "value": 33000
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Firefighting Aircraft Launched",
+            "time": "2025-01-23T18:29:00Z",
+            "attributes": [
+                {
+                    "name": "Aircraft Type",
+                    "value": "Modular Airborne Firefighting Systems"
+                },
+                {
+                    "name": "Gallons Delivered",
+                    "value": 30678
+                },
+                {
+                    "name": "Operation Duration (hours)",
+                    "value": 11.1
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "fighting"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Firefighting Aircraft Launched",
+            "time": "2025-01-23T18:29:00Z",
+            "attributes": [
+                {
+                    "name": "Aircraft Type",
+                    "value": "CAL FIRE HAWK"
+                },
+                {
+                    "name": "Gallons Delivered",
+                    "value": 80000
+                },
+                {
+                    "name": "Operation Duration (hours)",
+                    "value": 5.1
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "fighting"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Firefighting Aircraft Launched",
+            "time": "2025-01-23T18:29:00Z",
+            "attributes": [
+                {
+                    "name": "Aircraft Type",
+                    "value": "CAL FIRE HAWK"
+                },
+                {
+                    "name": "Gallons Delivered",
+                    "value": 80000
+                },
+                {
+                    "name": "Operation Duration (hours)",
+                    "value": 4.4
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "fighting"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Firefighting Aircraft Launched",
+            "time": "2025-01-23T18:29:00Z",
+            "attributes": [
+                {
+                    "name": "Aircraft Type",
+                    "value": "CAL FIRE HAWK"
+                },
+                {
+                    "name": "Gallons Delivered",
+                    "value": 33000
+                },
+                {
+                    "name": "Operation Duration (hours)",
+                    "value": 5
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "fighting"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "Control Line Established",
+            "time": "2025-01-23T18:29:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "controlling"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "type": "Control Line Reinforced",
+            "time": "2025-01-23T18:29:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "controlling"
+                }
+            ]
+        }
+    ]
+}

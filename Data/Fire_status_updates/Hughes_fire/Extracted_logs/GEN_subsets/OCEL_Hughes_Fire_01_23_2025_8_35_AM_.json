@@ -1,0 +1,377 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "redFlagWarning",
+                    "type": "boolean"
+                },
+                {
+                    "name": "windWarning",
+                    "type": "boolean"
+                }
+            ]
+        },
+        {
+            "name": "Aircraft",
+            "attributes": [
+                {
+                    "name": "type",
+                    "type": "string"
+                },
+                {
+                    "name": "capacityGallons",
+                    "type": "integer"
+                },
+                {
+                    "name": "operatingHours",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Firefighter Crew",
+            "attributes": [
+                {
+                    "name": "crewType",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Firefighting Operation",
+            "attributes": [
+                {
+                    "name": "action",
+                    "type": "string"
+                },
+                {
+                    "name": "amountGallons",
+                    "type": "integer"
+                },
+                {
+                    "name": "operatingHours",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Control Line Reinforcement",
+            "attributes": [
+                {
+                    "name": "action",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Fire Behavior Assessment",
+            "attributes": [
+                {
+                    "name": "behavior",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hughes Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-23T08:35:00Z",
+                    "value": "Hughes Fire"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-23T08:35:00Z",
+                    "value": "active"
+                },
+                {
+                    "name": "redFlagWarning",
+                    "time": "2025-01-23T08:35:00Z",
+                    "value": "true"
+                },
+                {
+                    "name": "windWarning",
+                    "time": "2025-01-23T08:35:00Z",
+                    "value": "true"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Channel Islands MAFFS",
+            "type": "Aircraft",
+            "attributes": [
+                {
+                    "name": "type",
+                    "time": "2025-01-23T08:35:00Z",
+                    "value": "Modular Airborne Firefighting Systems"
+                },
+                {
+                    "name": "capacityGallons",
+                    "time": "2025-01-23T08:35:00Z",
+                    "value": "30,678"
+                },
+                {
+                    "name": "operatingHours",
+                    "time": "2025-01-23T08:35:00Z",
+                    "value": "11.1"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "fighting"
+                }
+            ]
+        },
+        {
+            "id": "CAL FIRE HAWK 1",
+            "type": "Aircraft",
+            "attributes": [
+                {
+                    "name": "type",
+                    "time": "2025-01-23T08:35:00Z",
+                    "value": "CAL FIRE HAWK"
+                },
+                {
+                    "name": "capacityGallons",
+                    "time": "2025-01-23T08:35:00Z",
+                    "value": "80,000"
+                },
+                {
+                    "name": "operatingHours",
+                    "time": "2025-01-23T08:35:00Z",
+                    "value": "5.1"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "fighting"
+                }
+            ]
+        },
+        {
+            "id": "CAL FIRE HAWK 2",
+            "type": "Aircraft",
+            "attributes": [
+                {
+                    "name": "type",
+                    "time": "2025-01-23T08:35:00Z",
+                    "value": "CAL FIRE HAWK"
+                },
+                {
+                    "name": "capacityGallons",
+                    "time": "2025-01-23T08:35:00Z",
+                    "value": "80,000"
+                },
+                {
+                    "name": "operatingHours",
+                    "time": "2025-01-23T08:35:00Z",
+                    "value": "4.4"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "fighting"
+                }
+            ]
+        },
+        {
+            "id": "Hemet-Ryan HAWK",
+            "type": "Aircraft",
+            "attributes": [
+                {
+                    "name": "type",
+                    "time": "2025-01-23T08:35:00Z",
+                    "value": "CAL FIRE HAWK"
+                },
+                {
+                    "name": "capacityGallons",
+                    "time": "2025-01-23T08:35:00Z",
+                    "value": "33,000"
+                },
+                {
+                    "name": "operatingHours",
+                    "time": "2025-01-23T08:35:00Z",
+                    "value": "5"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "fighting"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Firefighting Operation",
+            "time": "2025-01-23T08:35:00Z",
+            "attributes": [
+                {
+                    "name": "action",
+                    "value": "dropped retardant"
+                },
+                {
+                    "name": "amountGallons",
+                    "value": "30,678"
+                },
+                {
+                    "name": "operatingHours",
+                    "value": "11.1"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Channel Islands MAFFS",
+                    "qualifier": "used"
+                },
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "on"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Firefighting Operation",
+            "time": "2025-01-23T08:35:00Z",
+            "attributes": [
+                {
+                    "name": "action",
+                    "value": "delivered water"
+                },
+                {
+                    "name": "amountGallons",
+                    "value": "80,000"
+                },
+                {
+                    "name": "operatingHours",
+                    "value": "5.1"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "CAL FIRE HAWK 1",
+                    "qualifier": "used"
+                },
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "on"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Firefighting Operation",
+            "time": "2025-01-23T08:35:00Z",
+            "attributes": [
+                {
+                    "name": "action",
+                    "value": "delivered water"
+                },
+                {
+                    "name": "amountGallons",
+                    "value": "80,000"
+                },
+                {
+                    "name": "operatingHours",
+                    "value": "4.4"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "CAL FIRE HAWK 2",
+                    "qualifier": "used"
+                },
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "on"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Firefighting Operation",
+            "time": "2025-01-23T08:35:00Z",
+            "attributes": [
+                {
+                    "name": "action",
+                    "value": "delivered water"
+                },
+                {
+                    "name": "amountGallons",
+                    "value": "33,000"
+                },
+                {
+                    "name": "operatingHours",
+                    "value": "5"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hemet-Ryan HAWK",
+                    "qualifier": "used"
+                },
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "on"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "Control Line Reinforcement",
+            "time": "2025-01-23T08:35:00Z",
+            "attributes": [
+                {
+                    "name": "action",
+                    "value": "reinforced control lines"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "on"
+                }
+            ]
+        },
+        {
+            "id": 6,
+            "type": "Fire Behavior Assessment",
+            "time": "2025-01-23T08:35:00Z",
+            "attributes": [
+                {
+                    "name": "behavior",
+                    "value": "extreme"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "assessment"
+                }
+            ]
+        }
+    ]
+}

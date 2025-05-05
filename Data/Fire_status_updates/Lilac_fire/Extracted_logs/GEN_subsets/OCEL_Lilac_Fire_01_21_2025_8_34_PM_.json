@@ -1,0 +1,162 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "type": "string"
+                },
+                {
+                    "name": "Forward Rate of Spread",
+                    "type": "string"
+                },
+                {
+                    "name": "Containment Status",
+                    "type": "string"
+                },
+                {
+                    "name": "Repopulation Status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Forward Rate of Spread Stopped",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Building Containment Lines",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Extinguishing Hotspots",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Repopulation Completed",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Lilac Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "time": "2025-01-21T20:34:00Z",
+                    "value": "Near Old Highway 395 and Lilac Road"
+                },
+                {
+                    "name": "Forward Rate of Spread",
+                    "time": "2025-01-21T20:34:00Z",
+                    "value": "Stopped"
+                },
+                {
+                    "name": "Containment Status",
+                    "time": "2025-01-21T20:34:00Z",
+                    "value": "In progress"
+                },
+                {
+                    "name": "Repopulation Status",
+                    "time": "2025-01-21T20:00:00Z",
+                    "value": "Completed"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Forward Rate of Spread Stopped",
+            "time": "2025-01-21T20:34:00Z",
+            "attributes": [
+                {
+                    "name": "Action",
+                    "value": "The forward rate of spread has been stopped"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lilac Fire",
+                    "qualifier": "affects"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Building Containment Lines",
+            "time": "2025-01-21T20:34:00Z",
+            "attributes": [
+                {
+                    "name": "Action",
+                    "value": "Fire crew will continue to build containment lines"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lilac Fire",
+                    "qualifier": "affects"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Extinguishing Hotspots",
+            "time": "2025-01-21T20:34:00Z",
+            "attributes": [
+                {
+                    "name": "Action",
+                    "value": "Fire crew will continue to extinguish hotspots"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lilac Fire",
+                    "qualifier": "affects"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Repopulation Completed",
+            "time": "2025-01-21T20:00:00Z",
+            "attributes": [
+                {
+                    "name": "Action",
+                    "value": "Repopulation has been completed"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Lilac Fire",
+                    "qualifier": "affects"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,156 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "type": "string"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Community",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "name": "VigilanceStatus",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Fire Spread",
+            "attributes": [
+                {
+                    "name": "WindCondition",
+                    "type": "string"
+                },
+                {
+                    "name": "HumidityLevel",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Containment Effort",
+            "attributes": [
+                {
+                    "name": "EffortDescription",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Community Alert",
+            "attributes": [
+                {
+                    "name": "AlertMessage",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hurst Fire",
+            "type": "Fire",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "time": "2025-01-08T19:53:00Z",
+                    "value": "Hurst"
+                },
+                {
+                    "name": "Status",
+                    "time": "2025-01-08T19:53:00Z",
+                    "value": "Spreading Rapidly"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Nearby Communities",
+            "type": "Community",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2025-01-08T19:53:00Z",
+                    "value": "Local Residents"
+                },
+                {
+                    "name": "VigilanceStatus",
+                    "time": "2025-01-08T19:53:00Z",
+                    "value": "Vigilant"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Fire Spread",
+            "time": "2025-01-08T19:53:00Z",
+            "attributes": [
+                {
+                    "name": "WindCondition",
+                    "value": "High Winds"
+                },
+                {
+                    "name": "HumidityLevel",
+                    "value": "Low"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "affects"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Containment Effort",
+            "time": "2025-01-08T19:53:00Z",
+            "attributes": [
+                {
+                    "name": "EffortDescription",
+                    "value": "Fire crews are working to contain the fire"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "targets"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Community Alert",
+            "time": "2025-01-08T19:53:00Z",
+            "attributes": [
+                {
+                    "name": "AlertMessage",
+                    "value": "Residents urged to stay vigilant"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Nearby Communities",
+                    "qualifier": "informed by"
+                }
+            ]
+        }
+    ]
+}

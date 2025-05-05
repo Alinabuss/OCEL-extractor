@@ -1,0 +1,251 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                },
+                {
+                    "name": "region",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Community",
+            "attributes": [
+                {
+                    "name": "name",
+                    "type": "string"
+                },
+                {
+                    "name": "threatened",
+                    "type": "boolean"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Initial Attack",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Air Support",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Controlled Fire",
+            "attributes": [
+                {
+                    "name": "technique",
+                    "type": "string"
+                },
+                {
+                    "name": "time",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Spot Fire Response",
+            "attributes": [
+                {
+                    "name": "affected_area",
+                    "type": "number"
+                },
+                {
+                    "name": "time",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Maintain Containment",
+            "attributes": [
+                {
+                    "name": "activity",
+                    "type": "string"
+                },
+                {
+                    "name": "time",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "HughesFire",
+            "type": "Fire",
+            "attributes": [
+                {
+                    "name": "status",
+                    "time": "2025-01-23T20:12:00Z",
+                    "value": "in progress"
+                },
+                {
+                    "name": "region",
+                    "time": "2025-01-23T20:12:00Z",
+                    "value": "Castaic and Santa Clarita areas"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CastaicCommunity",
+            "type": "Community",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-23T20:12:00Z",
+                    "value": "Castaic"
+                },
+                {
+                    "name": "threatened",
+                    "time": "2025-01-23T20:12:00Z",
+                    "value": true
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HughesFire",
+                    "qualifier": "affected by"
+                }
+            ]
+        },
+        {
+            "id": "SantaClaritaCommunity",
+            "type": "Community",
+            "attributes": [
+                {
+                    "name": "name",
+                    "time": "2025-01-23T20:12:00Z",
+                    "value": "Santa Clarita"
+                },
+                {
+                    "name": "threatened",
+                    "time": "2025-01-23T20:12:00Z",
+                    "value": true
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HughesFire",
+                    "qualifier": "affected by"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Initial Attack",
+            "time": "2025-01-22T20:12:00Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2025-01-22"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HughesFire",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Air Support",
+            "time": "2025-01-23T20:12:00Z",
+            "attributes": [
+                {
+                    "name": "time",
+                    "value": "2025-01-23"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HughesFire",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Controlled Fire",
+            "time": "2025-01-23T20:12:00Z",
+            "attributes": [
+                {
+                    "name": "technique",
+                    "value": "direct and indirect containment"
+                },
+                {
+                    "name": "time",
+                    "value": "2025-01-23"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HughesFire",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Spot Fire Response",
+            "time": "2025-01-23T20:12:00Z",
+            "attributes": [
+                {
+                    "name": "affected_area",
+                    "value": 100
+                },
+                {
+                    "name": "time",
+                    "value": "2025-01-23"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HughesFire",
+                    "qualifier": "related to"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "Maintain Containment",
+            "time": "2025-01-23T20:12:00Z",
+            "attributes": [
+                {
+                    "name": "activity",
+                    "value": "improving fireline and mopping up hot spots"
+                },
+                {
+                    "name": "time",
+                    "value": "2025-01-23"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "HughesFire",
+                    "qualifier": "related to"
+                }
+            ]
+        }
+    ]
+}

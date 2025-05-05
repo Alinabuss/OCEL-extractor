@@ -1,0 +1,202 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Resident",
+            "attributes": [
+                {
+                    "name": "advisory_status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Fire Containment",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "control_lines",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Flare-up Management",
+            "attributes": [
+                {
+                    "name": "flare_up_status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Evacuation Order Update",
+            "attributes": [
+                {
+                    "name": "order_status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Caution Advisory for Residents",
+            "attributes": [
+                {
+                    "name": "advisory",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Red Flag Warning Issued",
+            "attributes": [
+                {
+                    "name": "warning_status",
+                    "type": "string"
+                },
+                {
+                    "name": "end_time",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hurst Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-10T14:06:00Z",
+                    "value": "north of the I-210 Foothill Freeway"
+                },
+                {
+                    "name": "status",
+                    "time": "2025-01-10T14:06:00Z",
+                    "value": "contained"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Residents",
+            "type": "Resident",
+            "attributes": [
+                {
+                    "name": "advisory_status",
+                    "time": "2025-01-10T15:00:00Z",
+                    "value": "observe extreme caution"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Fire Containment",
+            "time": "2025-01-10T14:06:00Z",
+            "attributes": [
+                {
+                    "name": "location",
+                    "value": "north of the I-210 Foothill Freeway"
+                },
+                {
+                    "name": "control_lines",
+                    "value": "extending to Santa Clara Divide Road"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "is part of"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Flare-up Management",
+            "time": "2025-01-10T14:06:00Z",
+            "attributes": [
+                {
+                    "name": "flare_up_status",
+                    "value": "managed within perimeter"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "is related to"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Evacuation Order Update",
+            "time": "2025-01-09T15:00:00Z",
+            "attributes": [
+                {
+                    "name": "order_status",
+                    "value": "downgraded to warnings"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "occurs during"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Caution Advisory for Residents",
+            "time": "2025-01-10T15:00:00Z",
+            "attributes": [
+                {
+                    "name": "advisory",
+                    "value": "do not drink the water until further advised"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Residents",
+                    "qualifier": "advised to"
+                }
+            ]
+        },
+        {
+            "id": 5,
+            "type": "Red Flag Warning Issued",
+            "time": "2025-01-10T14:06:00Z",
+            "attributes": [
+                {
+                    "name": "warning_status",
+                    "value": "in effect"
+                },
+                {
+                    "name": "end_time",
+                    "value": "2025-01-12T18:00:00Z"
+                }
+            ],
+            "relationships": []
+        }
+    ]
+}

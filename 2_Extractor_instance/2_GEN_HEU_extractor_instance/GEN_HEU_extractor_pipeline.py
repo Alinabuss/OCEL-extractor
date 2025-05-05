@@ -18,7 +18,7 @@ azure_model = "gpt-4o-mini-2024-07-18"
 
 
 # Specify folder-path to dataset
-dataset_folder = "../../Data/Production/Test_data/"
+dataset_folder = "../../Data/HUDOC_Cases/Test_data/"
 
 # Definition of OCEL_event_level_extractor pipeline
 def OCEL_GEN_HEU_extractor(dataset_folder, level, api_type = "openai", openai_api_key = None, openai_model = "gpt-3.5-turbo", azure_api_key = None,  azure_endpoint = None, azure_model = None):

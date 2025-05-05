@@ -1,0 +1,215 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "type": "string"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                },
+                {
+                    "name": "Threat Level",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Fire Crew",
+            "attributes": [
+                {
+                    "name": "Team Size",
+                    "type": "integer"
+                },
+                {
+                    "name": "Role",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Community",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Population",
+                    "type": "integer"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Fire Spreading",
+            "attributes": [
+                {
+                    "name": "Wind Speed",
+                    "type": "float"
+                },
+                {
+                    "name": "Humidity",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Containment Effort",
+            "attributes": [
+                {
+                    "name": "Effort Type",
+                    "type": "string"
+                },
+                {
+                    "name": "Description",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Community Advisory",
+            "attributes": [
+                {
+                    "name": "Advisory Type",
+                    "type": "string"
+                },
+                {
+                    "name": "Directive",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hurst Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "time": "2025-01-08T02:07:00Z",
+                    "value": "Hurst"
+                },
+                {
+                    "name": "Status",
+                    "time": "2025-01-08T02:07:00Z",
+                    "value": "Spreading"
+                },
+                {
+                    "name": "Threat Level",
+                    "time": "2025-01-08T02:07:00Z",
+                    "value": "High"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Fire Crew",
+            "type": "Fire Crew",
+            "attributes": [
+                {
+                    "name": "Team Size",
+                    "time": "2025-01-08T02:07:00Z",
+                    "value": "20"
+                },
+                {
+                    "name": "Role",
+                    "time": "2025-01-08T02:07:00Z",
+                    "value": "Containment Team"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Nearby Communities",
+            "type": "Community",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2025-01-08T02:07:00Z",
+                    "value": "Hurst Community"
+                },
+                {
+                    "name": "Population",
+                    "time": "2025-01-08T02:07:00Z",
+                    "value": "5000"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Fire Spreading",
+            "time": "2025-01-08T02:07:00Z",
+            "attributes": [
+                {
+                    "name": "Wind Speed",
+                    "value": "High"
+                },
+                {
+                    "name": "Humidity",
+                    "value": "Low"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "affects"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Containment Effort",
+            "time": "2025-01-08T02:07:00Z",
+            "attributes": [
+                {
+                    "name": "Effort Type",
+                    "value": "Active"
+                },
+                {
+                    "name": "Description",
+                    "value": "Fire crews are working tirelessly to contain the fire"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Fire Crew",
+                    "qualifier": "performed by"
+                },
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "targets"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Community Advisory",
+            "time": "2025-01-08T02:07:00Z",
+            "attributes": [
+                {
+                    "name": "Advisory Type",
+                    "value": "Urgent"
+                },
+                {
+                    "name": "Directive",
+                    "value": "Residents are urged to remain vigilant and follow directives from local authorities"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Nearby Communities",
+                    "qualifier": "issued to"
+                }
+            ]
+        }
+    ]
+}

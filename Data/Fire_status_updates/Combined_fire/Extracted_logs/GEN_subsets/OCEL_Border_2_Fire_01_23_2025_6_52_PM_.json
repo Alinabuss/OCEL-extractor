@@ -1,0 +1,95 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "type": "string"
+                },
+                {
+                    "name": "threat",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Firefighter",
+            "attributes": [
+                {
+                    "name": "status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Fire Response",
+            "attributes": [
+                {
+                    "name": "time",
+                    "type": "timestamp"
+                },
+                {
+                    "name": "responseType",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Border 2 Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "location",
+                    "time": "2025-01-23T18:52:00Z",
+                    "value": "Otay Mountain Truck Trail"
+                },
+                {
+                    "name": "threat",
+                    "time": "2025-01-23T18:52:00Z",
+                    "value": "critical communication infrastructure"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "Firefighters",
+            "type": "Firefighter",
+            "attributes": [
+                {
+                    "name": "status",
+                    "time": "2025-01-23T18:52:00Z",
+                    "value": "on scene"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Fire Response",
+            "time": "2025-01-23T18:52:00Z",
+            "attributes": [
+                {
+                    "name": "responseType",
+                    "value": "vegetation fire"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Border 2 Fire",
+                    "qualifier": "relatedTo"
+                },
+                {
+                    "objectId": "Firefighters",
+                    "qualifier": "involved"
+                }
+            ]
+        }
+    ]
+}

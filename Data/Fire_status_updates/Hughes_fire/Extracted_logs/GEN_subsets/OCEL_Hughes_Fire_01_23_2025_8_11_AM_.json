@@ -1,0 +1,215 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "type": "string"
+                },
+                {
+                    "name": "Incident Command",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Aircraft",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "type": "string"
+                },
+                {
+                    "name": "Base",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Retardant Drop",
+            "attributes": [
+                {
+                    "name": "Gallons Dropped",
+                    "type": "integer"
+                },
+                {
+                    "name": "Flight Hours",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Water Drop",
+            "attributes": [
+                {
+                    "name": "Gallons Dropped",
+                    "type": "integer"
+                },
+                {
+                    "name": "Flight Hours",
+                    "type": "float"
+                }
+            ]
+        },
+        {
+            "name": "Helibase Establishment",
+            "attributes": []
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hughes Fire",
+            "type": "Fire",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "time": "2025-01-23T08:11:00Z",
+                    "value": "Off Lake Hughes Rd North of Castaic Reservoir Rd, Castaic"
+                },
+                {
+                    "name": "Incident Command",
+                    "time": "2025-01-23T08:11:00Z",
+                    "value": "U.S. Forest Service, Los Angeles County Fire Department, CAL FIRE"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "MAFFS",
+            "type": "Aircraft",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "value": "MAFFS"
+                },
+                {
+                    "name": "Base",
+                    "value": "Channel Islands"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CAL FIRE HAWK 1",
+            "type": "Aircraft",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "value": "CAL FIRE HAWK"
+                },
+                {
+                    "name": "Base",
+                    "value": "Prado Helitack Base"
+                }
+            ],
+            "relationships": []
+        },
+        {
+            "id": "CAL FIRE HAWK 2",
+            "type": "Aircraft",
+            "attributes": [
+                {
+                    "name": "Type",
+                    "value": "CAL FIRE HAWK"
+                },
+                {
+                    "name": "Base",
+                    "value": "Hemet-Ryan Helitack Base"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Retardant Drop",
+            "time": "2025-01-23T08:11:00Z",
+            "attributes": [
+                {
+                    "name": "Gallons Dropped",
+                    "value": "30678"
+                },
+                {
+                    "name": "Flight Hours",
+                    "value": "11.1"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "MAFFS",
+                    "qualifier": "performed"
+                },
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "targeted"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Water Drop",
+            "time": "2025-01-23T08:11:00Z",
+            "attributes": [
+                {
+                    "name": "Gallons Dropped",
+                    "value": "80000"
+                },
+                {
+                    "name": "Flight Hours",
+                    "value": "9.5"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "CAL FIRE HAWK 1",
+                    "qualifier": "performed"
+                },
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "targeted"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Water Drop",
+            "time": "2025-01-23T08:11:00Z",
+            "attributes": [
+                {
+                    "name": "Gallons Dropped",
+                    "value": "33000"
+                },
+                {
+                    "name": "Flight Hours",
+                    "value": "5"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "CAL FIRE HAWK 2",
+                    "qualifier": "performed"
+                },
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "targeted"
+                }
+            ]
+        },
+        {
+            "id": 4,
+            "type": "Helibase Establishment",
+            "time": "2025-01-23T08:11:00Z",
+            "attributes": [],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "is-related-to"
+                }
+            ]
+        }
+    ]
+}

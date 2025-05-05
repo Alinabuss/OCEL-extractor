@@ -1,0 +1,164 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "type": "string"
+                },
+                {
+                    "name": "Containment Area",
+                    "type": "string"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Firefighter Crew",
+            "attributes": [
+                {
+                    "name": "Crew ID",
+                    "type": "string"
+                },
+                {
+                    "name": "Role",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Strengthen Containment Lines",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "Action Taken",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Create Dozer Lines",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "Action Taken",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Handle Flare-ups",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "type": "datetime"
+                },
+                {
+                    "name": "Flare-up Status",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hurst Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Location",
+                    "time": "2025-01-08T21:40:00Z",
+                    "value": "Hurst"
+                },
+                {
+                    "name": "Containment Area",
+                    "time": "2025-01-08T21:40:00Z",
+                    "value": "Planned Containment Area"
+                },
+                {
+                    "name": "Status",
+                    "time": "2025-01-08T21:40:00Z",
+                    "value": "Controlled"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Strengthen Containment Lines",
+            "time": "2025-01-08T21:40:00Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2025-01-08T21:40:00Z"
+                },
+                {
+                    "name": "Action Taken",
+                    "value": "Firefighters continued to strengthen containment lines"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Create Dozer Lines",
+            "time": "2025-01-08T21:40:00Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2025-01-08T21:40:00Z"
+                },
+                {
+                    "name": "Action Taken",
+                    "value": "Firefighters created dozer lines to minimize fire growth"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "type": "Handle Flare-ups",
+            "time": "2025-01-08T21:40:00Z",
+            "attributes": [
+                {
+                    "name": "Time",
+                    "value": "2025-01-08T21:40:00Z"
+                },
+                {
+                    "name": "Flare-up Status",
+                    "value": "Firefighters managed a few flare-ups"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hurst Fire",
+                    "qualifier": "relatedTo"
+                }
+            ]
+        }
+    ]
+}

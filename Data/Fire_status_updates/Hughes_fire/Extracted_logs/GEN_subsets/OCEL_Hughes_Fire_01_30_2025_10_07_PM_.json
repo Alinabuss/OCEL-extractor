@@ -1,0 +1,126 @@
+{
+    "objectTypes": [
+        {
+            "name": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "type": "string"
+                },
+                {
+                    "name": "Status",
+                    "type": "string"
+                },
+                {
+                    "name": "Last Update",
+                    "type": "string"
+                },
+                {
+                    "name": "Contact Number",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "eventTypes": [
+        {
+            "name": "Last Incident Update",
+            "attributes": [
+                {
+                    "name": "Information Source",
+                    "type": "string"
+                },
+                {
+                    "name": "Timestamp",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "name": "Fire Information Contact",
+            "attributes": [
+                {
+                    "name": "Contact Number",
+                    "type": "string"
+                },
+                {
+                    "name": "Operating Hours",
+                    "type": "string"
+                }
+            ]
+        }
+    ],
+    "objects": [
+        {
+            "id": "Hughes Fire",
+            "type": "Fire Incident",
+            "attributes": [
+                {
+                    "name": "Name",
+                    "time": "2025-01-30T22:07:00Z",
+                    "value": "Hughes Fire"
+                },
+                {
+                    "name": "Status",
+                    "time": "2025-01-30T22:07:00Z",
+                    "value": "No further updates unless significant activity occurs"
+                },
+                {
+                    "name": "Last Update",
+                    "time": "2025-01-30T22:07:00Z",
+                    "value": "Last incident update on January 28th"
+                },
+                {
+                    "name": "Contact Number",
+                    "time": "2025-01-30T22:07:00Z",
+                    "value": "626-574-1613 (M-F 8:00 a.m. \u2013 4:30 p.m.)"
+                }
+            ],
+            "relationships": []
+        }
+    ],
+    "events": [
+        {
+            "id": 1,
+            "type": "Last Incident Update",
+            "time": "2025-01-30T22:07:00Z",
+            "attributes": [
+                {
+                    "name": "Information Source",
+                    "value": "Hughes Fire Information | InciWeb"
+                },
+                {
+                    "name": "Timestamp",
+                    "value": "2025-01-30T22:07:00Z"
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "is update for"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "type": "Fire Information Contact",
+            "time": "2025-01-30T22:07:00Z",
+            "attributes": [
+                {
+                    "name": "Contact Number",
+                    "value": "626-574-1613"
+                },
+                {
+                    "name": "Operating Hours",
+                    "value": "M-F 8:00 a.m. \u2013 4:30 p.m."
+                }
+            ],
+            "relationships": [
+                {
+                    "objectId": "Hughes Fire",
+                    "qualifier": "provides contact information for"
+                }
+            ]
+        }
+    ]
+}
